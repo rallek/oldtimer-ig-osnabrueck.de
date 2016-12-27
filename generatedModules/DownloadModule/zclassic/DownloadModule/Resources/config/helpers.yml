@@ -1,0 +1,40 @@
+services:
+    # Helper classes
+    rk_download_module.category_helper:
+        class: RK\DownloadModule\Helper\CategoryHelper
+        arguments: ["@service_container", "@translator.default", "@session", "@logger", "@request_stack", "@zikula_users_module.current_user"]
+    
+    rk_download_module.controller_helper:
+        class: RK\DownloadModule\Helper\ControllerHelper
+        arguments: ["@service_container", "@translator.default", "@session", "@logger"]
+    
+    rk_download_module.feature_activation_helper:
+        class: RK\DownloadModule\Helper\FeatureActivationHelper
+    
+    rk_download_module.hook_helper:
+        class: RK\DownloadModule\Helper\HookHelper
+        arguments: ["@hook_dispatcher"]
+    
+    rk_download_module.image_helper:
+        class: RK\DownloadModule\Helper\ImageHelper
+        arguments: ["@translator.default", "@session", "@zikula_extensions_module.api.variable"]
+    
+    rk_download_module.listentries_helper:
+        class: RK\DownloadModule\Helper\ListEntriesHelper
+        arguments: ["@translator.default"]
+    
+    rk_download_module.model_helper:
+        class: RK\DownloadModule\Helper\ModelHelper
+        arguments: ["@service_container"]
+    
+    rk_download_module.selection_helper:
+        class: RK\DownloadModule\Helper\SelectionHelper
+        arguments: ["@service_container", "@doctrine.orm.entity_manager", "@translator.default", "@rk_download_module.controller_helper"]
+    
+    rk_download_module.view_helper:
+        class: RK\DownloadModule\Helper\ViewHelper
+        arguments: ["@service_container", "@translator.default"]
+    
+    rk_download_module.workflow_helper:
+        class: RK\DownloadModule\Helper\WorkflowHelper
+        arguments: ["@service_container", "@translator.default"]

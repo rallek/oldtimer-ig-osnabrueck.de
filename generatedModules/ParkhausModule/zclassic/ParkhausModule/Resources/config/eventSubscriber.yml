@@ -1,0 +1,82 @@
+services:
+    # Event subscriber and listener classes
+    rk_parkhaus_module.entity_lifecycle_listener:
+        class: RK\ParkhausModule\Listener\EntityLifecycleListener
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_parkhaus_module.core_listener:
+        class: RK\ParkhausModule\Listener\CoreListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.kernel_listener:
+        class: RK\ParkhausModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.installer_listener:
+        class: RK\ParkhausModule\Listener\InstallerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.moduledispatch_listener:
+        class: RK\ParkhausModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.mailer_listener:
+        class: RK\ParkhausModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.page_listener:
+        class: RK\ParkhausModule\Listener\PageListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.theme_listener:
+        class: RK\ParkhausModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.view_listener:
+        class: RK\ParkhausModule\Listener\ViewListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.userlogin_listener:
+        class: RK\ParkhausModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.userlogout_listener:
+        class: RK\ParkhausModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.user_listener:
+        class: RK\ParkhausModule\Listener\UserListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.userregistration_listener:
+        class: RK\ParkhausModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.users_listener:
+        class: RK\ParkhausModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.group_listener:
+        class: RK\ParkhausModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_parkhaus_module.thirdparty_listener:
+        class: RK\ParkhausModule\Listener\ThirdPartyListener
+        tags:
+            - { name: kernel.event_subscriber }
+    

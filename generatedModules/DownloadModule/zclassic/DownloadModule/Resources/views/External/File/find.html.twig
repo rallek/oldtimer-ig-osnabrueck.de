@@ -1,0 +1,92 @@
+{# Purpose of this template: Display a popup selector of files for scribite integration #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app.request.locale }}" lang="{{ app.request.locale }}">
+<head>
+    <title>{{ __('Search and select file') }}</title>
+    {{ pageAddAsset('stylesheet', pagevars.homepath ~ 'style/core.css') }}
+    {{ pageAddAsset('stylesheet', zasset('@RKDownloadModule:css/style.css')) }}
+    {{ pageAddAsset('stylesheet', zasset('@RKDownloadModule:css/finder.css')) }}
+    <script type="text/javascript">/* <![CDATA[ */
+        if (typeof(Zikula) == 'undefined') {var Zikula = {};}
+        Zikula.Config = {'entrypoint': '{{ getModVar('ZConfig', 'entrypoint', 'index.php') }}', 'baseURL': '{{ app.request.getSchemeAndHttpHost() ~ '/' }}', 'baseURI': '{{ app.request.getBasePath() }}'}; /* ]]> */
+    </script>
+    {{ pageAddAsset('stylesheet', asset('bootstrap/css/bootstrap.min.css')) }}
+    {{ pageAddAsset('stylesheet', asset('bootstrap/css/bootstrap-theme.min.css')) }}
+    {{ pageAddAsset('javascript', asset('jquery/jquery.min.js')) }}
+    {{ pageAddAsset('javascript', asset('bootstrap/js/bootstrap.min.js')) }}
+    {#{ pageAddAsset('javascript', pagevars.homepath ~ 'javascript/helpers/Zikula.js') }#}
+    {{ pageAddAsset('javascript', zasset('@RKDownloadModule:js/RKDownloadModule.Finder.js')) }}
+</head>
+<body>
+    <div class="container">
+        {% form_theme finderForm with [
+            '@RKDownloadModule/Form/bootstrap_3.html.twig',
+            'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
+        ] %}
+        {{ form_start(finderForm, {attr: { id: 'rKDownloadModuleSelectorForm' }}) }}
+        {{ form_errors(finderForm) }}
+        <fieldset>
+            <legend>{{ __('Search and select file') }}</legend>
+            {% if featureActivationHelper.isEnabled(constant('RK\\DownloadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
+                {{ form_row(finderForm.categories) }}
+            {% endif %}
+            {{ form_row(finderForm.pasteas) }}
+            <br />
+            <div class="form-group">
+                <label for="rKDownloadModuleObjectId" class="col-sm-3 control-label">{{ __('File') }}:</label>
+                <div class="col-sm-9">
+                    <div id="rkdownloadmoduleItemContainer">
+                        <ul>
+                        {% for file in items %}
+                            <li>
+                                {% set itemId = file.createCompositeIdentifier() %}
+                                <a href="#" data-itemid="{{ itemId }}">{{ file.getTitleFromDisplayPattern() }}</a>
+                                <input type="hidden" id="url{{ itemId }}" value="{{ url('rkdownloadmodule_file_display', { 'id': file.id }) }}" />
+                                <input type="hidden" id="title{{ itemId }}" value="{{ file.getTitleFromDisplayPattern()|e('html_attr') }}" />
+                                <input type="hidden" id="desc{{ itemId }}" value="{% set description %}{% if file.myDescription is not empty %}{{ file.myDescription }}{% endif %}
+                                {% endset %}{{ description|striptags|e('html_attr') }}" />
+                            </li>
+                        {% else %}
+                            <li>{{ __('No entries found.') }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {{ form_row(finderForm.sort) }}
+            {{ form_row(finderForm.sortdir) }}
+            {{ form_row(finderForm.num) }}
+            {{ form_row(finderForm.q) }}
+            <div>
+                {{ pager({ display: 'page', rowcount: pager.numitems, limit: pager.itemsperpage, posvar: 'pos', maxpages: 10, route: 'rkdownloadmodule_external_finder'}) }}
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    {{ form_widget(finderForm.update) }}
+                    {{ form_widget(finderForm.cancel) }}
+                </div>
+            </div>
+        </fieldset>
+        {{ form_end(finderForm) }}
+    </div>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            $(document).ready(function() {
+                rKDownloadModule.finder.onLoad();
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+
+    {#
+    <div class="rkdownloadmodule-finderform">
+        <fieldset>
+            {{ render(controller('RKDownloadModule:Admin:edit')) }}
+        </fieldset>
+    </div>
+    #}
+</body>
+</html>

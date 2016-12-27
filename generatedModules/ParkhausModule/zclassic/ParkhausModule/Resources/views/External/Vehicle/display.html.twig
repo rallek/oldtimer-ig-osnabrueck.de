@@ -1,0 +1,48 @@
+{# Purpose of this template: Display one certain vehicle within an external context #}
+<div id="vehicle{$vehicle.id}" class="rkparkhausmodule-external-vehicle">
+{% if displayMode == 'link' %}
+    <p class="rkparkhausmodule-external-link">
+    <a href="{{ path('rkparkhausmodule_vehicle_display', { 'id': vehicle.id }) }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ vehicle.getTitleFromDisplayPattern()|notifyFilters('parkhaus.filter_hooks.vehicles.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKParkhausModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkparkhausmodule-external-title">
+            <strong>{{ vehicle.getTitleFromDisplayPattern()|notifyFilters('parkhaus.filter_hooks.vehicles.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkparkhausmodule-external-snippet">
+        {% if vehicle.titleImage is not empty and vehicle.titleImageMeta|default %}
+                    <a href="{{ vehicle.titleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.titleImageMeta.isImage %} class="lightbox"{% endif %}>
+        {% if vehicle.titleImageMeta.isImage %}
+            {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleTitleImage') %}
+            <img src="{{ vehicle.titleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+        {% else %}
+            {{ __('Download') }} ({{ vehicle.titleImageMeta.size|rkparkhausmodule_fileSize(vehicle.titleImage.getPathname(), false, false) }})
+        {% endif %}
+        </a>
+        {% else %}&nbsp;{% endif %}
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkparkhausmodule-external-description">
+            {% if vehicle.vehicleDescriptionTeaser is not empty %}{{ vehicle.vehicleDescriptionTeaser }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

@@ -1,0 +1,82 @@
+services:
+    # Event subscriber and listener classes
+    rk_download_module.entity_lifecycle_listener:
+        class: RK\DownloadModule\Listener\EntityLifecycleListener
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_download_module.core_listener:
+        class: RK\DownloadModule\Listener\CoreListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.kernel_listener:
+        class: RK\DownloadModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.installer_listener:
+        class: RK\DownloadModule\Listener\InstallerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.moduledispatch_listener:
+        class: RK\DownloadModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.mailer_listener:
+        class: RK\DownloadModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.page_listener:
+        class: RK\DownloadModule\Listener\PageListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.theme_listener:
+        class: RK\DownloadModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.view_listener:
+        class: RK\DownloadModule\Listener\ViewListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.userlogin_listener:
+        class: RK\DownloadModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.userlogout_listener:
+        class: RK\DownloadModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.user_listener:
+        class: RK\DownloadModule\Listener\UserListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.userregistration_listener:
+        class: RK\DownloadModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.users_listener:
+        class: RK\DownloadModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.group_listener:
+        class: RK\DownloadModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_download_module.thirdparty_listener:
+        class: RK\DownloadModule\Listener\ThirdPartyListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
