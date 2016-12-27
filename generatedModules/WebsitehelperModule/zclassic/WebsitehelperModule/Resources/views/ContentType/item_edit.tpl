@@ -2,10 +2,10 @@
 
 <div style="margin-left: 80px">
     <div class="form-group">
-        {formlabel for='rKWebsitehelperModuleObjectType' __text='Object type' cssClass='col-sm-3 control-label'}
+        {formlabel for='rKWebsiteHelperModuleObjectType' __text='Object type' cssClass='col-sm-3 control-label'}
         <div class="col-sm-9">
             {rkwebsitehelpermoduleObjectTypeSelector assign='allObjectTypes'}
-            {formdropdownlist id='rKWebsitehelperModuleObjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
+            {formdropdownlist id='rKWebsiteHelperModuleObjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
             <span class="help-block">{gt text='If you change this please save the element once to reload the parameters below.'}</span>
         </div>
     </div>

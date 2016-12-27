@@ -1,10 +1,10 @@
 {# purpose of this template: build the form to edit an instance of carousel #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.EditFunctions.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.Validation.js')) }}
     {{ pageAddAsset('javascript', pagevars.homepath ~ 'vendor/twitter/typeahead.js/dist/typeahead.bundle.min.js') }}
 {% endblock %}
 
@@ -13,7 +13,7 @@
 {% block content %}
     <div class="rkwebsitehelpermodule-carousel rkwebsitehelpermodule-edit">
 {% form_theme form with [
-    '@RKWebsitehelperModule/Form/bootstrap_3.html.twig',
+    '@RKWebsiteHelperModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
 {{ form_start(form, {attr: {id: 'carouselEditForm'}}) }}
@@ -33,7 +33,7 @@
 </fieldset>
 
 {% if mode != 'create' %}
-    {{ include('@RKWebsitehelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: carousel }) }}
+    {{ include('@RKWebsiteHelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: carousel }) }}
 {% endif %}
 
 {# include display hooks #}
@@ -90,7 +90,7 @@
         
                 function executeCustomValidationConstraints()
                 {
-                    rKWebsitehelperPerformCustomValidationRules('carousel', '{% if mode != 'create' %}{{ carousel.id }}{% endif %}');
+                    rKWebsiteHelperPerformCustomValidationRules('carousel', '{% if mode != 'create' %}{{ carousel.id }}{% endif %}');
                 }
         
                 function triggerFormValidation()

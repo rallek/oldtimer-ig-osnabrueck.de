@@ -1,6 +1,6 @@
 'use strict';
 
-function rKWebsitehelperToday(format)
+function rKWebsiteHelperToday(format)
 {
     var timestamp, todayDate, month, day, hours, minutes, seconds;
 
@@ -40,7 +40,7 @@ function rKWebsitehelperToday(format)
 }
 
 // returns YYYY-MM-DD even if date is in DD.MM.YYYY
-function rKWebsitehelperReadDate(val, includeTime)
+function rKWebsiteHelperReadDate(val, includeTime)
 {
     // look if we have YYYY-MM-DD
     if (val.substr(4, 1) === '-' && val.substr(7, 1) === '-') {
@@ -58,7 +58,7 @@ function rKWebsitehelperReadDate(val, includeTime)
     }
 }
 
-function rKWebsitehelperValidateNoSpace(val)
+function rKWebsiteHelperValidateNoSpace(val)
 {
     var valStr;
     valStr = new String(val);
@@ -66,7 +66,7 @@ function rKWebsitehelperValidateNoSpace(val)
     return (valStr.indexOf(' ') === -1);
 }
 
-function rKWebsitehelperValidateHtmlColour(val)
+function rKWebsiteHelperValidateHtmlColour(val)
 {
     var valStr;
     valStr = new String(val);
@@ -74,7 +74,7 @@ function rKWebsitehelperValidateHtmlColour(val)
     return valStr === '' || (/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(valStr));
 }
 
-function rKWebsitehelperValidateUploadExtension(val, elem)
+function rKWebsiteHelperValidateUploadExtension(val, elem)
 {
     var fileExtension, allowedExtensions;
     if (val === '') {
@@ -89,20 +89,20 @@ function rKWebsitehelperValidateUploadExtension(val, elem)
     return allowedExtensions.test(val);
 }
 
-function rKWebsitehelperValidateDateFuture(val)
+function rKWebsiteHelperValidateDateFuture(val)
 {
     var valStr, cmpVal;
     valStr = new String(val);
-    cmpVal = rKWebsitehelperReadDate(valStr, false);
+    cmpVal = rKWebsiteHelperReadDate(valStr, false);
 
-    return valStr === '' || (cmpVal > rKWebsitehelperToday('date'));
+    return valStr === '' || (cmpVal > rKWebsiteHelperToday('date'));
 }
 
-function rKWebsitehelperValidateDateRangeCarouselItem(val)
+function rKWebsiteHelperValidateDateRangeCarouselItem(val)
 {
     var cmpVal, cmpVal2, result;
-    cmpVal = rKWebsitehelperReadDate(jQuery("[id$='itemStartDate']").val(), false);
-    cmpVal2 = rKWebsitehelperReadDate(jQuery("[id$='intemEndDate']").val(), false);
+    cmpVal = rKWebsiteHelperReadDate(jQuery("[id$='itemStartDate']").val(), false);
+    cmpVal2 = rKWebsiteHelperReadDate(jQuery("[id$='intemEndDate']").val(), false);
 
     if (typeof cmpVal == 'undefined' && typeof cmpVal2 == 'undefined') {
         result = true;
@@ -116,31 +116,31 @@ function rKWebsitehelperValidateDateRangeCarouselItem(val)
 /**
  * Runs special validation rules.
  */
-function rKWebsitehelperPerformCustomValidationRules(objectType, currentEntityId)
+function rKWebsiteHelperPerformCustomValidationRules(objectType, currentEntityId)
 {
     jQuery('.validate-nospace').each( function() {
-        if (!rKWebsitehelperValidateNoSpace(jQuery(this).val())) {
+        if (!rKWebsiteHelperValidateNoSpace(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'This value must not contain spaces.'/*, 'rkwebsitehelpermodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-htmlcolour').each( function() {
-        if (!rKWebsitehelperValidateHtmlColour(jQuery(this).val())) {
+        if (!rKWebsiteHelperValidateHtmlColour(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid html colour code.'/*, 'rkwebsitehelpermodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-upload').each( function() {
-        if (!rKWebsitehelperValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
+        if (!rKWebsiteHelperValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid file extension.'/*, 'rkwebsitehelpermodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-date-future').each( function() {
-        if (!rKWebsitehelperValidateDateFuture(jQuery(this).val())) {
+        if (!rKWebsiteHelperValidateDateFuture(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a value in the future.'/*, 'rkwebsitehelpermodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
@@ -148,7 +148,7 @@ function rKWebsitehelperPerformCustomValidationRules(objectType, currentEntityId
     });
     jQuery('.validate-daterange-carouselitem').each( function() {
         if (typeof jQuery(this).attr('id') != 'undefined') {
-        if (!rKWebsitehelperValidateDateRangeCarouselItem(jQuery(this).val())) {
+        if (!rKWebsiteHelperValidateDateRangeCarouselItem(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'The start must be before the end.'/*, 'rkwebsitehelpermodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');

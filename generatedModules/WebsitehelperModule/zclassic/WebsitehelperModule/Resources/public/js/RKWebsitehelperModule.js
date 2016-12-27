@@ -1,6 +1,6 @@
 'use strict';
 
-function rKWebsitehelperCapitaliseFirstLetter(string)
+function rKWebsiteHelperCapitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.substring(1);
 }
@@ -8,62 +8,65 @@ function rKWebsitehelperCapitaliseFirstLetter(string)
 /**
  * Submits a quick navigation form.
  */
-function rKWebsitehelperSubmitQuickNavForm(objectType)
+function rKWebsiteHelperSubmitQuickNavForm(objectType)
 {
-    jQuery('#rkwebsitehelpermodule' + rKWebsitehelperCapitaliseFirstLetter(objectType) + 'QuickNavForm').submit();
+    jQuery('#rkwebsitehelpermodule' + rKWebsiteHelperCapitaliseFirstLetter(objectType) + 'QuickNavForm').submit();
 }
 
 /**
  * Initialise the quick navigation panel in list views.
  */
-function rKWebsitehelperInitQuickNavigation(objectType)
+function rKWebsiteHelperInitQuickNavigation(objectType)
 {
-    if (jQuery('#rkwebsitehelpermodule' + rKWebsitehelperCapitaliseFirstLetter(objectType) + 'QuickNavForm').length < 1) {
+    if (jQuery('#rkwebsitehelpermodule' + rKWebsiteHelperCapitaliseFirstLetter(objectType) + 'QuickNavForm').length < 1) {
         return;
     }
 
     var fieldPrefix = 'rkwebsitehelpermodule_' + objectType.toLowerCase() + 'quicknav_';
     if (jQuery('#' + fieldPrefix + 'catid').length > 0) {
-        jQuery('#' + fieldPrefix + 'catid').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'catid').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'sortBy').length > 0) {
-        jQuery('#' + fieldPrefix + 'sortBy').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'sortBy').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'sortDir').length > 0) {
-        jQuery('#' + fieldPrefix + 'sortDir').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'sortDir').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'num').length > 0) {
-        jQuery('#' + fieldPrefix + 'num').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'num').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
     }
 
     switch (objectType) {
     case 'linker':
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'linkerLanguage').length > 0) {
-            jQuery('#' + fieldPrefix + 'linkerLanguage').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'linkerLanguage').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         break;
     case 'carouselItem':
         if (jQuery('#' + fieldPrefix + 'carousel').length > 0) {
-            jQuery('#' + fieldPrefix + 'carousel').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'carousel').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
+        }
+        if (jQuery('#' + fieldPrefix + 'linkExternal').length > 0) {
+            jQuery('#' + fieldPrefix + 'linkExternal').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         break;
     case 'carousel':
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'controls').length > 0) {
-            jQuery('#' + fieldPrefix + 'controls').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'controls').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         break;
     case 'websiteImage':
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsitehelperSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKWebsiteHelperSubmitQuickNavForm(objectType); });
         }
         break;
     default:
@@ -74,7 +77,7 @@ function rKWebsitehelperInitQuickNavigation(objectType)
 /**
  * Helper function to create new Bootstrap modal window instances.
  */
-function rKWebsitehelperInitInlineWindow(containerElem, title)
+function rKWebsiteHelperInitInlineWindow(containerElem, title)
 {
     var newWindowId;
 
@@ -124,7 +127,7 @@ function rKWebsitehelperInitInlineWindow(containerElem, title)
 /**
  * Simulates a simple alert using bootstrap.
  */
-function rKWebsitehelperSimpleAlert(beforeElem, title, content, alertId, cssClass)
+function rKWebsiteHelperSimpleAlert(beforeElem, title, content, alertId, cssClass)
 {
     var alertBox;
 

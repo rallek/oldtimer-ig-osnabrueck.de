@@ -1,3 +1,3 @@
 # CHANGELOG
 
-Changes in RKWebsitehelperModule 0.4.0
+Changes in RKWebsiteHelperModule 0.5.0

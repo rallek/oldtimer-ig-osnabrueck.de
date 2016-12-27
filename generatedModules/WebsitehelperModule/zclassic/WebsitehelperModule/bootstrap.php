@@ -1,6 +1,6 @@
 <?php
 /**
- * Websitehelper.
+ * WebsiteHelper.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License

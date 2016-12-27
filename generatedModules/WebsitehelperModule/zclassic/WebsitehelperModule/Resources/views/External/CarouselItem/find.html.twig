@@ -4,8 +4,8 @@
 <head>
     <title>{{ __('Search and select carousel item') }}</title>
     {{ pageAddAsset('stylesheet', pagevars.homepath ~ 'style/core.css') }}
-    {{ pageAddAsset('stylesheet', zasset('@RKWebsitehelperModule:css/style.css')) }}
-    {{ pageAddAsset('stylesheet', zasset('@RKWebsitehelperModule:css/finder.css')) }}
+    {{ pageAddAsset('stylesheet', zasset('@RKWebsiteHelperModule:css/style.css')) }}
+    {{ pageAddAsset('stylesheet', zasset('@RKWebsiteHelperModule:css/finder.css')) }}
     <script type="text/javascript">/* <![CDATA[ */
         if (typeof(Zikula) == 'undefined') {var Zikula = {};}
         Zikula.Config = {'entrypoint': '{{ getModVar('ZConfig', 'entrypoint', 'index.php') }}', 'baseURL': '{{ app.request.getSchemeAndHttpHost() ~ '/' }}', 'baseURI': '{{ app.request.getBasePath() }}'}; /* ]]> */
@@ -15,7 +15,7 @@
     {{ pageAddAsset('javascript', asset('jquery/jquery.min.js')) }}
     {{ pageAddAsset('javascript', asset('bootstrap/js/bootstrap.min.js')) }}
     {#{ pageAddAsset('javascript', pagevars.homepath ~ 'javascript/helpers/Zikula.js') }#}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.Finder.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.Finder.js')) }}
 </head>
 <body>
     <div class="container">
@@ -25,17 +25,17 @@
         <li{{ objectType == 'websiteImage' ? ' class="active"' : '' }}><a href="{{ path('rkwebsitehelpermodule_external_finder', {'objectType': 'websiteImage', 'editor': editorName}) }}" title="{{ __('Search and select website image') }}">{{ __('Website images') }}</a></li>
         </ul>
         {% form_theme finderForm with [
-            '@RKWebsitehelperModule/Form/bootstrap_3.html.twig',
+            '@RKWebsiteHelperModule/Form/bootstrap_3.html.twig',
             'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
         ] %}
-        {{ form_start(finderForm, {attr: { id: 'rKWebsitehelperModuleSelectorForm' }}) }}
+        {{ form_start(finderForm, {attr: { id: 'rKWebsiteHelperModuleSelectorForm' }}) }}
         {{ form_errors(finderForm) }}
         <fieldset>
             <legend>{{ __('Search and select carousel item') }}</legend>
             {{ form_row(finderForm.pasteas) }}
             <br />
             <div class="form-group">
-                <label for="rKWebsitehelperModuleObjectId" class="col-sm-3 control-label">{{ __('Carousel item') }}:</label>
+                <label for="rKWebsiteHelperModuleObjectId" class="col-sm-3 control-label">{{ __('Carousel item') }}:</label>
                 <div class="col-sm-9">
                     <div id="rkwebsitehelpermoduleItemContainer">
                         <ul>
@@ -77,7 +77,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKWebsitehelperModule.finder.onLoad();
+                rKWebsiteHelperModule.finder.onLoad();
             });
         })(jQuery);
     /* ]]> */
@@ -86,7 +86,7 @@
     {#
     <div class="rkwebsitehelpermodule-finderform">
         <fieldset>
-            {{ render(controller('RKWebsitehelperModule:Admin:edit')) }}
+            {{ render(controller('RKWebsiteHelperModule:Admin:edit')) }}
         </fieldset>
     </div>
     #}

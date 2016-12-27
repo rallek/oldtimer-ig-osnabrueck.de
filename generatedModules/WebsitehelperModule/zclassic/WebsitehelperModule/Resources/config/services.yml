@@ -10,4 +10,4 @@ imports:
   - { resource: 'logger.yml' }
 
 parameters:
-    liip_imagine.cache.signer.class: RK\WebsitehelperModule\Imagine\Cache\DummySigner
+    liip_imagine.cache.signer.class: RK\WebsiteHelperModule\Imagine\Cache\DummySigner

@@ -1,5 +1,5 @@
 {# purpose of this template: carousells list view #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 {% block title __('Carousel list') %}
 {% block admin_page_icon 'list-alt' %}
 {% block content %}
@@ -7,7 +7,7 @@
 
     {{ block('page_nav_links') }}
 
-    {{ include('@RKWebsitehelperModule/Carousel/viewQuickNav.html.twig', { workflowStateFilter: false }) }}{# see template file for available options #}
+    {{ include('@RKWebsiteHelperModule/Carousel/viewQuickNav.html.twig', { workflowStateFilter: false }) }}{# see template file for available options #}
 
     {% if routeArea == 'admin' %}
     <form action="{{ path('rkwebsitehelpermodule_carousel_' ~ routeArea ~ 'handleselectedentries') }}" method="post" id="carousellsViewForm" class="form-horizontal" role="form">
@@ -80,7 +80,7 @@
                     {{ carousel.carouselGroup }}
                 </td>
                 <td id="itemActions{{ carousel.id }}" headers="hItemActions" class="actions text-right nowrap z-w02">
-                    {% set itemActions = knp_menu_get('RKWebsitehelperModule:ItemActionsMenu:menu', [], { entity: carousel, area: routeArea, context: 'view' }) %}
+                    {% set itemActions = knp_menu_get('RKWebsiteHelperModule:ItemActionsMenu:menu', [], { entity: carousel, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
                         <a id="itemActions{{ carousel.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
                         
@@ -105,9 +105,9 @@
         {% endif %}
     {% if routeArea == 'admin' %}
             <fieldset>
-                <label for="rKWebsitehelperModuleAction" class="col-sm-3 control-label">{{ __('With selected carousells') }}</label>
+                <label for="rKWebsiteHelperModuleAction" class="col-sm-3 control-label">{{ __('With selected carousells') }}</label>
                 <div class="col-sm-6">
-                    <select id="rKWebsitehelperModuleAction" name="action" class="form-control input-sm">
+                    <select id="rKWebsiteHelperModuleAction" name="action" class="form-control input-sm">
                         <option value="">{{ __('Choose action') }}</option>
                         <option value="delete" title="{{ __('Delete content permanently.') }}">{{ __('Delete') }}</option>
                     </select>
@@ -125,7 +125,7 @@
 {% endblock %}
 {% block page_nav_links %}
     {% if canBeCreated %}
-        {% if hasPermission('RKWebsitehelperModule:Carousel:', '::', 'ACCESS_EDIT') %}
+        {% if hasPermission('RKWebsiteHelperModule:Carousel:', '::', 'ACCESS_EDIT') %}
             {% set createTitle = __('Create carousel') %}
             <a href="{{ path('rkwebsitehelpermodule_carousel_' ~ routeArea ~ 'edit') }}" title="{{ createTitle|e('html_attr') }}" class="fa fa-plus">{{ createTitle }}</a>
         {% endif %}

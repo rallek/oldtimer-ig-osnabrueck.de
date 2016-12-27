@@ -4,7 +4,7 @@
 /**
  * Resets the value of an upload / file input field.
  */
-function rKWebsitehelperResetUploadField(fieldName)
+function rKWebsiteHelperResetUploadField(fieldName)
 {
     jQuery('#' + fieldName).attr('type', 'input');
     jQuery('#' + fieldName).attr('type', 'file');
@@ -13,18 +13,18 @@ function rKWebsitehelperResetUploadField(fieldName)
 /**
  * Initialises the reset button for a certain upload input.
  */
-function rKWebsitehelperInitUploadField(fieldName)
+function rKWebsiteHelperInitUploadField(fieldName)
 {
     jQuery('#' + fieldName + 'ResetVal').click( function (event) {
         event.stopPropagation();
-        rKWebsitehelperResetUploadField(fieldName);
+        rKWebsiteHelperResetUploadField(fieldName);
     }).removeClass('hidden');
 }
 
 /**
  * Resets the value of a date or datetime input field.
  */
-function rKWebsitehelperResetDateField(fieldName)
+function rKWebsiteHelperResetDateField(fieldName)
 {
     jQuery('#' + fieldName).val('');
     jQuery('#' + fieldName + 'cal').html(Zikula.__('No date set.', 'rkwebsitehelpermodule_js'));
@@ -33,11 +33,11 @@ function rKWebsitehelperResetDateField(fieldName)
 /**
  * Initialises the reset button for a certain date input.
  */
-function rKWebsitehelperInitDateField(fieldName)
+function rKWebsiteHelperInitDateField(fieldName)
 {
     jQuery('#' + fieldName + 'ResetVal').click( function (event) {
         event.stopPropagation();
-        rKWebsitehelperResetDateField(fieldName);
+        rKWebsiteHelperResetDateField(fieldName);
     }).removeClass('hidden');
 }
 

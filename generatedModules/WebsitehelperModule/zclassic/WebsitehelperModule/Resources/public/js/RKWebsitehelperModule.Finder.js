@@ -1,13 +1,13 @@
 'use strict';
 
-var currentRKWebsitehelperModuleEditor = null;
-var currentRKWebsitehelperModuleInput = null;
+var currentRKWebsiteHelperModuleEditor = null;
+var currentRKWebsiteHelperModuleInput = null;
 
 /**
  * Returns the attributes used for the popup window. 
  * @return {String}
  */
-function getRKWebsitehelperModulePopupAttributes()
+function getRKWebsiteHelperModulePopupAttributes()
 {
     var pWidth, pHeight;
 
@@ -20,10 +20,10 @@ function getRKWebsitehelperModulePopupAttributes()
 /**
  * Open a popup window with the finder triggered by a CKEditor button.
  */
-function RKWebsitehelperModuleFinderCKEditor(editor, websitUrl)
+function RKWebsiteHelperModuleFinderCKEditor(editor, websitUrl)
 {
     // Save editor for access in selector window
-    currentRKWebsitehelperModuleEditor = editor;
+    currentRKWebsiteHelperModuleEditor = editor;
 
     editor.popup(
         Routing.generate('rkwebsitehelpermodule_external_finder', { objectType: 'linker', editor: 'ckeditor' }),
@@ -33,44 +33,44 @@ function RKWebsitehelperModuleFinderCKEditor(editor, websitUrl)
 }
 
 
-var rKWebsitehelperModule = {};
+var rKWebsiteHelperModule = {};
 
-rKWebsitehelperModule.finder = {};
+rKWebsiteHelperModule.finder = {};
 
-rKWebsitehelperModule.finder.onLoad = function (baseId, selectedId)
+rKWebsiteHelperModule.finder.onLoad = function (baseId, selectedId)
 {
-    jQuery('select').change(rKWebsitehelperModule.finder.onParamChanged);
+    jQuery('select').change(rKWebsiteHelperModule.finder.onParamChanged);
     jQuery('.btn-success').addClass('hidden');
-    jQuery('.btn-default').click(rKWebsitehelperModule.finder.handleCancel);
+    jQuery('.btn-default').click(rKWebsiteHelperModule.finder.handleCancel);
 
     var selectedItems = jQuery('#rkwebsitehelpermoduleItemContainer li a');
     selectedItems.bind('click keypress', function (e) {
         e.preventDefault();
-        rKWebsitehelperModule.finder.selectItem(jQuery(this).data('itemid'));
+        rKWebsiteHelperModule.finder.selectItem(jQuery(this).data('itemid'));
     });
 };
 
-rKWebsitehelperModule.finder.onParamChanged = function ()
+rKWebsiteHelperModule.finder.onParamChanged = function ()
 {
-    jQuery('#rKWebsitehelperModuleSelectorForm').submit();
+    jQuery('#rKWebsiteHelperModuleSelectorForm').submit();
 };
 
-rKWebsitehelperModule.finder.handleCancel = function ()
+rKWebsiteHelperModule.finder.handleCancel = function ()
 {
     var editor, w;
 
     editor = jQuery("[id$='editor']").first().val();
     if (editor === 'tinymce') {
-        rKWebsitehelperClosePopup();
+        rKWebsiteHelperClosePopup();
     } else if (editor === 'ckeditor') {
-        rKWebsitehelperClosePopup();
+        rKWebsiteHelperClosePopup();
     } else {
         alert('Close Editor: ' + editor);
     }
 };
 
 
-function rKWebsitehelperGetPasteSnippet(mode, itemId)
+function rKWebsiteHelperGetPasteSnippet(mode, itemId)
 {
     var quoteFinder, itemUrl, itemTitle, itemDescription, pasteMode;
 
@@ -96,28 +96,28 @@ function rKWebsitehelperGetPasteSnippet(mode, itemId)
 
 
 // User clicks on "select item" button
-rKWebsitehelperModule.finder.selectItem = function (itemId)
+rKWebsiteHelperModule.finder.selectItem = function (itemId)
 {
     var editor, html;
 
     editor = jQuery("[id$='editorName']").first().val();
     if ('tinymce' === editor) {
-        html = rKWebsitehelperGetPasteSnippet('html', itemId);
+        html = rKWebsiteHelperGetPasteSnippet('html', itemId);
         tinyMCE.activeEditor.execCommand('mceInsertContent', false, html);
         // other tinymce commands: mceImage, mceInsertLink, mceReplaceContent, see http://www.tinymce.com/wiki.php/Command_identifiers
     } else if ('ckeditor' === editor) {
-        if (null !== window.opener.currentRKWebsitehelperModuleEditor) {
-            html = rKWebsitehelperGetPasteSnippet('html', itemId);
+        if (null !== window.opener.currentRKWebsiteHelperModuleEditor) {
+            html = rKWebsiteHelperGetPasteSnippet('html', itemId);
 
-            window.opener.currentRKWebsitehelperModuleEditor.insertHtml(html);
+            window.opener.currentRKWebsiteHelperModuleEditor.insertHtml(html);
         }
     } else {
         alert('Insert into Editor: ' + editor);
     }
-    rKWebsitehelperClosePopup();
+    rKWebsiteHelperClosePopup();
 };
 
-function rKWebsitehelperClosePopup()
+function rKWebsiteHelperClosePopup()
 {
     window.opener.focus();
     window.close();
@@ -127,44 +127,44 @@ function rKWebsitehelperClosePopup()
 
 
 //=============================================================================
-// RKWebsitehelperModule item selector for Forms
+// RKWebsiteHelperModule item selector for Forms
 //=============================================================================
 
-rKWebsitehelperModule.itemSelector = {};
-rKWebsitehelperModule.itemSelector.items = {};
-rKWebsitehelperModule.itemSelector.baseId = 0;
-rKWebsitehelperModule.itemSelector.selectedId = 0;
+rKWebsiteHelperModule.itemSelector = {};
+rKWebsiteHelperModule.itemSelector.items = {};
+rKWebsiteHelperModule.itemSelector.baseId = 0;
+rKWebsiteHelperModule.itemSelector.selectedId = 0;
 
-rKWebsitehelperModule.itemSelector.onLoad = function (baseId, selectedId)
+rKWebsiteHelperModule.itemSelector.onLoad = function (baseId, selectedId)
 {
-    rKWebsitehelperModule.itemSelector.baseId = baseId;
-    rKWebsitehelperModule.itemSelector.selectedId = selectedId;
+    rKWebsiteHelperModule.itemSelector.baseId = baseId;
+    rKWebsiteHelperModule.itemSelector.selectedId = selectedId;
 
     // required as a changed object type requires a new instance of the item selector plugin
-    jQuery('#rKWebsitehelperModuleObjectType').change(rKWebsitehelperModule.itemSelector.onParamChanged);
+    jQuery('#rKWebsiteHelperModuleObjectType').change(rKWebsiteHelperModule.itemSelector.onParamChanged);
 
     if (jQuery('#' + baseId + '_catidMain').length > 0) {
-        jQuery('#' + baseId + '_catidMain').change(rKWebsitehelperModule.itemSelector.onParamChanged);
+        jQuery('#' + baseId + '_catidMain').change(rKWebsiteHelperModule.itemSelector.onParamChanged);
     } else if (jQuery('#' + baseId + '_catidsMain').length > 0) {
-        jQuery('#' + baseId + '_catidsMain').change(rKWebsitehelperModule.itemSelector.onParamChanged);
+        jQuery('#' + baseId + '_catidsMain').change(rKWebsiteHelperModule.itemSelector.onParamChanged);
     }
-    jQuery('#' + baseId + 'Id').change(rKWebsitehelperModule.itemSelector.onItemChanged);
-    jQuery('#' + baseId + 'Sort').change(rKWebsitehelperModule.itemSelector.onParamChanged);
-    jQuery('#' + baseId + 'SortDir').change(rKWebsitehelperModule.itemSelector.onParamChanged);
-    jQuery('#rKWebsitehelperModuleSearchGo').click(rKWebsitehelperModule.itemSelector.onParamChanged);
-    jQuery('#rKWebsitehelperModuleSearchGo').keypress(rKWebsitehelperModule.itemSelector.onParamChanged);
+    jQuery('#' + baseId + 'Id').change(rKWebsiteHelperModule.itemSelector.onItemChanged);
+    jQuery('#' + baseId + 'Sort').change(rKWebsiteHelperModule.itemSelector.onParamChanged);
+    jQuery('#' + baseId + 'SortDir').change(rKWebsiteHelperModule.itemSelector.onParamChanged);
+    jQuery('#rKWebsiteHelperModuleSearchGo').click(rKWebsiteHelperModule.itemSelector.onParamChanged);
+    jQuery('#rKWebsiteHelperModuleSearchGo').keypress(rKWebsiteHelperModule.itemSelector.onParamChanged);
 
-    rKWebsitehelperModule.itemSelector.getItemList();
+    rKWebsiteHelperModule.itemSelector.getItemList();
 };
 
-rKWebsitehelperModule.itemSelector.onParamChanged = function ()
+rKWebsiteHelperModule.itemSelector.onParamChanged = function ()
 {
     jQuery('#ajax_indicator').removeClass('hidden');
 
-    rKWebsitehelperModule.itemSelector.getItemList();
+    rKWebsiteHelperModule.itemSelector.getItemList();
 };
 
-rKWebsitehelperModule.itemSelector.getItemList = function ()
+rKWebsiteHelperModule.itemSelector.getItemList = function ()
 {
     var baseId, params;
 
@@ -186,39 +186,39 @@ rKWebsitehelperModule.itemSelector.getItemList = function ()
     }).done(function(res) {
         // get data returned by the ajax response
         var baseId;
-        baseId = rKWebsitehelperModule.itemSelector.baseId;
-        rKWebsitehelperModule.itemSelector.items[baseId] = res.data;
+        baseId = rKWebsiteHelperModule.itemSelector.baseId;
+        rKWebsiteHelperModule.itemSelector.items[baseId] = res.data;
         jQuery('#ajax_indicator').addClass('hidden');
-        rKWebsitehelperModule.itemSelector.updateItemDropdownEntries();
-        rKWebsitehelperModule.itemSelector.updatePreview();
+        rKWebsiteHelperModule.itemSelector.updateItemDropdownEntries();
+        rKWebsiteHelperModule.itemSelector.updatePreview();
     });
 };
 
-rKWebsitehelperModule.itemSelector.updateItemDropdownEntries = function ()
+rKWebsiteHelperModule.itemSelector.updateItemDropdownEntries = function ()
 {
     var baseId, itemSelector, items, i, item;
 
-    baseId = rKWebsitehelperModule.itemSelector.baseId;
+    baseId = rKWebsiteHelperModule.itemSelector.baseId;
     itemSelector = jQuery('#' + baseId + 'Id');
     itemSelector.length = 0;
 
-    items = rKWebsitehelperModule.itemSelector.items[baseId];
+    items = rKWebsiteHelperModule.itemSelector.items[baseId];
     for (i = 0; i < items.length; ++i) {
         item = items[i];
         itemSelector.options[i] = new Option(item.title, item.id, false);
     }
 
-    if (rKWebsitehelperModule.itemSelector.selectedId > 0) {
-        jQuery('#' + baseId + 'Id').val(rKWebsitehelperModule.itemSelector.selectedId);
+    if (rKWebsiteHelperModule.itemSelector.selectedId > 0) {
+        jQuery('#' + baseId + 'Id').val(rKWebsiteHelperModule.itemSelector.selectedId);
     }
 };
 
-rKWebsitehelperModule.itemSelector.updatePreview = function ()
+rKWebsiteHelperModule.itemSelector.updatePreview = function ()
 {
     var baseId, items, selectedElement, i;
 
-    baseId = rKWebsitehelperModule.itemSelector.baseId;
-    items = rKWebsitehelperModule.itemSelector.items[baseId];
+    baseId = rKWebsiteHelperModule.itemSelector.baseId;
+    items = rKWebsiteHelperModule.itemSelector.items[baseId];
 
     jQuery('#' + baseId + 'PreviewContainer').addClass('hidden');
 
@@ -227,9 +227,9 @@ rKWebsitehelperModule.itemSelector.updatePreview = function ()
     }
 
     selectedElement = items[0];
-    if (rKWebsitehelperModule.itemSelector.selectedId > 0) {
+    if (rKWebsiteHelperModule.itemSelector.selectedId > 0) {
         for (var i = 0; i < items.length; ++i) {
-            if (items[i].id === rKWebsitehelperModule.itemSelector.selectedId) {
+            if (items[i].id === rKWebsiteHelperModule.itemSelector.selectedId) {
                 selectedElement = items[i];
                 break;
             }
@@ -243,14 +243,14 @@ rKWebsitehelperModule.itemSelector.updatePreview = function ()
     }
 };
 
-rKWebsitehelperModule.itemSelector.onItemChanged = function ()
+rKWebsiteHelperModule.itemSelector.onItemChanged = function ()
 {
     var baseId, itemSelector, preview;
 
-    baseId = rKWebsitehelperModule.itemSelector.baseId;
+    baseId = rKWebsiteHelperModule.itemSelector.baseId;
     itemSelector = jQuery('#' + baseId + 'Id');
-    preview = window.atob(rKWebsitehelperModule.itemSelector.items[baseId][itemSelector.selectedIndex].previewInfo);
+    preview = window.atob(rKWebsiteHelperModule.itemSelector.items[baseId][itemSelector.selectedIndex].previewInfo);
 
     jQuery('#' + baseId + 'PreviewContainer').html(preview);
-    rKWebsitehelperModule.itemSelector.selectedId = jQuery('#' + baseId + 'Id').val();
+    rKWebsiteHelperModule.itemSelector.selectedId = jQuery('#' + baseId + 'Id').val();
 };

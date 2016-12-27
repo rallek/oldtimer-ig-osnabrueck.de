@@ -1,6 +1,6 @@
-# r k\Websitehelper 0.4.0
+# r k\WebsiteHelper 0.5.0
 
-You have three helper so far. One is an image collection. These images might be used somewhere on the website. The other one is a carousel. Here you can add some items which will slide around. The third one is the linker. The linker is used to add some boostrap boxes on you website.
+here you can find the helpers for this site e.g. carousel, linker or images
 
 This module is intended for being used with Zikula 1.4.4 and later.
 

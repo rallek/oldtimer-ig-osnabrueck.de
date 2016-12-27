@@ -1,15 +1,15 @@
 {* Purpose of this template: edit view of generic item list content type *}
 <div class="form-group">
     {gt text='Object type' domain='rkwebsitehelpermodule' assign='objectTypeSelectorLabel'}
-    {formlabel for='rKWebsitehelperModuleObjectType' text=$objectTypeSelectorLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKWebsiteHelperModuleObjectType' text=$objectTypeSelectorLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
         {rkwebsitehelpermoduleObjectTypeSelector assign='allObjectTypes'}
-        {formdropdownlist id='rKWebsitehelperModuleOjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
+        {formdropdownlist id='rKWebsiteHelperModuleOjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
         <span class="help-block">{gt text='If you change this please save the element once to reload the parameters below.' domain='rkwebsitehelpermodule'}</span>
     </div>
 </div>
 
-{if $featureActivationHelper->isEnabled(const('RK\\WebsitehelperModule\\Helper\\FeatureActivationHelper::CATEGORIES', $objectType))}
+{if $featureActivationHelper->isEnabled(const('RK\\WebsiteHelperModule\\Helper\\FeatureActivationHelper::CATEGORIES', $objectType))}
 {formvolatile}
 {if $properties ne null && is_array($properties)}
     {nocache}
@@ -28,9 +28,9 @@
                 {gt text='Categories' domain='rkwebsitehelpermodule' assign='categorySelectorLabel'}
                 {assign var='selectionMode' value='multiple'}
             {/if}
-            {formlabel for="rKWebsitehelperModuleCatIds`$propertyName`" text=$categorySelectorLabel cssClass='col-sm-3 control-label'}
+            {formlabel for="rKWebsiteHelperModuleCatIds`$propertyName`" text=$categorySelectorLabel cssClass='col-sm-3 control-label'}
             <div class="col-sm-9">
-                {formdropdownlist id="rKWebsitehelperModuleCatIds`$propName`" items=$categories.$propName dataField="catids`$propName`" group='data' selectionMode=$selectionMode cssClass='form-control'}
+                {formdropdownlist id="rKWebsiteHelperModuleCatIds`$propName`" items=$categories.$propName dataField="catids`$propName`" group='data' selectionMode=$selectionMode cssClass='form-control'}
                 <span class="help-block">{gt text='This is an optional filter.' domain='rkwebsitehelpermodule'}</span>
             </div>
         </div>
@@ -44,49 +44,49 @@
     {gt text='Sorting' domain='rkwebsitehelpermodule' assign='sortingLabel'}
     {formlabel text=$sortingLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formradiobutton id='rKWebsitehelperModuleSortRandom' value='random' dataField='sorting' group='data' mandatory=true}
+        {formradiobutton id='rKWebsiteHelperModuleSortRandom' value='random' dataField='sorting' group='data' mandatory=true}
         {gt text='Random' domain='rkwebsitehelpermodule' assign='sortingRandomLabel'}
-        {formlabel for='rKWebsitehelperModuleSortRandom' text=$sortingRandomLabel}
-        {formradiobutton id='rKWebsitehelperModuleSortNewest' value='newest' dataField='sorting' group='data' mandatory=true}
+        {formlabel for='rKWebsiteHelperModuleSortRandom' text=$sortingRandomLabel}
+        {formradiobutton id='rKWebsiteHelperModuleSortNewest' value='newest' dataField='sorting' group='data' mandatory=true}
         {gt text='Newest' domain='rkwebsitehelpermodule' assign='sortingNewestLabel'}
-        {formlabel for='rKWebsitehelperModuleSortNewest' text=$sortingNewestLabel}
-        {formradiobutton id='rKWebsitehelperModuleSortDefault' value='default' dataField='sorting' group='data' mandatory=true}
+        {formlabel for='rKWebsiteHelperModuleSortNewest' text=$sortingNewestLabel}
+        {formradiobutton id='rKWebsiteHelperModuleSortDefault' value='default' dataField='sorting' group='data' mandatory=true}
         {gt text='Default' domain='rkwebsitehelpermodule' assign='sortingDefaultLabel'}
-        {formlabel for='rKWebsitehelperModuleSortDefault' text=$sortingDefaultLabel}
+        {formlabel for='rKWebsiteHelperModuleSortDefault' text=$sortingDefaultLabel}
     </div>
 </div>
 
 <div class="form-group">
     {gt text='Amount' domain='rkwebsitehelpermodule' assign='amountLabel'}
-    {formlabel for='rKWebsitehelperModuleAmount' text=$amountLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKWebsiteHelperModuleAmount' text=$amountLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formintinput id='rKWebsitehelperModuleAmount' dataField='amount' group='data' mandatory=true maxLength=2}
+        {formintinput id='rKWebsiteHelperModuleAmount' dataField='amount' group='data' mandatory=true maxLength=2}
     </div>
 </div>
 
 <div class="form-group">
     {gt text='Template' domain='rkwebsitehelpermodule' assign='templateLabel'}
-    {formlabel for='rKWebsitehelperModuleTemplate' text=$templateLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKWebsiteHelperModuleTemplate' text=$templateLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
         {rkwebsitehelpermoduleTemplateSelector assign='allTemplates'}
-        {formdropdownlist id='rKWebsitehelperModuleTemplate' dataField='template' group='data' mandatory=true items=$allTemplates cssClass='form-control'}
+        {formdropdownlist id='rKWebsiteHelperModuleTemplate' dataField='template' group='data' mandatory=true items=$allTemplates cssClass='form-control'}
     </div>
 </div>
 
-<div id="customTemplateArea" class="form-group" data-switch="rKWebsitehelperModuleTemplate" data-switch-value="custom">
+<div id="customTemplateArea" class="form-group" data-switch="rKWebsiteHelperModuleTemplate" data-switch-value="custom">
     {gt text='Custom template' domain='rkwebsitehelpermodule' assign='customTemplateLabel'}
-    {formlabel for='rKWebsitehelperModuleCustomTemplate' text=$customTemplateLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKWebsiteHelperModuleCustomTemplate' text=$customTemplateLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formtextinput id='rKWebsitehelperModuleCustomTemplate' dataField='customTemplate' group='data' mandatory=false maxLength=80 cssClass='form-control'}
+        {formtextinput id='rKWebsiteHelperModuleCustomTemplate' dataField='customTemplate' group='data' mandatory=false maxLength=80 cssClass='form-control'}
         <span class="help-block">{gt text='Example' domain='rkwebsitehelpermodule'}: <em>itemlist_[objectType]_display.tpl</em></span>
     </div>
 </div>
 
 <div class="form-group">
     {gt text='Filter (expert option)' domain='rkwebsitehelpermodule' assign='filterLabel'}
-    {formlabel for='rKWebsitehelperModuleFilter' text=$filterLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKWebsiteHelperModuleFilter' text=$filterLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formtextinput id='rKWebsitehelperModuleFilter' dataField='filter' group='data' mandatory=false maxLength=255 cssClass='form-control'}
+        {formtextinput id='rKWebsiteHelperModuleFilter' dataField='filter' group='data' mandatory=false maxLength=255 cssClass='form-control'}
         <span class="help-block">
             <a class="fa fa-filter" data-toggle="modal" data-target="#filterSyntaxModal">{gt text='Show syntax examples' domain='rkwebsitehelpermodule'}</a>
         </span>

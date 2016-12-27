@@ -1,82 +1,82 @@
 services:
     # Event subscriber and listener classes
     rk_websitehelper_module.entity_lifecycle_listener:
-        class: RK\WebsitehelperModule\Listener\EntityLifecycleListener
+        class: RK\WebsiteHelperModule\Listener\EntityLifecycleListener
         tags:
             - { name: doctrine.event_subscriber }
     
     rk_websitehelper_module.core_listener:
-        class: RK\WebsitehelperModule\Listener\CoreListener
+        class: RK\WebsiteHelperModule\Listener\CoreListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.kernel_listener:
-        class: RK\WebsitehelperModule\Listener\KernelListener
+        class: RK\WebsiteHelperModule\Listener\KernelListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.installer_listener:
-        class: RK\WebsitehelperModule\Listener\InstallerListener
+        class: RK\WebsiteHelperModule\Listener\InstallerListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.moduledispatch_listener:
-        class: RK\WebsitehelperModule\Listener\ModuleDispatchListener
+        class: RK\WebsiteHelperModule\Listener\ModuleDispatchListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.mailer_listener:
-        class: RK\WebsitehelperModule\Listener\MailerListener
+        class: RK\WebsiteHelperModule\Listener\MailerListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.page_listener:
-        class: RK\WebsitehelperModule\Listener\PageListener
+        class: RK\WebsiteHelperModule\Listener\PageListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.theme_listener:
-        class: RK\WebsitehelperModule\Listener\ThemeListener
+        class: RK\WebsiteHelperModule\Listener\ThemeListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.view_listener:
-        class: RK\WebsitehelperModule\Listener\ViewListener
+        class: RK\WebsiteHelperModule\Listener\ViewListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.userlogin_listener:
-        class: RK\WebsitehelperModule\Listener\UserLoginListener
+        class: RK\WebsiteHelperModule\Listener\UserLoginListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.userlogout_listener:
-        class: RK\WebsitehelperModule\Listener\UserLogoutListener
+        class: RK\WebsiteHelperModule\Listener\UserLogoutListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.user_listener:
-        class: RK\WebsitehelperModule\Listener\UserListener
+        class: RK\WebsiteHelperModule\Listener\UserListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.userregistration_listener:
-        class: RK\WebsitehelperModule\Listener\UserRegistrationListener
+        class: RK\WebsiteHelperModule\Listener\UserRegistrationListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.users_listener:
-        class: RK\WebsitehelperModule\Listener\UsersListener
+        class: RK\WebsiteHelperModule\Listener\UsersListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.group_listener:
-        class: RK\WebsitehelperModule\Listener\GroupListener
+        class: RK\WebsiteHelperModule\Listener\GroupListener
         tags:
             - { name: kernel.event_subscriber }
     
     rk_websitehelper_module.thirdparty_listener:
-        class: RK\WebsitehelperModule\Listener\ThirdPartyListener
+        class: RK\WebsiteHelperModule\Listener\ThirdPartyListener
         tags:
             - { name: kernel.event_subscriber }
     

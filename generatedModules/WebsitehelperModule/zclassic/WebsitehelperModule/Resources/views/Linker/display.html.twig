@@ -1,10 +1,10 @@
 {# purpose of this template: linkers display view #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 {% block pageTitle %}{{ linker.getTitleFromDisplayPattern()|default(__('Linker')) }}{% endblock %}
 {% block title %}
     {% set templateTitle = linker.getTitleFromDisplayPattern()|default(__('Linker')) %}
     {{ templateTitle|notifyFilters('rkwebsitehelpermodule.filter_hooks.linkers.filter') }}
-    {% set itemActions = knp_menu_get('RKWebsitehelperModule:ItemActionsMenu:menu', [], { entity: linker, area: routeArea, context: 'display' }) %}
+    {% set itemActions = knp_menu_get('RKWebsiteHelperModule:ItemActionsMenu:menu', [], { entity: linker, area: routeArea, context: 'display' }) %}
     <div class="dropdown">
         <a id="itemActions{{ linker.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
         
@@ -75,7 +75,7 @@
         {% endif %}
         
     </dl>
-    {{ include('@RKWebsitehelperModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: linker }) }}
+    {{ include('@RKWebsiteHelperModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: linker }) }}
 
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
         {# include display hooks #}

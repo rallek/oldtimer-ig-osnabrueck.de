@@ -1,10 +1,10 @@
 {# purpose of this template: build the form to edit an instance of website image #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.EditFunctions.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.Validation.js')) }}
 {% endblock %}
 
 {% block title mode == 'create' ? __('Create website image') : __('Edit website image') %}
@@ -12,7 +12,7 @@
 {% block content %}
     <div class="rkwebsitehelpermodule-websiteimage rkwebsitehelpermodule-edit">
 {% form_theme form with [
-    '@RKWebsitehelperModule/Form/bootstrap_3.html.twig',
+    '@RKWebsiteHelperModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
 {{ form_start(form, {attr: {id: 'websiteImageEditForm'}}) }}
@@ -28,7 +28,7 @@
 </fieldset>
 
 {% if mode != 'create' %}
-    {{ include('@RKWebsitehelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: websiteimage }) }}
+    {{ include('@RKWebsiteHelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: websiteimage }) }}
 {% endif %}
 
 {# include display hooks #}
@@ -85,7 +85,7 @@
         
                 function executeCustomValidationConstraints()
                 {
-                    rKWebsitehelperPerformCustomValidationRules('websiteImage', '{% if mode != 'create' %}{{ websiteimage.id }}{% endif %}');
+                    rKWebsiteHelperPerformCustomValidationRules('websiteImage', '{% if mode != 'create' %}{{ websiteimage.id }}{% endif %}');
                 }
         
                 function triggerFormValidation()
@@ -137,7 +137,7 @@
                             triggerFormValidation();
                         {% endif %}
         
-                        rKWebsitehelperInitUploadField('rkwebsitehelpermodule_websiteimage_myImage_myImage');
+                        rKWebsiteHelperInitUploadField('rkwebsitehelpermodule_websiteimage_myImage_myImage');
                     });
                 })(jQuery);
     /* ]]> */

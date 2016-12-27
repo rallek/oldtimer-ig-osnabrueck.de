@@ -1,10 +1,10 @@
-application "Websitehelper" {
-    documentation "You have three helper so far. One is an image collection. These images might be used somewhere on the website. The other one is a carousel. Here you can add some items which will slide around. The third one is the linker. The linker is used to add some boostrap boxes on you website."
+application "WebsiteHelper" {
+    documentation "here you can find the helpers for this site e.g. carousel, linker or images"
     vendor "RK"
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://oldtimer-ig-osnabrueck.de"
-    version "0.4.0"
+    version "0.5.0"
     prefix "websit"
     generatorSettings {
         settingsContainer "Settings"
@@ -96,8 +96,8 @@ application "Websitehelper" {
                     maxRatio 3.1
                 },
                 string "titleColor" nospace htmlcolour {
-                    documentation "The title color normally should not be changed. If you have to because the choosen image do have a similar color please select white or black. (#ffffff or #000000)"
-                    defaultValue ""
+                    documentation "select white first. If this do not fit try a grey or black."
+                    defaultValue "#ffffff"
                     mandatory false
                 }
             ,
@@ -112,14 +112,19 @@ application "Websitehelper" {
                     documentation "Here we can filter one single item in the block advanced filtering to reuse an image. Be shure the itemEndDate is valid and not in the past."
                     mandatory false
                 }
+            ,
+                boolean "linkExternal" {
+                    documentation "if this is selected the link will open another window or tab"
+                    defaultValue "false"
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                }
             }
             actions {
                 mainAction "Index",
                 editAction "Edit",
                 viewAction "View",
                 deleteAction "Delete"
-            ,
-                displayAction "Display"
             }
         },
         entity "carousel" {
@@ -148,8 +153,7 @@ application "Websitehelper" {
                 mainAction "Index",
                 viewAction "View",
                 editAction "Edit",
-                deleteAction "Delete",
-                displayAction "Display"
+                deleteAction "Delete"
             }
         },
         entity "websiteImage" {

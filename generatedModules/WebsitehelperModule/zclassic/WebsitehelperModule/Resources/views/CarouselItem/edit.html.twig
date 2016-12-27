@@ -1,10 +1,10 @@
 {# purpose of this template: build the form to edit an instance of carousel item #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.EditFunctions.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.Validation.js')) }}
     {{ pageAddAsset('javascript', pagevars.homepath ~ 'vendor/twitter/typeahead.js/dist/typeahead.bundle.min.js') }}
 {% endblock %}
 
@@ -13,7 +13,7 @@
 {% block content %}
     <div class="rkwebsitehelpermodule-carouselitem rkwebsitehelpermodule-edit">
 {% form_theme form with [
-    '@RKWebsitehelperModule/Form/bootstrap_3.html.twig',
+    '@RKWebsiteHelperModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
 {{ form_start(form, {attr: {id: 'carouselItemEditForm'}}) }}
@@ -38,14 +38,16 @@
     {{ form_row(form.intemEndDate) }}
     
     {{ form_row(form.singleItemIdentifier) }}
+    
+    {{ form_row(form.linkExternal) }}
 </fieldset>
 
 {{ include(
-    '@RKWebsitehelperModule/Carousel/includeSelectOne.html.twig',
+    '@RKWebsiteHelperModule/Carousel/includeSelectOne.html.twig',
     { group: 'carouselitem', alias: 'carousel', aliasReverse: 'carouselItems', mandatory: false, idPrefix: 'websitCarouselItem_Carousel', linkingItem: carouselitem, displayMode: 'choices', allowEditing: false }
 ) }}
 {% if mode != 'create' %}
-    {{ include('@RKWebsitehelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: carouselitem }) }}
+    {{ include('@RKWebsiteHelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: carouselitem }) }}
 {% endif %}
 
 {# include display hooks #}
@@ -102,7 +104,7 @@
         
                 function executeCustomValidationConstraints()
                 {
-                    rKWebsitehelperPerformCustomValidationRules('carouselItem', '{% if mode != 'create' %}{{ carouselitem.id }}{% endif %}');
+                    rKWebsiteHelperPerformCustomValidationRules('carouselItem', '{% if mode != 'create' %}{{ carouselitem.id }}{% endif %}');
                 }
         
                 function triggerFormValidation()
@@ -154,8 +156,8 @@
                             triggerFormValidation();
                         {% endif %}
         
-                        rKWebsitehelperInitUploadField('rkwebsitehelpermodule_carouselitem_itemImage_itemImage');
-                        rKWebsitehelperInitDateField('rkwebsitehelpermodule_carouselitem_itemStartDate');
+                        rKWebsiteHelperInitUploadField('rkwebsitehelpermodule_carouselitem_itemImage_itemImage');
+                        rKWebsiteHelperInitDateField('rkwebsitehelpermodule_carouselitem_itemStartDate');
                     });
                 })(jQuery);
     /* ]]> */

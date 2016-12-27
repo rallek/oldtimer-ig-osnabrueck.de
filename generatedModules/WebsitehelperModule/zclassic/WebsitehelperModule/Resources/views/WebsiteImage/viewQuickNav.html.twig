@@ -1,9 +1,9 @@
 {# purpose of this template: website images view filter form #}
-{% if hasPermission('RKWebsitehelperModule:WebsiteImage:', '::', 'ACCESS_EDIT') %}
+{% if hasPermission('RKWebsiteHelperModule:WebsiteImage:', '::', 'ACCESS_EDIT') %}
     {% form_theme quickNavForm with [
         'bootstrap_3_layout.html.twig'
     ] %}
-    {{ form_start(quickNavForm, {attr: {id: 'rKWebsitehelperModuleWebsiteImageQuickNavForm', class: 'rkwebsitehelpermodule-quicknav navbar-form', role: 'navigation'}}) }}
+    {{ form_start(quickNavForm, {attr: {id: 'rKWebsiteHelperModuleWebsiteImageQuickNavForm', class: 'rkwebsitehelpermodule-quicknav navbar-form', role: 'navigation'}}) }}
     {{ form_errors(quickNavForm) }}
     <fieldset>
         <h3>{{ __('Quick navigation') }}</h3>
@@ -43,7 +43,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKWebsitehelperInitQuickNavigation('websiteImage');
+                rKWebsiteHelperInitQuickNavigation('websiteImage');
                 {% if searchFilter|default and searchFilter == false %}
                     {# we can hide the submit button if we have no quick search field #}
                     $('#rkwebsitehelpermodule_websiteimagequicknav_updateview').addClass('hidden');

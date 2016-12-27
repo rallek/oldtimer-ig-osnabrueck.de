@@ -1,5 +1,5 @@
 services:
     # Upload handler class
     rk_websitehelper_module.upload_handler:
-        class: RK\WebsitehelperModule\UploadHandler
+        class: RK\WebsiteHelperModule\UploadHandler
         arguments: ["@translator.default", "@zikula_users_module.current_user", "@zikula_extensions_module.api.variable"]

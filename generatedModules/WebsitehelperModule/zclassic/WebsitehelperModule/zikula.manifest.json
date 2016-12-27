@@ -5,15 +5,15 @@
         "logo": ""
     },
     "extension": {
-        "name": "Websitehelper",
+        "name": "Website helper",
         "url": "http://oldtimer-ig-osnabrueck.de",
         "icon": ""
     },
     "version": {
-        "semver": "0.4.0",
+        "semver": "0.5.0",
         "compatibility": ">=1.4.4 <2.0.0",
         "composerpath": "composer.json",
-        "description": "You have three helper so far. One is an image collection. These images might be used somewhere on the website. The other one is a carousel. Here you can add some items which will slide around. The third one is the linker. The linker is used to add some boostrap boxes on you website.",
+        "description": "here you can find the helpers for this site e.g. carousel, linker or images",
         "keywords": [
         ]
     },

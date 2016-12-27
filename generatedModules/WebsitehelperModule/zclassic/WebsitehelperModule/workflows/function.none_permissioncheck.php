@@ -1,6 +1,6 @@
 <?php
 /**
- * Websitehelper.
+ * WebsiteHelper.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -22,12 +22,12 @@
  *
  * @return bool Whether the current user is allowed to execute the action or not
  */
-function RKWebsitehelperModule_workflow_none_permissioncheck($obj, $permLevel, $currentUser, $actionId)
+function RKWebsiteHelperModule_workflow_none_permissioncheck($obj, $permLevel, $currentUser, $actionId)
 {
 
     // calculate the permission component
     $objectType = $obj['_objectType'];
-    $component = 'RKWebsitehelperModule:' . ucfirst($objectType) . ':';
+    $component = 'RKWebsiteHelperModule:' . ucfirst($objectType) . ':';
 
     // calculate the permission instance
     $instance = $obj->createCompositeIdentifier() . '::';
@@ -41,7 +41,7 @@ function RKWebsitehelperModule_workflow_none_permissioncheck($obj, $permLevel, $
 /**
  * This helper functions cares for including the strings used in the workflow into translation.
  */
-function RKWebsitehelperModule_workflow_none_gettextstrings()
+function RKWebsiteHelperModule_workflow_none_gettextstrings()
 {
     $serviceManager = \ServiceUtil::getManager();
     $translator = $serviceManager->get('translator.default');

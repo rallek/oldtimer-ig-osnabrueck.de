@@ -1,9 +1,9 @@
 {# purpose of this template: carousel items view filter form #}
-{% if hasPermission('RKWebsitehelperModule:CarouselItem:', '::', 'ACCESS_EDIT') %}
+{% if hasPermission('RKWebsiteHelperModule:CarouselItem:', '::', 'ACCESS_EDIT') %}
     {% form_theme quickNavForm with [
         'bootstrap_3_layout.html.twig'
     ] %}
-    {{ form_start(quickNavForm, {attr: {id: 'rKWebsitehelperModuleCarouselItemQuickNavForm', class: 'rkwebsitehelpermodule-quicknav navbar-form', role: 'navigation'}}) }}
+    {{ form_start(quickNavForm, {attr: {id: 'rKWebsiteHelperModuleCarouselItemQuickNavForm', class: 'rkwebsitehelpermodule-quicknav navbar-form', role: 'navigation'}}) }}
     {{ form_errors(quickNavForm) }}
     <fieldset>
         <h3>{{ __('Quick navigation') }}</h3>
@@ -43,6 +43,13 @@
         {% if pageSizeSelector is defined and pageSizeSelector != true %}
             </div>
         {% endif %}
+        {% if linkExternalFilter is defined and linkExternalFilter != true %}
+            <div class="hidden">
+        {% endif %}
+            {{ form_row(quickNavForm.linkExternal) }}
+        {% if linkExternalFilter is defined and linkExternalFilter != true %}
+            </div>
+        {% endif %}
         {{ form_widget(quickNavForm.updateview) }}
     </fieldset>
     {{ form_end(quickNavForm) }}
@@ -50,7 +57,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKWebsitehelperInitQuickNavigation('carouselItem');
+                rKWebsiteHelperInitQuickNavigation('carouselItem');
                 {% if searchFilter|default and searchFilter == false %}
                     {# we can hide the submit button if we have no quick search field #}
                     $('#rkwebsitehelpermodule_carouselitemquicknav_updateview').addClass('hidden');

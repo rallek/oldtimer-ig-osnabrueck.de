@@ -6,11 +6,11 @@ To create a new translation follow the steps below:
 2. Open a console and navigate to the Zikula root directory.
 3. Execute this command replacing `en` by your desired locale code:
 
-`php app/console translation:extract en --bundle=RKWebsitehelperModule --enable-extractor=jms_i18n_routing --output-format=po`
+`php app/console translation:extract en --bundle=RKWebsiteHelperModule --enable-extractor=jms_i18n_routing --output-format=po`
 
 You can also use multiple locales at once, for example `de fr es`.
 
-4. Translate the resulting `.po` files in `modules/RK/WebsitehelperModule/Resources/translations/` using your favourite Gettext tooling.
+4. Translate the resulting `.po` files in `modules/RK/WebsiteHelperModule/Resources/translations/` using your favourite Gettext tooling.
 
 For questions and other remarks visit our homepage http://oldtimer-ig-osnabrueck.de.
 

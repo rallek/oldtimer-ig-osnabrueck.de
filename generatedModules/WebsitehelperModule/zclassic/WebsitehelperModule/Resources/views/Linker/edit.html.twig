@@ -1,10 +1,10 @@
 {# purpose of this template: build the form to edit an instance of linker #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKWebsitehelperModule:js/RKWebsitehelperModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.EditFunctions.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.Validation.js')) }}
 {% endblock %}
 
 {% block title mode == 'create' ? __('Create linker') : __('Edit linker') %}
@@ -12,7 +12,7 @@
 {% block content %}
     <div class="rkwebsitehelpermodule-linker rkwebsitehelpermodule-edit">
 {% form_theme form with [
-    '@RKWebsitehelperModule/Form/bootstrap_3.html.twig',
+    '@RKWebsiteHelperModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
 {{ form_start(form, {attr: {id: 'linkerEditForm'}}) }}
@@ -38,7 +38,7 @@
 </fieldset>
 
 {% if mode != 'create' %}
-    {{ include('@RKWebsitehelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: linker }) }}
+    {{ include('@RKWebsiteHelperModule/Helper/includeStandardFieldsEdit.html.twig', { obj: linker }) }}
 {% endif %}
 
 {# include display hooks #}
@@ -95,7 +95,7 @@
         
                 function executeCustomValidationConstraints()
                 {
-                    rKWebsitehelperPerformCustomValidationRules('linker', '{% if mode != 'create' %}{{ linker.id }}{% endif %}');
+                    rKWebsiteHelperPerformCustomValidationRules('linker', '{% if mode != 'create' %}{{ linker.id }}{% endif %}');
                 }
         
                 function triggerFormValidation()
@@ -147,7 +147,7 @@
                             triggerFormValidation();
                         {% endif %}
         
-                        rKWebsitehelperInitUploadField('rkwebsitehelpermodule_linker_linkerImage_linkerImage');
+                        rKWebsiteHelperInitUploadField('rkwebsitehelpermodule_linker_linkerImage_linkerImage');
                     });
                 })(jQuery);
     /* ]]> */

@@ -1,5 +1,5 @@
 {# purpose of this template: carousel items list view #}
-{% extends routeArea == 'admin' ? 'RKWebsitehelperModule::adminBase.html.twig' : 'RKWebsitehelperModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKWebsiteHelperModule::adminBase.html.twig' : 'RKWebsiteHelperModule::base.html.twig' %}
 {% block title __('Carousel item list') %}
 {% block admin_page_icon 'list-alt' %}
 {% block content %}
@@ -9,7 +9,7 @@
 
     {{ block('page_nav_links') }}
 
-    {{ include('@RKWebsitehelperModule/CarouselItem/viewQuickNav.html.twig', { workflowStateFilter: false }) }}{# see template file for available options #}
+    {{ include('@RKWebsiteHelperModule/CarouselItem/viewQuickNav.html.twig', { workflowStateFilter: false }) }}{# see template file for available options #}
 
     {% if routeArea == 'admin' %}
     <form action="{{ path('rkwebsitehelpermodule_carouselitem_' ~ routeArea ~ 'handleselectedentries') }}" method="post" id="carouselItemsViewForm" class="form-horizontal" role="form">
@@ -30,6 +30,7 @@
                 <col id="cItemStartDate" />
                 <col id="cIntemEndDate" />
                 <col id="cSingleItemIdentifier" />
+                <col id="cLinkExternal" />
                 <col id="cCarousel" />
                 <col id="cItemActions" />
             </colgroup>
@@ -67,6 +68,9 @@
                 <th id="hSingleItemIdentifier" scope="col" class="text-left">
                     <a href="{{ sort.singleItemIdentifier.url }}" title="{{ __f('Sort by %s', {'%s': 'single item identifier'}) }}" class="{{ sort.singleItemIdentifier.class }}">{{ __('Single item identifier') }}</a>
                 </th>
+                <th id="hLinkExternal" scope="col" class="text-center z-order-unsorted">
+                    {{ __('Link external') }}
+                </th>
                 <th id="hCarousel" scope="col" class="text-left">
                     <a href="{{ sort.carousel.url }}" title="{{ __f('Sort by %s', {'%s': 'carousel'}) }}" class="{{ sort.carousel.class }}">{{ __('Carousel') }}</a>
                 </th>
@@ -86,7 +90,7 @@
                     {{ carouselItem.itemName }}
                 </td>
                 <td headers="hTitle" class="text-left">
-                    <a href="{{ path('rkwebsitehelpermodule_carouselitem_' ~ routeArea ~ 'display', { 'id': carouselItem.id }) }}" title="{{ __('View detail page')|e('html_attr') }}">{{ carouselItem.title|notifyFilters('rkwebsitehelpermodule.filterhook.carouselitems') }}</a>
+                    {{ carouselItem.title|notifyFilters('rkwebsitehelpermodule.filterhook.carouselitems') }}
                 </td>
                 <td headers="hSubtitle" class="text-left">
                     {{ carouselItem.subtitle }}
@@ -118,27 +122,22 @@
                 <td headers="hSingleItemIdentifier" class="text-left">
                     {{ carouselItem.singleItemIdentifier }}
                 </td>
+                <td headers="hLinkExternal" class="text-center">
+                    {% if carouselItem.linkExternal %}
+                        <i class="fa fa-check" title="{{ __('Yes') }}"></i>
+                    {% else %}
+                        <i class="fa fa-times" title="{{ __('No') }}"></i>
+                    {% endif %}
+                </td>
                 <td headers="hCarousel" class="text-left">
                     {% if carouselItem.carousel|default %}
-                        <a href="{{ path('rkwebsitehelpermodule_carousel_' ~ routeArea ~ 'display', { 'id': carouselItem.carousel.id }) }}">{% spaceless %}
                           {{ carouselItem.carousel.getTitleFromDisplayPattern() }}
-                        {% endspaceless %}</a>
-                        <a id="carouselItem{{ carouselItem.id }}_rel_{{ carouselItem.carousel.id }}Display" href="{{ path('rkwebsitehelpermodule_carousel_' ~ routeArea ~ 'display', {'id': carouselItem.carousel.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="fa fa-search-plus hidden"></a>
-                        <script type="text/javascript">
-                        /* <![CDATA[ */
-                            ( function($) {
-                                $(document).ready(function() {
-                                    rKWebsitehelperInitInlineWindow($('#carouselItem{{ carouselItem.id }}_rel_{{ carouselItem.carousel.id }}Display'), '{{ carouselItem.carousel.getTitleFromDisplayPattern()|e('js') }}');
-                                });
-                            })(jQuery);
-                        /* ]]> */
-                        </script>
                     {% else %}
                         {{ __('Not set.') }}
                     {% endif %}
                 </td>
                 <td id="itemActions{{ carouselItem.id }}" headers="hItemActions" class="actions text-right nowrap z-w02">
-                    {% set itemActions = knp_menu_get('RKWebsitehelperModule:ItemActionsMenu:menu', [], { entity: carouselItem, area: routeArea, context: 'view' }) %}
+                    {% set itemActions = knp_menu_get('RKWebsiteHelperModule:ItemActionsMenu:menu', [], { entity: carouselItem, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
                         <a id="itemActions{{ carouselItem.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
                         
@@ -148,7 +147,7 @@
             </tr>
         {% else %}
             <tr class="z-{{ routeArea == 'admin' ? 'admin' : 'data' }}tableempty">
-                <td class="text-left" colspan="{% if routeArea == 'admin' %}12{% else %}11{% endif %}">
+                <td class="text-left" colspan="{% if routeArea == 'admin' %}13{% else %}12{% endif %}">
             {{ __('No carousel items found.') }}
               </td>
             </tr>
@@ -163,9 +162,9 @@
         {% endif %}
     {% if routeArea == 'admin' %}
             <fieldset>
-                <label for="rKWebsitehelperModuleAction" class="col-sm-3 control-label">{{ __('With selected carousel items') }}</label>
+                <label for="rKWebsiteHelperModuleAction" class="col-sm-3 control-label">{{ __('With selected carousel items') }}</label>
                 <div class="col-sm-6">
-                    <select id="rKWebsitehelperModuleAction" name="action" class="form-control input-sm">
+                    <select id="rKWebsiteHelperModuleAction" name="action" class="form-control input-sm">
                         <option value="">{{ __('Choose action') }}</option>
                         <option value="delete" title="{{ __('Delete content permanently.') }}">{{ __('Delete') }}</option>
                     </select>
@@ -183,7 +182,7 @@
 {% endblock %}
 {% block page_nav_links %}
     {% if canBeCreated %}
-        {% if hasPermission('RKWebsitehelperModule:CarouselItem:', '::', 'ACCESS_EDIT') %}
+        {% if hasPermission('RKWebsiteHelperModule:CarouselItem:', '::', 'ACCESS_EDIT') %}
             {% set createTitle = __('Create carousel item') %}
             <a href="{{ path('rkwebsitehelpermodule_carouselitem_' ~ routeArea ~ 'edit') }}" title="{{ createTitle|e('html_attr') }}" class="fa fa-plus">{{ createTitle }}</a>
         {% endif %}

@@ -1,5 +1,5 @@
 {# purpose of this template: admin area base layout #}
-{% extends 'RKWebsitehelperModule::base.html.twig' %}
+{% extends 'RKWebsiteHelperModule::base.html.twig' %}
 {% block header %}
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
         {{ adminHeader() }}

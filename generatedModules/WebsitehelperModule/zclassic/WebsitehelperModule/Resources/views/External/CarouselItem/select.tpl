@@ -35,6 +35,7 @@
         <option value="itemStartDate"{if $sort eq 'itemStartDate'} selected="selected"{/if}>{gt text='Item start date'}</option>
         <option value="intemEndDate"{if $sort eq 'intemEndDate'} selected="selected"{/if}>{gt text='Intem end date'}</option>
         <option value="singleItemIdentifier"{if $sort eq 'singleItemIdentifier'} selected="selected"{/if}>{gt text='Single item identifier'}</option>
+        <option value="linkExternal"{if $sort eq 'linkExternal'} selected="selected"{/if}>{gt text='Link external'}</option>
         <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>
         <option value="createdUserId"{if $sort eq 'createdUserId'} selected="selected"{/if}>{gt text='Creator'}</option>
         <option value="updatedDate"{if $sort eq 'updatedDate'} selected="selected"{/if}>{gt text='Update date'}</option>
@@ -48,7 +49,7 @@
 <p>
     <label for="{$baseID}SearchTerm"{$leftSide}>{gt text='Search for'}:</label>
     <input type="text" id="{$baseID}SearchTerm" name="q" class="form-control"{$rightSide} />
-    <input type="button" id="rKWebsitehelperModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
+    <input type="button" id="rKWebsiteHelperModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
     <br{$break} />
 </p>
 <br />
@@ -58,7 +59,7 @@
 /* <![CDATA[ */
     ( function($) {
         $(document).ready(function() {
-            rKWebsitehelperModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
+            rKWebsiteHelperModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
         });
     })(jQuery);
 /* ]]> */

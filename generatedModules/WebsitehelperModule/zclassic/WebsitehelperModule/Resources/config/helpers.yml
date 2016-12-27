@@ -1,33 +1,33 @@
 services:
     # Helper classes
     rk_websitehelper_module.controller_helper:
-        class: RK\WebsitehelperModule\Helper\ControllerHelper
+        class: RK\WebsiteHelperModule\Helper\ControllerHelper
         arguments: ["@service_container", "@translator.default", "@session", "@logger"]
     
     rk_websitehelper_module.hook_helper:
-        class: RK\WebsitehelperModule\Helper\HookHelper
+        class: RK\WebsiteHelperModule\Helper\HookHelper
         arguments: ["@hook_dispatcher"]
     
     rk_websitehelper_module.image_helper:
-        class: RK\WebsitehelperModule\Helper\ImageHelper
+        class: RK\WebsiteHelperModule\Helper\ImageHelper
         arguments: ["@translator.default", "@session", "@zikula_extensions_module.api.variable"]
     
     rk_websitehelper_module.listentries_helper:
-        class: RK\WebsitehelperModule\Helper\ListEntriesHelper
+        class: RK\WebsiteHelperModule\Helper\ListEntriesHelper
         arguments: ["@translator.default"]
     
     rk_websitehelper_module.model_helper:
-        class: RK\WebsitehelperModule\Helper\ModelHelper
+        class: RK\WebsiteHelperModule\Helper\ModelHelper
         arguments: ["@service_container"]
     
     rk_websitehelper_module.selection_helper:
-        class: RK\WebsitehelperModule\Helper\SelectionHelper
+        class: RK\WebsiteHelperModule\Helper\SelectionHelper
         arguments: ["@service_container", "@doctrine.orm.entity_manager", "@translator.default", "@rk_websitehelper_module.controller_helper"]
     
     rk_websitehelper_module.view_helper:
-        class: RK\WebsitehelperModule\Helper\ViewHelper
+        class: RK\WebsiteHelperModule\Helper\ViewHelper
         arguments: ["@service_container", "@translator.default"]
     
     rk_websitehelper_module.workflow_helper:
-        class: RK\WebsitehelperModule\Helper\WorkflowHelper
+        class: RK\WebsiteHelperModule\Helper\WorkflowHelper
         arguments: ["@service_container", "@translator.default"]

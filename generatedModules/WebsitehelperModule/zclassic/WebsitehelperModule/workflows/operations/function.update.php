@@ -1,6 +1,6 @@
 <?php
 /**
- * Websitehelper.
+ * WebsiteHelper.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -20,7 +20,7 @@
  *
  * @throws RuntimeException Thrown if executing the workflow action fails
  */
-function RKWebsitehelperModule_operation_update(&$entity, $params)
+function RKWebsiteHelperModule_operation_update(&$entity, $params)
 {
 
     // get attributes read from the workflow
@@ -37,7 +37,7 @@ function RKWebsitehelperModule_operation_update(&$entity, $params)
     $serviceManager = \ServiceUtil::getManager();
     $entityManager = $serviceManager->get('doctrine.orm.default_entity_manager');
     $logger = $serviceManager->get('logger');
-    $logArgs = ['app' => 'RKWebsitehelperModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname')];
+    $logArgs = ['app' => 'RKWebsiteHelperModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname')];
     
     // save entity data
     try {

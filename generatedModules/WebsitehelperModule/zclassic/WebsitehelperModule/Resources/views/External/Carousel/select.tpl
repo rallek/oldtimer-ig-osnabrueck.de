@@ -44,7 +44,7 @@
 <p>
     <label for="{$baseID}SearchTerm"{$leftSide}>{gt text='Search for'}:</label>
     <input type="text" id="{$baseID}SearchTerm" name="q" class="form-control"{$rightSide} />
-    <input type="button" id="rKWebsitehelperModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
+    <input type="button" id="rKWebsiteHelperModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
     <br{$break} />
 </p>
 <br />
@@ -54,7 +54,7 @@
 /* <![CDATA[ */
     ( function($) {
         $(document).ready(function() {
-            rKWebsitehelperModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
+            rKWebsiteHelperModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
         });
     })(jQuery);
 /* ]]> */

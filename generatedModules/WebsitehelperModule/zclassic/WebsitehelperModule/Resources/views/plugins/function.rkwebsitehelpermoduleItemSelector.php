@@ -1,6 +1,6 @@
 <?php
 /**
- * Websitehelper.
+ * WebsiteHelper.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -20,5 +20,5 @@
  */
 function smarty_function_rkwebsitehelpermoduleItemSelector($params, $view)
 {
-    return $view->registerPlugin('\\RK\\WebsitehelperModule\\Form\\Plugin\\ItemSelector', $params);
+    return $view->registerPlugin('\\RK\\WebsiteHelperModule\\Form\\Plugin\\ItemSelector', $params);
 }
