@@ -1,0 +1,45 @@
+{
+    "name": "rk/parkhaus-module",
+    "version": "0.2.0",
+    "description": "This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album.",
+    "type": "zikula-module",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Ralf Koester",
+            "email": "ralf@familie-koester.de",
+            "homepage": "http://oldtimer-ig-osnabrueck.de",
+            "role": "owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "RK\\ParkhausModule\\": "" }
+    },
+    "require": {
+        "php": ">=5.4.1"
+    },
+    "suggest": {
+    },
+    "extra": {
+        "zikula": {
+            "core-compatibility": "~1.4.4",
+            "class": "RK\\ParkhausModule\\RKParkhausModule",
+            "displayname": "Parkhaus",
+            "url": "parkhaus",
+            "capabilities": {
+                "user": {"route": "rkparkhausmodule_user_index"},
+                "admin": {"route": "rkparkhausmodule_admin_index"},
+                "searchable": {"class": "RK\\ParkhausModule\\Helper\\SearchHelper"},
+                "hook_subscriber": {"class": "RK\\ParkhausModule\\Container\\HookContainer"}
+            },
+            "securityschema": {
+                "RKParkhausModule::": "::",
+                "RKParkhausModule:ItemListBlock:": "Block title::",
+                "RKParkhausModule:Vehicle:": "Vehicle ID::",
+                "RKParkhausModule:VehicleImage:": "VehicleImage ID::",
+                "RKParkhausModule:Vehicle:VehicleImage": "Vehicle ID:VehicleImage ID:",
+                "RKParkhausModule::Ajax": "::"
+            }
+        }
+    }
+}

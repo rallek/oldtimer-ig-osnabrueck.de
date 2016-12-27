@@ -1,0 +1,13 @@
+{# Purpose of this template: Display vehicles within an external context #}
+<dl>
+    {% for vehicle in items %}
+        <dt>{{ vehicle.getTitleFromDisplayPattern() }}</dt>
+        {% if vehicle.vehicleDescriptionTeaser %}
+            <dd>{{ vehicle.vehicleDescriptionTeaser|striptags|truncate(200, true, '&hellip;') }}</dd>
+        {% endif %}
+        <dd><a href="{{ path('rkparkhausmodule_vehicle_display', { 'id': vehicle.id }) }}">{{ __('Read more') }}</a>
+        </dd>
+    {% else %}
+        <dt>{{ __('No entries found.') }}</dt>
+    {% endfor %}
+</dl>

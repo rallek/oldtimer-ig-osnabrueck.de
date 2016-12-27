@@ -1,0 +1,16 @@
+{# Purpose of this template: Display item information for previewing from other modules #}
+<dl id="vehicle{{ vehicle.id }}">
+<dt>{{ vehicle.getTitleFromDisplayPattern()|notifyFilters('parkhaus.filter_hooks.vehicles.filter') }}</dt>
+<dd>{% if vehicle.titleImage is not empty and vehicle.titleImageMeta|default %}
+            <a href="{{ vehicle.titleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.titleImageMeta.isImage %} class="lightbox"{% endif %}>
+{% if vehicle.titleImageMeta.isImage %}
+    {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleTitleImage') %}
+    <img src="{{ vehicle.titleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+{% else %}
+    {{ __('Download') }} ({{ vehicle.titleImageMeta.size|rkparkhausmodule_fileSize(vehicle.titleImage.getPathname(), false, false) }})
+{% endif %}
+</a>
+{% else %}&nbsp;{% endif %}
+</dd>
+{% if vehicle.vehicleDescriptionTeaser is not empty %}<dd>{{ vehicle.vehicleDescriptionTeaser }}</dd>{% endif %}
+</dl>

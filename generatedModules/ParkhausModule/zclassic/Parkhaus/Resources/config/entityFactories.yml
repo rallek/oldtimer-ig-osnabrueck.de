@@ -1,0 +1,10 @@
+services:
+    # Entity factory classes
+    rk_parkhaus_module.vehicle_factory:
+        class: RK\ParkhausModule\Entity\Factory\VehicleFactory
+        arguments: ["@doctrine.orm.entity_manager", RK\ParkhausModule\Entity\VehicleEntity]
+    
+    rk_parkhaus_module.vehicleImage_factory:
+        class: RK\ParkhausModule\Entity\Factory\VehicleImageFactory
+        arguments: ["@doctrine.orm.entity_manager", RK\ParkhausModule\Entity\VehicleImageEntity]
+    
