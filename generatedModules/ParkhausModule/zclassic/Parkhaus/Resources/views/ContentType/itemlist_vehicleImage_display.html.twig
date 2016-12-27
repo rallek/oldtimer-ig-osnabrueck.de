@@ -1,6 +1,0 @@
-{# Purpose of this template: Display vehicle images within an external context #}
-{% for vehicleImage in items %}
-    <h3>{{ vehicleImage.getTitleFromDisplayPattern() }}</h3>
-    <p><a href="{{ path('rkparkhausmodule_vehicleimage_display', { 'id': vehicleImage.id }) }}">{{ __('Read more') }}</a>
-    </p>
-{% endfor %}
