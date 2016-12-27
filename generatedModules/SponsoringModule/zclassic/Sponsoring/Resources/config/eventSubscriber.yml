@@ -1,0 +1,82 @@
+services:
+    # Event subscriber and listener classes
+    rk_sponsoring_module.entity_lifecycle_listener:
+        class: RK\SponsoringModule\Listener\EntityLifecycleListener
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_sponsoring_module.core_listener:
+        class: RK\SponsoringModule\Listener\CoreListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.kernel_listener:
+        class: RK\SponsoringModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.installer_listener:
+        class: RK\SponsoringModule\Listener\InstallerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.moduledispatch_listener:
+        class: RK\SponsoringModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.mailer_listener:
+        class: RK\SponsoringModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.page_listener:
+        class: RK\SponsoringModule\Listener\PageListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.theme_listener:
+        class: RK\SponsoringModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.view_listener:
+        class: RK\SponsoringModule\Listener\ViewListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.userlogin_listener:
+        class: RK\SponsoringModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.userlogout_listener:
+        class: RK\SponsoringModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.user_listener:
+        class: RK\SponsoringModule\Listener\UserListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.userregistration_listener:
+        class: RK\SponsoringModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.users_listener:
+        class: RK\SponsoringModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.group_listener:
+        class: RK\SponsoringModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_sponsoring_module.thirdparty_listener:
+        class: RK\SponsoringModule\Listener\ThirdPartyListener
+        tags:
+            - { name: kernel.event_subscriber }
+    

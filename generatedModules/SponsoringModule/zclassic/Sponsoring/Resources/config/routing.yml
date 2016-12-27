@@ -1,0 +1,5 @@
+rksponsoringmodule:
+    # define routing support for these controllers
+    resource: "@RKSponsoringModule/Controller"
+    # enable support for defining routes by annotations
+    type: annotation

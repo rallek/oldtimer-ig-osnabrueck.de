@@ -1,0 +1,13 @@
+{# Purpose of this template: Display sponsors within an external context #}
+<dl>
+    {% for sponsor in items %}
+        <dt>{{ sponsor.getTitleFromDisplayPattern() }}</dt>
+        {% if sponsor.description %}
+            <dd>{{ sponsor.description|striptags|truncate(200, true, '&hellip;') }}</dd>
+        {% endif %}
+        <dd><a href="{{ path('rksponsoringmodule_sponsor_display', { 'id': sponsor.id }) }}">{{ __('Read more') }}</a>
+        </dd>
+    {% else %}
+        <dt>{{ __('No entries found.') }}</dt>
+    {% endfor %}
+</dl>

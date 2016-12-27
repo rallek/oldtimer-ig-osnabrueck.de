@@ -1,0 +1,16 @@
+{# Purpose of this template: Display item information for previewing from other modules #}
+<dl id="sponsor{{ sponsor.id }}">
+<dt>{{ sponsor.getTitleFromDisplayPattern()|notifyFilters('sponsoring.filter_hooks.sponsors.filter') }}</dt>
+<dd>{% if sponsor.logo is not empty and sponsor.logoMeta|default %}
+            <a href="{{ sponsor.logoUrl }}" title="{{ sponsor.getTitleFromDisplayPattern()|e('html_attr') }}"{% if sponsor.logoMeta.isImage %} class="lightbox"{% endif %}>
+{% if sponsor.logoMeta.isImage %}
+    {% set thumbOptions = attribute(thumbRuntimeOptions, 'sponsorLogo') %}
+    <img src="{{ sponsor.logo.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ sponsor.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+{% else %}
+    {{ __('Download') }} ({{ sponsor.logoMeta.size|rksponsoringmodule_fileSize(sponsor.logo.getPathname(), false, false) }})
+{% endif %}
+</a>
+{% else %}&nbsp;{% endif %}
+</dd>
+{% if sponsor.description is not empty %}<dd>{{ sponsor.description }}</dd>{% endif %}
+</dl>
