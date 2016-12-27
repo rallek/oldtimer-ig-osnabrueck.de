@@ -1,6 +1,6 @@
 {# purpose of this template: inclusion template for display of related vehicle images #}
-{% set hasAdminPermission = hasPermission('RKParkhausModule:VehicleImage:', '::', 'ACCESS_EDIT') %}
-{% set hasEditPermission = hasPermission('RKParkhausModule:VehicleImage:', '::', 'ACCESS_EDIT') %}
+{% set hasAdminPermission = hasPermission('RKParkHausModule:VehicleImage:', '::', 'ACCESS_EDIT') %}
+{% set hasEditPermission = hasPermission('RKParkHausModule:VehicleImage:', '::', 'ACCESS_EDIT') %}
 {% if nolink is not defined %}
     {% set nolink = false %}
 {% endif %}
@@ -21,7 +21,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKParkhausInitInlineWindow($('#vehicleImageItem{{ item.id }}Display'), '{{ item.getTitleFromDisplayPattern()|e('js') }}');
+                rKParkHausInitInlineWindow($('#vehicleImageItem{{ item.id }}Display'), '{{ item.getTitleFromDisplayPattern()|e('js') }}');
             });
         })(jQuery);
     /* ]]> */

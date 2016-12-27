@@ -1,6 +1,6 @@
 'use strict';
 
-function rKParkhausToday(format)
+function rKParkHausToday(format)
 {
     var timestamp, todayDate, month, day, hours, minutes, seconds;
 
@@ -40,7 +40,7 @@ function rKParkhausToday(format)
 }
 
 // returns YYYY-MM-DD even if date is in DD.MM.YYYY
-function rKParkhausReadDate(val, includeTime)
+function rKParkHausReadDate(val, includeTime)
 {
     // look if we have YYYY-MM-DD
     if (val.substr(4, 1) === '-' && val.substr(7, 1) === '-') {
@@ -58,7 +58,7 @@ function rKParkhausReadDate(val, includeTime)
     }
 }
 
-function rKParkhausValidateNoSpace(val)
+function rKParkHausValidateNoSpace(val)
 {
     var valStr;
     valStr = new String(val);
@@ -66,7 +66,7 @@ function rKParkhausValidateNoSpace(val)
     return (valStr.indexOf(' ') === -1);
 }
 
-function rKParkhausValidateHtmlColour(val)
+function rKParkHausValidateHtmlColour(val)
 {
     var valStr;
     valStr = new String(val);
@@ -74,7 +74,7 @@ function rKParkhausValidateHtmlColour(val)
     return valStr === '' || (/^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(valStr));
 }
 
-function rKParkhausValidateUploadExtension(val, elem)
+function rKParkHausValidateUploadExtension(val, elem)
 {
     var fileExtension, allowedExtensions;
     if (val === '') {
@@ -92,24 +92,24 @@ function rKParkhausValidateUploadExtension(val, elem)
 /**
  * Runs special validation rules.
  */
-function rKParkhausPerformCustomValidationRules(objectType, currentEntityId)
+function rKParkHausPerformCustomValidationRules(objectType, currentEntityId)
 {
     jQuery('.validate-nospace').each( function() {
-        if (!rKParkhausValidateNoSpace(jQuery(this).val())) {
+        if (!rKParkHausValidateNoSpace(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'This value must not contain spaces.'/*, 'rkparkhausmodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-htmlcolour').each( function() {
-        if (!rKParkhausValidateHtmlColour(jQuery(this).val())) {
+        if (!rKParkHausValidateHtmlColour(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid html colour code.'/*, 'rkparkhausmodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-upload').each( function() {
-        if (!rKParkhausValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
+        if (!rKParkHausValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid file extension.'/*, 'rkparkhausmodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');

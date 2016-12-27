@@ -1,5 +1,5 @@
 {# purpose of this template: vehicles list view #}
-{% extends routeArea == 'admin' ? 'RKParkhausModule::adminBase.html.twig' : 'RKParkhausModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
 {% block title __('Vehicle list') %}
 {% block admin_page_icon 'list-alt' %}
 {% block content %}
@@ -7,7 +7,7 @@
 
     {{ block('page_nav_links') }}
 
-    {{ include('@RKParkhausModule/Vehicle/viewQuickNav.html.twig') }}{# see template file for available options #}
+    {{ include('@RKParkHausModule/Vehicle/viewQuickNav.html.twig') }}{# see template file for available options #}
 
     {% if routeArea == 'admin' %}
     <form action="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'handleselectedentries') }}" method="post" id="vehiclesViewForm" class="form-horizontal" role="form">
@@ -129,7 +129,7 @@
                     </div></noscript>
                 </td>
                 <td id="itemActions{{ vehicle.id }}" headers="hItemActions" class="actions text-right nowrap z-w02">
-                    {% set itemActions = knp_menu_get('RKParkhausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'view' }) %}
+                    {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
                         <a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
                         
@@ -154,9 +154,9 @@
         {% endif %}
     {% if routeArea == 'admin' %}
             <fieldset>
-                <label for="rKParkhausModuleAction" class="col-sm-3 control-label">{{ __('With selected vehicles') }}</label>
+                <label for="rKParkHausModuleAction" class="col-sm-3 control-label">{{ __('With selected vehicles') }}</label>
                 <div class="col-sm-6">
-                    <select id="rKParkhausModuleAction" name="action" class="form-control input-sm">
+                    <select id="rKParkHausModuleAction" name="action" class="form-control input-sm">
                         <option value="">{{ __('Choose action') }}</option>
                         <option value="delete" title="{{ __('Delete content permanently.') }}">{{ __('Delete') }}</option>
                     </select>
@@ -174,7 +174,7 @@
 {% endblock %}
 {% block page_nav_links %}
     {% if canBeCreated %}
-        {% if hasPermission('RKParkhausModule:Vehicle:', '::', 'ACCESS_EDIT') %}
+        {% if hasPermission('RKParkHausModule:Vehicle:', '::', 'ACCESS_EDIT') %}
             {% set createTitle = __('Create vehicle') %}
             <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'edit') }}" title="{{ createTitle|e('html_attr') }}" class="fa fa-plus">{{ createTitle }}</a>
         {% endif %}
@@ -213,7 +213,7 @@
             $('.rkparkhausmodule-vehicle .dropdown-toggle').removeClass('hidden').dropdown();
             {% for vehicle in items %}
                 {% set itemid = vehicle.id %}
-                rKParkhausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('js') }}');
+                rKParkHausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('js') }}');
             {% endfor %}
             {% if routeArea == 'admin' %}
                 {# init the "toggle all" functionality #}

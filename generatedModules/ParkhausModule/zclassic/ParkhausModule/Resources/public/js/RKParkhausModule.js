@@ -1,6 +1,6 @@
 'use strict';
 
-function rKParkhausCapitaliseFirstLetter(string)
+function rKParkHausCapitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.substring(1);
 }
@@ -8,58 +8,58 @@ function rKParkhausCapitaliseFirstLetter(string)
 /**
  * Submits a quick navigation form.
  */
-function rKParkhausSubmitQuickNavForm(objectType)
+function rKParkHausSubmitQuickNavForm(objectType)
 {
-    jQuery('#rkparkhausmodule' + rKParkhausCapitaliseFirstLetter(objectType) + 'QuickNavForm').submit();
+    jQuery('#rkparkhausmodule' + rKParkHausCapitaliseFirstLetter(objectType) + 'QuickNavForm').submit();
 }
 
 /**
  * Initialise the quick navigation panel in list views.
  */
-function rKParkhausInitQuickNavigation(objectType)
+function rKParkHausInitQuickNavigation(objectType)
 {
-    if (jQuery('#rkparkhausmodule' + rKParkhausCapitaliseFirstLetter(objectType) + 'QuickNavForm').length < 1) {
+    if (jQuery('#rkparkhausmodule' + rKParkHausCapitaliseFirstLetter(objectType) + 'QuickNavForm').length < 1) {
         return;
     }
 
     var fieldPrefix = 'rkparkhausmodule_' + objectType.toLowerCase() + 'quicknav_';
     if (jQuery('#' + fieldPrefix + 'catid').length > 0) {
-        jQuery('#' + fieldPrefix + 'catid').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'catid').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'sortBy').length > 0) {
-        jQuery('#' + fieldPrefix + 'sortBy').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'sortBy').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'sortDir').length > 0) {
-        jQuery('#' + fieldPrefix + 'sortDir').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'sortDir').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'num').length > 0) {
-        jQuery('#' + fieldPrefix + 'num').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'num').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
     }
 
     switch (objectType) {
     case 'vehicle':
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'vehicleType').length > 0) {
-            jQuery('#' + fieldPrefix + 'vehicleType').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'vehicleType').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'owner').length > 0) {
-            jQuery('#' + fieldPrefix + 'owner').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'owner').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'showVehicleOwner').length > 0) {
-            jQuery('#' + fieldPrefix + 'showVehicleOwner').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'showVehicleOwner').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         break;
     case 'vehicleImage':
         if (jQuery('#' + fieldPrefix + 'vehicle').length > 0) {
-            jQuery('#' + fieldPrefix + 'vehicle').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'vehicle').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         if (jQuery('#' + fieldPrefix + 'viewImage').length > 0) {
-            jQuery('#' + fieldPrefix + 'viewImage').change(function () { rKParkhausSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'viewImage').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
         break;
     default:
@@ -70,7 +70,7 @@ function rKParkhausInitQuickNavigation(objectType)
 /**
  * Helper function to create new Bootstrap modal window instances.
  */
-function rKParkhausInitInlineWindow(containerElem, title)
+function rKParkHausInitInlineWindow(containerElem, title)
 {
     var newWindowId;
 
@@ -120,14 +120,14 @@ function rKParkhausInitInlineWindow(containerElem, title)
 /**
  * Initialise ajax-based toggle for boolean fields.
  */
-function rKParkhausInitToggle(objectType, fieldName, itemId)
+function rKParkHausInitToggle(objectType, fieldName, itemId)
 {
-    var idSuffix = rKParkhausCapitaliseFirstLetter(fieldName) + itemId;
+    var idSuffix = rKParkHausCapitaliseFirstLetter(fieldName) + itemId;
     if (jQuery('#toggle' + idSuffix).length < 1) {
         return;
     }
     jQuery('#toggle' + idSuffix).click( function() {
-        rKParkhausToggleFlag(objectType, fieldName, itemId);
+        rKParkHausToggleFlag(objectType, fieldName, itemId);
     }).removeClass('hidden');
 }
 
@@ -135,9 +135,9 @@ function rKParkhausInitToggle(objectType, fieldName, itemId)
 /**
  * Toggles a certain flag for a given item.
  */
-function rKParkhausToggleFlag(objectType, fieldName, itemId)
+function rKParkHausToggleFlag(objectType, fieldName, itemId)
 {
-    var fieldNameCapitalised = rKParkhausCapitaliseFirstLetter(fieldName);
+    var fieldNameCapitalised = rKParkHausCapitaliseFirstLetter(fieldName);
     var params = 'ot=' + objectType + '&field=' + fieldName + '&id=' + itemId;
 
     jQuery.ajax({
@@ -152,7 +152,7 @@ function rKParkhausToggleFlag(objectType, fieldName, itemId)
         data = res.data;
 
         /*if (data.message) {
-            rKParkhausSimpleAlert(jQuery('#toggle' + idSuffix), Zikula.__('Success', 'rkparkhausmodule_js'), data.message, 'toggle' + idSuffix + 'DoneAlert', 'success');
+            rKParkHausSimpleAlert(jQuery('#toggle' + idSuffix), Zikula.__('Success', 'rkparkhausmodule_js'), data.message, 'toggle' + idSuffix + 'DoneAlert', 'success');
         }*/
 
         idSuffix = idSuffix.toLowerCase();
@@ -171,7 +171,7 @@ function rKParkhausToggleFlag(objectType, fieldName, itemId)
 /**
  * Simulates a simple alert using bootstrap.
  */
-function rKParkhausSimpleAlert(beforeElem, title, content, alertId, cssClass)
+function rKParkHausSimpleAlert(beforeElem, title, content, alertId, cssClass)
 {
     var alertBox;
 

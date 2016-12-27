@@ -1,9 +1,9 @@
 {# purpose of this template: vehicle images view filter form #}
-{% if hasPermission('RKParkhausModule:VehicleImage:', '::', 'ACCESS_EDIT') %}
+{% if hasPermission('RKParkHausModule:VehicleImage:', '::', 'ACCESS_EDIT') %}
     {% form_theme quickNavForm with [
         'bootstrap_3_layout.html.twig'
     ] %}
-    {{ form_start(quickNavForm, {attr: {id: 'rKParkhausModuleVehicleImageQuickNavForm', class: 'rkparkhausmodule-quicknav navbar-form', role: 'navigation'}}) }}
+    {{ form_start(quickNavForm, {attr: {id: 'rKParkHausModuleVehicleImageQuickNavForm', class: 'rkparkhausmodule-quicknav navbar-form', role: 'navigation'}}) }}
     {{ form_errors(quickNavForm) }}
     <fieldset>
         <h3>{{ __('Quick navigation') }}</h3>
@@ -57,7 +57,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKParkhausInitQuickNavigation('vehicleImage');
+                rKParkHausInitQuickNavigation('vehicleImage');
                 {% if searchFilter|default and searchFilter == false %}
                     {# we can hide the submit button if we have no quick search field #}
                     $('#rkparkhausmodule_vehicleimagequicknav_updateview').addClass('hidden');

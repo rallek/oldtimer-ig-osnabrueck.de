@@ -1,6 +1,6 @@
 <?php
 /**
- * Parkhaus.
+ * ParkHaus.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -22,12 +22,12 @@
  *
  * @return bool Whether the current user is allowed to execute the action or not
  */
-function RKParkhausModule_workflow_none_permissioncheck($obj, $permLevel, $currentUser, $actionId)
+function RKParkHausModule_workflow_none_permissioncheck($obj, $permLevel, $currentUser, $actionId)
 {
 
     // calculate the permission component
     $objectType = $obj['_objectType'];
-    $component = 'RKParkhausModule:' . ucfirst($objectType) . ':';
+    $component = 'RKParkHausModule:' . ucfirst($objectType) . ':';
 
     // calculate the permission instance
     $instance = $obj->createCompositeIdentifier() . '::';
@@ -47,7 +47,7 @@ function RKParkhausModule_workflow_none_permissioncheck($obj, $permLevel, $curre
 /**
  * This helper functions cares for including the strings used in the workflow into translation.
  */
-function RKParkhausModule_workflow_none_gettextstrings()
+function RKParkHausModule_workflow_none_gettextstrings()
 {
     $serviceManager = \ServiceUtil::getManager();
     $translator = $serviceManager->get('translator.default');

@@ -1,6 +1,6 @@
 <?php
 /**
- * Parkhaus.
+ * ParkHaus.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -20,14 +20,14 @@
  *
  * @throws RuntimeException Thrown if executing the workflow action fails
  */
-function RKParkhausModule_operation_delete(&$entity, $params)
+function RKParkHausModule_operation_delete(&$entity, $params)
 {
 
     // get entity manager
     $serviceManager = \ServiceUtil::getManager();
     $entityManager = $serviceManager->get('doctrine.orm.default_entity_manager');
     $logger = $serviceManager->get('logger');
-    $logArgs = ['app' => 'RKParkhausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname')];
+    $logArgs = ['app' => 'RKParkHausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname')];
     
     // delete entity
     try {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Parkhaus.
+ * ParkHaus.
  *
  * @copyright Ralf Koester (RK)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -20,5 +20,5 @@
  */
 function smarty_function_rkparkhausmoduleItemSelector($params, $view)
 {
-    return $view->registerPlugin('\\RK\\ParkhausModule\\Form\\Plugin\\ItemSelector', $params);
+    return $view->registerPlugin('\\RK\\ParkHausModule\\Form\\Plugin\\ItemSelector', $params);
 }

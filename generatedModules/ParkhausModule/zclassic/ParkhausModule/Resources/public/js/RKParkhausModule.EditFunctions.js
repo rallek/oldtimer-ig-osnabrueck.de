@@ -3,7 +3,7 @@
 /**
  * Initialises a user field with auto completion.
  */
-function rKParkhausInitUserField(fieldName, getterName)
+function rKParkHausInitUserField(fieldName, getterName)
 {
     if (jQuery('#' + fieldName + 'LiveSearch').length < 1) {
         return;
@@ -51,7 +51,7 @@ function rKParkhausInitUserField(fieldName, getterName)
 /**
  * Resets the value of an upload / file input field.
  */
-function rKParkhausResetUploadField(fieldName)
+function rKParkHausResetUploadField(fieldName)
 {
     jQuery('#' + fieldName).attr('type', 'input');
     jQuery('#' + fieldName).attr('type', 'file');
@@ -60,11 +60,11 @@ function rKParkhausResetUploadField(fieldName)
 /**
  * Initialises the reset button for a certain upload input.
  */
-function rKParkhausInitUploadField(fieldName)
+function rKParkHausInitUploadField(fieldName)
 {
     jQuery('#' + fieldName + 'ResetVal').click( function (event) {
         event.stopPropagation();
-        rKParkhausResetUploadField(fieldName);
+        rKParkHausResetUploadField(fieldName);
     }).removeClass('hidden');
 }
 

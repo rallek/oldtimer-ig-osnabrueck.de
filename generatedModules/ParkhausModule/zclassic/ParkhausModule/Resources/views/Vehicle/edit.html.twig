@@ -1,10 +1,10 @@
 {# purpose of this template: build the form to edit an instance of vehicle #}
-{% extends routeArea == 'admin' ? 'RKParkhausModule::adminBase.html.twig' : 'RKParkhausModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKParkhausModule:js/RKParkhausModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKParkhausModule:js/RKParkhausModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.EditFunctions.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.Validation.js')) }}
     {{ pageAddAsset('javascript', pagevars.homepath ~ 'vendor/twitter/typeahead.js/dist/typeahead.bundle.min.js') }}
 {% endblock %}
 
@@ -13,7 +13,7 @@
 {% block content %}
     <div class="rkparkhausmodule-vehicle rkparkhausmodule-edit">
 {% form_theme form with [
-    '@RKParkhausModule/Form/bootstrap_3.html.twig',
+    '@RKParkHausModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
 {{ form_start(form, {attr: {id: 'vehicleEditForm'}}) }}
@@ -83,7 +83,7 @@
 </fieldset>
 
 {% if mode != 'create' %}
-    {{ include('@RKParkhausModule/Helper/includeStandardFieldsEdit.html.twig', { obj: vehicle }) }}
+    {{ include('@RKParkHausModule/Helper/includeStandardFieldsEdit.html.twig', { obj: vehicle }) }}
 {% endif %}
 
 {# include display hooks #}
@@ -140,7 +140,7 @@
         
                 function executeCustomValidationConstraints()
                 {
-                    rKParkhausPerformCustomValidationRules('vehicle', '{% if mode != 'create' %}{{ vehicle.id }}{% endif %}');
+                    rKParkHausPerformCustomValidationRules('vehicle', '{% if mode != 'create' %}{{ vehicle.id }}{% endif %}');
                 }
         
                 function triggerFormValidation()
@@ -174,7 +174,7 @@
                     $(document).ready(function() {
                         $('a.lightbox').lightbox();
                         // initialise auto completion for user fields
-                        rKParkhausInitUserField('rkparkhausmodule_vehicle_owner', 'getVehicleOwnerUsers');
+                        rKParkHausInitUserField('rkparkhausmodule_vehicle_owner', 'getVehicleOwnerUsers');
         
                         var allFormFields = $('#vehicleEditForm input, #vehicleEditForm select, #vehicleEditForm textarea');
                         allFormFields.change(executeCustomValidationConstraints);
@@ -194,8 +194,8 @@
                             triggerFormValidation();
                         {% endif %}
         
-                        rKParkhausInitUploadField('rkparkhausmodule_vehicle_titleImage_titleImage');
-                        rKParkhausInitUploadField('rkparkhausmodule_vehicle_vehicleImage_vehicleImage');
+                        rKParkHausInitUploadField('rkparkhausmodule_vehicle_titleImage_titleImage');
+                        rKParkHausInitUploadField('rkparkhausmodule_vehicle_vehicleImage_vehicleImage');
                     });
                 })(jQuery);
     /* ]]> */

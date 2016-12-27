@@ -1,10 +1,10 @@
 # INSTALLATION INSTRUCTIONS
 
-1. Copy RKParkhausModule into your modules directory. Afterwards you should have a folder named `modules/RK/ParkhausModule/Resources`.
-2. Initialize and activate RKParkhausModule in the modules administration.
-3. Move or copy the directory `Resources/userdata/RKParkhausModule/` to `/userdata/RKParkhausModule/`.
+1. Copy RKParkHausModule into your modules directory. Afterwards you should have a folder named `modules/RK/ParkHausModule/Resources`.
+2. Initialize and activate RKParkHausModule in the modules administration.
+3. Move or copy the directory `Resources/userdata/RKParkHausModule/` to `/userdata/RKParkHausModule/`.
    Note this step is optional as the install process can create these folders, too.
-4. Make the directory `/userdata/RKParkhausModule/` writable including all sub folders.
+4. Make the directory `/userdata/RKParkHausModule/` writable including all sub folders.
 
 For questions and other remarks visit our homepage http://oldtimer-ig-osnabrueck.de.
 

@@ -1,5 +1,5 @@
 {# purpose of this template: vehicle images delete confirmation view #}
-{% extends routeArea == 'admin' ? 'RKParkhausModule::adminBase.html.twig' : 'RKParkhausModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
 {% block title __('Delete vehicle image') %}
 {% block admin_page_icon 'trash-o' %}
 {% block content %}
@@ -7,7 +7,7 @@
         <p class="alert alert-warning">{{ __f('Do you really want to delete this vehicle image: "%name%" ?', {'%name%': vehicleImage.getTitleFromDisplayPattern()}) }}</p>
 
         {% form_theme deleteForm with [
-            '@RKParkhausModule/Form/bootstrap_3.html.twig',
+            '@RKParkHausModule/Form/bootstrap_3.html.twig',
             'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
         ] %}
         {{ form_start(deleteForm) }}

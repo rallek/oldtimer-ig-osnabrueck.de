@@ -2,10 +2,10 @@
 
 <div style="margin-left: 80px">
     <div class="form-group">
-        {formlabel for='rKParkhausModuleObjectType' __text='Object type' cssClass='col-sm-3 control-label'}
+        {formlabel for='rKParkHausModuleObjectType' __text='Object type' cssClass='col-sm-3 control-label'}
         <div class="col-sm-9">
             {rkparkhausmoduleObjectTypeSelector assign='allObjectTypes'}
-            {formdropdownlist id='rKParkhausModuleObjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
+            {formdropdownlist id='rKParkHausModuleObjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
             <span class="help-block">{gt text='If you change this please save the element once to reload the parameters below.'}</span>
         </div>
     </div>

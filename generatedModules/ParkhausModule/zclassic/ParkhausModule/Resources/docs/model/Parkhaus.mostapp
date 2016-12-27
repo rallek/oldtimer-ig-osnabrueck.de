@@ -1,4 +1,4 @@
-application "Parkhaus" {
+application "ParkHaus" {
     documentation "This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album."
     vendor "RK"
     author "Ralf Koester"
@@ -24,7 +24,7 @@ application "Parkhaus" {
         generateKmlTemplates false
         generateIcsTemplates false
         versionAllGeneratedFiles false
-        generatePoweredByBacklinksIntoFooterTemplates false
+        generatePoweredByBacklinksIntoFooterTemplates true
         generateTests false
     writeModelToDocs true
     }

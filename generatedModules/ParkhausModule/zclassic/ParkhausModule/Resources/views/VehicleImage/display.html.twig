@@ -1,10 +1,10 @@
 {# purpose of this template: vehicle images display view #}
-{% extends routeArea == 'admin' ? 'RKParkhausModule::adminBase.html.twig' : 'RKParkhausModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
 {% block pageTitle %}{{ vehicleImage.getTitleFromDisplayPattern()|default(__('Vehicle image')) }}{% endblock %}
 {% block title %}
     {% set templateTitle = vehicleImage.getTitleFromDisplayPattern()|default(__('Vehicle image')) %}
     {{ templateTitle|notifyFilters('rkparkhausmodule.filter_hooks.vehicleimages.filter') }}{% if routeArea == 'admin' %} <small>({{ vehicleImage.workflowState|rkparkhausmodule_objectState(false)|lower }})</small>{% endif %}
-    {% set itemActions = knp_menu_get('RKParkhausModule:ItemActionsMenu:menu', [], { entity: vehicleImage, area: routeArea, context: 'display' }) %}
+    {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicleImage, area: routeArea, context: 'display' }) %}
     <div class="dropdown">
         <a id="itemActions{{ vehicleImage.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
         
@@ -77,7 +77,7 @@
               /* <![CDATA[ */
                   ( function($) {
                       $(document).ready(function() {
-                          rKParkhausInitInlineWindow($('vehicleItem{{ vehicleImage.vehicle.id }}Display'), '{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('js') }}');
+                          rKParkHausInitInlineWindow($('vehicleItem{{ vehicleImage.vehicle.id }}Display'), '{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('js') }}');
                       });
                   })(jQuery);
               /* ]]> */
@@ -89,7 +89,7 @@
         {% endif %}
         
     </dl>
-    {{ include('@RKParkhausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicleImage }) }}
+    {{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicleImage }) }}
 
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
         {# include display hooks #}

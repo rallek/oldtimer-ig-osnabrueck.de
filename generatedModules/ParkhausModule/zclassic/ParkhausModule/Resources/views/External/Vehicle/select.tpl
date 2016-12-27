@@ -69,7 +69,7 @@
 <p>
     <label for="{$baseID}SearchTerm"{$leftSide}>{gt text='Search for'}:</label>
     <input type="text" id="{$baseID}SearchTerm" name="q" class="form-control"{$rightSide} />
-    <input type="button" id="rKParkhausModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
+    <input type="button" id="rKParkHausModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
     <br{$break} />
 </p>
 <br />
@@ -79,7 +79,7 @@
 /* <![CDATA[ */
     ( function($) {
         $(document).ready(function() {
-            rKParkhausModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
+            rKParkHausModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
         });
     })(jQuery);
 /* ]]> */

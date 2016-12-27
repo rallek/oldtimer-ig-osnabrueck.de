@@ -13,7 +13,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "RK\\ParkhausModule\\": "" }
+        "psr-4": { "RK\\ParkHausModule\\": "" }
     },
     "require": {
         "php": ">=5.4.1"
@@ -23,22 +23,22 @@
     "extra": {
         "zikula": {
             "core-compatibility": "~1.4.4",
-            "class": "RK\\ParkhausModule\\RKParkhausModule",
-            "displayname": "Parkhaus",
+            "class": "RK\\ParkHausModule\\RKParkHausModule",
+            "displayname": "Park haus",
             "url": "parkhaus",
             "capabilities": {
                 "user": {"route": "rkparkhausmodule_user_index"},
                 "admin": {"route": "rkparkhausmodule_admin_index"},
-                "searchable": {"class": "RK\\ParkhausModule\\Helper\\SearchHelper"},
-                "hook_subscriber": {"class": "RK\\ParkhausModule\\Container\\HookContainer"}
+                "searchable": {"class": "RK\\ParkHausModule\\Helper\\SearchHelper"},
+                "hook_subscriber": {"class": "RK\\ParkHausModule\\Container\\HookContainer"}
             },
             "securityschema": {
-                "RKParkhausModule::": "::",
-                "RKParkhausModule:ItemListBlock:": "Block title::",
-                "RKParkhausModule:Vehicle:": "Vehicle ID::",
-                "RKParkhausModule:VehicleImage:": "VehicleImage ID::",
-                "RKParkhausModule:Vehicle:VehicleImage": "Vehicle ID:VehicleImage ID:",
-                "RKParkhausModule::Ajax": "::"
+                "RKParkHausModule::": "::",
+                "RKParkHausModule:ItemListBlock:": "Block title::",
+                "RKParkHausModule:Vehicle:": "Vehicle ID::",
+                "RKParkHausModule:VehicleImage:": "VehicleImage ID::",
+                "RKParkHausModule:Vehicle:VehicleImage": "Vehicle ID:VehicleImage ID:",
+                "RKParkHausModule::Ajax": "::"
             }
         }
     }

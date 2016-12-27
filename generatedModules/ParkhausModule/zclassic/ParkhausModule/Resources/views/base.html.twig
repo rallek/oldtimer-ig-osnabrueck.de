@@ -8,19 +8,18 @@
     {{ pageAddAsset('stylesheet', asset('bootstrap-media-lightbox/bootstrap-media-lightbox.css')) }}
     {{ pageAddAsset('stylesheet', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.css')) }}
     {{ pageAddAsset('javascript', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKParkhausModule:js/RKParkhausModule.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.js')) }}
     {{ polyfill(['forms', 'forms-ext']) }}
 
     {# initialise additional gettext domain for translations within javascript #}
     {# blocked by https://github.com/zikula/core/issues/2601 #}
     {# commented out because not sure yet whether this is still required in 1.4.x #}
-    {# { pageAddVar('jsgettext', 'rkparkhausmodule_js:RKParkhausModule') } #}
+    {# { pageAddVar('jsgettext', 'rkparkhausmodule_js:RKParkHausModule') } #}
 {% endblock %}
 
 {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
     {% block appTitle %}
-        <h2 class="userheader">{{ __('Parkhaus') }}</h2>
-        {{ moduleLinks(type='user', modName='RKParkhausModule') }}
+        {{ moduleHeader('user', '', '', false, true, false, true) }}
     {% endblock %}
 {% endif %}
 
@@ -35,9 +34,12 @@
 
 {% block footer %}
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+        <p class="text-center">
+            Powered by <a href="http://modulestudio.de" title="Get the MOST out of Zikula!">ModuleStudio 0.7.0</a>
+        </p>
     {% elseif app.request.query.get('func') == 'edit' %}
         {{ pageAddAsset('stylesheet', 'style/core.css') }}
-        {{ pageAddAsset('stylesheet', zasset('@RKParkhausModule:css/style.css')) }}
+        {{ pageAddAsset('stylesheet', zasset('@RKParkHausModule:css/style.css')) }}
         {{ pageAddAsset('stylesheet', zasset('@ZikulaThemeModule:css/form/style.css')) }}
         {{ pageAddAsset('stylesheet', zasset('@ZikulaAndreas08Theme:css/fluid960gs/reset.css')) }}
         {% set pageStyles %}

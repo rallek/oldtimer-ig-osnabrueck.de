@@ -1,10 +1,10 @@
 {# purpose of this template: vehicles display view #}
-{% extends routeArea == 'admin' ? 'RKParkhausModule::adminBase.html.twig' : 'RKParkhausModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
 {% block pageTitle %}{{ vehicle.getTitleFromDisplayPattern()|default(__('Vehicle')) }}{% endblock %}
 {% block title %}
     {% set templateTitle = vehicle.getTitleFromDisplayPattern()|default(__('Vehicle')) %}
     {{ templateTitle|notifyFilters('rkparkhausmodule.filter_hooks.vehicles.filter') }}{% if routeArea == 'admin' %} <small>({{ vehicle.workflowState|rkparkhausmodule_objectState(false)|lower }})</small>{% endif %}
-    {% set itemActions = knp_menu_get('RKParkhausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'display' }) %}
+    {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'display' }) %}
     <div class="dropdown">
         <a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
         
@@ -181,7 +181,7 @@
         {% endif %}
         
     </dl>
-    {{ include('@RKParkhausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicle }) }}
+    {{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicle }) }}
 
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
         {# include display hooks #}
@@ -203,7 +203,7 @@
     
     {% if vehicle.vehicleImages|default %}
         {{ include(
-            '@RKParkhausModule/VehicleImage/includeDisplayItemListMany.html.twig',
+            '@RKParkHausModule/VehicleImage/includeDisplayItemListMany.html.twig',
             { items: vehicle.vehicleImages }
         ) }}
     {% endif %}
@@ -212,7 +212,7 @@
     {% if routeArea == 'admin' %}
         {% set permLevel = 'ACCESS_ADMIN' %}
     {% endif %}
-    {% set mayManage = hasPermission('RKParkhausModule:Vehicle:', vehicle.id ~ '::', permLevel) %}
+    {% set mayManage = hasPermission('RKParkHausModule:Vehicle:', vehicle.id ~ '::', permLevel) %}
     {% if mayManage or (uid is defined and vehicle.createdUserId is defined and vehicle.createdUserId == uid) %}
     <p class="managelink">
         {% set createTitle = __('Create vehicle image') %}
