@@ -1,6 +1,0 @@
-{# Purpose of this template: Display sponsors within an external context #}
-{% for sponsor in items %}
-    <h3>{{ sponsor.getTitleFromDisplayPattern() }}</h3>
-    <p><a href="{{ path('rksponsoringmodule_sponsor_display', { 'id': sponsor.id }) }}">{{ __('Read more') }}</a>
-    </p>
-{% endfor %}

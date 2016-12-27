@@ -1,5 +1,0 @@
-{# Purpose of this template: Display item information for previewing from other modules #}
-<dl id="carousel{{ carousel.id }}">
-<dt>{{ carousel.getTitleFromDisplayPattern()|notifyFilters('websitehelper.filter_hooks.carousells.filter') }}</dt>
-{% if carousel.carouselName is not empty %}<dd>{{ carousel.carouselName }}</dd>{% endif %}
-</dl>
