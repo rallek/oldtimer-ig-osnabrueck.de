@@ -211,7 +211,7 @@ abstract class AbstractCarouselItemType extends AbstractType
             'help' => $this->__('Here we can filter one single item in the block advanced filtering to reuse an image. Be shure the itemEndDate is valid and not in the past.'),
             'empty_data' => '',
             'attr' => [
-                'class' => '',
+                'class' => 'validate-unique',
                 'title' => $this->__('Enter the single item identifier of the carousel item')
             ],'required' => false,
             'max_length' => 255,

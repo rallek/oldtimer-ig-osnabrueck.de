@@ -246,4 +246,71 @@ abstract class AbstractAjaxController extends AbstractController
         
         return new JsonResponse($resultItems);
     }
+    
+    /**
+     * Checks whether a field value is a duplicate or not.
+     *
+     * @param Request $request Current request instance
+     *
+     * @return AjaxResponse
+     *
+     * @throws AccessDeniedException Thrown if the user doesn't have required permissions
+     */
+    public function checkForDuplicateAction(Request $request)
+    {
+        $this->checkAjaxToken();
+        if (!$this->hasPermission($this->name . '::Ajax', '::', ACCESS_EDIT)) {
+            throw new AccessDeniedException();
+        }
+        
+        $postData = $request->request;
+        
+        $objectType = $postData->getAlnum('ot', 'linker');
+        $controllerHelper = $this->get('rk_websitehelper_module.controller_helper');
+        $utilArgs = ['controller' => 'ajax', 'action' => 'checkForDuplicate'];
+        if (!in_array($objectType, $controllerHelper->getObjectTypes('controllerAction', $utilArgs))) {
+            $objectType = $controllerHelper->getDefaultObjectType('controllerAction', $utilArgs);
+        }
+        
+        $fieldName = $postData->getAlnum('fn', '');
+        $value = $postData->get('v', '');
+        
+        if (empty($fieldName) || empty($value)) {
+            return new BadDataResponse($this->__('Error: invalid input.'));
+        }
+        
+        // check if the given field is existing and unique
+        $uniqueFields = [];
+        switch ($objectType) {
+            case 'carouselItem':
+                    $uniqueFields = ['singleItemIdentifier'];
+                    break;
+        }
+        if (!count($uniqueFields) || !in_array($fieldName, $uniqueFields)) {
+            return new BadDataResponse($this->__('Error: invalid input.'));
+        }
+        
+        $exclude = $postData->get('ex', '');
+        /* can probably be removed
+         * $createMethod = 'create' . ucfirst($objectType);
+         * $object = $this->get('websitehelper.' . $objectType . '_factory')->$createMethod();
+         */
+        
+        $result = false;
+        switch ($objectType) {
+        case 'carouselItem':
+            $repository = $this->get('rk_websitehelper_module.' . $objectType . '_factory')->getRepository();
+            switch ($fieldName) {
+            case 'singleItemIdentifier':
+                    $result = $repository->detectUniqueState('singleItemIdentifier', $value, $exclude);
+                    break;
+            }
+            break;
+        }
+        
+        // return response
+        $result = ['isDuplicate' => $result];
+        
+        return new AjaxResponse($result);
+    }
 }

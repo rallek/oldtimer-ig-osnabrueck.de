@@ -76,5 +76,22 @@ class AjaxController extends AbstractAjaxController
     {
         return parent::getItemListAutoCompletionAction($request);
     }
+    
+    /**
+     * Checks whether a field value is a duplicate or not.
+     *
+     * @Route("/checkForDuplicate", options={"expose"=true})
+     * @Method("POST")
+     *
+     * @param Request $request Current request instance
+     *
+     * @return AjaxResponse
+     *
+     * @throws AccessDeniedException Thrown if the user doesn't have required permissions
+     */
+    public function checkForDuplicateAction(Request $request)
+    {
+        return parent::checkForDuplicateAction($request);
+    }
     // feel free to add your own controller methods here
 }

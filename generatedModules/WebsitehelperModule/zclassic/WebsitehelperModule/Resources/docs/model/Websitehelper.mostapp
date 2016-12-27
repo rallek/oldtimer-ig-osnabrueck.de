@@ -109,7 +109,7 @@ application "WebsiteHelper" {
                 date "intemEndDate" future endDate {
                     defaultValue "2099-12-31"
                 },
-                string "singleItemIdentifier" {
+                string "singleItemIdentifier" unique {
                     documentation "Here we can filter one single item in the block advanced filtering to reuse an image. Be shure the itemEndDate is valid and not in the past."
                     mandatory false
                 }

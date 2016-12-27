@@ -58,6 +58,45 @@ function rKWebsiteHelperReadDate(val, includeTime)
     }
 }
 
+var lastCarouselItemSingleItemIdentifier = '';
+
+/**
+ * Performs a duplicate check for unique fields
+ */
+function rKWebsiteHelperUniqueCheck(ucOt, val, elem, ucEx)
+{
+    var params;
+
+    if (elem.val() == window['last' + rKWebsiteHelperCapitaliseFirstLetter(ucOt) + rKWebsiteHelperCapitaliseFirstLetter(elem.attr('id')) ]) {
+        return true;
+    }
+
+    window['last' + rKWebsiteHelperCapitaliseFirstLetter(ucOt) + rKWebsiteHelperCapitaliseFirstLetter(elem.attr('id')) ] = elem.val();
+
+    // build parameters object
+    params = {
+        ot: ucOt,
+        fn: encodeURIComponent(elem.attr('id')),
+        v: encodeURIComponent(val),
+        ex: ucEx
+    };
+
+    var result = true;
+
+    jQuery.ajax({
+        type: 'POST',
+        url: Routing.generate('rkwebsitehelpermodule_ajax_checkforduplicate'),
+        data: params,
+        async: false
+    }).done(function(res) {
+        if (null == res.data || true === res.data.isDuplicate) {
+            result = false;
+        }
+    });
+
+    return result;
+}
+
 function rKWebsiteHelperValidateNoSpace(val)
 {
     var valStr;
@@ -153,6 +192,13 @@ function rKWebsiteHelperPerformCustomValidationRules(objectType, currentEntityId
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
+        }
+    });
+    jQuery('.validate-unique').each( function() {
+        if (!rKWebsiteHelperUniqueCheck(jQuery(this).attr('id'), jQuery(this).val(), jQuery(this), currentEntityId)) {
+            document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'This value is already assigned, but must be unique. Please change it.'/*, 'rkwebsitehelpermodule_js')*/);
+        } else {
+            document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
 }

@@ -19,6 +19,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use DoctrineExtensions\StandardFields\Mapping\Annotation as ZK;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Entity class that defines the entity structure and behaviours.
@@ -30,6 +31,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *         @ORM\Index(name="workflowstateindex", columns={"workflowState"})
  *     }
  * )
+ * @UniqueEntity(fields="singleItemIdentifier", ignoreNull="false")
  */
 class CarouselItemEntity extends BaseEntity
 {

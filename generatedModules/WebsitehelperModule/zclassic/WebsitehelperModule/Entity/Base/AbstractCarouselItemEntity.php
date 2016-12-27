@@ -17,6 +17,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use DoctrineExtensions\StandardFields\Mapping\Annotation as ZK;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 use DataUtil;
 use FormUtil;
@@ -168,7 +169,7 @@ abstract class AbstractCarouselItemEntity extends EntityAccess
     
     /**
      * Here we can filter one single item in the block advanced filtering to reuse an image. Be shure the itemEndDate is valid and not in the past.
-     * @ORM\Column(length=255)
+     * @ORM\Column(length=255, unique=true)
      * @Assert\NotNull()
      * @Assert\Length(min="0", max="255")
      * @var string $singleItemIdentifier
