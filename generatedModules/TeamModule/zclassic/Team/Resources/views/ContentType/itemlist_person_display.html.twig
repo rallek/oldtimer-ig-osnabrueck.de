@@ -1,0 +1,6 @@
+{# Purpose of this template: Display persons within an external context #}
+{% for person in items %}
+    <h3>{{ person.getTitleFromDisplayPattern() }}</h3>
+    <p><a href="{{ path('rkteammodule_person_display', { 'id': person.id }) }}">{{ __('Read more') }}</a>
+    </p>
+{% endfor %}

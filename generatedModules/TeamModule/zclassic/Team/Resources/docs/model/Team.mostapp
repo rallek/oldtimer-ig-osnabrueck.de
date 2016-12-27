@@ -1,0 +1,103 @@
+application "Team" {
+    vendor "RK"
+    author "Ralf Koester"
+    email "ralf@familie-koester.de"
+    url "http://oldtimer-ig-osnabrueck.de"
+    version "0.1.0"
+    prefix "team"
+    generatorSettings {
+        settingsContainer "Settings"
+        generateMailzApi false
+        generateModerationBlock false
+        generateNewsletterPlugin false
+        generateModerationPanel false
+        generatePendingContentSupport false
+        generateTagSupport false
+        generateMultiHookNeedles false
+        generateRssTemplates false
+        generateAtomTemplates false
+        generateCsvTemplates false
+        generateXmlTemplates false
+        generateJsonTemplates false
+        generateKmlTemplates false
+        generateIcsTemplates false
+        generateTests false
+        writeModelToDocs true
+    }
+    entities {
+        entity "person" leading {
+            nameMultiple "persons"
+            displayPattern "#lastName#, #firstName#"
+            ownerPermission true
+            fields {
+                string "lastName",
+                string "firstName" {
+                    mandatory false
+                }
+            ,
+                upload "teamMemberImage" {
+                    documentation "Please upload a portait formated image file."
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                    allowSquare false
+                    allowLandscape false
+                },
+                string "teamMemberFunction" {
+                    documentation "The function the person do have inside the team."
+                },
+                text "teamMemberDescription" {
+                    documentation "A description about the team member."
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                    length 5000
+                },
+                string "phoneNumber" {
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                },
+                string "mobileNumber" {
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                },
+                email "personEmailAddress" {
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                },
+                text "personAddress" {
+                    mandatory false
+                    displayType VIEW_DISPLAY
+                    length 500
+                },
+                user "registeredUser" {
+                    documentation "Here you can select which registered user is this person."
+                    mandatory false
+                },
+                string "filter" nospace {
+                    documentation "the filter field is used for special block filtering. If you do not know anything about this please leave empty. No spaces are allowed."
+                    mandatory false
+                    displayType NONE
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            ,
+                deleteAction "Delete"
+            }
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Index"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Index"
+            }
+        }
+    }
+}

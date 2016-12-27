@@ -1,0 +1,6 @@
+services:
+    rk_team_module.link_container:
+        class: RK\TeamModule\Container\LinkContainer
+        arguments: ["@translator.default", "@router", "@zikula_permissions_module.api.permission", "@rk_team_module.controller_helper", "@zikula_extensions_module.api.variable", "@zikula_users_module.current_user"]
+        tags:
+            - { name: zikula.link_container }

@@ -1,0 +1,7 @@
+{# purpose of this template: persons index view #}
+{% extends routeArea == 'admin' ? 'RKTeamModule::adminBase.html.twig' : 'RKTeamModule::base.html.twig' %}
+{% block title __('persons') %}
+{% block admin_page_icon 'home' %}
+{% block content %}
+    <p>{{ __('Welcome to the person section of the Team application.') }}</p>
+{% endblock %}

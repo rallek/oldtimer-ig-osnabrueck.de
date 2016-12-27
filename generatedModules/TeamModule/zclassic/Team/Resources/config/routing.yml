@@ -1,0 +1,5 @@
+rkteammodule:
+    # define routing support for these controllers
+    resource: "@RKTeamModule/Controller"
+    # enable support for defining routes by annotations
+    type: annotation

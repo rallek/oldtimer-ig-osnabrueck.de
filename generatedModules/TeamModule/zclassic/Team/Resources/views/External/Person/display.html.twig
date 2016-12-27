@@ -1,0 +1,48 @@
+{# Purpose of this template: Display one certain person within an external context #}
+<div id="person{$person.id}" class="rkteammodule-external-person">
+{% if displayMode == 'link' %}
+    <p class="rkteammodule-external-link">
+    <a href="{{ path('rkteammodule_person_display', { 'id': person.id }) }}" title="{{ person.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ person.getTitleFromDisplayPattern()|notifyFilters('team.filter_hooks.persons.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKTeamModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkteammodule-external-title">
+            <strong>{{ person.getTitleFromDisplayPattern()|notifyFilters('team.filter_hooks.persons.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkteammodule-external-snippet">
+        {% if person.teamMemberImage is not empty and person.teamMemberImageMeta|default %}
+                    <a href="{{ person.teamMemberImageUrl }}" title="{{ person.getTitleFromDisplayPattern()|e('html_attr') }}"{% if person.teamMemberImageMeta.isImage %} class="lightbox"{% endif %}>
+        {% if person.teamMemberImageMeta.isImage %}
+            {% set thumbOptions = attribute(thumbRuntimeOptions, 'personTeamMemberImage') %}
+            <img src="{{ person.teamMemberImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ person.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+        {% else %}
+            {{ __('Download') }} ({{ person.teamMemberImageMeta.size|rkteammodule_fileSize(person.teamMemberImage.getPathname(), false, false) }})
+        {% endif %}
+        </a>
+        {% else %}&nbsp;{% endif %}
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkteammodule-external-description">
+            {% if person.teamMemberDescription is not empty %}{{ person.teamMemberDescription }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

@@ -1,0 +1,13 @@
+{# Purpose of this template: Display persons within an external context #}
+<dl>
+    {% for person in items %}
+        <dt>{{ person.getTitleFromDisplayPattern() }}</dt>
+        {% if person.teamMemberDescription %}
+            <dd>{{ person.teamMemberDescription|striptags|truncate(200, true, '&hellip;') }}</dd>
+        {% endif %}
+        <dd><a href="{{ path('rkteammodule_person_display', { 'id': person.id }) }}">{{ __('Read more') }}</a>
+        </dd>
+    {% else %}
+        <dt>{{ __('No entries found.') }}</dt>
+    {% endfor %}
+</dl>
