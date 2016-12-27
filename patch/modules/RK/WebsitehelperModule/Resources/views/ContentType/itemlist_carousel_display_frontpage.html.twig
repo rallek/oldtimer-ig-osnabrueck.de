@@ -1,0 +1,13 @@
+{# Purpose of this template: Display carousells within an external context #}
+<dl>
+    {% for carousel in items %}
+        <dt>{{ carousel.getTitleFromDisplayPattern() }}</dt>
+        {% if carousel.carouselName %}
+            <dd>{{ carousel.carouselName|striptags|truncate(200, true, '&hellip;') }}</dd>
+        {% endif %}
+        <dd><a href="{{ path('rkwebsitehelpermodule_carousel_display', { 'id': carousel.id }) }}">{{ __('Read more') }}</a>
+        </dd>
+    {% else %}
+        <dt>{{ __('No entries found.') }}</dt>
+    {% endfor %}
+</dl>

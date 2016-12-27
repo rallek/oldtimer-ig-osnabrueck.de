@@ -1,0 +1,24 @@
+{# Purpose of this template: Display linkers within an external context #}
+<div class="section">
+	<div class="container">
+		<div class="row">
+		    {% for linker in items %}
+			<div class="{{ linker.boostrapSetting }}">
+				{% if linker.linkerImageMeta.isImage %}                 
+					<a href="{{ linker.theLink }}"><img src="{{ linker.linkerImage.getPathname() }}" width="100%" alt="{{ linker.getTitleFromDisplayPattern()|e('html_attr') }}" /></a>
+				{% else %}
+					{{ __('Download') }} ({{ linker.linkerImageMeta.size|rkwebsitehelpermodule_fileSize(linker.linkerImage.getPathname(), false, false) }})
+				{% endif %}
+				<h2>{{ linker.getTitleFromDisplayPattern() }}</h2>
+				{% if linker.linkerText %}
+					<p>{{ linker.linkerText|striptags|truncate(200, true, '&hellip;') }}</p>
+				{% endif %}        
+				<a  type="button" class="btn btn-primary" href="{{ linker.theLink }}">{{ __('Read more') }}</a>
+			</div>
+			{% endfor %}
+                 
+		</div>
+	</div>
+</div>
+		
+
