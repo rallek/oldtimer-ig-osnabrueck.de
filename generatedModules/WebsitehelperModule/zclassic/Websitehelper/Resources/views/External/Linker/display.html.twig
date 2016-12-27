@@ -1,0 +1,48 @@
+{# Purpose of this template: Display one certain linker within an external context #}
+<div id="linker{$linker.id}" class="rkwebsitehelpermodule-external-linker">
+{% if displayMode == 'link' %}
+    <p class="rkwebsitehelpermodule-external-link">
+    <a href="{{ path('rkwebsitehelpermodule_linker_display', { 'id': linker.id }) }}" title="{{ linker.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ linker.getTitleFromDisplayPattern()|notifyFilters('websitehelper.filter_hooks.linkers.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKWebsitehelperModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkwebsitehelpermodule-external-title">
+            <strong>{{ linker.getTitleFromDisplayPattern()|notifyFilters('websitehelper.filter_hooks.linkers.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkwebsitehelpermodule-external-snippet">
+        {% if linker.linkerImageMeta|default %}
+        <a href="{{ linker.linkerImageUrl }}" title="{{ linker.getTitleFromDisplayPattern()|e('html_attr') }}"{% if linker.linkerImageMeta.isImage %} class="lightbox"{% endif %}>
+        {% if linker.linkerImageMeta.isImage %}
+            {% set thumbOptions = attribute(thumbRuntimeOptions, 'linkerLinkerImage') %}
+            <img src="{{ linker.linkerImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ linker.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+        {% else %}
+            {{ __('Download') }} ({{ linker.linkerImageMeta.size|rkwebsitehelpermodule_fileSize(linker.linkerImage.getPathname(), false, false) }})
+        {% endif %}
+        </a>
+        {% endif %}
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkwebsitehelpermodule-external-description">
+            {% if linker.linkerText is not empty %}{{ linker.linkerText }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

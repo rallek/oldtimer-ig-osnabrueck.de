@@ -1,0 +1,46 @@
+{
+    "name": "rk/websitehelper-module",
+    "version": "0.4.0",
+    "description": "You have three helper so far. One is an image collection. These images might be used somewhere on the website. The other one is a carousel. Here you can add some items which will slide around. The third one is the linker. The linker is used to add some boostrap boxes on you website.",
+    "type": "zikula-module",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Ralf Koester",
+            "email": "ralf@familie-koester.de",
+            "homepage": "http://oldtimer-ig-osnabrueck.de",
+            "role": "owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "RK\\WebsitehelperModule\\": "" }
+    },
+    "require": {
+        "php": ">=5.4.1"
+    },
+    "suggest": {
+    },
+    "extra": {
+        "zikula": {
+            "core-compatibility": "~1.4.4",
+            "class": "RK\\WebsitehelperModule\\RKWebsitehelperModule",
+            "displayname": "Websitehelper",
+            "url": "websitehelper",
+            "capabilities": {
+                "user": {"route": "rkwebsitehelpermodule_user_index"},
+                "admin": {"route": "rkwebsitehelpermodule_admin_index"},
+                "hook_subscriber": {"class": "RK\\WebsitehelperModule\\Container\\HookContainer"}
+            },
+            "securityschema": {
+                "RKWebsitehelperModule::": "::",
+                "RKWebsitehelperModule:ItemListBlock:": "Block title::",
+                "RKWebsitehelperModule:Linker:": "Linker ID::",
+                "RKWebsitehelperModule:CarouselItem:": "CarouselItem ID::",
+                "RKWebsitehelperModule:Carousel:CarouselItem": "Carousel ID:CarouselItem ID:",
+                "RKWebsitehelperModule:Carousel:": "Carousel ID::",
+                "RKWebsitehelperModule:WebsiteImage:": "WebsiteImage ID::",
+                "RKWebsitehelperModule::Ajax": "::"
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{# Purpose of this template: Display website images within an external context #}
+{% for websiteImage in items %}
+    <h3>{{ websiteImage.getTitleFromDisplayPattern() }}</h3>
+    <p><a href="{{ path('rkwebsitehelpermodule_websiteimage_display', { 'id': websiteImage.id }) }}">{{ __('Read more') }}</a>
+    </p>
+{% endfor %}

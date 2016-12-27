@@ -1,0 +1,88 @@
+{# purpose of this template: module configuration page #}
+{% extends 'RKWebsitehelperModule::adminBase.html.twig' %}
+{% block title __('Settings') %}
+{% block admin_page_icon 'wrench' %}
+{% block content %}
+    <div class="rkwebsitehelpermodule-config">
+        {% form_theme form with [
+            '@RKWebsitehelperModule/Form/bootstrap_3.html.twig',
+            'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
+        ] %}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {% set tabTitle = __('Images') %}
+        <fieldset>
+            <legend>{{ tabTitle }}</legend>
+        
+            <p class="alert alert-info">{{ __('Here you can define several options for image handling.')|nl2br }}</p>
+        
+            {{ form_row(form.enableShrinkingForLinkerLinkerImage) }}
+            <div id="shrinkDetailsLinkerLinkerImage">
+            {{ form_row(form.shrinkWidthLinkerLinkerImage) }}
+            {{ form_row(form.shrinkHeightLinkerLinkerImage) }}
+            </div>
+            {{ form_row(form.enableShrinkingForCarouselItemItemImage) }}
+            <div id="shrinkDetailsCarouselItemItemImage">
+            {{ form_row(form.shrinkWidthCarouselItemItemImage) }}
+            {{ form_row(form.shrinkHeightCarouselItemItemImage) }}
+            </div>
+            {{ form_row(form.enableShrinkingForWebsiteImageMyImage) }}
+            <div id="shrinkDetailsWebsiteImageMyImage">
+            {{ form_row(form.shrinkWidthWebsiteImageMyImage) }}
+            {{ form_row(form.shrinkHeightWebsiteImageMyImage) }}
+            </div>
+            {{ form_row(form.thumbnailModeLinker) }}
+            {{ form_row(form.thumbnailWidthLinkerLinkerImageView) }}
+            {{ form_row(form.thumbnailHeightLinkerLinkerImageView) }}
+            {{ form_row(form.thumbnailWidthLinkerLinkerImageDisplay) }}
+            {{ form_row(form.thumbnailHeightLinkerLinkerImageDisplay) }}
+            {{ form_row(form.thumbnailWidthLinkerLinkerImageEdit) }}
+            {{ form_row(form.thumbnailHeightLinkerLinkerImageEdit) }}
+            {{ form_row(form.thumbnailModeCarouselItem) }}
+            {{ form_row(form.thumbnailWidthCarouselItemItemImageView) }}
+            {{ form_row(form.thumbnailHeightCarouselItemItemImageView) }}
+            {{ form_row(form.thumbnailWidthCarouselItemItemImageDisplay) }}
+            {{ form_row(form.thumbnailHeightCarouselItemItemImageDisplay) }}
+            {{ form_row(form.thumbnailWidthCarouselItemItemImageEdit) }}
+            {{ form_row(form.thumbnailHeightCarouselItemItemImageEdit) }}
+            {{ form_row(form.thumbnailModeWebsiteImage) }}
+            {{ form_row(form.thumbnailWidthWebsiteImageMyImageView) }}
+            {{ form_row(form.thumbnailHeightWebsiteImageMyImageView) }}
+            {{ form_row(form.thumbnailWidthWebsiteImageMyImageDisplay) }}
+            {{ form_row(form.thumbnailHeightWebsiteImageMyImageDisplay) }}
+            {{ form_row(form.thumbnailWidthWebsiteImageMyImageEdit) }}
+            {{ form_row(form.thumbnailHeightWebsiteImageMyImageEdit) }}
+        </fieldset>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                {{ form_widget(form.save) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            function websitToggleShrinkSettings(fieldName) {
+                var idSuffix = fieldName.replace('rkwebsitehelpermodule_appsettings_', '');
+                $('#shrinkDetails' + idSuffix).toggleClass('hidden', !$('#rkwebsitehelpermodule_appsettings_enableShrinkingFor' + idSuffix).prop('checked'));
+            }
+
+            $(document).ready(function() {
+                $('.shrink-enabler').each(function (index) {
+                    $(this).bind('click keyup', function (event) {
+                        websitToggleShrinkSettings($(this).attr('id').replace('enableShrinkingFor', ''));
+                    });
+                    websitToggleShrinkSettings($(this).attr('id').replace('enableShrinkingFor', ''));
+                });
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+{% endblock %}
