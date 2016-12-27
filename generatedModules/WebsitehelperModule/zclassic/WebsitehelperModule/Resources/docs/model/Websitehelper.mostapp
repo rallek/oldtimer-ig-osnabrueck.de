@@ -26,7 +26,8 @@ application "WebsiteHelper" {
         generateJsonTemplates false
         generateKmlTemplates false
         generateIcsTemplates false
-    generateTests false
+    versionAllGeneratedFiles false
+        generateTests false
         writeModelToDocs true
     }
     entities {
