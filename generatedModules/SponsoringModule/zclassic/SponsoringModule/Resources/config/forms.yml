@@ -1,0 +1,44 @@
+services:
+    # Form types
+    
+    rk_sponsoring_module.form.type.sponsorquicknav:
+        class: RK\SponsoringModule\Form\Type\QuickNavigation\SponsorQuickNavType
+        arguments: ["@translator.default", "@request_stack", "@rk_sponsoring_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_sponsoring_module.form.handler.sponsor:
+        class: RK\SponsoringModule\Form\Handler\Sponsor\EditHandler
+        arguments: ["@service_container", "@translator.default", "@request_stack", "@router"]
+        tags:
+            - { name: form.type }
+    
+    rk_sponsoring_module.form.type.sponsor:
+        class: RK\SponsoringModule\Form\Type\SponsorType
+        arguments: ["@translator.default", "@rk_sponsoring_module.sponsor_factory", "@rk_sponsoring_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_sponsoring_module.form.type.deleteentity:
+        class: RK\SponsoringModule\Form\DeleteEntityType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_sponsoring_module.form.type.block.itemlist:
+        class: RK\SponsoringModule\Block\Form\Type\ItemListBlockType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_sponsoring_module.form.type.sponsorfinder:
+        class: RK\SponsoringModule\Form\Type\Finder\SponsorFinderType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_sponsoring_module.form.type.appsettings:
+        class: RK\SponsoringModule\Form\AppSettingsType
+        arguments: ["@translator.default", "@zikula_extensions_module.api.variable"]
+        tags:
+            - { name: form.type }

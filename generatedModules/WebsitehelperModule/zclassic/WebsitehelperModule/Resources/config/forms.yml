@@ -1,0 +1,116 @@
+services:
+    # Form types
+    
+    rk_websitehelper_module.form.type.linkerquicknav:
+        class: RK\WebsitehelperModule\Form\Type\QuickNavigation\LinkerQuickNavType
+        arguments: ["@translator.default", "@request_stack", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.carouselitemquicknav:
+        class: RK\WebsitehelperModule\Form\Type\QuickNavigation\CarouselItemQuickNavType
+        arguments: ["@translator.default", "@request_stack", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.carouselquicknav:
+        class: RK\WebsitehelperModule\Form\Type\QuickNavigation\CarouselQuickNavType
+        arguments: ["@translator.default", "@request_stack", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.websiteimagequicknav:
+        class: RK\WebsitehelperModule\Form\Type\QuickNavigation\WebsiteImageQuickNavType
+        arguments: ["@translator.default", "@request_stack", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.handler.linker:
+        class: RK\WebsitehelperModule\Form\Handler\Linker\EditHandler
+        arguments: ["@service_container", "@translator.default", "@request_stack", "@router"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.linker:
+        class: RK\WebsitehelperModule\Form\Type\LinkerType
+        arguments: ["@translator.default", "@rk_websitehelper_module.linker_factory", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.handler.carouselitem:
+        class: RK\WebsitehelperModule\Form\Handler\CarouselItem\EditHandler
+        arguments: ["@service_container", "@translator.default", "@request_stack", "@router"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.carouselitem:
+        class: RK\WebsitehelperModule\Form\Type\CarouselItemType
+        arguments: ["@translator.default", "@rk_websitehelper_module.carouselItem_factory", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.handler.carousel:
+        class: RK\WebsitehelperModule\Form\Handler\Carousel\EditHandler
+        arguments: ["@service_container", "@translator.default", "@request_stack", "@router"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.carousel:
+        class: RK\WebsitehelperModule\Form\Type\CarouselType
+        arguments: ["@translator.default", "@rk_websitehelper_module.carousel_factory", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.handler.websiteimage:
+        class: RK\WebsitehelperModule\Form\Handler\WebsiteImage\EditHandler
+        arguments: ["@service_container", "@translator.default", "@request_stack", "@router"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.websiteimage:
+        class: RK\WebsitehelperModule\Form\Type\WebsiteImageType
+        arguments: ["@translator.default", "@rk_websitehelper_module.websiteImage_factory", "@rk_websitehelper_module.listentries_helper"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.deleteentity:
+        class: RK\WebsitehelperModule\Form\DeleteEntityType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.block.itemlist:
+        class: RK\WebsitehelperModule\Block\Form\Type\ItemListBlockType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.linkerfinder:
+        class: RK\WebsitehelperModule\Form\Type\Finder\LinkerFinderType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.carouselitemfinder:
+        class: RK\WebsitehelperModule\Form\Type\Finder\CarouselItemFinderType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.carouselfinder:
+        class: RK\WebsitehelperModule\Form\Type\Finder\CarouselFinderType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.websiteimagefinder:
+        class: RK\WebsitehelperModule\Form\Type\Finder\WebsiteImageFinderType
+        arguments: ["@translator.default"]
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.appsettings:
+        class: RK\WebsitehelperModule\Form\AppSettingsType
+        arguments: ["@translator.default", "@zikula_extensions_module.api.variable"]
+        tags:
+            - { name: form.type }

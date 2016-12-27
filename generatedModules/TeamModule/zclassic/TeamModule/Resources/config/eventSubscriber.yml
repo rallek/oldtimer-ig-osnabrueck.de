@@ -1,0 +1,82 @@
+services:
+    # Event subscriber and listener classes
+    rk_team_module.entity_lifecycle_listener:
+        class: RK\TeamModule\Listener\EntityLifecycleListener
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_team_module.core_listener:
+        class: RK\TeamModule\Listener\CoreListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.kernel_listener:
+        class: RK\TeamModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.installer_listener:
+        class: RK\TeamModule\Listener\InstallerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.moduledispatch_listener:
+        class: RK\TeamModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.mailer_listener:
+        class: RK\TeamModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.page_listener:
+        class: RK\TeamModule\Listener\PageListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.theme_listener:
+        class: RK\TeamModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.view_listener:
+        class: RK\TeamModule\Listener\ViewListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.userlogin_listener:
+        class: RK\TeamModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.userlogout_listener:
+        class: RK\TeamModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.user_listener:
+        class: RK\TeamModule\Listener\UserListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.userregistration_listener:
+        class: RK\TeamModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.users_listener:
+        class: RK\TeamModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.group_listener:
+        class: RK\TeamModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_team_module.thirdparty_listener:
+        class: RK\TeamModule\Listener\ThirdPartyListener
+        tags:
+            - { name: kernel.event_subscriber }
+    

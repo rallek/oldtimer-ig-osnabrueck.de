@@ -1,0 +1,64 @@
+{# purpose of this template: module configuration page #}
+{% extends 'RKTeamModule::adminBase.html.twig' %}
+{% block title __('Settings') %}
+{% block admin_page_icon 'wrench' %}
+{% block content %}
+    <div class="rkteammodule-config">
+        {% form_theme form with [
+            '@RKTeamModule/Form/bootstrap_3.html.twig',
+            'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
+        ] %}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {% set tabTitle = __('Images') %}
+        <fieldset>
+            <legend>{{ tabTitle }}</legend>
+        
+            <p class="alert alert-info">{{ __('Here you can define several options for image handling.')|nl2br }}</p>
+        
+            {{ form_row(form.enableShrinkingForPersonTeamMemberImage) }}
+            <div id="shrinkDetailsPersonTeamMemberImage">
+            {{ form_row(form.shrinkWidthPersonTeamMemberImage) }}
+            {{ form_row(form.shrinkHeightPersonTeamMemberImage) }}
+            </div>
+            {{ form_row(form.thumbnailModePerson) }}
+            {{ form_row(form.thumbnailWidthPersonTeamMemberImageView) }}
+            {{ form_row(form.thumbnailHeightPersonTeamMemberImageView) }}
+            {{ form_row(form.thumbnailWidthPersonTeamMemberImageDisplay) }}
+            {{ form_row(form.thumbnailHeightPersonTeamMemberImageDisplay) }}
+            {{ form_row(form.thumbnailWidthPersonTeamMemberImageEdit) }}
+            {{ form_row(form.thumbnailHeightPersonTeamMemberImageEdit) }}
+        </fieldset>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                {{ form_widget(form.save) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            function teamToggleShrinkSettings(fieldName) {
+                var idSuffix = fieldName.replace('rkteammodule_appsettings_', '');
+                $('#shrinkDetails' + idSuffix).toggleClass('hidden', !$('#rkteammodule_appsettings_enableShrinkingFor' + idSuffix).prop('checked'));
+            }
+
+            $(document).ready(function() {
+                $('.shrink-enabler').each(function (index) {
+                    $(this).bind('click keyup', function (event) {
+                        teamToggleShrinkSettings($(this).attr('id').replace('enableShrinkingFor', ''));
+                    });
+                    teamToggleShrinkSettings($(this).attr('id').replace('enableShrinkingFor', ''));
+                });
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+{% endblock %}

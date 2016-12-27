@@ -1,0 +1,64 @@
+{# purpose of this template: module configuration page #}
+{% extends 'RKSponsoringModule::adminBase.html.twig' %}
+{% block title __('Settings') %}
+{% block admin_page_icon 'wrench' %}
+{% block content %}
+    <div class="rksponsoringmodule-config">
+        {% form_theme form with [
+            '@RKSponsoringModule/Form/bootstrap_3.html.twig',
+            'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
+        ] %}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {% set tabTitle = __('Images') %}
+        <fieldset>
+            <legend>{{ tabTitle }}</legend>
+        
+            <p class="alert alert-info">{{ __('Here you can define several options for image handling.')|nl2br }}</p>
+        
+            {{ form_row(form.enableShrinkingForSponsorLogo) }}
+            <div id="shrinkDetailsSponsorLogo">
+            {{ form_row(form.shrinkWidthSponsorLogo) }}
+            {{ form_row(form.shrinkHeightSponsorLogo) }}
+            </div>
+            {{ form_row(form.thumbnailModeSponsor) }}
+            {{ form_row(form.thumbnailWidthSponsorLogoView) }}
+            {{ form_row(form.thumbnailHeightSponsorLogoView) }}
+            {{ form_row(form.thumbnailWidthSponsorLogoDisplay) }}
+            {{ form_row(form.thumbnailHeightSponsorLogoDisplay) }}
+            {{ form_row(form.thumbnailWidthSponsorLogoEdit) }}
+            {{ form_row(form.thumbnailHeightSponsorLogoEdit) }}
+        </fieldset>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                {{ form_widget(form.save) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            function sponsoToggleShrinkSettings(fieldName) {
+                var idSuffix = fieldName.replace('rksponsoringmodule_appsettings_', '');
+                $('#shrinkDetails' + idSuffix).toggleClass('hidden', !$('#rksponsoringmodule_appsettings_enableShrinkingFor' + idSuffix).prop('checked'));
+            }
+
+            $(document).ready(function() {
+                $('.shrink-enabler').each(function (index) {
+                    $(this).bind('click keyup', function (event) {
+                        sponsoToggleShrinkSettings($(this).attr('id').replace('enableShrinkingFor', ''));
+                    });
+                    sponsoToggleShrinkSettings($(this).attr('id').replace('enableShrinkingFor', ''));
+                });
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+{% endblock %}

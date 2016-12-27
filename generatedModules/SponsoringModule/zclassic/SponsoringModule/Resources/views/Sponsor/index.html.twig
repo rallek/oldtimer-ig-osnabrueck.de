@@ -1,0 +1,7 @@
+{# purpose of this template: sponsors index view #}
+{% extends routeArea == 'admin' ? 'RKSponsoringModule::adminBase.html.twig' : 'RKSponsoringModule::base.html.twig' %}
+{% block title __('sponsors') %}
+{% block admin_page_icon 'home' %}
+{% block content %}
+    <p>{{ __('Welcome to the sponsor section of the Sponsoring application.') }}</p>
+{% endblock %}

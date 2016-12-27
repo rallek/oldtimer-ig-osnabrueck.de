@@ -1,0 +1,51 @@
+body {
+    background-color: #ddd;
+    margin: 10px;
+    text-align: left;
+}
+
+.rkteammodule-finderform fieldset,
+.rkteammodule-finderform fieldset legend {
+    background-color: #fff;
+    border: none;
+}
+
+#rkteammoduleItemContainer {
+    background-color: #eee;
+    height: 300px;
+    overflow: auto;
+    padding: 5px;
+}
+
+#rkteammoduleItemContainer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#rkteammoduleItemContainer a {
+    color: #000;
+    margin: 0.1em 0.2em;
+    text-decoration: underline;
+}
+#rkteammoduleItemContainer a:hover,
+#rkteammoduleItemContainer a:focus,
+#rkteammoduleItemContainer a:active {
+    color: #900;
+    text-decoration: none;
+}
+
+#rkteammoduleItemContainer a img {
+    border: none;
+}
+
+#rkteammoduleItemContainer a img {
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    padding: 0.5em;
+}
+#rkteammoduleItemContainer a:hover img,
+#rkteammoduleItemContainer a:focus img,
+#rkteammoduleItemContainer a:active img {
+    background-color: #fff;
+}
