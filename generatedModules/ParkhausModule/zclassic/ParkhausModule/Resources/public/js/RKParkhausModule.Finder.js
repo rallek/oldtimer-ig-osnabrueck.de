@@ -39,8 +39,8 @@ rKParkHausModule.finder = {};
 
 rKParkHausModule.finder.onLoad = function (baseId, selectedId)
 {
-    jQuery('select').change(rKParkHausModule.finder.onParamChanged);
-    jQuery('.btn-success').addClass('hidden');
+    jQuery('select').not("[id$='pasteas']").change(rKParkHausModule.finder.onParamChanged);
+    
     jQuery('.btn-default').click(rKParkHausModule.finder.handleCancel);
 
     var selectedItems = jQuery('#rkparkhausmoduleItemContainer li a');
@@ -57,12 +57,12 @@ rKParkHausModule.finder.onParamChanged = function ()
 
 rKParkHausModule.finder.handleCancel = function ()
 {
-    var editor, w;
+    var editor;
 
     editor = jQuery("[id$='editor']").first().val();
-    if (editor === 'tinymce') {
+    if ('tinymce' === editor) {
         rKParkHausClosePopup();
-    } else if (editor === 'ckeditor') {
+    } else if ('ckeditor' === editor) {
         rKParkHausClosePopup();
     } else {
         alert('Close Editor: ' + editor);
@@ -76,8 +76,8 @@ function rKParkHausGetPasteSnippet(mode, itemId)
 
     quoteFinder = new RegExp('"', 'g');
     itemUrl = jQuery('#url' + itemId).val().replace(quoteFinder, '');
-    itemTitle = jQuery('#title' + itemId).val().replace(quoteFinder, '');
-    itemDescription = jQuery('#desc' + itemId).val().replace(quoteFinder, '');
+    itemTitle = jQuery('#title' + itemId).val().replace(quoteFinder, '').trim();
+    itemDescription = jQuery('#desc' + itemId).val().replace(quoteFinder, '').trim();
     pasteMode = jQuery("[id$='pasteas']").first().val();
 
     if (pasteMode === '2' || pasteMode !== '1') {
@@ -100,7 +100,7 @@ rKParkHausModule.finder.selectItem = function (itemId)
 {
     var editor, html;
 
-    editor = jQuery("[id$='editorName']").first().val();
+    editor = jQuery("[id$='editor']").first().val();
     if ('tinymce' === editor) {
         html = rKParkHausGetPasteSnippet('html', itemId);
         tinyMCE.activeEditor.execCommand('mceInsertContent', false, html);

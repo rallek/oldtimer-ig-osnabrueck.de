@@ -19,8 +19,9 @@
 </head>
 <body>
     <div class="container">
-        <ul class="nav nav-pills nav-justified">
+        <ul class="nav nav-tabs">
         <li{{ objectType == 'vehicle' ? ' class="active"' : '' }}><a href="{{ path('rkparkhausmodule_external_finder', {'objectType': 'vehicle', 'editor': editorName}) }}" title="{{ __('Search and select vehicle') }}">{{ __('Vehicles') }}</a></li>
+        <li{{ objectType == 'vehicleImage' ? ' class="active"' : '' }}><a href="{{ path('rkparkhausmodule_external_finder', {'objectType': 'vehicleImage', 'editor': editorName}) }}" title="{{ __('Search and select vehicle image') }}">{{ __('Vehicle images') }}</a></li>
         </ul>
         {% form_theme finderForm with [
             '@RKParkHausModule/Form/bootstrap_3.html.twig',

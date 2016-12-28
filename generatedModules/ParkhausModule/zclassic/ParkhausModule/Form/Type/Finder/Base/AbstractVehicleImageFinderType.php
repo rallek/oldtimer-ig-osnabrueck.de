@@ -118,13 +118,8 @@ abstract class AbstractVehicleImageFinderType extends AbstractType
                 'label' => $this->__('Sort by') . ':',
                 'empty_data' => '',
                 'choices' => [
-                    $this->__('Id') => 'id',
                     $this->__('Titel') => 'titel',
                     $this->__('Vehicle image') => 'vehicleImage',
-                    $this->__('Copyright') => 'copyright',
-                    $this->__('Image date') => 'imageDate',
-                    $this->__('Description') => 'description',
-                    $this->__('View image') => 'viewImage',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdUserId',
                     $this->__('Update date') => 'updatedDate'
