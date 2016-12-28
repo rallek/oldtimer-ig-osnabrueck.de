@@ -76,6 +76,8 @@ abstract class AbstractWebsiteHelperModuleInstaller extends AbstractExtensionIns
         $this->setVar('thumbnailModeCarouselItem',  'inset' );
         $this->setVar('thumbnailWidthCarouselItemItemImageView', 32);
         $this->setVar('thumbnailHeightCarouselItemItemImageView', 24);
+        $this->setVar('thumbnailWidthCarouselItemItemImageDisplay', 240);
+        $this->setVar('thumbnailHeightCarouselItemItemImageDisplay', 180);
         $this->setVar('thumbnailWidthCarouselItemItemImageEdit', 240);
         $this->setVar('thumbnailHeightCarouselItemItemImageEdit', 180);
         $this->setVar('thumbnailModeWebsiteImage',  'inset' );

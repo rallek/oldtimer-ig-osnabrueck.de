@@ -1,11 +1,34 @@
 {# purpose of this template: inclusion template for display of related carousel items #}
 {% set hasAdminPermission = hasPermission('RKWebsiteHelperModule:CarouselItem:', '::', 'ACCESS_EDIT') %}
+{% if nolink is not defined %}
+    {% set nolink = false %}
+{% endif %}
 {% if items|default and items|length > 0 %}
 <ul class="rkwebsitehelpermodule-related-item-list carouselItem">
 {% for item in items %}
     {% if hasAdminPermission or item.workflowState == 'approved' %}
     <li>
+{% spaceless %}
+{% if not nolink %}
+    <a href="{{ path('rkwebsitehelpermodule_carouselitem_' ~ routeArea ~ 'display', { 'id': item.id }) }}" title="{{ item.getTitleFromDisplayPattern()|e('html_attr') }}">
+{% endif %}
     {{ item.getTitleFromDisplayPattern() }}
+{% if not nolink %}
+    </a>
+    <a id="carouselItemItem{{ item.id }}Display" href="{{ path('rkwebsitehelpermodule_carouselitem_' ~ routeArea ~ 'display', { 'id': item.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window') }}" class="fa fa-search-plus hidden"></a>
+{% endif %}
+{% endspaceless %}
+{% if not nolink %}
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            $(document).ready(function() {
+                rKWebsiteHelperInitInlineWindow($('#carouselItemItem{{ item.id }}Display'), '{{ item.getTitleFromDisplayPattern()|e('js') }}');
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+{% endif %}
 <br />
 {% if item.itemImage is not empty and item.itemImageMeta.isImage %}
     <img src="{{ item.itemImage.getPathname()|imagine_filter('zkroot', relationThumbRuntimeOptions) }}" alt="{{ item.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ relationThumbRuntimeOptions.thumbnail.size[0] }}" height="{{ relationThumbRuntimeOptions.thumbnail.size[1] }}" class="img-rounded" />

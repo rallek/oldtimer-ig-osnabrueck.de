@@ -201,6 +201,50 @@ class CarouselItemController extends AbstractCarouselItemController
     {
         return parent::deleteAction($request, $carouselItem);
     }
+    /**
+     * This action provides a item detail view in the admin area.
+     *
+     * @Route("/admin/carouselItem/{id}.{_format}",
+     *        requirements = {"id" = "\d+", "_format" = "html"},
+     *        defaults = {"_format" = "html"},
+     *        methods = {"GET"}
+     * )
+     * @Theme("admin")
+     *
+     * @param Request  $request      Current request instance
+     * @param CarouselItemEntity $carouselItem      Treated carousel item instance
+     *
+     * @return mixed Output
+     *
+     * @throws AccessDeniedException Thrown if the user doesn't have required permissions
+     * @throws NotFoundHttpException Thrown by param converter if item to be displayed isn't found
+     */
+    public function adminDisplayAction(Request $request, CarouselItemEntity $carouselItem)
+    {
+        return parent::adminDisplayAction($request, $carouselItem);
+    }
+    
+    /**
+     * This action provides a item detail view.
+     *
+     * @Route("/carouselItem/{id}.{_format}",
+     *        requirements = {"id" = "\d+", "_format" = "html"},
+     *        defaults = {"_format" = "html"},
+     *        methods = {"GET"}
+     * )
+     *
+     * @param Request  $request      Current request instance
+     * @param CarouselItemEntity $carouselItem      Treated carousel item instance
+     *
+     * @return mixed Output
+     *
+     * @throws AccessDeniedException Thrown if the user doesn't have required permissions
+     * @throws NotFoundHttpException Thrown by param converter if item to be displayed isn't found
+     */
+    public function displayAction(Request $request, CarouselItemEntity $carouselItem)
+    {
+        return parent::displayAction($request, $carouselItem);
+    }
 
     /**
      * Process status changes for multiple items.

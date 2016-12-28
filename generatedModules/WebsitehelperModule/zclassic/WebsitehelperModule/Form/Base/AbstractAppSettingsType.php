@@ -403,6 +403,38 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
+            ->add('thumbnailWidthCarouselItemItemImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail width carousel item item image display') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail width on display pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail width on display pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailWidthCarouselItemItemImageDisplay'],
+                'empty_data' => intval('240'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail width carousel item item image display. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailHeightCarouselItemItemImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail height carousel item item image display') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail height on display pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail height on display pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailHeightCarouselItemItemImageDisplay'],
+                'empty_data' => intval('180'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail height carousel item item image display. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
             ->add('thumbnailWidthCarouselItemItemImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
                 'label' => $this->__('Thumbnail width carousel item item image edit') . ':',
                 'label_attr' => [

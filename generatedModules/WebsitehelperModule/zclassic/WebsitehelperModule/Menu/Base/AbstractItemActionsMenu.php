@@ -159,6 +159,17 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
         
         if ($currentLegacyControllerType == 'admin') {
             if (in_array($currentFunc, ['index', 'view'])) {
+                $menu->addChild($this->__('Preview'), [
+                    'route' => 'rkwebsitehelpermodule_carouselitem_display',
+                    'routeParameters' => ['id' => $entity['id']]
+                ])->setAttribute('icon', 'fa fa-search-plus');
+                $menu[$this->__('Preview')]->setLinkAttribute('target', '_blank');
+                $menu[$this->__('Preview')]->setLinkAttribute('title', $this->__('Open preview page'));
+                $menu->addChild($this->__('Details'), [
+                    'route' => 'rkwebsitehelpermodule_carouselitem_admindisplay',
+                    'routeParameters' => ['id' => $entity['id']]
+                ])->setAttribute('icon', 'fa fa-eye');
+                $menu[$this->__('Details')]->setLinkAttribute('title', str_replace('"', '', $entity->getTitleFromDisplayPattern()));
             }
             if (in_array($currentFunc, ['index', 'view', 'display'])) {
                 if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
@@ -181,9 +192,21 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                     $menu[$this->__('Delete')]->setLinkAttribute('title', $this->__('Delete this carousel item'));
                 }
             }
+            if ($currentFunc == 'display') {
+                $title = $this->__('Back to overview');
+                $menu->addChild($title, [
+                    'route' => 'rkwebsitehelpermodule_carouselitem_adminview'
+                ])->setAttribute('icon', 'fa fa-reply');
+                $menu[$title]->setLinkAttribute('title', $title);
+            }
         }
         if ($currentLegacyControllerType == 'user') {
             if (in_array($currentFunc, ['index', 'view'])) {
+                $menu->addChild($this->__('Details'), [
+                    'route' => 'rkwebsitehelpermodule_carouselitem_display',
+                    'routeParameters' => ['id' => $entity['id']]
+                ])->setAttribute('icon', 'fa fa-eye');
+                $menu[$this->__('Details')]->setLinkAttribute('title', str_replace('"', '', $entity->getTitleFromDisplayPattern()));
             }
             if (in_array($currentFunc, ['index', 'view', 'display'])) {
                 if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
@@ -205,6 +228,13 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                     ])->setAttribute('icon', 'fa fa-trash-o');
                     $menu[$this->__('Delete')]->setLinkAttribute('title', $this->__('Delete this carousel item'));
                 }
+            }
+            if ($currentFunc == 'display') {
+                $title = $this->__('Back to overview');
+                $menu->addChild($title, [
+                    'route' => 'rkwebsitehelpermodule_carouselitem_view'
+                ])->setAttribute('icon', 'fa fa-reply');
+                $menu[$title]->setLinkAttribute('title', $title);
             }
         }
         }

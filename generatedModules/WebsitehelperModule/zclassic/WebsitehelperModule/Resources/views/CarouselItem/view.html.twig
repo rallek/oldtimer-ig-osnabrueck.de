@@ -90,7 +90,7 @@
                     {{ carouselItem.itemName }}
                 </td>
                 <td headers="hTitle" class="text-left">
-                    {{ carouselItem.title|notifyFilters('rkwebsitehelpermodule.filterhook.carouselitems') }}
+                    <a href="{{ path('rkwebsitehelpermodule_carouselitem_' ~ routeArea ~ 'display', { 'id': carouselItem.id }) }}" title="{{ __('View detail page')|e('html_attr') }}">{{ carouselItem.title|notifyFilters('rkwebsitehelpermodule.filterhook.carouselitems') }}</a>
                 </td>
                 <td headers="hSubtitle" class="text-left">
                     {{ carouselItem.subtitle }}

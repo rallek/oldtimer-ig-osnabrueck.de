@@ -126,6 +126,8 @@ application "WebsiteHelper" {
                 editAction "Edit",
                 viewAction "View",
                 deleteAction "Delete"
+            ,
+                displayAction "Display"
             }
         },
         entity "carousel" {

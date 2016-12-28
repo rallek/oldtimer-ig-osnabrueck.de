@@ -501,6 +501,87 @@ abstract class AbstractCarouselItemController extends AbstractController
         // fetch and return the appropriate template
         return $viewHelper->processTemplate($this->get('twig'), $objectType, 'delete', $request, $templateParameters);
     }
+    /**
+     * This action provides a item detail view in the admin area.
+     * @ParamConverter("carouselItem", class="RKWebsiteHelperModule:CarouselItemEntity", options={"id" = "id", "repository_method" = "selectById"})
+     * @Cache(lastModified="carouselItem.getUpdatedDate()", ETag="'CarouselItem' ~ carouselItem.getid() ~ carouselItem.getUpdatedDate().format('U')")
+     *
+     * @param Request  $request      Current request instance
+     * @param CarouselItemEntity $carouselItem      Treated carousel item instance
+     *
+     * @return mixed Output
+     *
+     * @throws AccessDeniedException Thrown if the user doesn't have required permissions
+     * @throws NotFoundHttpException Thrown by param converter if item to be displayed isn't found
+     */
+    public function adminDisplayAction(Request $request, CarouselItemEntity $carouselItem)
+    {
+        return $this->displayInternal($request, $carouselItem, true);
+    }
+    
+    /**
+     * This action provides a item detail view.
+     * @ParamConverter("carouselItem", class="RKWebsiteHelperModule:CarouselItemEntity", options={"id" = "id", "repository_method" = "selectById"})
+     * @Cache(lastModified="carouselItem.getUpdatedDate()", ETag="'CarouselItem' ~ carouselItem.getid() ~ carouselItem.getUpdatedDate().format('U')")
+     *
+     * @param Request  $request      Current request instance
+     * @param CarouselItemEntity $carouselItem      Treated carousel item instance
+     *
+     * @return mixed Output
+     *
+     * @throws AccessDeniedException Thrown if the user doesn't have required permissions
+     * @throws NotFoundHttpException Thrown by param converter if item to be displayed isn't found
+     */
+    public function displayAction(Request $request, CarouselItemEntity $carouselItem)
+    {
+        return $this->displayInternal($request, $carouselItem, false);
+    }
+    
+    /**
+     * This method includes the common implementation code for adminDisplay() and display().
+     */
+    protected function displayInternal(Request $request, CarouselItemEntity $carouselItem, $isAdmin = false)
+    {
+        // parameter specifying which type of objects we are treating
+        $objectType = 'carouselItem';
+        $utilArgs = ['controller' => 'carouselItem', 'action' => 'display'];
+        $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_READ;
+        if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
+            throw new AccessDeniedException();
+        }
+        $repository = $this->get('rk_websitehelper_module.' . $objectType . '_factory')->getRepository();
+        $repository->setRequest($request);
+        
+        $entity = $carouselItem;
+        
+        
+        $entity->initWorkflow();
+        
+        // build RouteUrl instance for display hooks; also create identifier for permission check
+        $currentUrlArgs = $entity->createUrlArgs();
+        $instanceId = $entity->createCompositeIdentifier();
+        $currentUrlArgs['id'] = $instanceId; // TODO remove this
+        $currentUrlArgs['_locale'] = $request->getLocale();
+        $currentUrlObject = new RouteUrl('rkwebsitehelpermodule_carouselItem_' . /*($isAdmin ? 'admin' : '') . */'display', $currentUrlArgs);
+        
+        if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', $instanceId . '::', $permLevel)) {
+            throw new AccessDeniedException();
+        }
+        
+        $viewHelper = $this->get('rk_websitehelper_module.view_helper');
+        $templateParameters = [
+            'routeArea' => $isAdmin ? 'admin' : ''
+        ];
+        $templateParameters[$objectType] = $entity;
+        $templateParameters['currentUrlObject'] = $currentUrlObject;
+        $imageHelper = $this->get('rk_websitehelper_module.image_helper');
+        $templateParameters = array_merge($templateParameters, $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', $utilArgs));
+        
+        // fetch and return the appropriate template
+        $response = $viewHelper->processTemplate($this->get('twig'), $objectType, 'display', $request, $templateParameters);
+        
+        return $response;
+    }
 
     /**
      * Process status changes for multiple items.

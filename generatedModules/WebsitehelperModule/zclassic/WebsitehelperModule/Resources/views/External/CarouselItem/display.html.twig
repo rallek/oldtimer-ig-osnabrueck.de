@@ -1,0 +1,48 @@
+{# Purpose of this template: Display one certain carousel item within an external context #}
+<div id="carouselItem{$carouselItem.id}" class="rkwebsitehelpermodule-external-carouselitem">
+{% if displayMode == 'link' %}
+    <p class="rkwebsitehelpermodule-external-link">
+    <a href="{{ path('rkwebsitehelpermodule_carouselitem_display', { 'id': carouselItem.id }) }}" title="{{ carouselItem.getTitleFromDisplayPattern()|e('html_attr') }}">
+    {{ carouselItem.getTitleFromDisplayPattern()|notifyFilters('websitehelper.filter_hooks.carouselitems.filter') }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKWebsiteHelperModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkwebsitehelpermodule-external-title">
+            <strong>{{ carouselItem.getTitleFromDisplayPattern()|notifyFilters('websitehelper.filter_hooks.carouselitems.filter') }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkwebsitehelpermodule-external-snippet">
+        {% if carouselItem.itemImage is not empty and carouselItem.itemImageMeta|default %}
+                    <a href="{{ carouselItem.itemImageUrl }}" title="{{ carouselItem.getTitleFromDisplayPattern()|e('html_attr') }}"{% if carouselItem.itemImageMeta.isImage %} class="lightbox"{% endif %}>
+        {% if carouselItem.itemImageMeta.isImage %}
+            {% set thumbOptions = attribute(thumbRuntimeOptions, 'carouselItemItemImage') %}
+            <img src="{{ carouselItem.itemImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ carouselItem.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+        {% else %}
+            {{ __('Download') }} ({{ carouselItem.itemImageMeta.size|rkwebsitehelpermodule_fileSize(carouselItem.itemImage.getPathname(), false, false) }})
+        {% endif %}
+        </a>
+        {% else %}&nbsp;{% endif %}
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'contentType' %}
+        ...
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkwebsitehelpermodule-external-description">
+            {% if carouselItem.itemName is not empty %}{{ carouselItem.itemName }}<br />{% endif %}
+        </p>
+    #}
+{% endif %}
+</div>
