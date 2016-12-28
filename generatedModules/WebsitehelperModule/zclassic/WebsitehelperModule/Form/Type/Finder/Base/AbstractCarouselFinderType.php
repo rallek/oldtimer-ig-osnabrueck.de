@@ -118,7 +118,6 @@ abstract class AbstractCarouselFinderType extends AbstractType
                 'label' => $this->__('Sort by') . ':',
                 'empty_data' => '',
                 'choices' => [
-                    $this->__('Id') => 'id',
                     $this->__('Carousel name') => 'carouselName',
                     $this->__('Remarks') => 'remarks',
                     $this->__('Sliding time') => 'slidingTime',

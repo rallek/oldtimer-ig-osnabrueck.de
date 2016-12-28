@@ -118,7 +118,6 @@ abstract class AbstractWebsiteImageFinderType extends AbstractType
                 'label' => $this->__('Sort by') . ':',
                 'empty_data' => '',
                 'choices' => [
-                    $this->__('Id') => 'id',
                     $this->__('Image title') => 'imageTitle',
                     $this->__('My image') => 'myImage',
                     $this->__('My description') => 'myDescription',

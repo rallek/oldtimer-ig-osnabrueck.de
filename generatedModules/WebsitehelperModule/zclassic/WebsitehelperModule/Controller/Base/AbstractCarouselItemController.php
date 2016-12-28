@@ -295,6 +295,14 @@ abstract class AbstractCarouselItemController extends AbstractController
         $templateParameters['sortdir'] = $sortdir;
         $templateParameters['num'] = $resultsPerPage;
         
+        $tpl = '';
+        if ($request->isMethod('POST')) {
+            $tpl = $request->request->getAlnum('tpl', '');
+        } elseif ($request->isMethod('GET')) {
+            $tpl = $request->query->getAlnum('tpl', '');
+        }
+        $templateParameters['tpl'] = $tpl;
+        
         $quickNavForm = $this->createForm('RK\WebsiteHelperModule\Form\Type\QuickNavigation\\' . ucfirst($objectType) . 'QuickNavType', $templateParameters);
         if ($quickNavForm->handleRequest($request) && $quickNavForm->isSubmitted()) {
             $quickNavData = $quickNavForm->getData();

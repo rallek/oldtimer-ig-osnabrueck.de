@@ -118,7 +118,6 @@ abstract class AbstractCarouselItemFinderType extends AbstractType
                 'label' => $this->__('Sort by') . ':',
                 'empty_data' => '',
                 'choices' => [
-                    $this->__('Id') => 'id',
                     $this->__('Item name') => 'itemName',
                     $this->__('Title') => 'title',
                     $this->__('Subtitle') => 'subtitle',
@@ -128,7 +127,6 @@ abstract class AbstractCarouselItemFinderType extends AbstractType
                     $this->__('Item start date') => 'itemStartDate',
                     $this->__('Intem end date') => 'intemEndDate',
                     $this->__('Single item identifier') => 'singleItemIdentifier',
-                    $this->__('Link external') => 'linkExternal',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdUserId',
                     $this->__('Update date') => 'updatedDate'

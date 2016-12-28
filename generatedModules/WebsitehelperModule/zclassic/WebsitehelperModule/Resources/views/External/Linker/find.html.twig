@@ -19,9 +19,8 @@
 </head>
 <body>
     <div class="container">
-        <ul class="nav nav-pills nav-justified">
-        <li{{ objectType == 'carouselItem' ? ' class="active"' : '' }}><a href="{{ path('rkwebsitehelpermodule_external_finder', {'objectType': 'carouselItem', 'editor': editorName}) }}" title="{{ __('Search and select carousel item') }}">{{ __('Carousel items') }}</a></li> | 
-        <li{{ objectType == 'carousel' ? ' class="active"' : '' }}><a href="{{ path('rkwebsitehelpermodule_external_finder', {'objectType': 'carousel', 'editor': editorName}) }}" title="{{ __('Search and select carousel') }}">{{ __('Carousells') }}</a></li> | 
+        <ul class="nav nav-tabs">
+        <li{{ objectType == 'linker' ? ' class="active"' : '' }}><a href="{{ path('rkwebsitehelpermodule_external_finder', {'objectType': 'linker', 'editor': editorName}) }}" title="{{ __('Search and select linker') }}">{{ __('Linkers') }}</a></li>
         <li{{ objectType == 'websiteImage' ? ' class="active"' : '' }}><a href="{{ path('rkwebsitehelpermodule_external_finder', {'objectType': 'websiteImage', 'editor': editorName}) }}" title="{{ __('Search and select website image') }}">{{ __('Website images') }}</a></li>
         </ul>
         {% form_theme finderForm with [
