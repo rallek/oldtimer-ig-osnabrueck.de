@@ -189,10 +189,10 @@
 <path d="M457 787 L906 787 L906 815 L457 815 L457 787 Z"/>
 </clipPath>
 <clipPath clipPathUnits="userSpaceOnUse" id="clipPath32">
-<path d="M457 813 L897 813 L897 841 L457 841 L457 813 Z"/>
+<path d="M457 813 L869 813 L869 841 L457 841 L457 813 Z"/>
 </clipPath>
 <clipPath clipPathUnits="userSpaceOnUse" id="clipPath33">
-<path d="M457 813 L901 813 L901 841 L457 841 L457 813 Z"/>
+<path d="M457 813 L873 813 L873 841 L457 841 L457 813 Z"/>
 </clipPath>
 <clipPath clipPathUnits="userSpaceOnUse" id="clipPath34">
 <path d="M457 839 L765 839 L765 867 L457 867 L457 839 Z"/>
@@ -695,7 +695,7 @@
 <image stroke="white" width="16" xlink:show="embed" xlink:type="simple" fill="white" clip-path="url(#clipPath30)" preserveAspectRatio="none" height="16" x="458" y="793" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAQklEQVR42mNgGGjA&#13;&#10;CGN8+vTpP7Ga+Pj4GDEEsRlAjBgTTf1HjLcodsEQNIDqscBCjs0wNtYEhawIhkmN&#13;&#10;WorTBn0BACD0MjlPItkrAAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
 <text x="477" y="812" clip-path="url(#clipPath31)" fill="white" stroke="none" xml:space="preserve">- boostrapSetting : string(255) [mandatory]</text>
 <image stroke="white" width="16" xlink:show="embed" xlink:type="simple" fill="white" clip-path="url(#clipPath32)" preserveAspectRatio="none" height="16" x="458" y="819" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAQklEQVR42mNgGGjA&#13;&#10;CGN8+vTpP7Ga+Pj4GDEEsRlAjBgTTf1HjLcodsEQNIDqscBCjs0wNtYEhawIhkmN&#13;&#10;WorTBn0BACD0MjlPItkrAAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
-<text x="477" y="838" clip-path="url(#clipPath33)" fill="white" stroke="none" xml:space="preserve">- linkerLanguage : string(255) [mandatory]</text>
+<text x="477" y="838" clip-path="url(#clipPath33)" fill="white" stroke="none" xml:space="preserve">- linkerLanguage : string(255) [optional]</text>
 <image stroke="white" width="16" xlink:show="embed" xlink:type="simple" fill="white" clip-path="url(#clipPath34)" preserveAspectRatio="none" height="16" x="458" y="845" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABFUlEQVR42mNgGGjA&#13;&#10;iC7w//9/9k+fPqUzMjJGAbk6UOErQPGlfHx8s4DiP3Ea8O3bN+k/f/5sBTIfABX2&#13;&#10;f/369QxInJub2xRoQBEQy7KysvpwcXE9xTAAZPPnz59PApnLgTZ1YnMu0GVVQHWh&#13;&#10;QHkLmEuYkCTTQTbj0gwCQLk2oMYnQLWpMDG4AUCJaJCzCQYaI2MfSC2GAUCg9f37&#13;&#10;97OEDPjx48cZpMBFMYAowMTEBAq3f9gMuMbJyWlCyAA2NjaQmmsYBgBDdwkoqggZ&#13;&#10;AI3OpRgGgBIJKJ5BUYVLMzCaa4BqpEFqcSak379/bwFFFSi0gYF6GiQO9JoZ1GZp&#13;&#10;nAkJyYlsQFekQaMKFtqXgeLLoEn5F8OgAgDP7YUX4QGOYgAAAABJRU5ErkJggg==" xlink:actuate="onLoad"/>
 <text x="477" y="864" clip-path="url(#clipPath35)" fill="white" stroke="none" xml:space="preserve">- sorting : int(11) [mandatory]</text>
 <image stroke="white" width="16" xlink:show="embed" xlink:type="simple" fill="white" clip-path="url(#clipPath36)" preserveAspectRatio="none" height="16" x="458" y="871" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAQklEQVR42mNgGGjA&#13;&#10;CGN8+vTpP7Ga+Pj4GDEEsRlAjBgTTf1HjLcodsEQNIDqscBCjs0wNtYEhawIhkmN&#13;&#10;WorTBn0BACD0MjlPItkrAAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>

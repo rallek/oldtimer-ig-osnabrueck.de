@@ -162,7 +162,8 @@ abstract class AbstractLinkerType extends AbstractType
             'attr' => [
                 'class' => ' validate-nospace',
                 'title' => $this->__('Choose the linker language of the linker')
-            ],'required' => true,
+            ],'required' => false,
+            'placeholder' => $this->__('All'),
             'max_length' => 255,
         ]);
         $builder->add('sorting', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [

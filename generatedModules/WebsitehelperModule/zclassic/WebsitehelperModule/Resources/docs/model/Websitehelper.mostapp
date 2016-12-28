@@ -52,7 +52,9 @@ application "WebsiteHelper" {
                     defaultValue "col-xs-12 col-sm-6 col-md-3"
                 }
             ,
-                string "linkerLanguage" nospace locale,
+                string "linkerLanguage" nospace locale {
+                    mandatory false
+                },
                 integer "sorting" sortablePosition {
                     defaultValue "0"
                 }
