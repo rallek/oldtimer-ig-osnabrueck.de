@@ -1,15 +1,15 @@
 {* Purpose of this template: edit view of generic item list content type *}
 <div class="form-group">
     {gt text='Object type' domain='rkdownloadmodule' assign='objectTypeSelectorLabel'}
-    {formlabel for='rKDownloadModuleObjectType' text=$objectTypeSelectorLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKDownLoadModuleObjectType' text=$objectTypeSelectorLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
         {rkdownloadmoduleObjectTypeSelector assign='allObjectTypes'}
-        {formdropdownlist id='rKDownloadModuleOjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
+        {formdropdownlist id='rKDownLoadModuleOjectType' dataField='objectType' group='data' mandatory=true items=$allObjectTypes cssClass='form-control'}
         <span class="help-block">{gt text='If you change this please save the element once to reload the parameters below.' domain='rkdownloadmodule'}</span>
     </div>
 </div>
 
-{if $featureActivationHelper->isEnabled(const('RK\\DownloadModule\\Helper\\FeatureActivationHelper::CATEGORIES', $objectType))}
+{if $featureActivationHelper->isEnabled(const('RK\\DownLoadModule\\Helper\\FeatureActivationHelper::CATEGORIES', $objectType))}
 {formvolatile}
 {if $properties ne null && is_array($properties)}
     {nocache}
@@ -28,9 +28,9 @@
                 {gt text='Categories' domain='rkdownloadmodule' assign='categorySelectorLabel'}
                 {assign var='selectionMode' value='multiple'}
             {/if}
-            {formlabel for="rKDownloadModuleCatIds`$propertyName`" text=$categorySelectorLabel cssClass='col-sm-3 control-label'}
+            {formlabel for="rKDownLoadModuleCatIds`$propertyName`" text=$categorySelectorLabel cssClass='col-sm-3 control-label'}
             <div class="col-sm-9">
-                {formdropdownlist id="rKDownloadModuleCatIds`$propName`" items=$categories.$propName dataField="catids`$propName`" group='data' selectionMode=$selectionMode cssClass='form-control'}
+                {formdropdownlist id="rKDownLoadModuleCatIds`$propName`" items=$categories.$propName dataField="catids`$propName`" group='data' selectionMode=$selectionMode cssClass='form-control'}
                 <span class="help-block">{gt text='This is an optional filter.' domain='rkdownloadmodule'}</span>
             </div>
         </div>
@@ -44,49 +44,49 @@
     {gt text='Sorting' domain='rkdownloadmodule' assign='sortingLabel'}
     {formlabel text=$sortingLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formradiobutton id='rKDownloadModuleSortRandom' value='random' dataField='sorting' group='data' mandatory=true}
+        {formradiobutton id='rKDownLoadModuleSortRandom' value='random' dataField='sorting' group='data' mandatory=true}
         {gt text='Random' domain='rkdownloadmodule' assign='sortingRandomLabel'}
-        {formlabel for='rKDownloadModuleSortRandom' text=$sortingRandomLabel}
-        {formradiobutton id='rKDownloadModuleSortNewest' value='newest' dataField='sorting' group='data' mandatory=true}
+        {formlabel for='rKDownLoadModuleSortRandom' text=$sortingRandomLabel}
+        {formradiobutton id='rKDownLoadModuleSortNewest' value='newest' dataField='sorting' group='data' mandatory=true}
         {gt text='Newest' domain='rkdownloadmodule' assign='sortingNewestLabel'}
-        {formlabel for='rKDownloadModuleSortNewest' text=$sortingNewestLabel}
-        {formradiobutton id='rKDownloadModuleSortDefault' value='default' dataField='sorting' group='data' mandatory=true}
+        {formlabel for='rKDownLoadModuleSortNewest' text=$sortingNewestLabel}
+        {formradiobutton id='rKDownLoadModuleSortDefault' value='default' dataField='sorting' group='data' mandatory=true}
         {gt text='Default' domain='rkdownloadmodule' assign='sortingDefaultLabel'}
-        {formlabel for='rKDownloadModuleSortDefault' text=$sortingDefaultLabel}
+        {formlabel for='rKDownLoadModuleSortDefault' text=$sortingDefaultLabel}
     </div>
 </div>
 
 <div class="form-group">
     {gt text='Amount' domain='rkdownloadmodule' assign='amountLabel'}
-    {formlabel for='rKDownloadModuleAmount' text=$amountLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKDownLoadModuleAmount' text=$amountLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formintinput id='rKDownloadModuleAmount' dataField='amount' group='data' mandatory=true maxLength=2}
+        {formintinput id='rKDownLoadModuleAmount' dataField='amount' group='data' mandatory=true maxLength=2}
     </div>
 </div>
 
 <div class="form-group">
     {gt text='Template' domain='rkdownloadmodule' assign='templateLabel'}
-    {formlabel for='rKDownloadModuleTemplate' text=$templateLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKDownLoadModuleTemplate' text=$templateLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
         {rkdownloadmoduleTemplateSelector assign='allTemplates'}
-        {formdropdownlist id='rKDownloadModuleTemplate' dataField='template' group='data' mandatory=true items=$allTemplates cssClass='form-control'}
+        {formdropdownlist id='rKDownLoadModuleTemplate' dataField='template' group='data' mandatory=true items=$allTemplates cssClass='form-control'}
     </div>
 </div>
 
-<div id="customTemplateArea" class="form-group" data-switch="rKDownloadModuleTemplate" data-switch-value="custom">
+<div id="customTemplateArea" class="form-group" data-switch="rKDownLoadModuleTemplate" data-switch-value="custom">
     {gt text='Custom template' domain='rkdownloadmodule' assign='customTemplateLabel'}
-    {formlabel for='rKDownloadModuleCustomTemplate' text=$customTemplateLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKDownLoadModuleCustomTemplate' text=$customTemplateLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formtextinput id='rKDownloadModuleCustomTemplate' dataField='customTemplate' group='data' mandatory=false maxLength=80 cssClass='form-control'}
+        {formtextinput id='rKDownLoadModuleCustomTemplate' dataField='customTemplate' group='data' mandatory=false maxLength=80 cssClass='form-control'}
         <span class="help-block">{gt text='Example' domain='rkdownloadmodule'}: <em>itemlist_[objectType]_display.tpl</em></span>
     </div>
 </div>
 
 <div class="form-group">
     {gt text='Filter (expert option)' domain='rkdownloadmodule' assign='filterLabel'}
-    {formlabel for='rKDownloadModuleFilter' text=$filterLabel cssClass='col-sm-3 control-label'}
+    {formlabel for='rKDownLoadModuleFilter' text=$filterLabel cssClass='col-sm-3 control-label'}
     <div class="col-sm-9">
-        {formtextinput id='rKDownloadModuleFilter' dataField='filter' group='data' mandatory=false maxLength=255 cssClass='form-control'}
+        {formtextinput id='rKDownLoadModuleFilter' dataField='filter' group='data' mandatory=false maxLength=255 cssClass='form-control'}
         <span class="help-block">
             <a class="fa fa-filter" data-toggle="modal" data-target="#filterSyntaxModal">{gt text='Show syntax examples' domain='rkdownloadmodule'}</a>
         </span>

@@ -1,10 +1,10 @@
 {# purpose of this template: build the form to edit an instance of file #}
-{% extends routeArea == 'admin' ? 'RKDownloadModule::adminBase.html.twig' : 'RKDownloadModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKDownLoadModule::adminBase.html.twig' : 'RKDownLoadModule::base.html.twig' %}
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKDownloadModule:js/RKDownloadModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKDownloadModule:js/RKDownloadModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKDownLoadModule:js/RKDownLoadModule.EditFunctions.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKDownLoadModule:js/RKDownLoadModule.Validation.js')) }}
 {% endblock %}
 
 {% block title mode == 'create' ? __('Create file') : __('Edit file') %}
@@ -12,7 +12,7 @@
 {% block content %}
     <div class="rkdownloadmodule-file rkdownloadmodule-edit">
 {% form_theme form with [
-    '@RKDownloadModule/Form/bootstrap_3.html.twig',
+    '@RKDownLoadModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
 {{ form_start(form, {attr: {id: 'fileEditForm'}}) }}
@@ -31,11 +31,11 @@
     {{ form_row(form.endDate) }}
 </fieldset>
 
-{% if featureActivationHelper.isEnabled(constant('RK\\DownloadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
-    {{ include('@RKDownloadModule/Helper/includeCategoriesEdit.html.twig', { obj: file }) }}
+{% if featureActivationHelper.isEnabled(constant('RK\\DownLoadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
+    {{ include('@RKDownLoadModule/Helper/includeCategoriesEdit.html.twig', { obj: file }) }}
 {% endif %}
 {% if mode != 'create' %}
-    {{ include('@RKDownloadModule/Helper/includeStandardFieldsEdit.html.twig', { obj: file }) }}
+    {{ include('@RKDownLoadModule/Helper/includeStandardFieldsEdit.html.twig', { obj: file }) }}
 {% endif %}
 
 {# include display hooks #}
@@ -92,7 +92,7 @@
         
                 function executeCustomValidationConstraints()
                 {
-                    rKDownloadPerformCustomValidationRules('file', '{% if mode != 'create' %}{{ file.id }}{% endif %}');
+                    rKDownLoadPerformCustomValidationRules('file', '{% if mode != 'create' %}{{ file.id }}{% endif %}');
                 }
         
                 function triggerFormValidation()
@@ -143,8 +143,8 @@
                             triggerFormValidation();
                         {% endif %}
         
-                        rKDownloadInitUploadField('rkdownloadmodule_file_myFile_myFile');
-                        rKDownloadInitDateField('rkdownloadmodule_file_startDate');
+                        rKDownLoadInitUploadField('rkdownloadmodule_file_myFile_myFile');
+                        rKDownLoadInitDateField('rkdownloadmodule_file_startDate');
                     });
                 })(jQuery);
     /* ]]> */

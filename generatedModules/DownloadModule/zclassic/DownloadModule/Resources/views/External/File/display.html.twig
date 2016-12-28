@@ -7,7 +7,7 @@
     </a>
     </p>
 {% endif %}
-{% if hasPermission('RKDownloadModule::', '::', 'ACCESS_EDIT') %}
+{% if hasPermission('RKDownLoadModule::', '::', 'ACCESS_EDIT') %}
     {# for normal users without edit permission show only the actual file per default #}
     {% if displayMode == 'embed' %}
         <p class="rkdownloadmodule-external-title">
@@ -33,7 +33,7 @@
     {#
         <p class="rkdownloadmodule-external-description">
             {% if file.myDescription is not empty %}{{ file.myDescription }}<br />{% endif %}
-            {% if featureActivationHelper.isEnabled(constant('RK\\DownloadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
+            {% if featureActivationHelper.isEnabled(constant('RK\\DownLoadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
                 <dl class="category-list">
                 {% for propName, catMapping in file.categories %}
                     <dt>{{ propName }}</dt>

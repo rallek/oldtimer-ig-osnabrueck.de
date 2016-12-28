@@ -12,7 +12,7 @@
     // Load plugin specific language pack
     tinymce.PluginManager.requireLangPack('download');
 
-    tinymce.create('tinymce.plugins.RKDownloadModulePlugin', {
+    tinymce.create('tinymce.plugins.RKDownLoadModulePlugin', {
         /**
          * Initializes the plugin, this will be executed after the plugin has been created.
          * This call is done before the editor instance has finished it's initialization so use the onInit event
@@ -22,8 +22,8 @@
          * @param {string} url Absolute URL to where the plugin is located
          */
         init: function (ed, url) {
-            // Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceRKDownloadModule');
-            ed.addCommand('mceRKDownloadModule', function () {
+            // Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceRKDownLoadModule');
+            ed.addCommand('mceRKDownLoadModule', function () {
                 ed.windowManager.open({
                     file: Routing.generate('rkdownloadmodule_external_finder', { objectType: 'file', editor: 'tinymce' }),
                     width: (screen.width * 0.75),
@@ -40,7 +40,7 @@
             // Register download button
             ed.addButton('download', {
                 title: 'download.desc',
-                cmd: 'mceRKDownloadModule',
+                cmd: 'mceRKDownLoadModule',
                 image: this.path.replace('docs/scribite/plugins/TinyMce/vendor/tinymce/plugins/rkdownloadmodule', 'public/images') + 'admin.png'
                 onPostRender: function() {
                     var ctrl = this;
@@ -75,7 +75,7 @@
          */
         getInfo: function () {
             return {
-                longname: 'RKDownloadModule for tinymce',
+                longname: 'RKDownLoadModule for tinymce',
                 author: 'Ralf Koester',
                 authorurl: 'http://oldtimer-ig-osnabrueck.de',
                 infourl: 'http://oldtimer-ig-osnabrueck.de',
@@ -85,5 +85,5 @@
     });
 
     // Register plugin
-    tinymce.PluginManager.add('download', tinymce.plugins.RKDownloadModulePlugin);
+    tinymce.PluginManager.add('download', tinymce.plugins.RKDownLoadModulePlugin);
 }());

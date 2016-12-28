@@ -8,19 +8,18 @@
     {{ pageAddAsset('stylesheet', asset('bootstrap-media-lightbox/bootstrap-media-lightbox.css')) }}
     {{ pageAddAsset('stylesheet', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.css')) }}
     {{ pageAddAsset('javascript', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKDownloadModule:js/RKDownloadModule.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKDownLoadModule:js/RKDownLoadModule.js')) }}
     {{ polyfill(['forms', 'forms-ext']) }}
 
     {# initialise additional gettext domain for translations within javascript #}
     {# blocked by https://github.com/zikula/core/issues/2601 #}
     {# commented out because not sure yet whether this is still required in 1.4.x #}
-    {# { pageAddVar('jsgettext', 'rkdownloadmodule_js:RKDownloadModule') } #}
+    {# { pageAddVar('jsgettext', 'rkdownloadmodule_js:RKDownLoadModule') } #}
 {% endblock %}
 
 {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
     {% block appTitle %}
-        <h2 class="userheader">{{ __('Download') }}</h2>
-        {{ moduleLinks(type='user', modName='RKDownloadModule') }}
+        {{ moduleHeader('user', '', '', false, true, false, true) }}
     {% endblock %}
 {% endif %}
 
@@ -40,7 +39,7 @@
         </p>
     {% elseif app.request.query.get('func') == 'edit' %}
         {{ pageAddAsset('stylesheet', 'style/core.css') }}
-        {{ pageAddAsset('stylesheet', zasset('@RKDownloadModule:css/style.css')) }}
+        {{ pageAddAsset('stylesheet', zasset('@RKDownLoadModule:css/style.css')) }}
         {{ pageAddAsset('stylesheet', zasset('@ZikulaThemeModule:css/form/style.css')) }}
         {{ pageAddAsset('stylesheet', zasset('@ZikulaAndreas08Theme:css/fluid960gs/reset.css')) }}
         {% set pageStyles %}

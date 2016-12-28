@@ -4,7 +4,7 @@
 /**
  * Resets the value of an upload / file input field.
  */
-function rKDownloadResetUploadField(fieldName)
+function rKDownLoadResetUploadField(fieldName)
 {
     jQuery('#' + fieldName).attr('type', 'input');
     jQuery('#' + fieldName).attr('type', 'file');
@@ -13,18 +13,18 @@ function rKDownloadResetUploadField(fieldName)
 /**
  * Initialises the reset button for a certain upload input.
  */
-function rKDownloadInitUploadField(fieldName)
+function rKDownLoadInitUploadField(fieldName)
 {
     jQuery('#' + fieldName + 'ResetVal').click( function (event) {
         event.stopPropagation();
-        rKDownloadResetUploadField(fieldName);
+        rKDownLoadResetUploadField(fieldName);
     }).removeClass('hidden');
 }
 
 /**
  * Resets the value of a date or datetime input field.
  */
-function rKDownloadResetDateField(fieldName)
+function rKDownLoadResetDateField(fieldName)
 {
     jQuery('#' + fieldName).val('');
     jQuery('#' + fieldName + 'cal').html(Zikula.__('No date set.', 'rkdownloadmodule_js'));
@@ -33,11 +33,11 @@ function rKDownloadResetDateField(fieldName)
 /**
  * Initialises the reset button for a certain date input.
  */
-function rKDownloadInitDateField(fieldName)
+function rKDownLoadInitDateField(fieldName)
 {
     jQuery('#' + fieldName + 'ResetVal').click( function (event) {
         event.stopPropagation();
-        rKDownloadResetDateField(fieldName);
+        rKDownLoadResetDateField(fieldName);
     }).removeClass('hidden');
 }
 

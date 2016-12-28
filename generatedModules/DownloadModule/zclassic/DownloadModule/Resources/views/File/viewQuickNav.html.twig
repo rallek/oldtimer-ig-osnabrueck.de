@@ -1,13 +1,13 @@
 {# purpose of this template: files view filter form #}
-{% if hasPermission('RKDownloadModule:File:', '::', 'ACCESS_EDIT') %}
+{% if hasPermission('RKDownLoadModule:File:', '::', 'ACCESS_EDIT') %}
     {% form_theme quickNavForm with [
         'bootstrap_3_layout.html.twig'
     ] %}
-    {{ form_start(quickNavForm, {attr: {id: 'rKDownloadModuleFileQuickNavForm', class: 'rkdownloadmodule-quicknav navbar-form', role: 'navigation'}}) }}
+    {{ form_start(quickNavForm, {attr: {id: 'rKDownLoadModuleFileQuickNavForm', class: 'rkdownloadmodule-quicknav navbar-form', role: 'navigation'}}) }}
     {{ form_errors(quickNavForm) }}
     <fieldset>
         <h3>{{ __('Quick navigation') }}</h3>
-        {% set categoriesEnabled = featureActivationHelper.isEnabled(constant('RK\\DownloadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
+        {% set categoriesEnabled = featureActivationHelper.isEnabled(constant('RK\\DownLoadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
         {% if (categoryFilter is defined and categoryFilter != true) or not categoriesEnabled %}
             <div class="hidden">
         {% endif %}
@@ -51,7 +51,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKDownloadInitQuickNavigation('file');
+                rKDownLoadInitQuickNavigation('file');
                 {% if searchFilter|default and searchFilter == false %}
                     {# we can hide the submit button if we have no quick search field #}
                     $('#rkdownloadmodule_filequicknav_updateview').addClass('hidden');

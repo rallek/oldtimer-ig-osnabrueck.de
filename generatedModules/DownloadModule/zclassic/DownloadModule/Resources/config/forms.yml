@@ -2,37 +2,37 @@ services:
     # Form types
     
     rk_download_module.form.type.filequicknav:
-        class: RK\DownloadModule\Form\Type\QuickNavigation\FileQuickNavType
+        class: RK\DownLoadModule\Form\Type\QuickNavigation\FileQuickNavType
         arguments: ["@translator.default", "@request_stack", "@rk_download_module.listentries_helper", "@rk_download_module.feature_activation_helper"]
         tags:
             - { name: form.type }
     
     rk_download_module.form.handler.file:
-        class: RK\DownloadModule\Form\Handler\File\EditHandler
+        class: RK\DownLoadModule\Form\Handler\File\EditHandler
         arguments: ["@service_container", "@translator.default", "@request_stack", "@router"]
         tags:
             - { name: form.type }
     
     rk_download_module.form.type.file:
-        class: RK\DownloadModule\Form\Type\FileType
+        class: RK\DownLoadModule\Form\Type\FileType
         arguments: ["@translator.default", "@rk_download_module.file_factory", "@rk_download_module.listentries_helper", "@rk_download_module.feature_activation_helper"]
         tags:
             - { name: form.type }
     
     rk_download_module.form.type.deleteentity:
-        class: RK\DownloadModule\Form\DeleteEntityType
+        class: RK\DownLoadModule\Form\DeleteEntityType
         arguments: ["@translator.default"]
         tags:
             - { name: form.type }
     
     rk_download_module.form.type.block.itemlist:
-        class: RK\DownloadModule\Block\Form\Type\ItemListBlockType
+        class: RK\DownLoadModule\Block\Form\Type\ItemListBlockType
         arguments: ["@translator.default"]
         tags:
             - { name: form.type }
     
     rk_download_module.form.type.filefinder:
-        class: RK\DownloadModule\Form\Type\Finder\FileFinderType
+        class: RK\DownLoadModule\Form\Type\Finder\FileFinderType
         arguments: ["@translator.default", "@rk_download_module.feature_activation_helper"]
         tags:
             - { name: form.type }

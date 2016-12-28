@@ -1,4 +1,5 @@
-application "Download" {
+application "DownLoad" {
+    documentation "A simple way to share some downloads. Categories are available"
     vendor "RK"
     author "Ralf Koester"
     email "ralf@familie-koester.de"
@@ -22,6 +23,7 @@ application "Download" {
         generateJsonTemplates false
         generateKmlTemplates false
         generateIcsTemplates false
+        versionAllGeneratedFiles false
         generateTests false
         writeModelToDocs true
     }

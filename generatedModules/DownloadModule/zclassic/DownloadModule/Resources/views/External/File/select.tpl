@@ -29,7 +29,7 @@
             {/if}
             <label for="{$baseID}_{$categorySelectorId}{$propertyName}"{$leftSide}>{$categoryLabel}:</label>
             &nbsp;
-            {selector_category name="`$baseID`_`$categorySelectorName``$propertyName`" field='id' selectedValue=$catIds.$propertyName categoryRegistryModule='RKDownloadModule' categoryRegistryTable=$objectType categoryRegistryProperty=$propertyName defaultText=$lblDefault editLink=false multipleSize=$categorySelectorSize cssClass='form-control'}
+            {selector_category name="`$baseID`_`$categorySelectorName``$propertyName`" field='id' selectedValue=$catIds.$propertyName categoryRegistryModule='RKDownLoadModule' categoryRegistryTable=$objectType categoryRegistryProperty=$propertyName defaultText=$lblDefault editLink=false multipleSize=$categorySelectorSize cssClass='form-control'}
             <br{$break} />
         </p>
     {/foreach}
@@ -69,7 +69,7 @@
 <p>
     <label for="{$baseID}SearchTerm"{$leftSide}>{gt text='Search for'}:</label>
     <input type="text" id="{$baseID}SearchTerm" name="q" class="form-control"{$rightSide} />
-    <input type="button" id="rKDownloadModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
+    <input type="button" id="rKDownLoadModuleSearchGo" name="gosearch" value="{gt text='Filter'}" class="btn btn-default" />
     <br{$break} />
 </p>
 <br />
@@ -79,7 +79,7 @@
 /* <![CDATA[ */
     ( function($) {
         $(document).ready(function() {
-            rKDownloadModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
+            rKDownLoadModule.itemSelector.onLoad('{{$baseID}}', {{$selectedId|default:0}});
         });
     })(jQuery);
 /* ]]> */

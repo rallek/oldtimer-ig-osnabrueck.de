@@ -1,6 +1,6 @@
 services:
     rk_download_module.link_container:
-        class: RK\DownloadModule\Container\LinkContainer
+        class: RK\DownLoadModule\Container\LinkContainer
         arguments: ["@translator.default", "@router", "@zikula_permissions_module.api.permission", "@rk_download_module.controller_helper", "@zikula_users_module.current_user"]
         tags:
             - { name: zikula.link_container }

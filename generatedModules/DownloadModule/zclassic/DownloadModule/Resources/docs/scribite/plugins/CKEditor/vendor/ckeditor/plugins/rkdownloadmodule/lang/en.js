@@ -1,4 +1,4 @@
 CKEDITOR.plugins.setLang('rkdownloadmodule', 'en', {
-    title: 'Insert RKDownloadModule object',
-    alt: 'Insert RKDownloadModule object'
+    title: 'Insert RKDownLoadModule object',
+    alt: 'Insert RKDownLoadModule object'
 });

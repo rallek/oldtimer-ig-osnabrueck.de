@@ -1,6 +1,6 @@
 'use strict';
 
-function rKDownloadCapitaliseFirstLetter(string)
+function rKDownLoadCapitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.substring(1);
 }
@@ -8,38 +8,38 @@ function rKDownloadCapitaliseFirstLetter(string)
 /**
  * Submits a quick navigation form.
  */
-function rKDownloadSubmitQuickNavForm(objectType)
+function rKDownLoadSubmitQuickNavForm(objectType)
 {
-    jQuery('#rkdownloadmodule' + rKDownloadCapitaliseFirstLetter(objectType) + 'QuickNavForm').submit();
+    jQuery('#rkdownloadmodule' + rKDownLoadCapitaliseFirstLetter(objectType) + 'QuickNavForm').submit();
 }
 
 /**
  * Initialise the quick navigation panel in list views.
  */
-function rKDownloadInitQuickNavigation(objectType)
+function rKDownLoadInitQuickNavigation(objectType)
 {
-    if (jQuery('#rkdownloadmodule' + rKDownloadCapitaliseFirstLetter(objectType) + 'QuickNavForm').length < 1) {
+    if (jQuery('#rkdownloadmodule' + rKDownLoadCapitaliseFirstLetter(objectType) + 'QuickNavForm').length < 1) {
         return;
     }
 
     var fieldPrefix = 'rkdownloadmodule_' + objectType.toLowerCase() + 'quicknav_';
     if (jQuery('#' + fieldPrefix + 'catid').length > 0) {
-        jQuery('#' + fieldPrefix + 'catid').change(function () { rKDownloadSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'catid').change(function () { rKDownLoadSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'sortBy').length > 0) {
-        jQuery('#' + fieldPrefix + 'sortBy').change(function () { rKDownloadSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'sortBy').change(function () { rKDownLoadSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'sortDir').length > 0) {
-        jQuery('#' + fieldPrefix + 'sortDir').change(function () { rKDownloadSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'sortDir').change(function () { rKDownLoadSubmitQuickNavForm(objectType); });
     }
     if (jQuery('#' + fieldPrefix + 'num').length > 0) {
-        jQuery('#' + fieldPrefix + 'num').change(function () { rKDownloadSubmitQuickNavForm(objectType); });
+        jQuery('#' + fieldPrefix + 'num').change(function () { rKDownLoadSubmitQuickNavForm(objectType); });
     }
 
     switch (objectType) {
     case 'file':
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
-            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKDownloadSubmitQuickNavForm(objectType); });
+            jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKDownLoadSubmitQuickNavForm(objectType); });
         }
         break;
     default:
@@ -50,7 +50,7 @@ function rKDownloadInitQuickNavigation(objectType)
 /**
  * Simulates a simple alert using bootstrap.
  */
-function rKDownloadSimpleAlert(beforeElem, title, content, alertId, cssClass)
+function rKDownLoadSimpleAlert(beforeElem, title, content, alertId, cssClass)
 {
     var alertBox;
 

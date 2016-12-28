@@ -1,6 +1,6 @@
 'use strict';
 
-function rKDownloadToday(format)
+function rKDownLoadToday(format)
 {
     var timestamp, todayDate, month, day, hours, minutes, seconds;
 
@@ -40,7 +40,7 @@ function rKDownloadToday(format)
 }
 
 // returns YYYY-MM-DD even if date is in DD.MM.YYYY
-function rKDownloadReadDate(val, includeTime)
+function rKDownLoadReadDate(val, includeTime)
 {
     // look if we have YYYY-MM-DD
     if (val.substr(4, 1) === '-' && val.substr(7, 1) === '-') {
@@ -58,7 +58,7 @@ function rKDownloadReadDate(val, includeTime)
     }
 }
 
-function rKDownloadValidateNoSpace(val)
+function rKDownLoadValidateNoSpace(val)
 {
     var valStr;
     valStr = new String(val);
@@ -66,7 +66,7 @@ function rKDownloadValidateNoSpace(val)
     return (valStr.indexOf(' ') === -1);
 }
 
-function rKDownloadValidateUploadExtension(val, elem)
+function rKDownLoadValidateUploadExtension(val, elem)
 {
     var fileExtension, allowedExtensions;
     if (val === '') {
@@ -81,11 +81,11 @@ function rKDownloadValidateUploadExtension(val, elem)
     return allowedExtensions.test(val);
 }
 
-function rKDownloadValidateDateRangeFile(val)
+function rKDownLoadValidateDateRangeFile(val)
 {
     var cmpVal, cmpVal2, result;
-    cmpVal = rKDownloadReadDate(jQuery("[id$='startDate']").val(), false);
-    cmpVal2 = rKDownloadReadDate(jQuery("[id$='endDate']").val(), false);
+    cmpVal = rKDownLoadReadDate(jQuery("[id$='startDate']").val(), false);
+    cmpVal2 = rKDownLoadReadDate(jQuery("[id$='endDate']").val(), false);
 
     if (typeof cmpVal == 'undefined' && typeof cmpVal2 == 'undefined') {
         result = true;
@@ -99,17 +99,17 @@ function rKDownloadValidateDateRangeFile(val)
 /**
  * Runs special validation rules.
  */
-function rKDownloadPerformCustomValidationRules(objectType, currentEntityId)
+function rKDownLoadPerformCustomValidationRules(objectType, currentEntityId)
 {
     jQuery('.validate-nospace').each( function() {
-        if (!rKDownloadValidateNoSpace(jQuery(this).val())) {
+        if (!rKDownLoadValidateNoSpace(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'This value must not contain spaces.'/*, 'rkdownloadmodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-upload').each( function() {
-        if (!rKDownloadValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
+        if (!rKDownLoadValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid file extension.'/*, 'rkdownloadmodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
@@ -117,7 +117,7 @@ function rKDownloadPerformCustomValidationRules(objectType, currentEntityId)
     });
     jQuery('.validate-daterange-file').each( function() {
         if (typeof jQuery(this).attr('id') != 'undefined') {
-        if (!rKDownloadValidateDateRangeFile(jQuery(this).val())) {
+        if (!rKDownLoadValidateDateRangeFile(jQuery(this).val())) {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'The start must be before the end.'/*, 'rkdownloadmodule_js')*/);
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');

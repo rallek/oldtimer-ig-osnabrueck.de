@@ -4,8 +4,8 @@
 <head>
     <title>{{ __('Search and select file') }}</title>
     {{ pageAddAsset('stylesheet', pagevars.homepath ~ 'style/core.css') }}
-    {{ pageAddAsset('stylesheet', zasset('@RKDownloadModule:css/style.css')) }}
-    {{ pageAddAsset('stylesheet', zasset('@RKDownloadModule:css/finder.css')) }}
+    {{ pageAddAsset('stylesheet', zasset('@RKDownLoadModule:css/style.css')) }}
+    {{ pageAddAsset('stylesheet', zasset('@RKDownLoadModule:css/finder.css')) }}
     <script type="text/javascript">/* <![CDATA[ */
         if (typeof(Zikula) == 'undefined') {var Zikula = {};}
         Zikula.Config = {'entrypoint': '{{ getModVar('ZConfig', 'entrypoint', 'index.php') }}', 'baseURL': '{{ app.request.getSchemeAndHttpHost() ~ '/' }}', 'baseURI': '{{ app.request.getBasePath() }}'}; /* ]]> */
@@ -15,25 +15,25 @@
     {{ pageAddAsset('javascript', asset('jquery/jquery.min.js')) }}
     {{ pageAddAsset('javascript', asset('bootstrap/js/bootstrap.min.js')) }}
     {#{ pageAddAsset('javascript', pagevars.homepath ~ 'javascript/helpers/Zikula.js') }#}
-    {{ pageAddAsset('javascript', zasset('@RKDownloadModule:js/RKDownloadModule.Finder.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKDownLoadModule:js/RKDownLoadModule.Finder.js')) }}
 </head>
 <body>
     <div class="container">
         {% form_theme finderForm with [
-            '@RKDownloadModule/Form/bootstrap_3.html.twig',
+            '@RKDownLoadModule/Form/bootstrap_3.html.twig',
             'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
         ] %}
-        {{ form_start(finderForm, {attr: { id: 'rKDownloadModuleSelectorForm' }}) }}
+        {{ form_start(finderForm, {attr: { id: 'rKDownLoadModuleSelectorForm' }}) }}
         {{ form_errors(finderForm) }}
         <fieldset>
             <legend>{{ __('Search and select file') }}</legend>
-            {% if featureActivationHelper.isEnabled(constant('RK\\DownloadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
+            {% if featureActivationHelper.isEnabled(constant('RK\\DownLoadModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'file') %}
                 {{ form_row(finderForm.categories) }}
             {% endif %}
             {{ form_row(finderForm.pasteas) }}
             <br />
             <div class="form-group">
-                <label for="rKDownloadModuleObjectId" class="col-sm-3 control-label">{{ __('File') }}:</label>
+                <label for="rKDownLoadModuleObjectId" class="col-sm-3 control-label">{{ __('File') }}:</label>
                 <div class="col-sm-9">
                     <div id="rkdownloadmoduleItemContainer">
                         <ul>
@@ -75,7 +75,7 @@
     /* <![CDATA[ */
         ( function($) {
             $(document).ready(function() {
-                rKDownloadModule.finder.onLoad();
+                rKDownLoadModule.finder.onLoad();
             });
         })(jQuery);
     /* ]]> */
@@ -84,7 +84,7 @@
     {#
     <div class="rkdownloadmodule-finderform">
         <fieldset>
-            {{ render(controller('RKDownloadModule:Admin:edit')) }}
+            {{ render(controller('RKDownLoadModule:Admin:edit')) }}
         </fieldset>
     </div>
     #}

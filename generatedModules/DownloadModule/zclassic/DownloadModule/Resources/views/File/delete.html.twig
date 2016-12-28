@@ -1,5 +1,5 @@
 {# purpose of this template: files delete confirmation view #}
-{% extends routeArea == 'admin' ? 'RKDownloadModule::adminBase.html.twig' : 'RKDownloadModule::base.html.twig' %}
+{% extends routeArea == 'admin' ? 'RKDownLoadModule::adminBase.html.twig' : 'RKDownLoadModule::base.html.twig' %}
 {% block title __('Delete file') %}
 {% block admin_page_icon 'trash-o' %}
 {% block content %}
@@ -7,7 +7,7 @@
         <p class="alert alert-warning">{{ __f('Do you really want to delete this file: "%name%" ?', {'%name%': file.getTitleFromDisplayPattern()}) }}</p>
 
         {% form_theme deleteForm with [
-            '@RKDownloadModule/Form/bootstrap_3.html.twig',
+            '@RKDownLoadModule/Form/bootstrap_3.html.twig',
             'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
         ] %}
         {{ form_start(deleteForm) }}
