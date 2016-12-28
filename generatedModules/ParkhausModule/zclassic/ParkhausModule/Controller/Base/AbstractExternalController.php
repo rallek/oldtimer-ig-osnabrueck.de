@@ -16,10 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-use ModUtil;
 use PageUtil;
-use ThemeUtil;
-use UserUtil;
 use Zikula\Core\Controller\AbstractController;
 use Zikula\Core\Response\PlainResponse;
 

@@ -22,6 +22,8 @@ application "Sponsoring" {
         generateJsonTemplates false
         generateKmlTemplates false
         generateIcsTemplates false
+        versionAllGeneratedFiles false
+        generateTests false
         writeModelToDocs true
     }
     entities {

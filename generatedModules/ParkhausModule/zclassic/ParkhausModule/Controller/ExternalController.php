@@ -70,7 +70,7 @@ class ExternalController extends AbstractExternalController
      */
     public function finderAction(Request $request, $objectType, $editor, $sort, $sortdir, $pos = 1, $num = 0)
     {
-        return parent::finderAction(Request $request, $objectType, $editor, $sort, $sortdir, $pos, $num);
+        return parent::finderAction($request, $objectType, $editor, $sort, $sortdir, $pos, $num);
     }
 
     // feel free to extend the external controller here

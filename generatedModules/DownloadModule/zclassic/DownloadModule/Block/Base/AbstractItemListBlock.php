@@ -104,7 +104,7 @@ abstract class AbstractItemListBlock extends AbstractBlockHandler
         if ($featureActivationHelper->isEnabled(FeatureActivationHelper::CATEGORIES, $objectType)) {
         $filteredEntities = [];
         foreach ($entities as $entity) {
-            if (ModUtil::apiFunc($this->name, 'category', 'hasPermission', array('entity' => $entity))) {
+            if ($this->get('rk_download_module.category_helper')->hasPermission($entity)) {
                 $filteredEntities[] = $entity;
             }
         }

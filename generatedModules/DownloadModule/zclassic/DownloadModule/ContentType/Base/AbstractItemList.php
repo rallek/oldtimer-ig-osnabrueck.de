@@ -265,7 +265,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
         if ($featureActivationHelper->isEnabled(FeatureActivationHelper::CATEGORIES, $this->objectType)) {
         $filteredEntities = [];
         foreach ($entities as $entity) {
-            if (ModUtil::apiFunc('RKDownLoadModule', 'category', 'hasPermission', array('entity' => $entity))) {
+            if ($this->get('rk_download_module.category_helper')->hasPermission($entity)) {
                 $filteredEntities[] = $entity;
             }
         }

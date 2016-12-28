@@ -81,7 +81,7 @@ function rKWebsiteHelperGetPasteSnippet(mode, itemId)
     pasteMode = jQuery("[id$='pasteas']").first().val();
 
     if (pasteMode === '2' || pasteMode !== '1') {
-        return itemId;
+        return '' + itemId;
     }
 
     // return link to item

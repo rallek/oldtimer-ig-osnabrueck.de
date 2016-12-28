@@ -157,8 +157,17 @@ abstract class AbstractCategoryHelper
     
         $objectType = $this->determineObjectType($objectType, 'retrieveCategoriesFromRequest');
         $properties = $this->getAllProperties($objectType);
+        $inputValues = null;
         $inputName = 'rkdownloadmodule_' . strtolower($objectType) . 'quicknav';
-        $inputValues = $dataSource->get($inputName);
+        if (!$dataSource->has($inputName)) {
+            $inputName = 'rkdownloadmodule_' . strtolower($objectType) . 'finder';
+        }
+        if ($dataSource->has($inputName)) {
+            $inputValues = $dataSource->get($inputName);
+        }
+        if (null === $inputValues) {
+            return $catIdsPerRegistry;
+        }
         $inputCategories = isset($inputValues['categories']) ? $inputValues['categories'] : [];
     
         if (!count($inputCategories)) {

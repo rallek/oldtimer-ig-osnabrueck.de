@@ -21,6 +21,7 @@ application "Team" {
         generateJsonTemplates false
         generateKmlTemplates false
         generateIcsTemplates false
+        versionAllGeneratedFiles false
         generateTests false
         writeModelToDocs true
     }

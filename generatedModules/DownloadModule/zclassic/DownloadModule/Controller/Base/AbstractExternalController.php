@@ -16,11 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-use CategoryUtil;
-use ModUtil;
 use PageUtil;
-use ThemeUtil;
-use UserUtil;
 use Zikula\Core\Controller\AbstractController;
 use Zikula\Core\Response\PlainResponse;
 use RK\DownLoadModule\Helper\FeatureActivationHelper;
@@ -30,13 +26,6 @@ use RK\DownLoadModule\Helper\FeatureActivationHelper;
  */
 abstract class AbstractExternalController extends AbstractController
 {
-    /**
-     * List of object types allowing categorisation.
-     *
-     * @var array
-     */
-    protected $categorisableObjectTypes;
-
 
     /**
      * Displays one item of a certain object type using a separate template for external usages.
@@ -133,11 +122,6 @@ abstract class AbstractExternalController extends AbstractController
         if (empty($editor) || !in_array($editor, ['tinymce', 'ckeditor'])) {
             return $this->__('Error: Invalid editor context given for external controller action.');
         }
-        
-        // fetch selected categories to reselect them in the output
-        // the actual filtering is done inside the repository class
-        $categoryHelper = $this->get('rk_download_module.category_helper');
-        $categoryIds = $categoryHelper->retrieveCategoriesFromRequest($objectType, 'GET');
         if (empty($sort) || !in_array($sort, $repository->getAllowedSortingFields())) {
             $sort = $repository->getDefaultSortingField();
         }
@@ -194,7 +178,7 @@ abstract class AbstractExternalController extends AbstractController
             if ($featureActivationHelper->isEnabled(FeatureActivationHelper::CATEGORIES, $objectType)) {
             $filteredEntities = [];
             foreach ($entities as $entity) {
-                if (ModUtil::apiFunc($this->name, 'category', 'hasPermission', array('entity' => $entity))) {
+                if ($this->get('rk_download_module.category_helper')->hasPermission($entity)) {
                     $filteredEntities[] = $entity;
                 }
             }
