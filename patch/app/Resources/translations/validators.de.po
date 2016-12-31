@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+
+msgid "Could not json_decode the string you entered."
+msgstr "Die Zeichenfolge konnte nicht json_decode werden."
+
+msgid "Length of field value must not be higher than 11."
+msgstr "Feldlänge darf nicht höher als 11 sein."
+
+msgid "Length of field value must not be higher than 9."
+msgstr "Feldlänge darf nicht höher als 9 sein."
+
+msgid "This option is mandatory."
+msgstr "Diese Option ist verpflichtend."

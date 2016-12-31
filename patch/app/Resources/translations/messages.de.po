@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+
+msgid "!="
+msgstr "!="
+
+msgid "!in_array"
+msgstr "!in_array"
+
+msgid ","
+msgstr ","
+
+msgid "/full/path/to/file.txt"
+msgstr "voller/Pfad/zur/Datei.txt"
+
+msgid "1"
+msgstr "1"
+
+msgid "10"
+msgstr "10"
+
+msgid "100"
+msgstr "100"
+
+msgid "15"
+msgstr "15"
+
+msgid "20"
+msgstr "20"
+
+msgid "30"
+msgstr "30"
+
+msgid "5"
+msgstr "5"
+
+msgid "50"
+msgstr "50"
+
+msgid "7bit"
+msgstr "7bit"
+
+msgid "8bit"
+msgstr "8bit"
+
+msgid ":"
+msgstr ":"
+
+msgid ";"
+msgstr ";"
+
+msgid "<"
+msgstr "<"
+
+msgid "<="
+msgstr "<="
+
+msgid "=="
+msgstr "=="
+
+msgid ">"
+msgstr ">"
+
+msgid ">="
+msgstr ">="
+
+msgid "Block type"
+msgstr "Block-Typ"
+
+msgid "Choose a block type"
+msgstr "Wählen Sie einen Blocktyp"
+
+msgid "Cram-MD5"
+msgstr "Cram-MD5"
+
+msgid "Custom filters"
+msgstr "Benutzerdefinierte Filter"
+
+msgid "Day"
+msgstr "Tag"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "HTML-formatted message"
+msgstr "HTML-formatierte Nachricht"
+
+msgid "InnoDB"
+msgstr "InnoDB"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Menu Name"
+msgstr "Menü Name"
+
+msgid "Month"
+msgstr "Monat"
+
+msgid "Multi-part message"
+msgstr "Mehrteilige Nachricht"
+
+msgid "MyISAM"
+msgstr "MyISAM"
+
+msgid "Options"
+msgstr "Optionen"
+
+msgid "PHP"
+msgstr "PHP"
+
+msgid "Plain"
+msgstr "Text"
+
+msgid "Plain-text message"
+msgstr "Einfache Textnachricht"
+
+msgid "SHA1"
+msgstr "SHA1"
+
+msgid "SHA256"
+msgstr "SHA256"
+
+msgid "SSL"
+msgstr "SSL"
+
+msgid "TLS"
+msgstr "TLS"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Year"
+msgstr "Jahr"
+
+msgid "base64"
+msgstr "base64"
+
+msgid "binary"
+msgstr "binary"
+
+msgid "http"
+msgstr "http"
+
+msgid "http://www.w3schools.com/html5/tag_label.asp"
+msgstr "http://www.w3schools.com/html5/tag_label.asp"
+
+msgid "https"
+msgstr "https"
+
+msgid "in_array"
+msgstr "in_array"
+
+msgid "label"
+msgstr "Bezeichnung"
+
+msgid "quoted-printable"
+msgstr "quoted-printable"
+
+msgid "tab"
+msgstr "tab"
