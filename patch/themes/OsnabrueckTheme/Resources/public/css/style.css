@@ -13,7 +13,16 @@ body {
 .bottom-space {
 	padding-bottom: 5px;
 }
-.min-height {
+.right-space {
+	padding-right: 10px;
+}
+.left-space {
+	padding-left: 10px;
+}
+.min-height .min-height-linker-text {
 	min-height: 60px;
+}
+.copyright {
+	font-size: 10px;
 }
 	
