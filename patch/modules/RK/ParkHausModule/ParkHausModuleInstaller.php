@@ -20,6 +20,10 @@ use RK\ParkHausModule\Base\AbstractParkHausModuleInstaller;
 class ParkHausModuleInstaller extends AbstractParkHausModuleInstaller
 {
     // feel free to extend the installer here
+public function install()
+
+{
+
 	
 	    $result = parent::install();
 
@@ -43,5 +47,8 @@ class ParkHausModuleInstaller extends AbstractParkHausModuleInstaller
  
 
     return $result;
-	
+
+}
+
+ 
 }
