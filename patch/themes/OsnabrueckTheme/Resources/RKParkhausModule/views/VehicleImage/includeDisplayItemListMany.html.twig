@@ -5,37 +5,34 @@
     {% set nolink = false %}
 {% endif %}
 {% if items|default and items|length > 0 %}
-<ul class="rkparkhausmodule-related-item-list vehicleImage">
-{% for item in items %}
-    {% if hasAdminPermission or item.workflowState == 'approved' or (item.workflowState == 'defered' and hasEditPermission and uid is defined and item.createdUserId == uid) %}
-    <li>
-{% spaceless %}
-{% if not nolink %}
-    <a href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'display', { 'id': item.id }) }}" title="{{ item.getTitleFromDisplayPattern()|e('html_attr') }}">
-{% endif %}
-    {{ item.getTitleFromDisplayPattern() }}
-{% if not nolink %}
-    </a>
-    <a id="vehicleImageItem{{ item.id }}Display" href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'display', { 'id': item.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window') }}" class="fa fa-search-plus hidden"></a>
-{% endif %}
-{% endspaceless %}
-{% if not nolink %}
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                rKParkHausInitInlineWindow($('#vehicleImageItem{{ item.id }}Display'), '{{ item.getTitleFromDisplayPattern()|e('js') }}');
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
-{% endif %}
-<br />
-{% if item.vehicleImage is not empty and item.vehicleImageMeta.isImage %}
-    <img src="{{ item.vehicleImage.getPathname()|imagine_filter('zkroot', relationThumbRuntimeOptions) }}" alt="{{ item.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ relationThumbRuntimeOptions.thumbnail.size[0] }}" height="{{ relationThumbRuntimeOptions.thumbnail.size[1] }}" class="img-rounded" />
-{% endif %}
-    </li>
-    {% endif %}
-{% endfor %}
-</ul>
+	{% for item in items %}
+	{% if item.viewImage %} 
+	{# hier muss ich noch die Permissions einbauen. Nur, wer einer bestimmten Gruppe angehört, soll dieses Bild sehen können, wenn item.viewImage false ist #}
+		{% if hasAdminPermission or item.workflowState == 'approved' or (item.workflowState == 'defered' and hasEditPermission and uid is defined and item.createdUserId == uid) %}
+			<div class="col-md-3 col-sm-6">
+			
+			{# Bild behandeln #}
+			
+				{% if not nolink %}
+					<a href="{{ item.vehicleImageUrl }}" title="{{ item.getTitleFromDisplayPattern()|e('html_attr') }}" {% if vehicle.vehicleImageMeta.isImage %} class="lightbox"{% endif %}>
+				{% endif %}
+				{% if item.vehicleImage is not empty and item.vehicleImageMeta.isImage %}
+					{% set relationThumbRuntimeOptions = attribute(thumbRuntimeOptions, 'vehicleTitleImage') %}
+					<img src="{{ item.vehicleImage.getPathname()|imagine_filter('zkroot', relationThumbRuntimeOptions) }}" alt="{{ item.getTitleFromDisplayPattern()|e('html_attr') }}" class="img-responsive center-block" />
+				{% endif %}
+				{% if not nolink %}
+					</a>
+				{% endif %}
+				<p class="copyright text-muted text-right">{{ __('Copyright') }}: {{ item.copyright }}</p>
+				
+			{# Überschrift behandeln #}
+				<h4>{{ item.getTitleFromDisplayPattern() }}</h4>
+
+			{# Beschreibung  behandeln #}
+				<p>{{ item.description() }}</p>
+
+			</div>
+		{% endif %}
+	{% endif %}
+	{% endfor %}
 {% endif %}
