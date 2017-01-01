@@ -58,6 +58,9 @@ function rKParkHausInitQuickNavigation(objectType)
         if (jQuery('#' + fieldPrefix + 'workflowState').length > 0) {
             jQuery('#' + fieldPrefix + 'workflowState').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
+        if (jQuery('#' + fieldPrefix + 'vehicleOwner').length > 0) {
+            jQuery('#' + fieldPrefix + 'vehicleOwner').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
+        }
         if (jQuery('#' + fieldPrefix + 'viewImage').length > 0) {
             jQuery('#' + fieldPrefix + 'viewImage').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
@@ -152,7 +155,7 @@ function rKParkHausToggleFlag(objectType, fieldName, itemId)
         data = res.data;
 
         /*if (data.message) {
-            rKParkHausSimpleAlert(jQuery('#toggle' + idSuffix), Zikula.__('Success', 'rkparkhausmodule_js'), data.message, 'toggle' + idSuffix + 'DoneAlert', 'success');
+            rKParkHausSimpleAlert(jQuery('#toggle' + idSuffix), Translator.__('Success'), data.message, 'toggle' + idSuffix + 'DoneAlert', 'success');
         }*/
 
         idSuffix = idSuffix.toLowerCase();

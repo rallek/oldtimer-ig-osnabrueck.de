@@ -104,8 +104,8 @@ abstract class AbstractUserListener implements EventSubscriberInterface
         
         // set last editor to guest (1) for all vehicles updated by this user
         $repo->updateLastEditor($uid, 1, $translator, $logger, $currentUserApi);
-        // set last editor to guest (1) for all vehicles affected by this user
-        $repo->updateUserField('owner', $uid, 1, $translator, $logger, $currentUserApi);
+        // set last editor to admin (2) for all vehicles affected by this user
+        $repo->updateUserField('owner', $uid, 2, $translator, $logger, $currentUserApi);
         
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname'), 'entities' => 'vehicles'];
         $logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);
@@ -116,6 +116,8 @@ abstract class AbstractUserListener implements EventSubscriberInterface
         
         // set last editor to guest (1) for all vehicle images updated by this user
         $repo->updateLastEditor($uid, 1, $translator, $logger, $currentUserApi);
+        // set last editor to admin (2) for all vehicle images affected by this user
+        $repo->updateUserField('vehicleOwner', $uid, 2, $translator, $logger, $currentUserApi);
         
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname'), 'entities' => 'vehicle images'];
         $logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);

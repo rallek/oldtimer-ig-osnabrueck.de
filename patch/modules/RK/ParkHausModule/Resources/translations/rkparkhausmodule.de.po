@@ -1,0 +1,538 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 2.0beta1\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+msgid ""
+"\"%bar\" will match \"FOObar\", \"Blubbar\" and so on, but not \"BarFoo\"."
+msgstr ""
+
+msgid "A filter consists of several statements."
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "All additional joined tables can be referenced by \"tblFoo\"."
+msgstr ""
+
+msgid "All items with a date in July 2016."
+msgstr ""
+
+msgid "All items with a date in year 2016."
+msgstr ""
+
+msgid "All items with date in the last year."
+msgstr ""
+
+msgid "All items with date of today."
+msgstr ""
+
+msgid "All items with date up from 24 hours ago."
+msgstr ""
+
+msgid "Allowed file extensions"
+msgstr ""
+
+msgid "Allowed file size"
+msgstr ""
+
+msgid "Also you can use \"%\" as placeholder."
+msgstr ""
+
+msgid "Back to paginated view"
+msgstr ""
+
+msgid "Brakes"
+msgstr ""
+
+msgid "Built"
+msgstr ""
+
+msgid "Choose action"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Combining statements"
+msgstr ""
+
+msgid "Compression"
+msgstr ""
+
+msgid "Confirmation prompt"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Copyright"
+msgstr ""
+
+msgid "Copyright title image"
+msgstr ""
+
+msgid "Copyright vehicle image"
+msgstr ""
+
+msgid "Create vehicle"
+msgstr ""
+
+msgid "Create vehicle image"
+msgstr ""
+
+msgid "Created by %user"
+msgstr ""
+
+msgid "Created by %user on %date"
+msgstr ""
+
+msgid "Created on %date"
+msgstr ""
+
+msgid "Creation"
+msgstr ""
+
+msgid "Creation and update"
+msgstr ""
+
+msgid "Current file"
+msgstr ""
+
+msgid "Cylinders"
+msgstr ""
+
+msgid "Date operators"
+msgstr ""
+
+msgid "Dates"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete content permanently."
+msgstr ""
+
+msgid "Delete vehicle image"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Displacement"
+msgstr ""
+
+msgid "Do you really want to delete this vehicle image: \"%name%\" ?"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid ""
+"Each statement is a set of field name, operator and value connected by a "
+"colon."
+msgstr ""
+
+msgid "Edit vehicle"
+msgstr ""
+
+msgid "Edit vehicle image"
+msgstr ""
+
+msgid ""
+"Either the first name is Peter and the house number of any address is below "
+"100 or the first name is Chris and the house number of any address is below "
+"150."
+msgstr ""
+
+msgid "Engine"
+msgstr ""
+
+msgid "Enter a part of the user name to search"
+msgstr ""
+
+msgid "Example"
+msgstr ""
+
+msgid "Filter statements"
+msgstr ""
+
+msgid "Filter syntax explained"
+msgstr ""
+
+msgid ""
+"For time periods: Begin of the given period. \"Date:ge:today\" matches all "
+"items with date of today or later."
+msgstr ""
+
+msgid ""
+"For time periods: Begin of the given period. \"Date:lt:today\" matches all "
+"items with date of yesterday or before."
+msgstr ""
+
+msgid ""
+"For time periods: End of the given period. \"Date:gt:today\" matches all "
+"items with date of tomorrow or later."
+msgstr ""
+
+msgid ""
+"For time periods: End of the given period. \"Date:le:today\" matches all "
+"items with date of today or before."
+msgstr ""
+
+msgid "Fuel"
+msgstr ""
+
+msgid "Fuel management"
+msgstr ""
+
+msgid "Furthermore you can use brackets to group statements."
+msgstr ""
+
+msgid "Gearbox"
+msgstr ""
+
+msgid "General syntax"
+msgstr ""
+
+msgid "Here you can define several options for image handling."
+msgstr ""
+
+msgid "Horse power"
+msgstr ""
+
+msgid "Image date"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Info field 1"
+msgstr ""
+
+msgid "Info field 2"
+msgstr ""
+
+msgid "Info field 3"
+msgstr ""
+
+msgid "Interior"
+msgstr ""
+
+msgid ""
+"It is possible to filter the list of retrieved items by specifying arbitrary "
+"filter expressions. This page shows how to create these expressions."
+msgstr ""
+
+msgid "Last update"
+msgstr ""
+
+msgid "Manage user"
+msgstr ""
+
+msgid "Manufacturer"
+msgstr ""
+
+msgid "Max speed"
+msgstr ""
+
+msgid "Model"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No entries found."
+msgstr ""
+
+msgid "No results found!"
+msgstr ""
+
+msgid "No vehicle images found."
+msgstr ""
+
+msgid "No vehicles found."
+msgstr ""
+
+msgid "Not set."
+msgstr ""
+
+msgid "Open file"
+msgstr ""
+
+msgid "Open quick view window"
+msgstr ""
+
+msgid "Operators"
+msgstr ""
+
+msgid "Owner"
+msgstr ""
+
+msgid ""
+"Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour"
+"\", \"min\" followed by a colon to search for a time period."
+msgstr ""
+
+msgid "Quick navigation"
+msgstr ""
+
+msgid "Read more"
+msgstr ""
+
+msgid "Really delete this vehicle image?"
+msgstr ""
+
+msgid "Really delete this vehicle?"
+msgstr ""
+
+msgid "Reset to empty value"
+msgstr ""
+
+msgid "Return control"
+msgstr ""
+
+msgid "Rim"
+msgstr ""
+
+msgid "Search and select vehicle"
+msgstr ""
+
+msgid "Search and select vehicle image"
+msgstr ""
+
+msgid "Search user"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid ""
+"Several statements can be connected by a comma , (AND) or an asterisk * (OR)."
+msgstr ""
+
+msgid "Show all entries"
+msgstr ""
+
+msgid "Show syntax examples"
+msgstr ""
+
+msgid "Show vehicle owner"
+msgstr ""
+
+msgid ""
+"So in our example we can reference Persons with \"tbl\" and addresses with "
+"\"tblAddresses\"."
+msgstr ""
+
+msgid "Sort by %s"
+msgstr ""
+
+msgid "Special field types"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Switch to users administration"
+msgstr ""
+
+msgid "Table aliases"
+msgstr ""
+
+msgid "The first name equals either Peter or Chris"
+msgstr ""
+
+msgid "The first name is Peter"
+msgstr ""
+
+msgid ""
+"The first name is Peter and the house number of any address is below 100."
+msgstr ""
+
+msgid ""
+"The following filters assume that you have a list of persons whereby each "
+"person can have many addresses."
+msgstr ""
+
+msgid "The house number of any address is lower than 100"
+msgstr ""
+
+msgid ""
+"The main table, that is the entity being the primary subject of the query, "
+"is always known directly. That means, you can prepend \"tbl.\", but you do "
+"not need to."
+msgstr ""
+
+msgid "The operator defines the condition type (equal, lower than, etc.)."
+msgstr ""
+
+msgid ""
+"The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo"
+"\"."
+msgstr ""
+
+msgid ""
+"The term \"foo\" will match \"fOo\", \"AnotherFoo\" and so on, but not "
+"\"FoObar\" or \"FooBlub\"."
+msgstr ""
+
+msgid ""
+"The term \"foo\" will match \"fOo\", \"FOObar\", \"FooBlub\" and so on, but "
+"not \"AnotherFoo\"."
+msgstr ""
+
+msgid "The value is scanned case insensitive."
+msgstr ""
+
+msgid ""
+"Thereby \"Foo\" does not mean the name of the joined entity, but the source "
+"or target alias of the corresponding relationship."
+msgstr ""
+
+msgid "This function requires JavaScript activated!"
+msgstr ""
+
+msgid ""
+"This has the advantage that it is possible to join a certain table multiple "
+"times. For example instead of having many addresses for a person one could "
+"also create two relationships for business and home addresses this way."
+msgstr ""
+
+msgid "This setting is disabled. Click here to enable it."
+msgstr ""
+
+msgid "This setting is enabled. Click here to disable it."
+msgstr ""
+
+msgid "Tire"
+msgstr ""
+
+msgid "Titel"
+msgstr ""
+
+msgid "Title image"
+msgstr ""
+
+msgid "Updated by %user"
+msgstr ""
+
+msgid "Updated by %user on %date"
+msgstr ""
+
+msgid "Updated on %date"
+msgstr ""
+
+msgid "Vehicle"
+msgstr ""
+
+msgid "Vehicle description"
+msgstr ""
+
+msgid "Vehicle description teaser"
+msgstr ""
+
+msgid "Vehicle image"
+msgstr ""
+
+msgid "Vehicle image list"
+msgstr ""
+
+msgid "Vehicle images"
+msgstr ""
+
+msgid "Vehicle list"
+msgstr ""
+
+msgid "Vehicle type"
+msgstr ""
+
+msgid "Vehicles"
+msgstr ""
+
+msgid "View image"
+msgstr ""
+
+msgid "Weight"
+msgstr ""
+
+msgid "Welcome to the vehicle image section of the Park haus application."
+msgstr ""
+
+msgid "Welcome to the vehicle section of the Park haus application."
+msgstr ""
+
+msgid ""
+"When filtering for dates you can use convenient extensions and even time "
+"periods."
+msgstr ""
+
+msgid "With selected vehicle images"
+msgstr ""
+
+msgid "With selected vehicles"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid ""
+"You can use relative time information according to the GNU Date Input "
+"Formats syntax."
+msgstr ""
+
+msgid ""
+"You may want to add some more images to your vehicle description. This album "
+"will collect all your images. You can add images later as well. The images "
+"can be restricted to be shown only to IG members."
+msgstr ""
+
+msgid "is Empty or NULL."
+msgstr ""
+
+msgid "is any middle coincidence."
+msgstr ""
+
+msgid "is equal."
+msgstr ""
+
+msgid "is greater or equal than."
+msgstr ""
+
+msgid "is greater than."
+msgstr ""
+
+msgid "is like."
+msgstr ""
+
+msgid "is lower or equal than."
+msgstr ""
+
+msgid "is lower than."
+msgstr ""
+
+msgid "is not empty and not NULL."
+msgstr ""
+
+msgid "is not equal."
+msgstr ""
+
+msgid "vehicle images"
+msgstr ""
+
+msgid "vehicles"
+msgstr ""

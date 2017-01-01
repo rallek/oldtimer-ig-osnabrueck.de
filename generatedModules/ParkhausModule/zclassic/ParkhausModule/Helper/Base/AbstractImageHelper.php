@@ -123,7 +123,7 @@ abstract class AbstractImageHelper
         if ($contextName == $this->name . '_ajax_autocomplete') {
             $options['thumbnail']['size'] = [100, 75];
         } elseif ($contextName == $this->name . '_relateditem') {
-            $options['thumbnail']['size'] = [50, 38];
+            $options['thumbnail']['size'] = [100, 75];
         } elseif ($context == 'controllerAction') {
             if (in_array($args['action'], ['view', 'display', 'edit'])) {
                 $fieldSuffix = ucfirst($objectType) . ucfirst($fieldName) . ucfirst($args['action']);

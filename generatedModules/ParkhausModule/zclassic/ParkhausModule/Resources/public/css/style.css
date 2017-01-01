@@ -127,3 +127,8 @@ div.rkparkhausmodule-view form.rkparkhausmodule-quicknav fieldset #num {
     width: 50px;
     text-align: right;
 }
+
+div.rkparkhausmodule-view .avatar img {
+    width: auto;
+    max-height: 24px;
+}

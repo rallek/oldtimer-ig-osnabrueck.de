@@ -62,6 +62,11 @@ abstract class AbstractAjaxController extends AbstractController
         return $this->getCommonUsersListAction($request);
     }
     
+    public function getVehicleImageVehicleOwnerUsersAction(Request $request)
+    {
+        return $this->getCommonUsersListAction($request);
+    }
+    
     /**
      * Retrieve a general purpose list of users.
      *

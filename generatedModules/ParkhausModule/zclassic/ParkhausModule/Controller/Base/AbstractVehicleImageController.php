@@ -175,7 +175,7 @@ abstract class AbstractVehicleImageController extends AbstractController
         if ($showAllEntries != 1) {
             // the number of items displayed on a page for pagination
             $resultsPerPage = $num;
-            if ($resultsPerPage == 0) {
+            if (in_array($resultsPerPage, [0, 10])) {
                 $resultsPerPage = $this->getVar($objectType . 'EntriesPerPage', 10);
             }
         }
@@ -199,6 +199,7 @@ abstract class AbstractVehicleImageController extends AbstractController
             new Column('workflowState'),
             new Column('titel'),
             new Column('vehicleImage'),
+            new Column('vehicleOwner'),
             new Column('vehicle'),
             new Column('createdUserId'),
             new Column('createdDate'),

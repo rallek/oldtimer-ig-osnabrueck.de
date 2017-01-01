@@ -56,6 +56,16 @@ class AjaxController extends AbstractAjaxController
     }
     
     /**
+     *
+     * @Route("/getVehicleImageVehicleOwnerUsers", options={"expose"=true})
+     * @Method("GET")
+     */
+    public function getVehicleImageVehicleOwnerUsersAction(Request $request)
+    {
+        return parent::getVehicleImageVehicleOwnerUsersAction($request);
+    }
+    
+    /**
      * Retrieve a general purpose list of users.
      *
      * @Route("/getCommonUsersList", options={"expose"=true})

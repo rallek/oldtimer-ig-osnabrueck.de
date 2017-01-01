@@ -96,21 +96,21 @@ function rKParkHausPerformCustomValidationRules(objectType, currentEntityId)
 {
     jQuery('.validate-nospace').each( function() {
         if (!rKParkHausValidateNoSpace(jQuery(this).val())) {
-            document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'This value must not contain spaces.'/*, 'rkparkhausmodule_js')*/);
+            document.getElementById(jQuery(this).attr('id')).setCustomValidity(Translator.__('This value must not contain spaces.'));
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-htmlcolour').each( function() {
         if (!rKParkHausValidateHtmlColour(jQuery(this).val())) {
-            document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid html colour code.'/*, 'rkparkhausmodule_js')*/);
+            document.getElementById(jQuery(this).attr('id')).setCustomValidity(Translator.__('Please select a valid html colour code.'));
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }
     });
     jQuery('.validate-upload').each( function() {
         if (!rKParkHausValidateUploadExtension(jQuery(this).val(), jQuery(this))) {
-            document.getElementById(jQuery(this).attr('id')).setCustomValidity(/*Zikula.__(*/'Please select a valid file extension.'/*, 'rkparkhausmodule_js')*/);
+            document.getElementById(jQuery(this).attr('id')).setCustomValidity(Translator.__('Please select a valid file extension.'));
         } else {
             document.getElementById(jQuery(this).attr('id')).setCustomValidity('');
         }

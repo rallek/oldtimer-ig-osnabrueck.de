@@ -63,6 +63,7 @@ abstract class AbstractAppSettingsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $this->addListviewsFields($builder, $options);
         $this->addImagesFields($builder, $options);
 
         $builder
@@ -80,6 +81,48 @@ abstract class AbstractAppSettingsType extends AbstractType
                     'class' => 'btn btn-default',
                     'formnovalidate' => 'formnovalidate'
                 ]
+            ])
+        ;
+    }
+
+    /**
+     * Adds fields for listviews fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addListviewsFields(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('vehicleEntriesPerPage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Vehicle entries per page') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The amount of vehicles shown per page')
+                ],
+                'help' => $this->__('The amount of vehicles shown per page'),
+                'required' => false,
+                'data' => $this->modVars['vehicleEntriesPerPage'],
+                'empty_data' => intval('10'),
+                'attr' => [
+                    'title' => $this->__('Enter the vehicle entries per page. Only digits are allowed.')
+                ],'max_length' => 255,
+                'scale' => 0
+            ])
+            ->add('vehicleImageEntriesPerPage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Vehicle image entries per page') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The amount of vehicle images shown per page')
+                ],
+                'help' => $this->__('The amount of vehicle images shown per page'),
+                'required' => false,
+                'data' => $this->modVars['vehicleImageEntriesPerPage'],
+                'empty_data' => intval('10'),
+                'attr' => [
+                    'title' => $this->__('Enter the vehicle image entries per page. Only digits are allowed.')
+                ],'max_length' => 255,
+                'scale' => 0
             ])
         ;
     }

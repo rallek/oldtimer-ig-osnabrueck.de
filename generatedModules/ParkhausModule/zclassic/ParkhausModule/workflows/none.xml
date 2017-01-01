@@ -81,6 +81,7 @@
             <description>Delete content permanently.</description>
             <permission>delete</permission>
             <state>deferred</state>
+            <nextState>deleted</nextState>
         
             <operation>delete</operation>
         </action>
@@ -90,6 +91,7 @@
             <description>Delete content permanently.</description>
             <permission>delete</permission>
             <state>approved</state>
+            <nextState>deleted</nextState>
         
             <operation>delete</operation>
         </action>

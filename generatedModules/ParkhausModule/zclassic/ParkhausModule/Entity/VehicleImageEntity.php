@@ -16,9 +16,9 @@ use RK\ParkHausModule\Entity\Base\AbstractVehicleImageEntity as BaseEntity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use DoctrineExtensions\StandardFields\Mapping\Annotation as ZK;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use RK\ParkHausModule\Traits\StandardFieldsTrait;
 
 /**
  * Entity class that defines the entity structure and behaviours.

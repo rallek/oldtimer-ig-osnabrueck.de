@@ -27,6 +27,7 @@ application "ParkHaus" {
         generatePoweredByBacklinksIntoFooterTemplates true
         generateTests false
     writeModelToDocs true
+    markFiles "ParkHausModuleInstaller.php, README.md"
     }
     entities {
         entity "vehicle" leading {
@@ -178,6 +179,7 @@ application "ParkHaus" {
                 user "owner" {
                     documentation "the owner of the vehicle if the owner is registered at our site"
                     mandatory false
+                onAccountDeletionCreator ADMIN
                 }
             ,
                 boolean "showVehicleOwner" nullable ajaxTogglability {
@@ -234,6 +236,12 @@ application "ParkHaus" {
                     defaultValue "true"
                     mandatory false
                     displayType VIEW
+                }
+            ,
+                user "vehicleOwner" {
+                    documentation "If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings."
+                    mandatory false
+                    onAccountDeletionCreator ADMIN
                 }
             }
             actions {

@@ -14,9 +14,9 @@ namespace RK\ParkHausModule\Entity\Base;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use DoctrineExtensions\StandardFields\Mapping\Annotation as ZK;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use RK\ParkHausModule\Traits\StandardFieldsTrait;
 
 use DataUtil;
 use FormUtil;
@@ -39,6 +39,12 @@ use Zikula\Core\Doctrine\EntityAccess;
  */
 abstract class AbstractVehicleImageEntity extends EntityAccess
 {
+    /**
+     * Hook standard fields behaviour.
+     * Updates createdUserId, updatedUserId, createdDate, updatedDate fields.
+     */
+    use StandardFieldsTrait;
+
     /**
      * @var string The tablename this object maps to
      */
@@ -146,36 +152,15 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      */
     protected $viewImage = true;
     
-    
     /**
+     * If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings.
      * @ORM\Column(type="integer")
-     * @ZK\StandardFields(type="userid", on="create")
-     * @var integer $createdUserId
+     * @Assert\Type(type="integer")
+     * @Assert\NotNull()
+     * @var integer $vehicleOwner
      */
-    protected $createdUserId;
+    protected $vehicleOwner = 0;
     
-    /**
-     * @ORM\Column(type="integer")
-     * @ZK\StandardFields(type="userid", on="update")
-     * @var integer $updatedUserId
-     */
-    protected $updatedUserId;
-    
-    /**
-     * @ORM\Column(type="datetime")
-     * @Gedmo\Timestampable(on="create")
-     * @Assert\DateTime()
-     * @var \DateTime $createdDate
-     */
-    protected $createdDate;
-    
-    /**
-     * @ORM\Column(type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     * @Assert\DateTime()
-     * @var \DateTime $updatedDate
-     */
-    protected $updatedDate;
     
     /**
      * Bidirectional - Many vehicleImages [vehicle images] are linked by one vehicle [vehicle] (OWNING SIDE).
@@ -492,91 +477,25 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
     }
     
     /**
-     * Returns the created user id.
+     * Returns the vehicle owner.
      *
      * @return integer
      */
-    public function getCreatedUserId()
+    public function getVehicleOwner()
     {
-        return $this->createdUserId;
+        return $this->vehicleOwner;
     }
     
     /**
-     * Sets the created user id.
+     * Sets the vehicle owner.
      *
-     * @param integer $createdUserId
+     * @param integer $vehicleOwner
      *
      * @return void
      */
-    public function setCreatedUserId($createdUserId)
+    public function setVehicleOwner($vehicleOwner)
     {
-        $this->createdUserId = $createdUserId;
-    }
-    
-    /**
-     * Returns the updated user id.
-     *
-     * @return integer
-     */
-    public function getUpdatedUserId()
-    {
-        return $this->updatedUserId;
-    }
-    
-    /**
-     * Sets the updated user id.
-     *
-     * @param integer $updatedUserId
-     *
-     * @return void
-     */
-    public function setUpdatedUserId($updatedUserId)
-    {
-        $this->updatedUserId = $updatedUserId;
-    }
-    
-    /**
-     * Returns the created date.
-     *
-     * @return \DateTime
-     */
-    public function getCreatedDate()
-    {
-        return $this->createdDate;
-    }
-    
-    /**
-     * Sets the created date.
-     *
-     * @param \DateTime $createdDate
-     *
-     * @return void
-     */
-    public function setCreatedDate($createdDate)
-    {
-        $this->createdDate = $createdDate;
-    }
-    
-    /**
-     * Returns the updated date.
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedDate()
-    {
-        return $this->updatedDate;
-    }
-    
-    /**
-     * Sets the updated date.
-     *
-     * @param \DateTime $updatedDate
-     *
-     * @return void
-     */
-    public function setUpdatedDate($updatedDate)
-    {
-        $this->updatedDate = $updatedDate;
+        $this->vehicleOwner = intval($vehicleOwner);
     }
     
     
@@ -642,6 +561,25 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
         }
     
         return $allowedValues;
+    }
+    
+    /**
+     * Checks whether the vehicleOwner field contains a valid user id.
+     * This method is used for validation.
+     *
+     * @Assert\IsTrue(message="This value must be a valid user id.")
+     *
+     * @return boolean True if data is valid else false
+     */
+    public function isVehicleOwnerUserValid()
+    {
+        if ($this['vehicleOwner'] < 1) {
+            return true;
+        }
+    
+        $uname = UserUtil::getVar('uname', $this['vehicleOwner']);
+    
+        return (!is_null($uname) && !empty($uname));
     }
     
     /**

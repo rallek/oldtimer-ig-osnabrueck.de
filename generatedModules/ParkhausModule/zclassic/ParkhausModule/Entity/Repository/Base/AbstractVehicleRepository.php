@@ -14,6 +14,7 @@ namespace RK\ParkHausModule\Entity\Repository\Base;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
+
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\Paginator;
@@ -38,6 +39,7 @@ use RK\ParkHausModule\Helper\ImageHelper;
  */
 abstract class AbstractVehicleRepository extends EntityRepository
 {
+    
     /**
      * @var string The default sorting field/expression
      */
@@ -47,6 +49,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
      * @var Request The request object given by the calling controller
      */
     protected $request;
+    
 
     /**
      * Retrieves an array with all fields which can be used for sorting instances.

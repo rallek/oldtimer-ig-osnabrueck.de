@@ -32,6 +32,8 @@
     {{ form_row(form.description) }}
     
     {{ form_row(form.viewImage) }}
+    
+    {{ form_row(form.vehicleOwner) }}
 </fieldset>
 
 {{ include(
@@ -129,6 +131,8 @@
                 ( function($) {
                     $(document).ready(function() {
                         $('a.lightbox').lightbox();
+                        // initialise auto completion for user fields
+                        rKParkHausInitUserField('rkparkhausmodule_vehicleimage_vehicleOwner', 'getVehicleImageVehicleOwnerUsers');
         
                         var allFormFields = $('#vehicleImageEditForm input, #vehicleImageEditForm select, #vehicleImageEditForm textarea');
                         allFormFields.change(executeCustomValidationConstraints);

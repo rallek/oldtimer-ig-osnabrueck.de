@@ -9,49 +9,71 @@
             'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
         ] %}
         {{ form_start(form) }}
-        {{ form_errors(form) }}
+        <ul class="nav nav-pills">
+        {% set tabTitle = __('Listviews') %}
+        <li class="active" data-toggle="pill"><a href="#tab1" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
         {% set tabTitle = __('Images') %}
-        <fieldset>
-            <legend>{{ tabTitle }}</legend>
-        
-            <p class="alert alert-info">{{ __('Here you can define several options for image handling.')|nl2br }}</p>
-        
-            {{ form_row(form.enableShrinkingForVehicleTitleImage) }}
-            <div id="shrinkDetailsVehicleTitleImage">
-            {{ form_row(form.shrinkWidthVehicleTitleImage) }}
-            {{ form_row(form.shrinkHeightVehicleTitleImage) }}
+        <li data-toggle="pill"><a href="#tab2" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
+        </ul>
+
+        {{ form_errors(form) }}
+        <div class="tab-content">
+            {% set tabTitle = __('Listviews') %}
+            <div role="tabpanel" class="tab-pane fade in active" id="tab1">
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+                
+                    <p class="alert alert-info">{{ __('Here you can configure parameters for list views.')|nl2br }}</p>
+                
+                    {{ form_row(form.vehicleEntriesPerPage) }}
+                    {{ form_row(form.vehicleImageEntriesPerPage) }}
+                </fieldset>
             </div>
-            {{ form_row(form.enableShrinkingForVehicleVehicleImage) }}
-            <div id="shrinkDetailsVehicleVehicleImage">
-            {{ form_row(form.shrinkWidthVehicleVehicleImage) }}
-            {{ form_row(form.shrinkHeightVehicleVehicleImage) }}
+            {% set tabTitle = __('Images') %}
+            <div role="tabpanel" class="tab-pane fade" id="tab2">
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+                
+                    <p class="alert alert-info">{{ __('Here you can define several options for image handling.')|nl2br }}</p>
+                
+                    {{ form_row(form.enableShrinkingForVehicleTitleImage) }}
+                    <div id="shrinkDetailsVehicleTitleImage">
+                    {{ form_row(form.shrinkWidthVehicleTitleImage) }}
+                    {{ form_row(form.shrinkHeightVehicleTitleImage) }}
+                    </div>
+                    {{ form_row(form.enableShrinkingForVehicleVehicleImage) }}
+                    <div id="shrinkDetailsVehicleVehicleImage">
+                    {{ form_row(form.shrinkWidthVehicleVehicleImage) }}
+                    {{ form_row(form.shrinkHeightVehicleVehicleImage) }}
+                    </div>
+                    {{ form_row(form.enableShrinkingForVehicleImageVehicleImage) }}
+                    <div id="shrinkDetailsVehicleImageVehicleImage">
+                    {{ form_row(form.shrinkWidthVehicleImageVehicleImage) }}
+                    {{ form_row(form.shrinkHeightVehicleImageVehicleImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeVehicle) }}
+                    {{ form_row(form.thumbnailWidthVehicleTitleImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleTitleImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleTitleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleTitleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleTitleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleTitleImageEdit) }}
+                    {{ form_row(form.thumbnailWidthVehicleVehicleImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleVehicleImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleVehicleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleVehicleImageEdit) }}
+                    {{ form_row(form.thumbnailModeVehicleImage) }}
+                    {{ form_row(form.thumbnailWidthVehicleImageVehicleImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleImageVehicleImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleImageVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleImageVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleImageVehicleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleImageVehicleImageEdit) }}
+                </fieldset>
             </div>
-            {{ form_row(form.enableShrinkingForVehicleImageVehicleImage) }}
-            <div id="shrinkDetailsVehicleImageVehicleImage">
-            {{ form_row(form.shrinkWidthVehicleImageVehicleImage) }}
-            {{ form_row(form.shrinkHeightVehicleImageVehicleImage) }}
-            </div>
-            {{ form_row(form.thumbnailModeVehicle) }}
-            {{ form_row(form.thumbnailWidthVehicleTitleImageView) }}
-            {{ form_row(form.thumbnailHeightVehicleTitleImageView) }}
-            {{ form_row(form.thumbnailWidthVehicleTitleImageDisplay) }}
-            {{ form_row(form.thumbnailHeightVehicleTitleImageDisplay) }}
-            {{ form_row(form.thumbnailWidthVehicleTitleImageEdit) }}
-            {{ form_row(form.thumbnailHeightVehicleTitleImageEdit) }}
-            {{ form_row(form.thumbnailWidthVehicleVehicleImageView) }}
-            {{ form_row(form.thumbnailHeightVehicleVehicleImageView) }}
-            {{ form_row(form.thumbnailWidthVehicleVehicleImageDisplay) }}
-            {{ form_row(form.thumbnailHeightVehicleVehicleImageDisplay) }}
-            {{ form_row(form.thumbnailWidthVehicleVehicleImageEdit) }}
-            {{ form_row(form.thumbnailHeightVehicleVehicleImageEdit) }}
-            {{ form_row(form.thumbnailModeVehicleImage) }}
-            {{ form_row(form.thumbnailWidthVehicleImageVehicleImageView) }}
-            {{ form_row(form.thumbnailHeightVehicleImageVehicleImageView) }}
-            {{ form_row(form.thumbnailWidthVehicleImageVehicleImageDisplay) }}
-            {{ form_row(form.thumbnailHeightVehicleImageVehicleImageDisplay) }}
-            {{ form_row(form.thumbnailWidthVehicleImageVehicleImageEdit) }}
-            {{ form_row(form.thumbnailHeightVehicleImageVehicleImageEdit) }}
-        </fieldset>
+        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
