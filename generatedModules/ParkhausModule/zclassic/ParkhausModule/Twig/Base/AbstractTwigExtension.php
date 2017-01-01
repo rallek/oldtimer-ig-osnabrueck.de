@@ -246,7 +246,7 @@ abstract class AbstractTwigExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function getUserAvatar($uid, $width = 0, $height = 0, $size = 0, $rating = '')
+    public function getUserAvatar($uid = 0, $width = 0, $height = 0, $size = 0, $rating = '')
     {
         $params = ['uid' => $uid];
         if ($width > 0) {

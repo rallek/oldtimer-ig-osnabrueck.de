@@ -19,4 +19,5 @@ use RK\ParkHausModule\Listener\Base\AbstractEntityLifecycleListener;
  */
 class EntityLifecycleListener extends AbstractEntityLifecycleListener
 {
+    // feel free to enhance this listener by custom actions
 }

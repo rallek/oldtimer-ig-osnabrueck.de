@@ -17,6 +17,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use RK\ParkHausModule\Traits\StandardFieldsTrait;
+use Zikula\UsersModule\Entity\UserEntity;
 
 use DataUtil;
 use FormUtil;

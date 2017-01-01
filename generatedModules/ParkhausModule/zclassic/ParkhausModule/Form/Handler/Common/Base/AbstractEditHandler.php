@@ -260,6 +260,9 @@ abstract class AbstractEditHandler
                 $lockingApi = $this->container->get('zikula_pagelock_module.api.locking');
                 $lockName = 'RKParkHausModule' . $this->objectTypeCapital . $this->createCompositeIdentifier();
                 $lockingApi->addLock($lockName, $this->getRedirectUrl(null));
+                // reload entity as the addLock call above has triggered the preUpdate event
+                $entityManager = $this->container->get('doctrine.orm.entity_manager');
+                $entityManager->refresh($entity);
             }
         } else {
             if (!$permissionApi->hasPermission($this->permissionComponent, '::', ACCESS_EDIT)) {

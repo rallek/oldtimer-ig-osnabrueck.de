@@ -1,5 +1,5 @@
 {# purpose of this template: reusable display of standard fields #}
-{% if (obj.createdUserId is defined and obj.createdUserId) or (obj.updatedUserId is defined and obj.updatedUserId) %}
+{% if obj.createdUserId|default or obj.updatedUserId|default %}
     {% if panel|default(false) == true %}
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -13,16 +13,14 @@
     <dl class="propertylist">
     {% if obj.createdUserId|default %}
         <dt>{{ __('Creation') }}</dt>
-        {% set cr_uname = rkparkhausmodule_userVar('uname', obj.createdUserId) %}
-        {% set profileLink = obj.createdUserId|profileLinkByUserId() %}
-        <dd class="avatar">{{ rkparkhausmodule_userAvatar(uid=obj.createdUserId, rating='g') }}</dd>
+        {% set profileLink = obj.createdUserId.getUid()|profileLinkByUserId() %}
+        <dd class="avatar">{{ rkparkhausmodule_userAvatar(uid=obj.createdUserId.id, rating='g') }}</dd>
         <dd>{{ __f('Created by %user on %date', {'%user': profileLink, '%date': obj.createdDate|localizeddate('medium', 'short')})|raw }}</dd>
     {% endif %}
     {% if obj.updatedUserId|default %}
         <dt>{{ __('Last update') }}</dt>
-        {% set lu_uname = rkparkhausmodule_userVar('uname', obj.updatedUserId) %}
-        {% set profileLink = obj.updatedUserId|profileLinkByUserId() %}
-        <dd class="avatar">{{ rkparkhausmodule_userAvatar(uid=obj.updatedUserId, rating='g') }}</dd>
+        {% set profileLink = obj.updatedUserId.getUid()|profileLinkByUserId() %}
+        <dd class="avatar">{{ rkparkhausmodule_userAvatar(uid=obj.updatedUserId.id, rating='g') }}</dd>
         <dd>{{ __f('Updated by %user on %date', {'%user': profileLink, '%date': obj.updatedDate|localizeddate('medium', 'short')})|raw }}</dd>
     {% endif %}
     </dl>

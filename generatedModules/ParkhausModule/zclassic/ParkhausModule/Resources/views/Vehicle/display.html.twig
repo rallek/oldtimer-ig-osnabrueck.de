@@ -213,7 +213,7 @@
         {% set permLevel = 'ACCESS_ADMIN' %}
     {% endif %}
     {% set mayManage = hasPermission('RKParkHausModule:Vehicle:', vehicle.id ~ '::', permLevel) %}
-    {% if mayManage or (uid is defined and vehicle.createdUserId is defined and vehicle.createdUserId == uid) %}
+    {% if mayManage or (currentUser|default and vehicle.createdUserId|default and vehicle.createdUserId.getUid() == currentUser.uid) %}
     <p class="managelink">
         {% set createTitle = __('Create vehicle image') %}
         <a href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'edit', { vehicle: vehicle.id }) }}" title="{{ createTitle }}" class="fa fa-plus">{{ createTitle }}</a>
