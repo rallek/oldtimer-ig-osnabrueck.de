@@ -192,11 +192,8 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
                 ],
                 'choices' =>             [
                     $this->__('Vehicle type') => 'vehicleType',
-                    $this->__('Manufacturer') => 'manufacturer',
-                    $this->__('Model') => 'model',
-                    $this->__('Owner') => 'owner',
                     $this->__('Creation date') => 'createdDate',
-                    $this->__('Creator') => 'createdUserId',
+                    $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate'
                 ],
                 'choices_as_values' => true,

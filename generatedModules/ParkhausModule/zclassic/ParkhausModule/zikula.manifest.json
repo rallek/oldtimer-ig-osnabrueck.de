@@ -10,7 +10,7 @@
         "icon": ""
     },
     "version": {
-        "semver": "0.2.0",
+        "semver": "0.3.0",
         "compatibility": ">=1.4.5 <2.0.0",
         "composerpath": "composer.json",
         "description": "This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album.",

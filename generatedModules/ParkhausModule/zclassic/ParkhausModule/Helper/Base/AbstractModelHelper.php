@@ -92,6 +92,6 @@ abstract class AbstractModelHelper
     
         $repository = $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
     
-        return ($repository->selectCount() > 0);
+        return $repository->selectCount() > 0;
     }
 }

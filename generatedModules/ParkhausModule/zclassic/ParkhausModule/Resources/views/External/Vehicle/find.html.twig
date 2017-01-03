@@ -37,18 +37,18 @@
                 <div class="col-sm-9">
                     <div id="rkparkhausmoduleItemContainer">
                         <ul>
-                        {% for vehicle in items %}
-                            <li>
-                                {% set itemId = vehicle.createCompositeIdentifier() %}
-                                <a href="#" data-itemid="{{ itemId }}">{{ vehicle.getTitleFromDisplayPattern() }}</a>
-                                <input type="hidden" id="url{{ itemId }}" value="{{ url('rkparkhausmodule_vehicle_display', { 'id': vehicle.id }) }}" />
-                                <input type="hidden" id="title{{ itemId }}" value="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" />
-                                <input type="hidden" id="desc{{ itemId }}" value="{% set description %}{% if vehicle.vehicleDescriptionTeaser is not empty %}{{ vehicle.vehicleDescriptionTeaser }}{% endif %}
-                                {% endset %}{{ description|striptags|e('html_attr') }}" />
-                            </li>
-                        {% else %}
-                            <li>{{ __('No entries found.') }}</li>
-                        {% endfor %}
+                            {% for vehicle in items %}
+                                <li>
+                                    {% set itemId = vehicle.createCompositeIdentifier() %}
+                                    <a href="#" data-itemid="{{ itemId }}">{{ vehicle.getTitleFromDisplayPattern() }}</a>
+                                    <input type="hidden" id="url{{ itemId }}" value="{{ url('rkparkhausmodule_vehicle_display', { 'id': vehicle.id }) }}" />
+                                    <input type="hidden" id="title{{ itemId }}" value="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" />
+                                    <input type="hidden" id="desc{{ itemId }}" value="{% set description %}{% if vehicle.vehicleDescriptionTeaser is not empty %}{{ vehicle.vehicleDescriptionTeaser }}{% endif %}
+                                    {% endset %}{{ description|striptags|e('html_attr') }}" />
+                                </li>
+                            {% else %}
+                                <li>{{ __('No entries found.') }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>

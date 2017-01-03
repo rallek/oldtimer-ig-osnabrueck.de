@@ -39,10 +39,6 @@
             <dt>{{ __('State') }}</dt>
             <dd>{{ vehicle.workflowState|rkparkhausmodule_listEntry('vehicle', 'workflowState') }}</dd>
         {% endif %}
-        {% if vehicle.vehicleType is not empty %}
-            <dt>{{ __('Vehicle type') }}</dt>
-            <dd>{{ vehicle.vehicleType|rkparkhausmodule_listEntry('vehicle', 'vehicleType') }}</dd>
-        {% endif %}
         {% if vehicle.titleImage is not empty %}
             <dt>{{ __('Title image') }}</dt>
             <dd>{% if vehicle.titleImage is not empty and vehicle.titleImageMeta|default %}
@@ -174,10 +170,35 @@
                 {{ vehicle.owner|profileLinkByUserId() }}
                 <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicle.owner, rating='g') }}</span>
             {% else %}
-              {{ rkparkhausmodule_userVar('uname', vehicle.owner) }}
+                {{ rkparkhausmodule_userVar('uname', vehicle.owner) }}
             {% endif %}
             {% else %}&nbsp;{% endif %}
             </dd>
+        {% endif %}
+        {% if vehicle.showVehicleOwner is not empty %}
+            <dt>{{ __('Show vehicle owner') }}</dt>
+            <dd>{% set itemid = vehicle.createCompositeIdentifier() %}
+            <a id="toggleShowVehicleOwner{{ itemid }}" href="javascript:void(0);" class="hidden">
+            {% if vehicle.showVehicleOwner %}
+                <i class="cursor-pointer fa fa-check" id="yesshowvehicleowner_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times hidden" id="noshowvehicleowner_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+            {% else %}
+                <i class="cursor-pointer fa fa-check hidden" id="yesshowvehicleowner_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times" id="noshowvehicleowner_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+            {% endif %}
+            </a>
+            <noscript><div id="noscriptShowVehicleOwner{{ itemid }}">
+                {% if vehicle.showVehicleOwner %}
+                    <i class="fa fa-check" title="{{ __('Yes') }}"></i>
+                {% else %}
+                    <i class="fa fa-times" title="{{ __('No') }}"></i>
+                {% endif %}
+            </div></noscript>
+            </dd>
+        {% endif %}
+        {% if vehicle.titleTextColor is not empty %}
+            <dt>{{ __('Title text color') }}</dt>
+            <dd>{{ vehicle.titleTextColor }}</dd>
         {% endif %}
         
     </dl>
@@ -213,7 +234,7 @@
         {% set permLevel = 'ACCESS_ADMIN' %}
     {% endif %}
     {% set mayManage = hasPermission('RKParkHausModule:Vehicle:', vehicle.id ~ '::', permLevel) %}
-    {% if mayManage or (currentUser|default and vehicle.createdUserId|default and vehicle.createdUserId.getUid() == currentUser.uid) %}
+    {% if mayManage or (currentUser|default and vehicle.createdBy|default and vehicle.createdBy.getUid() == currentUser.uid) %}
     <p class="managelink">
         {% set createTitle = __('Create vehicle image') %}
         <a href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'edit', { vehicle: vehicle.id }) }}" title="{{ createTitle }}" class="fa fa-plus">{{ createTitle }}</a>
@@ -231,16 +252,17 @@
 {% block footer %}
     {{ parent() }}
 
-
-{% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('a.lightbox').lightbox();
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
-{% endif %}
+    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            ( function($) {
+                $(document).ready(function() {
+                    $('a.lightbox').lightbox();
+                    {% set itemid = vehicle.createCompositeIdentifier() %}
+                    rKParkHausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('html_attr') }}');
+                });
+            })(jQuery);
+        /* ]]> */
+        </script>
+    {% endif %}
 {% endblock %}

@@ -63,6 +63,7 @@ abstract class AbstractAppSettingsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $this->addSettingsFields($builder, $options);
         $this->addListviewsFields($builder, $options);
         $this->addImagesFields($builder, $options);
 
@@ -81,6 +82,36 @@ abstract class AbstractAppSettingsType extends AbstractType
                     'class' => 'btn btn-default',
                     'formnovalidate' => 'formnovalidate'
                 ]
+            ])
+        ;
+    }
+
+    /**
+     * Adds fields for settings fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addSettingsFields(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('myDirectory', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
+                'label' => $this->__('My directory') . ':',
+                'required' => false,
+                'data' => $this->modVars['myDirectory'],
+                'empty_data' => '',
+                'attr' => [
+                    'title' => $this->__('Enter the my directory.')
+                ],'max_length' => 255
+            ])
+            ->add('myText', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
+                'label' => $this->__('My text') . ':',
+                'required' => false,
+                'data' => $this->modVars['myText'],
+                'empty_data' => '',
+                'attr' => [
+                    'title' => $this->__('Enter the my text.')
+                ],'max_length' => 255
             ])
         ;
     }

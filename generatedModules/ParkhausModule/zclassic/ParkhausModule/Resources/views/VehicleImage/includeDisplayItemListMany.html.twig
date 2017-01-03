@@ -7,7 +7,7 @@
 {% if items|default and items|length > 0 %}
 <ul class="rkparkhausmodule-related-item-list vehicleImage">
 {% for item in items %}
-    {% if hasAdminPermission or item.workflowState == 'approved' or (item.workflowState == 'defered' and hasEditPermission and currentUser|default and item.createdUserId.getUid() == currentUser.uid) %}
+    {% if hasAdminPermission or item.workflowState == 'approved' or (item.workflowState == 'defered' and hasEditPermission and currentUser|default and item.createdBy.getUid() == currentUser.uid) %}
     <li>
 {% spaceless %}
 {% if not nolink %}

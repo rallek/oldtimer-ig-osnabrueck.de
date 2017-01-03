@@ -162,17 +162,17 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
                 && $this->permissionApi->hasPermission($this->getBundleName() . ':Vehicle:', '::', $permLevel)) {
                 $links[] = [
                     'url' => $this->router->generate('rkparkhausmodule_vehicle_adminview'),
-                     'text' => $this->__('Vehicles'),
-                     'title' => $this->__('Vehicle list')
-                 ];
+                    'text' => $this->__('Vehicles'),
+                    'title' => $this->__('Vehicle list')
+                ];
             }
             if (in_array('vehicleImage', $allowedObjectTypes)
                 && $this->permissionApi->hasPermission($this->getBundleName() . ':VehicleImage:', '::', $permLevel)) {
                 $links[] = [
                     'url' => $this->router->generate('rkparkhausmodule_vehicleimage_adminview'),
-                     'text' => $this->__('Vehicle images'),
-                     'title' => $this->__('Vehicle image list')
-                 ];
+                    'text' => $this->__('Vehicle images'),
+                    'title' => $this->__('Vehicle image list')
+                ];
             }
             if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
                 $links[] = [
@@ -197,17 +197,17 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
                 && $this->permissionApi->hasPermission($this->getBundleName() . ':Vehicle:', '::', $permLevel)) {
                 $links[] = [
                     'url' => $this->router->generate('rkparkhausmodule_vehicle_view'),
-                     'text' => $this->__('Vehicles'),
-                     'title' => $this->__('Vehicle list')
-                 ];
+                    'text' => $this->__('Vehicles'),
+                    'title' => $this->__('Vehicle list')
+                ];
             }
             if (in_array('vehicleImage', $allowedObjectTypes)
                 && $this->permissionApi->hasPermission($this->getBundleName() . ':VehicleImage:', '::', $permLevel)) {
                 $links[] = [
                     'url' => $this->router->generate('rkparkhausmodule_vehicleimage_view'),
-                     'text' => $this->__('Vehicle images'),
-                     'title' => $this->__('Vehicle image list')
-                 ];
+                    'text' => $this->__('Vehicle images'),
+                    'title' => $this->__('Vehicle image list')
+                ];
             }
             if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
                 $links[] = [

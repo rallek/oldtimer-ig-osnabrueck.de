@@ -57,7 +57,7 @@
         <option value="showVehicleOwner"{if $sort eq 'showVehicleOwner'} selected="selected"{/if}>{gt text='Show vehicle owner'}</option>
         <option value="titleTextColor"{if $sort eq 'titleTextColor'} selected="selected"{/if}>{gt text='Title text color'}</option>
         <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>
-        <option value="createdUserId"{if $sort eq 'createdUserId'} selected="selected"{/if}>{gt text='Creator'}</option>
+        <option value="createdBy"{if $sort eq 'createdBy'} selected="selected"{/if}>{gt text='Creator'}</option>
         <option value="updatedDate"{if $sort eq 'updatedDate'} selected="selected"{/if}>{gt text='Update date'}</option>
     </select>
     <select id="{$baseID}SortDir" name="sortdir" class="form-control">

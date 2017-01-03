@@ -34,8 +34,6 @@ use Zikula\Core\Response\PlainResponse;
  */
 abstract class AbstractAjaxController extends AbstractController
 {
-
-
     /**
      * This is the default action handling the index area called without defining arguments.
      *
@@ -72,7 +70,7 @@ abstract class AbstractAjaxController extends AbstractController
      *
      * @param string $fragment The search fragment
      *
-     * @return PlainResponse
+     * @return JsonResponse
      */ 
     public function getCommonUsersListAction(Request $request)
     {
@@ -87,9 +85,12 @@ abstract class AbstractAjaxController extends AbstractController
             $fragment = $request->query->get('fragment', '');
         }
         
-        
-        $dql = 'SELECT u FROM Zikula\Module\UsersModule\Entity\UserEntity u WHERE u.uname LIKE :fragment';
-        $entityManager = $this->get('doctrine')->getManager();
+        $dql = '
+            SELECT u
+            FROM Zikula\Module\UsersModule\Entity\UserEntity u
+            WHERE u.uname LIKE :fragment
+        ';
+        $entityManager = $this->get('doctrine.orm.default_entity_manager');
         $query = $entityManager->createQuery($dql);
         $query->setParameter('fragment', '%' . $fragment . '%');
         $results = $query->getArrayResult();
@@ -151,8 +152,7 @@ abstract class AbstractAjaxController extends AbstractController
             $sort = $repository->getDefaultSortingField();
         }
         
-        $sdir = $request->request->getAlpha('sortdir', '');
-        $sdir = strtolower($sdir);
+        $sdir = strtolower($request->request->getAlpha('sortdir', ''));
         if ($sdir != 'asc' && $sdir != 'desc') {
             $sdir = 'asc';
         }
@@ -192,10 +192,10 @@ abstract class AbstractAjaxController extends AbstractController
     {
         $view = Zikula_View::getInstance('RKParkHausModule', false);
         $view->assign($objectType, $item);
-        $previewInfo = base64_encode($view->fetch('External/' . ucfirst($objectType) . '/info.tpl'));
+        $previewInfo = base64_encode($view->fetch('External/' . ucfirst($objectType) . '/info.html.twig'));
     
         $title = $item->getTitleFromDisplayPattern();
-        $description = ($descriptionField != '') ? $item[$descriptionField] : '';
+        $description = $descriptionField != '' ? $item[$descriptionField] : '';
     
         return [
             'id'          => $itemId,

@@ -36,7 +36,7 @@ function RKParkHausModule_workflow_none_permissioncheck($obj, $permLevel, $curre
     $result = SecurityUtil::checkPermission($component, $instance, $permLevel, $currentUser);
 
     // check whether the current user is the owner
-    if (!$result && isset($obj['createdUserId']) && $obj['createdUserId'] == $currentUser) {
+    if (!$result && isset($obj['createdBy']) && $obj['createdBy']->getUid() == $currentUser) {
         // allow author update operations for all states which occur before 'approved' in the object's life cycle.
         $result = in_array($actionId, ['initial', 'deferred', 'accepted']);
     }

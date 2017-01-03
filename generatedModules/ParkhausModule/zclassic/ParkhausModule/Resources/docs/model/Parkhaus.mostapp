@@ -4,7 +4,7 @@ application "ParkHaus" {
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://oldtimer-ig-osnabrueck.de"
-    version "0.2.0"
+    version "0.3.0"
     prefix "parkha"
     generatorSettings {
         settingsContainer "Settings"
@@ -40,6 +40,7 @@ application "ParkHaus" {
                 list "vehicleType" {
                     documentation "please select which type fits best"
                     defaultValue "Auto"
+                    displayType SORTING
                     items {
                         listItem "Auto",
                         listItem "Motorbike",
@@ -90,10 +91,12 @@ application "ParkHaus" {
                 },
                 string "manufacturer" {
                     documentation "if you do not know the manufacturer please type unknown."
+                displayType VIEW_DISPLAY
                 },
                 string "model" nullable {
                     documentation "vehicle version"
                     mandatory false
+                displayType VIEW_DISPLAY
                 }
             ,
                 string "built" nullable {
@@ -179,20 +182,21 @@ application "ParkHaus" {
                 user "owner" {
                     documentation "the owner of the vehicle if the owner is registered at our site"
                     mandatory false
-                onAccountDeletionCreator ADMIN
+                displayType DISPLAY
+                    onAccountDeletionCreator ADMIN
                 }
             ,
                 boolean "showVehicleOwner" nullable ajaxTogglability {
                     documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see."
                     defaultValue "false"
                     mandatory false
-                displayType VIEW
+                displayType DISPLAY
                 }
             ,
                 string "titleTextColor" nospace htmlcolour {
                     documentation "Please change if white is not fitting due to the color of the title image. Preferred you should use #000000 in case."
                     defaultValue "#ffffff"
-                    displayType NONE
+                    displayType DISPLAY
                 }
             }
             actions {
@@ -241,6 +245,7 @@ application "ParkHaus" {
                 user "vehicleOwner" {
                     documentation "If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings."
                     mandatory false
+                    displayType DISPLAY
                     onAccountDeletionCreator ADMIN
                 }
             }
@@ -261,6 +266,14 @@ application "ParkHaus" {
             target "vehicleImage"
             targetAlias "vehicleImages"
             editType ACTIVE_NONE_PASSIVE_CHOOSE
+        }
+    }
+    variables {
+        varContainer "Settings" {
+            vars {
+                filePathVar "myDirectory",
+                textVar "myText"
+            }
         }
     }
     controllers {

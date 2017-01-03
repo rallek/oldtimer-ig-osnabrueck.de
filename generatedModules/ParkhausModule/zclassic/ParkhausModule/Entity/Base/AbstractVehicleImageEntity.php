@@ -17,7 +17,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use RK\ParkHausModule\Traits\StandardFieldsTrait;
-use Zikula\UsersModule\Entity\UserEntity;
 
 use DataUtil;
 use FormUtil;
@@ -42,7 +41,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
 {
     /**
      * Hook standard fields behaviour.
-     * Updates createdUserId, updatedUserId, createdDate, updatedDate fields.
+     * Updates createdBy, updatedBy, createdDate, updatedDate fields.
      */
     use StandardFieldsTrait;
 
@@ -580,7 +579,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
     
         $uname = UserUtil::getVar('uname', $this['vehicleOwner']);
     
-        return (!is_null($uname) && !empty($uname));
+        return null !== $uname && !empty($uname);
     }
     
     /**
@@ -783,11 +782,12 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
             // reset upload fields
             $this->setVehicleImage('');
             $this->setVehicleImageMeta([]);
+            $this->setVehicleImageUrl('');
     
+            $this->setCreatedBy(null);
             $this->setCreatedDate(null);
-            $this->setCreatedUserId(null);
+            $this->setUpdatedBy(null);
             $this->setUpdatedDate(null);
-            $this->setUpdatedUserId(null);
     
         }
         // otherwise do nothing, do NOT throw an exception!

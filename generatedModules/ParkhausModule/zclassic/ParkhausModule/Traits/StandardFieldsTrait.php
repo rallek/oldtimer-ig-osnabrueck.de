@@ -15,6 +15,7 @@ namespace RK\ParkHausModule\Traits;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use Zikula\UsersModule\Entity\UserEntity;
 
 /**
  * Standard fields trait implementation class.
@@ -22,20 +23,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 trait StandardFieldsTrait
 {
     /**
-     * @var UserEntity
      * @Gedmo\Blameable(on="create")
      * @ORM\ManyToOne(targetEntity="Zikula\UsersModule\Entity\UserEntity")
      * @ORM\JoinColumn(referencedColumnName="uid")
-     */
-    protected $createdUserId;
-
-    /**
      * @var UserEntity
-     * @Gedmo\Blameable(on="update")
-     * @ORM\ManyToOne(targetEntity="Zikula\UsersModule\Entity\UserEntity")
-     * @ORM\JoinColumn(referencedColumnName="uid")
      */
-    protected $updatedUserId;
+    protected $createdBy;
 
     /**
      * @ORM\Column(type="datetime")
@@ -46,6 +39,14 @@ trait StandardFieldsTrait
     protected $createdDate;
 
     /**
+     * @Gedmo\Blameable(on="update")
+     * @ORM\ManyToOne(targetEntity="Zikula\UsersModule\Entity\UserEntity")
+     * @ORM\JoinColumn(referencedColumnName="uid")
+     * @var UserEntity
+     */
+    protected $updatedBy;
+
+    /**
      * @ORM\Column(type="datetime")
      * @Gedmo\Timestampable(on="update")
      * @Assert\DateTime()
@@ -54,47 +55,25 @@ trait StandardFieldsTrait
     protected $updatedDate;
 
     /**
-     * Returns the created user id.
+     * Returns the created by.
      *
-     * @return string
+     * @return UserEntity
      */
-    public function getCreatedUserId()
+    public function getCreatedBy()
     {
-        return $this->createdUserId;
+        return $this->createdBy;
     }
     
     /**
-     * Sets the created user id.
+     * Sets the created by.
      *
-     * @param string $createdUserId
+     * @param UserEntity $createdBy
      *
      * @return void
      */
-    public function setCreatedUserId($createdUserId)
+    public function setCreatedBy($createdBy)
     {
-        $this->createdUserId = $createdUserId;
-    }
-    
-    /**
-     * Returns the updated user id.
-     *
-     * @return string
-     */
-    public function getUpdatedUserId()
-    {
-        return $this->updatedUserId;
-    }
-    
-    /**
-     * Sets the updated user id.
-     *
-     * @param string $updatedUserId
-     *
-     * @return void
-     */
-    public function setUpdatedUserId($updatedUserId)
-    {
-        $this->updatedUserId = $updatedUserId;
+        $this->createdBy = $createdBy;
     }
     
     /**
@@ -117,6 +96,28 @@ trait StandardFieldsTrait
     public function setCreatedDate($createdDate)
     {
         $this->createdDate = $createdDate;
+    }
+    
+    /**
+     * Returns the updated by.
+     *
+     * @return UserEntity
+     */
+    public function getUpdatedBy()
+    {
+        return $this->updatedBy;
+    }
+    
+    /**
+     * Sets the updated by.
+     *
+     * @param UserEntity $updatedBy
+     *
+     * @return void
+     */
+    public function setUpdatedBy($updatedBy)
+    {
+        $this->updatedBy = $updatedBy;
     }
     
     /**

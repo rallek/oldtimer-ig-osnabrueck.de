@@ -117,7 +117,6 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
         
         // retrieve the upload handler
         $uploadManager = $serviceManager->get('rk_parkhaus_module.upload_handler');
-        
         $uploadFields = $this->getUploadFields($objectType);
         
         foreach ($uploadFields as $uploadField) {

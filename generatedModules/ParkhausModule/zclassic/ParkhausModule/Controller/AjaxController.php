@@ -69,11 +69,11 @@ class AjaxController extends AbstractAjaxController
      * Retrieve a general purpose list of users.
      *
      * @Route("/getCommonUsersList", options={"expose"=true})
-    
+     
      *
      * @param string $fragment The search fragment
      *
-     * @return PlainResponse
+     * @return JsonResponse
      */ 
     public function getCommonUsersListAction(Request $request)
     {
@@ -82,8 +82,8 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Retrieve item list for finder selections in Forms, Content type plugin and Scribite.
-     *
-     * @Route("/getItemListFinder", options={"expose"=true})
+    *
+    * @Route("/getItemListFinder", options={"expose"=true})
     
      *
      * @param string $ot      Name of currently used object type
@@ -99,8 +99,8 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Searches for entities for auto completion usage.
-     *
-     * @Route("/getItemListAutoCompletion", options={"expose"=true})
+    *
+    * @Route("/getItemListAutoCompletion", options={"expose"=true})
     
      *
      * @param Request $request Current request instance
@@ -114,9 +114,9 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Changes a given flag (boolean field) by switching between true and false.
-     *
-     * @Route("/toggleFlag", options={"expose"=true})
-     * @Method("POST")
+    *
+    * @Route("/toggleFlag", options={"expose"=true})
+    
      *
      * @param Request $request Current request instance
      *
@@ -128,5 +128,6 @@ class AjaxController extends AbstractAjaxController
     {
         return parent::toggleFlagAction($request);
     }
+
     // feel free to add your own controller methods here
 }

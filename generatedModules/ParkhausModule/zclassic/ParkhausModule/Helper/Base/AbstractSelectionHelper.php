@@ -203,8 +203,6 @@ abstract class AbstractSelectionHelper
             throw new \InvalidArgumentException($this->translator->__('Invalid object type received.'));
         }
     
-        $repository = $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
-    
-        return $repository;
+        return $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
     }
 }

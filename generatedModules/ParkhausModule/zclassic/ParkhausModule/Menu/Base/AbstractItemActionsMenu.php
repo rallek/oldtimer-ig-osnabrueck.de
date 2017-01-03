@@ -88,7 +88,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
                     $uid = $currentUserApi->get('uid');
                     // only allow editing for the owner or people with higher permissions
-                    if ($entity->getCreatedUserId() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
+                    if ($entity->getCreatedBy()->getUid() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
                         $menu->addChild($this->__('Edit'), [
                             'route' => 'rkparkhausmodule_vehicle_adminedit',
                             'routeParameters' => ['id' => $entity['id']]
@@ -114,7 +114,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $authAdmin = $permissionApi->hasPermission($component, $instance, ACCESS_ADMIN);
             
             $uid = $currentUserApi->get('uid');
-            if ($authAdmin || (isset($uid) && $entity->getCreatedUserId() != '' && $entity->getCreatedUserId() == $uid)) {
+            if ($authAdmin || (isset($uid) && && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
             
                 $title = $this->__('Create vehicle image');
                 $menu->addChild($title, [
@@ -136,7 +136,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
                     $uid = $currentUserApi->get('uid');
                     // only allow editing for the owner or people with higher permissions
-                    if ($entity->getCreatedUserId() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
+                    if ($entity->getCreatedBy()->getUid() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
                         $menu->addChild($this->__('Edit'), [
                             'route' => 'rkparkhausmodule_vehicle_edit',
                             'routeParameters' => ['id' => $entity['id']]
@@ -162,7 +162,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $authAdmin = $permissionApi->hasPermission($component, $instance, ACCESS_ADMIN);
             
             $uid = $currentUserApi->get('uid');
-            if ($authAdmin || (isset($uid) && $entity->getCreatedUserId() != '' && $entity->getCreatedUserId() == $uid)) {
+            if ($authAdmin || (isset($uid) && && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
             
                 $title = $this->__('Create vehicle image');
                 $menu->addChild($title, [
@@ -195,7 +195,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
                     $uid = $currentUserApi->get('uid');
                     // only allow editing for the owner or people with higher permissions
-                    if ($entity->getCreatedUserId() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
+                    if ($entity->getCreatedBy()->getUid() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
                         $menu->addChild($this->__('Edit'), [
                             'route' => 'rkparkhausmodule_vehicleimage_adminedit',
                             'routeParameters' => ['id' => $entity['id']]
@@ -236,7 +236,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
                     $uid = $currentUserApi->get('uid');
                     // only allow editing for the owner or people with higher permissions
-                    if ($entity->getCreatedUserId() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
+                    if ($entity->getCreatedBy()->getUid() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
                         $menu->addChild($this->__('Edit'), [
                             'route' => 'rkparkhausmodule_vehicleimage_edit',
                             'routeParameters' => ['id' => $entity['id']]

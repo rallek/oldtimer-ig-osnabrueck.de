@@ -29,7 +29,7 @@
 {% block footer %}
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
         <p class="text-center">
-            Powered by <a href="http://modulestudio.de" title="Get the MOST out of Zikula!">ModuleStudio 0.7.0</a>
+            Powered by <a href="http://modulestudio.de" title="Get the MOST out of Zikula!">ModuleStudio 0.7.1</a>
         </p>
     {% elseif app.request.query.get('func') == 'edit' %}
         {{ pageAddAsset('stylesheet', 'style/core.css') }}

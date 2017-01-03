@@ -72,30 +72,30 @@
                 {{ vehicleImage.vehicleOwner|profileLinkByUserId() }}
                 <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicleImage.vehicleOwner, rating='g') }}</span>
             {% else %}
-              {{ rkparkhausmodule_userVar('uname', vehicleImage.vehicleOwner) }}
+                {{ rkparkhausmodule_userVar('uname', vehicleImage.vehicleOwner) }}
             {% endif %}
             {% else %}&nbsp;{% endif %}
             </dd>
         {% endif %}
         {% if vehicleImage.vehicle|default %}
-        <dt>{{ __('Vehicle') }}</dt>
-        <dd>
-          {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-              <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id }) }}">{% spaceless %}
-                {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
-              {% endspaceless %}</a>
-              <a id="vehicleItem{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="hidden"><span class="fa fa-eye"></span></a>
-              <script type="text/javascript">
-              /* <![CDATA[ */
-                  ( function($) {
-                      $(document).ready(function() {
-                          rKParkHausInitInlineWindow($('vehicleItem{{ vehicleImage.vehicle.id }}Display'), '{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('js') }}');
-                      });
-                  })(jQuery);
-              /* ]]> */
-              </script>
+            <dt>{{ __('Vehicle') }}</dt>
+            <dd>
+              {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+                  <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id }) }}">{% spaceless %}
+                    {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
+                  {% endspaceless %}</a>
+                  <a id="vehicleItem{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="hidden"><span class="fa fa-eye"></span></a>
+                  <script type="text/javascript">
+                  /* <![CDATA[ */
+                      ( function($) {
+                          $(document).ready(function() {
+                              rKParkHausInitInlineWindow($('vehicleItem{{ vehicleImage.vehicle.id }}Display'), '{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('js') }}');
+                          });
+                      })(jQuery);
+                  /* ]]> */
+                  </script>
               {% else %}
-                {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
+                  {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
               {% endif %}
             </dd>
         {% endif %}
@@ -120,16 +120,15 @@
 {% block footer %}
     {{ parent() }}
 
-
-{% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('a.lightbox').lightbox();
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
-{% endif %}
+    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            ( function($) {
+                $(document).ready(function() {
+                    $('a.lightbox').lightbox();
+                });
+            })(jQuery);
+        /* ]]> */
+        </script>
+    {% endif %}
 {% endblock %}

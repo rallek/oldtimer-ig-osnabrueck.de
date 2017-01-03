@@ -13,16 +13,14 @@
 namespace RK\ParkHausModule\Helper\Base;
 
 use Zikula\Common\Translator\TranslatorInterface;
+use Zikula\Common\Translator\TranslatorTrait;
 
 /**
  * Helper base class for list field entries related methods.
  */
 abstract class AbstractListEntriesHelper
 {
-    /**
-     * @var TranslatorInterface
-     */
-    protected $translator;
+    use TranslatorTrait;
 
     /**
      * Constructor.
@@ -31,6 +29,16 @@ abstract class AbstractListEntriesHelper
      * @param TranslatorInterface $translator Translator service instance
      */
     public function __construct(TranslatorInterface $translator)
+    {
+        $this->setTranslator($translator);
+    }
+
+    /**
+     * Sets the translator.
+     *
+     * @param TranslatorInterface $translator Translator service instance
+     */
+    public function setTranslator(/*TranslatorInterface */$translator)
     {
         $this->translator = $translator;
     }
@@ -195,29 +203,29 @@ abstract class AbstractListEntriesHelper
         $states = [];
         $states[] = [
             'value'   => 'deferred',
-            'text'    => $this->translator->__('Deferred'),
-            'title'   => $this->translator->__('Content has not been submitted yet or has been waiting, but was rejected.'),
+            'text'    => $this->__('Deferred'),
+            'title'   => $this->__('Content has not been submitted yet or has been waiting, but was rejected.'),
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'approved',
-            'text'    => $this->translator->__('Approved'),
-            'title'   => $this->translator->__('Content has been approved and is available online.'),
+            'text'    => $this->__('Approved'),
+            'title'   => $this->__('Content has been approved and is available online.'),
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => '!deferred',
-            'text'    => $this->translator->__('All except deferred'),
-            'title'   => $this->translator->__('Shows all items except these which are deferred'),
+            'text'    => $this->__('All except deferred'),
+            'title'   => $this->__('Shows all items except these which are deferred'),
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => '!approved',
-            'text'    => $this->translator->__('All except approved'),
-            'title'   => $this->translator->__('Shows all items except these which are approved'),
+            'text'    => $this->__('All except approved'),
+            'title'   => $this->__('Shows all items except these which are approved'),
             'image'   => '',
             'default' => false
         ];
@@ -235,49 +243,49 @@ abstract class AbstractListEntriesHelper
         $states = [];
         $states[] = [
             'value'   => 'auto',
-            'text'    => $this->translator->__('Auto'),
+            'text'    => $this->__('Auto'),
             'title'   => '',
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'motorbike',
-            'text'    => $this->translator->__('Motorbike'),
+            'text'    => $this->__('Motorbike'),
             'title'   => '',
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'bicycle',
-            'text'    => $this->translator->__('Bicycle'),
+            'text'    => $this->__('Bicycle'),
             'title'   => '',
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'bus',
-            'text'    => $this->translator->__('Bus'),
+            'text'    => $this->__('Bus'),
             'title'   => '',
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'truck',
-            'text'    => $this->translator->__('Truck'),
+            'text'    => $this->__('Truck'),
             'title'   => '',
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'tractor',
-            'text'    => $this->translator->__('Tractor'),
+            'text'    => $this->__('Tractor'),
             'title'   => '',
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'miscellaneous',
-            'text'    => $this->translator->__('Miscellaneous'),
+            'text'    => $this->__('Miscellaneous'),
             'title'   => '',
             'image'   => '',
             'default' => false
@@ -296,29 +304,29 @@ abstract class AbstractListEntriesHelper
         $states = [];
         $states[] = [
             'value'   => 'deferred',
-            'text'    => $this->translator->__('Deferred'),
-            'title'   => $this->translator->__('Content has not been submitted yet or has been waiting, but was rejected.'),
+            'text'    => $this->__('Deferred'),
+            'title'   => $this->__('Content has not been submitted yet or has been waiting, but was rejected.'),
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => 'approved',
-            'text'    => $this->translator->__('Approved'),
-            'title'   => $this->translator->__('Content has been approved and is available online.'),
+            'text'    => $this->__('Approved'),
+            'title'   => $this->__('Content has been approved and is available online.'),
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => '!deferred',
-            'text'    => $this->translator->__('All except deferred'),
-            'title'   => $this->translator->__('Shows all items except these which are deferred'),
+            'text'    => $this->__('All except deferred'),
+            'title'   => $this->__('Shows all items except these which are deferred'),
             'image'   => '',
             'default' => false
         ];
         $states[] = [
             'value'   => '!approved',
-            'text'    => $this->translator->__('All except approved'),
-            'title'   => $this->translator->__('Shows all items except these which are approved'),
+            'text'    => $this->__('All except approved'),
+            'title'   => $this->__('Shows all items except these which are approved'),
             'image'   => '',
             'default' => false
         ];

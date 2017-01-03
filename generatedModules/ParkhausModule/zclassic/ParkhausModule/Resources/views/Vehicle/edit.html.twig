@@ -131,73 +131,72 @@
     {% set editImage = '<span class="fa fa-pencil-square-o"></span>' %}
     {% set deleteImage = '<span class="fa fa-trash-o"></span>' %}
     
-    
     <script type="text/javascript">
     /* <![CDATA[ */
         
-                var formButtons;
-                var triggerValidation = true;
+        var formButtons;
+        var triggerValidation = true;
         
-                function executeCustomValidationConstraints()
-                {
-                    rKParkHausPerformCustomValidationRules('vehicle', '{% if mode != 'create' %}{{ vehicle.id }}{% endif %}');
+        function executeCustomValidationConstraints()
+        {
+            rKParkHausPerformCustomValidationRules('vehicle', '{% if mode != 'create' %}{{ vehicle.id }}{% endif %}');
+        }
+        
+        function triggerFormValidation()
+        {
+            executeCustomValidationConstraints();
+            if (!document.getElementById('vehicleEditForm').checkValidity()) {
+                // This does not really submit the form,
+                // but causes the browser to display the error message
+                jQuery('#vehicleEditForm').find(':submit').first().click();
+            }
+        }
+        
+        function handleFormSubmit (event) {
+            if (triggerValidation) {
+                triggerFormValidation();
+                if (!document.getElementById('vehicleEditForm').checkValidity()) {
+                    event.preventDefault();
+                    return false;
                 }
+            }
         
-                function triggerFormValidation()
-                {
-                    executeCustomValidationConstraints();
-                    if (!document.getElementById('vehicleEditForm').checkValidity()) {
-                        // This does not really submit the form,
-                        // but causes the browser to display the error message
-                        jQuery('#vehicleEditForm').find(':submit').first().click();
+            // hide form buttons to prevent double submits by accident
+            formButtons.each(function (index) {
+                jQuery(this).addClass('hidden');
+            });
+        
+            return true;
+        }
+        
+        ( function($) {
+            $(document).ready(function() {
+                $('a.lightbox').lightbox();
+                // initialise auto completion for user fields
+                rKParkHausInitUserField('rkparkhausmodule_vehicle_owner', 'getVehicleOwnerUsers');
+        
+                var allFormFields = $('#vehicleEditForm input, #vehicleEditForm select, #vehicleEditForm textarea');
+                allFormFields.change(executeCustomValidationConstraints);
+        
+                formButtons = $('#vehicleEditForm .form-buttons input');
+                $('.btn-danger').first().bind('click keypress', function (event) {
+                    if (!window.confirm('{{ __('Really delete this vehicle?') }}')) {
+                        event.preventDefault();
                     }
-                }
+                });
+                $('#vehicleEditForm button[type=submit]').bind('click keypress', function (event) {
+                    triggerValidation = !$(this).attr('formnovalidate');
+                });
+                $('#vehicleEditForm').submit(handleFormSubmit);
         
-                function handleFormSubmit (event) {
-                    if (triggerValidation) {
-                        triggerFormValidation();
-                        if (!document.getElementById('vehicleEditForm').checkValidity()) {
-                            event.preventDefault();
-                            return false;
-                        }
-                    }
+                {% if mode != 'create' %}
+                    triggerFormValidation();
+                {% endif %}
         
-                    // hide form buttons to prevent double submits by accident
-                    formButtons.each(function (index) {
-                        jQuery(this).addClass('hidden');
-                    });
-        
-                    return true;
-                }
-        
-                ( function($) {
-                    $(document).ready(function() {
-                        $('a.lightbox').lightbox();
-                        // initialise auto completion for user fields
-                        rKParkHausInitUserField('rkparkhausmodule_vehicle_owner', 'getVehicleOwnerUsers');
-        
-                        var allFormFields = $('#vehicleEditForm input, #vehicleEditForm select, #vehicleEditForm textarea');
-                        allFormFields.change(executeCustomValidationConstraints);
-        
-                        formButtons = $('#vehicleEditForm .form-buttons input');
-                        $('.btn-danger').first().bind('click keypress', function (event) {
-                            if (!window.confirm('{{ __('Really delete this vehicle?') }}')) {
-                                event.preventDefault();
-                            }
-                        });
-                        $('#vehicleEditForm button[type=submit]').bind('click keypress', function (event) {
-                            triggerValidation = !$(this).attr('formnovalidate');
-                        });
-                        $('#vehicleEditForm').submit(handleFormSubmit);
-        
-                        {% if mode != 'create' %}
-                            triggerFormValidation();
-                        {% endif %}
-        
-                        rKParkHausInitUploadField('rkparkhausmodule_vehicle_titleImage_titleImage');
-                        rKParkHausInitUploadField('rkparkhausmodule_vehicle_vehicleImage_vehicleImage');
-                    });
-                })(jQuery);
+                rKParkHausInitUploadField('rkparkhausmodule_vehicle_titleImage_titleImage');
+                rKParkHausInitUploadField('rkparkhausmodule_vehicle_vehicleImage_vehicleImage');
+            });
+        })(jQuery);
     /* ]]> */
     </script>
 {% endblock %}

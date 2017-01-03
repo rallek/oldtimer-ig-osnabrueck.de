@@ -109,7 +109,7 @@ abstract class AbstractEditHandler extends EditHandler
     
         // only allow editing for the owner or people with higher permissions
         $uid = $this->container->get('zikula_users_module.current_user')->get('uid');
-        if (isset($entity['createdUserId']) && $entity['createdUserId'] != $uid) {
+        if (!method_exists($entity, 'getCreatedBy') || $entity->getCreatedBy()->getUid() != $uid) {
             $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
             if (!$permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)) {
                 throw new AccessDeniedException();
@@ -324,6 +324,7 @@ abstract class AbstractEditHandler extends EditHandler
                     }
                     return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_admindisplay', $urlArgs);
                 }
+    
                 return $this->getDefaultReturnUrl($args);
             case 'user':
                 return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_index');
@@ -336,6 +337,7 @@ abstract class AbstractEditHandler extends EditHandler
                     }
                     return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_display', $urlArgs);
                 }
+    
                 return $this->getDefaultReturnUrl($args);
             case 'adminViewVehicle':
                 return $this->router->generate('rkparkhausmodule_vehicle_adminview');
@@ -343,6 +345,7 @@ abstract class AbstractEditHandler extends EditHandler
                 if (!empty($this->relationPresets['vehicle'])) {
                     return $this->router->generate('rkparkhausmodule_vehicle_admindisplay',  ['id' => $this->relationPresets['vehicle']]);
                 }
+    
                 return $this->getDefaultReturnUrl($args);
             case 'userViewVehicle':
                 return $this->router->generate('rkparkhausmodule_vehicle_view');
@@ -350,6 +353,7 @@ abstract class AbstractEditHandler extends EditHandler
                 if (!empty($this->relationPresets['vehicle'])) {
                     return $this->router->generate('rkparkhausmodule_vehicle_display',  ['id' => $this->relationPresets['vehicle']]);
                 }
+    
                 return $this->getDefaultReturnUrl($args);
             default:
                 return $this->getDefaultReturnUrl($args);

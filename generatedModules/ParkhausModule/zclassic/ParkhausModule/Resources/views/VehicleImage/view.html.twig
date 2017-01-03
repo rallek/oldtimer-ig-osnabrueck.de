@@ -27,7 +27,6 @@
                 <col id="cTitel" />
                 <col id="cVehicleImage" />
                 <col id="cViewImage" />
-                <col id="cVehicleOwner" />
                 <col id="cVehicle" />
                 <col id="cItemActions" />
             </colgroup>
@@ -51,9 +50,6 @@
                 </th>
                 <th id="hViewImage" scope="col" class="text-center z-order-unsorted">
                     {{ __('View image') }}
-                </th>
-                <th id="hVehicleOwner" scope="col" class="text-left">
-                    <a href="{{ sort.vehicleOwner.url }}" title="{{ __f('Sort by %s', {'%s': 'vehicle owner'}) }}" class="{{ sort.vehicleOwner.class }}">{{ __('Vehicle owner') }}</a>
                 </th>
                 <th id="hVehicle" scope="col" class="text-left">
                     <a href="{{ sort.vehicle.url }}" title="{{ __f('Sort by %s', {'%s': 'vehicle'}) }}" class="{{ sort.vehicle.class }}">{{ __('Vehicle') }}</a>
@@ -89,7 +85,7 @@
                     {% endif %}
                 </td>
                 <td headers="hViewImage" class="text-center">
-                    {% set itemid = vehicleImage.id %}
+                    {% set itemid = vehicleImage.createCompositeIdentifier() %}
                     <a id="toggleViewImage{{ itemid }}" href="javascript:void(0);" class="hidden">
                     {% if vehicleImage.viewImage %}
                         <i class="cursor-pointer fa fa-check" id="yesviewimage_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
@@ -106,12 +102,6 @@
                             <i class="fa fa-times" title="{{ __('No') }}"></i>
                         {% endif %}
                     </div></noscript>
-                </td>
-                <td headers="hVehicleOwner" class="text-left">
-                    {% if vehicleImage.vehicleOwner > 0 %}
-                        {{ vehicleImage.vehicleOwner|profileLinkByUserId() }}
-                        <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicleImage.vehicleOwner, rating='g') }}</span>
-                    {% else %}&nbsp;{% endif %}
                 </td>
                 <td headers="hVehicle" class="text-left">
                     {% if vehicleImage.vehicle|default %}
@@ -143,7 +133,7 @@
             </tr>
         {% else %}
             <tr class="z-{{ routeArea == 'admin' ? 'admin' : 'data' }}tableempty">
-                <td class="text-left" colspan="{% if routeArea == 'admin' %}8{% else %}7{% endif %}">
+                <td class="text-left" colspan="{% if routeArea == 'admin' %}7{% else %}6{% endif %}">
             {{ __('No vehicle images found.') }}
               </td>
             </tr>
@@ -204,31 +194,31 @@
 {% block footer %}
     {{ parent() }}
 
-<script type="text/javascript">
-/* <![CDATA[ */
-    ( function($) {
-        $(document).ready(function() {
-            $('a.lightbox').lightbox();
-            $('.rkparkhausmodule-vehicleimage .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu dropdown-menu-right');
-            $('.rkparkhausmodule-vehicleimage .dropdown > ul a').each(function (index) {
-                $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            $(document).ready(function() {
+                $('a.lightbox').lightbox();
+                $('.rkparkhausmodule-vehicleimage .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu dropdown-menu-right');
+                $('.rkparkhausmodule-vehicleimage .dropdown > ul a').each(function (index) {
+                    $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
+                });
+                $('.rkparkhausmodule-vehicleimage .dropdown > ul a i').addClass('fa-fw');
+                $('.rkparkhausmodule-vehicleimage .dropdown-toggle').removeClass('hidden').dropdown();
+                {% for vehicleImage in items %}
+                    {% set itemid = vehicleImage.createCompositeIdentifier() %}
+                    rKParkHausInitToggle('vehicleImage', 'viewImage', '{{ itemid|e('js') }}');
+                {% endfor %}
+                {% if routeArea == 'admin' %}
+                    {# init the "toggle all" functionality #}
+                    if ($('#toggleVehicleImages').length > 0) {
+                        $('#toggleVehicleImages').click(function (event) {
+                            $('.vehicleimages-checkbox').prop('checked', $(this).prop('checked'));
+                        });
+                    }
+                {% endif %}
             });
-            $('.rkparkhausmodule-vehicleimage .dropdown > ul a i').addClass('fa-fw');
-            $('.rkparkhausmodule-vehicleimage .dropdown-toggle').removeClass('hidden').dropdown();
-            {% for vehicleImage in items %}
-                {% set itemid = vehicleImage.id %}
-                rKParkHausInitToggle('vehicleImage', 'viewImage', '{{ itemid|e('js') }}');
-            {% endfor %}
-            {% if routeArea == 'admin' %}
-                {# init the "toggle all" functionality #}
-                if ($('#toggleVehicleImages').length > 0) {
-                    $('#toggleVehicleImages').click(function (event) {
-                        $('.vehicleimages-checkbox').prop('checked', $(this).prop('checked'));
-                    });
-                }
-            {% endif %}
-        });
-    })(jQuery);
-/* ]]> */
-</script>
+        })(jQuery);
+    /* ]]> */
+    </script>
 {% endblock %}

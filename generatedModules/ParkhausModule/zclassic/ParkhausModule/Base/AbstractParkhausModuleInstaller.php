@@ -57,6 +57,8 @@ abstract class AbstractParkHausModuleInstaller extends AbstractExtensionInstalle
         }
     
         // set up all our vars with initial values
+        $this->setVar('myDirectory', '');
+        $this->setVar('myText', '');
         $this->setVar('vehicleEntriesPerPage', 10);
         $this->setVar('vehicleImageEntriesPerPage', 10);
         $this->setVar('enableShrinkingForVehicleTitleImage', false);
@@ -132,8 +134,8 @@ abstract class AbstractParkHausModuleInstaller extends AbstractExtensionInstalle
                 }
         }
     
-        // Note there are several helpers available for making migration of your extension easier.
-        // The following convenience methods are each responsible for a single aspect of upgrading to Zikula 1.4.0.
+        // Note there are several helpers available for making migrating your extension from Zikula 1.3 to 1.4 easier.
+        // The following convenience methods are each responsible for a single aspect of upgrading to Zikula 1.4.x.
     
         // here is a possible usage example
         // of course 1.2.3 should match the number you used for the last stable 1.3.x module version.

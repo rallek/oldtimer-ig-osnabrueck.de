@@ -405,7 +405,7 @@ abstract class AbstractEditHandler
             }
         }
     
-        if (is_null($entity)) {
+        if (null === $entity) {
             $factory = $this->container->get('rk_parkhaus_module.' . $this->objectType . '_factory');
             $createMethod = 'create' . ucfirst($this->objectType);
             $entity = $factory->$createMethod();
@@ -497,7 +497,7 @@ abstract class AbstractEditHandler
                     $urlArgs['_locale'] = $this->container->get('request_stack')->getMasterRequest()->getLocale();
                     $url = new RouteUrl('rkparkhausmodule_' . $this->objectType . '_display', $urlArgs);
                 }
-                if (!is_null($hookHelper)) {
+                if (null !== $hookHelper) {
                     $hookHelper->callProcessHooks($entity, $hookType, $url);
                 }
             }
@@ -585,9 +585,6 @@ abstract class AbstractEditHandler
     {
         // fetch posted data input values as an associative array
         $formData = $this->form->getData();
-    
-        if ($args['commandName'] != 'cancel') {
-        }
     
         if ($this->templateParameters['mode'] == 'create' && isset($this->form['repeatCreation']) && $this->form['repeatCreation']->getData() == 1) {
             $this->repeatCreateAction = true;

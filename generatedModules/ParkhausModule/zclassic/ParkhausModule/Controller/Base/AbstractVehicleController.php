@@ -198,12 +198,9 @@ abstract class AbstractVehicleController extends AbstractController
         $sortableColumns->addColumns([
             new Column('workflowState'),
             new Column('vehicleType'),
-            new Column('manufacturer'),
-            new Column('model'),
-            new Column('owner'),
-            new Column('createdUserId'),
+            new Column('createdBy'),
             new Column('createdDate'),
-            new Column('updatedUserId'),
+            new Column('updatedBy'),
             new Column('updatedDate'),
         ]);
         
@@ -346,7 +343,6 @@ abstract class AbstractVehicleController extends AbstractController
         $repository->setRequest($request);
         
         $entity = $vehicle;
-        
         
         $entity->initWorkflow();
         

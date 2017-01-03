@@ -199,11 +199,10 @@ abstract class AbstractVehicleImageController extends AbstractController
             new Column('workflowState'),
             new Column('titel'),
             new Column('vehicleImage'),
-            new Column('vehicleOwner'),
             new Column('vehicle'),
-            new Column('createdUserId'),
+            new Column('createdBy'),
             new Column('createdDate'),
-            new Column('updatedUserId'),
+            new Column('updatedBy'),
             new Column('updatedDate'),
         ]);
         
@@ -346,7 +345,6 @@ abstract class AbstractVehicleImageController extends AbstractController
         $repository->setRequest($request);
         
         $entity = $vehicleImage;
-        
         
         $entity->initWorkflow();
         
