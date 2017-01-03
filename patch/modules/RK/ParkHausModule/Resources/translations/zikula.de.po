@@ -1,0 +1,1419 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "All except approved"
+msgstr "Alle außer Freigegebene"
+
+msgid "All except deferred"
+msgstr "Alle außer zurückgestellte"
+
+msgid "Amount"
+msgstr "Anzahl"
+
+#, fuzzy
+msgid ""
+"An error occured during creation of the .htaccess file in directory \"%s\"."
+msgstr ""
+"An error occured during creation of the .htaccess file in directory \"%s\"."
+
+#, fuzzy
+msgid ""
+"An error was encountered while removing stored object workflows for the %s "
+"extension."
+msgstr ""
+"An error was encountered while removing stored object workflows for the %s "
+"extension."
+
+msgid "Approved"
+msgstr "Genehmigt"
+
+msgid "Ascending"
+msgstr "Aufsteigend"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Back to overview"
+msgstr "Zurück zur Übersicht"
+
+msgid "Backend"
+msgstr "Backend"
+
+msgid "Bicycle"
+msgstr "Fahrrad"
+
+msgid "Brakes"
+msgstr "Bremsen"
+
+msgid "Built"
+msgstr "Baujahr"
+
+msgid "Bus"
+msgstr "Bus"
+
+msgid "Bytes"
+msgstr "Bytes"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Change selection"
+msgstr "Ändere Auswahl"
+
+#, fuzzy
+msgid "Choose the thumbnail mode vehicle image."
+msgstr "Wählen Sie das thumbnail-Modus-Fahrzeug-Bild."
+
+#, fuzzy
+msgid "Choose the thumbnail mode vehicle."
+msgstr "Choose the thumbnail mode vehicle."
+
+#, fuzzy
+msgid "Choose the title text color of the vehicle"
+msgstr "Choose the title text color of the vehicle"
+
+#, fuzzy
+msgid "Choose the vehicle"
+msgstr "Choose the vehicle"
+
+#, fuzzy
+msgid "Choose the vehicle type"
+msgstr "Wählen Sie den Fahrzeugtyp"
+
+#, fuzzy
+msgid "Compression"
+msgstr "Kompression"
+
+#, fuzzy
+msgid "Configuration"
+msgstr "Configuration"
+
+#, fuzzy
+msgid "Content has been approved and is available online."
+msgstr "Content has been approved and is available online."
+
+#, fuzzy
+msgid ""
+"Content has not been submitted yet or has been waiting, but was rejected."
+msgstr ""
+"Content has not been submitted yet or has been waiting, but was rejected."
+
+#, fuzzy
+msgid "Copyright"
+msgstr "Copyright"
+
+#, fuzzy
+msgid "Copyright title image"
+msgstr "Copyright Titelbild"
+
+#, fuzzy
+msgid "Copyright vehicle image"
+msgstr "Copyright Fahrzeug Bild"
+
+#, fuzzy
+msgid "Create another item after save"
+msgstr "Create another item after save"
+
+#, fuzzy
+msgid "Create vehicle image"
+msgstr "Erstelle neues Fahrzeugbild"
+
+#, fuzzy
+msgid "Creation date"
+msgstr "Creation date"
+
+#, fuzzy
+msgid "Creator"
+msgstr "Creator"
+
+#, fuzzy
+msgid "Custom template"
+msgstr "Custom template"
+
+#, fuzzy
+msgid "Cylinders"
+msgstr "Zylinder"
+
+#, fuzzy
+msgid "Default"
+msgstr "Default"
+
+#, fuzzy
+msgid "Defer"
+msgstr "Defer"
+
+#, fuzzy
+msgid "Defer content for later submission."
+msgstr "Defer content for later submission."
+
+#, fuzzy
+msgid "Deferred"
+msgstr "Deferred"
+
+#, fuzzy
+msgid "Delete"
+msgstr "Delete"
+
+#, fuzzy
+msgid "Delete content permanently."
+msgstr "Inhalt dauerhaft löschen."
+
+#, fuzzy
+msgid "Delete existing file"
+msgstr "Delete existing file"
+
+#, fuzzy
+msgid "Delete this file ?"
+msgstr "Delete this file ?"
+
+#, fuzzy
+msgid "Delete this vehicle image"
+msgstr "Dieses Bild löschen?"
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Deleted"
+
+#, fuzzy
+msgid "Descending"
+msgstr "Descending"
+
+#, fuzzy
+msgid "Description"
+msgstr "Description"
+
+#, fuzzy
+msgid "Details"
+msgstr "Details"
+
+#, fuzzy
+msgid "Displacement"
+msgstr "Hubraum"
+
+#, fuzzy
+msgid "Display list of RKParkHausModule objects."
+msgstr "Display list of RKParkhausModule objects."
+
+#, fuzzy
+msgid "Display or link a single RKParkHausModule object."
+msgstr "Display or link a single RKParkhausModule object."
+
+#, fuzzy
+msgid "Doctrine Exception"
+msgstr "Doctrine Exception"
+
+#, fuzzy
+msgid "Done! Item created."
+msgstr "Done! Item created."
+
+#, fuzzy
+msgid "Done! Item deleted."
+msgstr "Done! Item deleted."
+
+#, fuzzy
+msgid "Done! Item updated."
+msgstr "Done! Item updated."
+
+#, fuzzy
+msgid "Done! Module configuration updated."
+msgstr "Done! Module configuration updated."
+
+#, fuzzy
+msgid "Done! Vehicle created."
+msgstr "Done! Vehicle created."
+
+#, fuzzy
+msgid "Done! Vehicle deleted."
+msgstr "Done! Vehicle deleted."
+
+#, fuzzy
+msgid "Done! Vehicle image created."
+msgstr "Fertig! Fahrzeug-Bild erstellt."
+
+#, fuzzy
+msgid "Done! Vehicle image deleted."
+msgstr "Fertig! Fahrzeug Bild gelöscht."
+
+#, fuzzy
+msgid "Done! Vehicle image updated."
+msgstr "Fertig! Fahrzeug Bild aktualisiert."
+
+#, fuzzy
+msgid "Done! Vehicle updated."
+msgstr "Done! Vehicle updated."
+
+#, fuzzy
+msgid "Edit"
+msgstr "Edit"
+
+#, fuzzy
+msgid "Edit this vehicle"
+msgstr "Fahrzeug bearbeiten"
+
+#, fuzzy
+msgid "Edit this vehicle image"
+msgstr "Dieses Fahrzeug-Bild bearbeiten"
+
+#, fuzzy
+msgid "Enable shrinking for vehicle image vehicle image"
+msgstr "Aktivieren Sie für Fahrzeug Bild Fahrzeug Bild verkleinern"
+
+#, fuzzy
+msgid "Enable shrinking for vehicle title image"
+msgstr "Enable shrinking for vehicle title image"
+
+#, fuzzy
+msgid "Enable shrinking for vehicle vehicle image"
+msgstr "Enable shrinking for vehicle vehicle image"
+
+#, fuzzy
+msgid "Engine"
+msgstr "Motor"
+
+#, fuzzy
+msgid "Enter the brakes of the vehicle"
+msgstr "Enter the brakes of the vehicle"
+
+#, fuzzy
+msgid "Enter the built of the vehicle"
+msgstr "Enter the built of the vehicle"
+
+#, fuzzy
+msgid "Enter the compression of the vehicle"
+msgstr "Enter the compression of the vehicle"
+
+#, fuzzy
+msgid "Enter the copyright of the vehicle image"
+msgstr "Geben Sie das Copyright der Fahrzeug-Bild"
+
+#, fuzzy
+msgid "Enter the copyright title image of the vehicle"
+msgstr "Enter the copyright title image of the vehicle"
+
+#, fuzzy
+msgid "Enter the copyright vehicle image of the vehicle"
+msgstr "Enter the copyright vehicle image of the vehicle"
+
+#, fuzzy
+msgid "Enter the cylinders of the vehicle"
+msgstr "Enter the cylinders of the vehicle"
+
+#, fuzzy
+msgid "Enter the description of the vehicle image"
+msgstr "Geben Sie die Beschreibung des Bildes Fahrzeug"
+
+#, fuzzy
+msgid "Enter the displacement of the vehicle"
+msgstr "Enter the displacement of the vehicle"
+
+#, fuzzy
+msgid "Enter the engine of the vehicle"
+msgstr "Enter the engine of the vehicle"
+
+#, fuzzy
+msgid "Enter the fuel management of the vehicle"
+msgstr "Enter the fuel management of the vehicle"
+
+#, fuzzy
+msgid "Enter the fuel of the vehicle"
+msgstr "Enter the fuel of the vehicle"
+
+#, fuzzy
+msgid "Enter the gearbox of the vehicle"
+msgstr "Enter the gearbox of the vehicle"
+
+#, fuzzy
+msgid "Enter the horse power of the vehicle"
+msgstr "Geben Sie die Pferdestärken des Fahrzeugs"
+
+#, fuzzy
+msgid "Enter the image date of the vehicle image"
+msgstr "Geben Sie das Bild der Fahrzeug-Bild"
+
+#, fuzzy
+msgid "Enter the info field 1 of the vehicle"
+msgstr "Enter the info field 1 of the vehicle"
+
+#, fuzzy
+msgid "Enter the info field 2 of the vehicle"
+msgstr "Enter the info field 2 of the vehicle"
+
+#, fuzzy
+msgid "Enter the info field 3 of the vehicle"
+msgstr "Enter the info field 3 of the vehicle"
+
+#, fuzzy
+msgid "Enter the interior of the vehicle"
+msgstr "Enter the interior of the vehicle"
+
+#, fuzzy
+msgid "Enter the manufacturer of the vehicle"
+msgstr "Enter the manufacturer of the vehicle"
+
+#, fuzzy
+msgid "Enter the max speed of the vehicle"
+msgstr "Enter the max speed of the vehicle"
+
+#, fuzzy
+msgid "Enter the model of the vehicle"
+msgstr "Enter the model of the vehicle"
+
+#, fuzzy
+msgid "Enter the owner of the vehicle"
+msgstr "Geben Sie der Eigentümer des Fahrzeugs"
+
+#, fuzzy
+msgid "Enter the rim of the vehicle"
+msgstr "Enter the rim of the vehicle"
+
+#, fuzzy
+msgid ""
+"Enter the shrink height vehicle image vehicle image. Only digits are allowed."
+msgstr ""
+"Geben Sie das schrumpfen Höhe Fahrzeug Bild Fahrzeug Bild. Nur Ziffern sind "
+"erlaubt."
+
+#, fuzzy
+msgid "Enter the shrink height vehicle title image. Only digits are allowed."
+msgstr "Enter the shrink height vehicle title image. Only digits are allowed."
+
+#, fuzzy
+msgid "Enter the shrink height vehicle vehicle image. Only digits are allowed."
+msgstr ""
+"Enter the shrink height vehicle vehicle image. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the shrink width vehicle image vehicle image. Only digits are allowed."
+msgstr ""
+"Geben Sie die Verkleinerung breite Fahrzeug Bild Fahrzeug Bild. Nur Ziffern "
+"sind erlaubt."
+
+#, fuzzy
+msgid "Enter the shrink width vehicle title image. Only digits are allowed."
+msgstr "Enter the shrink width vehicle title image. Only digits are allowed."
+
+#, fuzzy
+msgid "Enter the shrink width vehicle vehicle image. Only digits are allowed."
+msgstr "Enter the shrink width vehicle vehicle image. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle image vehicle image display. Only digits "
+"are allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bilddarstellung. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle image vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bild bearbeiten. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle image vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bildansicht. Nur "
+"Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle title image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle title image edit. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image edit. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle title image view. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image view. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle vehicle image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle vehicle image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle vehicle image edit. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle vehicle image view. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle image vehicle image display. Only digits "
+"are allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bilddarstellung. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle image vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht breite Fahrzeug Bild Fahrzeug Bild bearbeiten. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle image vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bildansicht. Nur "
+"Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle title image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle title image edit. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image edit. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle title image view. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image view. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle vehicle image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle vehicle image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle vehicle image edit. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle vehicle image view. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid "Enter the tire of the vehicle"
+msgstr "Enter the tire of the vehicle"
+
+#, fuzzy
+msgid "Enter the titel of the vehicle image"
+msgstr "Geben Sie den Titel des Bildes Fahrzeug"
+
+#, fuzzy
+msgid "Enter the title image of the vehicle"
+msgstr "Enter the title image of the vehicle"
+
+#, fuzzy
+msgid "Enter the vehicle description of the vehicle"
+msgstr "Enter the vehicle description of the vehicle"
+
+#, fuzzy
+msgid "Enter the vehicle description teaser of the vehicle"
+msgstr "Enter the vehicle description teaser of the vehicle"
+
+#, fuzzy
+msgid "Enter the vehicle image of the vehicle"
+msgstr "Enter the vehicle image of the vehicle"
+
+#, fuzzy
+msgid "Enter the vehicle image of the vehicle image"
+msgstr "Geben Sie die Fahrzeug-Bild des Fahrzeug-Bildes"
+
+#, fuzzy
+msgid "Enter the weight of the vehicle"
+msgstr "Enter the weight of the vehicle"
+
+#, fuzzy
+msgid "Error! Could not determine workflow actions."
+msgstr "Error! Could not determine workflow actions."
+
+#, fuzzy
+msgid "Error! Could not load the associated workflow."
+msgstr "Error! Could not load the associated workflow."
+
+#, fuzzy
+msgid "Error! Could not remove stored workflow. Deletion has been aborted."
+msgstr "Error! Could not remove stored workflow. Deletion has been aborted."
+
+#, fuzzy
+msgid "Error! Creation attempt failed."
+msgstr "Error! Creation attempt failed."
+
+#, fuzzy
+msgid "Error! Deletion attempt failed."
+msgstr "Error! Deletion attempt failed."
+
+#, fuzzy
+msgid "Error! Invalid identifier received."
+msgstr "Error! Invalid identifier received."
+
+#, fuzzy
+msgid "Error! It is not allowed to delete this vehicle image."
+msgstr "Fehler! Es ist nicht erlaubt, dieses Fahrzeug-Bild zu löschen."
+
+#, fuzzy
+msgid ""
+"Error! This file type is not allowed. Please choose another file format."
+msgstr ""
+"Error! This file type is not allowed. Please choose another file format."
+
+#, fuzzy
+msgid "Error! This file type seems not to be a valid image."
+msgstr "Error! This file type seems not to be a valid image."
+
+#, fuzzy
+msgid "Error! Update attempt failed."
+msgstr "Error! Update attempt failed."
+
+#, fuzzy
+msgid "Error: Invalid editor context given for external controller action."
+msgstr "Error: Invalid editor context given for external controller action."
+
+#, fuzzy
+msgid "Error: invalid input."
+msgstr "Error: invalid input."
+
+#, fuzzy
+msgid "Example"
+msgstr "Beispiel"
+
+#, fuzzy
+msgid "Filter (expert option)"
+msgstr "Filter (expert option)"
+
+#, fuzzy
+msgid "Frontend"
+msgstr "Frontend"
+
+#, fuzzy
+msgid "Fuel"
+msgstr "Treibstoff"
+
+#, fuzzy
+msgid "Fuel management"
+msgstr "Gemischaufbereitung"
+
+#, fuzzy
+msgid "GB"
+msgstr "GB"
+
+#, fuzzy
+msgid "Gearbox"
+msgstr "Getriebe"
+
+#, fuzzy
+msgid "Horse power"
+msgstr "Motorleistung"
+
+#, fuzzy
+msgid "ID of vehicle"
+msgstr "ID of vehicle"
+
+#, fuzzy
+msgid "ID of vehicle image"
+msgstr "ID des Fahrzeug-Bild"
+
+#, fuzzy
+msgid ""
+"If not checked the image will not been shown to the public. Only IG members "
+"are able to see."
+msgstr ""
+"If not checked the image will not been shown to the public. Only IG members "
+"are able to see."
+
+#, fuzzy
+msgid ""
+"If not checked the registered user will not been shown to the public. Only "
+"IG members are able to see."
+msgstr ""
+"If not checked the registered user will not been shown to the public. Only "
+"IG members are able to see."
+
+#, fuzzy
+msgid ""
+"If there is somethin special what you can not fill into one of the other "
+"fields you may want to place it here."
+msgstr ""
+"If there is somethin special what you can not fill into one of the other "
+"fields you may want to place it here."
+
+#, fuzzy
+msgid ""
+"If there is something special what you can not fill into one of the other "
+"fields you may want to place it here."
+msgstr ""
+"If there is something special what you can not fill into one of the other "
+"fields you may want to place it here."
+
+#, fuzzy
+msgid ""
+"If you change this please save the block once to reload the parameters below."
+msgstr ""
+"If you change this please save the block once to reload the parameters below."
+
+#, fuzzy
+msgid "Image date"
+msgstr "Bilddatum"
+
+#, fuzzy
+msgid "Info field 1"
+msgstr "Info-Feld 1"
+
+#, fuzzy
+msgid "Info field 2"
+msgstr "Info-Feld 2"
+
+#, fuzzy
+msgid "Info field 3"
+msgstr "Info-Feld 3"
+
+#, fuzzy
+msgid "Initial"
+msgstr "Initial"
+
+#, fuzzy
+msgid "Inset"
+msgstr "Inset"
+
+#, fuzzy
+msgid "Interior"
+msgstr "Innenausstattung"
+
+#, fuzzy
+msgid "Invalid identifier received."
+msgstr "Invalid identifier received."
+
+#, fuzzy
+msgid "Invalid object type received."
+msgstr "Invalid object type received."
+
+#, fuzzy
+msgid "Invalid user field name received."
+msgstr "Ungültiges Feld Benutzernamen erhalten."
+
+#, fuzzy
+msgid "Invalid user identifier received."
+msgstr "Invalid user identifier received."
+
+#, fuzzy
+msgid "KB"
+msgstr "KB"
+
+#, fuzzy
+msgid "Link to the vehicle"
+msgstr "Link to the vehicle"
+
+#, fuzzy
+msgid "Link to the vehicle image"
+msgstr "Link zum Fahrzeug-Bild"
+
+#, fuzzy
+msgid "MB"
+msgstr "MB"
+
+#, fuzzy
+msgid "Manage settings for this application"
+msgstr "Manage settings for this application"
+
+#, fuzzy
+msgid "Manufacturer"
+msgstr "Hersteller"
+
+#, fuzzy
+msgid "Max speed"
+msgstr "Höchstgeschwindigkeit"
+
+#, fuzzy
+msgid "Miscellaneous"
+msgstr "Miscellaneous"
+
+#, fuzzy
+msgid "Model"
+msgstr "Modell"
+
+#, fuzzy
+msgid "Motorbike"
+msgstr "Motorbike"
+
+#, fuzzy
+msgid "My vehicle images"
+msgstr "Mein Fahrzeugbilder"
+
+#, fuzzy
+msgid "My vehicles"
+msgstr "My vehicles"
+
+#, fuzzy
+msgid "Newest"
+msgstr "Newest"
+
+#, fuzzy
+msgid "No"
+msgstr "Nein"
+
+#, fuzzy
+msgid "No item selected."
+msgstr "No item selected."
+
+#, fuzzy
+msgid "No such item."
+msgstr "No such item."
+
+#, fuzzy
+msgid "None workflow (no approval)"
+msgstr "None workflow (no approval)"
+
+#, fuzzy
+msgid "OK"
+msgstr "Ok"
+
+#, fuzzy
+msgid "Object type"
+msgstr "Object type"
+
+#, fuzzy
+msgid "Only item titles"
+msgstr "Only item titles"
+
+#, fuzzy
+msgid "Open preview page"
+msgstr "Open preview page"
+
+#, fuzzy
+msgid "Operation cancelled."
+msgstr "Operation cancelled."
+
+#, fuzzy
+msgid "Outbound"
+msgstr "Outbound"
+
+#, fuzzy
+msgid "Owner"
+msgstr "Eigentümer"
+
+#, fuzzy
+msgid "Page size"
+msgstr "Page size"
+
+#, fuzzy
+msgid "Park haus Backend"
+msgstr "Park Haus Backend"
+
+#, fuzzy
+msgid "Paste as"
+msgstr "Paste as"
+
+#, fuzzy
+msgid ""
+"Please change if white is not fitting due to the color of the title image. "
+"Preferred you should use #000000 in case."
+msgstr ""
+"Bitte ändern Sie, wenn weiß nicht wegen der Farbe des Bildes Titel passend "
+"ist. Bevorzugt, dass Sie im Fall #000000 verwenden sollten."
+
+#, fuzzy
+msgid ""
+"Please fill the copyright. If you got the image from someone else please be "
+"fair and name him here."
+msgstr ""
+"Füllen Sie bitte das Copyright. Wenn Sie das Bild von jemand anderem "
+"bekommen bitte fair sein und ihm den Namen hier."
+
+#, fuzzy
+msgid ""
+"Please fill the copyright. If you qot the image from someone else please be "
+"fair and name him here."
+msgstr ""
+"Please fill the copyright. If you qot the image from someone else please be "
+"fair and name him here."
+
+#, fuzzy
+msgid ""
+"Please upload an image. It does not matter if it is portrait, landscape or "
+"square. The hight will be harmonized always."
+msgstr ""
+"Please upload an image. It does not matter if it is portrait, landscape or "
+"square. The hight will be harmonized always."
+
+#, fuzzy
+msgid "Preview"
+msgstr "Preview"
+
+#, fuzzy
+msgid "Pseudo-state for content which has been deleted from the database."
+msgstr "Pseudo-state for content which has been deleted from the database."
+
+#, fuzzy
+msgid "Pseudo-state for content which is just created and not persisted yet."
+msgstr "Pseudo-state for content which is just created and not persisted yet."
+
+#, fuzzy
+msgid "RKParkHausModule detail view"
+msgstr "RKParkhausModule detail view"
+
+#, fuzzy
+msgid "RKParkHausModule items"
+msgstr "RKParkhausModule items"
+
+#, fuzzy
+msgid "RKParkHausModule list view"
+msgstr "RKParkhausModule list view"
+
+#, fuzzy
+msgid "Random"
+msgstr "Random"
+
+#, fuzzy
+msgid "Reset"
+msgstr "Reset"
+
+#, fuzzy
+msgid "Reuse"
+msgstr "Reuse"
+
+#, fuzzy
+msgid "Reuse for new vehicle"
+msgstr "Wiederverwendung für neues Fahrzeug"
+
+#, fuzzy
+msgid "Reuse for new vehicle image"
+msgstr "Wiederverwendung für neue Fahrzeug-Bild"
+
+#, fuzzy
+msgid "Rim"
+msgstr "Felge"
+
+#, fuzzy
+msgid "Search"
+msgstr "Search"
+
+#, fuzzy
+msgid "Search for"
+msgstr "Search for"
+
+#, fuzzy
+msgid "Show vehicle owner"
+msgstr "Fahrzeugeigentümer zeigen"
+
+#, fuzzy
+msgid "Shows all items except these which are approved"
+msgstr "Shows all items except these which are approved"
+
+#, fuzzy
+msgid "Shows all items except these which are deferred"
+msgstr "Shows all items except these which are deferred"
+
+#, fuzzy
+msgid "Shrink height vehicle image vehicle image"
+msgstr "Höhe Fahrzeug Bild Fahrzeug Bild verkleinern"
+
+#, fuzzy
+msgid "Shrink height vehicle title image"
+msgstr "Shrink height vehicle title image"
+
+#, fuzzy
+msgid "Shrink height vehicle vehicle image"
+msgstr "Shrink height vehicle vehicle image"
+
+#, fuzzy
+msgid "Shrink width vehicle image vehicle image"
+msgstr "Breite Fahrzeug Bild Fahrzeug Bild verkleinern"
+
+#, fuzzy
+msgid "Shrink width vehicle title image"
+msgstr "Shrink width vehicle title image"
+
+#, fuzzy
+msgid "Shrink width vehicle vehicle image"
+msgstr "Shrink width vehicle vehicle image"
+
+#, fuzzy
+msgid ""
+"Sorry, but an error occured during the %action% action. Please apply the "
+"changes again!"
+msgstr ""
+"Sorry, but an error occured during the %action% action. Please apply the "
+"changes again!"
+
+#, fuzzy
+msgid "Sorry, but an error occured during the %s action."
+msgstr "Tut mir leid, aber während der %s Aktion ist ein Fehler aufgetreten."
+
+#, fuzzy
+msgid ""
+"Sorry, but you can not create the vehicle image yet as other items are "
+"required which must be created before!"
+msgstr ""
+"Tut mir leid, aber Sie können nicht das Fahrzeug Bild noch andere "
+"Gegenstände erforderlich sind, muss vor erstellt werden!"
+
+#, fuzzy
+msgid ""
+"Sorry, but you can not create the vehicle yet as other items are required "
+"which must be created before!"
+msgstr ""
+"Sorry, but you can not create the vehicle yet as other items are required "
+"which must be created before!"
+
+#, fuzzy
+msgid "Sort by"
+msgstr "Sort by"
+
+#, fuzzy
+msgid "Sort direction"
+msgstr "Sort direction"
+
+#, fuzzy
+msgid "Sorting"
+msgstr "Sorting"
+
+#, fuzzy
+msgid "State"
+msgstr "Status"
+
+#, fuzzy
+msgid "Submit"
+msgstr "Bestätigen"
+
+#, fuzzy
+msgid "Submit content."
+msgstr "Submit content."
+
+#, fuzzy
+msgid "Switch to administration area."
+msgstr "Switch to administration area."
+
+#, fuzzy
+msgid "Switch to user area."
+msgstr "Switch to user area."
+
+#, fuzzy
+msgid "Template"
+msgstr "Template"
+
+#, fuzzy
+msgid ""
+"The cache directory \"%directory%\" does not exist. Please create it and "
+"make it writable for the webserver."
+msgstr ""
+"The cache directory \"%directory%\" does not exist. Please create it and "
+"make it writable for the webserver."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle image vehicle image option."
+msgstr "Die schrumpfende für Fahrzeug-Bild-Fahrzeug-Bild-Option aktivieren."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle title image option."
+msgstr "The enable shrinking for vehicle title image option."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle vehicle image option."
+msgstr "The enable shrinking for vehicle vehicle image option."
+
+#, fuzzy
+msgid "The maximum amount of items to be shown. Only digits are allowed."
+msgstr "The maximum amount of items to be shown. Only digits are allowed."
+
+#, fuzzy
+msgid "The maximum image height in pixels."
+msgstr "The maximum image height in pixels."
+
+#, fuzzy
+msgid "The maximum image width in pixels."
+msgstr "The maximum image width in pixels."
+
+#, fuzzy
+msgid "The upload directories at [%s] can be removed manually."
+msgstr "The upload directories at [%s] can be removed manually."
+
+#, fuzzy
+msgid ""
+"The upload directory \"%s\" does not exist and could not be created. Try to "
+"create it yourself and make sure that this folder is accessible via the web "
+"and writable by the webserver."
+msgstr ""
+"The upload directory \"%s\" does not exist and could not be created. Try to "
+"create it yourself and make sure that this folder is accessible via the web "
+"and writable by the webserver."
+
+#, fuzzy
+msgid ""
+"This image should be in landscape format. It will represent your vehicle. In "
+"the album you can add multiple additional images."
+msgstr ""
+"This image should be in landscape format. It will represent your vehicle. In "
+"the album you can add multiple additional images."
+
+#, fuzzy
+msgid ""
+"This image will be used as the title image. It shoud have a ratio of 3:1 and "
+"min 1200px. Bigger than 1800px will be reduced automatically."
+msgstr ""
+"This image will be used as the title image. It shoud have a ratio of 3:1 and "
+"min 1200px. Bigger than 1800px will be reduced automatically."
+
+#, fuzzy
+msgid ""
+"This is like a non-existing workflow. Everything is online immediately after "
+"creation."
+msgstr ""
+"This is like a non-existing workflow. Everything is online immediately after "
+"creation."
+
+#, fuzzy
+msgid ""
+"This is the text which follows the teaser text at the display page. You can "
+"use max 5000 char."
+msgstr ""
+"Dies ist der Text, der den Teasertext auf der Anzeigeseite folgt. Sie können "
+"maximale 5000 Zeichen verwenden."
+
+#, fuzzy
+msgid "Thumbnail height on display pages in pixels."
+msgstr "Thumbnail height on display pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail height on edit pages in pixels."
+msgstr "Thumbnail height on edit pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail height on view pages in pixels."
+msgstr "Thumbnail height on view pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail height vehicle image vehicle image display"
+msgstr "Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bildanzeige"
+
+#, fuzzy
+msgid "Thumbnail height vehicle image vehicle image edit"
+msgstr "Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bild bearbeiten"
+
+#, fuzzy
+msgid "Thumbnail height vehicle image vehicle image view"
+msgstr "Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bildansicht"
+
+#, fuzzy
+msgid "Thumbnail height vehicle title image display"
+msgstr "Thumbnail height vehicle title image display"
+
+#, fuzzy
+msgid "Thumbnail height vehicle title image edit"
+msgstr "Thumbnail height vehicle title image edit"
+
+#, fuzzy
+msgid "Thumbnail height vehicle title image view"
+msgstr "Thumbnail height vehicle title image view"
+
+#, fuzzy
+msgid "Thumbnail height vehicle vehicle image display"
+msgstr "Thumbnail height vehicle vehicle image display"
+
+#, fuzzy
+msgid "Thumbnail height vehicle vehicle image edit"
+msgstr "Thumbnail height vehicle vehicle image edit"
+
+#, fuzzy
+msgid "Thumbnail height vehicle vehicle image view"
+msgstr "Thumbnail height vehicle vehicle image view"
+
+#, fuzzy
+msgid "Thumbnail mode (inset or outbound)."
+msgstr "Thumbnail mode (inset or outbound)."
+
+#, fuzzy
+msgid "Thumbnail mode vehicle"
+msgstr "Thumbnail mode vehicle"
+
+#, fuzzy
+msgid "Thumbnail mode vehicle image"
+msgstr "Thumbnail-Modus Fahrzeug Bild"
+
+#, fuzzy
+msgid "Thumbnail width on display pages in pixels."
+msgstr "Thumbnail width on display pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail width on edit pages in pixels."
+msgstr "Thumbnail width on edit pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail width on view pages in pixels."
+msgstr "Thumbnail width on view pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail width vehicle image vehicle image display"
+msgstr "Miniaturansicht breite Fahrzeug Bild Fahrzeug Bildanzeige"
+
+#, fuzzy
+msgid "Thumbnail width vehicle image vehicle image edit"
+msgstr "Miniaturansicht breite Fahrzeug Bild Fahrzeug Bild bearbeiten"
+
+#, fuzzy
+msgid "Thumbnail width vehicle image vehicle image view"
+msgstr "Miniaturansicht breite Fahrzeug Bild Fahrzeug Bildansicht"
+
+#, fuzzy
+msgid "Thumbnail width vehicle title image display"
+msgstr "Thumbnail width vehicle title image display"
+
+#, fuzzy
+msgid "Thumbnail width vehicle title image edit"
+msgstr "Thumbnail width vehicle title image edit"
+
+#, fuzzy
+msgid "Thumbnail width vehicle title image view"
+msgstr "Thumbnail width vehicle title image view"
+
+#, fuzzy
+msgid "Thumbnail width vehicle vehicle image display"
+msgstr "Thumbnail width vehicle vehicle image display"
+
+#, fuzzy
+msgid "Thumbnail width vehicle vehicle image edit"
+msgstr "Thumbnail width vehicle vehicle image edit"
+
+#, fuzzy
+msgid "Thumbnail width vehicle vehicle image view"
+msgstr "Thumbnail width vehicle vehicle image view"
+
+#, fuzzy
+msgid "Tire"
+msgstr "Reifen"
+
+#, fuzzy
+msgid "Titel"
+msgstr "Titel"
+
+#, fuzzy
+msgid "Title image"
+msgstr "Titelbild"
+
+#, fuzzy
+msgid "Title text color"
+msgstr "Title text color"
+
+#, fuzzy
+msgid "Tractor"
+msgstr "Tractor"
+
+#, fuzzy
+msgid "Truck"
+msgstr "Truck"
+
+#, fuzzy
+msgid "Update"
+msgstr "Update"
+
+#, fuzzy
+msgid "Update configuration"
+msgstr "Update configuration"
+
+#, fuzzy
+msgid "Update content."
+msgstr "Update content."
+
+#, fuzzy
+msgid "Update date"
+msgstr "Update date"
+
+#, fuzzy
+msgid "Vehicle"
+msgstr "Fahrzeug"
+
+#, fuzzy
+msgid "Vehicle description"
+msgstr "Fahrzeugbeschreibung"
+
+#, fuzzy
+msgid "Vehicle description teaser"
+msgstr "Einleitende Fahrzeugbeschreibung"
+
+#, fuzzy
+msgid ""
+"Vehicle description with max 500 char. It will been shown in the list "
+"overview and added in front of the rest of the vehicle description."
+msgstr ""
+"Vehicle description with max 500 char. It will been shown in the list "
+"overview and added in front of the rest of the vehicle description."
+
+#, fuzzy
+msgid "Vehicle image"
+msgstr "Fahrzeugbild"
+
+#, fuzzy
+msgid "Vehicle image list"
+msgstr "Übersicht Fahrzeugbilder"
+
+#, fuzzy
+msgid "Vehicle images"
+msgstr "Fahrzeugbilder"
+
+#, fuzzy
+msgid "Vehicle list"
+msgstr "Fahrzeug Übersicht"
+
+#, fuzzy
+msgid "Vehicle type"
+msgstr "Fahrzeug Typ"
+
+#, fuzzy
+msgid "Vehicles"
+msgstr "Fahrzeuge"
+
+#, fuzzy
+msgid "View image"
+msgstr "Bild anzeigen"
+
+#, fuzzy
+msgid ""
+"Warning! The upload directory at \"%s\" exists but is not writable by the "
+"webserver."
+msgstr ""
+"Warning! The upload directory at \"%s\" exists but is not writable by the "
+"webserver."
+
+#, fuzzy
+msgid "Weight"
+msgstr "Gewicht ."
+
+#, fuzzy
+msgid ""
+"Whether to enable shrinking huge images to maximum dimensions. Stores "
+"downscaled version of the original image."
+msgstr ""
+"Whether to enable shrinking huge images to maximum dimensions. Stores "
+"downscaled version of the original image."
+
+#, fuzzy
+msgid "With description"
+msgstr "With description"
+
+#, fuzzy
+msgid "Yes"
+msgstr "Ja"
+
+#, fuzzy
+msgid "e.g. Otto, Diesel, Wankel, ..."
+msgstr "e.g. Otto, Diesel, Wankel, ..."
+
+#, fuzzy
+msgid "e.g. injection type, carburetor manufacturor and size ..."
+msgstr "e.g. injection type, carburetor manufacturor and size ..."
+
+msgid "e.g. the location or the event"
+msgstr ""
+
+#, fuzzy
+msgid "how much ccm"
+msgstr "wie viel"
+
+#, fuzzy
+msgid "if you do not know the manufacturer please type unknown."
+msgstr "Wenn Sie nicht, dass den Hersteller nicht bekannt geben wissen."
+
+#, fuzzy
+msgid "pixels"
+msgstr "pixels"
+
+#, fuzzy
+msgid "please select which type fits best"
+msgstr "Bitte wählen Sie, welcher Typ am besten passt"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicle images Display Hooks"
+msgstr "Rkparkhausmodule. Fahrzeug Bilder Anzeige Haken"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicle images Filter Hooks"
+msgstr "Rkparkhausmodule. Fahrzeug Bilder Filter Haken"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicles Display Hooks"
+msgstr "rkparkhausmodule. Vehicles Display Hooks"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicles Filter Hooks"
+msgstr "rkparkhausmodule. Vehicles Filter Hooks"
+
+#, fuzzy
+msgid "show vehicle owner ?"
+msgstr "show vehicle owner ?"
+
+#, fuzzy
+msgid "the image date will be added to the title"
+msgstr "die Bild-Datum wird der Titel hinzugefügt"
+
+#, fuzzy
+msgid "the owner of the vehicle if the owner is registered at our site"
+msgstr ""
+"der Eigentümer des Fahrzeugs, wenn der Besitzer auf unserer Website "
+"registriert ist"
+
+#, fuzzy
+msgid "vehicle version"
+msgstr "vehicle version"
+
+#, fuzzy
+msgid "view image ?"
+msgstr "view image ?"
+
+#, fuzzy
+msgid "z.B. Benzine, Diesel or 1:25"
+msgstr "z.B. Benzine, Diesel or 1:25"
