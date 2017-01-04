@@ -8,21 +8,41 @@ body {
     padding: 25px 20px;
 }
 .top-space {
-	padding-top: 5px;
+	padding-top: 8px;
 }
 .bottom-space {
-	padding-bottom: 5px;
+	padding-bottom: 8px;
 }
 .right-space {
-	padding-right: 10px;
+	padding-right: 8px;
 }
 .left-space {
-	padding-left: 10px;
+	padding-left: 8px;
 }
-.min-height .min-height-linker-text {
-	min-height: 60px;
+.min-height-linker-text {
+	min-height: 80px;
 }
 .copyright {
 	font-size: 10px;
+}
+.white-space {
+	background-image: linear-gradient(white, #F7F7F7); 
+	
+	padding: 4px;
+}
+.negative-space {
+	padding-left: -15px;
+	padding-right: -15px;
+}
+.no-padding {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.section-primary {
+	background: #898989;
+	color: #ffffff;
+}
+.white {
+	color: #ffffff;
 }
 	

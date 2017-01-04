@@ -1,0 +1,22 @@
+
+
+	<footer class="section section-primary">
+	<hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-right">
+            <ol class="list-unstyled">
+              <li>{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
+				<a class="white" href="/pages/display/impressum">Impressum</a> 
+				{% endif %}	</li>
+              <li><a class="white" href="{{ path('zikulausersmodule_user_index') }}" title="{{ __('Go to your account panel') }}">Benutzerkonto</a></li>
+              <li>Kontakt</li>
+			  <li>unsere Sponsoren</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /container -->
+    </footer>
+		
+    </body>
+</html>

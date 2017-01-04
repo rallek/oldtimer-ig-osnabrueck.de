@@ -8,181 +8,181 @@
     {% set templateTitle = vehicle.getTitleFromDisplayPattern()|default(__('Vehicle')) %}
 	{% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleTitleImage') %}
                 
-	<div class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="carousel slide" id="fullcarousel-example" data-interval="5000" data-ride="carousel">
-						<div class="carousel-inner">
-							<div class="item active">
-								{% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleTitleImage') %}
-{# Achtung, Bild thumbnailoption wieder einbauen #}
-								<img src="{{ vehicle.titleImageUrl }}" width="100%" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" />
-									
-								<div class="carousel-caption">
-									<h3>{{ templateTitle|notifyFilters('rkparkhausmodule.filter_hooks.vehicles.filter') }}{% if routeArea == 'admin' %} <small>({{ vehicle.workflowState|rkparkhausmodule_objectState(false)|lower }})</small>{% endif %}</h3>
-								</div>
+<div class="section">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-12 white-space">
+			
+				<div class="carousel slide" id="fullcarousel-example" data-interval="5000" data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="{{ vehicle.titleImageUrl }}" width="100%" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" />
+								
+							<div class="carousel-caption">
+								<h3>{{ templateTitle|notifyFilters('rkparkhausmodule.filter_hooks.vehicles.filter') }}{% if routeArea == 'admin' %} <small>({{ vehicle.workflowState|rkparkhausmodule_objectState(false)|lower }})</small>{% endif %}</h3>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 bottom-space">
+			
+			
+
+				<div class="col-md-12">
 					<p class="copyright text-muted text-right">{{ __('Copyright title image') }}: {{ vehicle.copyrightTitleImage }}</p>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	                
 
 {% endblock %}
-{# {% block admin_page_icon 'eye' %} #}
 {% block content %}
-    <div class="rkparkhausmodule-vehicle rkparkhausmodule-display">
+<!-- <div class="rkparkhausmodule-vehicle rkparkhausmodule-display"> -->
 
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-        <div class="row">
-            <div class="col-sm-8">
-    {% endif %}
-			<div class="pull-left right-space bottom-space">
-                <a href="{{ vehicle.vehicleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.vehicleImageMeta.isImage %} class="lightbox"{% endif %}>
-				{% if vehicle.vehicleImageMeta.isImage %}
-					{% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleVehicleImage') %}
-					<img src="{{ vehicle.vehicleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" />
-				{% endif %}
-				</a>
-
-				<p class="copyright text-muted text-right">{{ __('Copyright vehicle image') }}: {{ vehicle.copyrightVehicleImage }}</p>
-			</div>
-        
-            <h4>{{ __('Vehicle description') }}</h4>
-            <p>{{ vehicle.vehicleDescriptionTeaser|safeHtml }}</p>
-			{% if vehicle.vehicleDescription is not empty %}
-				<p>{{ vehicle.vehicleDescription|safeHtml }}</p>
-			{% endif %}
-
-    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-
-            </div>
-            <div class="col-sm-4">
-				<dl class="dl-horizontal">			
-
-					{% if vehicle.manufacturer is not empty %}
-						<dt>{{ __('Manufacturer') }}</dt>
-						<dd>{{ vehicle.manufacturer }}</dd>
-					{% endif %}
-					{% if vehicle.model is not empty %}
-						<dt>{{ __('Model') }}</dt>
-						<dd>{{ vehicle.model }}</dd>
-					{% endif %}
-					{% if vehicle.built is not empty %}
-						<dt>{{ __('Built') }}</dt>
-						<dd>{{ vehicle.built }}</dd>
-					{% endif %}
-					{% if vehicle.engine is not empty %}
-						<dt>{{ __('Engine') }}</dt>
-						<dd>{{ vehicle.engine }}</dd>
-					{% endif %}
-					{% if vehicle.displacement is not empty %}
-						<dt>{{ __('Displacement') }}</dt>
-						<dd>{{ vehicle.displacement }}</dd>
-					{% endif %}
-					{% if vehicle.cylinders is not empty %}
-						<dt>{{ __('Cylinders') }}</dt>
-						<dd>{{ vehicle.cylinders }}</dd>
-					{% endif %}
-					{% if vehicle.compression is not empty %}
-						<dt>{{ __('Compression') }}</dt>
-						<dd>{{ vehicle.compression }}</dd>
-					{% endif %}
-					{% if vehicle.fuelManagement is not empty %}
-						<dt>{{ __('Fuel management') }}</dt>
-						<dd>{{ vehicle.fuelManagement }}</dd>
-					{% endif %}
-					{% if vehicle.fuel is not empty %}
-						<dt>{{ __('Fuel') }}</dt>
-						<dd>{{ vehicle.fuel }}</dd>
-					{% endif %}
-					{% if vehicle.horsePower is not empty %}
-						<dt>{{ __('Horse power') }}</dt>
-						<dd>{{ vehicle.horsePower }}</dd>
-					{% endif %}
-					{% if vehicle.maxSpeed is not empty %}
-						<dt>{{ __('Max speed') }}</dt>
-						<dd>{{ vehicle.maxSpeed }}</dd>
-					{% endif %}
-					{% if vehicle.weight is not empty %}
-						<dt>{{ __('Weight') }}</dt>
-						<dd>{{ vehicle.weight }}</dd>
-					{% endif %}
-					{% if vehicle.brakes is not empty %}
-						<dt>{{ __('Brakes') }}</dt>
-						<dd>{{ vehicle.brakes }}</dd>
-					{% endif %}
-					{% if vehicle.gearbox is not empty %}
-						<dt>{{ __('Gearbox') }}</dt>
-						<dd>{{ vehicle.gearbox }}</dd>
-					{% endif %}
-					{% if vehicle.rim is not empty %}
-						<dt>{{ __('Rim') }}</dt>
-						<dd>{{ vehicle.rim }}</dd>
-					{% endif %}
-					{% if vehicle.tire is not empty %}
-						<dt>{{ __('Tire') }}</dt>
-						<dd>{{ vehicle.tire }}</dd>
-					{% endif %}
-					{% if vehicle.interior is not empty %}
-						<dt>{{ __('Interior') }}</dt>
-						<dd>{{ vehicle.interior }}</dd>
-					{% endif %}
-					{% if vehicle.infoField1 is not empty %}
-						<dt>{{ __('Info field 1') }}</dt>
-						<dd>{{ vehicle.infoField1 }}</dd>
-					{% endif %}
-					{% if vehicle.infoField2 is not empty %}
-						<dt>{{ __('Info field 2') }}</dt>
-						<dd>{{ vehicle.infoField2 }}</dd>
-					{% endif %}
-					{% if vehicle.infoField3 is not empty %}
-						<dt>{{ __('Info field 3') }}</dt>
-						<dd>{{ vehicle.infoField3 }}</dd>
-					{% endif %}
-					{% if vehicle.owner is not empty %}
-						{% if vehicle.showVehicleOwner %}
-							<dt>{{ __('Owner') }}</dt>
-							<dd>{% if vehicle.owner > 0 %}
-							{% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-								{{ vehicle.owner|profileLinkByUserId() }}
-								<span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicle.owner, rating='g') }}</span>
-							{% else %}
-							  {{ rkparkhausmodule_userVar('uname', vehicle.owner) }}
-							{% endif %}
-							{% else %}&nbsp;{% endif %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="col-xs-12 white-space">
+				<div class="col-md-8 col-sm-12">
+	{% endif %}
+					<div class="pull-left right-space">
+						<a href="{{ vehicle.vehicleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.vehicleImageMeta.isImage %} class="lightbox"{% endif %}>
+						{% if vehicle.vehicleImageMeta.isImage %}
+							{% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleVehicleImage') %}
+							<img src="{{ vehicle.vehicleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" />
 						{% endif %}
-						</dd>
-					{% endif %}		
-				</dl>
-            </div>
-        </div>
+						</a>
+
+						<p class="copyright text-muted text-right">{{ __('Copyright vehicle image') }}: {{ vehicle.copyrightVehicleImage }}</p>
+					</div>
+					<div class="right-space">
+						<h4>{{ __('Vehicle description') }}</h4>
+						<p>{{ vehicle.vehicleDescriptionTeaser|safeHtml }}</p>
+						{% if vehicle.vehicleDescription is not empty %}
+							<p>{{ vehicle.vehicleDescription|safeHtml }}</p>
+						{% endif %}
+					</div>
+					
+		{% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<dl class="dl-horizontal">			
+
+						{% if vehicle.manufacturer is not empty %}
+							<dt>{{ __('Manufacturer') }}</dt>
+							<dd>{{ vehicle.manufacturer }}</dd>
+						{% endif %}
+						{% if vehicle.model is not empty %}
+							<dt>{{ __('Model') }}</dt>
+							<dd>{{ vehicle.model }}</dd>
+						{% endif %}
+						{% if vehicle.built is not empty %}
+							<dt>{{ __('Built') }}</dt>
+							<dd>{{ vehicle.built }}</dd>
+						{% endif %}
+						{% if vehicle.engine is not empty %}
+							<dt>{{ __('Engine') }}</dt>
+							<dd>{{ vehicle.engine }}</dd>
+						{% endif %}
+						{% if vehicle.displacement is not empty %}
+							<dt>{{ __('Displacement') }}</dt>
+							<dd>{{ vehicle.displacement }}</dd>
+						{% endif %}
+						{% if vehicle.cylinders is not empty %}
+							<dt>{{ __('Cylinders') }}</dt>
+							<dd>{{ vehicle.cylinders }}</dd>
+						{% endif %}
+						{% if vehicle.compression is not empty %}
+							<dt>{{ __('Compression') }}</dt>
+							<dd>{{ vehicle.compression }}</dd>
+						{% endif %}
+						{% if vehicle.fuelManagement is not empty %}
+							<dt>{{ __('Fuel management') }}</dt>
+							<dd>{{ vehicle.fuelManagement }}</dd>
+						{% endif %}
+						{% if vehicle.fuel is not empty %}
+							<dt>{{ __('Fuel') }}</dt>
+							<dd>{{ vehicle.fuel }}</dd>
+						{% endif %}
+						{% if vehicle.horsePower is not empty %}
+							<dt>{{ __('Horse power') }}</dt>
+							<dd>{{ vehicle.horsePower }}</dd>
+						{% endif %}
+						{% if vehicle.maxSpeed is not empty %}
+							<dt>{{ __('Max speed') }}</dt>
+							<dd>{{ vehicle.maxSpeed }}</dd>
+						{% endif %}
+						{% if vehicle.weight is not empty %}
+							<dt>{{ __('Weight') }}</dt>
+							<dd>{{ vehicle.weight }}</dd>
+						{% endif %}
+						{% if vehicle.brakes is not empty %}
+							<dt>{{ __('Brakes') }}</dt>
+							<dd>{{ vehicle.brakes }}</dd>
+						{% endif %}
+						{% if vehicle.gearbox is not empty %}
+							<dt>{{ __('Gearbox') }}</dt>
+							<dd>{{ vehicle.gearbox }}</dd>
+						{% endif %}
+						{% if vehicle.rim is not empty %}
+							<dt>{{ __('Rim') }}</dt>
+							<dd>{{ vehicle.rim }}</dd>
+						{% endif %}
+						{% if vehicle.tire is not empty %}
+							<dt>{{ __('Tire') }}</dt>
+							<dd>{{ vehicle.tire }}</dd>
+						{% endif %}
+						{% if vehicle.interior is not empty %}
+							<dt>{{ __('Interior') }}</dt>
+							<dd>{{ vehicle.interior }}</dd>
+						{% endif %}
+						{% if vehicle.infoField1 is not empty %}
+							<dt>{{ __('Info field 1') }}</dt>
+							<dd>{{ vehicle.infoField1 }}</dd>
+						{% endif %}
+						{% if vehicle.infoField2 is not empty %}
+							<dt>{{ __('Info field 2') }}</dt>
+							<dd>{{ vehicle.infoField2 }}</dd>
+						{% endif %}
+						{% if vehicle.infoField3 is not empty %}
+							<dt>{{ __('Info field 3') }}</dt>
+							<dd>{{ vehicle.infoField3 }}</dd>
+						{% endif %}
+						{% if vehicle.owner is not empty %}
+							{% if vehicle.showVehicleOwner %}
+								<dt>{{ __('Owner') }}</dt>
+								<dd>{% if vehicle.owner > 0 %}
+								{% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+									{{ vehicle.owner|profileLinkByUserId() }}
+									<span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicle.owner, rating='g') }}</span>
+								{% else %}
+								  {{ rkparkhausmodule_userVar('uname', vehicle.owner) }}
+								{% endif %}
+								{% else %}&nbsp;{% endif %}
+							{% endif %}
+							</dd>
+						{% endif %}		
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- </div> -->
     {% endif %}
 
-		<div class="row">
-            <div class="col-sm-12">
-                {{ block('related_items') }}
-            </div>
-        </div>
+
+{{ block('related_items') }}
+
 		<div class="row">
             <div class="col-sm-12">	
-				<hr>			
+							
 				{{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicle }) }}
             </div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<hr>			
+						
 				{% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'display' }) %}
 				<div class="dropdown">
 					<a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
@@ -221,16 +221,17 @@
 
 {% endblock %}
 {% block related_items %}
-		<div class="row">
-            <div class="col-sm-12">	
-			<hr>
-				{% if routeArea == 'admin' %}
-					<h4 align="center">{{ __('Vehicle images') }}</h4>
-				{% else %}
-					<h3 align="center">{{ __('Vehicle images') }}</h3>
-				{% endif %}
-             </div>
-		</div>
+<div class="row top-space">
+	<div class="col-sm-12">	
+		<div class="col-sm-12 white-space">	
+			{% if routeArea == 'admin' %}
+				<h4 align="center">{{ __('Vehicle images') }}</h4>
+			{% else %}
+				<h3 align="center">{{ __('Vehicle images') }}</h3>
+			{% endif %}
+		 </div>
+	 </div>
+</div>
 		<div class="row">
             			
     {% if vehicle.vehicleImages|default %}
@@ -249,7 +250,7 @@
         {% set permLevel = 'ACCESS_ADMIN' %}
     {% endif %}
     {% set mayManage = hasPermission('RKParkHausModule:Vehicle:', vehicle.id ~ '::', permLevel) %}
-    {% if mayManage or (uid is defined and vehicle.createdUserId is defined and vehicle.createdUserId == uid) %}
+     {% if mayManage or (currentUser|default and vehicle.createdBy|default and vehicle.createdBy.getUid() == currentUser.uid) %}
     <p class="managelink">
         {% set createTitle = __('Create vehicle image') %}
         <a href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'edit', { vehicle: vehicle.id }) }}" title="{{ createTitle }}" class="fa fa-plus">{{ createTitle }}</a>
@@ -271,14 +272,16 @@
 
 
 {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('a.lightbox').lightbox();
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            ( function($) {
+                $(document).ready(function() {
+                    $('a.lightbox').lightbox();
+                    {% set itemid = vehicle.createCompositeIdentifier() %}
+                    rKParkHausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('html_attr') }}');
+                });
+            })(jQuery);
+        /* ]]> */
+        </script>
 {% endif %}
 {% endblock %}
