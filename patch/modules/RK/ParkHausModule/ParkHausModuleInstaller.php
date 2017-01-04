@@ -36,11 +36,14 @@ public function install()
         $this->setVar('shrinkWidthVehicleTitleImage', 1800);
         $this->setVar('shrinkHeightVehicleTitleImage', 600);
         $this->setVar('enableShrinkingForVehicleVehicleImage', true);
-        $this->setVar('shrinkWidthVehicleVehicleImage', 800);
-        $this->setVar('shrinkHeightVehicleVehicleImage', 600);
+        $this->setVar('shrinkWidthVehicleVehicleImage', 1200);
+        $this->setVar('shrinkHeightVehicleVehicleImage', 800);
+		$this->setVar('enableShrinkingForVehicleManufacturerImage', true);
+        $this->setVar('shrinkWidthVehicleManufacturerImage', 1200);
+        $this->setVar('shrinkHeightVehicleManufacturerImage', 800);
         $this->setVar('enableShrinkingForVehicleImageVehicleImage', true);
-        $this->setVar('shrinkWidthVehicleImageVehicleImage', 800);
-        $this->setVar('shrinkHeightVehicleImageVehicleImage', 600);
+        $this->setVar('shrinkWidthVehicleImageVehicleImage', 1200);
+        $this->setVar('shrinkHeightVehicleImageVehicleImage', 800);
 
     }
 
