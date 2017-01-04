@@ -5,6 +5,9 @@
 {% block content %}
 <div class="rkparkhausmodule-vehicle rkparkhausmodule-view">
 
+    <p class="alert alert-info">{{ __('please add your vehicle. You will be able to add some images in a vehicle specific album. 
+    Not all fields are mandatory. Feel free to fill what fits best to your vehicle.') }}</p>
+
     {{ block('page_nav_links') }}
 
     {{ include('@RKParkHausModule/Vehicle/viewQuickNav.html.twig') }}{# see template file for available options #}

@@ -16,14 +16,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use RK\ParkHausModule\Traits\EntityWorkflowTrait;
 use RK\ParkHausModule\Traits\StandardFieldsTrait;
 
 use DataUtil;
-use FormUtil;
 use RuntimeException;
 use ServiceUtil;
-use UserUtil;
-use Zikula_Workflow_Util;
 use Zikula\Core\Doctrine\EntityAccess;
 
 /**
@@ -40,8 +38,12 @@ use Zikula\Core\Doctrine\EntityAccess;
 abstract class AbstractVehicleImageEntity extends EntityAccess
 {
     /**
-     * Hook standard fields behaviour.
-     * Updates createdBy, updatedBy, createdDate, updatedDate fields.
+     * Hook entity workflow field and behaviour.
+     */
+    use EntityWorkflowTrait;
+
+    /**
+     * Hook standard fields behaviour embedding createdBy, updatedBy, createdDate, updatedDate fields.
      */
     use StandardFieldsTrait;
 
@@ -55,11 +57,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      * @var boolean Option to bypass validation if needed
      */
     protected $_bypassValidation = false;
-    
-    /**
-     * @var array The current workflow data of this object
-     */
-    protected $__WORKFLOW__ = [];
     
     /**
      * @ORM\Id
@@ -175,7 +172,8 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
     
     
     /**
-     * Constructor.
+     * VehicleImageEntity constructor.
+     *
      * Will not be called by Doctrine and can therefore be used
      * for own implementation purposes. It is also possible to add
      * arbitrary arguments as with every other class method.
@@ -229,28 +227,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
     public function set_bypassValidation($_bypassValidation)
     {
         $this->_bypassValidation = $_bypassValidation;
-    }
-    
-    /**
-     * Returns the __ w o r k f l o w__.
-     *
-     * @return array
-     */
-    public function get__WORKFLOW__()
-    {
-        return $this->__WORKFLOW__;
-    }
-    
-    /**
-     * Sets the __ w o r k f l o w__.
-     *
-     * @param array $__WORKFLOW__
-     *
-     * @return void
-     */
-    public function set__WORKFLOW__($__WORKFLOW__ = [])
-    {
-        $this->__WORKFLOW__ = $__WORKFLOW__;
     }
     
     
@@ -531,8 +507,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      */
     public function getTitleFromDisplayPattern()
     {
-        $serviceManager = ServiceUtil::getManager();
-        $listHelper = $serviceManager->get('rk_parkhaus_module.listentries_helper');
+        $listHelper = ServiceUtil::get('rk_parkhaus_module.listentries_helper');
     
         $formattedTitle = ''
                 . $this->getTitel()
@@ -583,72 +558,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
     }
     
     /**
-     * Sets/retrieves the workflow details.
-     *
-     * @param boolean $forceLoading load the workflow record
-     *
-     * @throws RuntimeException Thrown if retrieving the workflow object fails
-     */
-    public function initWorkflow($forceLoading = false)
-    {
-        $currentFunc = FormUtil::getPassedValue('func', 'index', 'GETPOST', FILTER_SANITIZE_STRING);
-        $isReuse = FormUtil::getPassedValue('astemplate', '', 'GETPOST', FILTER_SANITIZE_STRING);
-    
-        // apply workflow with most important information
-        $idColumn = 'id';
-        
-        $serviceManager = ServiceUtil::getManager();
-        $workflowHelper = $serviceManager->get('rk_parkhaus_module.workflow_helper');
-        
-        $schemaName = $workflowHelper->getWorkflowName($this['_objectType']);
-        $this['__WORKFLOW__'] = [
-            'module' => 'RKParkHausModule',
-            'state' => $this['workflowState'],
-            'obj_table' => $this['_objectType'],
-            'obj_idcolumn' => $idColumn,
-            'obj_id' => $this[$idColumn],
-            'schemaname' => $schemaName
-        ];
-        
-        // load the real workflow only when required (e. g. when func is edit or delete)
-        if ((!in_array($currentFunc, ['index', 'view', 'display']) && empty($isReuse)) || $forceLoading) {
-            $result = Zikula_Workflow_Util::getWorkflowForObject($this, $this['_objectType'], $idColumn, 'RKParkHausModule');
-            if (!$result) {
-                $flashBag = $serviceManager->get('session')->getFlashBag();
-                $flashBag->add('error', $serviceManager->get('translator.default')->__('Error! Could not load the associated workflow.'));
-            }
-        }
-        
-        if (!is_object($this['__WORKFLOW__']) && !isset($this['__WORKFLOW__']['schemaname'])) {
-            $workflow = $this['__WORKFLOW__'];
-            $workflow['schemaname'] = $schemaName;
-            $this['__WORKFLOW__'] = $workflow;
-        }
-    }
-    
-    /**
-     * Resets workflow data back to initial state.
-     * To be used after cloning an entity object.
-     */
-    public function resetWorkflow()
-    {
-        $this->setWorkflowState('initial');
-    
-        $serviceManager = ServiceUtil::getManager();
-        $workflowHelper = $serviceManager->get('rk_parkhaus_module.workflow_helper');
-    
-        $schemaName = $workflowHelper->getWorkflowName($this['_objectType']);
-        $this['__WORKFLOW__'] = [
-            'module' => 'RKParkHausModule',
-            'state' => $this['workflowState'],
-            'obj_table' => $this['_objectType'],
-            'obj_idcolumn' => 'id',
-            'obj_id' => 0,
-            'schemaname' => $schemaName
-        ];
-    }
-    
-    /**
      * Start validation and raise exception if invalid data is found.
      *
      * @return boolean Whether everything is valid or not
@@ -659,6 +568,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
             return true;
         }
     
+        
         $serviceManager = ServiceUtil::getManager();
     
         $validator = $serviceManager->get('validator');
@@ -756,7 +666,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      */
     public function __toString()
     {
-        return 'Vehicle image ' . $this->createCompositeIdentifier();
+        return 'Vehicle image ' . $this->createCompositeIdentifier() . ': ' . $this->getTitleFromDisplayPattern();
     }
     
     /**
@@ -771,25 +681,28 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      */
     public function __clone()
     {
-        // If the entity has an identity, proceed as normal.
-        if ($this->id) {
-            // unset identifiers
-            $this->setId(0);
-    
-            // reset Workflow
-            $this->resetWorkflow();
-    
-            // reset upload fields
-            $this->setVehicleImage('');
-            $this->setVehicleImageMeta([]);
-            $this->setVehicleImageUrl('');
-    
-            $this->setCreatedBy(null);
-            $this->setCreatedDate(null);
-            $this->setUpdatedBy(null);
-            $this->setUpdatedDate(null);
-    
+        // if the entity has no identity do nothing, do NOT throw an exception
+        if (!($this->id)) {
+            return;
         }
-        // otherwise do nothing, do NOT throw an exception!
+    
+        // otherwise proceed
+    
+        // unset identifiers
+        $this->setId(0);
+    
+        // reset workflow
+        $this->resetWorkflow();
+    
+        // reset upload fields
+        $this->setVehicleImage('');
+        $this->setVehicleImageMeta([]);
+        $this->setVehicleImageUrl('');
+    
+        $this->setCreatedBy(null);
+        $this->setCreatedDate(null);
+        $this->setUpdatedBy(null);
+        $this->setUpdatedDate(null);
+    
     }
 }

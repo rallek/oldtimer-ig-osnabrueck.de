@@ -29,7 +29,7 @@ trait StandardFieldsTrait
      * @var UserEntity
      */
     protected $createdBy;
-
+    
     /**
      * @ORM\Column(type="datetime")
      * @Gedmo\Timestampable(on="create")
@@ -37,7 +37,7 @@ trait StandardFieldsTrait
      * @var \DateTime $createdDate
      */
     protected $createdDate;
-
+    
     /**
      * @Gedmo\Blameable(on="update")
      * @ORM\ManyToOne(targetEntity="Zikula\UsersModule\Entity\UserEntity")
@@ -45,7 +45,7 @@ trait StandardFieldsTrait
      * @var UserEntity
      */
     protected $updatedBy;
-
+    
     /**
      * @ORM\Column(type="datetime")
      * @Gedmo\Timestampable(on="update")
@@ -53,7 +53,7 @@ trait StandardFieldsTrait
      * @var \DateTime $updatedDate
      */
     protected $updatedDate;
-
+    
     /**
      * Returns the created by.
      *

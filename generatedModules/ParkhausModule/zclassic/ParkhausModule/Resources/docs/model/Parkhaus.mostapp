@@ -31,6 +31,7 @@ application "ParkHaus" {
     }
     entities {
         entity "vehicle" leading {
+            documentation "please add your vehicle. You will be able to add some images in a vehicle specific album. \r\nNot all fields are mandatory. Feel free to fill what fits best to your vehicle."
             nameMultiple "vehicles"
             displayPattern "#manufacturer# #model# #built#"
             onAccountDeletionCreator GUEST
@@ -74,7 +75,7 @@ application "ParkHaus" {
                     allowPortrait false
                 },
                 string "copyrightVehicleImage" nullable {
-                    documentation "Please fill the copyright. If you qot the image from someone else please be fair and name him here."
+                    documentation "Please fill the copyright. If you got the image from someone else please be fair and name him here."
                     mandatory false
                 displayType DISPLAY
                 },
@@ -100,11 +101,12 @@ application "ParkHaus" {
                 }
             ,
                 string "built" nullable {
+                    documentation "the year or month.year of your vehicle built"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "engine" nullable {
-                    documentation "e.g. Otto, Diesel, Wankel, ..."
+                    documentation "e.g. Otto, Diesel, Wankel, or specific type of engine, ..."
                     mandatory false
                 displayType DISPLAY
                 },
@@ -114,10 +116,12 @@ application "ParkHaus" {
                 displayType DISPLAY
                 },
                 string "cylinders" nullable {
+                    documentation "how many cylinders"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "compression" nullable {
+                    documentation "compression in bar"
                     mandatory false
                 displayType DISPLAY
                 },
@@ -132,35 +136,43 @@ application "ParkHaus" {
                 displayType DISPLAY
                 },
                 string "horsePower" nullable {
+                    documentation "you can use hp or kw"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "maxSpeed" nullable {
+                    documentation "you can use km/h or mph"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "weight" nullable {
+                    documentation "typical in kg"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "brakes" nullable {
+                    documentation "tell us something about your brakes"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "gearbox" nullable {
+                    documentation "shifter or automatic? Specific type?"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "rim" nullable {
+                    documentation "if you have special rim installed"
                     mandatory false
                 displayType DISPLAY
                 },
                 string "tire" nullable {
+                    documentation "sice of tire or something specific about your tires"
                     mandatory false
                 displayType DISPLAY
                 }
             ,
                 string "interior" nullable {
+                    documentation "do you have a special interieur?"
                     mandatory false
                     displayType DISPLAY
                 },
@@ -187,7 +199,7 @@ application "ParkHaus" {
                 }
             ,
                 boolean "showVehicleOwner" nullable ajaxTogglability {
-                    documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see."
+                    documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty"
                     defaultValue "false"
                     mandatory false
                 displayType DISPLAY
@@ -220,6 +232,7 @@ application "ParkHaus" {
                 upload "vehicleImage"
             nospace {
                     documentation "Please upload an image. It does not matter if it is portrait, landscape or square. The hight will be harmonized always."
+                displayType VIEW_DISPLAY
                 },
                 string "copyright" nullable {
                     documentation "Please fill the copyright. If you got the image from someone else please be fair and name him here."
@@ -266,14 +279,6 @@ application "ParkHaus" {
             target "vehicleImage"
             targetAlias "vehicleImages"
             editType ACTIVE_NONE_PASSIVE_CHOOSE
-        }
-    }
-    variables {
-        varContainer "Settings" {
-            vars {
-                filePathVar "myDirectory",
-                textVar "myText"
-            }
         }
     }
     controllers {

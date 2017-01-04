@@ -2,9 +2,13 @@ services:
     # Entity factory classes
     rk_parkhaus_module.vehicle_factory:
         class: RK\ParkHausModule\Entity\Factory\VehicleFactory
-        arguments: ["@doctrine.orm.entity_manager", RK\ParkHausModule\Entity\VehicleEntity]
+        arguments:
+            - "@doctrine.orm.default_entity_manager"
+            - RK\ParkHausModule\Entity\VehicleEntity
     
     rk_parkhaus_module.vehicleImage_factory:
         class: RK\ParkHausModule\Entity\Factory\VehicleImageFactory
-        arguments: ["@doctrine.orm.entity_manager", RK\ParkHausModule\Entity\VehicleImageEntity]
+        arguments:
+            - "@doctrine.orm.default_entity_manager"
+            - RK\ParkHausModule\Entity\VehicleImageEntity
     

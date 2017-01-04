@@ -119,7 +119,6 @@ abstract class AbstractVehicleImageFinderType extends AbstractType
                 'empty_data' => '',
                 'choices' => [
                     $this->__('Titel') => 'titel',
-                    $this->__('Vehicle image') => 'vehicleImage',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate'

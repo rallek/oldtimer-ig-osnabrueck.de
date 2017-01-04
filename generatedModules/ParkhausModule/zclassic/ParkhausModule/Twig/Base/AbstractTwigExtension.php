@@ -12,9 +12,9 @@
 
 namespace RK\ParkHausModule\Twig\Base;
 
+use Twig_Extension;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
-use Zikula\Core\Doctrine\EntityAccess;
 use Zikula\ExtensionsModule\Api\VariableApi;
 use RK\ParkHausModule\Helper\ListEntriesHelper;
 use RK\ParkHausModule\Helper\ViewHelper;
@@ -23,7 +23,7 @@ use RK\ParkHausModule\Helper\WorkflowHelper;
 /**
  * Twig extension base class.
  */
-abstract class AbstractTwigExtension extends \Twig_Extension
+abstract class AbstractTwigExtension extends Twig_Extension
 {
     use TranslatorTrait;
     
@@ -48,8 +48,7 @@ abstract class AbstractTwigExtension extends \Twig_Extension
     protected $listHelper;
     
     /**
-     * Constructor.
-     * Initialises member vars.
+     * TwigExtension constructor.
      *
      * @param TranslatorInterface $translator     Translator service instance
      * @param VariableApi         $variableApi    VariableApi service instance

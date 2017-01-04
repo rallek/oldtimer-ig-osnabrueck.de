@@ -198,7 +198,6 @@ abstract class AbstractVehicleImageController extends AbstractController
         $sortableColumns->addColumns([
             new Column('workflowState'),
             new Column('titel'),
-            new Column('vehicleImage'),
             new Column('vehicle'),
             new Column('createdBy'),
             new Column('createdDate'),

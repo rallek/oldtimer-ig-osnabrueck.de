@@ -2,32 +2,50 @@ services:
     # Helper classes
     rk_parkhaus_module.controller_helper:
         class: RK\ParkHausModule\Helper\ControllerHelper
-        arguments: ["@service_container", "@translator.default", "@session", "@logger"]
+        arguments:
+            - "@service_container"
+            - "@translator.default"
+            - "@session"
+            - "@logger"
     
     rk_parkhaus_module.hook_helper:
         class: RK\ParkHausModule\Helper\HookHelper
-        arguments: ["@hook_dispatcher"]
+        arguments:
+            - "@hook_dispatcher"
     
     rk_parkhaus_module.image_helper:
         class: RK\ParkHausModule\Helper\ImageHelper
-        arguments: ["@translator.default", "@session", "@zikula_extensions_module.api.variable"]
+        arguments:
+            - "@translator.default"
+            - "@session"
+            - "@zikula_extensions_module.api.variable"
     
     rk_parkhaus_module.listentries_helper:
         class: RK\ParkHausModule\Helper\ListEntriesHelper
-        arguments: ["@translator.default"]
+        arguments:
+            - "@translator.default"
     
     rk_parkhaus_module.model_helper:
         class: RK\ParkHausModule\Helper\ModelHelper
-        arguments: ["@service_container"]
+        arguments:
+            - "@service_container"
     
     rk_parkhaus_module.selection_helper:
         class: RK\ParkHausModule\Helper\SelectionHelper
-        arguments: ["@service_container", "@doctrine.orm.entity_manager", "@translator.default", "@rk_parkhaus_module.controller_helper"]
+        arguments:
+            - "@service_container"
+            - "@doctrine.orm.default_entity_manager"
+            - "@translator.default"
+            - "@rk_parkhaus_module.controller_helper"
     
     rk_parkhaus_module.view_helper:
         class: RK\ParkHausModule\Helper\ViewHelper
-        arguments: ["@service_container", "@translator.default"]
+        arguments:
+            - "@service_container"
+            - "@translator.default"
     
     rk_parkhaus_module.workflow_helper:
         class: RK\ParkHausModule\Helper\WorkflowHelper
-        arguments: ["@service_container", "@translator.default"]
+        arguments:
+            - "@service_container"
+            - "@translator.default"

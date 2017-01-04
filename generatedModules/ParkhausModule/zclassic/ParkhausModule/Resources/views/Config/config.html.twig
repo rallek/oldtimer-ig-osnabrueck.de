@@ -10,29 +10,16 @@
         ] %}
         {{ form_start(form) }}
         <ul class="nav nav-pills">
-        {% set tabTitle = __('Settings') %}
-        <li class="active" data-toggle="pill"><a href="#tab1" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
         {% set tabTitle = __('Listviews') %}
-        <li data-toggle="pill"><a href="#tab2" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
+        <li class="active" data-toggle="pill"><a href="#tab1" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
         {% set tabTitle = __('Images') %}
-        <li data-toggle="pill"><a href="#tab3" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
+        <li data-toggle="pill"><a href="#tab2" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a></li>
         </ul>
 
         {{ form_errors(form) }}
         <div class="tab-content">
-            {% set tabTitle = __('Settings') %}
-            <div role="tabpanel" class="tab-pane fade in active" id="tab1">
-                <fieldset>
-                    <legend>{{ tabTitle }}</legend>
-                
-                    <p class="alert alert-info">{{ __('Here you can manage all basic settings for this application.') }}</p>
-                
-                    {{ form_row(form.myDirectory) }}
-                    {{ form_row(form.myText) }}
-                </fieldset>
-            </div>
             {% set tabTitle = __('Listviews') %}
-            <div role="tabpanel" class="tab-pane fade" id="tab2">
+            <div role="tabpanel" class="tab-pane fade in active" id="tab1">
                 <fieldset>
                     <legend>{{ tabTitle }}</legend>
                 
@@ -43,7 +30,7 @@
                 </fieldset>
             </div>
             {% set tabTitle = __('Images') %}
-            <div role="tabpanel" class="tab-pane fade" id="tab3">
+            <div role="tabpanel" class="tab-pane fade" id="tab2">
                 <fieldset>
                     <legend>{{ tabTitle }}</legend>
                 

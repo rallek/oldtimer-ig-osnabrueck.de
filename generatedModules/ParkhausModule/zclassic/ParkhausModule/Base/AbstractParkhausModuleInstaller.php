@@ -57,8 +57,6 @@ abstract class AbstractParkHausModuleInstaller extends AbstractExtensionInstalle
         }
     
         // set up all our vars with initial values
-        $this->setVar('myDirectory', '');
-        $this->setVar('myText', '');
         $this->setVar('vehicleEntriesPerPage', 10);
         $this->setVar('vehicleImageEntriesPerPage', 10);
         $this->setVar('enableShrinkingForVehicleTitleImage', false);

@@ -173,9 +173,9 @@ abstract class AbstractVehicleType extends AbstractType
             'label' => $this->__('Copyright vehicle image') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('Please fill the copyright. If you qot the image from someone else please be fair and name him here.')
+                'title' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.')
             ],
-            'help' => $this->__('Please fill the copyright. If you qot the image from someone else please be fair and name him here.'),
+            'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -241,6 +241,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('built', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Built') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('the year or month.year of your vehicle built')
+            ],
+            'help' => $this->__('the year or month.year of your vehicle built'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -252,9 +257,9 @@ abstract class AbstractVehicleType extends AbstractType
             'label' => $this->__('Engine') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('e.g. Otto, Diesel, Wankel, ...')
+                'title' => $this->__('e.g. Otto, Diesel, Wankel, or specific type of engine, ...')
             ],
-            'help' => $this->__('e.g. Otto, Diesel, Wankel, ...'),
+            'help' => $this->__('e.g. Otto, Diesel, Wankel, or specific type of engine, ...'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -278,6 +283,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('cylinders', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Cylinders') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('how many cylinders')
+            ],
+            'help' => $this->__('how many cylinders'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -287,6 +297,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('compression', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Compression') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('compression in bar')
+            ],
+            'help' => $this->__('compression in bar'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -324,6 +339,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('horsePower', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Horse power') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('you can use hp or kw')
+            ],
+            'help' => $this->__('you can use hp or kw'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -333,6 +353,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('maxSpeed', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Max speed') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('you can use km/h or mph')
+            ],
+            'help' => $this->__('you can use km/h or mph'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -342,6 +367,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('weight', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Weight') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('typical in kg')
+            ],
+            'help' => $this->__('typical in kg'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -351,6 +381,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('brakes', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Brakes') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('tell us something about your brakes')
+            ],
+            'help' => $this->__('tell us something about your brakes'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -360,6 +395,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('gearbox', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Gearbox') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('shifter or automatic? Specific type?')
+            ],
+            'help' => $this->__('shifter or automatic? Specific type?'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -369,6 +409,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('rim', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Rim') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('if you have special rim installed')
+            ],
+            'help' => $this->__('if you have special rim installed'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -378,6 +423,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('tire', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Tire') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('sice of tire or something specific about your tires')
+            ],
+            'help' => $this->__('sice of tire or something specific about your tires'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -387,6 +437,11 @@ abstract class AbstractVehicleType extends AbstractType
         ]);
         $builder->add('interior', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Interior') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('do you have a special interieur?')
+            ],
+            'help' => $this->__('do you have a special interieur?'),
             'empty_data' => '',
             'attr' => [
                 'class' => '',
@@ -455,9 +510,9 @@ abstract class AbstractVehicleType extends AbstractType
             'label' => $this->__('Show vehicle owner') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see.')
+                'title' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty')
             ],
-            'help' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see.'),
+            'help' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty'),
             'attr' => [
                 'class' => '',
                 'title' => $this->__('show vehicle owner ?')

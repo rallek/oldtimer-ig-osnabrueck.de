@@ -45,8 +45,8 @@
                 <th id="hTitel" scope="col" class="text-left">
                     <a href="{{ sort.titel.url }}" title="{{ __f('Sort by %s', {'%s': 'titel'}) }}" class="{{ sort.titel.class }}">{{ __('Titel') }}</a>
                 </th>
-                <th id="hVehicleImage" scope="col" class="text-left">
-                    <a href="{{ sort.vehicleImage.url }}" title="{{ __f('Sort by %s', {'%s': 'vehicle image'}) }}" class="{{ sort.vehicleImage.class }}">{{ __('Vehicle image') }}</a>
+                <th id="hVehicleImage" scope="col" class="text-left z-order-unsorted">
+                    {{ __('Vehicle image') }}
                 </th>
                 <th id="hViewImage" scope="col" class="text-center z-order-unsorted">
                     {{ __('View image') }}

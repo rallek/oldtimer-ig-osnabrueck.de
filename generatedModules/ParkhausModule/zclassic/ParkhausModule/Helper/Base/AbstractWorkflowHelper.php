@@ -40,8 +40,7 @@ abstract class AbstractWorkflowHelper
     protected $translator;
 
     /**
-     * Constructor.
-     * Initialises member vars.
+     * WorkflowHelper constructor.
      *
      * @param ContainerBuilder    $container  ContainerBuilder service instance
      * @param TranslatorInterface $translator Translator service instance
@@ -65,22 +64,22 @@ abstract class AbstractWorkflowHelper
          $states = [];
          $states[] = [
              'value' => 'initial',
-             'text' => $this->translator__('Initial'),
+             'text' => $this->translator->__('Initial'),
              'ui' => 'danger'
          ];
          $states[] = [
              'value' => 'deferred',
-             'text' => $this->translator__('Deferred'),
+             'text' => $this->translator->__('Deferred'),
              'ui' => 'danger'
          ];
          $states[] = [
              'value' => 'approved',
-             'text' => $this->translator__('Approved'),
+             'text' => $this->translator->__('Approved'),
              'ui' => 'success'
          ];
          $states[] = [
              'value' => 'deleted',
-             'text' => $this->translator__('Deleted'),
+             'text' => $this->translator->__('Deleted'),
              'ui' => 'danger'
          ];
     

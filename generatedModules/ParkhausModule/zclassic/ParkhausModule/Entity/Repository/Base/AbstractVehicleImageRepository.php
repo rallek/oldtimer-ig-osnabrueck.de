@@ -61,7 +61,6 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
         return [
             'workflowState',
             'titel',
-            'vehicleImage',
             'createdBy',
             'createdDate',
             'updatedBy',

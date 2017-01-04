@@ -114,7 +114,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $authAdmin = $permissionApi->hasPermission($component, $instance, ACCESS_ADMIN);
             
             $uid = $currentUserApi->get('uid');
-            if ($authAdmin || (isset($uid) && && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
+            if ($authAdmin || (isset($uid) && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
             
                 $title = $this->__('Create vehicle image');
                 $menu->addChild($title, [
@@ -162,7 +162,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $authAdmin = $permissionApi->hasPermission($component, $instance, ACCESS_ADMIN);
             
             $uid = $currentUserApi->get('uid');
-            if ($authAdmin || (isset($uid) && && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
+            if ($authAdmin || (isset($uid) && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
             
                 $title = $this->__('Create vehicle image');
                 $menu->addChild($title, [
