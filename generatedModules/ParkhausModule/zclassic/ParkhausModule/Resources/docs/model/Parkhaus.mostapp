@@ -219,6 +219,7 @@ application "ParkHaus" {
             ,
                 boolean "stillMyOwn" ajaxTogglability {
                     documentation "If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as \"not in Parkhaus anymore\""
+                    defaultValue "true"
                     mandatory false
                 }
             }

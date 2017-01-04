@@ -412,7 +412,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
      * @Assert\Type(type="bool")
      * @var boolean $stillMyOwn
      */
-    protected $stillMyOwn = false;
+    protected $stillMyOwn = true;
     
     
     /**
