@@ -57,6 +57,13 @@
         {% if showVehicleOwnerFilter is defined and showVehicleOwnerFilter != true %}
             </div>
         {% endif %}
+        {% if stillMyOwnFilter is defined and stillMyOwnFilter != true %}
+            <div class="hidden">
+        {% endif %}
+            {{ form_row(quickNavForm.stillMyOwn) }}
+        {% if stillMyOwnFilter is defined and stillMyOwnFilter != true %}
+            </div>
+        {% endif %}
         {{ form_widget(quickNavForm.updateview) }}
     </fieldset>
     {{ form_end(quickNavForm) }}

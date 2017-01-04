@@ -65,6 +65,9 @@ abstract class AbstractParkHausModuleInstaller extends AbstractExtensionInstalle
         $this->setVar('enableShrinkingForVehicleVehicleImage', false);
         $this->setVar('shrinkWidthVehicleVehicleImage', 800);
         $this->setVar('shrinkHeightVehicleVehicleImage', 600);
+        $this->setVar('enableShrinkingForVehicleManufacturerImage', false);
+        $this->setVar('shrinkWidthVehicleManufacturerImage', 800);
+        $this->setVar('shrinkHeightVehicleManufacturerImage', 600);
         $this->setVar('enableShrinkingForVehicleImageVehicleImage', false);
         $this->setVar('shrinkWidthVehicleImageVehicleImage', 800);
         $this->setVar('shrinkHeightVehicleImageVehicleImage', 600);
@@ -81,6 +84,12 @@ abstract class AbstractParkHausModuleInstaller extends AbstractExtensionInstalle
         $this->setVar('thumbnailHeightVehicleVehicleImageDisplay', 180);
         $this->setVar('thumbnailWidthVehicleVehicleImageEdit', 240);
         $this->setVar('thumbnailHeightVehicleVehicleImageEdit', 180);
+        $this->setVar('thumbnailWidthVehicleManufacturerImageView', 32);
+        $this->setVar('thumbnailHeightVehicleManufacturerImageView', 24);
+        $this->setVar('thumbnailWidthVehicleManufacturerImageDisplay', 240);
+        $this->setVar('thumbnailHeightVehicleManufacturerImageDisplay', 180);
+        $this->setVar('thumbnailWidthVehicleManufacturerImageEdit', 240);
+        $this->setVar('thumbnailHeightVehicleManufacturerImageEdit', 180);
         $this->setVar('thumbnailModeVehicleImage',  'inset' );
         $this->setVar('thumbnailWidthVehicleImageVehicleImageView', 32);
         $this->setVar('thumbnailHeightVehicleImageVehicleImageView', 24);

@@ -50,6 +50,9 @@ function rKParkHausInitQuickNavigation(objectType)
         if (jQuery('#' + fieldPrefix + 'showVehicleOwner').length > 0) {
             jQuery('#' + fieldPrefix + 'showVehicleOwner').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
         }
+        if (jQuery('#' + fieldPrefix + 'stillMyOwn').length > 0) {
+            jQuery('#' + fieldPrefix + 'stillMyOwn').change(function () { rKParkHausSubmitQuickNavForm(objectType); });
+        }
         break;
     case 'vehicleImage':
         if (jQuery('#' + fieldPrefix + 'vehicle').length > 0) {

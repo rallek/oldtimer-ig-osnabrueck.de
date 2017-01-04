@@ -368,7 +368,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
         $uploadFields = [];
         switch ($objectType) {
             case 'vehicle':
-                $uploadFields = ['titleImage', 'vehicleImage'];
+                $uploadFields = ['titleImage', 'vehicleImage', 'manufacturerImage'];
                 break;
             case 'vehicleImage':
                 $uploadFields = ['vehicleImage'];

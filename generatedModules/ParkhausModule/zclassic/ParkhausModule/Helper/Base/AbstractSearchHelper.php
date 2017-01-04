@@ -106,6 +106,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
                     $whereArray[] = 'tbl.vehicleDescriptionTeaser';
                     $whereArray[] = 'tbl.vehicleDescription';
                     $whereArray[] = 'tbl.manufacturer';
+                    $whereArray[] = 'tbl.manufacturerImage';
                     $whereArray[] = 'tbl.model';
                     $whereArray[] = 'tbl.built';
                     $whereArray[] = 'tbl.engine';

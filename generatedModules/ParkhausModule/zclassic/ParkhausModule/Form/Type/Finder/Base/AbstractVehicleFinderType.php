@@ -119,6 +119,7 @@ abstract class AbstractVehicleFinderType extends AbstractType
                 'empty_data' => '',
                 'choices' => [
                     $this->__('Vehicle type') => 'vehicleType',
+                    $this->__('Still my own') => 'stillMyOwn',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate'

@@ -192,6 +192,7 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
                 ],
                 'choices' =>             [
                     $this->__('Vehicle type') => 'vehicleType',
+                    $this->__('Still my own') => 'stillMyOwn',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
                     $this->__('Update date') => 'updatedDate'
@@ -256,6 +257,19 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
     {
         $builder->add('showVehicleOwner', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
             'label' => $this->__('Show vehicle owner'),
+            'attr' => [
+                'class' => 'input-sm'
+            ],
+            'required' => false,
+            'placeholder' => $this->__('All'),
+            'choices' => [
+                $this->__('No') => 'no',
+                $this->__('Yes') => 'yes'
+            ],
+            'choices_as_values' => true
+        ]);
+        $builder->add('stillMyOwn', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+            'label' => $this->__('Still my own'),
             'attr' => [
                 'class' => 'input-sm'
             ],

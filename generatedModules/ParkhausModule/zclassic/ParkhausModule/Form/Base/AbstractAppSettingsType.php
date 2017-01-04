@@ -232,6 +232,54 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
+            ->add('enableShrinkingForVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+                'label' => $this->__('Enable shrinking for vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
+                ],
+                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
+                'required' => false,
+                'data' => (bool)$this->modVars['enableShrinkingForVehicleManufacturerImage'],
+                'attr' => [
+                    'title' => $this->__('The enable shrinking for vehicle manufacturer image option.'),
+                    'class' => 'shrink-enabler'
+                ],
+            ])
+            ->add('shrinkWidthVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink width vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image width in pixels.')
+                ],
+                'help' => $this->__('The maximum image width in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkWidthVehicleManufacturerImage'],
+                'empty_data' => intval('800'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink width vehicle manufacturer image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkwidthvehiclemanufacturerimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('shrinkHeightVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink height vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image height in pixels.')
+                ],
+                'help' => $this->__('The maximum image height in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkHeightVehicleManufacturerImage'],
+                'empty_data' => intval('600'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink height vehicle manufacturer image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkheightvehiclemanufacturerimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
             ->add('enableShrinkingForVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
                 'label' => $this->__('Enable shrinking for vehicle image vehicle image') . ':',
                 'label_attr' => [
@@ -487,6 +535,102 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'title' => $this->__('Enter the thumbnail height vehicle vehicle image edit. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailWidthVehicleManufacturerImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail width vehicle manufacturer image view') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail width on view pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail width on view pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailWidthVehicleManufacturerImageView'],
+                'empty_data' => intval('32'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image view. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailHeightVehicleManufacturerImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail height vehicle manufacturer image view') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail height on view pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail height on view pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailHeightVehicleManufacturerImageView'],
+                'empty_data' => intval('24'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image view. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailWidthVehicleManufacturerImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail width vehicle manufacturer image display') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail width on display pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail width on display pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailWidthVehicleManufacturerImageDisplay'],
+                'empty_data' => intval('240'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image display. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailHeightVehicleManufacturerImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail height vehicle manufacturer image display') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail height on display pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail height on display pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailHeightVehicleManufacturerImageDisplay'],
+                'empty_data' => intval('180'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image display. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailWidthVehicleManufacturerImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail width vehicle manufacturer image edit') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail width on edit pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail width on edit pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailWidthVehicleManufacturerImageEdit'],
+                'empty_data' => intval('240'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image edit. Only digits are allowed.')
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailHeightVehicleManufacturerImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Thumbnail height vehicle manufacturer image edit') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail height on edit pages in pixels.')
+                ],
+                'help' => $this->__('Thumbnail height on edit pages in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailHeightVehicleManufacturerImageEdit'],
+                'empty_data' => intval('180'),
+                'attr' => [
+                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image edit. Only digits are allowed.')
                 ],'max_length' => 4,
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]

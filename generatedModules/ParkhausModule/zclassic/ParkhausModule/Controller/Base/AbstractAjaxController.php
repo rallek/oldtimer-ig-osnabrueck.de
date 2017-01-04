@@ -326,7 +326,7 @@ abstract class AbstractAjaxController extends AbstractController
         
         if ($id == 0
             || ($objectType != 'vehicle' && $objectType != 'vehicleImage')
-        || ($objectType == 'vehicle' && !in_array($field, ['showVehicleOwner']))
+        || ($objectType == 'vehicle' && !in_array($field, ['showVehicleOwner', 'stillMyOwn']))
         || ($objectType == 'vehicleImage' && !in_array($field, ['viewImage']))
         ) {
             return new BadDataResponse($this->__('Error: invalid input.'));

@@ -37,6 +37,8 @@
     
     {{ form_row(form.manufacturer) }}
     
+    {{ form_row(form.manufacturerImage) }}
+    
     {{ form_row(form.model) }}
     
     {{ form_row(form.built) }}
@@ -80,6 +82,8 @@
     {{ form_row(form.showVehicleOwner) }}
     
     {{ form_row(form.titleTextColor) }}
+    
+    {{ form_row(form.stillMyOwn) }}
 </fieldset>
 
 {% if mode != 'create' %}
@@ -195,6 +199,7 @@
         
                 rKParkHausInitUploadField('rkparkhausmodule_vehicle_titleImage_titleImage');
                 rKParkHausInitUploadField('rkparkhausmodule_vehicle_vehicleImage_vehicleImage');
+                rKParkHausInitUploadField('rkparkhausmodule_vehicle_manufacturerImage_manufacturerImage');
             });
         })(jQuery);
     /* ]]> */

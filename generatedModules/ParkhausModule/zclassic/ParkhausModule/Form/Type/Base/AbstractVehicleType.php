@@ -76,7 +76,7 @@ abstract class AbstractVehicleType extends AbstractType
 
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             $entity = $event->getData();
-            foreach (['titleImage', 'vehicleImage'] as $uploadFieldName) {
+            foreach (['titleImage', 'vehicleImage', 'manufacturerImage'] as $uploadFieldName) {
                 if ($entity[$uploadFieldName] instanceof File) {
                     $entity[$uploadFieldName] = [$uploadFieldName => $entity[$uploadFieldName]->getPathname()];
                 }
@@ -84,7 +84,7 @@ abstract class AbstractVehicleType extends AbstractType
         });
         $builder->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) {
             $entity = $event->getData();
-            foreach (['titleImage', 'vehicleImage'] as $uploadFieldName) {
+            foreach (['titleImage', 'vehicleImage', 'manufacturerImage'] as $uploadFieldName) {
                 if (is_array($entity[$uploadFieldName])) {
                     $entity[$uploadFieldName] = $entity[$uploadFieldName][$uploadFieldName];
                 }
@@ -224,6 +224,21 @@ abstract class AbstractVehicleType extends AbstractType
                 'title' => $this->__('Enter the manufacturer of the vehicle')
             ],'required' => true,
             'max_length' => 255,
+        ]);
+        $builder->add('manufacturerImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
+            'label' => $this->__('Manufacturer image') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('Here you can place an image from the OEM who manufactured the vehicle. It will be used in the print version.')
+            ],
+            'help' => $this->__('Here you can place an image from the OEM who manufactured the vehicle. It will be used in the print version.'),
+            'attr' => [
+                'class' => ' validate-upload',
+                'title' => $this->__('Enter the manufacturer image of the vehicle')
+            ],'required' => false,
+            'entity' => $options['entity'],
+            'allowed_extensions' => 'gif, jpeg, jpg, png',
+            'allowed_size' => 0
         ]);
         $builder->add('model', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Model') . ':',
@@ -532,6 +547,18 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => true,
             'max_length' => 255,
         ]);
+        $builder->add('stillMyOwn', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+            'label' => $this->__('Still my own') . ':',
+            'label_attr' => [
+                'class' => 'tooltips',
+                'title' => $this->__('If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as "not in Parkhaus anymore"')
+            ],
+            'help' => $this->__('If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as "not in Parkhaus anymore"'),
+            'attr' => [
+                'class' => '',
+                'title' => $this->__('still my own ?')
+            ],'required' => false,
+        ]);
     }
 
     /**
@@ -612,6 +639,7 @@ abstract class AbstractVehicleType extends AbstractType
                     'isOwnerUserValid' => 'owner',
                     'titleImage' => 'titleImage.titleImage',
                     'vehicleImage' => 'vehicleImage.vehicleImage',
+                    'manufacturerImage' => 'manufacturerImage.manufacturerImage',
                 ],
                 'mode' => 'create',
                 'actions' => [],

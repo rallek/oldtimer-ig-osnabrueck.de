@@ -87,6 +87,20 @@
             <dt>{{ __('Manufacturer') }}</dt>
             <dd>{{ vehicle.manufacturer }}</dd>
         {% endif %}
+        {% if vehicle.manufacturerImage is not empty %}
+            <dt>{{ __('Manufacturer image') }}</dt>
+            <dd>{% if vehicle.manufacturerImage is not empty and vehicle.manufacturerImageMeta|default %}
+                        <a href="{{ vehicle.manufacturerImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.manufacturerImageMeta.isImage %} class="lightbox"{% endif %}>
+            {% if vehicle.manufacturerImageMeta.isImage %}
+                {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleManufacturerImage') %}
+                <img src="{{ vehicle.manufacturerImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+            {% else %}
+                {{ __('Download') }} ({{ vehicle.manufacturerImageMeta.size|rkparkhausmodule_fileSize(vehicle.manufacturerImage.getPathname(), false, false) }})
+            {% endif %}
+            </a>
+            {% else %}&nbsp;{% endif %}
+            </dd>
+        {% endif %}
         {% if vehicle.model is not empty %}
             <dt>{{ __('Model') }}</dt>
             <dd>{{ vehicle.model }}</dd>
@@ -200,6 +214,27 @@
             <dt>{{ __('Title text color') }}</dt>
             <dd>{{ vehicle.titleTextColor }}</dd>
         {% endif %}
+        {% if vehicle.stillMyOwn is not empty %}
+            <dt>{{ __('Still my own') }}</dt>
+            <dd>{% set itemid = vehicle.createCompositeIdentifier() %}
+            <a id="toggleStillMyOwn{{ itemid }}" href="javascript:void(0);" class="hidden">
+            {% if vehicle.stillMyOwn %}
+                <i class="cursor-pointer fa fa-check" id="yesstillmyown_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times hidden" id="nostillmyown_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+            {% else %}
+                <i class="cursor-pointer fa fa-check hidden" id="yesstillmyown_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times" id="nostillmyown_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+            {% endif %}
+            </a>
+            <noscript><div id="noscriptStillMyOwn{{ itemid }}">
+                {% if vehicle.stillMyOwn %}
+                    <i class="fa fa-check" title="{{ __('Yes') }}"></i>
+                {% else %}
+                    <i class="fa fa-times" title="{{ __('No') }}"></i>
+                {% endif %}
+            </div></noscript>
+            </dd>
+        {% endif %}
         
     </dl>
     {{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicle }) }}
@@ -260,6 +295,7 @@
                     $('a.lightbox').lightbox();
                     {% set itemid = vehicle.createCompositeIdentifier() %}
                     rKParkHausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('html_attr') }}');
+                    rKParkHausInitToggle('vehicle', 'stillMyOwn', '{{ itemid|e('html_attr') }}');
                 });
             })(jQuery);
         /* ]]> */

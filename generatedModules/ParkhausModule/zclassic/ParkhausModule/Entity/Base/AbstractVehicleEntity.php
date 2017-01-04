@@ -196,6 +196,36 @@ abstract class AbstractVehicleEntity extends EntityAccess
     protected $manufacturer = '';
     
     /**
+     * Manufacturer image meta data array.
+     *
+     * @ORM\Column(type="array")
+     * @Assert\Type(type="array")
+     * @var array $manufacturerImageMeta
+     */
+    protected $manufacturerImageMeta = [];
+    
+    /**
+     * Here you can place an image from the OEM who manufactured the vehicle. It will be used in the print version.
+     * @ORM\Column(length=255, nullable=true)
+     * @Assert\Length(min="0", max="255")
+     * @Assert\File(
+        mimeTypes = {"image/*"}
+     * )
+     * @Assert\Image(
+     * )
+     * @var string $manufacturerImage
+     */
+    protected $manufacturerImage = null;
+    
+    /**
+     * Full manufacturer image path as url.
+     *
+     * @Assert\Type(type="string")
+     * @Assert\Url()
+     * @var string $manufacturerImageUrl
+     */
+    protected $manufacturerImageUrl = '';
+    /**
      * vehicle version
      * @ORM\Column(length=255, nullable=true)
      * @Assert\Length(min="0", max="255")
@@ -374,6 +404,15 @@ abstract class AbstractVehicleEntity extends EntityAccess
      * @var string $titleTextColor
      */
     protected $titleTextColor = '#ffffff';
+    
+    /**
+     * If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as "not in Parkhaus anymore"
+     * @ORM\Column(type="boolean")
+     * @Assert\NotNull()
+     * @Assert\Type(type="bool")
+     * @var boolean $stillMyOwn
+     */
+    protected $stillMyOwn = false;
     
     
     /**
@@ -752,6 +791,72 @@ abstract class AbstractVehicleEntity extends EntityAccess
     public function setManufacturer($manufacturer)
     {
         $this->manufacturer = isset($manufacturer) ? $manufacturer : '';
+    }
+    
+    /**
+     * Returns the manufacturer image.
+     *
+     * @return string
+     */
+    public function getManufacturerImage()
+    {
+        return $this->manufacturerImage;
+    }
+    
+    /**
+     * Sets the manufacturer image.
+     *
+     * @param string $manufacturerImage
+     *
+     * @return void
+     */
+    public function setManufacturerImage($manufacturerImage)
+    {
+        $this->manufacturerImage = $manufacturerImage;
+    }
+    
+    /**
+     * Returns the manufacturer image url.
+     *
+     * @return string
+     */
+    public function getManufacturerImageUrl()
+    {
+        return $this->manufacturerImageUrl;
+    }
+    
+    /**
+     * Sets the manufacturer image url.
+     *
+     * @param string $manufacturerImageUrl
+     *
+     * @return void
+     */
+    public function setManufacturerImageUrl($manufacturerImageUrl)
+    {
+        $this->manufacturerImageUrl = $manufacturerImageUrl;
+    }
+    
+    /**
+     * Returns the manufacturer image meta.
+     *
+     * @return array
+     */
+    public function getManufacturerImageMeta()
+    {
+        return $this->manufacturerImageMeta;
+    }
+    
+    /**
+     * Sets the manufacturer image meta.
+     *
+     * @param array $manufacturerImageMeta
+     *
+     * @return void
+     */
+    public function setManufacturerImageMeta($manufacturerImageMeta = [])
+    {
+        $this->manufacturerImageMeta = $manufacturerImageMeta;
     }
     
     /**
@@ -1240,6 +1345,30 @@ abstract class AbstractVehicleEntity extends EntityAccess
         $this->titleTextColor = isset($titleTextColor) ? $titleTextColor : '';
     }
     
+    /**
+     * Returns the still my own.
+     *
+     * @return boolean
+     */
+    public function getStillMyOwn()
+    {
+        return $this->stillMyOwn;
+    }
+    
+    /**
+     * Sets the still my own.
+     *
+     * @param boolean $stillMyOwn
+     *
+     * @return void
+     */
+    public function setStillMyOwn($stillMyOwn)
+    {
+        if ($stillMyOwn !== $this->stillMyOwn) {
+            $this->stillMyOwn = (bool)$stillMyOwn;
+        }
+    }
+    
     
     /**
      * Returns the vehicle images.
@@ -1517,6 +1646,9 @@ abstract class AbstractVehicleEntity extends EntityAccess
         $this->setVehicleImage('');
         $this->setVehicleImageMeta([]);
         $this->setVehicleImageUrl('');
+        $this->setManufacturerImage('');
+        $this->setManufacturerImageMeta([]);
+        $this->setManufacturerImageUrl('');
     
         $this->setCreatedBy(null);
         $this->setCreatedDate(null);

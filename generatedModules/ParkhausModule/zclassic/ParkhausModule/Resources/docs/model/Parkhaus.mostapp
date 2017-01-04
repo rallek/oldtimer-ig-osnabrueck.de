@@ -4,7 +4,7 @@ application "ParkHaus" {
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://oldtimer-ig-osnabrueck.de"
-    version "0.3.0"
+    version "0.4.0"
     prefix "parkha"
     generatorSettings {
         settingsContainer "Settings"
@@ -94,6 +94,12 @@ application "ParkHaus" {
                     documentation "if you do not know the manufacturer please type unknown."
                 displayType VIEW_DISPLAY
                 },
+                upload "manufacturerImage" {
+                    documentation "Here you can place an image from the OEM who manufactured the vehicle. It will be used in the print version."
+                    mandatory false
+                    displayType DISPLAY
+                }
+            ,
                 string "model" nullable {
                     documentation "vehicle version"
                     mandatory false
@@ -209,6 +215,11 @@ application "ParkHaus" {
                     documentation "Please change if white is not fitting due to the color of the title image. Preferred you should use #000000 in case."
                     defaultValue "#ffffff"
                     displayType DISPLAY
+                }
+            ,
+                boolean "stillMyOwn" ajaxTogglability {
+                    documentation "If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as \"not in Parkhaus anymore\""
+                    mandatory false
                 }
             }
             actions {

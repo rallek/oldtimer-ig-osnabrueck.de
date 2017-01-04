@@ -61,6 +61,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
         return [
             'workflowState',
             'vehicleType',
+            'stillMyOwn',
             'createdBy',
             'createdDate',
             'updatedBy',
@@ -191,6 +192,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
             $thumbRuntimeOptions = [];
             $thumbRuntimeOptions[$objectType . 'TitleImage'] = $imageHelper->getRuntimeOptions($objectType, 'titleImage', $context, $args);
             $thumbRuntimeOptions[$objectType . 'VehicleImage'] = $imageHelper->getRuntimeOptions($objectType, 'vehicleImage', $context, $args);
+            $thumbRuntimeOptions[$objectType . 'ManufacturerImage'] = $imageHelper->getRuntimeOptions($objectType, 'manufacturerImage', $context, $args);
             $templateParameters['thumbRuntimeOptions'] = $thumbRuntimeOptions;
             if (in_array($args['action'], ['display', 'view'])) {
                 // use separate preset for images in related items
@@ -226,6 +228,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
         $parameters['q'] = $this->getRequest()->query->get('q', '');
         
         $parameters['showVehicleOwner'] = $this->getRequest()->query->get('showVehicleOwner', '');
+        $parameters['stillMyOwn'] = $this->getRequest()->query->get('stillMyOwn', '');
     
         // in the concrete child class you could do something like
         // $parameters = parent::getViewQuickNavParameters($context, $args);
@@ -659,7 +662,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
                 if (!empty($v)) {
                     $qb = $this->addSearchFilter($qb, $v);
                 }
-            } elseif (in_array($k, ['showVehicleOwner'])) {
+            } elseif (in_array($k, ['showVehicleOwner', 'stillMyOwn'])) {
                 // boolean filter
                 if ($v == 'no') {
                     $qb->andWhere('tbl.' . $k . ' = 0');
@@ -788,6 +791,8 @@ abstract class AbstractVehicleRepository extends EntityRepository
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.manufacturer LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.manufacturerImage = \'' . $fragment . '\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.model LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.built LIKE \'%' . $fragment . '%\'';
@@ -846,6 +851,8 @@ abstract class AbstractVehicleRepository extends EntityRepository
             $where .= 'tbl.vehicleDescription LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.manufacturer LIKE \'%' . $fragment . '%\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.manufacturerImage = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.model LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
@@ -1099,8 +1106,8 @@ abstract class AbstractVehicleRepository extends EntityRepository
             // you could add explicit filters at this point, something like
             // $filterUtil->addFilter('foo:eq:something,bar:gt:100');
             // read more at
-            // https://github.com/zikula/core/blob/master/src/lib/Zikula/Component/FilterUtil/README.md
-            // https://github.com/zikula/core/blob/master/src/lib/Zikula/Component/FilterUtil/Resources/docs/users.md
+            // https://github.com/zikula/core/blob/1.4/src/lib/legacy/util/FilterUtil/docs/developers.md
+            // https://github.com/zikula/core/blob/1.4/src/lib/legacy/util/FilterUtil/docs/users.md
     
             // now enrich the query builder
             $filterUtil->enrichQuery();

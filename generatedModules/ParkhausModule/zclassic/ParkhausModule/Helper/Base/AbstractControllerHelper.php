@@ -246,6 +246,9 @@ abstract class AbstractControllerHelper
                     case 'vehicleImage':
                         $basePath .= 'vehicleimage/';
                         break;
+                    case 'manufacturerImage':
+                        $basePath .= 'manufacturerimage/';
+                        break;
                 }
             break;
             case 'vehicleImage':
@@ -277,6 +280,7 @@ abstract class AbstractControllerHelper
     
         $result &= $this->checkAndCreateUploadFolder('vehicle', 'titleImage', 'gif, jpeg, jpg, png');
         $result &= $this->checkAndCreateUploadFolder('vehicle', 'vehicleImage', 'gif, jpeg, jpg, png');
+        $result &= $this->checkAndCreateUploadFolder('vehicle', 'manufacturerImage', 'gif, jpeg, jpg, png');
     
         $result &= $this->checkAndCreateUploadFolder('vehicleImage', 'vehicleImage', 'gif, jpeg, jpg, png');
     

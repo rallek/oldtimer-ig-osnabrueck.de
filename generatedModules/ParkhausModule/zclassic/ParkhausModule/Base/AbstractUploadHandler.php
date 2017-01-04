@@ -303,6 +303,9 @@ abstract class AbstractUploadHandler
                     case 'vehicleImage':
                         $allowedExtensions = ['gif', 'jpeg', 'jpg', 'png'];
                         break;
+                    case 'manufacturerImage':
+                        $allowedExtensions = ['gif', 'jpeg', 'jpg', 'png'];
+                        break;
                 }
                     break;
             case 'vehicleImage':
@@ -349,6 +352,9 @@ abstract class AbstractUploadHandler
                         $namingScheme = 0;
                         break;
                     case 'vehicleImage':
+                        $namingScheme = 0;
+                        break;
+                    case 'manufacturerImage':
                         $namingScheme = 0;
                         break;
                 }

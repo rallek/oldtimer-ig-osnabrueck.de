@@ -34,6 +34,7 @@
         <option value="vehicleDescriptionTeaser"{if $sort eq 'vehicleDescriptionTeaser'} selected="selected"{/if}>{gt text='Vehicle description teaser'}</option>
         <option value="vehicleDescription"{if $sort eq 'vehicleDescription'} selected="selected"{/if}>{gt text='Vehicle description'}</option>
         <option value="manufacturer"{if $sort eq 'manufacturer'} selected="selected"{/if}>{gt text='Manufacturer'}</option>
+        <option value="manufacturerImage"{if $sort eq 'manufacturerImage'} selected="selected"{/if}>{gt text='Manufacturer image'}</option>
         <option value="model"{if $sort eq 'model'} selected="selected"{/if}>{gt text='Model'}</option>
         <option value="built"{if $sort eq 'built'} selected="selected"{/if}>{gt text='Built'}</option>
         <option value="engine"{if $sort eq 'engine'} selected="selected"{/if}>{gt text='Engine'}</option>
@@ -56,6 +57,7 @@
         <option value="owner"{if $sort eq 'owner'} selected="selected"{/if}>{gt text='Owner'}</option>
         <option value="showVehicleOwner"{if $sort eq 'showVehicleOwner'} selected="selected"{/if}>{gt text='Show vehicle owner'}</option>
         <option value="titleTextColor"{if $sort eq 'titleTextColor'} selected="selected"{/if}>{gt text='Title text color'}</option>
+        <option value="stillMyOwn"{if $sort eq 'stillMyOwn'} selected="selected"{/if}>{gt text='Still my own'}</option>
         <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>
         <option value="createdBy"{if $sort eq 'createdBy'} selected="selected"{/if}>{gt text='Creator'}</option>
         <option value="updatedDate"{if $sort eq 'updatedDate'} selected="selected"{/if}>{gt text='Update date'}</option>
