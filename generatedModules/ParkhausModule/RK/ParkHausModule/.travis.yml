@@ -1,0 +1,81 @@
+language: php
+
+sudo: false
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - hhvm
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: 7.0
+    - php: 7.1
+    - php: hhvm
+
+services:
+  - mysql
+
+before_install:
+    - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]] && [ $(php -r "echo PHP_MINOR_VERSION;") -le 4 ]; then echo "extension = apc.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
+    - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then (pecl install -f memcached-2.1.0 && echo "extension = memcache.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini) || echo "Let's continue without memcache extension"; fi;
+    # - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then php -i; fi;
+    # Set the COMPOSER_ROOT_VERSION to the right version according to the branch being built
+    - if [ "$TRAVIS_BRANCH" = "master" ]; then export COMPOSER_ROOT_VERSION=dev-master; else export COMPOSER_ROOT_VERSION="$TRAVIS_BRANCH".x-dev; fi;
+    - composer self-update
+    - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
+    - mysql -e 'create database zk_test;'
+
+install:
+    - composer install
+    - zip -qr RKParkHausModule.zip .
+    - wget http://ci.zikula.org/job/Zikula_Core-1.4.5/106/artifact/build/archive/Zikula_Core-1.4.5.build106.tar.gz
+    - tar -xpzf Zikula_Core-1.4.5.build106.tar.gz
+    - rm Zikula_Core-1.4.5.build106.tar.gz
+    - cd Zikula_Core-1.4.5
+    - php app/console zikula:install:start -n --database_user=root --database_name=zk_test --password=12345678 --email=admin@example.com --router:request_context:host=localhost
+    - php app/console zikula:install:finish
+    - cd modules
+    - mkdir rk
+    - cd rk
+    - mkdir parkhaus-module
+    - cd parkhaus-module
+    - unzip -q ../../../../RKParkHausModule
+    - cd  ../../..
+    - php app/console bootstrap:bundles
+    - mysql -e "INSERT INTO zk_test.modules (id, name, type, displayname, url, description, directory, version, capabilities, state, securityschema, core_min, core_max) VALUES (NULL, 'RKParkHausModule', '3', 'Park haus', 'parkhaus', 'This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album.', 'rk/parkhaus-module', '0.4.0', 'N;', '3', 'N;', '1.4.4', '2.0.0');"
+    - php app/console cache:warmup
+
+script:
+    - php app/console lint:yaml modules/rk/parkhaus-module/Resources
+    - php app/console lint:twig @RKParkHausModule
+    - phpunit --configuration modules/rk/parkhaus-module/phpunit.xml.dist --coverage-text --coverage-clover=coverage.clover -v
+
+after_script:
+    - wget https://scrutinizer-ci.com/ocular.phar
+    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+
+before_deploy:
+    - cd ..
+    - mkdir release
+    - cd release
+    - unzip -q ../RKParkHausModule.zip
+    - rm -Rf vendor
+    - rm -Rf .git
+    - composer install --no-dev --prefer-dist
+    - rm auth.json
+    - zip -qr RKParkHausModule.zip .
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "" # Enter your api key here!
+  file: RKParkHausModule.zip
+  on:
+    tags: true
+    repo: rK/ParkHaus
+

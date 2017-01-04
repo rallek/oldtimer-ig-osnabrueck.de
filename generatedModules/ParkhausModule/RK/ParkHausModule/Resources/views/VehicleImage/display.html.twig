@@ -1,0 +1,134 @@
+{# purpose of this template: vehicle images display view #}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
+{% block pageTitle %}{{ vehicleImage.getTitleFromDisplayPattern()|default(__('Vehicle image')) }}{% endblock %}
+{% block title %}
+    {% set templateTitle = vehicleImage.getTitleFromDisplayPattern()|default(__('Vehicle image')) %}
+    {{ templateTitle|notifyFilters('rkparkhausmodule.filter_hooks.vehicleimages.filter') }}{% if routeArea == 'admin' %} <small>({{ vehicleImage.workflowState|rkparkhausmodule_objectState(false)|lower }})</small>{% endif %}
+    {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicleImage, area: routeArea, context: 'display' }) %}
+    <div class="dropdown">
+        <a id="itemActions{{ vehicleImage.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
+        
+        {{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
+    </div>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            $(document).ready(function() {
+                $('h2 .dropdown > ul, h3 .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu');
+                $('h2 .dropdown > ul a, h3 .dropdown > ul a').each(function (index) {
+                    $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
+                });
+                $('h2 .dropdown > ul a i, h3 .dropdown > ul a i').addClass('fa-fw');
+                $('h2 .dropdown-toggle, h3 .dropdown-toggle').removeClass('hidden').dropdown();
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+{% endblock %}
+{% block admin_page_icon 'eye' %}
+{% block content %}
+    <div class="rkparkhausmodule-vehicleimage rkparkhausmodule-display">
+
+
+    <dl>
+        {% if vehicleImage.workflowState is not empty and routeArea == 'admin' %}
+            <dt>{{ __('State') }}</dt>
+            <dd>{{ vehicleImage.workflowState|rkparkhausmodule_listEntry('vehicleImage', 'workflowState') }}</dd>
+        {% endif %}
+        {% if vehicleImage.titel is not empty %}
+            <dt>{{ __('Titel') }}</dt>
+            <dd>{{ vehicleImage.titel }}</dd>
+        {% endif %}
+        {% if vehicleImage.vehicleImage is not empty %}
+            <dt>{{ __('Vehicle image') }}</dt>
+            <dd>{% if vehicleImage.vehicleImageMeta|default %}
+            <a href="{{ vehicleImage.vehicleImageUrl }}" title="{{ vehicleImage.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicleImage.vehicleImageMeta.isImage %} class="lightbox"{% endif %}>
+            {% if vehicleImage.vehicleImageMeta.isImage %}
+                {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleImageVehicleImage') %}
+                <img src="{{ vehicleImage.vehicleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicleImage.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+            {% else %}
+                {{ __('Download') }} ({{ vehicleImage.vehicleImageMeta.size|rkparkhausmodule_fileSize(vehicleImage.vehicleImage.getPathname(), false, false) }})
+            {% endif %}
+            </a>
+            {% endif %}
+            </dd>
+        {% endif %}
+        {% if vehicleImage.copyright is not empty %}
+            <dt>{{ __('Copyright') }}</dt>
+            <dd>{{ vehicleImage.copyright }}</dd>
+        {% endif %}
+        {% if vehicleImage.imageDate is not empty %}
+            <dt>{{ __('Image date') }}</dt>
+            <dd>{{ vehicleImage.imageDate }}</dd>
+        {% endif %}
+        {% if vehicleImage.description is not empty %}
+            <dt>{{ __('Description') }}</dt>
+            <dd>{{ vehicleImage.description|safeHtml }}</dd>
+        {% endif %}
+        {% if vehicleImage.vehicleOwner is not empty %}
+            <dt>{{ __('Vehicle owner') }}</dt>
+            <dd>{% if vehicleImage.vehicleOwner > 0 %}
+            {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+                {{ vehicleImage.vehicleOwner|profileLinkByUserId() }}
+                <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicleImage.vehicleOwner, rating='g') }}</span>
+            {% else %}
+                {{ rkparkhausmodule_userVar('uname', vehicleImage.vehicleOwner) }}
+            {% endif %}
+            {% else %}&nbsp;{% endif %}
+            </dd>
+        {% endif %}
+        {% if vehicleImage.vehicle|default %}
+            <dt>{{ __('Vehicle') }}</dt>
+            <dd>
+              {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+                  <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id }) }}">{% spaceless %}
+                    {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
+                  {% endspaceless %}</a>
+                  <a id="vehicleItem{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="hidden"><span class="fa fa-eye"></span></a>
+                  <script type="text/javascript">
+                  /* <![CDATA[ */
+                      ( function($) {
+                          $(document).ready(function() {
+                              rKParkHausInitInlineWindow($('vehicleItem{{ vehicleImage.vehicle.id }}Display'), '{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('js') }}');
+                          });
+                      })(jQuery);
+                  /* ]]> */
+                  </script>
+              {% else %}
+                  {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
+              {% endif %}
+            </dd>
+        {% endif %}
+        
+    </dl>
+    {{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicleImage }) }}
+
+    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+        {# include display hooks #}
+        {{ block('display_hooks') }}
+    {% endif %}
+</div>
+{% endblock %}
+{% block display_hooks %}
+    {% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicleimages.display_view', id=vehicleImage.id, urlObject=currentUrlObject) %}
+    {% for providerArea, hook in hooks %}
+        {% if providerArea != 'provider.scribite.ui_hooks.editor' %}{# fix for #664 #}
+            {{ hook }}
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+
+    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            ( function($) {
+                $(document).ready(function() {
+                    $('a.lightbox').lightbox();
+                });
+            })(jQuery);
+        /* ]]> */
+        </script>
+    {% endif %}
+{% endblock %}

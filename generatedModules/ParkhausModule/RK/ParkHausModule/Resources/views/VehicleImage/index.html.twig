@@ -1,0 +1,7 @@
+{# purpose of this template: vehicle images index view #}
+{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
+{% block title __('vehicle images') %}
+{% block admin_page_icon 'home' %}
+{% block content %}
+    <p>{{ __('Welcome to the vehicle image section of the Park haus application.') }}</p>
+{% endblock %}

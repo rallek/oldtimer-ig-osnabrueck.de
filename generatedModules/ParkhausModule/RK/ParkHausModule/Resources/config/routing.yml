@@ -1,0 +1,5 @@
+rkparkhausmodule:
+    # define routing support for these controllers
+    resource: "@RKParkHausModule/Controller"
+    # enable support for defining routes by annotations
+    type: annotation

@@ -1,0 +1,308 @@
+application "ParkHaus" {
+    documentation "This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album."
+    vendor "RK"
+    author "Ralf Koester"
+    email "ralf@familie-koester.de"
+    url "http://oldtimer-ig-osnabrueck.de"
+    version "0.4.0"
+    prefix "parkha"
+    generatorSettings {
+        settingsContainer "Settings"
+        generateMailzApi false
+        generateModerationBlock false
+        generateNewsletterPlugin false
+        generateModerationPanel false
+        generatePendingContentSupport false
+        generateScribitePlugins true
+        generateTagSupport false
+        generateMultiHookNeedles false
+        generateRssTemplates false
+        generateAtomTemplates false
+        generateCsvTemplates false
+        generateXmlTemplates false
+        generateJsonTemplates false
+        generateKmlTemplates false
+        generateIcsTemplates false
+        versionAllGeneratedFiles false
+        generatePoweredByBacklinksIntoFooterTemplates true
+        generateTests false
+    writeModelToDocs true
+    markFiles "ParkHausModuleInstaller.php, README.md"
+    }
+    entities {
+        entity "vehicle" leading {
+            documentation "please add your vehicle. You will be able to add some images in a vehicle specific album. \r\nNot all fields are mandatory. Feel free to fill what fits best to your vehicle."
+            nameMultiple "vehicles"
+            displayPattern "#manufacturer# #model# #built#"
+            onAccountDeletionCreator GUEST
+            onAccountDeletionLastEditor GUEST
+            ownerPermission true
+            fields {
+                list "vehicleType" {
+                    documentation "please select which type fits best"
+                    defaultValue "Auto"
+                    displayType SORTING
+                    items {
+                        listItem "Auto",
+                        listItem "Motorbike",
+                        listItem "Bicycle",
+                        listItem "Bus",
+                        listItem "Truck",
+                        listItem "Tractor",
+                        listItem "miscellaneous"
+                    }
+                },
+                upload "titleImage" nullable nospace {
+                    documentation "This image will be used as the title image. It shoud have a ratio of 3:1 and min 1200px. Bigger than 1800px will be reduced automatically."
+                    defaultValue ""
+                    mandatory false
+                    displayType DISPLAY
+                    minRatio 2.95
+                    maxRatio 3.05
+                    allowSquare false
+                    allowPortrait false
+                },
+                string "copyrightTitleImage" nullable {
+                    documentation "Please fill the copyright. If you got the image from someone else please be fair and name him here."
+                    mandatory false
+                displayType DISPLAY
+                },
+                upload "vehicleImage" nullable nospace {
+                    documentation "This image should be in landscape format. It will represent your vehicle. In the album you can add multiple additional images."
+                    mandatory false
+                displayType VIEW_DISPLAY
+                allowSquare false
+                    allowPortrait false
+                },
+                string "copyrightVehicleImage" nullable {
+                    documentation "Please fill the copyright. If you got the image from someone else please be fair and name him here."
+                    mandatory false
+                displayType DISPLAY
+                },
+                text "vehicleDescriptionTeaser" {
+                    documentation "Vehicle description with max 500 char. It will been shown in the list overview and added in front of the rest of the vehicle description."
+                    displayType VIEW_DISPLAY
+                    length 500
+                },
+                text "vehicleDescription" nullable {
+                    documentation "This is the text which follows the teaser text at the display page. You can use max 5000 char."
+                    mandatory false
+                    displayType DISPLAY
+                    length 5000
+                },
+                string "manufacturer" {
+                    documentation "if you do not know the manufacturer please type unknown."
+                displayType VIEW_DISPLAY
+                },
+                upload "manufacturerImage" {
+                    documentation "Here you can place an image from the OEM who manufactured the vehicle. It will be used in the print version."
+                    mandatory false
+                    displayType DISPLAY
+                }
+            ,
+                string "model" nullable {
+                    documentation "vehicle version"
+                    mandatory false
+                displayType VIEW_DISPLAY
+                }
+            ,
+                string "built" nullable {
+                    documentation "the year or month.year of your vehicle built"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "engine" nullable {
+                    documentation "e.g. Otto, Diesel, Wankel, or specific type of engine, ..."
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "displacement" nullable {
+                    documentation "how much ccm"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "cylinders" nullable {
+                    documentation "how many cylinders"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "compression" nullable {
+                    documentation "compression in bar"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "fuelManagement" nullable {
+					documentation "e.g. injection type, carburetor manufacturor and size ..."
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "fuel" nullable {
+                    documentation "z.B. Benzine, Diesel or 1:25"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "horsePower" nullable {
+                    documentation "you can use hp or kw"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "maxSpeed" nullable {
+                    documentation "you can use km/h or mph"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "weight" nullable {
+                    documentation "typical in kg"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "brakes" nullable {
+                    documentation "tell us something about your brakes"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "gearbox" nullable {
+                    documentation "shifter or automatic? Specific type?"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "rim" nullable {
+                    documentation "if you have special rim installed"
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "tire" nullable {
+                    documentation "sice of tire or something specific about your tires"
+                    mandatory false
+                displayType DISPLAY
+                }
+            ,
+                string "interior" nullable {
+                    documentation "do you have a special interieur?"
+                    mandatory false
+                    displayType DISPLAY
+                },
+                string "infoField1" nullable {
+                    documentation "If there is somethin special what you can not fill into one of the other fields you may want to place it here."
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "infoField2" nullable {
+                    documentation "If there is somethin special what you can not fill into one of the other fields you may want to place it here."
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "infoField3" nullable {
+                    documentation "If there is something special what you can not fill into one of the other fields you may want to place it here."
+                    mandatory false
+                displayType DISPLAY
+                },
+                user "owner" {
+                    documentation "the owner of the vehicle if the owner is registered at our site"
+                    mandatory false
+                displayType DISPLAY
+                    onAccountDeletionCreator ADMIN
+                }
+            ,
+                boolean "showVehicleOwner" nullable ajaxTogglability {
+                    documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty"
+                    defaultValue "false"
+                    mandatory false
+                displayType DISPLAY
+                }
+            ,
+                string "titleTextColor" nospace htmlcolour {
+                    documentation "Please change if white is not fitting due to the color of the title image. Preferred you should use #000000 in case."
+                    defaultValue "#ffffff"
+                    displayType DISPLAY
+                }
+            ,
+                boolean "stillMyOwn" ajaxTogglability {
+                    documentation "If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as \"not in Parkhaus anymore\""
+                    defaultValue "true"
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            }
+        },
+        entity "vehicleImage" {
+            documentation "You may want to add some more images to your vehicle description. This album will collect all your images. You can add images later as well. The images can be restricted to be shown only to IG members."
+            nameMultiple "vehicleImages"
+            displayPattern "#titel# #imageDate#"
+            onAccountDeletionCreator GUEST
+            onAccountDeletionLastEditor GUEST
+            ownerPermission true
+            fields {
+                string "titel" {
+                    documentation "e.g. the location or the event"
+                },
+                upload "vehicleImage"
+            nospace {
+                    documentation "Please upload an image. It does not matter if it is portrait, landscape or square. The hight will be harmonized always."
+                displayType VIEW_DISPLAY
+                },
+                string "copyright" nullable {
+                    documentation "Please fill the copyright. If you got the image from someone else please be fair and name him here."
+                    mandatory false
+                displayType DISPLAY
+                },
+                string "imageDate" {
+                    documentation "the image date will be added to the title"
+                    mandatory false
+                    displayType DISPLAY
+                },
+                text "description" nullable {
+                    mandatory false
+                displayType DISPLAY
+                },
+                boolean "viewImage" ajaxTogglability {
+                    documentation "If not checked the image will not been shown to the public. Only IG members are able to see."
+                    defaultValue "true"
+                    mandatory false
+                    displayType VIEW
+                }
+            ,
+                user "vehicleOwner" {
+                    documentation "If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings."
+                    mandatory false
+                    displayType DISPLAY
+                    onAccountDeletionCreator ADMIN
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            ,
+                deleteAction "Delete"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "vehicle"
+            sourceAlias "vehicle"
+            target "vehicleImage"
+            targetAlias "vehicleImages"
+            editType ACTIVE_NONE_PASSIVE_CHOOSE
+        }
+    }
+    controllers {
+        adminController "Admin" {
+            actions {
+                mainAction "Index"
+            }
+        },
+        ajaxController "Ajax" {
+            actions {
+                mainAction "Index"
+            }
+        }
+    }
+}
