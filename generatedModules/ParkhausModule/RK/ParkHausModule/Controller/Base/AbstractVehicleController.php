@@ -76,16 +76,7 @@ abstract class AbstractVehicleController extends AbstractController
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
             throw new AccessDeniedException();
         }
-        
-        if ($isAdmin) {
-            
-            return $this->redirectToRoute('rkparkhausmodule_vehicle_' . ($isAdmin ? 'admin' : '') . 'view');
-        }
-        
-        if (!$isAdmin) {
-            
-            return $this->redirectToRoute('rkparkhausmodule_vehicle_' . ($isAdmin ? 'admin' : '') . 'view');
-        }
+        return $this->redirectToRoute('rkparkhausmodule_vehicle_' . ($isAdmin ? 'admin' : '') . 'view');
         
         $templateParameters = [
             'routeArea' => $isAdmin ? 'admin' : ''

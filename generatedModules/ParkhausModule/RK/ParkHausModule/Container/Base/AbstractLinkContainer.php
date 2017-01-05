@@ -137,7 +137,7 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
             }
             if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
                 $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_admin_index'),
+                    'url' => $this->router->generate('rkparkhausmodule_vehicle_adminindex'),
                     'text' => $this->__('Park haus Backend'),
                     'icon' => 'wrench'
                 ];
@@ -146,76 +146,51 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
             return $links;
         }
 
-        
+
+        $routeArea = LinkContainerInterface::TYPE_ADMIN == $type ? 'admin' : '';
         if (LinkContainerInterface::TYPE_ADMIN == $type) {
             if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_READ)) {
                 $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_user_index'),
+                    'url' => $this->router->generate('rkparkhausmodule_vehicle_index'),
                     'text' => $this->__('Frontend'),
                     'title' => $this->__('Switch to user area.'),
                     'icon' => 'home'
                 ];
             }
-            
-            if (in_array('vehicle', $allowedObjectTypes)
-                && $this->permissionApi->hasPermission($this->getBundleName() . ':Vehicle:', '::', $permLevel)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_vehicle_adminview'),
-                    'text' => $this->__('Vehicles'),
-                    'title' => $this->__('Vehicle list')
-                ];
-            }
-            if (in_array('vehicleImage', $allowedObjectTypes)
-                && $this->permissionApi->hasPermission($this->getBundleName() . ':VehicleImage:', '::', $permLevel)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_vehicleimage_adminview'),
-                    'text' => $this->__('Vehicle images'),
-                    'title' => $this->__('Vehicle image list')
-                ];
-            }
+        } else {
             if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
                 $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_config_config'),
-                    'text' => $this->__('Configuration'),
-                    'title' => $this->__('Manage settings for this application'),
-                    'icon' => 'wrench'
-                ];
-            }
-        }
-        if (LinkContainerInterface::TYPE_USER == $type) {
-            if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_admin_index'),
+                    'url' => $this->router->generate('rkparkhausmodule_vehicle_adminindex'),
                     'text' => $this->__('Backend'),
                     'title' => $this->__('Switch to administration area.'),
                     'icon' => 'wrench'
                 ];
             }
-            
-            if (in_array('vehicle', $allowedObjectTypes)
-                && $this->permissionApi->hasPermission($this->getBundleName() . ':Vehicle:', '::', $permLevel)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_vehicle_view'),
-                    'text' => $this->__('Vehicles'),
-                    'title' => $this->__('Vehicle list')
-                ];
-            }
-            if (in_array('vehicleImage', $allowedObjectTypes)
-                && $this->permissionApi->hasPermission($this->getBundleName() . ':VehicleImage:', '::', $permLevel)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_vehicleimage_view'),
-                    'text' => $this->__('Vehicle images'),
-                    'title' => $this->__('Vehicle image list')
-                ];
-            }
-            if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_config_config'),
-                    'text' => $this->__('Configuration'),
-                    'title' => $this->__('Manage settings for this application'),
-                    'icon' => 'wrench'
-                ];
-            }
+        }
+        
+        if (in_array('vehicle', $allowedObjectTypes)
+            && $this->permissionApi->hasPermission($this->getBundleName() . ':Vehicle:', '::', $permLevel)) {
+            $links[] = [
+                'url' => $this->router->generate('rkparkhausmodule_vehicle_' . $routeArea . 'view'),
+                'text' => $this->__('Vehicles'),
+                'title' => $this->__('Vehicle list')
+            ];
+        }
+        if (in_array('vehicleImage', $allowedObjectTypes)
+            && $this->permissionApi->hasPermission($this->getBundleName() . ':VehicleImage:', '::', $permLevel)) {
+            $links[] = [
+                'url' => $this->router->generate('rkparkhausmodule_vehicleimage_' . $routeArea . 'view'),
+                'text' => $this->__('Vehicle images'),
+                'title' => $this->__('Vehicle image list')
+            ];
+        }
+        if ($routeArea == 'admin' && $this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
+            $links[] = [
+                'url' => $this->router->generate('rkparkhausmodule_config_config'),
+                'text' => $this->__('Configuration'),
+                'title' => $this->__('Manage settings for this application'),
+                'icon' => 'wrench'
+            ];
         }
 
         return $links;

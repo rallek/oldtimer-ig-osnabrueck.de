@@ -27,8 +27,8 @@
             "displayname": "Park haus",
             "url": "parkhaus",
             "capabilities": {
-                "user": {"route": "rkparkhausmodule_user_index"},
-                "admin": {"route": "rkparkhausmodule_admin_index"},
+                "user": {"route": "rkparkhausmodule_vehicle_index"},
+                "admin": {"route": "rkparkhausmodule_vehicle_adminindex"},
                 "searchable": {"class": "RK\\ParkHausModule\\Helper\\SearchHelper"},
                 "hook_subscriber": {"class": "RK\\ParkHausModule\\Container\\HookContainer"}
             },

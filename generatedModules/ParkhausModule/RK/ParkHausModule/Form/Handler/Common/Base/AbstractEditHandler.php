@@ -423,20 +423,7 @@ abstract class AbstractEditHandler
     {
         $codes = [];
     
-        // index page of admin area
-        $codes[] = 'admin';
-        // admin list of entities
-        $codes[] = 'adminView';
-        // admin display page of treated entity
-        $codes[] = 'adminDisplay';
-        // index page of ajax area
-        $codes[] = 'ajax';
-        // index page of user area
-        $codes[] = 'user';
-        // user list of entities
-        $codes[] = 'userView';
-        // user display page of treated entity
-        $codes[] = 'userDisplay';
+        // to be filled by subclasses
     
         return $codes;
     }

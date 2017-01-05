@@ -293,16 +293,4 @@ application "ParkHaus" {
             editType ACTIVE_NONE_PASSIVE_CHOOSE
         }
     }
-    controllers {
-        adminController "Admin" {
-            actions {
-                mainAction "Index"
-            }
-        },
-        ajaxController "Ajax" {
-            actions {
-                mainAction "Index"
-            }
-        }
     }
-}

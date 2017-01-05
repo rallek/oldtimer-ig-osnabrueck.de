@@ -128,14 +128,27 @@ abstract class AbstractEditHandler extends EditHandler
     {
         $codes = parent::getRedirectCodes();
     
-        // admin list of vehicles
-        $codes[] = 'adminViewVehicle';
-        // admin display page of treated vehicle
-        $codes[] = 'adminDisplayVehicle';
+        // user index page of vehicle image area
+        $codes[] = 'userIndex';
+        // admin index page of vehicle image area
+        $codes[] = 'adminIndex';
+        // user list of vehicle images
+        $codes[] = 'userView';
+        // admin list of vehicle images
+        $codes[] = 'adminView';
+        // user detail page of treated vehicle image
+        $codes[] = 'userDisplay';
+        // admin detail page of treated vehicle image
+        $codes[] = 'adminDisplay';
+    
         // user list of vehicles
         $codes[] = 'userViewVehicle';
-        // user display page of treated vehicle
+        // admin list of vehicles
+        $codes[] = 'adminViewVehicle';
+        // user detail page of related vehicle
         $codes[] = 'userDisplayVehicle';
+        // admin detail page of related vehicle
+        $codes[] = 'adminDisplayVehicle';
     
         return $codes;
     }
@@ -162,10 +175,11 @@ abstract class AbstractEditHandler extends EditHandler
         }
     
         $routeArea = array_key_exists('routeArea', $this->templateParameters) ? $this->templateParameters['routeArea'] : '';
+        $routePrefix = 'rkparkhausmodule_' . $this->objectTypeLower . '_' . $routeArea;
     
         // redirect to the list of vehicleImages
         $viewArgs = [];
-        $url = $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_' . $routeArea . 'view', $viewArgs);
+        $url = $this->router->generate($routePrefix . 'view', $viewArgs);
     
         return $url;
     }
@@ -311,47 +325,35 @@ abstract class AbstractEditHandler extends EditHandler
             return $this->getDefaultReturnUrl($args);
         }
     
+        $routeArea = substr($this->returnTo, 0, 5) == 'admin' ? 'admin' : '';
+        $routePrefix = 'rkparkhausmodule_' . $this->objectTypeLower . '_' . $routeArea;
+    
         // parse given redirect code and return corresponding url
         switch ($this->returnTo) {
-            case 'admin':
-                return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_adminindex');
+            case 'userIndex':
+            case 'adminIndex':
+                return $this->router->generate($routePrefix . 'index');
+            case 'userView':
             case 'adminView':
-                return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_adminview');
+                return $this->router->generate($routePrefix . 'view');
+            case 'userDisplay':
             case 'adminDisplay':
                 if ($args['commandName'] != 'delete' && !($this->templateParameters['mode'] == 'create' && $args['commandName'] == 'cancel')) {
                     foreach ($this->idFields as $idField) {
                         $urlArgs[$idField] = $this->idValues[$idField];
                     }
-                    return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_admindisplay', $urlArgs);
-                }
     
-                return $this->getDefaultReturnUrl($args);
-            case 'user':
-                return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_index');
-            case 'userView':
-                return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_view');
-            case 'userDisplay':
-                if ($args['commandName'] != 'delete' && !($this->templateParameters['mode'] == 'create' && $args['commandName'] == 'cancel')) {
-                    foreach ($this->idFields as $idField) {
-                        $urlArgs[$idField] = $this->idValues[$idField];
-                    }
-                    return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_display', $urlArgs);
-                }
-    
-                return $this->getDefaultReturnUrl($args);
-            case 'adminViewVehicle':
-                return $this->router->generate('rkparkhausmodule_vehicle_adminview');
-            case 'adminDisplayVehicle':
-                if (!empty($this->relationPresets['vehicle'])) {
-                    return $this->router->generate('rkparkhausmodule_vehicle_admindisplay',  ['id' => $this->relationPresets['vehicle']]);
+                    return $this->router->generate($routePrefix . 'display', $urlArgs);
                 }
     
                 return $this->getDefaultReturnUrl($args);
             case 'userViewVehicle':
-                return $this->router->generate('rkparkhausmodule_vehicle_view');
+            case 'adminViewVehicle':
+                return $this->router->generate('rkparkhausmodule_vehicle_' . $routeArea . 'view');
             case 'userDisplayVehicle':
+            case 'adminDisplayVehicle':
                 if (!empty($this->relationPresets['vehicle'])) {
-                    return $this->router->generate('rkparkhausmodule_vehicle_display',  ['id' => $this->relationPresets['vehicle']]);
+                    return $this->router->generate('rkparkhausmodule_vehicle_' . $routeArea . 'display',  ['id' => $this->relationPresets['vehicle']]);
                 }
     
                 return $this->getDefaultReturnUrl($args);
