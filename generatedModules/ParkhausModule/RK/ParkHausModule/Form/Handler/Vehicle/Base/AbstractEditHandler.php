@@ -19,7 +19,6 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use ModUtil;
 use RuntimeException;
 use System;
-use UserUtil;
 
 /**
  * This handler class handles the page events of editing forms.
@@ -296,8 +295,8 @@ abstract class AbstractEditHandler extends EditHandler
             return $this->repeatReturnUrl;
         }
     
-        if ($this->request->getSession()->has('referer')) {
-            $this->request->getSession()->del('referer');
+        if ($this->request->getSession()->has('rkparkhausmoduleReferer')) {
+            $this->request->getSession()->del('rkparkhausmoduleReferer');
         }
     
         // normal usage, compute return url from given redirect code

@@ -19,6 +19,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use UserUtil;
 use RK\ParkHausModule\Traits\EntityWorkflowTrait;
 use RK\ParkHausModule\Traits\StandardFieldsTrait;
 

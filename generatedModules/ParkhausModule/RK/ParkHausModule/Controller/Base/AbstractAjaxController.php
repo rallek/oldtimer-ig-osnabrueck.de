@@ -324,7 +324,8 @@ abstract class AbstractAjaxController extends AbstractController
         // return response
         $result = [
             'id' => $id,
-            'state' => $entity[$field]
+            'state' => $entity[$field],
+            'message' => $this->__('The setting has been successfully changed.')
         ];
         
         $logger = $this->get('logger');

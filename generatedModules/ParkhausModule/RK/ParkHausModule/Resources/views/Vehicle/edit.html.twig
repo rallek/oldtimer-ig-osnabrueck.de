@@ -3,8 +3,8 @@
 
 {% block header %}
     {{ parent() }}
-    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.EditFunctions.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.Validation.js')) }}
+    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.Validation.js', 98)) }}
+    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.EditFunctions.js', 99)) }}
     {{ pageAddAsset('javascript', pagevars.homepath ~ 'vendor/twitter/typeahead.js/dist/typeahead.bundle.min.js') }}
 {% endblock %}
 
@@ -91,12 +91,8 @@
 {% endif %}
 
 {# include display hooks #}
-{% if mode != 'create' %}
-    {% set hookId = vehicle.id %}
-    {% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicles.form_edit', id=hookId) %}
-{% else %}
-    {% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicles.form_edit', id=null) %}
-{% endif %}
+{% set hookId = mode != 'create' ? vehicle.id : null %}
+{% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicles.form_edit', id=hookId) %}
 {% if hooks is iterable and hooks|length > 0 %}
     {% for providerArea, hook in hooks %}
         {% if providerArea != 'provider.scribite.ui_hooks.editor' %}{# fix for #664 #}
@@ -143,7 +139,7 @@
             $(document).ready(function() {
                 // initialise auto completion for user fields
                 rKParkHausInitUserField('rkparkhausmodule_vehicle_owner', 'getVehicleOwnerUsers');
-                rKParkHausInitEditForm({{ mode }}, '{% if mode != 'create' %}{{ vehicle.id }}{% endif %}');
+                rKParkHausInitEditForm('{{ mode }}', '{% if mode != 'create' %}{{ vehicle.id }}{% endif %}');
                 rKParkHausInitUploadField('rkparkhausmodule_vehicle_titleImage_titleImage');
                 rKParkHausInitUploadField('rkparkhausmodule_vehicle_vehicleImage_vehicleImage');
                 rKParkHausInitUploadField('rkparkhausmodule_vehicle_manufacturerImage_manufacturerImage');

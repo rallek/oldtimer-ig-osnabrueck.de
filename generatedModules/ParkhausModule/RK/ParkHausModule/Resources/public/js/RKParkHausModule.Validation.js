@@ -92,7 +92,7 @@ function rKParkHausValidateUploadExtension(val, elem)
 /**
  * Runs special validation rules.
  */
-function rKParkHausPerformCustomValidationRules(objectType, currentEntityId)
+function rKParkHausExecuteCustomValidationRules(objectType, currentEntityId)
 {
     jQuery('.validate-nospace').each( function() {
         if (!rKParkHausValidateNoSpace(jQuery(this).val())) {

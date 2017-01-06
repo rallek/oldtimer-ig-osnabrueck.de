@@ -178,13 +178,8 @@
             <dt>{{ __('Show vehicle owner') }}</dt>
             <dd>{% set itemid = vehicle.createCompositeIdentifier() %}
             <a id="toggleShowVehicleOwner{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicle" data-field-name="showVehicleOwner" data-item-id="{{ itemid }}">
-            {% if vehicle.showVehicleOwner %}
-                <i class="cursor-pointer fa fa-check" id="yesShowVehicleOwner{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times hidden" id="noShowVehicleOwner{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
-            {% else %}
-                <i class="cursor-pointer fa fa-check hidden" id="yesShowVehicleOwner{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times" id="noShowVehicleOwner{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
-            {% endif %}
+                <i class="fa fa-check{% if not vehicle.showVehicleOwner %} hidden{% endif %}" id="yesShowVehicleOwner{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="fa fa-times{% if vehicle.showVehicleOwner %} hidden{% endif %}" id="noShowVehicleOwner{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
             </a>
             <noscript><div id="noscriptShowVehicleOwner{{ itemid }}">
                 {% if vehicle.showVehicleOwner %}
@@ -203,13 +198,8 @@
             <dt>{{ __('Still my own') }}</dt>
             <dd>{% set itemid = vehicle.createCompositeIdentifier() %}
             <a id="toggleStillMyOwn{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicle" data-field-name="stillMyOwn" data-item-id="{{ itemid }}">
-            {% if vehicle.stillMyOwn %}
-                <i class="cursor-pointer fa fa-check" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times hidden" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
-            {% else %}
-                <i class="cursor-pointer fa fa-check hidden" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
-            {% endif %}
+                <i class="fa fa-check{% if not vehicle.stillMyOwn %} hidden{% endif %}" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="fa fa-times{% if vehicle.stillMyOwn %} hidden{% endif %}" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
             </a>
             <noscript><div id="noscriptStillMyOwn{{ itemid }}">
                 {% if vehicle.stillMyOwn %}

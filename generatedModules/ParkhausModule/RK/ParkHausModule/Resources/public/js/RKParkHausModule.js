@@ -46,24 +46,20 @@ function rKParkHausToggleFlag(objectType, fieldName, itemId)
         }
     }).done(function(res) {
         // get data returned by the ajax response
-        var fieldNameCapitalised, idSuffix, data;
+        var idSuffix;
+        var toggleLink;
+        var data;
 
-        fieldNameCapitalised = rKParkHausCapitaliseFirstLetter(fieldName);
-        idSuffix = fieldNameCapitalised + itemId;
+        idSuffix = rKParkHausCapitaliseFirstLetter(fieldName) + itemId;
+        toggleLink = jQuery('#toggle' + idSuffix);
         data = res.data;
 
-        /*if (data.message) {
-            rKParkHausSimpleAlert(jQuery('#toggle' + idSuffix), Translator.__('Success'), data.message, 'toggle' + idSuffix + 'DoneAlert', 'success');
-        }*/
-
-        idSuffix = idSuffix.toLowerCase();
-        if (true === data.state) {
-            jQuery('#no' + idSuffix).addClass('hidden');
-            jQuery('#yes' + idSuffix).removeClass('hidden');
-        } else {
-            jQuery('#yes' + idSuffix).addClass('hidden');
-            jQuery('#no' + idSuffix).removeClass('hidden');
+        if (data.message) {
+            rKParkHausSimpleAlert(toggleLink, Translator.__('Success'), data.message, 'toggle' + idSuffix + 'DoneAlert', 'success');
         }
+
+        toggleLink.find('.fa-check').toggleClass('hidden', true !== data.state);
+        toggleLink.find('.fa-times').toggleClass('hidden', true === data.state);
     });
 }
 
@@ -153,6 +149,7 @@ function rKParkHausInitItemActions(context)
     });
     containers.find('.dropdown > ul a i').addClass('fa-fw');
     containers.find('.dropdown-toggle').removeClass('hidden').dropdown();
+}
 
 /**
  * Helper function to create new Bootstrap modal window instances.
@@ -218,8 +215,8 @@ jQuery(document).ready(function() {
     var isViewPage;
     var isDisplayPage;
 
-    isViewPage = jQuery(#.rkparkhausmodule-view').length > 0;
-    isDisplayPage = jQuery(#.rkparkhausmodule-display').length > 0;
+    isViewPage = jQuery('.rkparkhausmodule-view').length > 0;
+    isDisplayPage = jQuery('.rkparkhausmodule-display').length > 0;
 
     jQuery('a.lightbox').lightbox();
 

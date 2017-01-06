@@ -102,6 +102,7 @@ abstract class AbstractVehicleImageType extends AbstractType
      */
     public function addEntityFields(FormBuilderInterface $builder, array $options)
     {
+        
         $builder->add('titel', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Titel') . ':',
             'label_attr' => [
@@ -116,6 +117,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             ],'required' => true,
             'max_length' => 255,
         ]);
+        
         $builder->add('vehicleImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
             'label' => $this->__('Vehicle image') . ':',
             'label_attr' => [
@@ -131,6 +133,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             'allowed_extensions' => 'gif, jpeg, jpg, png',
             'allowed_size' => 0
         ]);
+        
         $builder->add('copyright', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Copyright') . ':',
             'label_attr' => [
@@ -145,6 +148,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('imageDate', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Image date') . ':',
             'label_attr' => [
@@ -159,6 +163,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('description', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
             'label' => $this->__('Description') . ':',
             'empty_data' => '',
@@ -168,6 +173,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             ],'required' => false,
             'max_length' => 2000,
         ]);
+        
         $builder->add('viewImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
             'label' => $this->__('View image') . ':',
             'label_attr' => [
@@ -180,6 +186,7 @@ abstract class AbstractVehicleImageType extends AbstractType
                 'title' => $this->__('view image ?')
             ],'required' => false,
         ]);
+        
         $builder->add('vehicleOwner', 'RK\ParkHausModule\Form\Type\Field\UserType', [
             'label' => $this->__('Vehicle owner') . ':',
             'label_attr' => [

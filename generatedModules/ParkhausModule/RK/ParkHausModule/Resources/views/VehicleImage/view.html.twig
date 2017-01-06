@@ -87,13 +87,8 @@
                 <td headers="hViewImage" class="text-center">
                     {% set itemid = vehicleImage.createCompositeIdentifier() %}
                     <a id="toggleViewImage{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicleImage" data-field-name="viewImage" data-item-id="{{ itemid }}">
-                    {% if vehicleImage.viewImage %}
-                        <i class="cursor-pointer fa fa-check" id="yesViewImage{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                        <i class="cursor-pointer fa fa-times hidden" id="noViewImage{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
-                    {% else %}
-                        <i class="cursor-pointer fa fa-check hidden" id="yesViewImage{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                        <i class="cursor-pointer fa fa-times" id="noViewImage{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
-                    {% endif %}
+                        <i class="fa fa-check{% if not vehicleImage.viewImage %} hidden{% endif %}" id="yesViewImage{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                        <i class="fa fa-times{% if vehicleImage.viewImage %} hidden{% endif %}" id="noViewImage{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
                     </a>
                     <noscript><div id="noscriptViewImage{{ itemid }}">
                         {% if vehicleImage.viewImage %}

@@ -216,14 +216,14 @@ abstract class AbstractEditHandler
         $this->returnTo = $this->request->query->get('returnTo', null);
         if (null === $this->returnTo) {
             // default to referer
-            if ($this->request->getSession()->has('referer')) {
-                $this->returnTo = $this->request->getSession()->get('referer');
-            } elseif ($this->request->headers->has('referer')) {
-                $this->returnTo = $this->request->headers->get('referer');
-                $this->request->getSession()->set('referer', $this->returnTo);
+            if ($this->request->getSession()->has('rkparkhausmoduleReferer')) {
+                $this->returnTo = $this->request->getSession()->get('rkparkhausmoduleReferer');
+            } elseif ($this->request->headers->has('rkparkhausmoduleReferer')) {
+                $this->returnTo = $this->request->headers->get('rkparkhausmoduleReferer');
+                $this->request->getSession()->set('rkparkhausmoduleReferer', $this->returnTo);
             } elseif ($this->request->server->has('HTTP_REFERER')) {
                 $this->returnTo = $this->request->server->get('HTTP_REFERER');
-                $this->request->getSession()->set('referer', $this->returnTo);
+                $this->request->getSession()->set('rkparkhausmoduleReferer', $this->returnTo);
             }
         }
         // store current uri for repeated creations

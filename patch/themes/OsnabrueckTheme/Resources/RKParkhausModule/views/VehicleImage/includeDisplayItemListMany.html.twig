@@ -10,6 +10,7 @@
 	{# hier muss ich noch die Permissions einbauen. Nur, wer einer bestimmten Gruppe angehört, soll dieses Bild sehen können, wenn item.viewImage false ist #}
 		{% if hasAdminPermission or item.workflowState == 'approved' or (item.workflowState == 'defered' and hasEditPermission and uid is defined and item.createdUserId == uid) %}
 			<div class="col-md-3 col-sm-6">
+			<div class="col-xs-12 white-space">
 			
 			{# Bild behandeln #}
 			
@@ -29,9 +30,14 @@
 				<h4>{{ item.getTitleFromDisplayPattern() }}</h4>
 
 			{# Beschreibung  behandeln #}
-				<p>{{ item.description() }}</p>
-
+				<p class="min-height-linker-text">{{ item.description() }}</p>
 			</div>
+			</div>
+			
+			
+			{# hier noch für xs einbauen #}
+			
+			
 		{% endif %}
 	{% endif %}
 	{% endfor %}

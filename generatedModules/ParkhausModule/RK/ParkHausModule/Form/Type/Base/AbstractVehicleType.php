@@ -100,6 +100,7 @@ abstract class AbstractVehicleType extends AbstractType
      */
     public function addEntityFields(FormBuilderInterface $builder, array $options)
     {
+        
         $listEntries = $this->listHelper->getEntries('vehicle', 'vehicleType');
         $choices = [];
         $choiceAttributes = [];
@@ -124,6 +125,7 @@ abstract class AbstractVehicleType extends AbstractType
             'multiple' => false,
             'expanded' => false
         ]);
+        
         $builder->add('titleImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
             'label' => $this->__('Title image') . ':',
             'label_attr' => [
@@ -139,6 +141,7 @@ abstract class AbstractVehicleType extends AbstractType
             'allowed_extensions' => 'gif, jpeg, jpg, png',
             'allowed_size' => 0
         ]);
+        
         $builder->add('copyrightTitleImage', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Copyright title image') . ':',
             'label_attr' => [
@@ -153,6 +156,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('vehicleImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
             'label' => $this->__('Vehicle image') . ':',
             'label_attr' => [
@@ -168,6 +172,7 @@ abstract class AbstractVehicleType extends AbstractType
             'allowed_extensions' => 'gif, jpeg, jpg, png',
             'allowed_size' => 0
         ]);
+        
         $builder->add('copyrightVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Copyright vehicle image') . ':',
             'label_attr' => [
@@ -182,6 +187,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('vehicleDescriptionTeaser', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
             'label' => $this->__('Vehicle description teaser') . ':',
             'label_attr' => [
@@ -196,6 +202,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => true,
             'max_length' => 500,
         ]);
+        
         $builder->add('vehicleDescription', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
             'label' => $this->__('Vehicle description') . ':',
             'label_attr' => [
@@ -210,6 +217,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 5000,
         ]);
+        
         $builder->add('manufacturer', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Manufacturer') . ':',
             'label_attr' => [
@@ -224,6 +232,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => true,
             'max_length' => 255,
         ]);
+        
         $builder->add('manufacturerImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
             'label' => $this->__('Manufacturer image') . ':',
             'label_attr' => [
@@ -239,6 +248,7 @@ abstract class AbstractVehicleType extends AbstractType
             'allowed_extensions' => 'gif, jpeg, jpg, png',
             'allowed_size' => 0
         ]);
+        
         $builder->add('model', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Model') . ':',
             'label_attr' => [
@@ -253,6 +263,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('built', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Built') . ':',
             'label_attr' => [
@@ -267,6 +278,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('engine', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Engine') . ':',
             'label_attr' => [
@@ -281,6 +293,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('displacement', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Displacement') . ':',
             'label_attr' => [
@@ -295,6 +308,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('cylinders', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Cylinders') . ':',
             'label_attr' => [
@@ -309,6 +323,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('compression', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Compression') . ':',
             'label_attr' => [
@@ -323,6 +338,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('fuelManagement', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Fuel management') . ':',
             'label_attr' => [
@@ -337,6 +353,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('fuel', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Fuel') . ':',
             'label_attr' => [
@@ -351,6 +368,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('horsePower', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Horse power') . ':',
             'label_attr' => [
@@ -365,6 +383,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('maxSpeed', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Max speed') . ':',
             'label_attr' => [
@@ -379,6 +398,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('weight', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Weight') . ':',
             'label_attr' => [
@@ -393,6 +413,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('brakes', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Brakes') . ':',
             'label_attr' => [
@@ -407,6 +428,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('gearbox', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Gearbox') . ':',
             'label_attr' => [
@@ -421,6 +443,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('rim', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Rim') . ':',
             'label_attr' => [
@@ -435,6 +458,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('tire', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Tire') . ':',
             'label_attr' => [
@@ -449,6 +473,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('interior', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Interior') . ':',
             'label_attr' => [
@@ -463,6 +488,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('infoField1', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Info field 1') . ':',
             'label_attr' => [
@@ -477,6 +503,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('infoField2', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Info field 2') . ':',
             'label_attr' => [
@@ -491,6 +518,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('infoField3', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Info field 3') . ':',
             'label_attr' => [
@@ -505,6 +533,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => false,
             'max_length' => 255,
         ]);
+        
         $builder->add('owner', 'RK\ParkHausModule\Form\Type\Field\UserType', [
             'label' => $this->__('Owner') . ':',
             'label_attr' => [
@@ -520,6 +549,7 @@ abstract class AbstractVehicleType extends AbstractType
             'max_length' => 11,
             'inlineUsage' => $options['inlineUsage']
         ]);
+        
         $builder->add('showVehicleOwner', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
             'label' => $this->__('Show vehicle owner') . ':',
             'label_attr' => [
@@ -532,6 +562,7 @@ abstract class AbstractVehicleType extends AbstractType
                 'title' => $this->__('show vehicle owner ?')
             ],'required' => false,
         ]);
+        
         $builder->add('titleTextColor', 'RK\ParkHausModule\Form\Type\Field\ColourType', [
             'label' => $this->__('Title text color') . ':',
             'label_attr' => [
@@ -546,6 +577,7 @@ abstract class AbstractVehicleType extends AbstractType
             ],'required' => true,
             'max_length' => 255,
         ]);
+        
         $builder->add('stillMyOwn', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
             'label' => $this->__('Still my own') . ':',
             'label_attr' => [

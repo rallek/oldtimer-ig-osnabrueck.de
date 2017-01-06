@@ -76,7 +76,7 @@ var triggerValidation = true;
 
 function rKParkHausTriggerFormValidation()
 {
-    rKParkHausPerformCustomValidationRules(editedObjectType, editedEntityId);
+    rKParkHausPerformCustomValidationConstraints(editedObjectType, editedEntityId);
 
     if (!editForm.get(0).checkValidity()) {
         // This does not really submit the form,
