@@ -1,0 +1,21 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-01-06 17:17+0100\n"
+"PO-Revision-Date: 2017-01-06 17:18+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language: de\n"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/public/js/RKParkHausModule.EditFunctions.js
+msgid "Do you really want to delete this entry?"
+msgstr "Wollen Sie diesen Eintrag wirklich löschen?"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/public/js/RKParkHausModule.js
+msgid "Success"
+msgstr "Erfolg"

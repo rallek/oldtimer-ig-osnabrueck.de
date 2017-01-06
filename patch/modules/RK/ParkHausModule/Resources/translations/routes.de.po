@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+
+msgid "doc"
+msgstr "/installdoc/{name}"
+
+msgid "fos_js_routing_js"
+msgstr "/js/routing.{_format}"
+
+msgid "install"
+msgstr "/install/{stage}"
+
+msgid "legacy_short_url"
+msgstr "/{path}"
+
+msgid "liip_imagine_filter"
+msgstr "/media/cache/resolve/{filter}/{path}"
+
+msgid "liip_imagine_filter_runtime"
+msgstr "/media/cache/resolve/{filter}/rc/{hash}/{path}"
+
+msgid "rkparkhausmodule_ajax_getcommonuserslist"
+msgstr "/ajax/getCommonUsersList"
+
+msgid "rkparkhausmodule_ajax_getitemlistautocompletion"
+msgstr "/ajax/getItemListAutoCompletion"
+
+msgid "rkparkhausmodule_ajax_getitemlistfinder"
+msgstr "/ajax/getItemListFinder"
+
+msgid "rkparkhausmodule_ajax_getvehicleimagevehicleownerusers"
+msgstr "/ajax/getVehicleImageVehicleOwnerUsers"
+
+msgid "rkparkhausmodule_ajax_getvehicleownerusers"
+msgstr "/ajax/getVehicleOwnerUsers"
+
+msgid "rkparkhausmodule_ajax_toggleflag"
+msgstr "/ajax/toggleFlag"
+
+msgid "rkparkhausmodule_config_config"
+msgstr "/config/config"
+
+msgid "rkparkhausmodule_external_display"
+msgstr "/extern/anzeige/{ot}/{id}/{source}/{displayMode}"
+
+msgid "rkparkhausmodule_external_finder"
+msgstr "/extern/finder/{objectType}/{editor}/{sort}/{sortdir}/{pos}/{num}"
+
+msgid "rkparkhausmodule_vehicle_admindisplay"
+msgstr "/admin/fahrzeug/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicle_adminedit"
+msgstr "/admin/fahrzeug/bearbeiten/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicle_adminhandleselectedentries"
+msgstr "/fahrzeuge/handleSelectedEntries"
+
+msgid "rkparkhausmodule_vehicle_adminindex"
+msgstr "/admin/fahrzeuge"
+
+msgid "rkparkhausmodule_vehicle_adminview"
+msgstr "/admin/fahrzeuge/ansicht/{sort}/{sortdir}/{pos}/{num}.{_format}"
+
+msgid "rkparkhausmodule_vehicle_display"
+msgstr "/Fahrzeug/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicle_edit"
+msgstr "/Fahrzeug/bearbeiten/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicle_handleselectedentries"
+msgstr "/fahrzeuge/handleSelectedEntries"
+
+msgid "rkparkhausmodule_vehicle_index"
+msgstr "/fahrzeuge"
+
+msgid "rkparkhausmodule_vehicle_view"
+msgstr "/fahrzeuge/ansicht/{sort}/{sortdir}/{pos}/{num}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_admindelete"
+msgstr "/admin/fahrzeugBild/loeschen/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_admindisplay"
+msgstr "/admin/fahrzeugBild/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_adminedit"
+msgstr "/admin/fahrzeugBild/bearbeiten/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_adminhandleselectedentries"
+msgstr "/fahrzeugBilder/handleSelectedEntries"
+
+msgid "rkparkhausmodule_vehicleimage_adminindex"
+msgstr "/admin/fahrzeugBilder"
+
+msgid "rkparkhausmodule_vehicleimage_adminview"
+msgstr "/admin/fahrzeugBilder/ansicht/{sort}/{sortdir}/{pos}/{num}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_delete"
+msgstr "/fahrzeugBild/loeschen/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_display"
+msgstr "/fahrzeugBild/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_edit"
+msgstr "/fahrzeugBild/bearbeiten/{id}.{_format}"
+
+msgid "rkparkhausmodule_vehicleimage_handleselectedentries"
+msgstr "/fahrzeugBilder/handleSelectedEntries"
+
+msgid "rkparkhausmodule_vehicleimage_index"
+msgstr "/fahrzeugBilder"
+
+msgid "rkparkhausmodule_vehicleimage_view"
+msgstr "/fahrzeugBilder/ansicht/{sort}/{sortdir}/{pos}/{num}.{_format}"
+
+msgid "upgrade"
+msgstr "/upgrade/{stage}"
+
+msgid "zikula_hook_hook_changeproviderareaorder"
+msgstr "/hooks/changeorder"
+
+msgid "zikula_hook_hook_edit"
+msgstr "/hooks/{moduleName}"
+
+msgid "zikula_hook_hook_togglesubscribeareastatus"
+msgstr "/hooks/togglestatus"

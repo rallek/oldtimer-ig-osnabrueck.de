@@ -1,609 +1,854 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-01-06 16:08+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 2.0beta1\n"
-"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"X-Generator: Poedit 1.8.11\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de\n"
 
-msgid ""
-"\"%bar\" will match \"FOObar\", \"Blubbar\" and so on, but not \"BarFoo\"."
-msgstr ""
-"\"%bar\" wird \"FOObar\", \"Blubbar\" usw. entsprechen, aber nicht \"BarFoo"
-"\"."
-
-msgid "A filter consists of several statements."
-msgstr "Ein Filter besteht aus mehreren Anweisungen."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 9
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 57
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 62
 msgid "Actions"
 msgstr "Aktionen"
 
-msgid "All additional joined tables can be referenced by \"tblFoo\"."
-msgstr ""
-"Alle zusätzlichen verknüpfte Tabellen können durch \"TblFoo\" verwiesen "
-"werden."
-
-msgid "All items with a date in July 2016."
-msgstr "Alle Elemente mit einem Datum im Juli 2016."
-
-msgid "All items with a date in year 2016."
-msgstr "Alle Elemente mit einem Datum im Jahr 2016."
-
-msgid "All items with date in the last year."
-msgstr "Alle Elemente mit Datum im letzten Jahr."
-
-msgid "All items with date of today."
-msgstr "Alle Elemente mit Datum von heute."
-
-#, fuzzy
-msgid "All items with date up from 24 hours ago."
-msgstr "Alle Artikel der letzten 24 Stunden."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 17
 msgid "Allowed file extensions"
 msgstr "Erlaubte Dateiendungen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 19
 msgid "Allowed file size"
 msgstr "Erlaubte Dateigröße:"
 
-msgid "Also you can use \"%\" as placeholder."
-msgstr "Sie können auch \"%\" als Platzhalter verwenden."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 162
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 163
 msgid "Back to paginated view"
 msgstr "Zurück zur Seitenansicht"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 134
 msgid "Brakes"
 msgstr "Bremsen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 94
 msgid "Built"
 msgstr "Baujahr"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 139
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 140
 msgid "Choose action"
 msgstr "Aktion wählen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 6 84
 msgid "Close"
 msgstr "Schließen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 29
 msgid "Combining statements"
 msgstr "Kombination von Aussagen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 110
 msgid "Compression"
 msgstr "Kompression"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/delete.html.twig
+#: on line 17
 msgid "Confirmation prompt"
 msgstr "Bestätigungsabfrage"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/edit.html.twig
+#: on line 22
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/edit.html.twig
 msgid "Content"
 msgstr "Inhalt"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 42
 msgid "Copyright"
 msgstr "Copyright"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 42
 msgid "Copyright title image"
 msgstr "Copyright Titelbild"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 60
 msgid "Copyright vehicle image"
 msgstr "Copyright Fahrzeug Bild"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/edit.html.twig
+#: on line 11
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 158
 msgid "Create vehicle"
 msgstr "Erstelle neues Fahrzeug"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/edit.html.twig
+#: on line 11
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 157
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 249
 msgid "Create vehicle image"
 msgstr "Erstelle neues Fahrzeugbild"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsEdit.html.twig
+#: on line 16
 msgid "Created by %user"
 msgstr "Erstellt von %user"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsDisplay.html.twig
+#: on line 18
 msgid "Created by %user on %date"
 msgstr "Erstellt von %user am %date"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsEdit.html.twig
+#: on line 17
 msgid "Created on %date"
 msgstr "Erstellt am %date"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsDisplay.html.twig
+#: on line 15
 msgid "Creation"
 msgstr "Erstellung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsDisplay.html.twig
+#: on line 6 11
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsEdit.html.twig
+#: 13
 msgid "Creation and update"
 msgstr "Erstellung und Aktualisierung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 23
 msgid "Current file"
 msgstr "Aktuelle Datei"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 106
 msgid "Cylinders"
 msgstr "Zylinder"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 73
 msgid "Date operators"
 msgstr "Datumsauswahl"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 56
 msgid "Dates"
 msgstr "Datum"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 140
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 141
 msgid "Delete"
 msgstr "Löschen"
 
-msgid "Delete content permanently."
-msgstr "Inhalt dauerhaft löschen."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/delete.html.twig
+#: on line 3
 msgid "Delete vehicle image"
 msgstr "Fahrzeugbild löschen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 50
 msgid "Description"
 msgstr "Beschreibung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 102
 msgid "Displacement"
 msgstr "Hubraum"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/delete.html.twig
+#: on line 7
 msgid "Do you really want to delete this vehicle image: \"%name%\" ?"
 msgstr "Möchten Sie wirklich diese Fahrzeugbild löschen: \"% Name%\"?"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/display.html.twig
+#: on line 28
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/info.html.twig
+#: 10
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/display.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/info.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: 35
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 82
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 53 83
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 84
 msgid "Download"
 msgstr "Download"
 
-msgid ""
-"Each statement is a set of field name, operator and value connected by a "
-"colon."
-msgstr ""
-"Jede Aussage ist ein Satz von Feldnamen, Operator und Wert durch einen "
-"Doppelpunkt verbunden."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/edit.html.twig
+#: on line 11
 msgid "Edit vehicle"
 msgstr "Fahrzeug bearbeiten"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/edit.html.twig
+#: on line 11
 msgid "Edit vehicle image"
 msgstr "Fahrzeugbild bearbeiten"
 
-msgid ""
-"Either the first name is Peter and the house number of any address is below "
-"100 or the first name is Chris and the house number of any address is below "
-"150."
-msgstr ""
-"Entweder der erste Name ist Peter und die Hausnummer an jede beliebige "
-"Adresse ist unter 100 oder der erste Name ist Chris und die Hausnummer an "
-"jede beliebige Adresse ist unter 150."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 98
 msgid "Engine"
 msgstr "Motor"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 45
 msgid "Enter a part of the user name to search"
 msgstr "Zum Suchen geben Sie einen Teil des Benutzernamens ein"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 11
 msgid "Example"
 msgstr "Beispiel"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 23
 #, fuzzy
 msgid "Filter statements"
 msgstr "Filter statements"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 7
 msgid "Filter syntax explained"
 msgstr "Filtersyntax erklärt"
 
-#, fuzzy
-msgid ""
-"For time periods: Begin of the given period. \"Date:ge:today\" matches all "
-"items with date of today or later."
-msgstr ""
-"Für Zeiträume: Anfang der gegeben Periode. \"Date:ge:today\" betrift alle "
-"Items mit dem Datum von heute oder später."
-
-#, fuzzy
-msgid ""
-"For time periods: Begin of the given period. \"Date:lt:today\" matches all "
-"items with date of yesterday or before."
-msgstr ""
-"Für Zeiträume: Anfang der gegeben Periode. \"Date:lt:today\" betrift alle "
-"Items mit dem Datum von gestern oder früher."
-
-#, fuzzy
-msgid ""
-"For time periods: End of the given period. \"Date:gt:today\" matches all "
-"items with date of tomorrow or later."
-msgstr ""
-"Für Zeiträume: Ende der gegeben Periode. \"Date:gt:today\" betrift alle "
-"Items mit dem Datum von morgen oder später."
-
-#, fuzzy
-msgid ""
-"For time periods: End of the given period. \"Date:le:today\" matches all "
-"items with date of today or before."
-msgstr ""
-"Für Zeiträume: Ende der gegeben Periode. \"Date:le:today\" betrift alle "
-"Items mit dem Datum von heute oder früher."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 118
 msgid "Fuel"
 msgstr "Treibstoff"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 114
 msgid "Fuel management"
 msgstr "Gemischaufbereitung"
 
-#, fuzzy
-msgid "Furthermore you can use brackets to group statements."
-msgstr "Desweiteren können Klammern genutzt werden um Aussagen zu gruppieren."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 138
 msgid "Gearbox"
 msgstr "Getriebe"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 22
 msgid "General syntax"
 msgstr "Allgemeine Syntax"
 
-msgid "Here you can define several options for image handling."
-msgstr "Hier können Sie verschiedene Optionen für Bild Handhabung definieren."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 122
 msgid "Horse power"
 msgstr "Motorleistung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 46
 msgid "Image date"
 msgstr "Bilddatum"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Config/config.html.twig
+#: on line 17 44
 msgid "Images"
 msgstr "Bilder"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 154
 msgid "Info field 1"
 msgstr "Info-Feld 1"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 158
 msgid "Info field 2"
 msgstr "Info-Feld 2"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 162
 msgid "Info field 3"
 msgstr "Info-Feld 3"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 150
 msgid "Interior"
 msgstr "Innenausstattung"
 
-msgid ""
-"It is possible to filter the list of retrieved items by specifying arbitrary "
-"filter expressions. This page shows how to create these expressions."
-msgstr ""
-"Es ist möglich, die Liste der gefundenen Elemente zu filtern durch Angabe "
-"frei wählbarer Filterausdrücke. Diese Seite zeigt, wie Sie diese Ausdrücke "
-"erstellen."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsDisplay.html.twig
+#: on line 21
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Config/config.html.twig
+#: on line 15 33
+msgid "Listviews"
+msgstr "Listviews"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 54
 msgid "Manage user"
 msgstr "Benutzer verwalten"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 72
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 54
 msgid "Manufacturer"
 msgstr "Hersteller"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 76
+msgid "Manufacturer image"
+msgstr "Herstellerlogo"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 126
 msgid "Max speed"
 msgstr "Höchstgeschwindigkeit"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 90
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 57
 msgid "Model"
 msgstr "Modell"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 97
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 188 208
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 108
 msgid "No"
 msgstr "Nein"
 
-msgid "No entries found."
-msgstr "Keine Einträge gefunden."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 47
 msgid "No results found!"
 msgstr "Keine Ergebnisse gefunden!"
 
-msgid "No vehicle images found."
-msgstr "Kein Fahrzeugbilder gefunden."
-
-msgid "No vehicles found."
-msgstr "Keine Fahrzeuge gefunden."
-
-msgid "Not set."
-msgstr "Nicht gesetzt."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 24
 msgid "Open file"
 msgstr "Datei öffnen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/includeDisplayItemListMany.html.twig
+#: on line 19
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: 72
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/includeDisplayItemListOne.html.twig
+#: 15
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 106
 msgid "Open quick view window"
 msgstr "Fenster für Schnellansicht öffnen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 39
 msgid "Operators"
 msgstr "Operatoren"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 166
 msgid "Owner"
 msgstr "Eigentümer"
 
-#, fuzzy
-msgid ""
-"Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour"
-"\", \"min\" followed by a colon to search for a time period."
-msgstr ""
-"Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour"
-"\", \"min\" followed by a colon to search for a time period."
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Config/config.html.twig
+#: on line 13 23
+msgid "Owner refresh"
+msgstr "Eigentümer zuordnen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/viewQuickNav.html.twig
+#: on line 9
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/viewQuickNav.html.twig
 msgid "Quick navigation"
 msgstr "Schnellnavigation"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/ContentType/itemlist_vehicleImage_display_description.html.twig
+#: on line 8
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/ContentType/itemlist_vehicleImage_display.html.twig
+#: 4
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/ContentType/itemlist_vehicle_display.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/ContentType/itemlist_vehicle_display_description.html.twig
 msgid "Read more"
 msgstr "Weiterlesen"
 
-msgid "Really delete this vehicle image?"
-msgstr "Dieses Bild löschen?"
-
-msgid "Really delete this vehicle?"
-msgstr "Dieses Fahrzeug löschen?"
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 15
 msgid "Reset to empty value"
 msgstr "Eingabe Löschen"
 
-#, fuzzy
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/edit.html.twig
+#: on line 64
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/edit.html.twig
+#: 110
 msgid "Return control"
-msgstr "Return control"
+msgstr "Return Control"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 142
 msgid "Rim"
 msgstr "Felge"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/find.html.twig
+#: on line 22
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/find.html.twig
+#: 5 32
 msgid "Search and select vehicle"
 msgstr "Fahrzeug suchen und auswählen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/find.html.twig
+#: on line 5 23 32
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/find.html.twig
 msgid "Search and select vehicle image"
 msgstr "Fahrzeugbild suchen und auswählen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 42
 msgid "Search user"
 msgstr "Benutzer suchen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Config/config.html.twig
+#: on line 3
 msgid "Settings"
 msgstr "Einstellungen"
 
-#, fuzzy
-msgid ""
-"Several statements can be connected by a comma , (AND) or an asterisk * (OR)."
-msgstr ""
-"Mehere Ausdrücke können durch , (AND) oder Stern * (OR) verbunden werden."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 165
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 166
 msgid "Show all entries"
 msgstr "Zeige alle Einträge"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Block/itemlist_modify.html.twig
+#: on line 12
 msgid "Show syntax examples"
 msgstr "Syntaxbeispiele zeigen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 178
 msgid "Show vehicle owner"
 msgstr "Fahrzeugeigentümer zeigen"
 
-#, fuzzy
-msgid ""
-"So in our example we can reference Persons with \"tbl\" and addresses with "
-"\"tblAddresses\"."
-msgstr ""
-"So in our example we can reference Persons with \"tbl\" and addresses with "
-"\"tblAddresses\"."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 42 46 55
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 44 60
 msgid "Sort by %s"
 msgstr "Sortieren nach %s"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 55
 msgid "Special field types"
 msgstr "Spezielle Feldtypen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 20
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 42
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 24
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 44
 msgid "State"
 msgstr "Status"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 198
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 60
+msgid "Still my own"
+msgstr "im Besitz"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 144
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 145
 msgid "Submit"
 msgstr "Bestätigen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 54
 msgid "Switch to users administration"
 msgstr "Wechseln Sie in die Benutzerverwaltung."
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 14
 msgid "Table aliases"
 msgstr "Tabellen Aliase"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 33
 msgid "The first name equals either Peter or Chris"
 msgstr "Der Vorname entspricht entweder Peter oder Chris"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 26
 msgid "The first name is Peter"
 msgstr "Der erste Name ist Peter"
 
-#, fuzzy
-msgid ""
-"The first name is Peter and the house number of any address is below 100."
-msgstr ""
-"The first name is Peter and the house number of any address is below 100."
-
-#, fuzzy
-msgid ""
-"The following filters assume that you have a list of persons whereby each "
-"person can have many addresses."
-msgstr ""
-"The following filters assume that you have a list of persons whereby each "
-"person can have many addresses."
-
-#, fuzzy
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/includeFilterSyntaxDialog.html.twig
+#: on line 27
 msgid "The house number of any address is lower than 100"
-msgstr "The house number of any address is lower than 100"
+msgstr "Die Hausnummer von jeder beliebigen Adresse ist niedriger als 100"
 
-#, fuzzy
-msgid ""
-"The main table, that is the entity being the primary subject of the query, "
-"is always known directly. That means, you can prepend \"tbl.\", but you do "
-"not need to."
-msgstr ""
-"The main table, that is the entity being the primary subject of the query, "
-"is always known directly. That means, you can prepend \"tbl.\", but you do "
-"not need to."
-
-#, fuzzy
-msgid "The operator defines the condition type (equal, lower than, etc.)."
-msgstr "The operator defines the condition type (equal, lower than, etc.)."
-
-#, fuzzy
-msgid ""
-"The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo"
-"\"."
-msgstr ""
-"The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo"
-"\"."
-
-msgid ""
-"The term \"foo\" will match \"fOo\", \"AnotherFoo\" and so on, but not "
-"\"FoObar\" or \"FooBlub\"."
-msgstr ""
-"Der Begriff \"Foo\" passt für \"fOo\", \"AnotherFoo\" und so weiter, aber "
-"nicht für \"FoObar\" oder \"FooBlub\"."
-
-msgid ""
-"The term \"foo\" will match \"fOo\", \"FOObar\", \"FooBlub\" and so on, but "
-"not \"AnotherFoo\"."
-msgstr ""
-"Der Begriff \"Foo\" passt für \"fOo\", \"FOObar\", \"FooBlub\" und so "
-"weiter, aber nicht für \"AnotherFoo\"."
-
-#, fuzzy
-msgid "The value is scanned case insensitive."
-msgstr "Der Wert wird unabhängig von Groß- bzw. Kleinschreibung abgefragt."
-
-#, fuzzy
-msgid ""
-"Thereby \"Foo\" does not mean the name of the joined entity, but the source "
-"or target alias of the corresponding relationship."
-msgstr ""
-"Dabei bedeutet \"Foo\" nicht der Name der verknüpften Entität, aber die "
-"Quelle oder das Ziel Alias der entsprechenden Beziehung."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Form/bootstrap_3.html.twig
+#: on line 43
 msgid "This function requires JavaScript activated!"
 msgstr "Diese Funktion verlangt aktiviertes Javascript!"
 
-#, fuzzy
-msgid ""
-"This has the advantage that it is possible to join a certain table multiple "
-"times. For example instead of having many addresses for a person one could "
-"also create two relationships for business and home addresses this way."
-msgstr ""
-"Dies hat den Vorteil, dass es möglich ist, eine bestimmte Tabelle mehrfach "
-"zu verknüpfen. Zum Beispiel könnte anstatt viele Adressen für eine Person "
-"auch zwei Beziehungen für Geschäfts- und Privatadressen auf diese Weise "
-"entstehen."
-
-msgid "This setting is disabled. Click here to enable it."
-msgstr "Diese Einstellung ist deaktiviert. Klicke hier zum aktivieren."
-
-msgid "This setting is enabled. Click here to disable it."
-msgstr "Diese Einstellung ist aktiviert. Klicke hier um sie zu deaktivieren."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 146
 msgid "Tire"
 msgstr "Reifen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 24
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 46
 msgid "Titel"
 msgstr "Titel"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 28
 msgid "Title image"
 msgstr "Titelbild"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 194
+msgid "Title text color"
+msgstr "Titel Textfarbe"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsEdit.html.twig
+#: on line 20
 msgid "Updated by %user"
 msgstr "Aktualisiert von %user"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsDisplay.html.twig
+#: on line 24
 msgid "Updated by %user on %date"
 msgstr "Aktualisiert von %user am %date"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Helper/includeStandardFieldsEdit.html.twig
+#: on line 21
 msgid "Updated on %date"
 msgstr "Aktualisiert am %date"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/find.html.twig
+#: on line 36
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: 66
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 55
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/includeSelectOne.html.twig
+#: 11 18
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 3 5
 msgid "Vehicle"
 msgstr "Fahrzeug"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 68
 msgid "Vehicle description"
 msgstr "Fahrzeugbeschreibung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 64
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 51
 msgid "Vehicle description teaser"
 msgstr "Einleitende Fahrzeugbeschreibung"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/find.html.twig
+#: on line 36
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: 3 5 28
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: 49
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 46
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 48
 msgid "Vehicle image"
 msgstr "Fahrzeugbild"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 3
 msgid "Vehicle image list"
 msgstr "Übersicht Fahrzeugbilder"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/find.html.twig
+#: on line 23
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/find.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Search/options.html.twig
+#: 9
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 230 232
 msgid "Vehicle images"
 msgstr "Fahrzeugbilder"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: on line 3
 msgid "Vehicle list"
 msgstr "Fahrzeug Übersicht"
 
-msgid "Vehicle type"
-msgstr "Fahrzeug Typ"
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/display.html.twig
+#: on line 54
+msgid "Vehicle owner"
+msgstr "Fahrzeugeigentümer"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/VehicleImage/find.html.twig
+#: on line 22
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/External/Vehicle/find.html.twig
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Search/options.html.twig
+#: 5
 msgid "Vehicles"
 msgstr "Fahrzeuge"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 52
 msgid "View image"
 msgstr "Bild anzeigen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: on line 130
 msgid "Weight"
 msgstr "Gewicht ."
 
-msgid "Welcome to the vehicle image section of the Park haus application."
-msgstr "Willkommen in der Bilderansicht der Parkhaus Anwendung."
-
-msgid "Welcome to the vehicle section of the Park haus application."
-msgstr "Willkommen in der Fahrzeugansicht der Parkhaus Anwendung."
-
-#, fuzzy
-msgid ""
-"When filtering for dates you can use convenient extensions and even time "
-"periods."
-msgstr ""
-"Beim Filtern von Daten können Sie bequeme Erweiterungen und sogar Zeiträume "
-"benutzen."
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 136
 msgid "With selected vehicle images"
 msgstr "Mit ausgewählten Fahrzeugbilder"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: on line 137
 msgid "With selected vehicles"
 msgstr "Mit ausgewählten Fahrzeugen"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/view.html.twig
+#: on line 95
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/display.html.twig
+#: 186 206
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/view.html.twig
+#: 106
 msgid "Yes"
 msgstr "Ja"
 
-msgid ""
-"You can use relative time information according to the GNU Date Input "
-"Formats syntax."
-msgstr ""
-"Es können relative Zeitinformation gemäß dem Format der GNU Datum "
-"Eingabeformate verwendet werden."
-
-msgid ""
-"You may want to add some more images to your vehicle description. This album "
-"will collect all your images. You can add images later as well. The images "
-"can be restricted to be shown only to IG members."
-msgstr ""
-"Hier werden die Bilder aller Fahrzeuge angezeigt. Je nach Zugriffsrecht sind "
-"einige Bilder evtl. herausgefiltert."
-
-msgid "is Empty or NULL."
-msgstr "ist leer oder NULL."
-
-#, fuzzy
-msgid "is any middle coincidence."
-msgstr "is any middle coincidence."
-
-msgid "is equal."
-msgstr "ist gleich."
-
-msgid "is greater or equal than."
-msgstr "ist größer oder gleich wie."
-
-msgid "is greater than."
-msgstr "ist größer als."
-
-msgid "is like."
-msgstr "Ist wie."
-
-msgid "is lower or equal than."
-msgstr "ist kleiner oder gleich wie."
-
-msgid "is lower than."
-msgstr "ist niedriger als."
-
-msgid "is not empty and not NULL."
-msgstr "ist nicht leer und nicht NULL."
-
-msgid "is not equal."
-msgstr "ist ungleich"
-
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/VehicleImage/index.html.twig
+#: on line 3
 msgid "vehicle images"
 msgstr "Fahrzeugbilder"
 
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/Vehicle/index.html.twig
+#: on line 3
 msgid "vehicles"
 msgstr "Fahrzeuge"
+
+#~ msgid "\"%bar\" will match \"FOObar\", \"Blubbar\" and so on, but not \"BarFoo\"."
+#~ msgstr "\"%bar\" wird \"FOObar\", \"Blubbar\" usw. entsprechen, aber nicht \"BarFoo\"."
+
+#~ msgid "A filter consists of several statements."
+#~ msgstr "Ein Filter besteht aus mehreren Anweisungen."
+
+#~ msgid "All additional joined tables can be referenced by \"tblFoo\"."
+#~ msgstr "Alle zusätzlichen verknüpfte Tabellen können durch \"TblFoo\" verwiesen werden."
+
+#~ msgid "All items with a date in July 2016."
+#~ msgstr "Alle Elemente mit einem Datum im Juli 2016."
+
+#~ msgid "All items with a date in year 2016."
+#~ msgstr "Alle Elemente mit einem Datum im Jahr 2016."
+
+#~ msgid "All items with date in the last year."
+#~ msgstr "Alle Elemente mit Datum im letzten Jahr."
+
+#~ msgid "All items with date of today."
+#~ msgstr "Alle Elemente mit Datum von heute."
+
+#, fuzzy
+#~ msgid "All items with date up from 24 hours ago."
+#~ msgstr "Alle Artikel der letzten 24 Stunden."
+
+#~ msgid "Also you can use \"%\" as placeholder."
+#~ msgstr "Sie können auch \"%\" als Platzhalter verwenden."
+
+#~ msgid "Delete content permanently."
+#~ msgstr "Inhalt dauerhaft löschen."
+
+#~ msgid "Each statement is a set of field name, operator and value connected by a colon."
+#~ msgstr "Jede Aussage ist ein Satz von Feldnamen, Operator und Wert durch einen Doppelpunkt verbunden."
+
+#~ msgid "Either the first name is Peter and the house number of any address is below 100 or the first name is Chris and the house number of any address is below 150."
+#~ msgstr "Entweder der erste Name ist Peter und die Hausnummer an jede beliebige Adresse ist unter 100 oder der erste Name ist Chris und die Hausnummer an jede beliebige Adresse ist unter 150."
+
+#, fuzzy
+#~ msgid "For time periods: Begin of the given period. \"Date:ge:today\" matches all items with date of today or later."
+#~ msgstr "Für Zeiträume: Anfang der gegeben Periode. \"Date:ge:today\" betrift alle Items mit dem Datum von heute oder später."
+
+#, fuzzy
+#~ msgid "For time periods: Begin of the given period. \"Date:lt:today\" matches all items with date of yesterday or before."
+#~ msgstr "Für Zeiträume: Anfang der gegeben Periode. \"Date:lt:today\" betrift alle Items mit dem Datum von gestern oder früher."
+
+#, fuzzy
+#~ msgid "For time periods: End of the given period. \"Date:gt:today\" matches all items with date of tomorrow or later."
+#~ msgstr "Für Zeiträume: Ende der gegeben Periode. \"Date:gt:today\" betrift alle Items mit dem Datum von morgen oder später."
+
+#, fuzzy
+#~ msgid "For time periods: End of the given period. \"Date:le:today\" matches all items with date of today or before."
+#~ msgstr "Für Zeiträume: Ende der gegeben Periode. \"Date:le:today\" betrift alle Items mit dem Datum von heute oder früher."
+
+#, fuzzy
+#~ msgid "Furthermore you can use brackets to group statements."
+#~ msgstr "Desweiteren können Klammern genutzt werden um Aussagen zu gruppieren."
+
+#~ msgid "Here you can define several options for image handling."
+#~ msgstr "Hier können Sie verschiedene Optionen für Bild Handhabung definieren."
+
+#~ msgid "It is possible to filter the list of retrieved items by specifying arbitrary filter expressions. This page shows how to create these expressions."
+#~ msgstr "Es ist möglich, die Liste der gefundenen Elemente zu filtern durch Angabe frei wählbarer Filterausdrücke. Diese Seite zeigt, wie Sie diese Ausdrücke erstellen."
+
+#~ msgid "No entries found."
+#~ msgstr "Keine Einträge gefunden."
+
+#~ msgid "No vehicle images found."
+#~ msgstr "Kein Fahrzeugbilder gefunden."
+
+#~ msgid "No vehicles found."
+#~ msgstr "Keine Fahrzeuge gefunden."
+
+#~ msgid "Not set."
+#~ msgstr "Nicht gesetzt."
+
+#, fuzzy
+#~ msgid "Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour\", \"min\" followed by a colon to search for a time period."
+#~ msgstr "Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour\", \"min\" followed by a colon to search for a time period."
+
+#~ msgid "Really delete this vehicle image?"
+#~ msgstr "Dieses Bild löschen?"
+
+#~ msgid "Really delete this vehicle?"
+#~ msgstr "Dieses Fahrzeug löschen?"
+
+#, fuzzy
+#~ msgid "Several statements can be connected by a comma , (AND) or an asterisk * (OR)."
+#~ msgstr "Mehere Ausdrücke können durch , (AND) oder Stern * (OR) verbunden werden."
+
+#, fuzzy
+#~ msgid "So in our example we can reference Persons with \"tbl\" and addresses with \"tblAddresses\"."
+#~ msgstr "So in our example we can reference Persons with \"tbl\" and addresses with \"tblAddresses\"."
+
+#, fuzzy
+#~ msgid "The first name is Peter and the house number of any address is below 100."
+#~ msgstr "The first name is Peter and the house number of any address is below 100."
+
+#, fuzzy
+#~ msgid "The following filters assume that you have a list of persons whereby each person can have many addresses."
+#~ msgstr "The following filters assume that you have a list of persons whereby each person can have many addresses."
+
+#, fuzzy
+#~ msgid "The main table, that is the entity being the primary subject of the query, is always known directly. That means, you can prepend \"tbl.\", but you do not need to."
+#~ msgstr "The main table, that is the entity being the primary subject of the query, is always known directly. That means, you can prepend \"tbl.\", but you do not need to."
+
+#, fuzzy
+#~ msgid "The operator defines the condition type (equal, lower than, etc.)."
+#~ msgstr "The operator defines the condition type (equal, lower than, etc.)."
+
+#, fuzzy
+#~ msgid "The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo\"."
+#~ msgstr "The term \"bar\" will match \"foobarthis\", but not \"foobar\" nor \"barfoo\"."
+
+#~ msgid "The term \"foo\" will match \"fOo\", \"AnotherFoo\" and so on, but not \"FoObar\" or \"FooBlub\"."
+#~ msgstr "Der Begriff \"Foo\" passt für \"fOo\", \"AnotherFoo\" und so weiter, aber nicht für \"FoObar\" oder \"FooBlub\"."
+
+#~ msgid "The term \"foo\" will match \"fOo\", \"FOObar\", \"FooBlub\" and so on, but not \"AnotherFoo\"."
+#~ msgstr "Der Begriff \"Foo\" passt für \"fOo\", \"FOObar\", \"FooBlub\" und so weiter, aber nicht für \"AnotherFoo\"."
+
+#, fuzzy
+#~ msgid "The value is scanned case insensitive."
+#~ msgstr "Der Wert wird unabhängig von Groß- bzw. Kleinschreibung abgefragt."
+
+#, fuzzy
+#~ msgid "Thereby \"Foo\" does not mean the name of the joined entity, but the source or target alias of the corresponding relationship."
+#~ msgstr "Dabei bedeutet \"Foo\" nicht der Name der verknüpften Entität, aber die Quelle oder das Ziel Alias der entsprechenden Beziehung."
+
+#, fuzzy
+#~ msgid "This has the advantage that it is possible to join a certain table multiple times. For example instead of having many addresses for a person one could also create two relationships for business and home addresses this way."
+#~ msgstr "Dies hat den Vorteil, dass es möglich ist, eine bestimmte Tabelle mehrfach zu verknüpfen. Zum Beispiel könnte anstatt viele Adressen für eine Person auch zwei Beziehungen für Geschäfts- und Privatadressen auf diese Weise entstehen."
+
+#~ msgid "This setting is disabled. Click here to enable it."
+#~ msgstr "Diese Einstellung ist deaktiviert. Klicke hier zum aktivieren."
+
+#~ msgid "This setting is enabled. Click here to disable it."
+#~ msgstr "Diese Einstellung ist aktiviert. Klicke hier um sie zu deaktivieren."
+
+#~ msgid "Vehicle type"
+#~ msgstr "Fahrzeug Typ"
+
+#~ msgid "Welcome to the vehicle image section of the Park haus application."
+#~ msgstr "Willkommen in der Bilderansicht der Parkhaus Anwendung."
+
+#~ msgid "Welcome to the vehicle section of the Park haus application."
+#~ msgstr "Willkommen in der Fahrzeugansicht der Parkhaus Anwendung."
+
+#, fuzzy
+#~ msgid "When filtering for dates you can use convenient extensions and even time periods."
+#~ msgstr "Beim Filtern von Daten können Sie bequeme Erweiterungen und sogar Zeiträume benutzen."
+
+#~ msgid "You can use relative time information according to the GNU Date Input Formats syntax."
+#~ msgstr "Es können relative Zeitinformation gemäß dem Format der GNU Datum Eingabeformate verwendet werden."
+
+#~ msgid "You may want to add some more images to your vehicle description. This album will collect all your images. You can add images later as well. The images can be restricted to be shown only to IG members."
+#~ msgstr "Hier werden die Bilder aller Fahrzeuge angezeigt. Je nach Zugriffsrecht sind einige Bilder evtl. herausgefiltert."
+
+#~ msgid "is Empty or NULL."
+#~ msgstr "ist leer oder NULL."
+
+#, fuzzy
+#~ msgid "is any middle coincidence."
+#~ msgstr "is any middle coincidence."
+
+#~ msgid "is equal."
+#~ msgstr "ist gleich."
+
+#~ msgid "is greater or equal than."
+#~ msgstr "ist größer oder gleich wie."
+
+#~ msgid "is greater than."
+#~ msgstr "ist größer als."
+
+#~ msgid "is like."
+#~ msgstr "Ist wie."
+
+#~ msgid "is lower or equal than."
+#~ msgstr "ist kleiner oder gleich wie."
+
+#~ msgid "is lower than."
+#~ msgstr "ist niedriger als."
+
+#~ msgid "is not empty and not NULL."
+#~ msgstr "ist nicht leer und nicht NULL."
+
+#~ msgid "is not equal."
+#~ msgstr "ist ungleich"
