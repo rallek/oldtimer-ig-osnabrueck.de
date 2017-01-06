@@ -16,7 +16,7 @@
     '@RKParkHausModule/Form/bootstrap_3.html.twig',
     'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
 ] %}
-{{ form_start(form, {attr: {id: 'vehicleImageEditForm'}}) }}
+{{ form_start(form, {attr: {id: 'vehicleImageEditForm', class: 'rkparkhaus-edit-form'}}) }}
 {{ form_errors(form) }}
 <fieldset>
     <legend>{{ __('Content') }}</legend>
@@ -92,65 +92,12 @@
     <script type="text/javascript">
     /* <![CDATA[ */
         
-        var formButtons;
-        var triggerValidation = true;
-        
-        function executeCustomValidationConstraints()
-        {
-            rKParkHausPerformCustomValidationRules('vehicleImage', '{% if mode != 'create' %}{{ vehicleimage.id }}{% endif %}');
-        }
-        
-        function triggerFormValidation()
-        {
-            executeCustomValidationConstraints();
-            if (!document.getElementById('vehicleImageEditForm').checkValidity()) {
-                // This does not really submit the form,
-                // but causes the browser to display the error message
-                jQuery('#vehicleImageEditForm').find(':submit').first().click();
-            }
-        }
-        
-        function handleFormSubmit (event) {
-            if (triggerValidation) {
-                triggerFormValidation();
-                if (!document.getElementById('vehicleImageEditForm').checkValidity()) {
-                    event.preventDefault();
-                    return false;
-                }
-            }
-        
-            // hide form buttons to prevent double submits by accident
-            formButtons.each(function (index) {
-                jQuery(this).addClass('hidden');
-            });
-        
-            return true;
-        }
         
         ( function($) {
             $(document).ready(function() {
-                $('a.lightbox').lightbox();
                 // initialise auto completion for user fields
                 rKParkHausInitUserField('rkparkhausmodule_vehicleimage_vehicleOwner', 'getVehicleImageVehicleOwnerUsers');
-        
-                var allFormFields = $('#vehicleImageEditForm input, #vehicleImageEditForm select, #vehicleImageEditForm textarea');
-                allFormFields.change(executeCustomValidationConstraints);
-        
-                formButtons = $('#vehicleImageEditForm .form-buttons input');
-                $('.btn-danger').first().bind('click keypress', function (event) {
-                    if (!window.confirm('{{ __('Really delete this vehicle image?') }}')) {
-                        event.preventDefault();
-                    }
-                });
-                $('#vehicleImageEditForm button[type=submit]').bind('click keypress', function (event) {
-                    triggerValidation = !$(this).attr('formnovalidate');
-                });
-                $('#vehicleImageEditForm').submit(handleFormSubmit);
-        
-                {% if mode != 'create' %}
-                    triggerFormValidation();
-                {% endif %}
-        
+                rKParkHausInitEditForm({{ mode }}, '{% if mode != 'create' %}{{ vehicleimage.id }}{% endif %}');
                 rKParkHausInitUploadField('rkparkhausmodule_vehicleimage_vehicleImage_vehicleImage');
             });
         })(jQuery);

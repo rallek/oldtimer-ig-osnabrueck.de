@@ -34,7 +34,7 @@
             <tr>
                 {% if routeArea == 'admin' %}
                     <th id="hSelect" scope="col" class="text-center">
-                        <input type="checkbox" id="toggleVehicleImages" />
+                        <input type="checkbox" class="rkparkhaus-mass-toggle" />
                     </th>
                 {% endif %}
                 {% if routeArea == 'admin' %}
@@ -63,7 +63,7 @@
             <tr>
                 {% if routeArea == 'admin' %}
                     <td headers="hSelect" class="text-center">
-                        <input type="checkbox" name="items[]" value="{{ vehicleImage.id }}" class="vehicleimages-checkbox" />
+                        <input type="checkbox" name="items[]" value="{{ vehicleImage.id }}" class="rkparkhaus-toggle-checkbox" />
                     </td>
                 {% endif %}
                 {% if routeArea == 'admin' %}<td headers="hWorkflowState" class="text-left nowrap">
@@ -86,13 +86,13 @@
                 </td>
                 <td headers="hViewImage" class="text-center">
                     {% set itemid = vehicleImage.createCompositeIdentifier() %}
-                    <a id="toggleViewImage{{ itemid }}" href="javascript:void(0);" class="hidden">
+                    <a id="toggleViewImage{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicleImage" data-field-name="viewImage" data-item-id="{{ itemid }}">
                     {% if vehicleImage.viewImage %}
-                        <i class="cursor-pointer fa fa-check" id="yesviewimage_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                        <i class="cursor-pointer fa fa-times hidden" id="noviewimage_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-check" id="yesViewImage{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-times hidden" id="noViewImage{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
                     {% else %}
-                        <i class="cursor-pointer fa fa-check hidden" id="yesviewimage_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                        <i class="cursor-pointer fa fa-times" id="noviewimage_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-check hidden" id="yesViewImage{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-times" id="noViewImage{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
                     {% endif %}
                     </a>
                     <noscript><div id="noscriptViewImage{{ itemid }}">
@@ -108,16 +108,7 @@
                         <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id }) }}">{% spaceless %}
                           {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
                         {% endspaceless %}</a>
-                        <a id="vehicleItem{{ vehicleImage.id }}_rel_{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', {'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="fa fa-search-plus hidden"></a>
-                        <script type="text/javascript">
-                        /* <![CDATA[ */
-                            ( function($) {
-                                $(document).ready(function() {
-                                    rKParkHausInitInlineWindow($('#vehicleItem{{ vehicleImage.id }}_rel_{{ vehicleImage.vehicle.id }}Display'), '{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('js') }}');
-                                });
-                            })(jQuery);
-                        /* ]]> */
-                        </script>
+                        <a id="vehicleItem{{ vehicleImage.id }}_rel_{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', {'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="rkparkhaus-inline-window hidden" data-modal-title="{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"><span class="fa fa-id-card-o"></span></a>
                     {% else %}
                         {{ __('Not set.') }}
                     {% endif %}
@@ -126,7 +117,6 @@
                     {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicleImage, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
                         <a id="itemActions{{ vehicleImage.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
-                        
                         {{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
                     </div>
                 </td>
@@ -190,35 +180,4 @@
             {{ hook }}
         {% endfor %}
     {% endif % #}
-{% endblock %}
-{% block footer %}
-    {{ parent() }}
-
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('a.lightbox').lightbox();
-                $('.rkparkhausmodule-vehicleimage .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu dropdown-menu-right');
-                $('.rkparkhausmodule-vehicleimage .dropdown > ul a').each(function (index) {
-                    $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
-                });
-                $('.rkparkhausmodule-vehicleimage .dropdown > ul a i').addClass('fa-fw');
-                $('.rkparkhausmodule-vehicleimage .dropdown-toggle').removeClass('hidden').dropdown();
-                {% for vehicleImage in items %}
-                    {% set itemid = vehicleImage.createCompositeIdentifier() %}
-                    rKParkHausInitToggle('vehicleImage', 'viewImage', '{{ itemid|e('js') }}');
-                {% endfor %}
-                {% if routeArea == 'admin' %}
-                    {# init the "toggle all" functionality #}
-                    if ($('#toggleVehicleImages').length > 0) {
-                        $('#toggleVehicleImages').click(function (event) {
-                            $('.vehicleimages-checkbox').prop('checked', $(this).prop('checked'));
-                        });
-                    }
-                {% endif %}
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
 {% endblock %}

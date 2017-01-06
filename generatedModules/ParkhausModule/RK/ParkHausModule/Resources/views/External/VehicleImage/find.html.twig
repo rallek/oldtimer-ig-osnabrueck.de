@@ -71,16 +71,6 @@
         {{ form_end(finderForm) }}
     </div>
 
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                rKParkHausModule.finder.onLoad();
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
-
     {#
     <div class="rkparkhausmodule-finderform">
         <fieldset>
@@ -88,5 +78,18 @@
         </fieldset>
     </div>
     #}
+
+    {% set customJsInit %}
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            ( function($) {
+                $(document).ready(function() {
+                    rKParkHausModule.finder.onLoad();
+                });
+            })(jQuery);
+        /* ]]> */
+        </script>
+    {% endset %}
+    {{ pageAddAsset('footer', customJsInit) }}
 </body>
 </html>

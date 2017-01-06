@@ -63,6 +63,7 @@ abstract class AbstractAppSettingsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $this->addOwnerRefreshFields($builder, $options);
         $this->addListviewsFields($builder, $options);
         $this->addImagesFields($builder, $options);
 
@@ -81,6 +82,26 @@ abstract class AbstractAppSettingsType extends AbstractType
                     'class' => 'btn btn-default',
                     'formnovalidate' => 'formnovalidate'
                 ]
+            ])
+        ;
+    }
+
+    /**
+     * Adds fields for owner refresh fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addOwnerRefreshFields(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('myFlag', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+                'label' => $this->__('My flag') . ':',
+                'required' => false,
+                'data' => (bool)$this->modVars['myFlag'],
+                'attr' => [
+                    'title' => $this->__('The my flag option.')
+                ],
             ])
         ;
     }

@@ -7,8 +7,10 @@
     {{ pageAddAsset('stylesheet', asset('bootstrap-media-lightbox/bootstrap-media-lightbox.css')) }}
     {{ pageAddAsset('stylesheet', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.css')) }}
     {{ pageAddAsset('javascript', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.js')) }}
-    {{ polyfill(['forms', 'forms-ext']) }}
+    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+        {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.js')) }}
+        {{ polyfill(['forms', 'forms-ext']) }}
+    {% endif %}
 {% endblock %}
 
 {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}

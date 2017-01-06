@@ -12,7 +12,7 @@
 
 namespace RK\ParkHausModule\Controller;
 
-use RK\ParkHausModule\Controller\Base\AbstractAjaxController;
+use RK\ParkHausModule\Controller\Base\AbstractConfigController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;

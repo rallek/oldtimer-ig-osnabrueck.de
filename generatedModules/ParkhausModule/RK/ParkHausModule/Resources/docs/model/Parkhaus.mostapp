@@ -4,7 +4,7 @@ application "ParkHaus" {
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://oldtimer-ig-osnabrueck.de"
-    version "0.4.0"
+    version "0.5.0"
     prefix "parkha"
     generatorSettings {
         settingsContainer "Settings"
@@ -293,4 +293,12 @@ application "ParkHaus" {
             editType ACTIVE_NONE_PASSIVE_CHOOSE
         }
     }
+    variables {
+        varContainer "ownerRefresh" {
+            documentation "here we can refresh the owner relationsship for vehicles and vehicle images. This can be used if a vehicle has been addressed to another user."
+            vars {
+                boolVar "myFlag"
+            }
+        }
     }
+}

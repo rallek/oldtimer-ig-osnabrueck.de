@@ -7,23 +7,8 @@
     {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'display' }) %}
     <div class="dropdown">
         <a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
-        
         {{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
     </div>
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('h2 .dropdown > ul, h3 .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu');
-                $('h2 .dropdown > ul a, h3 .dropdown > ul a').each(function (index) {
-                    $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
-                });
-                $('h2 .dropdown > ul a i, h3 .dropdown > ul a i').addClass('fa-fw');
-                $('h2 .dropdown-toggle, h3 .dropdown-toggle').removeClass('hidden').dropdown();
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
 {% endblock %}
 {% block admin_page_icon 'eye' %}
 {% block content %}
@@ -192,13 +177,13 @@
         {% if vehicle.showVehicleOwner is not empty %}
             <dt>{{ __('Show vehicle owner') }}</dt>
             <dd>{% set itemid = vehicle.createCompositeIdentifier() %}
-            <a id="toggleShowVehicleOwner{{ itemid }}" href="javascript:void(0);" class="hidden">
+            <a id="toggleShowVehicleOwner{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicle" data-field-name="showVehicleOwner" data-item-id="{{ itemid }}">
             {% if vehicle.showVehicleOwner %}
-                <i class="cursor-pointer fa fa-check" id="yesshowvehicleowner_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times hidden" id="noshowvehicleowner_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                <i class="cursor-pointer fa fa-check" id="yesShowVehicleOwner{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times hidden" id="noShowVehicleOwner{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
             {% else %}
-                <i class="cursor-pointer fa fa-check hidden" id="yesshowvehicleowner_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times" id="noshowvehicleowner_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                <i class="cursor-pointer fa fa-check hidden" id="yesShowVehicleOwner{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times" id="noShowVehicleOwner{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
             {% endif %}
             </a>
             <noscript><div id="noscriptShowVehicleOwner{{ itemid }}">
@@ -217,13 +202,13 @@
         {% if vehicle.stillMyOwn is not empty %}
             <dt>{{ __('Still my own') }}</dt>
             <dd>{% set itemid = vehicle.createCompositeIdentifier() %}
-            <a id="toggleStillMyOwn{{ itemid }}" href="javascript:void(0);" class="hidden">
+            <a id="toggleStillMyOwn{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicle" data-field-name="stillMyOwn" data-item-id="{{ itemid }}">
             {% if vehicle.stillMyOwn %}
-                <i class="cursor-pointer fa fa-check" id="yesstillmyown_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times hidden" id="nostillmyown_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                <i class="cursor-pointer fa fa-check" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times hidden" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
             {% else %}
-                <i class="cursor-pointer fa fa-check hidden" id="yesstillmyown_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                <i class="cursor-pointer fa fa-times" id="nostillmyown_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                <i class="cursor-pointer fa fa-check hidden" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                <i class="cursor-pointer fa fa-times" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
             {% endif %}
             </a>
             <noscript><div id="noscriptStillMyOwn{{ itemid }}">
@@ -283,22 +268,4 @@
             {{ hook }}
         {% endif %}
     {% endfor %}
-{% endblock %}
-{% block footer %}
-    {{ parent() }}
-
-    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-        <script type="text/javascript">
-        /* <![CDATA[ */
-            ( function($) {
-                $(document).ready(function() {
-                    $('a.lightbox').lightbox();
-                    {% set itemid = vehicle.createCompositeIdentifier() %}
-                    rKParkHausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('html_attr') }}');
-                    rKParkHausInitToggle('vehicle', 'stillMyOwn', '{{ itemid|e('html_attr') }}');
-                });
-            })(jQuery);
-        /* ]]> */
-        </script>
-    {% endif %}
 {% endblock %}

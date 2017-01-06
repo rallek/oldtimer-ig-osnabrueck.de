@@ -36,7 +36,7 @@
             <tr>
                 {% if routeArea == 'admin' %}
                     <th id="hSelect" scope="col" class="text-center">
-                        <input type="checkbox" id="toggleVehicles" />
+                        <input type="checkbox" class="rkparkhaus-mass-toggle" />
                     </th>
                 {% endif %}
                 {% if routeArea == 'admin' %}
@@ -68,7 +68,7 @@
             <tr>
                 {% if routeArea == 'admin' %}
                     <td headers="hSelect" class="text-center">
-                        <input type="checkbox" name="items[]" value="{{ vehicle.id }}" class="vehicles-checkbox" />
+                        <input type="checkbox" name="items[]" value="{{ vehicle.id }}" class="rkparkhaus-toggle-checkbox" />
                     </td>
                 {% endif %}
                 {% if routeArea == 'admin' %}<td headers="hWorkflowState" class="text-left nowrap">
@@ -97,13 +97,13 @@
                 </td>
                 <td headers="hStillMyOwn" class="text-center">
                     {% set itemid = vehicle.createCompositeIdentifier() %}
-                    <a id="toggleStillMyOwn{{ itemid }}" href="javascript:void(0);" class="hidden">
+                    <a id="toggleStillMyOwn{{ itemid }}" href="javascript:void(0);" class="rkparkhaus-ajax-toggle hidden" data-object-type="vehicle" data-field-name="stillMyOwn" data-item-id="{{ itemid }}">
                     {% if vehicle.stillMyOwn %}
-                        <i class="cursor-pointer fa fa-check" id="yesstillmyown_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                        <i class="cursor-pointer fa fa-times hidden" id="nostillmyown_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-check" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-times hidden" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
                     {% else %}
-                        <i class="cursor-pointer fa fa-check hidden" id="yesstillmyown_{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
-                        <i class="cursor-pointer fa fa-times" id="nostillmyown_{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-check hidden" id="yesStillMyOwn{{ itemid }}" title="{{ __('This setting is enabled. Click here to disable it.') }}"></i>
+                        <i class="cursor-pointer fa fa-times" id="noStillMyOwn{{ itemid }}" title="{{ __('This setting is disabled. Click here to enable it.') }}"></i>
                     {% endif %}
                     </a>
                     <noscript><div id="noscriptStillMyOwn{{ itemid }}">
@@ -118,7 +118,6 @@
                     {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
                         <a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
-                        
                         {{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
                     </div>
                 </td>
@@ -182,35 +181,4 @@
             {{ hook }}
         {% endfor %}
     {% endif % #}
-{% endblock %}
-{% block footer %}
-    {{ parent() }}
-
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('a.lightbox').lightbox();
-                $('.rkparkhausmodule-vehicle .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu dropdown-menu-right');
-                $('.rkparkhausmodule-vehicle .dropdown > ul a').each(function (index) {
-                    $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
-                });
-                $('.rkparkhausmodule-vehicle .dropdown > ul a i').addClass('fa-fw');
-                $('.rkparkhausmodule-vehicle .dropdown-toggle').removeClass('hidden').dropdown();
-                {% for vehicle in items %}
-                    {% set itemid = vehicle.createCompositeIdentifier() %}
-                    rKParkHausInitToggle('vehicle', 'stillMyOwn', '{{ itemid|e('js') }}');
-                {% endfor %}
-                {% if routeArea == 'admin' %}
-                    {# init the "toggle all" functionality #}
-                    if ($('#toggleVehicles').length > 0) {
-                        $('#toggleVehicles').click(function (event) {
-                            $('.vehicles-checkbox').prop('checked', $(this).prop('checked'));
-                        });
-                    }
-                {% endif %}
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
 {% endblock %}

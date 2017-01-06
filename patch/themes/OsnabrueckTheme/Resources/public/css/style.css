@@ -26,9 +26,9 @@ body {
 	font-size: 10px;
 }
 .white-space {
-	background-image: linear-gradient(white, #F7F7F7); 
+	background-image: linear-gradient(white, #F0F0F0); 
 	
-	padding: 4px;
+	padding: 5px;
 }
 .negative-space {
 	padding-left: -15px;

@@ -60,17 +60,4 @@
         {{ form_widget(quickNavForm.updateview) }}
     </fieldset>
     {{ form_end(quickNavForm) }}
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                rKParkHausInitQuickNavigation('vehicleImage');
-                {% if searchFilter|default and searchFilter == false %}
-                    {# we can hide the submit button if we have no quick search field #}
-                    $('#rkparkhausmodule_vehicleimagequicknav_updateview').addClass('hidden');
-                {% endif %}
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
 {% endif %}
