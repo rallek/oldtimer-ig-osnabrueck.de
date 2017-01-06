@@ -189,20 +189,7 @@
 					
 					{{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
 				</div>
-				<script type="text/javascript">
-				/* <![CDATA[ */
-					( function($) {
-						$(document).ready(function() {
-							$('h2 .dropdown > ul, h3 .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu');
-							$('h2 .dropdown > ul a, h3 .dropdown > ul a').each(function (index) {
-								$(this).html($(this).html() + $(this).find('i').first().data('original-title'));
-							});
-							$('h2 .dropdown > ul a i, h3 .dropdown > ul a i').addClass('fa-fw');
-							$('h2 .dropdown-toggle, h3 .dropdown-toggle').removeClass('hidden').dropdown();
-						});
-					})(jQuery);
-				/* ]]> */
-				</script>
+
             </div>
 		</div>
 
@@ -222,7 +209,7 @@
 {% endblock %}
 {% block related_items %}
 <div class="row top-space">
-	<div class="col-sm-12">	
+	<div class="col-sm-12 bottom-space">	
 		<div class="col-sm-12 white-space">	
 			{% if routeArea == 'admin' %}
 				<h4 align="center">{{ __('Vehicle images') }}</h4>
@@ -267,21 +254,4 @@
         {% endif %}
     {% endfor %}
 {% endblock %}
-{% block footer %}
-    {{ parent() }}
 
-
-{% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
-        <script type="text/javascript">
-        /* <![CDATA[ */
-            ( function($) {
-                $(document).ready(function() {
-                    $('a.lightbox').lightbox();
-                    {% set itemid = vehicle.createCompositeIdentifier() %}
-                    rKParkHausInitToggle('vehicle', 'showVehicleOwner', '{{ itemid|e('html_attr') }}');
-                });
-            })(jQuery);
-        /* ]]> */
-        </script>
-{% endif %}
-{% endblock %}

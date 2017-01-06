@@ -12,41 +12,43 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li>{{ adminPanelMenu() }}</li>
-            <li><a href="{{ pagevars.homepath }}" title="{{ __('Go to the sites home page') }}">{{ __('Home') }}</a></li>
+            <li><a href="{{ pagevars.homepath }}" title="{{ __('Go to the sites home page') }}">Startseite</a></li>
  
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Verein <b class="caret"></b></a>
-              <ul class="dropdown-menu"> -->
-				{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
-				<li><a href="/pages/display/uber-uns">über uns</a></li>
-				{% endif %}
-				{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
-				<li><a href="/pages/display/vorstand">Vorstand</a></li>
-				{% endif %}
+
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">die IG <span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					{% if modAvailable('ZikulaPagesModule') %}
+						{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
+							<li><a href="{{ path('zikulapagesmodule_user_display', { urltitle: 'uber-uns' }) }}">über uns</a></li>
+						{% endif %}
+					{% endif %}
+					{% if modAvailable('ZikulaPagesModule') %}
+						{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
+							<li><a href="{{ path('zikulapagesmodule_user_display', { urltitle: 'vorstand' }) }}">der Vorstand</a></li>
+						{% endif %}
+					{% endif %}		
+					
+					
+				  </ul>
+				</li>
+				<li><a href="/?module=news&type=user&func=view&displayonindex=1">News</a></li>
 				{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
 				<li><a href="/pages/display/termine">Termine</a></li>
 				{% endif %}
-				{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
-				<li><a href="/pages/display/links">Links</a></li>
+				{% if modAvailable('ZikulaPagesModule') %}
+					{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
+						<li><a href="{{ path('zikulapagesmodule_user_display', { urltitle: 'links' }) }}">Links</a></li>
+					{% endif %}
 				{% endif %}
-
-<!-- 				{% if hasPermission('CmfcmfMediaModule::', '::', 'ACCESS_READ') %}
-				<li><a href="/Sammlungen/anzeigen/root/jahrgangsbilder">Album</a></li>
-				{% endif %} -->
-
-				{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
-					<li><a href="/parkhaus/vehicles/view">Garage</a></li>
+				{% if modAvailable('RKParkHausModule') %}
+					{% if hasPermission('RKParkHausModule::', '::', 'ACCESS_READ') %}
+						<li><a href="{{ path('rkparkhausmodule_vehicle_view') }}">Parkhaus</a></li>
+					{% endif %}	
 				{% endif %}
 				
-                <!-- <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul> -->
-            <!-- </li> -->
-            <!-- {% if hasPermission('ZikulaDizkusModule::', '::', 'ACCESS_READ') %} -->
-            <!-- <li><a href="/forums">Forum</a></li> -->
-            <!-- {% endif %}			 -->
+
+
             <li><a href="{{ path('zikulasearchmodule_user_form') }}" title="{{ __('Search this site') }}"><span class="fa fa-search"></span></a></li>
 			
           </ul>

@@ -4,15 +4,17 @@
 {% block admin_page_icon 'list-alt' %}
 {% block content %}
 <div class="rkparkhausmodule-vehicle rkparkhausmodule-view">
-
+<div class="bottom-space">
+<div class="white-space">
     {{ block('page_nav_links') }}
 
-    {{ include('@RKParkHausModule/Vehicle/viewQuickNav.html.twig') }}{# see template file for available options #}
-
+    {{ include('@RKParkHausModule/Vehicle/viewQuickNav.html.twig', { workflowStateFilter: routeArea == 'admin', ownerFilter: routeArea == 'admin', searchFilter: routeArea == 'admin', showVehicleOwnerFilter: routeArea == 'admin', stillMyOwnFilter: routeArea == 'admin' }) }}{# see template file for available options #}
+</div>
+</div>
     {% if routeArea == 'admin' %}
     <form action="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'handleselectedentries') }}" method="post" id="vehiclesViewForm" class="form-horizontal" role="form">
         <div>
-    {% endif %}
+    
         <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover{% if routeArea == 'admin' %} table-condensed{% endif %}">
             <colgroup>
@@ -37,16 +39,15 @@
             </colgroup>
             <thead>
             <tr>
-                {% if routeArea == 'admin' %}
+                
                     <th id="hSelect" scope="col" class="text-center">
-                        <input type="checkbox" id="toggleVehicles" />
+                        <input type="checkbox" class="rkparkhaus-mass-toggle" />
                     </th>
-                {% endif %}
-                {% if routeArea == 'admin' %}
+                
                 <th id="hWorkflowState" scope="col" class="text-left">
                     <a href="{{ sort.workflowState.url }}" title="{{ __f('Sort by %s', {'%s': 'state'}) }}" class="{{ sort.workflowState.class }}">{{ __('State') }}</a>
                 </th>
-                {% endif %}
+                
 
 				
                 <th id="hVehicleImage" scope="col" class="text-left z-order-unsorted">
@@ -59,29 +60,28 @@
                     {{ __('Manufacturer') }}
                 </th>
 				
-                {% if routeArea == 'admin' %}
+                
                 <th id="hModel" scope="col" class="text-left z-order-unsorted">
                     {{ __('Model') }}
                 </th>
-				{% endif %}
-                {% if routeArea == 'admin' %}
+				
                 <th id="hItemActions" scope="col" class="text-right z-order-unsorted">{{ __('Actions') }}</th>
-				{% endif %}
+				
             </tr>
             </thead>
             <tbody>
-        
+{% endif %}   
         {% for vehicle in items %}
+{% if routeArea == 'admin' %}
             <tr>
-                {% if routeArea == 'admin' %}
+                
                     <td headers="hSelect" class="text-center">
-                        <input type="checkbox" name="items[]" value="{{ vehicle.id }}" class="vehicles-checkbox" />
+                        <input type="checkbox" name="items[]" value="{{ vehicle.id }}" class="rkparkhaus-toggle-checkbox" />
                     </td>
-                {% endif %}
-                {% if routeArea == 'admin' %}<td headers="hWorkflowState" class="text-left nowrap">
+                <td headers="hWorkflowState" class="text-left nowrap">
                     {{ vehicle.workflowState|rkparkhausmodule_objectState }}
                 </td>
-                {% endif %}
+                
                 <td headers="hVehicleImage" class="text-left">
                     {% if vehicle.vehicleImage is not empty and vehicle.vehicleImageMeta|default %}
                                 <a href="{{ path('rkparkhausmodule_vehicle_display', { id: vehicle.id }) }}" title="{{ vehicle.getTitleFromDisplayPattern() }}">
@@ -101,13 +101,11 @@
                     {{ vehicle.manufacturer }}
                 </td>
 				
-                {% if routeArea == 'admin' %}
+               
                 <td headers="hModel" class="text-left">
                     {{ vehicle.model }}
                 </td>
-				{% endif %}
-                
-                {% if routeArea == 'admin' %}
+
                 <td id="itemActions{{ vehicle.id }}" headers="hItemActions" class="actions text-right nowrap z-w02">
                     {% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'view' }) %}
                     <div class="dropdown">
@@ -116,18 +114,47 @@
                         {{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
                     </div>
                 </td>
-				{% endif %}
+				
             </tr>
+{% else %}
+
+{% if hasPermission('RKParkHausModule:Vehicle:', '::', 'ACCESS_READ') %}
+				<div class="col-xs-12 white-space">
+				
+                    {% if vehicle.vehicleImage is not empty and vehicle.vehicleImageMeta|default %}
+                                <a href="{{ path('rkparkhausmodule_vehicle_display', { id: vehicle.id }) }}" title="{{ vehicle.getTitleFromDisplayPattern() }}">
+                    {% if vehicle.vehicleImageMeta.isImage %}
+                        {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleVehicleImage') %}
+                        <img src="{{ vehicle.vehicleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"  class="right-space pull-left" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}"  />
+                    {% else %}
+                        {{ __('Download') }} ({{ vehicle.vehicleImageMeta.size|rkparkhausmodule_fileSize(vehicle.vehicleImage.getPathname(), false, false) }})
+                    {% endif %}
+                    </a>
+				
+                    {% else %}&nbsp;{% endif %}
+					<h3>{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}</h3>
+					<p>{{ vehicle.vehicleDescriptionTeaser|safeHtml }}</p>
+				
+				</div>
+
+{% endif %}
+
+{% endif %}
         {% else %}
+{% if routeArea == 'admin' %}
             <tr class="z-{{ routeArea == 'admin' ? 'admin' : 'data' }}tableempty">
                 <td class="text-left" colspan="{% if routeArea == 'admin' %}7{% else %}6{% endif %}">
             {{ __('No vehicles found.') }}
               </td>
             </tr>
+{% else %}
+<p>{{ __('No vehicles found.') }}</p>
+{% endif %}
         {% endfor %}
-        
+{% if routeArea == 'admin' %}       
             </tbody>
         </table>
+{% endif %}
         </div>
         
         {% if showAllEntries != 1 and pager|default %}
@@ -178,30 +205,4 @@
         {% endfor %}
     {% endif % #}
 {% endblock %}
-{% block footer %}
-    {{ parent() }}
 
-    <script type="text/javascript">
-    /* <![CDATA[ */
-        ( function($) {
-            $(document).ready(function() {
-                $('a.lightbox').lightbox();
-                $('.rkparkhausmodule-vehicle .dropdown > ul').removeClass('list-inline').addClass('list-unstyled dropdown-menu dropdown-menu-right');
-                $('.rkparkhausmodule-vehicle .dropdown > ul a').each(function (index) {
-                    $(this).html($(this).html() + $(this).find('i').first().data('original-title'));
-                });
-                $('.rkparkhausmodule-vehicle .dropdown > ul a i').addClass('fa-fw');
-                $('.rkparkhausmodule-vehicle .dropdown-toggle').removeClass('hidden').dropdown();
-                {% if routeArea == 'admin' %}
-                    {# init the "toggle all" functionality #}
-                    if ($('#toggleVehicles').length > 0) {
-                        $('#toggleVehicles').click(function (event) {
-                            $('.vehicles-checkbox').prop('checked', $(this).prop('checked'));
-                        });
-                    }
-                {% endif %}
-            });
-        })(jQuery);
-    /* ]]> */
-    </script>
-{% endblock %}
