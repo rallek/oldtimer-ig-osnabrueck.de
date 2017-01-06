@@ -92,7 +92,7 @@ application "ParkHaus" {
                 },
                 string "manufacturer" {
                     documentation "if you do not know the manufacturer please type unknown."
-                displayType VIEW_DISPLAY
+                displayType ALL
                 },
                 upload "manufacturerImage" {
                     documentation "Here you can place an image from the OEM who manufactured the vehicle. It will be used in the print version."
@@ -221,6 +221,7 @@ application "ParkHaus" {
                     documentation "If you do not own the vehicle anymore you do have two options. You may wont to delete the vehicle or you uncheck this option. If unchecked the vehicle is marked as \"not in Parkhaus anymore\""
                     defaultValue "true"
                     mandatory false
+                displayType VIEW_DISPLAY
                 }
             }
             actions {

@@ -50,14 +50,14 @@
                 <th id="hVehicleDescriptionTeaser" scope="col" class="text-left z-order-unsorted">
                     {{ __('Vehicle description teaser') }}
                 </th>
-                <th id="hManufacturer" scope="col" class="text-left z-order-unsorted">
-                    {{ __('Manufacturer') }}
+                <th id="hManufacturer" scope="col" class="text-left">
+                    <a href="{{ sort.manufacturer.url }}" title="{{ __f('Sort by %s', {'%s': 'manufacturer'}) }}" class="{{ sort.manufacturer.class }}">{{ __('Manufacturer') }}</a>
                 </th>
                 <th id="hModel" scope="col" class="text-left z-order-unsorted">
                     {{ __('Model') }}
                 </th>
-                <th id="hStillMyOwn" scope="col" class="text-center">
-                    <a href="{{ sort.stillMyOwn.url }}" title="{{ __f('Sort by %s', {'%s': 'still my own'}) }}" class="{{ sort.stillMyOwn.class }}">{{ __('Still my own') }}</a>
+                <th id="hStillMyOwn" scope="col" class="text-center z-order-unsorted">
+                    {{ __('Still my own') }}
                 </th>
                 <th id="hItemActions" scope="col" class="text-right z-order-unsorted">{{ __('Actions') }}</th>
             </tr>

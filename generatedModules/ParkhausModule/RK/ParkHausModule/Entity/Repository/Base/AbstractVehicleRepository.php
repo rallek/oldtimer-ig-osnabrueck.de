@@ -61,7 +61,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
         return [
             'workflowState',
             'vehicleType',
-            'stillMyOwn',
+            'manufacturer',
             'createdBy',
             'createdDate',
             'updatedBy',
