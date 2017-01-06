@@ -1,0 +1,361 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-01-06 17:25+0100\n"
+"PO-Revision-Date: 2017-01-06 17:31+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language: de\n"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/main.html.twig
+#: on line 12
+msgid "%s page|%s pages"
+msgstr "%s Seite|%s Seiten"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 57
+msgid "%s reads"
+msgstr "%s mal gelesen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 55
+msgid "%s total characters in this text"
+msgstr "%s Gesamtzahl der Zeichen in diesem Text"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 188
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: 68
+msgid "Actions"
+msgstr "Aktionen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/main.html.twig
+#: on line 7
+msgid "Available categories:"
+msgstr "Verfügbare Kategorien:"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 164
+msgid "Back to paginated view"
+msgstr "Zurück zur Seitenansicht"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 22
+msgid "Blocks"
+msgstr "Blöcke"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 122
+msgid "Brakes"
+msgstr "Bremsen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 82
+msgid "Built"
+msgstr "Baujahr"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 32
+msgid "Categories"
+msgstr "Kategorien"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/view.html.twig
+#: on line 6
+msgid "Category: %s"
+msgstr "Kategorie: %s"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 141
+msgid "Choose action"
+msgstr "Aktion wählen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 98
+msgid "Compression"
+msgstr "Kompression"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/VehicleImage/includeDisplayItemListMany.html.twig
+#: on line 26
+msgid "Copyright"
+msgstr "Copyright"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 34
+msgid "Copyright title image"
+msgstr "Copyright Titelbild"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 58
+msgid "Copyright vehicle image"
+msgstr "Copyright Fahrzeug Bild"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 159
+msgid "Create vehicle"
+msgstr "Erstelle Fahrzeug"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 254
+msgid "Create vehicle image"
+msgstr "Erstelle Fahrzeugbild"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 25
+msgid "Created by %name% on %date%"
+msgstr "Erstellt von %name% am %date%"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 94
+msgid "Cylinders"
+msgstr "Zylinder"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 142
+msgid "Delete"
+msgstr "Löschen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 90
+msgid "Displacement"
+msgstr "Hubraum"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 92
+msgid "Download"
+msgstr "Herunterladen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 51
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 86
+msgid "Engine"
+msgstr "Motor"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 19
+msgid "Extensions"
+msgstr "Erweiterungen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 106
+msgid "Fuel"
+msgstr "Treibstoff"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 102
+msgid "Fuel management"
+msgstr "Treibstoffversorgung"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 126
+msgid "Gearbox"
+msgstr "Getriebe"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/main_menu.html.twig
+#: on line 15
+msgid "Go to the sites home page"
+msgstr "Zur Startseite der Website"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/footer.html.twig
+#: on line 12
+msgid "Go to your account panel"
+msgstr "Gehe zum Benutzerkonto"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 28
+msgid "Groups"
+msgstr "Gruppen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/main_menu.html.twig
+#: on line 15
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: 14
+msgid "Home"
+msgstr "Startseite"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 110
+msgid "Horse power"
+msgstr "Motorleistung"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 142
+msgid "Info field 1"
+msgstr "Info-Feld 1"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 146
+msgid "Info field 2"
+msgstr "Info-Feld 2"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 150
+msgid "Info field 3"
+msgstr "Info-Feld 3"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 138
+msgid "Interior"
+msgstr "Innenausstattung"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 28
+msgid "Last update by %name% on %date%"
+msgstr "Letzte Aktualisierung durch %name% am %date%"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 74
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: 59
+msgid "Manufacturer"
+msgstr "Hersteller"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 114
+msgid "Max speed"
+msgstr "Höchstgeschwindigkeit"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 78
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: 64
+msgid "Model"
+msgstr "Modell"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/modules/ZikulaUsersModule/User/main.html.twig
+#: on line 1
+msgid "My account"
+msgstr "Benutzerkonto"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/modules/ZikulaThemeModule/moduleheader.html.twig
+#: on line 18
+msgid "Navigation"
+msgstr "Navigation"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/display.html.twig
+#: on line 36
+msgid "No categories"
+msgstr "Keine Kategorien"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 155
+msgid "Owner"
+msgstr "Eigentümer"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/main.html.twig
+#: on line 2
+msgid "Pages"
+msgstr "Seiten"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/view.html.twig
+#: on line 2
+msgid "Pages list"
+msgstr "Seitenliste"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/ZikulaPagesModule/views/User/view.html.twig
+#: on line 7
+msgid "Pages published under this category:"
+msgstr "Seiten in dieser Kategorie veröffentlicht:"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 31
+msgid "Permission rules"
+msgstr "Zugriffsrechte"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 130
+msgid "Rim"
+msgstr "Felge"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/main_menu.html.twig
+#: on line 50
+msgid "Search this site"
+msgstr "Diese Website durchsuchen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 16
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 167
+msgid "Show all entries"
+msgstr "Zeige alle Einträge"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 47
+msgid "Sort by %s"
+msgstr "Sortieren nach %s"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 47
+msgid "State"
+msgstr "Status"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 146
+msgid "Submit"
+msgstr "Bestätigen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 34
+msgid "Themes"
+msgstr "Themes"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 134
+msgid "Tire"
+msgstr "Reifen"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/views/Include/admin_menu.html.twig
+#: on line 25
+msgid "Users"
+msgstr "Benutzer"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 3 8
+msgid "Vehicle"
+msgstr "Fahrzeug"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 61
+msgid "Vehicle description"
+msgstr "Fahrzeugbeschreibung"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 56
+msgid "Vehicle description teaser"
+msgstr "Einleitende Fahrzeugbeschreibung"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 53
+msgid "Vehicle image"
+msgstr "Fahrzeugbild"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 228 230
+msgid "Vehicle images"
+msgstr "Fahrzeugbilder"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 3
+msgid "Vehicle list"
+msgstr "Fahrzeug Übersicht"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/display.html.twig
+#: on line 118
+msgid "Weight"
+msgstr "Gewicht"
+
+#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/themes/OsnabrueckTheme/Resources/RKParkHausModule/views/Vehicle/view.html.twig
+#: on line 138
+msgid "With selected vehicles"
+msgstr "Mit ausgewählten Fahrzeugen"
