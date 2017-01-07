@@ -138,16 +138,6 @@ abstract class AbstractVehicleImageController extends AbstractController
         ];
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
         
-        // parameter for used sorting field
-        if (empty($sort) || !in_array($sort, $repository->getAllowedSortingFields())) {
-            $sort = $repository->getDefaultSortingField();
-            $request->query->set('sort', $sort);
-            // set default sorting in route parameters (e.g. for the pager)
-            $routeParams = $request->attributes->get('_route_params');
-            $routeParams['sort'] = $sort;
-            $request->attributes->set('_route_params', $routeParams);
-        }
-        
         // parameter for used sort order
         $sortdir = strtolower($sortdir);
         $request->query->set('sort', $sort);

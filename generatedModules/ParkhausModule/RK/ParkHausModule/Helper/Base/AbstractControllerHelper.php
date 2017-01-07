@@ -16,8 +16,8 @@ use DataUtil;
 use FileUtil;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Zikula\Common\Translator\TranslatorInterface;
@@ -236,11 +236,24 @@ abstract class AbstractControllerHelper
             throw new Exception('Error! Invalid object type received.');
         }
     
+        $utilArgs = ['controller' => $objectType, 'action' => 'view'];
         $request = $this->container->get('request_stack')->getMasterRequest();
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
         $repository->setRequest($request);
     
-        $showOwnEntries = $request->query->getInt('own', $this->getVar('showOnlyOwnEntries', 0));
+        // parameter for used sorting field
+        if (empty($sort) || !in_array($sort, $repository->getAllowedSortingFields())) {
+            $sort = $repository->getDefaultSortingField();
+            $request->query->set('sort', $sort);
+            // set default sorting in route parameters (e.g. for the pager)
+            $routeParams = $request->attributes->get('_route_params');
+            $routeParams['sort'] = $sort;
+            $request->attributes->set('_route_params', $routeParams);
+        }
+    
+    
+        $variableApi = $this->container->get('zikula_extensions_module.api.variable');
+        $showOwnEntries = $request->query->getInt('own', $variableApi->get('RKParkHausModule', 'showOnlyOwnEntries', 0));
         $showAllEntries = $request->query->getInt('all', 0);
     
     
@@ -259,7 +272,7 @@ abstract class AbstractControllerHelper
             // the number of items displayed on a page for pagination
             $resultsPerPage = $request->query->getInt('num', 0);
             if (in_array($resultsPerPage, [0, 10])) {
-                $resultsPerPage = $this->container->get('zikula_extensions_module.api.variable')->get('RKParkHausModule', $objectType . 'EntriesPerPage', 10);
+                $resultsPerPage = $variableApi->get('RKParkHausModule', $objectType . 'EntriesPerPage', 10);
             }
         }
     
@@ -309,7 +322,7 @@ abstract class AbstractControllerHelper
         $templateParameters['sort'] = $sort;
         $templateParameters['sortdir'] = $sortdir;
     
-        $selectionHelper = $this->get('rk_parkhaus_module.selection_helper');
+        $selectionHelper = $this->container->get('rk_parkhaus_module.selection_helper');
     
         $where = '';
         if ($showAllEntries == 1) {
@@ -332,7 +345,7 @@ abstract class AbstractControllerHelper
         if (true === $supportsHooks) {
             // build RouteUrl instance for display hooks
             $currentUrlArgs['_locale'] = $request->getLocale();
-            $currentUrlObject = new RouteUrl('rkparkhausmodule_parkHaus_' . /*($isAdmin ? 'admin' : '') . */'view', $currentUrlArgs);
+            $currentUrlObject = new RouteUrl('rkparkhausmodule_parkhaus_' . /*($isAdmin ? 'admin' : '') . */'view', $currentUrlArgs);
         }
     
         $templateParameters['items'] = $entities;

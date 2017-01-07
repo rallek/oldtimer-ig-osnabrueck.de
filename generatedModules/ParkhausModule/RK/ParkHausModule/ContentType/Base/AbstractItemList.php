@@ -13,7 +13,6 @@
 namespace RK\ParkHausModule\ContentType\Base;
 
 use ServiceUtil;
-use ZLanguage;
 
 /**
  * Generic item list content plugin base class.
@@ -149,8 +148,6 @@ abstract class AbstractItemList extends \Content_AbstractContentType
      */
     public function display()
     {
-        $dom = ZLanguage::getModuleDomain('RKParkHausModule');
-    
         $serviceManager = ServiceUtil::getManager();
         $repository = $serviceManager->get('rk_parkhaus_module.' . $this->objectType . '_factory')->getRepository();
         $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');

@@ -1,4 +1,4 @@
-# r k\ParkHaus 0.5.0
+# r k\ParkHaus 0.6.0
 
 This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album.
 
