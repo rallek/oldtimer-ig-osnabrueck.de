@@ -16,9 +16,7 @@ use RK\ParkHausModule\Form\Handler\Common\EditHandler;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use ModUtil;
 use RuntimeException;
-use System;
 
 /**
  * This handler class handles the page events of editing forms.
@@ -57,12 +55,7 @@ abstract class AbstractEditHandler extends EditHandler
             }
         }
     
-        $entity = $this->entityRef;
-    
-        // save entity reference for later reuse
-        $this->entityRef = $entity;
-    
-        $entityData = $entity->toArray();
+        $entityData = $this->entityRef->toArray();
     
         // assign data to template as array (makes translatable support easier)
         $this->templateParameters[$this->objectTypeLower] = $entityData;

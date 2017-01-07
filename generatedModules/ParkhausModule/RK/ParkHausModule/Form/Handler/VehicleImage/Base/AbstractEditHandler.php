@@ -16,9 +16,7 @@ use RK\ParkHausModule\Form\Handler\Common\EditHandler;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use ModUtil;
 use RuntimeException;
-use System;
 
 /**
  * This handler class handles the page events of editing forms.
@@ -57,7 +55,21 @@ abstract class AbstractEditHandler extends EditHandler
             }
         }
     
+        $entityData = $this->entityRef->toArray();
+    
+        // assign data to template as array (makes translatable support easier)
+        $this->templateParameters[$this->objectTypeLower] = $entityData;
+    
+        return $result;
+    }
+    
+    /**
+     * Initialises relationship presets.
+     */
+    protected function initRelationPresets()
+    {
         $entity = $this->entityRef;
+    
         $selectionHelper = $this->container->get('rk_parkhaus_module.selection_helper');
         
         // assign identifiers of predefined incoming relationships
@@ -72,13 +84,6 @@ abstract class AbstractEditHandler extends EditHandler
     
         // save entity reference for later reuse
         $this->entityRef = $entity;
-    
-        $entityData = $entity->toArray();
-    
-        // assign data to template as array (makes translatable support easier)
-        $this->templateParameters[$this->objectTypeLower] = $entityData;
-    
-        return $result;
     }
     
     /**

@@ -12,9 +12,10 @@
 {% endblock %}
 {% block admin_page_icon 'eye' %}
 {% block content %}
+    {% set isQuickView = app.request.query.getBoolean('raw', false) %}
     <div class="rkparkhausmodule-vehicle rkparkhausmodule-display">
 
-    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+    {% if not isQuickView %}
         <div class="row">
             <div class="col-sm-9">
     {% endif %}
@@ -165,7 +166,7 @@
         {% if vehicle.owner is not empty %}
             <dt>{{ __('Owner') }}</dt>
             <dd>{% if vehicle.owner > 0 %}
-            {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+            {% if not isQuickView %}
                 {{ vehicle.owner|profileLinkByUserId() }}
                 <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicle.owner, rating='g') }}</span>
             {% else %}
@@ -214,7 +215,7 @@
     </dl>
     {{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicle }) }}
 
-    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+    {% if not isQuickView %}
         {# include display hooks #}
         {{ block('display_hooks') }}
             </div>
@@ -253,9 +254,7 @@
 {% endblock %}
 {% block display_hooks %}
     {% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicles.display_view', id=vehicle.id, urlObject=currentUrlObject) %}
-    {% for providerArea, hook in hooks %}
-        {% if providerArea != 'provider.scribite.ui_hooks.editor' %}{# fix for #664 #}
-            {{ hook }}
-        {% endif %}
+    {% for providerArea, hook in hooks if providerArea != 'provider.scribite.ui_hooks.editor' %}
+        {{ hook }}
     {% endfor %}
 {% endblock %}

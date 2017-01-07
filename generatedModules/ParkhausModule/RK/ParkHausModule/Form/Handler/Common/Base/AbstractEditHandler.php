@@ -26,7 +26,6 @@ use Zikula\Core\Doctrine\EntityAccess;
 use Zikula\Core\RouteUrl;
 use ModUtil;
 use RuntimeException;
-use UserUtil;
 
 /**
  * This handler class handles the page events of editing forms.
@@ -208,7 +207,7 @@ abstract class AbstractEditHandler
     public function processForm(array $templateParameters)
     {
         $this->templateParameters = $templateParameters;
-        $this->templateParameters['inlineUsage'] = UserUtil::getTheme() == 'ZikulaPrinterTheme' ? true : false;
+        $this->templateParameters['inlineUsage'] = $this->request->query->getBoolean('raw', false);
     
         $this->idPrefix = $this->request->query->getAlnum('idp', '');
     
@@ -255,7 +254,7 @@ abstract class AbstractEditHandler
                 return false;
             }
     
-            if (true === $this->hasPageLockSupport && \ModUtil::available('ZikulaPageLockModule')) {
+            if (true === $this->hasPageLockSupport && $this->container->get('kernel')->isBundle('ZikulaPageLockModule')) {
                 // try to guarantee that only one person at a time can be editing this entity
                 $lockingApi = $this->container->get('zikula_pagelock_module.api.locking');
                 $lockName = 'RKParkHausModule' . $this->objectTypeCapital . $this->createCompositeIdentifier();
@@ -275,6 +274,8 @@ abstract class AbstractEditHandler
         // save entity reference for later reuse
         $this->entityRef = $entity;
     
+        
+        $this->initRelationPresets();
     
         $workflowHelper = $this->container->get('rk_parkhaus_module.workflow_helper');
         $actions = $workflowHelper->getActionsForObject($entity);
@@ -321,6 +322,15 @@ abstract class AbstractEditHandler
     {
         // to be customised in sub classes
         return null;
+    }
+    
+    
+    /**
+     * Initialises relationship presets.
+     */
+    protected function initRelationPresets()
+    {
+        // to be customised in sub classes
     }
     
     /**
@@ -490,7 +500,7 @@ abstract class AbstractEditHandler
             }
         }
     
-        if (true === $this->hasPageLockSupport && $this->templateParameters['mode'] == 'edit' && \ModUtil::available('ZikulaPageLockModule')) {
+        if (true === $this->hasPageLockSupport && $this->templateParameters['mode'] == 'edit' && $this->container->get('kernel')->isBundle('ZikulaPageLockModule')) {
             $lockingApi = $this->container->get('zikula_pagelock_module.api.locking');
             $lockName = 'RKParkHausModule' . $this->objectTypeCapital . $this->createCompositeIdentifier();
             $lockingApi->releaseLock($lockName);

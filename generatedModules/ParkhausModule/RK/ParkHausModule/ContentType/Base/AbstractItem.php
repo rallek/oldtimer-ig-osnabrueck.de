@@ -12,7 +12,6 @@
 
 namespace RK\ParkHausModule\ContentType\Base;
 
-use ModUtil;
 use ServiceUtil;
 
 /**
@@ -100,8 +99,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
     public function display()
     {
         if (null !== $this->id && !empty($this->displayMode)) {
-            
-            return ModUtil::func('RKParkHausModule', 'external', 'display', $this->getDisplayArguments());
+            return ServiceUtil::get('router')->generate('rkparkhausmodule_external_display', $this->getDisplayArguments());
         }
     
         return '';
@@ -113,8 +111,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
     public function displayEditing()
     {
         if (null !== $this->id && !empty($this->displayMode)) {
-            
-            return ModUtil::func('RKParkHausModule', 'external', 'display', $this->getDisplayArguments());
+            return ServiceUtil::get('router')->generate('rkparkhausmodule_external_display', $this->getDisplayArguments());
         }
     
         return ServiceUtil::get('translator.default')->__('No item selected.');
@@ -155,7 +152,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
     public function startEditing()
     {
         // ensure our custom plugins are loaded
-        array_push($this->view->plugins_dir, 'modules/RK/ParkHaus/Resources/views//plugins');
+        array_push($this->view->plugins_dir, 'modules/RK/ParkHausModule/Resources/views//plugins');
     
         // required as parameter for the item selector plugin
         $this->view->assign('objectType', $this->objectType);

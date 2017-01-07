@@ -28,18 +28,16 @@ abstract class AbstractExternalController extends AbstractController
     /**
      * Displays one item of a certain object type using a separate template for external usages.
      *
-     * @param string $ot          The currently treated object type
+     * @param string $objectType  The currently treated object type
      * @param int    $id          Identifier of the entity to be shown
      * @param string $source      Source of this call (contentType or scribite)
      * @param string $displayMode Display mode (link or embed)
      *
      * @return string Desired data output
      */
-    public function displayAction($ot, $id, $source, $displayMode)
+    public function displayAction($objectType, $id, $source, $displayMode)
     {
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
-        
-        $objectType = $ot;
         $utilArgs = ['controller' => 'external', 'action' => 'display'];
         if (!in_array($objectType, $controllerHelper->getObjectTypes('controller', $utilArgs))) {
             $objectType = $controllerHelper->getDefaultObjectType('controllerType', $utilArgs);
@@ -99,8 +97,9 @@ abstract class AbstractExternalController extends AbstractController
      */
     public function finderAction(Request $request, $objectType, $editor, $sort, $sortdir, $pos = 1, $num = 0)
     {
-        
-        PageUtil::addVar('stylesheet', '@RKParkHausModule/Resources/public/css/style.css');
+        $assetHelper = $this->get('zikula_core.common.theme.asset_helper');
+        $cssAssetBag = $this->get('zikula_core.common.theme.assets_css');
+        $cssAssetBag->add($assetHelper->resolve('@RKParkHausModule:css/style.css'));
         
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
         $utilArgs = ['controller' => 'external', 'action' => 'finder'];
@@ -112,7 +111,7 @@ abstract class AbstractExternalController extends AbstractController
             throw new AccessDeniedException();
         }
         
-        if (empty($editor) || !in_array($editor, ['tinymce', 'ckeditor'])) {
+        if (empty($editor) || !in_array($editor, ['ckeditor', 'tinymce'])) {
             return $this->__('Error: Invalid editor context given for external controller action.');
         }
         

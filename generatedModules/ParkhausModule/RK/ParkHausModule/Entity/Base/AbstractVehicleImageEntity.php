@@ -696,7 +696,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
         $this->resetWorkflow();
     
         // reset upload fields
-        $this->setVehicleImage('');
+        $this->setVehicleImage(null);
         $this->setVehicleImageMeta([]);
         $this->setVehicleImageUrl('');
     

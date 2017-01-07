@@ -181,6 +181,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
             'objectType' => $this->objectType,
             'items' => $entities
         ];
+    
         $imageHelper = $serviceManager->get('rk_parkhaus_module.image_helper');
         $templateParameters = array_merge($templateData, $repository->getAdditionalTemplateParameters($imageHelper, 'contentType'));
     
@@ -283,7 +284,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
         $this->view->toplevelmodule = 'RKParkHausModule';
     
         // ensure our custom plugins are loaded
-        array_push($this->view->plugins_dir, 'modules/RK/ParkHaus/Resources/views//plugins');
+        array_push($this->view->plugins_dir, 'modules/RK/ParkHausModule/Resources/views//plugins');
     }
     
     /**

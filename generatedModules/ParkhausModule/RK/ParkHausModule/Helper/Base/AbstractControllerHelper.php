@@ -21,6 +21,8 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Zikula\Common\Translator\TranslatorInterface;
+use Zikula\Component\SortableColumns\SortableColumns;
+use Zikula\Core\RouteUrl;
 
 /**
  * Helper base class for controller layer methods.
@@ -218,6 +220,142 @@ abstract class AbstractControllerHelper
     }
 
     /**
+     * Processes the parameters for a view action.
+     * This includes handling pagination, quick navigation forms and other aspects.
+     *
+     * @param string          $objectType         Name of treated entity type
+     * @param SortableColumns $sortableColumns    Used SortableColumns instance
+     * @param array           $templateParameters Template data
+     * @param boolean         $supportsHooks      Whether hooks are supported or not
+     *
+     * @return array Enriched template parameters used for creating the response
+     */
+    public function processViewActionParameters($objectType, SortableColumns $sortableColumns, array $templateParameters = [], $supportsHooks = false)
+    {
+        if (!in_array($objectType, $this->getObjectTypes())) {
+            throw new Exception('Error! Invalid object type received.');
+        }
+    
+        $request = $this->container->get('request_stack')->getMasterRequest();
+        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository->setRequest($request);
+    
+        $showOwnEntries = $request->query->getInt('own', $this->getVar('showOnlyOwnEntries', 0));
+        $showAllEntries = $request->query->getInt('all', 0);
+    
+    
+        if (true === $supportsHooks) {
+            $currentUrlArgs = [];
+            if ($showAllEntries == 1) {
+                $currentUrlArgs['all'] = 1;
+            }
+            if ($showOwnEntries == 1) {
+                $currentUrlArgs['own'] = 1;
+            }
+        }
+    
+        $resultsPerPage = 0;
+        if ($showAllEntries != 1) {
+            // the number of items displayed on a page for pagination
+            $resultsPerPage = $request->query->getInt('num', 0);
+            if (in_array($resultsPerPage, [0, 10])) {
+                $resultsPerPage = $this->container->get('zikula_extensions_module.api.variable')->get('RKParkHausModule', $objectType . 'EntriesPerPage', 10);
+            }
+        }
+    
+        $imageHelper = $this->container->get('rk_parkhaus_module.image_helper');
+        $additionalParameters = $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', $utilArgs);
+    
+        $additionalUrlParameters = [
+            'all' => $showAllEntries,
+            'own' => $showOwnEntries,
+            'num' => $resultsPerPage
+        ];
+        foreach ($additionalParameters as $parameterName => $parameterValue) {
+            if (false !== stripos($parameterName, 'thumbRuntimeOptions')) {
+                continue;
+            }
+            $additionalUrlParameters[$parameterName] = $parameterValue;
+        }
+    
+        $templateParameters['own'] = $showAllEntries;
+        $templateParameters['all'] = $showOwnEntries;
+        $templateParameters['num'] = $resultsPerPage;
+        $templateParameters['tpl'] = $request->query->getAlnum('tpl', '');
+    
+        $quickNavForm = $this->container->get('form.factory')->create('RK\ParkHausModule\Form\Type\QuickNavigation\\' . ucfirst($objectType) . 'QuickNavType', $templateParameters);
+        if ($quickNavForm->handleRequest($request) && $quickNavForm->isSubmitted()) {
+            $quickNavData = $quickNavForm->getData();
+            foreach ($quickNavData as $fieldName => $fieldValue) {
+                if ($fieldName == 'routeArea') {
+                    continue;
+                }
+                if ($fieldName == 'all') {
+                    $showAllEntries = $additionalUrlParameters['all'] = $templateParameters['all'] = $fieldValue;
+                } elseif ($fieldName == 'own') {
+                    $showOwnEntries = $additionalUrlParameters['own'] = $templateParameters['own'] = $fieldValue;
+                } elseif ($fieldName == 'num') {
+                    $resultsPerPage = $additionalUrlParameters['num'] = $fieldValue;
+                } else {
+                    // set filter as query argument, fetched inside repository
+                    $request->query->set($fieldName, $fieldValue);
+                }
+            }
+        }
+        $sort = $request->query->get('sort');
+        $sortdir = $request->query->get('sortdir');
+        $sortableColumns->setOrderBy($sortableColumns->getColumn($sort), strtoupper($sortdir));
+        $sortableColumns->setAdditionalUrlParameters($additionalUrlParameters);
+        $templateParameters['sort'] = $sort;
+        $templateParameters['sortdir'] = $sortdir;
+    
+        $selectionHelper = $this->get('rk_parkhaus_module.selection_helper');
+    
+        $where = '';
+        if ($showAllEntries == 1) {
+            // retrieve item list without pagination
+            $entities = $selectionHelper->getEntities($objectType, [], $where, $sort . ' ' . $sortdir);
+        } else {
+            // the current offset which is used to calculate the pagination
+            $currentPage = $request->query->getInt('pos', 1);
+    
+            // retrieve item list with pagination
+            list($entities, $objectCount) = $selectionHelper->getEntitiesPaginated($objectType, $where, $sort . ' ' . $sortdir, $currentPage, $resultsPerPage);
+    
+            $templateParameters['currentPage'] = $currentPage;
+            $templateParameters['pager'] = [
+                'amountOfItems' => $objectCount,
+                'itemsPerPage' => $resultsPerPage
+            ];
+        }
+    
+        if (true === $supportsHooks) {
+            // build RouteUrl instance for display hooks
+            $currentUrlArgs['_locale'] = $request->getLocale();
+            $currentUrlObject = new RouteUrl('rkparkhausmodule_parkHaus_' . /*($isAdmin ? 'admin' : '') . */'view', $currentUrlArgs);
+        }
+    
+        $templateParameters['items'] = $entities;
+        $templateParameters['sort'] = $sort;
+        $templateParameters['sortdir'] = $sortdir;
+        $templateParameters['num'] = $resultsPerPage;
+        if (true === $supportsHooks) {
+            $templateParameters['currentUrlObject'] = $currentUrlObject;
+        }
+        $templateParameters = array_merge($templateParameters, $additionalParameters);
+    
+        $templateParameters['sort'] = $sortableColumns->generateSortableColumns();
+        $templateParameters['quickNavForm'] = $quickNavForm->createView();
+    
+        $templateParameters['showAllEntries'] = $templateParameters['all'];
+        $templateParameters['showOwnEntries'] = $templateParameters['own'];
+    
+        $templateParameters['canBeCreated'] = $this->container->get('rk_parkhaus_module.model_helper')->canBeCreated($objectType);
+    
+        return $templateParameters;
+    }
+
+    /**
      * Retrieve the base path for given object type and upload field combination.
      *
      * @param string  $objectType   Name of treated entity type
@@ -329,7 +467,7 @@ abstract class AbstractControllerHelper
     
         // Write a htaccess file into the upload directory
         $htaccessFilePath = $uploadPath . '/.htaccess';
-        $htaccessFileTemplate = 'modules/RKParkHausModule/Resources/docs/htaccessTemplate';
+        $htaccessFileTemplate = 'modules/RK/ParkHausModule/Resources/docs/htaccessTemplate';
         if (!$fs->exists($htaccessFilePath) && $fs->exists($htaccessFileTemplate)) {
             try {
                 $extensions = str_replace(',', '|', str_replace(' ', '', $allowedExtensions));

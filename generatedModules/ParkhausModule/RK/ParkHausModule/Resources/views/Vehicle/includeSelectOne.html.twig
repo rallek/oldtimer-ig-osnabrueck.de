@@ -20,18 +20,18 @@
         {{ form_row(attribute(form, alias)) }}
     {% elseif displayMode == 'autocomplete' %}
         {% set createUrl = allowEditing ? path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'edit') : '' %}
-        {{ form_row(attribute(form, alias)) }}
-        <div class="rkparkhausmodule-relation-leftside">
-            {% if attribute(linkingItem, alias) is defined %}
-                {{ include(
-                    'Vehicle/includeSelectItemListOne.html.twig',
-                    { item: attribute(linkingItem, alias) }
-                ) }}
-            {% else %}
-                {{ include('Vehicle/includeSelectItemListOne.html.twig') }}
-            {% endif %}
-        </div>
-        <br style="clear: both" />
+            {{ form_row(attribute(form, alias)) }}
+            <div class="rkparkhausmodule-relation-leftside">
+                {% if attribute(linkingItem, alias) is defined %}
+                    {{ include(
+                        'Vehicle/includeSelectItemListOne.html.twig',
+                        { item: attribute(linkingItem, alias) }
+                    ) }}
+                {% else %}
+                    {{ include('Vehicle/includeSelectItemListOne.html.twig') }}
+                {% endif %}
+            </div>
+            <br style="clear: both" />
     {% endif %}
 {% if panel|default(false) == true %}
             </div>

@@ -14,6 +14,7 @@ namespace RK\ParkHausModule\Form\Type\QuickNavigation\Base;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
@@ -27,9 +28,9 @@ abstract class AbstractVehicleImageQuickNavType extends AbstractType
     use TranslatorTrait;
 
     /**
-     * @var RequestStack
+     * @var Request
      */
-    protected $requestStack;
+    protected $request;
 
     /**
      * @var ListEntriesHelper
@@ -40,13 +41,13 @@ abstract class AbstractVehicleImageQuickNavType extends AbstractType
      * VehicleImageQuickNavType constructor.
      *
      * @param TranslatorInterface $translator   Translator service instance
-     * @param RequestStack        $requestStack RequestStack service instance
+    * @param RequestStack        $requestStack RequestStack service instance
      * @param ListEntriesHelper   $listHelper   ListEntriesHelper service instance
      */
     public function __construct(TranslatorInterface $translator, RequestStack $requestStack, ListEntriesHelper $listHelper)
     {
         $this->setTranslator($translator);
-        $this->requestStack = $requestStack;
+        $this->request = $requestStack->getMasterRequest();
         $this->listHelper = $listHelper;
     }
 
@@ -96,11 +97,10 @@ abstract class AbstractVehicleImageQuickNavType extends AbstractType
     public function addIncomingRelationshipFields(FormBuilderInterface $builder, array $options)
     {
         $mainSearchTerm = '';
-        $request = $this->requestStack->getCurrentRequest();
-        if ($request->query->has('q')) {
+        if ($this->request->query->has('q')) {
             // remove current search argument from request to avoid filtering related items
-            $mainSearchTerm = $request->query->get('q');
-            $request->query->remove('q');
+            $mainSearchTerm = $this->request->query->get('q');
+            $this->request->query->remove('q');
         }
     
         $builder->add('vehicle', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', [
@@ -116,7 +116,7 @@ abstract class AbstractVehicleImageQuickNavType extends AbstractType
     
         if ($mainSearchTerm != '') {
             // readd current search argument
-            $request->query->set('q', $mainSearchTerm);
+            $this->request->query->set('q', $mainSearchTerm);
         }
     }
 

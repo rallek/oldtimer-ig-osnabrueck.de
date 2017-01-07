@@ -48,12 +48,10 @@
 {% set hookId = mode != 'create' ? vehicleimage.id : null %}
 {% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicleimages.form_edit', id=hookId) %}
 {% if hooks is iterable and hooks|length > 0 %}
-    {% for providerArea, hook in hooks %}
-        {% if providerArea != 'provider.scribite.ui_hooks.editor' %}{# fix for #664 #}
-            <fieldset>
-                {{ hook }}
-            </fieldset>
-        {% endif %}
+    {% for providerArea, hook in hooks if providerArea != 'provider.scribite.ui_hooks.editor' %}
+        <fieldset>
+            {{ hook }}
+        </fieldset>
     {% endfor %}
 {% endif %}
 

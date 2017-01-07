@@ -15,10 +15,10 @@ namespace RK\ParkHausModule\Controller;
 use RK\ParkHausModule\Controller\Base\AbstractVehicleImageController;
 
 use RuntimeException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Zikula\ThemeModule\Engine\Annotation\Theme;
 use RK\ParkHausModule\Entity\VehicleImageEntity;
 
@@ -28,16 +28,16 @@ use RK\ParkHausModule\Entity\VehicleImageEntity;
 class VehicleImageController extends AbstractVehicleImageController
 {
     /**
-     * This is the default action handling the index admin area called without defining arguments.
+     * {@inheritdoc}
      *
      * @Route("/admin/vehicleImages",
      *        methods = {"GET"}
      * )
      * @Theme("admin")
      *
-     * @param Request  $request      Current request instance
+     * @param Request $request Current request instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      */
@@ -47,15 +47,15 @@ class VehicleImageController extends AbstractVehicleImageController
     }
     
     /**
-     * This is the default action handling the index area called without defining arguments.
+     * {@inheritdoc}
      *
      * @Route("/vehicleImages",
      *        methods = {"GET"}
      * )
      *
-     * @param Request  $request      Current request instance
+     * @param Request $request Current request instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      */
@@ -64,7 +64,7 @@ class VehicleImageController extends AbstractVehicleImageController
         return parent::indexAction($request);
     }
     /**
-     * This action provides an item list overview in the admin area.
+     * {@inheritdoc}
      *
      * @Route("/admin/vehicleImages/view/{sort}/{sortdir}/{pos}/{num}.{_format}",
      *        requirements = {"sortdir" = "asc|desc|ASC|DESC", "pos" = "\d+", "num" = "\d+", "_format" = "html"},
@@ -73,13 +73,13 @@ class VehicleImageController extends AbstractVehicleImageController
      * )
      * @Theme("admin")
      *
-     * @param Request  $request      Current request instance
-     * @param string  $sort         Sorting field
-     * @param string  $sortdir      Sorting direction
-     * @param int     $pos          Current pager position
-     * @param int     $num          Amount of entries to display
+     * @param Request $request Current request instance
+     * @param string $sort         Sorting field
+     * @param string $sortdir      Sorting direction
+     * @param int    $pos          Current pager position
+     * @param int    $num          Amount of entries to display
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      */
@@ -89,7 +89,7 @@ class VehicleImageController extends AbstractVehicleImageController
     }
     
     /**
-     * This action provides an item list overview.
+     * {@inheritdoc}
      *
      * @Route("/vehicleImages/view/{sort}/{sortdir}/{pos}/{num}.{_format}",
      *        requirements = {"sortdir" = "asc|desc|ASC|DESC", "pos" = "\d+", "num" = "\d+", "_format" = "html"},
@@ -97,13 +97,13 @@ class VehicleImageController extends AbstractVehicleImageController
      *        methods = {"GET"}
      * )
      *
-     * @param Request  $request      Current request instance
-     * @param string  $sort         Sorting field
-     * @param string  $sortdir      Sorting direction
-     * @param int     $pos          Current pager position
-     * @param int     $num          Amount of entries to display
+     * @param Request $request Current request instance
+     * @param string $sort         Sorting field
+     * @param string $sortdir      Sorting direction
+     * @param int    $pos          Current pager position
+     * @param int    $num          Amount of entries to display
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      */
@@ -112,7 +112,7 @@ class VehicleImageController extends AbstractVehicleImageController
         return parent::viewAction($request, $sort, $sortdir, $pos, $num);
     }
     /**
-     * This action provides a item detail view in the admin area.
+     * {@inheritdoc}
      *
      * @Route("/admin/vehicleImage/{id}.{_format}",
      *        requirements = {"id" = "\d+", "_format" = "html"},
@@ -121,10 +121,10 @@ class VehicleImageController extends AbstractVehicleImageController
      * )
      * @Theme("admin")
      *
-     * @param Request  $request      Current request instance
-     * @param VehicleImageEntity $vehicleImage      Treated vehicle image instance
+     * @param Request $request Current request instance
+     * @param VehicleImageEntity $vehicleImage Treated vehicle image instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      * @throws NotFoundHttpException Thrown by param converter if item to be displayed isn't found
@@ -135,7 +135,7 @@ class VehicleImageController extends AbstractVehicleImageController
     }
     
     /**
-     * This action provides a item detail view.
+     * {@inheritdoc}
      *
      * @Route("/vehicleImage/{id}.{_format}",
      *        requirements = {"id" = "\d+", "_format" = "html"},
@@ -143,10 +143,10 @@ class VehicleImageController extends AbstractVehicleImageController
      *        methods = {"GET"}
      * )
      *
-     * @param Request  $request      Current request instance
-     * @param VehicleImageEntity $vehicleImage      Treated vehicle image instance
+     * @param Request $request Current request instance
+     * @param VehicleImageEntity $vehicleImage Treated vehicle image instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      * @throws NotFoundHttpException Thrown by param converter if item to be displayed isn't found
@@ -156,7 +156,7 @@ class VehicleImageController extends AbstractVehicleImageController
         return parent::displayAction($request, $vehicleImage);
     }
     /**
-     * This action provides a handling of edit requests in the admin area.
+     * {@inheritdoc}
      *
      * @Route("/admin/vehicleImage/edit/{id}.{_format}",
      *        requirements = {"id" = "\d+", "_format" = "html"},
@@ -165,9 +165,9 @@ class VehicleImageController extends AbstractVehicleImageController
      * )
      * @Theme("admin")
      *
-     * @param Request  $request      Current request instance
+     * @param Request $request Current request instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      * @throws NotFoundHttpException Thrown by form handler if item to be edited isn't found
@@ -179,7 +179,7 @@ class VehicleImageController extends AbstractVehicleImageController
     }
     
     /**
-     * This action provides a handling of edit requests.
+     * {@inheritdoc}
      *
      * @Route("/vehicleImage/edit/{id}.{_format}",
      *        requirements = {"id" = "\d+", "_format" = "html"},
@@ -187,9 +187,9 @@ class VehicleImageController extends AbstractVehicleImageController
      *        methods = {"GET", "POST"}
      * )
      *
-     * @param Request  $request      Current request instance
+     * @param Request $request Current request instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      * @throws NotFoundHttpException Thrown by form handler if item to be edited isn't found
@@ -200,7 +200,7 @@ class VehicleImageController extends AbstractVehicleImageController
         return parent::editAction($request);
     }
     /**
-     * This action provides a handling of simple delete requests in the admin area.
+     * {@inheritdoc}
      *
      * @Route("/admin/vehicleImage/delete/{id}.{_format}",
      *        requirements = {"id" = "\d+", "_format" = "html"},
@@ -209,10 +209,10 @@ class VehicleImageController extends AbstractVehicleImageController
      * )
      * @Theme("admin")
      *
-     * @param Request  $request      Current request instance
-     * @param VehicleImageEntity $vehicleImage      Treated vehicle image instance
+     * @param Request $request Current request instance
+     * @param VehicleImageEntity $vehicleImage Treated vehicle image instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      * @throws NotFoundHttpException Thrown by param converter if item to be deleted isn't found
@@ -224,7 +224,7 @@ class VehicleImageController extends AbstractVehicleImageController
     }
     
     /**
-     * This action provides a handling of simple delete requests.
+     * {@inheritdoc}
      *
      * @Route("/vehicleImage/delete/{id}.{_format}",
      *        requirements = {"id" = "\d+", "_format" = "html"},
@@ -232,10 +232,10 @@ class VehicleImageController extends AbstractVehicleImageController
      *        methods = {"GET", "POST"}
      * )
      *
-     * @param Request  $request      Current request instance
-     * @param VehicleImageEntity $vehicleImage      Treated vehicle image instance
+     * @param Request $request Current request instance
+     * @param VehicleImageEntity $vehicleImage Treated vehicle image instance
      *
-     * @return mixed Output
+     * @return Response Output
      *
      * @throws AccessDeniedException Thrown if the user doesn't have required permissions
      * @throws NotFoundHttpException Thrown by param converter if item to be deleted isn't found

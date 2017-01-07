@@ -60,27 +60,24 @@ abstract class AbstractAjaxController extends AbstractController
             $fragment = $request->query->get('fragment', '');
         }
         
-        $dql = '
-            SELECT u
-            FROM Zikula\Module\UsersModule\Entity\UserEntity u
-            WHERE u.uname LIKE :fragment
-        ';
-        $entityManager = $this->get('doctrine.orm.default_entity_manager');
-        $query = $entityManager->createQuery($dql);
-        $query->setParameter('fragment', '%' . $fragment . '%');
-        $results = $query->getArrayResult();
+        $userRepository = $this->get('zikula_users_module.user_repository');
+        $limit = 50;
+        $filter = [
+            'uname' => ['operator' => 'like', 'operand' => '%' . $fragment . '%']
+        ];
+        $results = $userRepository->query($filter, ['uname' => 'asc'], $limit);
         
         // load avatar plugin
         include_once 'lib/legacy/viewplugins/function.useravatar.php';
         $view = \Zikula_View::getInstance('RKParkHausModule', false);
         
         $resultItems = [];
-        if (is_array($results) && count($results) > 0) {
+        if (count($results) > 0) {
             foreach ($results as $result) {
                 $resultItems[] = [
-                    'uid' => $result['uid'],
-                    'uname' => DataUtil::formatForDisplay($result['uname']),
-                    'avatar' => smarty_function_useravatar(['uid' => $result['uid'], 'rating' => 'g'], $view)
+                    'uid' => $result->getUid(),
+                    'uname' => $result->getUname(),
+                    'avatar' => smarty_function_useravatar(['uid' => $result->getUid(), 'rating' => 'g'], $view)
                 ];
             }
         }
@@ -224,7 +221,6 @@ abstract class AbstractAjaxController extends AbstractController
         $sort = $request->query->get('sort', '');
         if (empty($sort) || !in_array($sort, $repository->getAllowedSortingFields())) {
             $sort = $repository->getDefaultSortingField();
-            System::queryStringSetVar('sort', $sort);
             $request->query->set('sort', $sort);
             // set default sorting in route parameters (e.g. for the pager)
             $routeParams = $request->attributes->get('_route_params');

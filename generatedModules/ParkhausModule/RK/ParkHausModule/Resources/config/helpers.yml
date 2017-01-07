@@ -42,7 +42,8 @@ services:
         class: RK\ParkHausModule\Helper\ViewHelper
         arguments:
             - "@service_container"
-            - "@translator.default"
+            - "@templating"
+            - "@request_stack"
     
     rk_parkhaus_module.workflow_helper:
         class: RK\ParkHausModule\Helper\WorkflowHelper

@@ -12,6 +12,7 @@
 {% endblock %}
 {% block admin_page_icon 'eye' %}
 {% block content %}
+    {% set isQuickView = app.request.query.getBoolean('raw', false) %}
     <div class="rkparkhausmodule-vehicleimage rkparkhausmodule-display">
 
 
@@ -53,7 +54,7 @@
         {% if vehicleImage.vehicleOwner is not empty %}
             <dt>{{ __('Vehicle owner') }}</dt>
             <dd>{% if vehicleImage.vehicleOwner > 0 %}
-            {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+            {% if not isQuickView %}
                 {{ vehicleImage.vehicleOwner|profileLinkByUserId() }}
                 <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicleImage.vehicleOwner, rating='g') }}</span>
             {% else %}
@@ -65,11 +66,11 @@
         {% if vehicleImage.vehicle|default %}
             <dt>{{ __('Vehicle') }}</dt>
             <dd>
-              {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+              {% if not isQuickView %}
                   <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id }) }}">{% spaceless %}
                     {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
                   {% endspaceless %}</a>
-                  <a id="vehicleItem{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="rkparkhaus-inline-window hidden" data-modal-title="{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"><span class="fa fa-id-card-o"></span></a>
+                  <a id="vehicleItem{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id, 'raw': 1 }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="rkparkhaus-inline-window hidden" data-modal-title="{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"><span class="fa fa-id-card-o"></span></a>
               {% else %}
                   {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
               {% endif %}
@@ -79,7 +80,7 @@
     </dl>
     {{ include('@RKParkHausModule/Helper/includeStandardFieldsDisplay.html.twig', { obj: vehicleImage }) }}
 
-    {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
+    {% if not isQuickView %}
         {# include display hooks #}
         {{ block('display_hooks') }}
     {% endif %}
@@ -87,9 +88,7 @@
 {% endblock %}
 {% block display_hooks %}
     {% set hooks = notifyDisplayHooks(eventName='rkparkhausmodule.ui_hooks.vehicleimages.display_view', id=vehicleImage.id, urlObject=currentUrlObject) %}
-    {% for providerArea, hook in hooks %}
-        {% if providerArea != 'provider.scribite.ui_hooks.editor' %}{# fix for #664 #}
-            {{ hook }}
-        {% endif %}
+    {% for providerArea, hook in hooks if providerArea != 'provider.scribite.ui_hooks.editor' %}
+        {{ hook }}
     {% endfor %}
 {% endblock %}

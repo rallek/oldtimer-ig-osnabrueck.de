@@ -5,7 +5,6 @@ services:
         class: RK\ParkHausModule\Form\Type\QuickNavigation\VehicleQuickNavType
         arguments:
             - "@translator.default"
-            - "@request_stack"
             - "@rk_parkhaus_module.listentries_helper"
         tags:
             - { name: form.type }

@@ -103,7 +103,7 @@
                         <a href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', { 'id': vehicleImage.vehicle.id }) }}">{% spaceless %}
                           {{ vehicleImage.vehicle.getTitleFromDisplayPattern() }}
                         {% endspaceless %}</a>
-                        <a id="vehicleItem{{ vehicleImage.id }}_rel_{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', {'id': vehicleImage.vehicle.id, 'theme': 'ZikulaPrinterTheme' }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="rkparkhaus-inline-window hidden" data-modal-title="{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"><span class="fa fa-id-card-o"></span></a>
+                        <a id="vehicleItem{{ vehicleImage.id }}_rel_{{ vehicleImage.vehicle.id }}Display" href="{{ path('rkparkhausmodule_vehicle_' ~ routeArea ~ 'display', {'id': vehicleImage.vehicle.id, 'raw': 1 }) }}" title="{{ __('Open quick view window')|e('html_attr') }}" class="rkparkhaus-inline-window hidden" data-modal-title="{{ vehicleImage.vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"><span class="fa fa-id-card-o"></span></a>
                     {% else %}
                         {{ __('Not set.') }}
                     {% endif %}
@@ -129,7 +129,7 @@
         </div>
         
         {% if showAllEntries != 1 and pager|default %}
-            {{ pager({ rowcount: pager.numitems, limit: pager.itemsperpage, display: 'page', route: 'rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'view'}) }}
+            {{ pager({ rowcount: pager.amountOfItems, limit: pager.itemsPerPage, display: 'page', route: 'rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'view'}) }}
         {% endif %}
     {% if routeArea == 'admin' %}
             <fieldset>

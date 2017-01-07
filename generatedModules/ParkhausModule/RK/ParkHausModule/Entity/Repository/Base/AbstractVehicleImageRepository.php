@@ -23,10 +23,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Zikula\Component\FilterUtil\FilterUtil;
 use Zikula\Component\FilterUtil\Config as FilterConfig;
 use Zikula\Component\FilterUtil\PluginManager as FilterPluginManager;
-use ModUtil;
 use Psr\Log\LoggerInterface;
 use ServiceUtil;
-use System;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\UsersModule\Api\CurrentUserApi;
 use RK\ParkHausModule\Entity\VehicleImageEntity;
@@ -502,7 +500,7 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
      */
     public function selectById($id = 0, $useJoins = true, $slimMode = false)
     {
-        $results = $this->selectByIdList([$id], $useJoins, $slimMode);
+        $results = $this->selectByIdList(is_array($id) ? $id : [$id], $useJoins, $slimMode);
     
         return count($results) > 0 ? $results[0] : null;
     }
@@ -534,7 +532,7 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
      * Adds where clauses excluding desired identifiers from selection.
      *
      * @param QueryBuilder $qb        Query builder to be enhanced
-     * @param integer      $excludeId The id (or array of ids) to be excluded from selection
+     * @param integer      $excludeId The id to be excluded from selection
      *
      * @return QueryBuilder Enriched query builder instance
      */
@@ -726,7 +724,7 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
      * Selects entities by a given search fragment.
      *
      * @param string  $fragment       The fragment to search for
-     * @param array   $exclude        Comma separated list with ids to be excluded from search
+     * @param array   $exclude        List with identifiers to be excluded from search
      * @param string  $orderBy        The order-by clause to use when retrieving the collection (optional) (default='')
      * @param integer $currentPage    Where to start selection
      * @param integer $resultsPerPage Amount of items to select
@@ -738,8 +736,7 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
     {
         $qb = $this->genericBaseQuery('', $orderBy, $useJoins);
         if (count($exclude) > 0) {
-            $qb->andWhere('tbl.id NOT IN (:excludeList)')
-               ->setParameter('excludeList', $exclude);
+        	$qb = $this->addExclusion($qb, $exclude);
         }
     
         $qb = $this->addSearchFilter($qb, $fragment);
@@ -1084,9 +1081,9 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
     /**
      * Helper method to add joins to from clause.
      *
-     * @param QueryBuilder $qb query builder instance used to create the query
+     * @param QueryBuilder $qb Query builder instance used to create the query
      *
-     * @return String Enhancement for from clause
+     * @return QueryBuilder The query builder enriched by additional joins
      */
     protected function addJoinsToFrom(QueryBuilder $qb)
     {
