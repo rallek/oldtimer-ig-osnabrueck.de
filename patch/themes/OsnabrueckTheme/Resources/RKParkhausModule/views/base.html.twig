@@ -16,9 +16,7 @@
     {# commented out because not sure yet whether this is still required in 1.4.x #}
     {# { pageAddVar('jsgettext', 'rkparkhausmodule_js:RKParkHausModule') } #}
 {% endblock %}
-<div class="row">
-<div class="col-xs-12 bottom-space">
-<div class="white-space">
+
 {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
     {% block appTitle %}
         {{ moduleHeader('user', '', '', false, true, false, true) }}
@@ -31,9 +29,7 @@
 {{ pageSetVar('title', block('pageTitle')|default(block('title'))) }}
 
 {{ showflashes() }}
-</div>
-</div>
-</div>
+
 {% block content %}{% endblock %}
 
 {% block footer %}

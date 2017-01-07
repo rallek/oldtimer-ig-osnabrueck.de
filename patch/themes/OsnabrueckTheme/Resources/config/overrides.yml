@@ -7,5 +7,7 @@ system/ThemeModule/Resources/views/moduleheader.tpl: themes/OsnabrueckTheme/Reso
 modules/News/templates/user/index.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/user/index.tpl
 modules/News/templates/user/view.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/user/view.tpl
 modules/News/templates/user/menu.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/user/menu.tpl
+modules/News/templates/user/article.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/user/article.tpl
+modules/News/templates/user/articlecontent.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/user/articlecontent.tpl
 modules/News/templates/block/storiesext/row2.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/block/storiesext/row2.tpl
 modules/News/templates/block/storiesext/main2.tpl: themes/OsnabrueckTheme/Resources/views/modules/News/templates/block/storiesext/main2.tpl

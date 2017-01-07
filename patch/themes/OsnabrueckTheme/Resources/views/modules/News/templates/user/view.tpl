@@ -1,11 +1,15 @@
 {nocache}{include file='user/menu.tpl'}{/nocache}
 {insert name='getstatusmsg'}
-hallo
+
 {section name='newsview' loop=$newsitems}
+<div class="bottom-space">
+<div class="white-space">
     {$newsitems[newsview]}
     {if $smarty.section.newsview.last neq true}
-    <hr />
+   
     {/if}
+</div>
+</div>
 {/section}
 
 {if $newsitems}

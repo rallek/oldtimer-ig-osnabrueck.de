@@ -4,30 +4,48 @@
     {% block appTitle %}
         
     {% endblock %}
-{% block title %}
+
+	
+	{% block titleArea %}
+    
+{% endblock %}
+
+{% block content %}
     {% set templateTitle = vehicle.getTitleFromDisplayPattern()|default(__('Vehicle')) %}
 	{% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleTitleImage') %}
-                
+
+              
 <div class="section">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 bottom-space">
 			<div class="col-md-12 white-space">
 			
 				<div class="carousel slide" id="fullcarousel-example" data-interval="5000" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="item active">
+							<a href="{{ vehicle.titleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.vehicleImageMeta.isImage %}  data-lightbox="lightbox2" data-title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% endif %}>
 							<img src="{{ vehicle.titleImageUrl }}" width="100%" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" />
 								
 							<div class="carousel-caption">
 								<h3>{{ templateTitle|notifyFilters('rkparkhausmodule.filter_hooks.vehicles.filter') }}{% if routeArea == 'admin' %} <small>({{ vehicle.workflowState|rkparkhausmodule_objectState(false)|lower }})</small>{% endif %}</h3>
 							</div>
+							</a>
 						</div>
 					</div>
 				</div>
 			
 			
 
-				<div class="col-md-12">
+				<div class="copyright col-md-12">
+					
+					{% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'display' }) %}
+						<div class="dropdown pull-left">
+							<p class=" text-left "><a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
+							
+							{{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}</p>
+						</div>
+						
+					
 					<p class="copyright text-muted text-right">{{ __('Copyright title image') }}: {{ vehicle.copyrightTitleImage }}</p>
 				</div>
 			</div>
@@ -36,8 +54,7 @@
 
 	                
 
-{% endblock %}
-{% block content %}
+
 <!-- <div class="rkparkhausmodule-vehicle rkparkhausmodule-display"> -->
 
     {% if app.request.query.get('theme') != 'ZikulaPrinterTheme' %}
@@ -53,6 +70,8 @@
 							<img src="{{ vehicle.vehicleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" />
 						{% endif %}
 						</a>
+						
+						
 
 						<p class="copyright text-muted text-right">{{ __('Copyright vehicle image') }}: {{ vehicle.copyrightVehicleImage }}</p>
 					</div>
@@ -164,6 +183,14 @@
 							</dd>
 						{% endif %}		
 					</dl>
+
+						
+					{% set itemActions = knp_menu_get('RKParkHausModule:ItemActionsMenu:menu', [], { entity: vehicle, area: routeArea, context: 'display' }) %}
+					<div class="dropdown text-right">
+						<a id="itemActions{{ vehicle.id }}DropDownToggle" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> {{ __('Actions') }} <span class="caret"></span></a>
+						
+						{{ knp_menu_render(itemActions, { template: 'ZikulaMenuModule:Override:actions.html.twig' }) }}
+					</div>
 				</div>
 			</div>
 		</div>

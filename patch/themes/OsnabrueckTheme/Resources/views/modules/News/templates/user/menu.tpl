@@ -14,16 +14,13 @@
     {pagesetvar name='title' value=$catname}
   {/if}
 {/if}
+<div class="bottom-space">
+	<div class="white-space">
 
-{* smarty blockposition wird nicht angezeigt *}
-{blockposition name='news'} 
+		<h2>{gt text='News'}{if $func eq 'view' AND $catname|default:'' neq ''} &raquo; {$catname}{/if}</h2>
 
-{* twig darf ich hier anscheinend nicht nehmen. Hab nen Block drumzugebaut, nützt auch nichts *}
-{* {% block newstitle %}
- {{ showblockposition('news') }} 
-{% endblock %} *}
-
-<h2>{gt text='News'}{if $func eq 'view' AND $catname|default:'' neq ''} &raquo; {$catname}{/if}</h2>
-{if $theme neq 'Printer'}
-{modulelinks modname='News' type='user'}
-{/if}
+		{if $theme neq 'Printer'}
+			{modulelinks modname='News' type='user'}
+		{/if}
+	</div>
+</div>

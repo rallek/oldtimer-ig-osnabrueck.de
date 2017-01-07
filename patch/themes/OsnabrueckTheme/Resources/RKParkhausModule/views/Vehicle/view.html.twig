@@ -1,7 +1,12 @@
 {# purpose of this template: vehicles list view #}
 {% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
-{% block title __('Vehicle list') %}
+
 {% block admin_page_icon 'list-alt' %}
+
+{% block titleArea %}
+    <h2 class="text-center white-space">{% block title __('Vehicle list') %}</h2>
+{% endblock %}
+
 {% block content %}
 <div class="rkparkhausmodule-vehicle rkparkhausmodule-view">
 <div class="bottom-space">
@@ -132,7 +137,8 @@
                     </a>
 				
                     {% else %}&nbsp;{% endif %}
-					<h3>{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}</h3>
+					<a href="{{ path('rkparkhausmodule_vehicle_display', { id: vehicle.id }) }}" title="{{ vehicle.getTitleFromDisplayPattern() }}">
+					<h3>{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}</h3></a>
 					<p>{{ vehicle.vehicleDescriptionTeaser|safeHtml }}</p>
 				
 				</div>
@@ -158,7 +164,7 @@
         </div>
         
         {% if showAllEntries != 1 and pager|default %}
-            {{ pager({ rowcount: pager.numitems, limit: pager.itemsperpage, display: 'page', route: 'rkparkhausmodule_vehicle_' ~ routeArea ~ 'view'}) }}
+            {{ pager({ rowcount: pager.amountOfItems, limit: pager.itemsPerPage, display: 'page', route: 'rkparkhausmodule_vehicle_' ~ routeArea ~ 'view'}) }}
         {% endif %}
     {% if routeArea == 'admin' %}
             <fieldset>
