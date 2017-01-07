@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-01-07 23:03+0100\n"
+"PO-Revision-Date: 2017-01-07 23:03+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language: de\n"
+
+#: Pages/Controller/AdminFormController.php on line 95 130
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: Pages/Controller/AdminFormController.php on line 129
+msgid "Delete"
+msgstr "Löschen"
+
+#: Pages/Controller/AdminFormController.php on line 94
+msgid "Save"
+msgstr "Speichern"

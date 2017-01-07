@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+
+msgid "ajaxinstall"
+msgstr "/ajaxinstall"
+
+msgid "ajaxupgrade"
+msgstr "/ajaxupgrade"
+
+msgid "doc"
+msgstr "/installdoc/{name}"
+
+msgid "fos_js_routing_js"
+msgstr "/js/routing.{_format}"
+
+msgid "install"
+msgstr "/install/{stage}"
+
+msgid "upgrade"
+msgstr "/upgrade/{stage}"
+
+msgid "zikulapagesmodule_admin_index"
+msgstr "/admin"
+
+msgid "zikulapagesmodule_admin_purge"
+msgstr "/admin/purge"
+
+msgid "zikulapagesmodule_adminform_config"
+msgstr "/admin/config"
+
+msgid "zikulapagesmodule_adminform_delete"
+msgstr "/admin/delete/{page}"
+
+msgid "zikulapagesmodule_adminform_edit"
+msgstr "/admin/edit/{page}"
+
+msgid "zikulapagesmodule_user_categories"
+msgstr "/kategorien"
+
+msgid "zikulapagesmodule_user_display"
+msgstr "/anzeige/{urltitle}/{pagenum}"
+
+msgid "zikulapagesmodule_user_index"
+msgstr "/"
+
+msgid "zikulapagesmodule_user_listpages"
+msgstr "/liste/{startnum}"
+
+msgid "zikulapagesmodule_user_view"
+msgstr "/uebersicht/{prop}/{cat}/{startnum}"
