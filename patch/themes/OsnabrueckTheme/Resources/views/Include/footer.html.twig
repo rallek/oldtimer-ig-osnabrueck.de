@@ -17,6 +17,13 @@
         </div>
       </div><!-- /container -->
     </footer>
-		
+		{{ pageAddAsset('javascript', pagevars.homepath ~ 'additions/lightbox2/dist/js/lightbox.min.js', 99) }}
+		<script>
+			lightbox.option({
+			  'resizeDuration': 200,
+			  'wrapAround': true,
+			  'albumLabel': "Bild %1 von %2"
+			})
+		</script>
     </body>
 </html>

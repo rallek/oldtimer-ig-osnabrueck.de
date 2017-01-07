@@ -5,8 +5,9 @@
         <title>{{ pagevars.title }}</title>
         <meta name="description" content="{{ pagevars.meta.description }}" />
         <meta name="keywords" content="{{ pagevars.meta.keywords }}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-        {{ pageAddAsset('stylesheet', zasset('@ZikulaOsnabrueckTheme:css/style.css')) }}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+		{{ pageAddAsset('stylesheet', zasset('@ZikulaOsnabrueckTheme:css/style.css')) }}
+		{{ pageAddAsset('stylesheet', pagevars.homepath ~ 'additions/lightbox2/dist/css/lightbox.min.css', 99) }}
 		
 		<!-- Piwik -->
 			<script type="text/javascript">

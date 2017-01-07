@@ -47,7 +47,7 @@
 				<div class="col-md-8 col-sm-12">
 	{% endif %}
 					<div class="pull-left right-space">
-						<a href="{{ vehicle.vehicleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.vehicleImageMeta.isImage %} class="lightbox"{% endif %}>
+						<a href="{{ vehicle.vehicleImageUrl }}" title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% if vehicle.vehicleImageMeta.isImage %}  data-lightbox="lightbox2" data-title="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}"{% endif %}>
 						{% if vehicle.vehicleImageMeta.isImage %}
 							{% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleVehicleImage') %}
 							<img src="{{ vehicle.vehicleImage.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" />
