@@ -14,13 +14,6 @@ services:
         tags:
             - { name: form.type }
     
-    rk_parkhaus_module.form.upload_file_transformer:
-        class: RK\ParkHausModule\Form\Type\Field\DataTransformer\UploadFileTransformer
-        calls:
-            - [setRequestStack, ["@request_stack"]]
-            - [setControllerHelper, ["@rk_parkhaus_module.controller_helper"]]
-            - [setUploadHelper, ["@rk_parkhaus_module.upload_helper"]]
-    
     rk_parkhaus_module.form.type.field.user:
         class: RK\ParkHausModule\Form\Type\Field\UserType
         tags:

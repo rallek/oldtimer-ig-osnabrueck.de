@@ -13,7 +13,6 @@ services:
             - "@rk_parkhaus_module.model_helper"
             - "@rk_parkhaus_module.selection_helper"
             - "@rk_parkhaus_module.image_helper"
-            - "%datadir%"
     
     rk_parkhaus_module.hook_helper:
         class: RK\ParkHausModule\Helper\HookHelper
@@ -44,14 +43,14 @@ services:
             - "@rk_parkhaus_module.entity_factory"
     
     rk_parkhaus_module.upload_helper:
-        class: RK\ParkHausModule\Helper\\UploadHelper
+        class: RK\ParkHausModule\Helper\UploadHelper
         arguments:
             - "@translator.default"
             - "@session"
             - "@logger"
             - "@zikula_users_module.current_user"
             - "@zikula_extensions_module.api.variable"
-            - "@rk_parkhaus_module.controller_helper"
+            - "%datadir%"
     
     rk_parkhaus_module.view_helper:
         class: RK\ParkHausModule\Helper\ViewHelper

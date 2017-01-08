@@ -15,6 +15,7 @@ namespace RK\ParkHausModule\Helper\Base;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Core\Doctrine\EntityAccess;
 use Zikula_Workflow_Util;
+use RK\ParkHausModule\Helper\ListEntriesHelper;
 
 /**
  * Helper base class for workflow methods.

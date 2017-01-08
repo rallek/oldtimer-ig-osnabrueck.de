@@ -48,7 +48,7 @@ abstract class AbstractParkHausFactory
     {
         $entityClass = 'RK\\ParkHausModule\\Entity\\' . ucfirst($objectType) . 'Entity';
 
-        return $this->objectManager->getRepository($className);
+        return $this->objectManager->getRepository($entityClass);
     }
 
     /**

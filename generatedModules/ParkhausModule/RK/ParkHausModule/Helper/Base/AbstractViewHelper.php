@@ -19,6 +19,7 @@ use Symfony\Component\Templating\EngineInterface;
 use Zikula\Core\Response\PlainResponse;
 use Zikula\ExtensionsModule\Api\VariableApi;
 use Zikula\PermissionsModule\Api\PermissionApi;
+use RK\ParkHausModule\Helper\ControllerHelper;
 
 /**
  * Helper base class for view layer methods.

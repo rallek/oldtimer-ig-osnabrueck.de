@@ -13,7 +13,7 @@
 namespace RK\ParkHausModule\Listener\Base;
 
 use Psr\Log\LoggerInterface;
-use Zikula\Common\Translator\TranslatorInterface;
+use Zikula\Common\Translator\TranslatorInterface as ZkTranslatorInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Zikula\Common\Translator\TranslatorInterface;
@@ -28,7 +28,7 @@ use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
 abstract class AbstractUserListener implements EventSubscriberInterface
 {
     /**
-     * @var TranslatorInterface
+     * @var ZkTranslatorInterface
      */
     protected $translator;
     
@@ -50,14 +50,14 @@ abstract class AbstractUserListener implements EventSubscriberInterface
     /**
      * UserListener constructor.
      *
-     * @param TranslatorInterface $translator     Translator service instance
+     * @param ZkTranslatorInterface $translator     Translator service instance
      * @param ParkHausFactory $entityFactory ParkHausFactory service instance
-     * @param CurrentUserApi      $currentUserApi CurrentUserApi service instance
-     * @param LoggerInterface     $logger         Logger service instance
+     * @param CurrentUserApi        $currentUserApi CurrentUserApi service instance
+     * @param LoggerInterface       $logger         Logger service instance
      *
      * @return void
      */
-    public function __construct(TranslatorInterface $translator, ParkHausFactory $entityFactory, CurrentUserApi $currentUserApi, LoggerInterface $logger)
+    public function __construct(ZkTranslatorInterface $translator, ParkHausFactory $entityFactory, CurrentUserApi $currentUserApi, LoggerInterface $logger)
     {
         $this->translator = $translator;
         $this->entityFactory = $entityFactory;

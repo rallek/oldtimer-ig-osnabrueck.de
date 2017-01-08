@@ -25,6 +25,9 @@ use Zikula\Component\SortableColumns\SortableColumns;
 use Zikula\Core\RouteUrl;
 use Zikula\ExtensionsModule\Api\VariableApi;
 use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
+use RK\ParkHausModule\Helper\ImageHelper;
+use RK\ParkHausModule\Helper\ModelHelper;
+use RK\ParkHausModule\Helper\SelectionHelper;
 
 /**
  * Helper base class for controller layer methods.
@@ -79,11 +82,6 @@ abstract class AbstractControllerHelper
     protected $imageHelper;
 
     /**
-     * @var String
-     */
-    protected $dataDirectory;
-
-    /**
      * ControllerHelper constructor.
      *
      * @param TranslatorInterface $translator      Translator service instance
@@ -96,7 +94,6 @@ abstract class AbstractControllerHelper
      * @param ModelHelper         $modelHelper     ModelHelper service instance
      * @param SelectionHelper     $selectionHelper SelectionHelper service instance
      * @param ImageHelper         $imageHelper     ImageHelper service instance
-     * @param String              $dataDirectory   The data directory name
      */
     public function __construct(
         TranslatorInterface $translator,
@@ -108,9 +105,7 @@ abstract class AbstractControllerHelper
         ParkHausFactory $entityFactory,
         ModelHelper $modelHelper,
         SelectionHelper $selectionHelper,
-            ImageHelper $imageHelper
-        ,
-            $dataDirectory)
+        ImageHelper $imageHelper)
     {
         $this->setTranslator($translator);
         $this->request = $requestStack->getCurrentRequest();
@@ -122,7 +117,6 @@ abstract class AbstractControllerHelper
         $this->modelHelper = $modelHelper;
         $this->selectionHelper = $selectionHelper;
         $this->imageHelper = $imageHelper;
-        $this->dataDirectory = $dataDirectory;
     }
 
     /**
@@ -496,133 +490,5 @@ abstract class AbstractControllerHelper
         $templateParameters = array_merge($templateParameters, $additionalParameters);
     
         return $templateParameters;
-    }
-
-    /**
-     * Retrieve the base path for given object type and upload field combination.
-     *
-     * @param string  $objectType   Name of treated entity type
-     * @param string  $fieldName    Name of upload field
-     * @param boolean $ignoreCreate Whether to ignore the creation of upload folders on demand or not
-     *
-     * @return mixed Output
-     *
-     * @throws Exception If an invalid object type is used
-     */
-    public function getFileBaseFolder($objectType, $fieldName, $ignoreCreate = false)
-    {
-        $contextArgs = ['helper' => $objectType, 'action' => 'getFileBaseFolder'];
-        if (!in_array($objectType, $this->getObjectTypes('helper', $contextArgs))) {
-            throw new Exception('Error! Invalid object type received.');
-        }
-    
-        $basePath = $this->dataDirectory . '/RKParkHausModule/';
-    
-        switch ($objectType) {
-            case 'vehicle':
-                $basePath .= 'vehicles/';
-                switch ($fieldName) {
-                    case 'titleImage':
-                        $basePath .= 'titleimage/';
-                        break;
-                    case 'vehicleImage':
-                        $basePath .= 'vehicleimage/';
-                        break;
-                    case 'manufacturerImage':
-                        $basePath .= 'manufacturerimage/';
-                        break;
-                }
-            break;
-            case 'vehicleImage':
-                $basePath .= 'vehicleimages/vehicleimage/';
-            break;
-        }
-    
-        $result = $basePath;
-        if (substr($result, -1, 1) != '/') {
-            // reappend the removed slash
-            $result .= '/';
-        }
-    
-        if (!is_dir($result) && !$ignoreCreate) {
-            $this->checkAndCreateAllUploadFolders();
-        }
-    
-        return $result;
-    }
-
-    /**
-     * Creates all required upload folders for this application.
-     *
-     * @return Boolean Whether everything went okay or not
-     */
-    public function checkAndCreateAllUploadFolders()
-    {
-        $result = true;
-    
-        $result &= $this->checkAndCreateUploadFolder('vehicle', 'titleImage', 'gif, jpeg, jpg, png');
-        $result &= $this->checkAndCreateUploadFolder('vehicle', 'vehicleImage', 'gif, jpeg, jpg, png');
-        $result &= $this->checkAndCreateUploadFolder('vehicle', 'manufacturerImage', 'gif, jpeg, jpg, png');
-    
-        $result &= $this->checkAndCreateUploadFolder('vehicleImage', 'vehicleImage', 'gif, jpeg, jpg, png');
-    
-        return $result;
-    }
-
-    /**
-     * Creates upload folder including a subfolder for thumbnail and an .htaccess file within it.
-     *
-     * @param string $objectType        Name of treated entity type
-     * @param string $fieldName         Name of upload field
-     * @param string $allowedExtensions String with list of allowed file extensions (separated by ", ")
-     *
-     * @return Boolean Whether everything went okay or not
-     */
-    protected function checkAndCreateUploadFolder($objectType, $fieldName, $allowedExtensions = '')
-    {
-        $uploadPath = $this->getFileBaseFolder($objectType, $fieldName, true);
-    
-        $fs = new Filesystem();
-        $flashBag = $this->session->getFlashBag();
-    
-        // Check if directory exist and try to create it if needed
-        if (!$fs->exists($uploadPath)) {
-            try {
-                $fs->mkdir($uploadPath, 0777);
-            } catch (IOExceptionInterface $e) {
-                $flashBag->add('error', $this->__f('The upload directory "%s" does not exist and could not be created. Try to create it yourself and make sure that this folder is accessible via the web and writable by the webserver.', ['%s' => $e->getPath()]));
-                $this->logger->error('{app}: The upload directory {directory} does not exist and could not be created.', ['app' => 'RKParkHausModule', 'directory' => $uploadPath]);
-    
-                return false;
-            }
-        }
-    
-        // Check if directory is writable and change permissions if needed
-        if (!is_writable($uploadPath)) {
-            try {
-                $fs->chmod($uploadPath, 0777);
-            } catch (IOExceptionInterface $e) {
-                $flashBag->add('warning', $this->__f('Warning! The upload directory at "%s" exists but is not writable by the webserver.', ['%s' => $e->getPath()]));
-                $this->logger->error('{app}: The upload directory {directory} exists but is not writable by the webserver.', ['app' => 'RKParkHausModule', 'directory' => $uploadPath]);
-    
-                return false;
-            }
-        }
-    
-        // Write a htaccess file into the upload directory
-        $htaccessFilePath = $uploadPath . '/.htaccess';
-        $htaccessFileTemplate = 'modules/RK/ParkHausModule/Resources/docs/htaccessTemplate';
-        if (!$fs->exists($htaccessFilePath) && $fs->exists($htaccessFileTemplate)) {
-            try {
-                $extensions = str_replace(',', '|', str_replace(' ', '', $allowedExtensions));
-                $htaccessContent = str_replace('__EXTENSIONS__', $extensions, file_get_contents($htaccessFileTemplate, false));
-                $fs->dumpFile($htaccessFilePath, $htaccessContent);
-            } catch (IOExceptionInterface $e) {
-                $flashBag->add('error', $this->__f('An error occured during creation of the .htaccess file in directory "%s".', ['%s' => $e->getPath()]));
-                $this->logger->error('{app}: An error occured during creation of the .htaccess file in directory {directory}.', ['app' => 'RKParkHausModule', 'directory' => $uploadPath]);
-            }
-        }
-    
-        return true;
     }
 }

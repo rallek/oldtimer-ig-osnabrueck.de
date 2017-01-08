@@ -2,10 +2,6 @@ services:
     # Event subscriber and listener classes
     rk_parkhaus_module.entity_lifecycle_listener:
         class: RK\ParkHausModule\Listener\EntityLifecycleListener
-        arguments:
-            - "@request_stack"
-            - "@rk_parkhaus_module.controller_helper"
-            - "@rk_parkhaus_module.upload_helper"
         tags:
             - { name: doctrine.event_subscriber }
     
