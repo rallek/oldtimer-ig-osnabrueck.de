@@ -12,7 +12,7 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
 
 /**
  * Helper base class for model layer methods.
@@ -20,18 +20,25 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 abstract class AbstractModelHelper
 {
     /**
-     * @var ContainerBuilder
+     * @var ParkHausFactory
      */
-    protected $container;
+    private $entityFactory;
+
+    /**
+     * @var ControllerHelper
+     */
+    private $controllerHelper;
 
     /**
      * ModelHelper constructor.
      *
-     * @param ContainerBuilder $container ContainerBuilder service instance
+     * @param ParkHausFactory $entityFactory ParkHausFactory service instance
+     * @param ControllerHelper $controllerHelper ControllerHelper service instance
      */
-    public function __construct(ContainerBuilder $container)
+    public function __construct(ParkHausFactory $entityFactory, ControllerHelper $controllerHelper)
     {
-        $this->container = $container;
+        $this->entityFactory = $entityFactory;
+        $this->controllerHelper = $controllerHelper;
     }
 
     /**
@@ -54,8 +61,7 @@ abstract class AbstractModelHelper
      */
     public function canBeCreated($objectType)
     {
-        $controllerHelper = $this->container->get('rk_parkhaus_module.controller_helper');
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('util', ['util' => 'model', 'action' => 'canBeCreated']))) {
+        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('helper', ['helper' => 'model', 'action' => 'canBeCreated']))) {
             throw new Exception('Error! Invalid object type received.');
         }
     
@@ -84,12 +90,11 @@ abstract class AbstractModelHelper
      */
     protected function hasExistingInstances($objectType)
     {
-        $controllerHelper = $this->container->get('rk_parkhaus_module.controller_helper');
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('util', ['util' => 'model', 'action' => 'hasExistingInstances']))) {
+        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('helper', ['helper' => 'model', 'action' => 'hasExistingInstances']))) {
             throw new Exception('Error! Invalid object type received.');
         }
     
-        $repository = $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->entityFactory->getRepository($objectType);
     
         return $repository->selectCount() > 0;
     }

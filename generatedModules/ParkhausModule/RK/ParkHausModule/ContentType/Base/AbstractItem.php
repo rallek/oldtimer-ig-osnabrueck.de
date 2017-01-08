@@ -73,9 +73,9 @@ abstract class AbstractItem extends \Content_AbstractContentType
         $serviceManager = ServiceUtil::getManager();
         $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
     
-        $utilArgs = ['name' => 'detail'];
-        if (!isset($data['objectType']) || !in_array($data['objectType'], $controllerHelper->getObjectTypes('contentType', $utilArgs))) {
-            $data['objectType'] = $controllerHelper->getDefaultObjectType('contentType', $utilArgs);
+        $contextArgs = ['name' => 'detail'];
+        if (!isset($data['objectType']) || !in_array($data['objectType'], $controllerHelper->getObjectTypes('contentType', $contextArgs))) {
+            $data['objectType'] = $controllerHelper->getDefaultObjectType('contentType', $contextArgs);
         }
     
         $this->objectType = $data['objectType'];

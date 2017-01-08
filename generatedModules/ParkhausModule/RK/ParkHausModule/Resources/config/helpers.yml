@@ -3,10 +3,17 @@ services:
     rk_parkhaus_module.controller_helper:
         class: RK\ParkHausModule\Helper\ControllerHelper
         arguments:
-            - "@service_container"
             - "@translator.default"
+            - "@request_stack"
             - "@session"
             - "@logger"
+            - "@form.factory"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_parkhaus_module.entity_factory"
+            - "@rk_parkhaus_module.model_helper"
+            - "@rk_parkhaus_module.selection_helper"
+            - "@rk_parkhaus_module.image_helper"
+            - "%datadir%"
     
     rk_parkhaus_module.hook_helper:
         class: RK\ParkHausModule\Helper\HookHelper
@@ -28,25 +35,34 @@ services:
     rk_parkhaus_module.model_helper:
         class: RK\ParkHausModule\Helper\ModelHelper
         arguments:
-            - "@service_container"
+            - "@rk_parkhaus_module.entity_factory"
+            - "@rk_parkhaus_module.controller_helper"
     
     rk_parkhaus_module.selection_helper:
         class: RK\ParkHausModule\Helper\SelectionHelper
         arguments:
-            - "@service_container"
-            - "@doctrine.orm.default_entity_manager"
             - "@translator.default"
+            - "@rk_parkhaus_module.entity_factory"
             - "@rk_parkhaus_module.controller_helper"
+    
+    rk_parkhaus_module.upload_helper:
+        class: RK\ParkHausModule\Helper\\UploadHelper
+        arguments:
+            - "@translator.default"
+            - "@zikula_users_module.current_user"
+            - "@zikula_extensions_module.api.variable"
     
     rk_parkhaus_module.view_helper:
         class: RK\ParkHausModule\Helper\ViewHelper
         arguments:
-            - "@service_container"
             - "@templating"
             - "@request_stack"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_parkhaus_module.controller_helper"
     
     rk_parkhaus_module.workflow_helper:
         class: RK\ParkHausModule\Helper\WorkflowHelper
         arguments:
-            - "@service_container"
             - "@translator.default"
+            - "@rk_parkhaus_module.listentries_helper"

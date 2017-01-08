@@ -39,14 +39,14 @@ abstract class AbstractItemListBlock extends AbstractBlockHandler
         $properties = array_merge($defaults, $properties);
     
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
-        $utilArgs = ['name' => 'list'];
-        if (!isset($properties['objectType']) || !in_array($properties['objectType'], $controllerHelper->getObjectTypes('block', $utilArgs))) {
-            $properties['objectType'] = $controllerHelper->getDefaultObjectType('block', $utilArgs);
+        $contextArgs = ['name' => 'list'];
+        if (!isset($properties['objectType']) || !in_array($properties['objectType'], $controllerHelper->getObjectTypes('block', $contextArgs))) {
+            $properties['objectType'] = $controllerHelper->getDefaultObjectType('block', $contextArgs);
         }
     
         $objectType = $properties['objectType'];
     
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
     
         // create query
         $where = $properties['filter'];
@@ -103,7 +103,7 @@ abstract class AbstractItemListBlock extends AbstractBlockHandler
         ];
     
         $template = '';
-        for ($templateOptions as $templatePath) {
+        foreach ($templateOptions as $templatePath) {
             if ($templating->exists('@RKParkHausModule/' . $templatePath)) {
                 $template = '@RKParkHausModule/' . $templatePath;
                 break;

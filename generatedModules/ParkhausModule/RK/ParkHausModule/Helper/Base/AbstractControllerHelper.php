@@ -15,29 +15,30 @@ namespace RK\ParkHausModule\Helper\Base;
 use DataUtil;
 use FileUtil;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Zikula\Common\Translator\TranslatorInterface;
+use Zikula\Common\Translator\TranslatorTrait;
 use Zikula\Component\SortableColumns\SortableColumns;
 use Zikula\Core\RouteUrl;
+use Zikula\ExtensionsModule\Api\VariableApi;
+use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
 
 /**
  * Helper base class for controller layer methods.
  */
 abstract class AbstractControllerHelper
 {
-    /**
-     * @var ContainerBuilder
-     */
-    protected $container;
+    use TranslatorTrait;
 
     /**
-     * @var TranslatorInterface
+     * @var Request
      */
-    protected $translator;
+    protected $request;
 
     /**
      * @var SessionInterface
@@ -50,19 +51,90 @@ abstract class AbstractControllerHelper
     protected $logger;
 
     /**
+     * @var FormFactoryInterface
+     */
+    protected $formFactory;
+
+    /**
+     * @var VariableApi
+     */
+    protected $variableApi;
+
+    /**
+     * @var ParkHausFactory
+     */
+    private $entityFactory;
+
+    /**
+     * @var ModelHelper
+     */
+    private $modelHelper;
+
+    /**
+     * @var SelectionHelper
+     */
+    private $selectionHelper;
+
+    /**
+     * @var ImageHelper
+     */
+    private $imageHelper;
+
+    /**
+     * @var String
+     */
+    private $dataDirectory;
+
+    /**
      * ControllerHelper constructor.
      *
-     * @param ContainerBuilder    $container  ContainerBuilder service instance
-     * @param TranslatorInterface $translator Translator service instance
-     * @param SessionInterface    $session    Session service instance
-     * @param LoggerInterface     $logger     Logger service instance
+     * @param TranslatorInterface $translator      Translator service instance
+     * @param RequestStack        $requestStack    RequestStack service instance
+     * @param SessionInterface    $session         Session service instance
+     * @param LoggerInterface     $logger          Logger service instance
+     * @param FormFactoryInterface $formFactory    FormFactory service instance
+     * @param VariableApi         $variableApi     VariableApi service instance
+     * @param ParkHausFactory $entityFactory ParkHausFactory service instance
+     * @param ModelHelper         $modelHelper     ModelHelper service instance
+     * @param SelectionHelper     $selectionHelper SelectionHelper service instance
+     * @param ImageHelper         $imageHelper     ImageHelper service instance
+     * @param String              $dataDirectory   The data directory name
      */
-    public function __construct(ContainerBuilder $container, TranslatorInterface $translator, SessionInterface $session, LoggerInterface $logger)
+    public function __construct(
+        TranslatorInterface $translator,
+        RequestStack $requestStack,
+        SessionInterface $session,
+        LoggerInterface $logger,
+        FormFactoryInterface $formFactory,
+        VariableApi $variableApi,
+        ParkHausFactory $entityFactory,
+        ModelHelper $modelHelper,
+        SelectionHelper $selectionHelper,
+            ImageHelper $imageHelper
+        ,
+            $dataDirectory)
     {
-        $this->container = $container;
-        $this->translator = $translator;
+        $this->setTranslator($translator);
+        $this->request = $requestStack->getCurrentRequest();
         $this->session = $session;
         $this->logger = $logger;
+        $this->formFactory = $formFactory;
+        $this->variableApi = $variableApi;
+        $this->entityFactory = $entityFactory;
+        $this->modelHelper = $modelHelper;
+        $this->selectionHelper = $selectionHelper;
+        $this->imageHelper = $imageHelper;
+        $this->dataDirectory = $dataDirectory;
+    }
+
+    /**
+     * Sets the translator.
+     *
+     * @param TranslatorInterface $translator Translator service instance
+     */
+    public function setTranslator(/*TranslatorInterface */$translator)
+    {
+        $this->translator = $translator;
     }
 
     /**
@@ -232,13 +304,13 @@ abstract class AbstractControllerHelper
      */
     public function processViewActionParameters($objectType, SortableColumns $sortableColumns, array $templateParameters = [], $supportsHooks = false)
     {
-        if (!in_array($objectType, $this->getObjectTypes())) {
+        $contextArgs = ['controller' => $objectType, 'action' => 'view'];
+        if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
             throw new Exception('Error! Invalid object type received.');
         }
     
-        $utilArgs = ['controller' => $objectType, 'action' => 'view'];
-        $request = $this->container->get('request_stack')->getMasterRequest();
-        $repository = $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $request = $this->request;
+        $repository = $this->entityFactory->getRepository($objectType);
         $repository->setRequest($request);
     
         // parameter for used sorting field
@@ -252,8 +324,7 @@ abstract class AbstractControllerHelper
         }
     
     
-        $variableApi = $this->container->get('zikula_extensions_module.api.variable');
-        $showOwnEntries = $request->query->getInt('own', $variableApi->get('RKParkHausModule', 'showOnlyOwnEntries', 0));
+        $showOwnEntries = $request->query->getInt('own', $this->variableApi->get('RKParkHausModule', 'showOnlyOwnEntries', 0));
         $showAllEntries = $request->query->getInt('all', 0);
     
     
@@ -272,12 +343,11 @@ abstract class AbstractControllerHelper
             // the number of items displayed on a page for pagination
             $resultsPerPage = $request->query->getInt('num', 0);
             if (in_array($resultsPerPage, [0, 10])) {
-                $resultsPerPage = $variableApi->get('RKParkHausModule', $objectType . 'EntriesPerPage', 10);
+                $resultsPerPage = $this->variableApi->get('RKParkHausModule', $objectType . 'EntriesPerPage', 10);
             }
         }
     
-        $imageHelper = $this->container->get('rk_parkhaus_module.image_helper');
-        $additionalParameters = $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', $utilArgs);
+        $additionalParameters = $repository->getAdditionalTemplateParameters($this->imageHelper, 'controllerAction', $contextArgs);
     
         $additionalUrlParameters = [
             'all' => $showAllEntries,
@@ -296,7 +366,7 @@ abstract class AbstractControllerHelper
         $templateParameters['num'] = $resultsPerPage;
         $templateParameters['tpl'] = $request->query->getAlnum('tpl', '');
     
-        $quickNavForm = $this->container->get('form.factory')->create('RK\ParkHausModule\Form\Type\QuickNavigation\\' . ucfirst($objectType) . 'QuickNavType', $templateParameters);
+        $quickNavForm = $this->formFactory->create('RK\ParkHausModule\Form\Type\QuickNavigation\\' . ucfirst($objectType) . 'QuickNavType', $templateParameters);
         if ($quickNavForm->handleRequest($request) && $quickNavForm->isSubmitted()) {
             $quickNavData = $quickNavForm->getData();
             foreach ($quickNavData as $fieldName => $fieldValue) {
@@ -322,18 +392,16 @@ abstract class AbstractControllerHelper
         $templateParameters['sort'] = $sort;
         $templateParameters['sortdir'] = $sortdir;
     
-        $selectionHelper = $this->container->get('rk_parkhaus_module.selection_helper');
-    
         $where = '';
         if ($showAllEntries == 1) {
             // retrieve item list without pagination
-            $entities = $selectionHelper->getEntities($objectType, [], $where, $sort . ' ' . $sortdir);
+            $entities = $this->selectionHelper->getEntities($objectType, [], $where, $sort . ' ' . $sortdir);
         } else {
             // the current offset which is used to calculate the pagination
             $currentPage = $request->query->getInt('pos', 1);
     
             // retrieve item list with pagination
-            list($entities, $objectCount) = $selectionHelper->getEntitiesPaginated($objectType, $where, $sort . ' ' . $sortdir, $currentPage, $resultsPerPage);
+            list($entities, $objectCount) = $this->selectionHelper->getEntitiesPaginated($objectType, $where, $sort . ' ' . $sortdir, $currentPage, $resultsPerPage);
     
             $templateParameters['currentPage'] = $currentPage;
             $templateParameters['pager'] = [
@@ -345,7 +413,7 @@ abstract class AbstractControllerHelper
         if (true === $supportsHooks) {
             // build RouteUrl instance for display hooks
             $currentUrlArgs['_locale'] = $request->getLocale();
-            $currentUrlObject = new RouteUrl('rkparkhausmodule_parkhaus_' . /*($isAdmin ? 'admin' : '') . */'view', $currentUrlArgs);
+            $currentUrlObject = new RouteUrl('rkparkhausmodule_' . $objectType . '_' . /*$templateParameters['routeArea'] . */'view', $currentUrlArgs);
         }
     
         $templateParameters['items'] = $entities;
@@ -363,7 +431,90 @@ abstract class AbstractControllerHelper
         $templateParameters['showAllEntries'] = $templateParameters['all'];
         $templateParameters['showOwnEntries'] = $templateParameters['own'];
     
-        $templateParameters['canBeCreated'] = $this->container->get('rk_parkhaus_module.model_helper')->canBeCreated($objectType);
+        $templateParameters['canBeCreated'] = $this->modelHelper->canBeCreated($objectType);
+    
+        return $templateParameters;
+    }
+
+    /**
+     * Processes the parameters for a display action.
+     *
+     * @param string  $objectType         Name of treated entity type
+     * @param array   $templateParameters Template data
+     * @param boolean $supportsHooks      Whether hooks are supported or not
+     *
+     * @return array Enriched template parameters used for creating the response
+     */
+    public function processDisplayActionParameters($objectType, array $templateParameters = [], $supportsHooks = false)
+    {
+        $contextArgs = ['controller' => $objectType, 'action' => 'display'];
+        if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
+            throw new Exception('Error! Invalid object type received.');
+        }
+    
+        $repository = $this->entityFactory->getRepository($objectType);
+        $repository->setRequest($this->request);
+        $entity = $templateParameters[$objectType];
+    
+        if (true === $supportsHooks) {
+            // build RouteUrl instance for display hooks
+            $currentUrlArgs = $entity->createUrlArgs();
+            $currentUrlArgs['_locale'] = $this->request->getLocale();
+            $currentUrlObject = new RouteUrl('rkparkhausmodule_' . $objectType . '_' . /*$templateParameters['routeArea'] . */'display', $currentUrlArgs);
+            $templateParameters['currentUrlObject'] = $currentUrlObject;
+        }
+    
+        $additionalParameters = $repository->getAdditionalTemplateParameters($this->imageHelper, 'controllerAction', $contextArgs);
+        $templateParameters = array_merge($templateParameters, $additionalParameters);
+    
+        return $templateParameters;
+    }
+
+    /**
+     * Processes the parameters for an edit action.
+     *
+     * @param string  $objectType         Name of treated entity type
+     * @param array   $templateParameters Template data
+     *
+     * @return array Enriched template parameters used for creating the response
+     */
+    public function processEditActionParameters($objectType, array $templateParameters = [])
+    {
+        $contextArgs = ['controller' => $objectType, 'action' => 'edit'];
+        if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
+            throw new Exception('Error! Invalid object type received.');
+        }
+    
+        $repository = $this->entityFactory->getRepository($objectType);
+        $repository->setRequest($this->request);
+    
+        $additionalParameters = $repository->getAdditionalTemplateParameters($this->imageHelper, 'controllerAction', $contextArgs);
+        $templateParameters = array_merge($templateParameters, $additionalParameters);
+    
+        return $templateParameters;
+    }
+
+    /**
+     * Processes the parameters for a delete action.
+     *
+     * @param string  $objectType         Name of treated entity type
+     * @param array   $templateParameters Template data
+     * @param boolean $supportsHooks      Whether hooks are supported or not
+     *
+     * @return array Enriched template parameters used for creating the response
+     */
+    public function processDeleteActionParameters($objectType, array $templateParameters = [], $supportsHooks = false)
+    {
+        $contextArgs = ['controller' => $objectType, 'action' => 'delete'];
+        if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
+            throw new Exception('Error! Invalid object type received.');
+        }
+    
+        $repository = $this->entityFactory->getRepository($objectType);
+        $repository->setRequest($this->request);
+    
+        $additionalParameters = $repository->getAdditionalTemplateParameters($this->imageHelper, 'controllerAction', $contextArgs);
+        $templateParameters = array_merge($templateParameters, $additionalParameters);
     
         return $templateParameters;
     }
@@ -381,11 +532,12 @@ abstract class AbstractControllerHelper
      */
     public function getFileBaseFolder($objectType, $fieldName, $ignoreCreate = false)
     {
-        if (!in_array($objectType, $this->getObjectTypes())) {
+        $contextArgs = ['helper' => $objectType, 'action' => 'getFileBaseFolder'];
+        if (!in_array($objectType, $this->getObjectTypes('helper', $contextArgs))) {
             throw new Exception('Error! Invalid object type received.');
         }
     
-        $basePath = $this->container->getParameter('datadir') . '/RKParkHausModule/';
+        $basePath = $this->dataDirectory . '/RKParkHausModule/';
     
         switch ($objectType) {
             case 'vehicle':
@@ -459,7 +611,7 @@ abstract class AbstractControllerHelper
             try {
                 $fs->mkdir($uploadPath, 0777);
             } catch (IOExceptionInterface $e) {
-                $flashBag->add('error', $this->translator->__f('The upload directory "%s" does not exist and could not be created. Try to create it yourself and make sure that this folder is accessible via the web and writable by the webserver.', ['%s' => $e->getPath()]));
+                $flashBag->add('error', $this->__f('The upload directory "%s" does not exist and could not be created. Try to create it yourself and make sure that this folder is accessible via the web and writable by the webserver.', ['%s' => $e->getPath()]));
                 $this->logger->error('{app}: The upload directory {directory} does not exist and could not be created.', ['app' => 'RKParkHausModule', 'directory' => $uploadPath]);
     
                 return false;
@@ -471,7 +623,7 @@ abstract class AbstractControllerHelper
             try {
                 $fs->chmod($uploadPath, 0777);
             } catch (IOExceptionInterface $e) {
-                $flashBag->add('warning', $this->translator->__f('Warning! The upload directory at "%s" exists but is not writable by the webserver.', ['%s' => $e->getPath()]));
+                $flashBag->add('warning', $this->__f('Warning! The upload directory at "%s" exists but is not writable by the webserver.', ['%s' => $e->getPath()]));
                 $this->logger->error('{app}: The upload directory {directory} exists but is not writable by the webserver.', ['app' => 'RKParkHausModule', 'directory' => $uploadPath]);
     
                 return false;
@@ -487,7 +639,7 @@ abstract class AbstractControllerHelper
                 $htaccessContent = str_replace('__EXTENSIONS__', $extensions, file_get_contents($htaccessFileTemplate, false));
                 $fs->dumpFile($htaccessFilePath, $htaccessContent);
             } catch (IOExceptionInterface $e) {
-                $flashBag->add('error', $this->translator->__f('An error occured during creation of the .htaccess file in directory "%s".', ['%s' => $e->getPath()]));
+                $flashBag->add('error', $this->__f('An error occured during creation of the .htaccess file in directory "%s".', ['%s' => $e->getPath()]));
                 $this->logger->error('{app}: An error occured during creation of the .htaccess file in directory {directory}.', ['app' => 'RKParkHausModule', 'directory' => $uploadPath]);
             }
         }

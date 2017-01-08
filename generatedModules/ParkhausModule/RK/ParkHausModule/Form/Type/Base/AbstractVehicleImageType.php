@@ -22,7 +22,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
-use RK\ParkHausModule\Entity\Factory\VehicleImageFactory;
+use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
 use RK\ParkHausModule\Helper\ListEntriesHelper;
 
 /**
@@ -33,7 +33,7 @@ abstract class AbstractVehicleImageType extends AbstractType
     use TranslatorTrait;
 
     /**
-     * @var VehicleImageFactory
+     * @var ParkHausFactory
      */
     protected $entityFactory;
 
@@ -46,10 +46,10 @@ abstract class AbstractVehicleImageType extends AbstractType
      * VehicleImageType constructor.
      *
      * @param TranslatorInterface $translator    Translator service instance
-     * @param VehicleImageFactory        $entityFactory Entity factory service instance
+     * @param ParkHausFactory        $entityFactory Entity factory service instance
      * @param ListEntriesHelper   $listHelper    ListEntriesHelper service instance
      */
-    public function __construct(TranslatorInterface $translator, VehicleImageFactory $entityFactory, ListEntriesHelper $listHelper)
+    public function __construct(TranslatorInterface $translator, ParkHausFactory $entityFactory, ListEntriesHelper $listHelper)
     {
         $this->setTranslator($translator);
         $this->entityFactory = $entityFactory;

@@ -569,7 +569,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
             return true;
         }
     
-        
         $serviceManager = ServiceUtil::getManager();
     
         $validator = $serviceManager->get('validator');

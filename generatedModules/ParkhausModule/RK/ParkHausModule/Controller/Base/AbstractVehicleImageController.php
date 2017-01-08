@@ -68,16 +68,15 @@ abstract class AbstractVehicleImageController extends AbstractController
     {
         // parameter specifying which type of objects we are treating
         $objectType = 'vehicleImage';
-        $utilArgs = ['controller' => 'vehicleImage', 'action' => 'index'];
         $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_OVERVIEW;
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
             throw new AccessDeniedException();
         }
-        return $this->redirectToRoute('rkparkhausmodule_vehicleimage_' . ($isAdmin ? 'admin' : '') . 'view');
-        
         $templateParameters = [
             'routeArea' => $isAdmin ? 'admin' : ''
         ];
+        
+        return $this->redirectToRoute('rkparkhausmodule_vehicleimage_' . $templateParameters['routeArea'] . 'view');
         
         // return index template
         return $this->render('@RKParkHausModule/VehicleImage/index.html.twig', $templateParameters);
@@ -127,16 +126,15 @@ abstract class AbstractVehicleImageController extends AbstractController
     {
         // parameter specifying which type of objects we are treating
         $objectType = 'vehicleImage';
-        $utilArgs = ['controller' => 'vehicleImage', 'action' => 'view'];
         $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_READ;
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
             throw new AccessDeniedException();
         }
-        $viewHelper = $this->get('rk_parkhaus_module.view_helper');
         $templateParameters = [
             'routeArea' => $isAdmin ? 'admin' : ''
         ];
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
+        $viewHelper = $this->get('rk_parkhaus_module.view_helper');
         
         // parameter for used sort order
         $sortdir = strtolower($sortdir);
@@ -206,37 +204,27 @@ abstract class AbstractVehicleImageController extends AbstractController
     {
         // parameter specifying which type of objects we are treating
         $objectType = 'vehicleImage';
-        $utilArgs = ['controller' => 'vehicleImage', 'action' => 'display'];
         $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_READ;
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
             throw new AccessDeniedException();
         }
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
-        $repository->setRequest($request);
-        
-        $vehicleImage->initWorkflow();
-        
-        // build RouteUrl instance for display hooks; also create identifier for permission check
-        $currentUrlArgs = $vehicleImage->createUrlArgs();
-        $currentUrlArgs['_locale'] = $request->getLocale();
-        $currentUrlObject = new RouteUrl('rkparkhausmodule_vehicleImage_' . /*($isAdmin ? 'admin' : '') . */'display', $currentUrlArgs);
+        // create identifier for permission check
         $instanceId = $vehicleImage->createCompositeIdentifier();
-        
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', $instanceId . '::', $permLevel)) {
             throw new AccessDeniedException();
         }
         
-        $viewHelper = $this->get('rk_parkhaus_module.view_helper');
+        $vehicleImage->initWorkflow();
         $templateParameters = [
             'routeArea' => $isAdmin ? 'admin' : '',
             $objectType => $vehicleImage
         ];
-        $templateParameters['currentUrlObject'] = $currentUrlObject;
-        $imageHelper = $this->get('rk_parkhaus_module.image_helper');
-        $templateParameters = array_merge($templateParameters, $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', $utilArgs));
+        
+        $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
+        $templateParameters = $controllerHelper->processDisplayActionParameters($objectType, $templateParameters, true);
         
         // fetch and return the appropriate template
-        $response = $viewHelper->processTemplate($objectType, 'display', $templateParameters);
+        $response = $this->get('rk_parkhaus_module.view_helper')->processTemplate($objectType, 'display', $templateParameters);
         
         return $response;
     }
@@ -281,18 +269,16 @@ abstract class AbstractVehicleImageController extends AbstractController
     {
         // parameter specifying which type of objects we are treating
         $objectType = 'vehicleImage';
-        $utilArgs = ['controller' => 'vehicleImage', 'action' => 'edit'];
         $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_EDIT;
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
             throw new AccessDeniedException();
         }
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
-        
         $templateParameters = [
             'routeArea' => $isAdmin ? 'admin' : ''
         ];
-        $imageHelper = $this->get('rk_parkhaus_module.image_helper');
-        $templateParameters = array_merge($templateParameters, $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', $utilArgs));
+        
+        $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
+        $templateParameters = $controllerHelper->processEditActionParameters($objectType, $templateParameters);
         
         // delegate form processing to the form handler
         $formHandler = $this->get('rk_parkhaus_module.form.handler.vehicleimage');
@@ -301,11 +287,10 @@ abstract class AbstractVehicleImageController extends AbstractController
             return $result;
         }
         
-        $viewHelper = $this->get('rk_parkhaus_module.view_helper');
         $templateParameters = $formHandler->getTemplateParameters();
         
         // fetch and return the appropriate template
-        return $viewHelper->processTemplate($objectType, 'edit', $templateParameters);
+        return $this->get('rk_parkhaus_module.view_helper')->processTemplate($objectType, 'edit', $templateParameters);
     }
     /**
      * This action provides a handling of simple delete requests in the admin area.
@@ -352,7 +337,6 @@ abstract class AbstractVehicleImageController extends AbstractController
     {
         // parameter specifying which type of objects we are treating
         $objectType = 'vehicleImage';
-        $utilArgs = ['controller' => 'vehicleImage', 'action' => 'delete'];
         $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_DELETE;
         if (!$this->hasPermission($this->name . ':' . ucfirst($objectType) . ':', '::', $permLevel)) {
             throw new AccessDeniedException();
@@ -418,20 +402,17 @@ abstract class AbstractVehicleImageController extends AbstractController
             }
         }
         
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
-        
-        $viewHelper = $this->get('rk_parkhaus_module.view_helper');
         $templateParameters = [
             'routeArea' => $isAdmin ? 'admin' : '',
             'deleteForm' => $form->createView(),
             $objectType => $vehicleImage
         ];
         
-        $imageHelper = $this->get('rk_parkhaus_module.image_helper');
-        $templateParameters = array_merge($templateParameters, $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', $utilArgs));
+        $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
+        $templateParameters = $controllerHelper->processDeleteActionParameters($objectType, $templateParameters, true);
         
         // fetch and return the appropriate template
-        return $viewHelper->processTemplate($objectType, 'delete', $templateParameters);
+        return $this->get('rk_parkhaus_module.view_helper')->processTemplate($objectType, 'delete', $templateParameters);
     }
 
     /**

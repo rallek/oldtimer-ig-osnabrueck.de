@@ -1,8 +1,0 @@
-services:
-    # Upload handler class
-    rk_parkhaus_module.upload_handler:
-        class: RK\ParkHausModule\UploadHandler
-        arguments:
-            - "@translator.default"
-            - "@zikula_users_module.current_user"
-            - "@zikula_extensions_module.api.variable"

@@ -12,9 +12,9 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
-use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use InvalidArgumentException;
 use Zikula\Common\Translator\TranslatorInterface;
+use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
 use RK\ParkHausModule\Helper\ControllerHelper;
 
 /**
@@ -23,19 +23,14 @@ use RK\ParkHausModule\Helper\ControllerHelper;
 abstract class AbstractSelectionHelper
 {
     /**
-     * @var ContainerBuilder
-     */
-    protected $container;
-
-    /**
-     * @var ObjectManager The object manager to be used for determining the repository
-     */
-    protected $objectManager;
-
-    /**
      * @var TranslatorInterface
      */
     protected $translator;
+
+    /**
+     * @var ParkHausFactory
+     */
+    private $entityFactory;
 
     /**
      * @var ControllerHelper
@@ -45,16 +40,14 @@ abstract class AbstractSelectionHelper
     /**
      * SelectionHelper constructor.
      *
-     * @param ContainerBuilder    $container        ContainerBuilder service instance
-     * @param ObjectManager       $objectManager    The object manager to be used for retrieving entity meta data
      * @param TranslatorInterface $translator       Translator service instance
+     * @param ParkHausFactory $entityFactory ParkHausFactory service instance
      * @param ControllerHelper    $controllerHelper ControllerHelper service instance
      */
-    public function __construct(ContainerBuilder $container, ObjectManager $objectManager, TranslatorInterface $translator, ControllerHelper $controllerHelper)
+    public function __construct(TranslatorInterface $translator, ParkHausFactory $entityFactory, ControllerHelper $controllerHelper)
     {
-        $this->container = $container;
-        $this->objectManager = $objectManager;
         $this->translator = $translator;
+        $this->entityFactory = $entityFactory;
         $this->controllerHelper = $controllerHelper;
     }
 
@@ -70,7 +63,7 @@ abstract class AbstractSelectionHelper
         $objectType = $this->determineObjectType($objectType, 'getIdFields');
         $entityClass = 'RKParkHausModule:' . ucfirst($objectType) . 'Entity';
     
-        $meta = $this->objectManager->getClassMetadata($entityClass);
+        $meta = $this->entityFactory->getObjectManager()->getClassMetadata($entityClass);
     
         if ($this->hasCompositeKeys($objectType)) {
             $idFields = $meta->getIdentifierFieldNames();
@@ -106,7 +99,7 @@ abstract class AbstractSelectionHelper
     public function getEntity($objectType = '', $id = '', $useJoins = true, $slimMode = false)
     {
         if (empty($id)) {
-            throw new \InvalidArgumentException($this->translator->__('Invalid identifier received.'));
+            throw new InvalidArgumentException($this->translator->__('Invalid identifier received.'));
         }
     
         $objectType = $this->determineObjectType($objectType, 'getEntity');
@@ -181,9 +174,9 @@ abstract class AbstractSelectionHelper
      */
     protected function determineObjectType($objectType = '', $methodName = '')
     {
-        $utilArgs = ['api' => 'selection', 'action' => $methodName];
-        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('api', $utilArgs))) {
-            $objectType = $this->controllerHelper->getDefaultObjectType('api', $utilArgs);
+        $contextArgs = ['helper' => 'selection', 'action' => $methodName];
+        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('helper', $contextArgs))) {
+            $objectType = $this->controllerHelper->getDefaultObjectType('helper', $contextArgs);
         }
     
         return $objectType;
@@ -199,9 +192,9 @@ abstract class AbstractSelectionHelper
     protected function getRepository($objectType = '')
     {
         if (empty($objectType)) {
-            throw new \InvalidArgumentException($this->translator->__('Invalid object type received.'));
+            throw new InvalidArgumentException($this->translator->__('Invalid object type received.'));
         }
     
-        return $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        return $this->entityFactory->getRepository($objectType);
     }
 }

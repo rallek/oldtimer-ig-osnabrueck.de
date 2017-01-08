@@ -44,12 +44,10 @@ abstract class AbstractEditHandler extends EditHandler
         $result = parent::processForm($templateParameters);
     
         if ($this->templateParameters['mode'] == 'create') {
-            $modelHelper = $this->container->get('rk_parkhaus_module.model_helper');
-            if (!$modelHelper->canBeCreated($this->objectType)) {
+            if (!$this->modelHelper->canBeCreated($this->objectType)) {
                 $this->request->getSession()->getFlashBag()->add('error', $this->__('Sorry, but you can not create the vehicle image yet as other items are required which must be created before!'));
-                $logger = $this->container->get('logger');
-                $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->container->get('zikula_users_module.current_user')->get('uname'), 'entity' => $this->objectType];
-                $logger->notice('{app}: User {user} tried to create a new {entity}, but failed as it other items are required which must be created before.', $logArgs);
+                $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entity' => $this->objectType];
+                $this->logger->notice('{app}: User {user} tried to create a new {entity}, but failed as it other items are required which must be created before.', $logArgs);
     
                 return new RedirectResponse($this->getRedirectUrl(['commandName' => '']), 302);
             }
@@ -70,13 +68,12 @@ abstract class AbstractEditHandler extends EditHandler
     {
         $entity = $this->entityRef;
     
-        $selectionHelper = $this->container->get('rk_parkhaus_module.selection_helper');
         
         // assign identifiers of predefined incoming relationships
         // editable relation, we store the id and assign it now to show it in UI
         $this->relationPresets['vehicle'] = $this->request->get('vehicle', '');
         if (!empty($this->relationPresets['vehicle'])) {
-            $relObj = $selectionHelper->getEntity('vehicle', $this->relationPresets['vehicle']);
+            $relObj = $this->selectionHelper->getEntity('vehicle', $this->relationPresets['vehicle']);
             if (null !== $relObj) {
                 $relObj->addVehicleImages($entity);
             }
@@ -98,7 +95,7 @@ abstract class AbstractEditHandler extends EditHandler
             'inlineUsage' => $this->templateParameters['inlineUsage']
         ];
     
-        return $this->container->get('form.factory')->create('RK\ParkHausModule\Form\Type\VehicleImageType', $this->entityRef, $options);
+        return $this->formFactory->create('RK\ParkHausModule\Form\Type\VehicleImageType', $this->entityRef, $options);
     }
 
 
@@ -112,10 +109,8 @@ abstract class AbstractEditHandler extends EditHandler
         $entity = parent::initEntityForEditing();
     
         // only allow editing for the owner or people with higher permissions
-        $uid = $this->container->get('zikula_users_module.current_user')->get('uid');
-        if (!method_exists($entity, 'getCreatedBy') || $entity->getCreatedBy()->getUid() != $uid) {
-            $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
-            if (!$permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)) {
+        if (!method_exists($entity, 'getCreatedBy') || $entity->getCreatedBy()->getUid() != $this->currentUserApi->get('uid')) {
+            if (!$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)) {
                 throw new AccessDeniedException();
             }
         }
@@ -270,15 +265,13 @@ abstract class AbstractEditHandler extends EditHandler
     
         $success = false;
         $flashBag = $this->request->getSession()->getFlashBag();
-        $logger = $this->container->get('logger');
         try {
             // execute the workflow action
-            $workflowHelper = $this->container->get('rk_parkhaus_module.workflow_helper');
-            $success = $workflowHelper->executeAction($entity, $action);
+            $success = $this->workflowHelper->executeAction($entity, $action);
         } catch(\Exception $e) {
             $flashBag->add('error', $this->__f('Sorry, but an error occured during the %action% action. Please apply the changes again!', ['%action%' => $action]) . ' ' . $e->getMessage());
-            $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->container->get('zikula_users_module.current_user')->get('uname'), 'entity' => 'vehicle image', 'id' => $entity->createCompositeIdentifier(), 'errorMessage' => $e->getMessage()];
-            $logger->error('{app}: User {user} tried to edit the {entity} with id {id}, but failed. Error details: {errorMessage}.', $logArgs);
+            $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entity' => 'vehicle image', 'id' => $entity->createCompositeIdentifier(), 'errorMessage' => $e->getMessage()];
+            $this->logger->error('{app}: User {user} tried to edit the {entity} with id {id}, but failed. Error details: {errorMessage}.', $logArgs);
         }
     
         $this->addDefaultMessage($args, $success);

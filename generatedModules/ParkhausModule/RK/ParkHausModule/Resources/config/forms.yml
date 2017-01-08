@@ -21,10 +21,22 @@ services:
     rk_parkhaus_module.form.handler.vehicle:
         class: RK\ParkHausModule\Form\Handler\Vehicle\EditHandler
         arguments:
-            - "@service_container"
+            - "@kernel"
             - "@translator.default"
+            - "@form.factory"
             - "@request_stack"
             - "@router"
+            - "@logger"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_users_module.current_user"
+            - "@rk_parkhaus_module.entity_factory"
+            - "@rk_parkhaus_module.controller_helper"
+            - "@rk_parkhaus_module.model_helper"
+            - "@rk_parkhaus_module.selection_helper"
+            - "@rk_parkhaus_module.workflow_helper"
+            - "@rk_parkhaus_module.hook_helper"
+        calls:
+            - [setLockingApi, ['@?zikula_pagelock_module.api.locking']]
         tags:
             - { name: form.type }
     
@@ -32,7 +44,7 @@ services:
         class: RK\ParkHausModule\Form\Type\VehicleType
         arguments:
             - "@translator.default"
-            - "@rk_parkhaus_module.vehicle_factory"
+            - "@rk_parkhaus_module.entity_factory"
             - "@rk_parkhaus_module.listentries_helper"
         tags:
             - { name: form.type }
@@ -40,10 +52,22 @@ services:
     rk_parkhaus_module.form.handler.vehicleimage:
         class: RK\ParkHausModule\Form\Handler\VehicleImage\EditHandler
         arguments:
-            - "@service_container"
+            - "@kernel"
             - "@translator.default"
+            - "@form.factory"
             - "@request_stack"
             - "@router"
+            - "@logger"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_users_module.current_user"
+            - "@rk_parkhaus_module.entity_factory"
+            - "@rk_parkhaus_module.controller_helper"
+            - "@rk_parkhaus_module.model_helper"
+            - "@rk_parkhaus_module.selection_helper"
+            - "@rk_parkhaus_module.workflow_helper"
+            - "@rk_parkhaus_module.hook_helper"
+        calls:
+            - [setLockingApi, ['@?zikula_pagelock_module.api.locking']]
         tags:
             - { name: form.type }
     
@@ -51,7 +75,7 @@ services:
         class: RK\ParkHausModule\Form\Type\VehicleImageType
         arguments:
             - "@translator.default"
-            - "@rk_parkhaus_module.vehicleImage_factory"
+            - "@rk_parkhaus_module.entity_factory"
             - "@rk_parkhaus_module.listentries_helper"
         tags:
             - { name: form.type }

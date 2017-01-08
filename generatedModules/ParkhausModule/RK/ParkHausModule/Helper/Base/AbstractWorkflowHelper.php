@@ -12,7 +12,6 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Core\Doctrine\EntityAccess;
 use Zikula_Workflow_Util;
@@ -30,28 +29,28 @@ abstract class AbstractWorkflowHelper
     protected $name;
 
     /**
-     * @var ContainerBuilder
-     */
-    protected $container;
-
-    /**
      * @var TranslatorInterface
      */
     protected $translator;
 
     /**
+     * @var ListEntriesHelper
+     */
+    private $listEntriesHelper;
+
+    /**
      * WorkflowHelper constructor.
      *
-     * @param ContainerBuilder    $container  ContainerBuilder service instance
-     * @param TranslatorInterface $translator Translator service instance
+     * @param TranslatorInterface $translator        Translator service instance
+     * @param ListEntriesHelper   $listEntriesHelper ListEntriesHelper service instance
      *
      * @return void
      */
-    public function __construct(ContainerBuilder $container, TranslatorInterface $translator)
+    public function __construct(TranslatorInterface $translator, ListEntriesHelper $listEntriesHelper)
     {
         $this->name = 'RKParkHausModule';
-        $this->container = $container;
         $this->translator = $translator;
+        $this->listEntriesHelper = $listEntriesHelper;
     }
 
     /**
@@ -166,8 +165,7 @@ abstract class AbstractWorkflowHelper
         $wfActions = Zikula_Workflow_Util::getActionsForObject($entity, $objectType, $idColumn, $this->name);
     
         // as we use the workflows for multiple object types we must maybe filter out some actions
-        $listHelper = $this->container->get('rk_parkhaus_module.listentries_helper');
-        $states = $listHelper->getEntries($objectType, 'workflowState');
+        $states = $this->listEntriesHelper->getEntries($objectType, 'workflowState');
         $allowedStates = [];
         foreach ($states as $state) {
             $allowedStates[] = $state['value'];
@@ -317,7 +315,7 @@ abstract class AbstractWorkflowHelper
      */
     public function getAmountOfModerationItems($objectType, $state)
     {
-        $repository = $this->container->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->entityFactory->getRepository($objectType);
     
         $where = 'tbl.workflowState:eq:' . $state;
         $parameters = ['workflowState' => $state];

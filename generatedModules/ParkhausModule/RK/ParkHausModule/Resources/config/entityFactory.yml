@@ -1,0 +1,6 @@
+services:
+    # Entity factory class
+    rk_parkhaus_module.entity_factory:
+        class: RK\ParkHausModule\Entity\Factory\ParkHausFactory
+        arguments:
+            - "@doctrine.orm.default_entity_manager"

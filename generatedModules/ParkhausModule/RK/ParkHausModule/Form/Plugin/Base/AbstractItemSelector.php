@@ -111,7 +111,7 @@ class AbstractItemSelector extends Zikula_Form_Plugin_TextInput
         $this->selectedItemId = $this->text;
 
         $serviceManager = ServiceUtil::getManager();
-        $repository = $serviceManager->get('rk_parkhaus_module.' . $this->objectType . '_factory')->getRepository();
+        $repository = $serviceManager->get('rk_parkhaus_module.entity_factory')->getRepository($this->objectType);
 
         $sort = $repository->getDefaultSortingField();
         $sdir = 'asc';

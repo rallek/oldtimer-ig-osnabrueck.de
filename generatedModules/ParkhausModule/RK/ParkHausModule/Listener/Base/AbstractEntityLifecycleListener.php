@@ -115,8 +115,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
         $objectType = $entity->get_objectType();
         $objectId = $entity->createCompositeIdentifier();
         
-        // retrieve the upload handler
-        $uploadManager = $serviceManager->get('rk_parkhaus_module.upload_handler');
+        $uploadHelper = $serviceManager->get('rk_parkhaus_module.upload_helper');
         $uploadFields = $this->getUploadFields($objectType);
         
         foreach ($uploadFields as $uploadField) {
@@ -125,7 +124,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
             }
         
             // remove upload file
-            $uploadManager->deleteUploadFile($entity, $uploadField);
+            $uploadHelper->deleteUploadFile($entity, $uploadField);
         }
         
         $logger = $serviceManager->get('logger');
@@ -304,7 +303,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
             $controllerHelper = ServiceUtil::get('rk_parkhaus_module.controller_helper');
             $request = ServiceUtil::get('request_stack')->getCurrentRequest();
             $baseUrl = $request->getSchemeAndHttpHost() . $request->getBasePath();
-            $uploadManager = ServiceUtil::get('rk_parkhaus_module.upload_handler');
+            $uploadHelper = ServiceUtil::get('rk_parkhaus_module.upload_helper');
             foreach ($uploadFields as $fieldName) {
                 if (empty($entity[$fieldName])) {
                     continue;
@@ -318,7 +317,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
 
                     // determine meta data if it does not exist
                     if (!is_array($entity[$fieldName . 'Meta']) || !count($entity[$fieldName . 'Meta'])) {
-                        $entity[$fieldName . 'Meta'] = $uploadManager->readMetaDataForFile($fileName, $filePath);
+                        $entity[$fieldName . 'Meta'] = $uploadHelper->readMetaDataForFile($fileName, $filePath);
                     }
                 } else {
                     $entity[$fieldName] = null;

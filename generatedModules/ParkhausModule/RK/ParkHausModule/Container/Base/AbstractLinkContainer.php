@@ -18,8 +18,8 @@ use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
 use Zikula\Core\Doctrine\EntityAccess;
 use Zikula\Core\LinkContainer\LinkContainerInterface;
-use Zikula\PermissionsModule\Api\PermissionApi;
 use Zikula\ExtensionsModule\Api\VariableApi;
+use Zikula\PermissionsModule\Api\PermissionApi;
 use Zikula\UsersModule\Api\CurrentUserApi;
 use RK\ParkHausModule\Helper\ControllerHelper;
 
@@ -41,11 +41,6 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
     protected $permissionApi;
 
     /**
-     * @var ControllerHelper
-     */
-    protected $controllerHelper;
-
-    /**
      * @var VariableApi
      */
     protected $variableApi;
@@ -56,23 +51,28 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
     private $currentUserApi;
 
     /**
+     * @var ControllerHelper
+     */
+    protected $controllerHelper;
+
+    /**
      * LinkContainer constructor.
      *
      * @param TranslatorInterface $translator       Translator service instance
      * @param Routerinterface     $router           Router service instance
      * @param PermissionApi       $permissionApi    PermissionApi service instance
-     * @param ControllerHelper    $controllerHelper ControllerHelper service instance
      * @param VariableApi         $variableApi      VariableApi service instance
      * @param CurrentUserApi      $currentUserApi   CurrentUserApi service instance
+     * @param ControllerHelper    $controllerHelper ControllerHelper service instance
      */
-    public function __construct(TranslatorInterface $translator, RouterInterface $router, PermissionApi $permissionApi, ControllerHelper $controllerHelper, VariableApi $variableApi, CurrentUserApi $currentUserApi)
+    public function __construct(TranslatorInterface $translator, RouterInterface $router, PermissionApi $permissionApi, VariableApi $variableApi, CurrentUserApi $currentUserApi, ControllerHelper $controllerHelper)
     {
         $this->setTranslator($translator);
         $this->router = $router;
         $this->permissionApi = $permissionApi;
-        $this->controllerHelper = $controllerHelper;
         $this->variableApi = $variableApi;
         $this->currentUserApi = $currentUserApi;
+        $this->controllerHelper = $controllerHelper;
     }
 
     /**
@@ -94,8 +94,8 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
      */
     public function getLinks($type = LinkContainerInterface::TYPE_ADMIN)
     {
-        $utilArgs = ['api' => 'linkContainer', 'action' => 'getLinks'];
-        $allowedObjectTypes = $this->controllerHelper->getObjectTypes('api', $utilArgs);
+        $contextArgs = ['api' => 'linkContainer', 'action' => 'getLinks'];
+        $allowedObjectTypes = $this->controllerHelper->getObjectTypes('api', $contextArgs);
 
         $permLevel = LinkContainerInterface::TYPE_ADMIN == $type ? ACCESS_ADMIN : ACCESS_READ;
 

@@ -38,9 +38,9 @@ abstract class AbstractExternalController extends AbstractController
     public function displayAction($objectType, $id, $source, $displayMode)
     {
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
-        $utilArgs = ['controller' => 'external', 'action' => 'display'];
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('controller', $utilArgs))) {
-            $objectType = $controllerHelper->getDefaultObjectType('controllerType', $utilArgs);
+        $contextArgs = ['controller' => 'external', 'action' => 'display'];
+        if (!in_array($objectType, $controllerHelper->getObjectTypes('controller', $contextArgs))) {
+            $objectType = $controllerHelper->getDefaultObjectType('controllerType', $contextArgs);
         }
         
         $component = $this->name . ':' . ucfirst($objectType) . ':';
@@ -48,7 +48,7 @@ abstract class AbstractExternalController extends AbstractController
             return '';
         }
         
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
         $repository->setRequest($this->get('request_stack')->getCurrentRequest());
         $selectionHelper = $this->get('rk_parkhaus_module.selection_helper');
         $idFields = $selectionHelper->getIdFields($objectType);
@@ -102,9 +102,9 @@ abstract class AbstractExternalController extends AbstractController
         $cssAssetBag->add($assetHelper->resolve('@RKParkHausModule:css/style.css'));
         
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
-        $utilArgs = ['controller' => 'external', 'action' => 'finder'];
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('controller', $utilArgs))) {
-            $objectType = $controllerHelper->getDefaultObjectType('controllerType', $utilArgs);
+        $contextArgs = ['controller' => 'external', 'action' => 'finder'];
+        if (!in_array($objectType, $controllerHelper->getObjectTypes('controller', $contextArgs))) {
+            $objectType = $controllerHelper->getDefaultObjectType('controllerType', $contextArgs);
         }
         
         if (!$this->hasPermission('RKParkHausModule:' . ucfirst($objectType) . ':', '::', ACCESS_COMMENT)) {
@@ -115,7 +115,7 @@ abstract class AbstractExternalController extends AbstractController
             return $this->__('Error: Invalid editor context given for external controller action.');
         }
         
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
         $repository->setRequest($request);
         if (empty($sort) || !in_array($sort, $repository->getAllowedSortingFields())) {
             $sort = $repository->getDefaultSortingField();

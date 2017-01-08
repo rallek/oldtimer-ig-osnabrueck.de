@@ -205,162 +205,18 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
-            ->add('enableShrinkingForVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
-                'label' => $this->__('Enable shrinking for vehicle vehicle image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
-                ],
-                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
-                'required' => false,
-                'data' => (bool)$this->modVars['enableShrinkingForVehicleVehicleImage'],
-                'attr' => [
-                    'title' => $this->__('The enable shrinking for vehicle vehicle image option.'),
-                    'class' => 'shrink-enabler'
-                ],
-            ])
-            ->add('shrinkWidthVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
-                'label' => $this->__('Shrink width vehicle vehicle image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('The maximum image width in pixels.')
-                ],
-                'help' => $this->__('The maximum image width in pixels.'),
-                'required' => false,
-                'data' => $this->modVars['shrinkWidthVehicleVehicleImage'],
-                'empty_data' => intval('800'),
-                'attr' => [
-                    'title' => $this->__('Enter the shrink width vehicle vehicle image. Only digits are allowed.'),
-                    'class' => 'shrinkdimension-shrinkwidthvehiclevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
-                'input_group' => ['right' => $this->__('pixels')]
-            ])
-            ->add('shrinkHeightVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
-                'label' => $this->__('Shrink height vehicle vehicle image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('The maximum image height in pixels.')
-                ],
-                'help' => $this->__('The maximum image height in pixels.'),
-                'required' => false,
-                'data' => $this->modVars['shrinkHeightVehicleVehicleImage'],
-                'empty_data' => intval('600'),
-                'attr' => [
-                    'title' => $this->__('Enter the shrink height vehicle vehicle image. Only digits are allowed.'),
-                    'class' => 'shrinkdimension-shrinkheightvehiclevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
-                'input_group' => ['right' => $this->__('pixels')]
-            ])
-            ->add('enableShrinkingForVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
-                'label' => $this->__('Enable shrinking for vehicle manufacturer image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
-                ],
-                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
-                'required' => false,
-                'data' => (bool)$this->modVars['enableShrinkingForVehicleManufacturerImage'],
-                'attr' => [
-                    'title' => $this->__('The enable shrinking for vehicle manufacturer image option.'),
-                    'class' => 'shrink-enabler'
-                ],
-            ])
-            ->add('shrinkWidthVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
-                'label' => $this->__('Shrink width vehicle manufacturer image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('The maximum image width in pixels.')
-                ],
-                'help' => $this->__('The maximum image width in pixels.'),
-                'required' => false,
-                'data' => $this->modVars['shrinkWidthVehicleManufacturerImage'],
-                'empty_data' => intval('800'),
-                'attr' => [
-                    'title' => $this->__('Enter the shrink width vehicle manufacturer image. Only digits are allowed.'),
-                    'class' => 'shrinkdimension-shrinkwidthvehiclemanufacturerimage'
-                ],'max_length' => 4,
-                'scale' => 0,
-                'input_group' => ['right' => $this->__('pixels')]
-            ])
-            ->add('shrinkHeightVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
-                'label' => $this->__('Shrink height vehicle manufacturer image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('The maximum image height in pixels.')
-                ],
-                'help' => $this->__('The maximum image height in pixels.'),
-                'required' => false,
-                'data' => $this->modVars['shrinkHeightVehicleManufacturerImage'],
-                'empty_data' => intval('600'),
-                'attr' => [
-                    'title' => $this->__('Enter the shrink height vehicle manufacturer image. Only digits are allowed.'),
-                    'class' => 'shrinkdimension-shrinkheightvehiclemanufacturerimage'
-                ],'max_length' => 4,
-                'scale' => 0,
-                'input_group' => ['right' => $this->__('pixels')]
-            ])
-            ->add('enableShrinkingForVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
-                'label' => $this->__('Enable shrinking for vehicle image vehicle image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
-                ],
-                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
-                'required' => false,
-                'data' => (bool)$this->modVars['enableShrinkingForVehicleImageVehicleImage'],
-                'attr' => [
-                    'title' => $this->__('The enable shrinking for vehicle image vehicle image option.'),
-                    'class' => 'shrink-enabler'
-                ],
-            ])
-            ->add('shrinkWidthVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
-                'label' => $this->__('Shrink width vehicle image vehicle image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('The maximum image width in pixels.')
-                ],
-                'help' => $this->__('The maximum image width in pixels.'),
-                'required' => false,
-                'data' => $this->modVars['shrinkWidthVehicleImageVehicleImage'],
-                'empty_data' => intval('800'),
-                'attr' => [
-                    'title' => $this->__('Enter the shrink width vehicle image vehicle image. Only digits are allowed.'),
-                    'class' => 'shrinkdimension-shrinkwidthvehicleimagevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
-                'input_group' => ['right' => $this->__('pixels')]
-            ])
-            ->add('shrinkHeightVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
-                'label' => $this->__('Shrink height vehicle image vehicle image') . ':',
-                'label_attr' => [
-                    'class' => 'tooltips',
-                    'title' => $this->__('The maximum image height in pixels.')
-                ],
-                'help' => $this->__('The maximum image height in pixels.'),
-                'required' => false,
-                'data' => $this->modVars['shrinkHeightVehicleImageVehicleImage'],
-                'empty_data' => intval('600'),
-                'attr' => [
-                    'title' => $this->__('Enter the shrink height vehicle image vehicle image. Only digits are allowed.'),
-                    'class' => 'shrinkdimension-shrinkheightvehicleimagevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
-                'input_group' => ['right' => $this->__('pixels')]
-            ])
-            ->add('thumbnailModeVehicle', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
-                'label' => $this->__('Thumbnail mode vehicle') . ':',
+            ->add('thumbnailModeVehicleTitleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+                'label' => $this->__('Thumbnail mode vehicle title image') . ':',
                 'label_attr' => [
                     'class' => 'tooltips',
                     'title' => $this->__('Thumbnail mode (inset or outbound).')
                 ],
                 'help' => $this->__('Thumbnail mode (inset or outbound).'),
                 'required' => false,
-                'data' => $this->modVars['thumbnailModeVehicle'],
+                'data' => $this->modVars['thumbnailModeVehicleTitleImage'],
                 'empty_data' => 'inset',
                 'attr' => [
-                    'title' => $this->__('Choose the thumbnail mode vehicle.')
+                    'title' => $this->__('Choose the thumbnail mode vehicle title image.')
                 ],'choices' => [
                     $this->__('Inset') => 'inset'
                     ,$this->__('Outbound') => 'outbound'
@@ -464,6 +320,73 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
+            ->add('enableShrinkingForVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+                'label' => $this->__('Enable shrinking for vehicle vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
+                ],
+                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
+                'required' => false,
+                'data' => (bool)$this->modVars['enableShrinkingForVehicleVehicleImage'],
+                'attr' => [
+                    'title' => $this->__('The enable shrinking for vehicle vehicle image option.'),
+                    'class' => 'shrink-enabler'
+                ],
+            ])
+            ->add('shrinkWidthVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink width vehicle vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image width in pixels.')
+                ],
+                'help' => $this->__('The maximum image width in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkWidthVehicleVehicleImage'],
+                'empty_data' => intval('800'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink width vehicle vehicle image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkwidthvehiclevehicleimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('shrinkHeightVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink height vehicle vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image height in pixels.')
+                ],
+                'help' => $this->__('The maximum image height in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkHeightVehicleVehicleImage'],
+                'empty_data' => intval('600'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink height vehicle vehicle image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkheightvehiclevehicleimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailModeVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+                'label' => $this->__('Thumbnail mode vehicle vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail mode (inset or outbound).')
+                ],
+                'help' => $this->__('Thumbnail mode (inset or outbound).'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailModeVehicleVehicleImage'],
+                'empty_data' => 'inset',
+                'attr' => [
+                    'title' => $this->__('Choose the thumbnail mode vehicle vehicle image.')
+                ],'choices' => [
+                    $this->__('Inset') => 'inset'
+                    ,$this->__('Outbound') => 'outbound'
+                ],
+                'choices_as_values' => true,
+                'multiple' => false
+            ])
             ->add('thumbnailWidthVehicleVehicleImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
                 'label' => $this->__('Thumbnail width vehicle vehicle image view') . ':',
                 'label_attr' => [
@@ -559,6 +482,73 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],'max_length' => 4,
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('enableShrinkingForVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+                'label' => $this->__('Enable shrinking for vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
+                ],
+                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
+                'required' => false,
+                'data' => (bool)$this->modVars['enableShrinkingForVehicleManufacturerImage'],
+                'attr' => [
+                    'title' => $this->__('The enable shrinking for vehicle manufacturer image option.'),
+                    'class' => 'shrink-enabler'
+                ],
+            ])
+            ->add('shrinkWidthVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink width vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image width in pixels.')
+                ],
+                'help' => $this->__('The maximum image width in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkWidthVehicleManufacturerImage'],
+                'empty_data' => intval('800'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink width vehicle manufacturer image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkwidthvehiclemanufacturerimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('shrinkHeightVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink height vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image height in pixels.')
+                ],
+                'help' => $this->__('The maximum image height in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkHeightVehicleManufacturerImage'],
+                'empty_data' => intval('600'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink height vehicle manufacturer image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkheightvehiclemanufacturerimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailModeVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+                'label' => $this->__('Thumbnail mode vehicle manufacturer image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Thumbnail mode (inset or outbound).')
+                ],
+                'help' => $this->__('Thumbnail mode (inset or outbound).'),
+                'required' => false,
+                'data' => $this->modVars['thumbnailModeVehicleManufacturerImage'],
+                'empty_data' => 'inset',
+                'attr' => [
+                    'title' => $this->__('Choose the thumbnail mode vehicle manufacturer image.')
+                ],'choices' => [
+                    $this->__('Inset') => 'inset'
+                    ,$this->__('Outbound') => 'outbound'
+                ],
+                'choices_as_values' => true,
+                'multiple' => false
             ])
             ->add('thumbnailWidthVehicleManufacturerImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
                 'label' => $this->__('Thumbnail width vehicle manufacturer image view') . ':',
@@ -656,18 +646,66 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
-            ->add('thumbnailModeVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
-                'label' => $this->__('Thumbnail mode vehicle image') . ':',
+            ->add('enableShrinkingForVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+                'label' => $this->__('Enable shrinking for vehicle image vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.')
+                ],
+                'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
+                'required' => false,
+                'data' => (bool)$this->modVars['enableShrinkingForVehicleImageVehicleImage'],
+                'attr' => [
+                    'title' => $this->__('The enable shrinking for vehicle image vehicle image option.'),
+                    'class' => 'shrink-enabler'
+                ],
+            ])
+            ->add('shrinkWidthVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink width vehicle image vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image width in pixels.')
+                ],
+                'help' => $this->__('The maximum image width in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkWidthVehicleImageVehicleImage'],
+                'empty_data' => intval('800'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink width vehicle image vehicle image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkwidthvehicleimagevehicleimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('shrinkHeightVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
+                'label' => $this->__('Shrink height vehicle image vehicle image') . ':',
+                'label_attr' => [
+                    'class' => 'tooltips',
+                    'title' => $this->__('The maximum image height in pixels.')
+                ],
+                'help' => $this->__('The maximum image height in pixels.'),
+                'required' => false,
+                'data' => $this->modVars['shrinkHeightVehicleImageVehicleImage'],
+                'empty_data' => intval('600'),
+                'attr' => [
+                    'title' => $this->__('Enter the shrink height vehicle image vehicle image. Only digits are allowed.'),
+                    'class' => 'shrinkdimension-shrinkheightvehicleimagevehicleimage'
+                ],'max_length' => 4,
+                'scale' => 0,
+                'input_group' => ['right' => $this->__('pixels')]
+            ])
+            ->add('thumbnailModeVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+                'label' => $this->__('Thumbnail mode vehicle image vehicle image') . ':',
                 'label_attr' => [
                     'class' => 'tooltips',
                     'title' => $this->__('Thumbnail mode (inset or outbound).')
                 ],
                 'help' => $this->__('Thumbnail mode (inset or outbound).'),
                 'required' => false,
-                'data' => $this->modVars['thumbnailModeVehicleImage'],
+                'data' => $this->modVars['thumbnailModeVehicleImageVehicleImage'],
                 'empty_data' => 'inset',
                 'attr' => [
-                    'title' => $this->__('Choose the thumbnail mode vehicle image.')
+                    'title' => $this->__('Choose the thumbnail mode vehicle image vehicle image.')
                 ],'choices' => [
                     $this->__('Inset') => 'inset'
                     ,$this->__('Outbound') => 'outbound'

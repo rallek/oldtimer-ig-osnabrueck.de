@@ -12,14 +12,14 @@
 
 namespace RK\ParkHausModule\Entity\Factory;
 
-use RK\ParkHausModule\Entity\Factory\Base\AbstractVehicleImageFactory;
+use RK\ParkHausModule\Entity\Factory\Base\AbstractParkHausFactory;
 
 /**
- * Factory class used to retrieve entity and repository instances.
+ * Factory class used to create entities and receive entity repositories.
  *
- * This is the concrete factory class for vehicle image entities.
+ * This is the concrete factory class.
  */
-class VehicleImageFactory extends AbstractVehicleImageFactory
+class ParkHausFactory extends AbstractParkHausFactory
 {
-    // feel free to customise the manager
+    // feel free to customise the factory
 }

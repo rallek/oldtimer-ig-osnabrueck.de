@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use RK\ParkHausModule\Form\Type\Field\UploadType;
 use RK\ParkHausModule\Helper\ControllerHelper;
-use RK\ParkHausModule\UploadHandler;
+use RK\ParkHausModule\Helper\UploadHelper;
 
 /**
  * Upload file transformer base class.
@@ -44,9 +44,9 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
     protected $controllerHelper = '';
 
     /**
-     * @var UploadHandler
+     * @var UploadHelper
      */
-    protected $uploadHandler = '';
+    protected $uploadHelper = '';
 
     /**
      * @var string
@@ -62,9 +62,9 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
     public function __construct(UploadType $formType, $fieldName)
     {
         $this->formType = $formType;
-        $this->request = ServiceUtil::get('request_stack')->getMasterRequest();
+        $this->request = ServiceUtil::get('request_stack')->getCurrentRequest();
         $this->controllerHelper = ServiceUtil::get('rk_parkhaus_module.controller_helper');
-        $this->uploadHandler = ServiceUtil::get('rk_parkhaus_module.upload_handler');
+        $this->uploadHelper = ServiceUtil::get('rk_parkhaus_module.upload_helper');
         $this->fieldName = $fieldName;
     }
 
@@ -139,7 +139,7 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
         $hasBeenDeleted = !$hasOldFile;
         if ($hasOldFile && true === $deleteFile) {
             // remove old upload file
-            $entity = $this->uploadHandler->deleteUploadFile($entity, $fieldName);
+            $entity = $this->uploadHelper->deleteUploadFile($entity, $fieldName);
             $hasBeenDeleted = true;
         }
 
@@ -151,11 +151,11 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
         // new file has been uploaded; check if there is an old one to be deleted
         if ($hasOldFile && true !== $hasBeenDeleted) {
             // remove old upload file (and image thumbnails)
-            $entity = $this->uploadHandler->deleteUploadFile($entity, $fieldName);
+            $entity = $this->uploadHelper->deleteUploadFile($entity, $fieldName);
         }
 
         // do the actual upload (includes validation, physical file processing and reading meta data)
-        $uploadResult = $this->uploadHandler->performFileUpload($objectType, $uploadedFile, $fieldName);
+        $uploadResult = $this->uploadHelper->performFileUpload($objectType, $uploadedFile, $fieldName);
 
         $result = null;
         $metaData = [];

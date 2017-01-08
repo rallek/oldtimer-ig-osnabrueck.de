@@ -47,7 +47,7 @@ abstract class AbstractVehicleImageQuickNavType extends AbstractType
     public function __construct(TranslatorInterface $translator, RequestStack $requestStack, ListEntriesHelper $listHelper)
     {
         $this->setTranslator($translator);
-        $this->request = $requestStack->getMasterRequest();
+        $this->request = $requestStack->getCurrentRequest();
         $this->listHelper = $listHelper;
     }
 

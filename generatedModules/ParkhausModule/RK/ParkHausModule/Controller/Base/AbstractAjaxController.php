@@ -107,12 +107,12 @@ abstract class AbstractAjaxController extends AbstractController
             $objectType = $request->query->getAlnum('ot', 'vehicle');
         }
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
-        $utilArgs = ['controller' => 'ajax', 'action' => 'getItemListFinder'];
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('controllerAction', $utilArgs))) {
-            $objectType = $controllerHelper->getDefaultObjectType('controllerAction', $utilArgs);
+        $contextArgs = ['controller' => 'ajax', 'action' => 'getItemListFinder'];
+        if (!in_array($objectType, $controllerHelper->getObjectTypes('controllerAction', $contextArgs))) {
+            $objectType = $controllerHelper->getDefaultObjectType('controllerAction', $contextArgs);
         }
         
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
         $repository->setRequest($request);
         $selectionHelper = $this->get('rk_parkhaus_module.selection_helper');
         $idFields = $selectionHelper->getIdFields($objectType);
@@ -197,12 +197,12 @@ abstract class AbstractAjaxController extends AbstractController
             $objectType = $request->query->getAlnum('ot', 'vehicle');
         }
         $controllerHelper = $this->get('rk_parkhaus_module.controller_helper');
-        $utilArgs = ['controller' => 'ajax', 'action' => 'getItemListAutoCompletion'];
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('controllerAction', $utilArgs))) {
-            $objectType = $controllerHelper->getDefaultObjectType('controllerAction', $utilArgs);
+        $contextArgs = ['controller' => 'ajax', 'action' => 'getItemListAutoCompletion'];
+        if (!in_array($objectType, $controllerHelper->getObjectTypes('controllerAction', $contextArgs))) {
+            $objectType = $controllerHelper->getDefaultObjectType('controllerAction', $contextArgs);
         }
         
-        $repository = $this->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+        $repository = $this->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
         $selectionHelper = $this->get('rk_parkhaus_module.selection_helper');
         $idFields = $selectionHelper->getIdFields($objectType);
         
@@ -242,7 +242,7 @@ abstract class AbstractAjaxController extends AbstractController
             $previewFieldName = $repository->getPreviewFieldName();
             
             //$imageHelper = $this->get('rk_parkhaus_module.image_helper');
-            //$imagineManager = $imageHelper->getManager($objectType, $previewFieldName, 'controllerAction', $utilArgs);
+            //$imagineManager = $imageHelper->getManager($objectType, $previewFieldName, 'controllerAction', $contextArgs);
             $imagineManager = $this->get('systemplugin.imagine.manager');
             foreach ($entities as $item) {
                 $itemTitle = $item->getTitleFromDisplayPattern();

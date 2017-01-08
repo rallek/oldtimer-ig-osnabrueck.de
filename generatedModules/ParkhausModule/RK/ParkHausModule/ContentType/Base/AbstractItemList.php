@@ -111,9 +111,9 @@ abstract class AbstractItemList extends \Content_AbstractContentType
         $serviceManager = ServiceUtil::getManager();
         $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
     
-        $utilArgs = ['name' => 'list'];
-        if (!isset($data['objectType']) || !in_array($data['objectType'], $controllerHelper->getObjectTypes('contentType', $utilArgs))) {
-            $data['objectType'] = $controllerHelper->getDefaultObjectType('contentType', $utilArgs);
+        $contextArgs = ['name' => 'list'];
+        if (!isset($data['objectType']) || !in_array($data['objectType'], $controllerHelper->getObjectTypes('contentType', $contextArgs))) {
+            $data['objectType'] = $controllerHelper->getDefaultObjectType('contentType', $contextArgs);
         }
     
         $this->objectType = $data['objectType'];
@@ -149,7 +149,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
     public function display()
     {
         $serviceManager = ServiceUtil::getManager();
-        $repository = $serviceManager->get('rk_parkhaus_module.' . $this->objectType . '_factory')->getRepository();
+        $repository = $serviceManager->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
         $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');
     
         // create query

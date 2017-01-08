@@ -61,7 +61,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
     {
         $serviceManager = ServiceUtil::getManager();
         $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');
-        $request = $serviceManager->get('request_stack')->getMasterRequest();
+        $request = $serviceManager->get('request_stack')->getCurrentRequest();
     
         if (!$permissionApi->hasPermission($this->name . '::', '::', ACCESS_READ)) {
             return [];
@@ -85,8 +85,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
         }
     
         $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
-        $utilArgs = ['helper' => 'search', 'action' => 'getResults'];
-        $allowedTypes = $controllerHelper->getObjectTypes('helper', $utilArgs);
+        $allowedTypes = $controllerHelper->getObjectTypes('helper', ['helper' => 'search', 'action' => 'getResults']);
     
         foreach ($searchTypes as $objectType) {
             if (!in_array($objectType, $allowedTypes)) {
@@ -138,7 +137,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
                     break;
             }
     
-            $repository = $serviceManager->get('rk_parkhaus_module.' . $objectType . '_factory')->getRepository();
+            $repository = $serviceManager->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
     
             // build the search query without any joins
             $qb = $repository->genericBaseQuery('', '', false);
