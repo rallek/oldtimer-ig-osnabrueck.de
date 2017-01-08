@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-01-06 16:11+0100\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
 "Language-Team: \n"
@@ -12,826 +12,943 @@ msgstr ""
 "X-Generator: Poedit 1.8.11\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 109 144 167 277
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 110 130 153 264
 msgid "All"
 msgstr "Alle"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 226 327
 msgid "All except approved"
 msgstr "Alle außer Freigegebene"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 219 320
 msgid "All except deferred"
 msgstr "Alle außer zurückgestellte"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 126
 msgid "Amount"
 msgstr "Anzahl"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 61
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractWorkflowHelper.php
-#: 77
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: 212 313
+msgid ""
+"An error occured during creation of the .htaccess file in directory \"%s\"."
+msgstr ""
+"Während der Erstellung der .htaccess-Datei im Verzeichnis \"%s\" ist ein "
+"Fehler aufgetreten."
+
+msgid ""
+"An error was encountered while removing stored object workflows for the %s "
+"extension."
+msgstr ""
+"Während des Entfernens gespeicherter Objekt-Workflows für das Modul %s ist "
+"ein Fehler aufgetreten."
+
 msgid "Approved"
 msgstr "Genehmigt"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 224
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 211
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 134
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 135
 msgid "Ascending"
 msgstr "Aufsteigend"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 245
 msgid "Auto"
 msgstr "Auto"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 102 167
 msgid "Back to overview"
 msgstr "Zurück zur Übersicht"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 164
 msgid "Backend"
 msgstr "Backend"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 259
 msgid "Bicycle"
 msgstr "Fahrrad"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 418
 msgid "Brakes"
 msgstr "Bremsen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 268
 msgid "Built"
 msgstr "Baujahr"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 266
 msgid "Bus"
 msgstr "Bus"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 79
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractDeleteEntityType.php
-#: 53
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: 640
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: 276
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 77
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
+msgid "Bytes"
+msgstr "Bytes"
+
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: on line 70
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
 msgid "Change selection"
 msgstr "Ändere Auswahl"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 576
+msgid "Choose the thumbnail mode vehicle image vehicle image."
+msgstr "Wählen Sie den Thumbnail-Modus vehicle image vehicle image."
+
+msgid "Choose the thumbnail mode vehicle manufacturer image."
+msgstr "Wählen Sie den Thumbnail-Modus vehicle manufacturer image."
+
+msgid "Choose the thumbnail mode vehicle title image."
+msgstr "Wählen Sie den Thumbnail-Modus vehicle title image."
+
+msgid "Choose the thumbnail mode vehicle vehicle image."
+msgstr "Wählen Sie den Thumbnail-Modus vehicle vehicle image."
+
 msgid "Choose the title text color of the vehicle"
 msgstr "Titeltextfarbe auswählen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 226
 msgid "Choose the vehicle"
 msgstr "Fahrzeug auswählen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 121
 msgid "Choose the vehicle type"
 msgstr "Wählen Sie den Fahrzeugtyp"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 328
 msgid "Compression"
 msgstr "Kompression"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 190
 msgid "Configuration"
 msgstr "Konfiguration"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 138
+msgid "Content has been approved and is available online."
+msgstr "Inhalt wurde geprüft und ist online verfügbar."
+
+msgid ""
+"Content has not been submitted yet or has been waiting, but was rejected."
+msgstr ""
+"Inhalt wurde nicht übermittelt oder freigegeben hat, aber wurde abgelehnt."
+
 msgid "Copyright"
 msgstr "Copyright"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 146
 msgid "Copyright title image"
 msgstr "Copyright Titelbild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 177
 msgid "Copyright vehicle image"
 msgstr "Copyright Fahrzeug Bild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 608
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: 244
 msgid "Create another item after save"
 msgstr "Erzeuge einen weiteren Eintrag nach dem Speichern"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 115
 msgid "Create vehicle image"
 msgstr "Erstelle neues Fahrzeugbild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 209
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 196
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 122
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 123
 msgid "Creation date"
 msgstr "Erstellungsdatum"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 210
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 197
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 123
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 124
 msgid "Creator"
 msgstr "Ersteller"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 152 159
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Twig/Base/AbstractTwigExtension.php
-#: 212
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/plugins/function.rkparkhausmoduleTemplateSelector.php
-#: 30
 msgid "Custom template"
 msgstr "Benutzerdefinierte Vorlage"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 313
 msgid "Cylinders"
 msgstr "Zylinder"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 109
 msgid "Default"
 msgstr "Default"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 69
 msgid "Defer"
 msgstr "Zurückstellen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 60
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractWorkflowHelper.php
-#: 72
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: 205 306
+msgid "Defer content for later submission."
+msgstr "Inhalt zur späteren Veröffentlichung aufschieben"
+
 msgid "Deferred"
 msgstr "Zurückgestellt"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 75 80
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: 160 164
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractDeleteEntityType.php
-#: 46
 msgid "Delete"
 msgstr "Löschen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Field/Base/AbstractUploadType.php
-#: on line 86
+msgid "Delete content permanently."
+msgstr "Inhalt dauerhaft löschen."
+
 msgid "Delete existing file"
 msgstr "Vorhandene Datei löschen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Field/Base/AbstractUploadType.php
-#: on line 89
 msgid "Delete this file ?"
 msgstr "Diese Datei löschen?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 164
 msgid "Delete this vehicle image"
 msgstr "Dieses Bild löschen?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 62
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractWorkflowHelper.php
-#: 82
 msgid "Deleted"
 msgstr "Gelöscht"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 225
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 212
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 135
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 136
 msgid "Descending"
 msgstr "Absteigend"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 168
 msgid "Description"
 msgstr "Beschreibung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 79 83 137 141
 msgid "Details"
 msgstr "Details"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 298
 msgid "Displacement"
 msgstr "Hubraum"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Base/AbstractParkHausModuleInstaller.php
-#: on line 53 378
+msgid "Display list of RKParkHausModule objects."
+msgstr "Übersichtsliste der RKParkhausModule Objekte."
+
+msgid "Display or link a single RKParkHausModule object."
+msgstr "Anzeigen oder ein einzelnes RKParkHausModule-Objekt verknüpfen."
+
 msgid "Doctrine Exception"
 msgstr "Doctrine Exception"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 89 93 147 151
+msgid "Done! Item created."
+msgstr "Erledigt! Element erstellt."
+
+msgid "Done! Item deleted."
+msgstr "Erledigt! Element gelöscht."
+
+msgid "Done! Item updated."
+msgstr "Erledigt! Element aktualisiert."
+
+msgid "Done! Module configuration updated."
+msgstr "Erledigt! Modul Konfiguration aktualisiert."
+
+msgid "Done! Vehicle created."
+msgstr "Fertig! Fahrzeug angelegt."
+
+msgid "Done! Vehicle deleted."
+msgstr "Fertig! Fahrzeug gelöscht."
+
+msgid "Done! Vehicle image created."
+msgstr "Fertig! Fahrzeug Bild erstellt."
+
+msgid "Done! Vehicle image deleted."
+msgstr "Fertig! Fahrzeug Bild gelöscht."
+
+msgid "Done! Vehicle image updated."
+msgstr "Fertig! Fahrzeug Bild aktualisiert."
+
+msgid "Done! Vehicle updated."
+msgstr "Fertig! Fahrzeug aktualisiert."
+
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 93
 msgid "Edit this vehicle"
 msgstr "Fahrzeug bearbeiten"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 151
 msgid "Edit this vehicle image"
 msgstr "Dieses Fahrzeug-Bild bearbeiten"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 305
 msgid "Enable shrinking for vehicle image vehicle image"
 msgstr "Aktivieren Sie für Fahrzeug Bild Fahrzeug Bild verkleinern"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 257
 msgid "Enable shrinking for vehicle manufacturer image"
 msgstr "Aktivieren Sie für Fahrzeug Hersteller Logo verkleinern"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 161
 msgid "Enable shrinking for vehicle title image"
 msgstr "Aktivieren Sie für Fahrzeug Titelbild verkleinern"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 209
 msgid "Enable shrinking for vehicle vehicle image"
 msgstr "Aktivieren Sie für Fahrzeug Fahrzeug-Bild verkleinern"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 283
 msgid "Engine"
 msgstr "Motor"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 427
 msgid "Enter the brakes of the vehicle"
 msgstr "Informationen über die Bremsen eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 277
 msgid "Enter the built of the vehicle"
 msgstr "Baujehr des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 337
 msgid "Enter the compression of the vehicle"
 msgstr "Kompression des Motors eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 147
 msgid "Enter the copyright of the vehicle image"
 msgstr "Copyright für das Fahrzeug-Bild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 155
 msgid "Enter the copyright title image of the vehicle"
 msgstr "Copyright für das Titel-Bild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 186
 msgid "Enter the copyright vehicle image of the vehicle"
 msgstr "Copyright für das Fahrzeug-Bild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 322
 msgid "Enter the cylinders of the vehicle"
 msgstr "Anzahl Zylinder eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 172
 msgid "Enter the description of the vehicle image"
 msgstr "Beschreibung des Fahrzeug-Bildes eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 307
 msgid "Enter the displacement of the vehicle"
 msgstr "Hubraum des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 292
 msgid "Enter the engine of the vehicle"
 msgstr "Motor des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 352
 msgid "Enter the fuel management of the vehicle"
 msgstr "Kraftstoffversorgung des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 367
 msgid "Enter the fuel of the vehicle"
 msgstr "Kraftstoff des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 442
 msgid "Enter the gearbox of the vehicle"
 msgstr "Getriebe des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 382
 msgid "Enter the horse power of the vehicle"
 msgstr "Leistung des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 162
 msgid "Enter the image date of the vehicle image"
 msgstr "Datum des Fahrzeugbildes eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 502
 msgid "Enter the info field 1 of the vehicle"
 msgstr "Infofeld 1 zum Fahrzeug eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 517
 msgid "Enter the info field 2 of the vehicle"
 msgstr "Infofeld 2 zum Fahrzeug eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 532
 msgid "Enter the info field 3 of the vehicle"
 msgstr "Infofeld 3 zum Fahrzeug eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 487
 msgid "Enter the interior of the vehicle"
 msgstr "Ausstattung des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 245
 msgid "Enter the manufacturer image of the vehicle"
 msgstr "Herstellerlogo des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 231
 msgid "Enter the manufacturer of the vehicle"
 msgstr "Hersteller des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 397
 msgid "Enter the max speed of the vehicle"
 msgstr "Höchstgeschwindigkeit des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 262
 msgid "Enter the model of the vehicle"
 msgstr "Modell des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 547
 msgid "Enter the owner of the vehicle"
 msgstr "Eigentümer des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 457
 msgid "Enter the rim of the vehicle"
 msgstr "Felgen des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 472
+#, fuzzy
+msgid ""
+"Enter the shrink height vehicle image vehicle image. Only digits are allowed."
+msgstr ""
+"Geben Sie das schrumpfen Höhe Fahrzeug Bild Fahrzeug Bild. Nur Ziffern sind "
+"erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the shrink height vehicle manufacturer image. Only digits are allowed."
+msgstr "Enter the shrink height vehicle title image. Only digits are allowed."
+
+#, fuzzy
+msgid "Enter the shrink height vehicle title image. Only digits are allowed."
+msgstr "Enter the shrink height vehicle title image. Only digits are allowed."
+
+#, fuzzy
+msgid "Enter the shrink height vehicle vehicle image. Only digits are allowed."
+msgstr ""
+"Enter the shrink height vehicle vehicle image. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the shrink width vehicle image vehicle image. Only digits are allowed."
+msgstr ""
+"Geben Sie die Verkleinerung breite Fahrzeug Bild Fahrzeug Bild. Nur Ziffern "
+"sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the shrink width vehicle manufacturer image. Only digits are allowed."
+msgstr "Enter the shrink width vehicle title image. Only digits are allowed."
+
+#, fuzzy
+msgid "Enter the shrink width vehicle title image. Only digits are allowed."
+msgstr "Enter the shrink width vehicle title image. Only digits are allowed."
+
+#, fuzzy
+msgid "Enter the shrink width vehicle vehicle image. Only digits are allowed."
+msgstr "Enter the shrink width vehicle vehicle image. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle image vehicle image display. Only digits "
+"are allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bilddarstellung. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle image vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bild bearbeiten. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle image vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bildansicht. Nur "
+"Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle manufacturer image display. Only digits "
+"are allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle manufacturer image edit. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image edit. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle manufacturer image view. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image view. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle title image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle title image edit. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image edit. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle title image view. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail height vehicle title image view. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle vehicle image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle vehicle image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle vehicle image edit. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail height vehicle vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail height vehicle vehicle image view. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle image vehicle image display. Only digits "
+"are allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bilddarstellung. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle image vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht breite Fahrzeug Bild Fahrzeug Bild bearbeiten. "
+"Nur Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle image vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bildansicht. Nur "
+"Ziffern sind erlaubt."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle manufacturer image display. Only digits "
+"are allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle manufacturer image edit. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image edit. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle manufacturer image view. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image view. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle title image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle title image edit. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image edit. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle title image view. Only digits are allowed."
+msgstr ""
+"Enter the thumbnail width vehicle title image view. Only digits are allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle vehicle image display. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle vehicle image display. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle vehicle image edit. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle vehicle image edit. Only digits are "
+"allowed."
+
+#, fuzzy
+msgid ""
+"Enter the thumbnail width vehicle vehicle image view. Only digits are "
+"allowed."
+msgstr ""
+"Enter the thumbnail width vehicle vehicle image view. Only digits are "
+"allowed."
+
 msgid "Enter the tire of the vehicle"
 msgstr "Reifen des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 116
 msgid "Enter the titel of the vehicle image"
 msgstr "Titel des Fahrzeugbildes eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 138
 msgid "Enter the title image of the vehicle"
 msgstr "Titelbild des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 216
 msgid "Enter the vehicle description of the vehicle"
 msgstr "Beschreibung des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 201
 msgid "Enter the vehicle description teaser of the vehicle"
 msgstr "Einletungstext des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 169
+msgid "Enter the vehicle entries per page. Only digits are allowed."
+msgstr ""
+"Geben Sie die Fahrzeug-Einträge pro Seite an. Nur Ziffern sind erlaubt."
+
+msgid "Enter the vehicle image entries per page. Only digits are allowed."
+msgstr ""
+"Geben Sie die Fahrzeugbild-Einträge pro Seite an. Nur Ziffern sind erlaubt."
+
 msgid "Enter the vehicle image of the vehicle"
 msgstr "Bild des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 130
 msgid "Enter the vehicle image of the vehicle image"
 msgstr "Bild des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 200
 msgid "Enter the vehicle owner of the vehicle image"
 msgstr "Eigentümer des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 412
 msgid "Enter the weight of the vehicle"
 msgstr "Gewicht des Fahrzeugs eingeben"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 162 164
+msgid "Error! Could not determine workflow actions."
+msgstr "Fehler! Kann den zugeordneten Workflow nicht erkennen."
+
+msgid "Error! Could not load the associated workflow."
+msgstr "Fehler! Kann den zugeordneten Workflow nicht laden."
+
+msgid "Error! Could not remove stored workflow. Deletion has been aborted."
+msgstr ""
+"Fehler! Konnte den gespeicherten Workflow nicht entfernen. Löschen wurde "
+"abgebrochen."
+
+msgid "Error! Creation attempt failed."
+msgstr "Fehler! Erstellung fehlgeschlagen."
+
+msgid "Error! Deletion attempt failed."
+msgstr "Fehler! Löschen fehlgeschlagen."
+
+msgid "Error! Invalid identifier received."
+msgstr "Fehler! Ungültiger Bezeichner aufgerufen."
+
+msgid "Error! Invalid object type received."
+msgstr "Fehler! Ungültiges Objekttyp erhalten."
+
+msgid "Error! It is not allowed to delete this vehicle image."
+msgstr "Fehler! Es ist nicht erlaubt, dieses Fahrzeug-Bild zu löschen."
+
+msgid ""
+"Error! This file type is not allowed. Please choose another file format."
+msgstr ""
+"Fehler! Dieser Dateityp ist nicht erlaubt. Wähle bitte ein anderes Format."
+
+msgid "Error! This file type seems not to be a valid image."
+msgstr "Fehler! Dieser Dateityp scheint kein gültiges Bild zu sein."
+
+msgid "Error! Update attempt failed."
+msgstr "Fehler! Aktualisierung fehlgeschlagen."
+
+msgid "Error: Invalid editor context given for external controller action."
+msgstr ""
+"Fehler: ungültiger Editor Kontext für externe Controller-Aktion gegeben."
+
+msgid "Error: invalid input."
+msgstr "Fehler: ungültige Eingabe"
+
 msgid "Example"
 msgstr "Beispiel"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 179
 msgid "Filter (expert option)"
 msgstr "Filter (expert option)"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 155
 msgid "Frontend"
 msgstr "Frontend"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 358
 msgid "Fuel"
 msgstr "Treibstoff"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 343
 msgid "Fuel management"
 msgstr "Treibstoffversorgung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 433
+msgid "GB"
+msgstr "GB"
+
 msgid "Gearbox"
 msgstr "Getriebe"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 373
+msgid ""
+"Here you can place an image from the OEM who manufactured the vehicle. It "
+"will be used in the print version."
+msgstr ""
+"Hier kann ein Bild des Fahrzeugherstellers hochgeladen werden. Es wird in "
+"der Druckversion verwendet."
+
 msgid "Horse power"
 msgstr "Motorleistung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: on line 100
 msgid "ID of vehicle"
 msgstr "ID des Fahrzeugs"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: on line 100
 msgid "ID of vehicle image"
 msgstr "ID des Fahrzeug-Bildes"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 153
+#, fuzzy
+msgid ""
+"If not checked the image will not been shown to the public. Only IG members "
+"are able to see."
+msgstr ""
+"If not checked the image will not been shown to the public. Only IG members "
+"are able to see."
+
+#, fuzzy
+msgid ""
+"If not checked the registered user will not been shown to the public. Only "
+"IG members are able to see. If you even do not want this leave the owner "
+"field empty"
+msgstr ""
+"If not checked the registered user will not been shown to the public. Only "
+"IG members are able to see."
+
+#, fuzzy
+msgid ""
+"If there is somethin special what you can not fill into one of the other "
+"fields you may want to place it here."
+msgstr ""
+"If there is somethin special what you can not fill into one of the other "
+"fields you may want to place it here."
+
+#, fuzzy
+msgid ""
+"If there is something special what you can not fill into one of the other "
+"fields you may want to place it here."
+msgstr ""
+"If there is something special what you can not fill into one of the other "
+"fields you may want to place it here."
+
+msgid ""
+"If this filed is changed the image will be shown as created by this suer. It "
+"also will apper in his account settings."
+msgstr ""
+"If this filed is changed the image will be shown as created by this user. It "
+"also will apper in his account settings."
+
+#, fuzzy
+msgid ""
+"If you change this please save the block once to reload the parameters below."
+msgstr ""
+"If you change this please save the block once to reload the parameters below."
+
+msgid ""
+"If you do not own the vehicle anymore you do have two options. You may wont "
+"to delete the vehicle or you uncheck this option. If unchecked the vehicle "
+"is marked as \"not in Parkhaus anymore\""
+msgstr ""
+"Weann das Fahrzeug nicht mehr im Besitz ist hat man zwei möglichkeiten. Zum "
+"Einen kann man es löschen oder aber hier als nicht mehr im Besitz markieren. "
+"Dann wird es nicht mehr öffentlich gelistet."
+
 msgid "Image date"
 msgstr "Bilddatum"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 493
 msgid "Info field 1"
 msgstr "Info-Feld 1"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 508
 msgid "Info field 2"
 msgstr "Info-Feld 2"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 523
 msgid "Info field 3"
 msgstr "Info-Feld 3"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 59
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractWorkflowHelper.php
-#: 67
 msgid "Initial"
 msgstr "Initial"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 365 672
 msgid "Inset"
 msgstr "Einfügen (inset)"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 478
 msgid "Interior"
 msgstr "Innenausstattung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: on line 99
+#, fuzzy
+msgid "Invalid identifier received."
+msgstr "Invalid identifier received."
+
+#, fuzzy
+msgid "Invalid object type received."
+msgstr "Invalid object type received."
+
+#, fuzzy
+msgid "Invalid user field name received."
+msgstr "Ungültiges Feld Benutzernamen erhalten."
+
+#, fuzzy
+msgid "Invalid user identifier received."
+msgstr "Invalid user identifier received."
+
+#, fuzzy
+msgid "KB"
+msgstr "KB"
+
 msgid "Link to the vehicle"
 msgstr "Link zum Fahrzeug"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: on line 99
 msgid "Link to the vehicle image"
 msgstr "Link zum Fahrzeug-Bild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 191
+#, fuzzy
+msgid "MB"
+msgstr "MB"
+
 msgid "Manage settings for this application"
 msgstr "Einstellungen für dieses Modul"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 222
 msgid "Manufacturer"
 msgstr "Hersteller"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 237
 msgid "Manufacturer image"
 msgstr "Herstellerlogo"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 388
 msgid "Max speed"
 msgstr "Höchstgeschwindigkeit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 287
 msgid "Miscellaneous"
 msgstr "Diverses"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 253
 msgid "Model"
 msgstr "Modell"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 252
 msgid "Motorbike"
 msgstr "Motorrad"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 99
 msgid "My flag"
 msgstr "ungenutzt"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 134
 msgid "My vehicle images"
 msgstr "Meine Fahrzeugbilder"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 126
 msgid "My vehicles"
 msgstr "Meine Fahrzeuge"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 108
 msgid "Newest"
 msgstr "Neueste"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 279
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 266
 msgid "No"
 msgstr "Nein"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 54
+#, fuzzy
+msgid "No item selected."
+msgstr "No item selected."
+
+#, fuzzy
+msgid "No such item."
+msgstr "No such item."
+
 msgid "None workflow (no approval)"
 msgstr "Kein Workflow (keine Freigabe)"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 83
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 82
 msgid "OK"
 msgstr "Ok"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 79
 msgid "Object type"
 msgstr "Objekttyp"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 150
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Twig/Base/AbstractTwigExtension.php
-#: 210
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/plugins/function.rkparkhausmoduleTemplateSelector.php
-#: 28
 msgid "Only item titles"
 msgstr "Nur Einträge Titel"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 76 134
 msgid "Open preview page"
 msgstr "Vorschau öffnen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 366 673
+#, fuzzy
+msgid "Operation cancelled."
+msgstr "Operation cancelled."
+
 msgid "Outbound"
 msgstr "abschneiden (outbound)"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 538
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 148
 msgid "Owner"
 msgstr "Eigentümer"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 243
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 230
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 153
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 154
 msgid "Page size"
 msgstr "Seitengröße"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 141
 msgid "Park haus Backend"
 msgstr "Parkhaus Backend"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: on line 96
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
 msgid "Paste as"
 msgstr "Einfügen als"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 71 75 76 129 133 134
+#, fuzzy
+msgid ""
+"Please change if white is not fitting due to the color of the title image. "
+"Preferred you should use #000000 in case."
+msgstr ""
+"Bitte ändern Sie, wenn weiß nicht wegen der Farbe des Bildes Titel passend "
+"ist. Bevorzugt, dass Sie im Fall #000000 verwenden sollten."
+
+#, fuzzy
+msgid ""
+"Please fill the copyright. If you got the image from someone else please be "
+"fair and name him here."
+msgstr ""
+"Füllen Sie bitte das Copyright. Wenn Sie das Bild von jemand anderem "
+"bekommen bitte fair sein und ihm den Namen hier."
+
+#, fuzzy
+msgid ""
+"Please upload an image. It does not matter if it is portrait, landscape or "
+"square. The hight will be harmonized always."
+msgstr ""
+"Please upload an image. It does not matter if it is portrait, landscape or "
+"square. The hight will be harmonized always."
+
 msgid "Preview"
 msgstr "Vorschau"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/ContentType/Base/AbstractItem.php
-#: on line 54
+#, fuzzy
+msgid "Pseudo-state for content which has been deleted from the database."
+msgstr "Pseudo-state for content which has been deleted from the database."
+
+#, fuzzy
+msgid "Pseudo-state for content which is just created and not persisted yet."
+msgstr "Pseudo-state for content which is just created and not persisted yet."
+
 msgid "RKParkHausModule detail view"
 msgstr "RKParkhausModule Detailansicht"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Base/AbstractItemListBlock.php
-#: on line 64
 msgid "RKParkHausModule items"
 msgstr "RKParkhausModule Einträge"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/ContentType/Base/AbstractItemList.php
-#: on line 92
 msgid "RKParkHausModule list view"
 msgstr "RKParkhausModule-Listenansicht"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 107
 msgid "Random"
 msgstr "Zufall"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 632
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: 268
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 94 98 152 156
 msgid "Reuse"
 msgstr "Wiederverwenden"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 98
 msgid "Reuse for new vehicle"
 msgstr "Wiederverwendung für neues Fahrzeug"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Menu/Base/AbstractItemActionsMenu.php
-#: on line 156
 msgid "Reuse for new vehicle image"
 msgstr "Wiederverwendung für neue Fahrzeug-Bild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 448
 msgid "Rim"
 msgstr "Felge"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 183
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 169
 msgid "Search"
 msgstr "Suchen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: on line 182
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 183
 msgid "Search for"
 msgstr "Suche nach"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 554
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 259
 msgid "Show vehicle owner"
 msgstr "Fahrzeugeigentümer zeigen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 227 328
 msgid "Shows all items except these which are approved"
 msgstr "Zeigt alle Elemente außer den Freigegebenen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 220 321
 msgid "Shows all items except these which are deferred"
 msgstr "Zeigt alle Elemente außer den zurückgestellten"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 336
 msgid "Shrink height vehicle image vehicle image"
 msgstr "Shrink height vehicle image vehicle image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 288
 msgid "Shrink height vehicle manufacturer image"
 msgstr "Shrink height vehicle manufacturer image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 192
 msgid "Shrink height vehicle title image"
 msgstr "Shrink height vehicle title image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 240
 msgid "Shrink height vehicle vehicle image"
 msgstr "Shrink height vehicle vehicle image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 319
 msgid "Shrink width vehicle image vehicle image"
 msgstr "Shrink width vehicle image vehicle image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 271
 msgid "Shrink width vehicle manufacturer image"
 msgstr "Shrink width vehicle manufacturer image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 175
 msgid "Shrink width vehicle title image"
 msgstr "Shrink width vehicle title image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 223
 msgid "Shrink width vehicle vehicle image"
 msgstr "Shrink width vehicle vehicle image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Handler/VehicleImage/Base/AbstractEditHandler.php
-#: on line 51
+#, fuzzy
+msgid ""
+"Sorry, but an error occured during the %action% action. Please apply the "
+"changes again!"
+msgstr ""
+"Sorry, but an error occured during the %action% action. Please apply the "
+"changes again!"
+
+#, fuzzy
+msgid "Sorry, but an error occured during the %s action."
+msgstr "Tut mir leid, aber während der %s Aktion ist ein Fehler aufgetreten."
+
 msgid ""
 "Sorry, but you can not create the vehicle image yet as other items are "
 "required which must be created before!"
@@ -839,8 +956,6 @@ msgstr ""
 "Tut mir leid, aber Sie können noch nicht das Fahrzeug Bild erstellen! "
 "Pflichteinträge müssen vorher gemacht werden!"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Handler/Vehicle/Base/AbstractEditHandler.php
-#: on line 51
 msgid ""
 "Sorry, but you can not create the vehicle yet as other items are required "
 "which must be created before!"
@@ -848,1096 +963,460 @@ msgstr ""
 "Tut mir leid, aber Sie können noch nicht das Fahrzeug Bild erstellen! "
 "Pflichteinträge müssen vorher gemacht werden!"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 203
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 189
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 118
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
 msgid "Sort by"
 msgstr "Sortiert nach"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 218
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 205
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 131
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 132
 msgid "Sort direction"
 msgstr "Sortier-Richtung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 104
 msgid "Sorting"
 msgstr "Sortierung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 139
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 105
 msgid "State"
 msgstr "Status"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 582
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 195 272
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 122
 msgid "Still my own"
 msgstr "im Besitz"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 68 73
 msgid "Submit"
 msgstr "Bestätigen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 147
+#, fuzzy
+msgid "Submit content."
+msgstr "Submit content."
+
+#, fuzzy
+msgid "Switch to administration area."
+msgstr "Switch to administration area."
+
+#, fuzzy
+msgid "Switch to user area."
+msgstr "Switch to user area."
+
 msgid "Template"
 msgstr "Template"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 137 139
 msgid "The amount of vehicle images shown per page"
 msgstr "Die Anzahl der Fahrzeugbilder pro Seite"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 122 124
 msgid "The amount of vehicles shown per page"
 msgstr "Die Anzahl der Fahrzeuge pro Seite"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 727
+#, fuzzy
+msgid ""
+"The cache directory \"%directory%\" does not exist. Please create it and "
+"make it writable for the webserver."
+msgstr ""
+"The cache directory \"%directory%\" does not exist. Please create it and "
+"make it writable for the webserver."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle image vehicle image option."
+msgstr "Die schrumpfende für Fahrzeug-Bild-Fahrzeug-Bild-Option aktivieren."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle manufacturer image option."
+msgstr "The enable shrinking for vehicle title image option."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle title image option."
+msgstr "The enable shrinking for vehicle title image option."
+
+#, fuzzy
+msgid "The enable shrinking for vehicle vehicle image option."
+msgstr "The enable shrinking for vehicle vehicle image option."
+
+#, fuzzy
+msgid "The maximum amount of items to be shown. Only digits are allowed."
+msgstr "The maximum amount of items to be shown. Only digits are allowed."
+
+#, fuzzy
+msgid "The maximum image height in pixels."
+msgstr "The maximum image height in pixels."
+
+#, fuzzy
+msgid "The maximum image width in pixels."
+msgstr "The maximum image width in pixels."
+
+msgid "The my flag option."
+msgstr "The my flag option."
+
+msgid "The setting has been successfully changed."
+msgstr "Die Einstellungen wurden erfolgreich geändert."
+
+#, fuzzy
+msgid "The upload directories at [%s] can be removed manually."
+msgstr "The upload directories at [%s] can be removed manually."
+
+#, fuzzy
+msgid ""
+"The upload directory \"%s\" does not exist and could not be created. Try to "
+"create it yourself and make sure that this folder is accessible via the web "
+"and writable by the webserver."
+msgstr ""
+"The upload directory \"%s\" does not exist and could not be created. Try to "
+"create it yourself and make sure that this folder is accessible via the web "
+"and writable by the webserver."
+
+#, fuzzy
+msgid ""
+"This image should be in landscape format. It will represent your vehicle. In "
+"the album you can add multiple additional images."
+msgstr ""
+"This image should be in landscape format. It will represent your vehicle. In "
+"the album you can add multiple additional images."
+
+#, fuzzy
+msgid ""
+"This image will be used as the title image. It shoud have a ratio of 3:1 and "
+"min 1200px. Bigger than 1800px will be reduced automatically."
+msgstr ""
+"This image will be used as the title image. It shoud have a ratio of 3:1 and "
+"min 1200px. Bigger than 1800px will be reduced automatically."
+
+#, fuzzy
+msgid ""
+"This is like a non-existing workflow. Everything is online immediately after "
+"creation."
+msgstr ""
+"This is like a non-existing workflow. Everything is online immediately after "
+"creation."
+
+#, fuzzy
+msgid ""
+"This is the text which follows the teaser text at the display page. You can "
+"use max 5000 char."
+msgstr ""
+"Dies ist der Text, der den Teasertext auf der Anzeigeseite folgt. Sie können "
+"maximale 5000 Zeichen verwenden."
+
+#, fuzzy
+msgid "Thumbnail height on display pages in pixels."
+msgstr "Thumbnail height on display pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail height on edit pages in pixels."
+msgstr "Thumbnail height on edit pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail height on view pages in pixels."
+msgstr "Thumbnail height on view pages in pixels."
+
 msgid "Thumbnail height vehicle image vehicle image display"
 msgstr "Thumbnail height vehicle image vehicle image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 759
 msgid "Thumbnail height vehicle image vehicle image edit"
 msgstr "Thumbnail height vehicle image vehicle image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 695
 msgid "Thumbnail height vehicle image vehicle image view"
 msgstr "Thumbnail height vehicle image vehicle image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 612
 msgid "Thumbnail height vehicle manufacturer image display"
 msgstr "Thumbnail height vehicle manufacturer image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 644
 msgid "Thumbnail height vehicle manufacturer image edit"
 msgstr "Thumbnail height vehicle manufacturer image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 580
 msgid "Thumbnail height vehicle manufacturer image view"
 msgstr "Thumbnail height vehicle manufacturer image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 420
 msgid "Thumbnail height vehicle title image display"
 msgstr "Thumbnail height vehicle title image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 452
 msgid "Thumbnail height vehicle title image edit"
 msgstr "Thumbnail height vehicle title image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 388
 msgid "Thumbnail height vehicle title image view"
 msgstr "Thumbnail height vehicle title image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 516
 msgid "Thumbnail height vehicle vehicle image display"
 msgstr "Thumbnail height vehicle vehicle image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 548
 msgid "Thumbnail height vehicle vehicle image edit"
 msgstr "Thumbnail height vehicle vehicle image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 484
 msgid "Thumbnail height vehicle vehicle image view"
 msgstr "Thumbnail height vehicle vehicle image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 353
-msgid "Thumbnail mode vehicle"
-msgstr "Thumbnail mode vehicle"
+#, fuzzy
+msgid "Thumbnail mode (inset or outbound)."
+msgstr "Thumbnail mode (inset or outbound)."
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 660
-msgid "Thumbnail mode vehicle image"
+#, fuzzy
+msgid "Thumbnail mode vehicle image vehicle image"
+msgstr "Thumbnail width vehicle image vehicle image edit"
+
+#, fuzzy
+msgid "Thumbnail mode vehicle manufacturer image"
+msgstr "Thumbnail width vehicle manufacturer image edit"
+
+#, fuzzy
+msgid "Thumbnail mode vehicle title image"
 msgstr "Thumbnail mode vehicle image"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 711
+#, fuzzy
+msgid "Thumbnail mode vehicle vehicle image"
+msgstr "Thumbnail mode vehicle image"
+
+#, fuzzy
+msgid "Thumbnail width on display pages in pixels."
+msgstr "Thumbnail width on display pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail width on edit pages in pixels."
+msgstr "Thumbnail width on edit pages in pixels."
+
+#, fuzzy
+msgid "Thumbnail width on view pages in pixels."
+msgstr "Thumbnail width on view pages in pixels."
+
 msgid "Thumbnail width vehicle image vehicle image display"
 msgstr "Thumbnail width vehicle image vehicle image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 743
 msgid "Thumbnail width vehicle image vehicle image edit"
 msgstr "Thumbnail width vehicle image vehicle image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 679
 msgid "Thumbnail width vehicle image vehicle image view"
 msgstr "Thumbnail width vehicle image vehicle image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 596
 msgid "Thumbnail width vehicle manufacturer image display"
 msgstr "Thumbnail width vehicle manufacturer image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 628
 msgid "Thumbnail width vehicle manufacturer image edit"
 msgstr "Thumbnail width vehicle manufacturer image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 564
 msgid "Thumbnail width vehicle manufacturer image view"
 msgstr "Thumbnail width vehicle manufacturer image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 404
 msgid "Thumbnail width vehicle title image display"
 msgstr "Thumbnail width vehicle title image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 436
 msgid "Thumbnail width vehicle title image edit"
 msgstr "Thumbnail width vehicle title image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 372
 msgid "Thumbnail width vehicle title image view"
 msgstr "Thumbnail width vehicle title image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 500
 msgid "Thumbnail width vehicle vehicle image display"
 msgstr "Thumbnail width vehicle vehicle image display"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 532
 msgid "Thumbnail width vehicle vehicle image edit"
 msgstr "Thumbnail width vehicle vehicle image edit"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 468
 msgid "Thumbnail width vehicle vehicle image view"
 msgstr "Thumbnail width vehicle vehicle image view"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 463
 msgid "Tire"
 msgstr "Reifen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 107
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: 208
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 121
 msgid "Titel"
 msgstr "Titel"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 130
 msgid "Title image"
 msgstr "Titelbild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 567
 msgid "Title text color"
 msgstr "Titel Textfarbe"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 280
 msgid "Tractor"
 msgstr "Traktor"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Helper/Base/AbstractListEntriesHelper.php
-#: on line 273
 msgid "Truck"
 msgstr "LKW"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/workflows/function.none_permissioncheck.php
-#: on line 74 79
 msgid "Update"
 msgstr "Update"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 72
 msgid "Update configuration"
 msgstr "Update-Konfiguration"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 211
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 198
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 124
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 125
+#, fuzzy
+msgid "Update content."
+msgstr "Update content."
+
 msgid "Update date"
 msgstr "Update Datum"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 224
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: 111
 msgid "Vehicle"
 msgstr "Fahrzeug"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 207
 msgid "Vehicle description"
 msgstr "Fahrzeugbeschreibung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 192
 msgid "Vehicle description teaser"
 msgstr "Einleitende Fahrzeugbeschreibung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 119
+#, fuzzy
+msgid ""
+"Vehicle description with max 500 char. It will been shown in the list "
+"overview and added in front of the rest of the vehicle description."
+msgstr ""
+"Vehicle description with max 500 char. It will been shown in the list "
+"overview and added in front of the rest of the vehicle description."
+
 msgid "Vehicle entries per page"
 msgstr "Fahrzeug-Einträge pro Seite"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 161
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: 122
 msgid "Vehicle image"
 msgstr "Fahrzeugbild"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 134
 msgid "Vehicle image entries per page"
 msgstr "Fahrzeug Bild Einträge pro Seite"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 184
 msgid "Vehicle image list"
 msgstr "Übersicht Fahrzeugbilder"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 87
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Twig/Base/AbstractTwigExtension.php
-#: 195
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/plugins/function.rkparkhausmoduleObjectTypeSelector.php
-#: 29
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: 183
 msgid "Vehicle images"
 msgstr "Fahrzeugbilder"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: on line 176
 msgid "Vehicle list"
 msgstr "Fahrzeug Übersicht"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 191
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: 162
 msgid "Vehicle owner"
 msgstr "Fahrzeugeigentümer"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 112
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 125 194
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 121
 msgid "Vehicle type"
 msgstr "Fahrzeug Typ"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 86
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Twig/Base/AbstractTwigExtension.php
-#: 194
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/plugins/function.rkparkhausmoduleObjectTypeSelector.php
-#: 28
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Container/Base/AbstractLinkContainer.php
-#: 175
 msgid "Vehicles"
 msgstr "Fahrzeuge"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 178
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: 272
 msgid "View image"
 msgstr "Bild anzeigen"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 403
+#, fuzzy
+msgid ""
+"Warning! The upload directory at \"%s\" exists but is not writable by the "
+"webserver."
+msgstr ""
+"Warning! The upload directory at \"%s\" exists but is not writable by the "
+"webserver."
+
 msgid "Weight"
 msgstr "Gewicht ."
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Block/Form/Type/Base/AbstractItemListBlockType.php
-#: on line 151
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Twig/Base/AbstractTwigExtension.php
-#: 211
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Resources/views/plugins/function.rkparkhausmoduleTemplateSelector.php
-#: 29
+#, fuzzy
+msgid ""
+"Whether to enable shrinking huge images to maximum dimensions. Stores "
+"downscaled version of the original image."
+msgstr ""
+"Whether to enable shrinking huge images to maximum dimensions. Stores "
+"downscaled version of the original image."
+
 msgid "With description"
 msgstr "Mit Beschreibung"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 280
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 267
 msgid "Yes"
 msgstr "Ja"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 331 333
 msgid "compression in bar"
 msgstr "Kompression in Bar"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 481 483
 msgid "do you have a special interieur?"
 msgstr "Hat das Fahrzeug eine spezielle Einrichtung?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 316 318
+#, fuzzy
+msgid "e.g. Otto, Diesel, Wankel, or specific type of engine, ..."
+msgstr "e.g. Otto, Diesel, Wankel, ..."
+
+#, fuzzy
+msgid "e.g. injection type, carburetor manufacturor and size ..."
+msgstr "e.g. injection type, carburetor manufacturor and size ..."
+
+msgid "e.g. the location or the event"
+msgstr "z.B. der Ort oder das Event"
+
 msgid "how many cylinders"
 msgstr "Anzahl Zylinder"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 301 303
 msgid "how much ccm"
 msgstr "Größe des Hubraums"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 451 453
+#, fuzzy
+msgid "if you do not know the manufacturer please type unknown."
+msgstr "Wenn Sie nicht, dass den Hersteller nicht bekannt geben wissen."
+
 msgid "if you have special rim installed"
 msgstr "Sind besondere Felgen montiert?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Base/AbstractAppSettingsType.php
-#: on line 189 206 237 254 285 302 333 350 385 401 417 433 449 465 481 497 513
-#: 529 545 561 577 593 609 625 641 657 692 708 724 740 756 772
 msgid "pixels"
 msgstr "Pixel"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 115 117
 msgid "please select which type fits best"
 msgstr "Bitte wählen Sie, welcher Typ am besten passt"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 436 438
+#, fuzzy
+msgid "rkparkhausmodule. Vehicle images Display Hooks"
+msgstr "Rkparkhausmodule. Fahrzeug Bilder Anzeige Haken"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicle images Filter Hooks"
+msgstr "Rkparkhausmodule. Fahrzeug Bilder Filter Haken"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicles Display Hooks"
+msgstr "rkparkhausmodule. Vehicles Display Hooks"
+
+#, fuzzy
+msgid "rkparkhausmodule. Vehicles Filter Hooks"
+msgstr "rkparkhausmodule. Vehicles Filter Hooks"
+
 msgid "shifter or automatic? Specific type?"
 msgstr "Automatik, Schalter, besonderes Getriebe?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 562
 msgid "show vehicle owner ?"
 msgstr "Fahrzeugeigentümer zeigen?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 466 468
 msgid "sice of tire or something specific about your tires"
 msgstr "Z.B. Reifengröße oder besonderer Reifentyp"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 590
 msgid "still my own ?"
 msgstr "im Besitz?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 421 423
 msgid "tell us something about your brakes"
 msgstr "Erwähnenswertes beim Bremssystem?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 156 158
 msgid "the image date will be added to the title"
 msgstr "Das Bild-Datum wird der Titel hinzugefügt"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 541 543
 msgid "the owner of the vehicle if the owner is registered at our site"
 msgstr ""
 "der Eigentümer des Fahrzeugs, wenn der Besitzer auf unserer Website "
 "registriert ist"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 406 408
+msgid "the year or month.year of your vehicle built"
+msgstr "Das Jahr oder Monat.Jahr der Fahrzeugherstellung"
+
 msgid "typical in kg"
 msgstr "üblicherweise in kg"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 256 258
 msgid "vehicle version"
 msgstr "Fahrzeugversion"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleImageType.php
-#: on line 186
 msgid "view image ?"
 msgstr "Bild anzeigen?"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 376 378
 msgid "you can use hp or kw"
 msgstr "PS oder KW"
 
-#: /home/www/www.oldtimer-ig-osnabrueck.de/test/Zikula_Core-1.4.5/modules/RK/ParkHausModule/Form/Type/Base/AbstractVehicleType.php
-#: on line 391 393
 msgid "you can use km/h or mph"
 msgstr "km/h oder mph"
 
 #, fuzzy
-#~ msgid ""
-#~ "An error occured during creation of the .htaccess file in directory \"%s"
-#~ "\"."
-#~ msgstr ""
-#~ "An error occured during creation of the .htaccess file in directory \"%s"
-#~ "\"."
+msgid "z.B. Benzine, Diesel or 1:25"
+msgstr "z.B. Benzine, Diesel or 1:25"
 
-#, fuzzy
-#~ msgid ""
-#~ "An error was encountered while removing stored object workflows for the "
-#~ "%s extension."
-#~ msgstr ""
-#~ "An error was encountered while removing stored object workflows for the "
-#~ "%s extension."
-
-#~ msgid "Bytes"
-#~ msgstr "Bytes"
-
-#, fuzzy
-#~ msgid "Choose the thumbnail mode vehicle image."
-#~ msgstr "Wählen Sie das thumbnail-Modus-Fahrzeug-Bild."
+#~ msgid "Thumbnail mode vehicle"
+#~ msgstr "Thumbnail mode vehicle"
 
 #, fuzzy
 #~ msgid "Choose the thumbnail mode vehicle."
 #~ msgstr "Choose the thumbnail mode vehicle."
 
 #, fuzzy
-#~ msgid "Content has been approved and is available online."
-#~ msgstr "Content has been approved and is available online."
-
-#, fuzzy
-#~ msgid ""
-#~ "Content has not been submitted yet or has been waiting, but was rejected."
-#~ msgstr ""
-#~ "Content has not been submitted yet or has been waiting, but was rejected."
-
-#, fuzzy
-#~ msgid "Defer content for later submission."
-#~ msgstr "Defer content for later submission."
-
-#, fuzzy
-#~ msgid "Delete content permanently."
-#~ msgstr "Inhalt dauerhaft löschen."
-
-#, fuzzy
-#~ msgid "Display list of RKParkHausModule objects."
-#~ msgstr "Display list of RKParkhausModule objects."
-
-#, fuzzy
-#~ msgid "Display or link a single RKParkHausModule object."
-#~ msgstr "Display or link a single RKParkhausModule object."
-
-#, fuzzy
-#~ msgid "Done! Item created."
-#~ msgstr "Done! Item created."
-
-#, fuzzy
-#~ msgid "Done! Item deleted."
-#~ msgstr "Done! Item deleted."
-
-#, fuzzy
-#~ msgid "Done! Item updated."
-#~ msgstr "Done! Item updated."
-
-#, fuzzy
-#~ msgid "Done! Module configuration updated."
-#~ msgstr "Done! Module configuration updated."
-
-#, fuzzy
-#~ msgid "Done! Vehicle created."
-#~ msgstr "Done! Vehicle created."
-
-#, fuzzy
-#~ msgid "Done! Vehicle deleted."
-#~ msgstr "Done! Vehicle deleted."
-
-#, fuzzy
-#~ msgid "Done! Vehicle image created."
-#~ msgstr "Fertig! Fahrzeug-Bild erstellt."
-
-#, fuzzy
-#~ msgid "Done! Vehicle image deleted."
-#~ msgstr "Fertig! Fahrzeug Bild gelöscht."
-
-#, fuzzy
-#~ msgid "Done! Vehicle image updated."
-#~ msgstr "Fertig! Fahrzeug Bild aktualisiert."
-
-#, fuzzy
-#~ msgid "Done! Vehicle updated."
-#~ msgstr "Done! Vehicle updated."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the shrink height vehicle image vehicle image. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Geben Sie das schrumpfen Höhe Fahrzeug Bild Fahrzeug Bild. Nur Ziffern "
-#~ "sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the shrink height vehicle title image. Only digits are allowed."
-#~ msgstr ""
-#~ "Enter the shrink height vehicle title image. Only digits are allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the shrink height vehicle vehicle image. Only digits are allowed."
-#~ msgstr ""
-#~ "Enter the shrink height vehicle vehicle image. Only digits are allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the shrink width vehicle image vehicle image. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Geben Sie die Verkleinerung breite Fahrzeug Bild Fahrzeug Bild. Nur "
-#~ "Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid "Enter the shrink width vehicle title image. Only digits are allowed."
-#~ msgstr ""
-#~ "Enter the shrink width vehicle title image. Only digits are allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the shrink width vehicle vehicle image. Only digits are allowed."
-#~ msgstr ""
-#~ "Enter the shrink width vehicle vehicle image. Only digits are allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle image vehicle image display. Only "
-#~ "digits are allowed."
-#~ msgstr ""
-#~ "Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild "
-#~ "Bilddarstellung. Nur Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle image vehicle image edit. Only digits "
-#~ "are allowed."
-#~ msgstr ""
-#~ "Geben Sie die Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bild "
-#~ "bearbeiten. Nur Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle image vehicle image view. Only digits "
-#~ "are allowed."
-#~ msgstr ""
-#~ "Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bildansicht. "
-#~ "Nur Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle title image display. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail height vehicle title image display. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle title image edit. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail height vehicle title image edit. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle title image view. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail height vehicle title image view. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle vehicle image display. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail height vehicle vehicle image display. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle vehicle image edit. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail height vehicle vehicle image edit. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail height vehicle vehicle image view. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail height vehicle vehicle image view. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle image vehicle image display. Only "
-#~ "digits are allowed."
-#~ msgstr ""
-#~ "Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild "
-#~ "Bilddarstellung. Nur Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle image vehicle image edit. Only digits "
-#~ "are allowed."
-#~ msgstr ""
-#~ "Geben Sie die Miniaturansicht breite Fahrzeug Bild Fahrzeug Bild "
-#~ "bearbeiten. Nur Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle image vehicle image view. Only digits "
-#~ "are allowed."
-#~ msgstr ""
-#~ "Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bildansicht. "
-#~ "Nur Ziffern sind erlaubt."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle title image display. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail width vehicle title image display. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle title image edit. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail width vehicle title image edit. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle title image view. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail width vehicle title image view. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle vehicle image display. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail width vehicle vehicle image display. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle vehicle image edit. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail width vehicle vehicle image edit. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid ""
-#~ "Enter the thumbnail width vehicle vehicle image view. Only digits are "
-#~ "allowed."
-#~ msgstr ""
-#~ "Enter the thumbnail width vehicle vehicle image view. Only digits are "
-#~ "allowed."
-
-#, fuzzy
-#~ msgid "Error! Could not determine workflow actions."
-#~ msgstr "Error! Could not determine workflow actions."
-
-#, fuzzy
-#~ msgid "Error! Could not load the associated workflow."
-#~ msgstr "Error! Could not load the associated workflow."
-
-#, fuzzy
-#~ msgid "Error! Could not remove stored workflow. Deletion has been aborted."
-#~ msgstr "Error! Could not remove stored workflow. Deletion has been aborted."
-
-#, fuzzy
-#~ msgid "Error! Creation attempt failed."
-#~ msgstr "Error! Creation attempt failed."
-
-#, fuzzy
-#~ msgid "Error! Deletion attempt failed."
-#~ msgstr "Error! Deletion attempt failed."
-
-#, fuzzy
-#~ msgid "Error! Invalid identifier received."
-#~ msgstr "Error! Invalid identifier received."
-
-#, fuzzy
-#~ msgid "Error! It is not allowed to delete this vehicle image."
-#~ msgstr "Fehler! Es ist nicht erlaubt, dieses Fahrzeug-Bild zu löschen."
-
-#, fuzzy
-#~ msgid ""
-#~ "Error! This file type is not allowed. Please choose another file format."
-#~ msgstr ""
-#~ "Error! This file type is not allowed. Please choose another file format."
-
-#, fuzzy
-#~ msgid "Error! This file type seems not to be a valid image."
-#~ msgstr "Error! This file type seems not to be a valid image."
-
-#, fuzzy
-#~ msgid "Error! Update attempt failed."
-#~ msgstr "Error! Update attempt failed."
-
-#, fuzzy
-#~ msgid "Error: Invalid editor context given for external controller action."
-#~ msgstr "Error: Invalid editor context given for external controller action."
-
-#, fuzzy
-#~ msgid "Error: invalid input."
-#~ msgstr "Error: invalid input."
-
-#, fuzzy
-#~ msgid "GB"
-#~ msgstr "GB"
-
-#, fuzzy
-#~ msgid ""
-#~ "If not checked the image will not been shown to the public. Only IG "
-#~ "members are able to see."
-#~ msgstr ""
-#~ "If not checked the image will not been shown to the public. Only IG "
-#~ "members are able to see."
-
-#, fuzzy
-#~ msgid ""
-#~ "If not checked the registered user will not been shown to the public. "
-#~ "Only IG members are able to see."
-#~ msgstr ""
-#~ "If not checked the registered user will not been shown to the public. "
-#~ "Only IG members are able to see."
-
-#, fuzzy
-#~ msgid ""
-#~ "If there is somethin special what you can not fill into one of the other "
-#~ "fields you may want to place it here."
-#~ msgstr ""
-#~ "If there is somethin special what you can not fill into one of the other "
-#~ "fields you may want to place it here."
-
-#, fuzzy
-#~ msgid ""
-#~ "If there is something special what you can not fill into one of the other "
-#~ "fields you may want to place it here."
-#~ msgstr ""
-#~ "If there is something special what you can not fill into one of the other "
-#~ "fields you may want to place it here."
-
-#, fuzzy
-#~ msgid ""
-#~ "If you change this please save the block once to reload the parameters "
-#~ "below."
-#~ msgstr ""
-#~ "If you change this please save the block once to reload the parameters "
-#~ "below."
-
-#, fuzzy
-#~ msgid "Invalid identifier received."
-#~ msgstr "Invalid identifier received."
-
-#, fuzzy
-#~ msgid "Invalid object type received."
-#~ msgstr "Invalid object type received."
-
-#, fuzzy
-#~ msgid "Invalid user field name received."
-#~ msgstr "Ungültiges Feld Benutzernamen erhalten."
-
-#, fuzzy
-#~ msgid "Invalid user identifier received."
-#~ msgstr "Invalid user identifier received."
-
-#, fuzzy
-#~ msgid "KB"
-#~ msgstr "KB"
-
-#, fuzzy
-#~ msgid "MB"
-#~ msgstr "MB"
-
-#, fuzzy
-#~ msgid "No item selected."
-#~ msgstr "No item selected."
-
-#, fuzzy
-#~ msgid "No such item."
-#~ msgstr "No such item."
-
-#, fuzzy
-#~ msgid "Operation cancelled."
-#~ msgstr "Operation cancelled."
-
-#, fuzzy
-#~ msgid ""
-#~ "Please change if white is not fitting due to the color of the title "
-#~ "image. Preferred you should use #000000 in case."
-#~ msgstr ""
-#~ "Bitte ändern Sie, wenn weiß nicht wegen der Farbe des Bildes Titel "
-#~ "passend ist. Bevorzugt, dass Sie im Fall #000000 verwenden sollten."
-
-#, fuzzy
-#~ msgid ""
-#~ "Please fill the copyright. If you got the image from someone else please "
-#~ "be fair and name him here."
-#~ msgstr ""
-#~ "Füllen Sie bitte das Copyright. Wenn Sie das Bild von jemand anderem "
-#~ "bekommen bitte fair sein und ihm den Namen hier."
-
-#, fuzzy
 #~ msgid ""
 #~ "Please fill the copyright. If you qot the image from someone else please "
 #~ "be fair and name him here."
 #~ msgstr ""
 #~ "Please fill the copyright. If you qot the image from someone else please "
 #~ "be fair and name him here."
-
-#, fuzzy
-#~ msgid ""
-#~ "Please upload an image. It does not matter if it is portrait, landscape "
-#~ "or square. The hight will be harmonized always."
-#~ msgstr ""
-#~ "Please upload an image. It does not matter if it is portrait, landscape "
-#~ "or square. The hight will be harmonized always."
-
-#, fuzzy
-#~ msgid "Pseudo-state for content which has been deleted from the database."
-#~ msgstr "Pseudo-state for content which has been deleted from the database."
-
-#, fuzzy
-#~ msgid ""
-#~ "Pseudo-state for content which is just created and not persisted yet."
-#~ msgstr ""
-#~ "Pseudo-state for content which is just created and not persisted yet."
-
-#, fuzzy
-#~ msgid ""
-#~ "Sorry, but an error occured during the %action% action. Please apply the "
-#~ "changes again!"
-#~ msgstr ""
-#~ "Sorry, but an error occured during the %action% action. Please apply the "
-#~ "changes again!"
-
-#, fuzzy
-#~ msgid "Sorry, but an error occured during the %s action."
-#~ msgstr ""
-#~ "Tut mir leid, aber während der %s Aktion ist ein Fehler aufgetreten."
-
-#, fuzzy
-#~ msgid "Submit content."
-#~ msgstr "Submit content."
-
-#, fuzzy
-#~ msgid "Switch to administration area."
-#~ msgstr "Switch to administration area."
-
-#, fuzzy
-#~ msgid "Switch to user area."
-#~ msgstr "Switch to user area."
-
-#, fuzzy
-#~ msgid ""
-#~ "The cache directory \"%directory%\" does not exist. Please create it and "
-#~ "make it writable for the webserver."
-#~ msgstr ""
-#~ "The cache directory \"%directory%\" does not exist. Please create it and "
-#~ "make it writable for the webserver."
-
-#, fuzzy
-#~ msgid "The enable shrinking for vehicle image vehicle image option."
-#~ msgstr "Die schrumpfende für Fahrzeug-Bild-Fahrzeug-Bild-Option aktivieren."
-
-#, fuzzy
-#~ msgid "The enable shrinking for vehicle title image option."
-#~ msgstr "The enable shrinking for vehicle title image option."
-
-#, fuzzy
-#~ msgid "The enable shrinking for vehicle vehicle image option."
-#~ msgstr "The enable shrinking for vehicle vehicle image option."
-
-#, fuzzy
-#~ msgid "The maximum amount of items to be shown. Only digits are allowed."
-#~ msgstr "The maximum amount of items to be shown. Only digits are allowed."
-
-#, fuzzy
-#~ msgid "The maximum image height in pixels."
-#~ msgstr "The maximum image height in pixels."
-
-#, fuzzy
-#~ msgid "The maximum image width in pixels."
-#~ msgstr "The maximum image width in pixels."
-
-#, fuzzy
-#~ msgid "The upload directories at [%s] can be removed manually."
-#~ msgstr "The upload directories at [%s] can be removed manually."
-
-#, fuzzy
-#~ msgid ""
-#~ "The upload directory \"%s\" does not exist and could not be created. Try "
-#~ "to create it yourself and make sure that this folder is accessible via "
-#~ "the web and writable by the webserver."
-#~ msgstr ""
-#~ "The upload directory \"%s\" does not exist and could not be created. Try "
-#~ "to create it yourself and make sure that this folder is accessible via "
-#~ "the web and writable by the webserver."
-
-#, fuzzy
-#~ msgid ""
-#~ "This image should be in landscape format. It will represent your vehicle. "
-#~ "In the album you can add multiple additional images."
-#~ msgstr ""
-#~ "This image should be in landscape format. It will represent your vehicle. "
-#~ "In the album you can add multiple additional images."
-
-#, fuzzy
-#~ msgid ""
-#~ "This image will be used as the title image. It shoud have a ratio of 3:1 "
-#~ "and min 1200px. Bigger than 1800px will be reduced automatically."
-#~ msgstr ""
-#~ "This image will be used as the title image. It shoud have a ratio of 3:1 "
-#~ "and min 1200px. Bigger than 1800px will be reduced automatically."
-
-#, fuzzy
-#~ msgid ""
-#~ "This is like a non-existing workflow. Everything is online immediately "
-#~ "after creation."
-#~ msgstr ""
-#~ "This is like a non-existing workflow. Everything is online immediately "
-#~ "after creation."
-
-#, fuzzy
-#~ msgid ""
-#~ "This is the text which follows the teaser text at the display page. You "
-#~ "can use max 5000 char."
-#~ msgstr ""
-#~ "Dies ist der Text, der den Teasertext auf der Anzeigeseite folgt. Sie "
-#~ "können maximale 5000 Zeichen verwenden."
-
-#, fuzzy
-#~ msgid "Thumbnail height on display pages in pixels."
-#~ msgstr "Thumbnail height on display pages in pixels."
-
-#, fuzzy
-#~ msgid "Thumbnail height on edit pages in pixels."
-#~ msgstr "Thumbnail height on edit pages in pixels."
-
-#, fuzzy
-#~ msgid "Thumbnail height on view pages in pixels."
-#~ msgstr "Thumbnail height on view pages in pixels."
-
-#, fuzzy
-#~ msgid "Thumbnail mode (inset or outbound)."
-#~ msgstr "Thumbnail mode (inset or outbound)."
-
-#, fuzzy
-#~ msgid "Thumbnail width on display pages in pixels."
-#~ msgstr "Thumbnail width on display pages in pixels."
-
-#, fuzzy
-#~ msgid "Thumbnail width on edit pages in pixels."
-#~ msgstr "Thumbnail width on edit pages in pixels."
-
-#, fuzzy
-#~ msgid "Thumbnail width on view pages in pixels."
-#~ msgstr "Thumbnail width on view pages in pixels."
-
-#, fuzzy
-#~ msgid "Update content."
-#~ msgstr "Update content."
-
-#, fuzzy
-#~ msgid ""
-#~ "Vehicle description with max 500 char. It will been shown in the list "
-#~ "overview and added in front of the rest of the vehicle description."
-#~ msgstr ""
-#~ "Vehicle description with max 500 char. It will been shown in the list "
-#~ "overview and added in front of the rest of the vehicle description."
-
-#, fuzzy
-#~ msgid ""
-#~ "Warning! The upload directory at \"%s\" exists but is not writable by the "
-#~ "webserver."
-#~ msgstr ""
-#~ "Warning! The upload directory at \"%s\" exists but is not writable by the "
-#~ "webserver."
-
-#, fuzzy
-#~ msgid ""
-#~ "Whether to enable shrinking huge images to maximum dimensions. Stores "
-#~ "downscaled version of the original image."
-#~ msgstr ""
-#~ "Whether to enable shrinking huge images to maximum dimensions. Stores "
-#~ "downscaled version of the original image."
-
-#, fuzzy
-#~ msgid "e.g. Otto, Diesel, Wankel, ..."
-#~ msgstr "e.g. Otto, Diesel, Wankel, ..."
-
-#, fuzzy
-#~ msgid "e.g. injection type, carburetor manufacturor and size ..."
-#~ msgstr "e.g. injection type, carburetor manufacturor and size ..."
-
-#, fuzzy
-#~ msgid "if you do not know the manufacturer please type unknown."
-#~ msgstr "Wenn Sie nicht, dass den Hersteller nicht bekannt geben wissen."
-
-#, fuzzy
-#~ msgid "rkparkhausmodule. Vehicle images Display Hooks"
-#~ msgstr "Rkparkhausmodule. Fahrzeug Bilder Anzeige Haken"
-
-#, fuzzy
-#~ msgid "rkparkhausmodule. Vehicle images Filter Hooks"
-#~ msgstr "Rkparkhausmodule. Fahrzeug Bilder Filter Haken"
-
-#, fuzzy
-#~ msgid "rkparkhausmodule. Vehicles Display Hooks"
-#~ msgstr "rkparkhausmodule. Vehicles Display Hooks"
-
-#, fuzzy
-#~ msgid "rkparkhausmodule. Vehicles Filter Hooks"
-#~ msgstr "rkparkhausmodule. Vehicles Filter Hooks"
-
-#, fuzzy
-#~ msgid "z.B. Benzine, Diesel or 1:25"
-#~ msgstr "z.B. Benzine, Diesel or 1:25"

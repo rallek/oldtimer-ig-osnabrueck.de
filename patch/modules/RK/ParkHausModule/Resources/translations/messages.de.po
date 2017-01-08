@@ -1,90 +1,34 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-01-06 17:02+0100\n"
-"PO-Revision-Date: 2017-01-06 17:03+0100\n"
-"Language-Team: EMAIL@ADDRESS\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2017-01-08 18:33+0100\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: ralf@familie-koester.de\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.11\n"
-"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
-"Language: de\n"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 250
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 237
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 160
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 161
 msgid "10"
 msgstr "10"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 255
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 242
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 165
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 166
 msgid "100"
 msgstr "100"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 251
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 238
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 161
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 162
 msgid "15"
 msgstr "15"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 252
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 239
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 162
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 163
 msgid "20"
 msgstr "20"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 253
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 240
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 163
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 164
 msgid "30"
 msgstr "30"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 249
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 236
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 159
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 160
 msgid "5"
 msgstr "5"
 
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleImageQuickNavType.php
-#: on line 254
-#: /../modules/RK/ParkHausModule/Form/Type/QuickNavigation/Base/AbstractVehicleQuickNavType.php
-#: 241
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleImageFinderType.php
-#: 164
-#: /../modules/RK/ParkHausModule/Form/Type/Finder/Base/AbstractVehicleFinderType.php
-#: 165
 msgid "50"
 msgstr "50"
