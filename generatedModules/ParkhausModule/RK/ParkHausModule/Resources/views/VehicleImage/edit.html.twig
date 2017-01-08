@@ -32,8 +32,6 @@
     {{ form_row(form.description) }}
     
     {{ form_row(form.viewImage) }}
-    
-    {{ form_row(form.vehicleOwner) }}
 </fieldset>
 
 {{ include(
@@ -89,8 +87,6 @@
         
         ( function($) {
             $(document).ready(function() {
-                // initialise auto completion for user fields
-                rKParkHausInitUserField('rkparkhausmodule_vehicleimage_vehicleOwner', 'getVehicleImageVehicleOwnerUsers');
                 rKParkHausInitEditForm('{{ mode }}', '{% if mode != 'create' %}{{ vehicleimage.id }}{% endif %}');
                 rKParkHausInitUploadField('rkparkhausmodule_vehicleimage_vehicleImage_vehicleImage');
             });

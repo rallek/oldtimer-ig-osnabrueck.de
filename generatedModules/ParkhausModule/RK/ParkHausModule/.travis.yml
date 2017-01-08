@@ -47,7 +47,7 @@ install:
     - unzip -q ../../../../RKParkHausModule
     - cd  ../../..
     - php app/console bootstrap:bundles
-    - mysql -e "INSERT INTO zk_test.modules (id, name, type, displayname, url, description, directory, version, capabilities, state, securityschema, core_min, core_max) VALUES (NULL, 'RKParkHausModule', '3', 'Park haus', 'parkhaus', 'This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album.', 'rk/parkhaus-module', '0.6.0', 'N;', '3', 'N;', '1.4.4', '2.0.0');"
+    - mysql -e "INSERT INTO zk_test.modules (id, name, type, displayname, url, description, directory, version, capabilities, state, securityschema, core_min, core_max) VALUES (NULL, 'RKParkHausModule', '3', 'Park haus', 'parkhaus', 'This module is made for the Oldtimer IG Osnabrueck. Here we can store the details about our classic vehicles. You may want to store also some pictures in the attached album.', 'rk/parkhaus-module', '0.6.1', 'N;', '3', 'N;', '1.4.4', '2.0.0');"
     - php app/console cache:warmup
 
 script:

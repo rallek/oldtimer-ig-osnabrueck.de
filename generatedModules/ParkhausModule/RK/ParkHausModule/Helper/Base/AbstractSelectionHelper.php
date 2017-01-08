@@ -82,9 +82,9 @@ abstract class AbstractSelectionHelper
                 return false;
             case 'vehicleImage':
                 return false;
-                default:
-                    return false;
         }
+    
+        return false;
     }
     
     /**

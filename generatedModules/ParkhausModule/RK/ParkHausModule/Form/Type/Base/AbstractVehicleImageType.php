@@ -186,22 +186,6 @@ abstract class AbstractVehicleImageType extends AbstractType
                 'title' => $this->__('view image ?')
             ],'required' => false,
         ]);
-        
-        $builder->add('vehicleOwner', 'RK\ParkHausModule\Form\Type\Field\UserType', [
-            'label' => $this->__('Vehicle owner') . ':',
-            'label_attr' => [
-                'class' => 'tooltips',
-                'title' => $this->__('If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings.')
-            ],
-            'help' => $this->__('If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings.'),
-            'empty_data' => '',
-            'attr' => [
-                'class' => ' validate-digits',
-                'title' => $this->__('Enter the vehicle owner of the vehicle image')
-            ],'required' => false,
-            'max_length' => 11,
-            'inlineUsage' => $options['inlineUsage']
-        ]);
     }
 
     /**
@@ -303,7 +287,6 @@ abstract class AbstractVehicleImageType extends AbstractType
                     return $this->entityFactory->createVehicleImage();
                 },
                 'error_mapping' => [
-                    'isVehicleOwnerUserValid' => 'vehicleOwner',
                     'vehicleImage' => 'vehicleImage.vehicleImage',
                 ],
                 'mode' => 'create',

@@ -33,41 +33,6 @@ class AjaxController extends AbstractAjaxController
 {
     
     /**
-     *
-     * @Route("/getVehicleOwnerUsers", options={"expose"=true})
-     * @Method("GET")
-     */
-    public function getVehicleOwnerUsersAction(Request $request)
-    {
-        return parent::getVehicleOwnerUsersAction($request);
-    }
-    
-    /**
-     *
-     * @Route("/getVehicleImageVehicleOwnerUsers", options={"expose"=true})
-     * @Method("GET")
-     */
-    public function getVehicleImageVehicleOwnerUsersAction(Request $request)
-    {
-        return parent::getVehicleImageVehicleOwnerUsersAction($request);
-    }
-    
-    /**
-     * Retrieve a general purpose list of users.
-     *
-     * @Route("/getCommonUsersList", options={"expose"=true})
-     * @Method("GET")
-     *
-     * @param string $fragment The search fragment
-     *
-     * @return JsonResponse
-     */ 
-    public function getCommonUsersListAction(Request $request)
-    {
-        return parent::getCommonUsersListAction($request);
-    }
-    
-    /**
      * Retrieve item list for finder selections in Forms, Content type plugin and Scribite.
     *
     * @Route("/getItemListFinder", options={"expose"=true})

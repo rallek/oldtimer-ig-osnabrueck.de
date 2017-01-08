@@ -222,7 +222,6 @@ abstract class AbstractVehicleRepository extends EntityRepository
         $parameters = [];
         $parameters['workflowState'] = $this->getRequest()->query->get('workflowState', '');
         $parameters['vehicleType'] = $this->getRequest()->query->get('vehicleType', '');
-        $parameters['owner'] = (int) $this->getRequest()->query->get('owner', 0);
         $parameters['q'] = $this->getRequest()->query->get('q', '');
         
         $parameters['showVehicleOwner'] = $this->getRequest()->query->get('showVehicleOwner', '');
@@ -381,80 +380,6 @@ abstract class AbstractVehicleRepository extends EntityRepository
     
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $currentUserApi->get('uname'), 'entities' => 'vehicles', 'userid' => $userId];
         $logger->debug('{app}: User {user} deleted {entities} edited by user id {userid}.', $logArgs);
-    }
-    
-     /**
-     * Updates a user field value of all objects affected by a certain user.
-     *
-     * @param string              $fieldName      The name of the user field
-     * @param integer             $userId         The userid to be replaced
-     * @param integer             $newUserId      The new userid as replacement
-     * @param TranslatorInterface $translator     Translator service instance
-     * @param LoggerInterface     $logger         Logger service instance
-     * @param CurrentUserApi      $currentUserApi CurrentUserApi service instance
-     *
-     * @return void
-     *
-     * @throws InvalidArgumentException Thrown if invalid parameters are received
-     */
-    public function updateUserField($userFieldName, $userId, $newUserId, TranslatorInterface $translator, LoggerInterface $logger, CurrentUserApi $currentUserApi)
-    {
-        // check field parameter
-        if (empty($userFieldName) || !in_array($userFieldName, ['owner'])) {
-            throw new InvalidArgumentException($translator->__('Invalid user field name received.'));
-        }
-        // check id parameter
-        if ($userId == 0 || !is_numeric($userId)
-         || $newUserId == 0 || !is_numeric($newUserId)) {
-            throw new InvalidArgumentException($translator->__('Invalid user identifier received.'));
-        }
-    
-        $qb = $this->getEntityManager()->createQueryBuilder();
-        $qb->update('RK\ParkHausModule\Entity\VehicleEntity', 'tbl')
-           ->set('tbl.' . $userFieldName, $newUserId)
-           ->where('tbl.' . $userFieldName . ' = :user')
-           ->setParameter('user', $userId);
-        $query = $qb->getQuery();
-        $query->execute();
-    
-        $logArgs = ['app' => 'RKParkHausModule', 'user' => $currentUserApi->get('uname'), 'entities' => 'vehicles', 'field' => $userFieldName, 'userid' => $userId, 'newuserid' => $newUserId];
-        $logger->debug('{app}: User {user} updated {entities} setting {field} from {userid} to {newuserid}.', $logArgs);
-    }
-    
-    /**
-     * Deletes all objects updated by a certain user.
-     *
-     * @param string              $fieldName      The name of the user field
-     * @param integer             $userId         The userid to be removed
-     * @param TranslatorInterface $translator     Translator service instance
-     * @param LoggerInterface     $logger         Logger service instance
-     * @param CurrentUserApi      $currentUserApi CurrentUserApi service instance
-     *
-     * @return void
-     *
-     * @throws InvalidArgumentException Thrown if invalid parameters are received
-     */
-    public function deleteByUserField($userFieldName, $userId, TranslatorInterface $translator, LoggerInterface $logger, CurrentUserApi $currentUserApi)
-    {
-        // check field parameter
-        if (empty($userFieldName) || !in_array($userFieldName, ['owner'])) {
-            throw new InvalidArgumentException($translator->__('Invalid user field name received.'));
-        }
-        // check id parameter
-        if ($userId == 0 || !is_numeric($userId)) {
-            throw new InvalidArgumentException($translator->__('Invalid user identifier received.'));
-        }
-    
-        $qb = $this->getEntityManager()->createQueryBuilder();
-        $qb->delete('RK\ParkHausModule\Entity\VehicleEntity', 'tbl')
-           ->where('tbl.' . $userFieldName . ' = :user')
-           ->setParameter('user', $userId);
-        $query = $qb->getQuery();
-    
-        $query->execute();
-    
-        $logArgs = ['app' => 'RKParkHausModule', 'user' => $currentUserApi->get('uname'), 'entities' => 'vehicles', 'field' => $userFieldName, 'userid' => $userId];
-        $logger->debug('{app}: User {user} deleted {entities} with {field} having set to user id {userid}.', $logArgs);
     }
 
     /**
@@ -888,8 +813,6 @@ abstract class AbstractVehicleRepository extends EntityRepository
             $where .= 'tbl.infoField2 LIKE \'%' . $fragment . '%\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.infoField3 LIKE \'%' . $fragment . '%\'';
-            $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.owner = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.titleTextColor LIKE \'%' . $fragment . '%\'';
         }

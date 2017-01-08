@@ -16,7 +16,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
-use UserUtil;
 use RK\ParkHausModule\Traits\EntityWorkflowTrait;
 use RK\ParkHausModule\Traits\StandardFieldsTrait;
 
@@ -148,15 +147,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      * @var boolean $viewImage
      */
     protected $viewImage = true;
-    
-    /**
-     * If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings.
-     * @ORM\Column(type="integer")
-     * @Assert\Type(type="integer")
-     * @Assert\NotNull()
-     * @var integer $vehicleOwner
-     */
-    protected $vehicleOwner = 0;
     
     
     /**
@@ -452,28 +442,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
         }
     }
     
-    /**
-     * Returns the vehicle owner.
-     *
-     * @return integer
-     */
-    public function getVehicleOwner()
-    {
-        return $this->vehicleOwner;
-    }
-    
-    /**
-     * Sets the vehicle owner.
-     *
-     * @param integer $vehicleOwner
-     *
-     * @return void
-     */
-    public function setVehicleOwner($vehicleOwner)
-    {
-        $this->vehicleOwner = intval($vehicleOwner);
-    }
-    
     
     /**
      * Returns the vehicle.
@@ -536,25 +504,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
         }
     
         return $allowedValues;
-    }
-    
-    /**
-     * Checks whether the vehicleOwner field contains a valid user id.
-     * This method is used for validation.
-     *
-     * @Assert\IsTrue(message="This value must be a valid user id.")
-     *
-     * @return boolean True if data is valid else false
-     */
-    public function isVehicleOwnerUserValid()
-    {
-        if ($this['vehicleOwner'] < 1) {
-            return true;
-        }
-    
-        $uname = UserUtil::getVar('uname', $this['vehicleOwner']);
-    
-        return null !== $uname && !empty($uname);
     }
     
     /**

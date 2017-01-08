@@ -12,7 +12,6 @@
 
 namespace RK\ParkHausModule\Controller\Base;
 
-use Doctrine\ORM\AbstractQuery;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
@@ -28,61 +27,6 @@ use Zikula\Core\Response\Ajax\NotFoundResponse;
  */
 abstract class AbstractAjaxController extends AbstractController
 {
-    
-    public function getVehicleOwnerUsersAction(Request $request)
-    {
-        return $this->getCommonUsersListAction($request);
-    }
-    
-    public function getVehicleImageVehicleOwnerUsersAction(Request $request)
-    {
-        return $this->getCommonUsersListAction($request);
-    }
-    
-    /**
-     * Retrieve a general purpose list of users.
-     *
-     * @param string $fragment The search fragment
-     *
-     * @return JsonResponse
-     */ 
-    public function getCommonUsersListAction(Request $request)
-    {
-        if (!$this->hasPermission($this->name . '::Ajax', '::', ACCESS_EDIT)) {
-            return true;
-        }
-        
-        $fragment = '';
-        if ($request->isMethod('POST') && $request->request->has('fragment')) {
-            $fragment = $request->request->get('fragment', '');
-        } elseif ($request->isMethod('GET') && $request->query->has('fragment')) {
-            $fragment = $request->query->get('fragment', '');
-        }
-        
-        $userRepository = $this->get('zikula_users_module.user_repository');
-        $limit = 50;
-        $filter = [
-            'uname' => ['operator' => 'like', 'operand' => '%' . $fragment . '%']
-        ];
-        $results = $userRepository->query($filter, ['uname' => 'asc'], $limit);
-        
-        // load avatar plugin
-        include_once 'lib/legacy/viewplugins/function.useravatar.php';
-        $view = \Zikula_View::getInstance('RKParkHausModule', false);
-        
-        $resultItems = [];
-        if (count($results) > 0) {
-            foreach ($results as $result) {
-                $resultItems[] = [
-                    'uid' => $result->getUid(),
-                    'uname' => $result->getUname(),
-                    'avatar' => smarty_function_useravatar(['uid' => $result->getUid(), 'rating' => 'g'], $view)
-                ];
-            }
-        }
-        
-        return new JsonResponse($resultItems);
-    }
     
     /**
      * Retrieve item list for finder selections in Forms, Content type plugin and Scribite.

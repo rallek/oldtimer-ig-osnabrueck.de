@@ -1,3 +1,3 @@
 # CHANGELOG
 
-Changes in RKParkHausModule 0.6.0
+Changes in RKParkHausModule 0.6.1

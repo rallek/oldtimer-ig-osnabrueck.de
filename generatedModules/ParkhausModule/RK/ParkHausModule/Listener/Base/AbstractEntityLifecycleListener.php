@@ -298,7 +298,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber, Conta
         if (count($uploadFields) > 0) {
             $request = $this->container->get('request_stack')->getCurrentRequest();
             $baseUrl = $request->getSchemeAndHttpHost() . $request->getBasePath();
-            $uploadHelper = $this->container->get('RK\ParkHausModule.upload_helper');
+            $uploadHelper = $this->container->get('rk_parkhaus_module.upload_helper');
             foreach ($uploadFields as $fieldName) {
                 if (empty($entity[$fieldName])) {
                     continue;

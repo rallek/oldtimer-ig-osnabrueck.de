@@ -51,18 +51,6 @@
             <dt>{{ __('Description') }}</dt>
             <dd>{{ vehicleImage.description|safeHtml }}</dd>
         {% endif %}
-        {% if vehicleImage.vehicleOwner is not empty %}
-            <dt>{{ __('Vehicle owner') }}</dt>
-            <dd>{% if vehicleImage.vehicleOwner > 0 %}
-            {% if not isQuickView %}
-                {{ vehicleImage.vehicleOwner|profileLinkByUserId() }}
-                <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicleImage.vehicleOwner, rating='g') }}</span>
-            {% else %}
-                {{ rkparkhausmodule_userVar('uname', vehicleImage.vehicleOwner) }}
-            {% endif %}
-            {% else %}&nbsp;{% endif %}
-            </dd>
-        {% endif %}
         {% if vehicleImage.vehicle|default %}
             <dt>{{ __('Vehicle') }}</dt>
             <dd>

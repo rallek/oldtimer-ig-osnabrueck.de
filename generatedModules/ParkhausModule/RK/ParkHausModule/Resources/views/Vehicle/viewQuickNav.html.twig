@@ -21,13 +21,6 @@
         {% if vehicleTypeFilter is defined and vehicleTypeFilter != true %}
             </div>
         {% endif %}
-        {% if ownerFilter is defined and ownerFilter != true %}
-            <div class="hidden">
-        {% endif %}
-            {{ form_row(quickNavForm.owner) }}
-        {% if ownerFilter is defined and ownerFilter != true %}
-            </div>
-        {% endif %}
         {% if searchFilter is defined and searchFilter != true %}
             <div class="hidden">
         {% endif %}

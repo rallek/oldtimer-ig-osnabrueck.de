@@ -65,7 +65,6 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
         ;
 
         $this->addListFields($builder, $options);
-        $this->addUserFields($builder, $options);
         $this->addSearchField($builder, $options);
         $this->addSortingFields($builder, $options);
         $this->addAmountField($builder, $options);
@@ -125,27 +124,6 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
             'choice_attr' => $choiceAttributes,
             'multiple' => false,
             'expanded' => false
-        ]);
-    }
-
-    /**
-     * Adds user fields.
-     *
-     * @param FormBuilderInterface $builder The form builder
-     * @param array                $options The options
-     */
-    public function addUserFields(FormBuilderInterface $builder, array $options)
-    {
-        $builder->add('owner', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', [
-            'label' => $this->__('Owner'),
-            'attr' => [
-                'class' => 'input-sm'
-            ],
-            'required' => false,
-            'placeholder' => $this->__('All'),
-            // Zikula core should provide a form type for this to hide entity details
-            'class' => 'Zikula\UsersModule\Entity\UserEntity',
-            'choice_label' => 'uname'
         ]);
     }
 

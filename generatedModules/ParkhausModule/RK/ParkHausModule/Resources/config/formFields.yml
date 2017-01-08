@@ -13,8 +13,3 @@ services:
             - "@rk_parkhaus_module.image_helper"
         tags:
             - { name: form.type }
-    
-    rk_parkhaus_module.form.type.field.user:
-        class: RK\ParkHausModule\Form\Type\Field\UserType
-        tags:
-            - { name: form.type }

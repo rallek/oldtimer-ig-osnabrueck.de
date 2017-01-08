@@ -163,18 +163,6 @@
             <dt>{{ __('Info field 3') }}</dt>
             <dd>{{ vehicle.infoField3 }}</dd>
         {% endif %}
-        {% if vehicle.owner is not empty %}
-            <dt>{{ __('Owner') }}</dt>
-            <dd>{% if vehicle.owner > 0 %}
-            {% if not isQuickView %}
-                {{ vehicle.owner|profileLinkByUserId() }}
-                <span class="avatar">{{ rkparkhausmodule_userAvatar(uid=vehicle.owner, rating='g') }}</span>
-            {% else %}
-                {{ rkparkhausmodule_userVar('uname', vehicle.owner) }}
-            {% endif %}
-            {% else %}&nbsp;{% endif %}
-            </dd>
-        {% endif %}
         {% if vehicle.showVehicleOwner is not empty %}
             <dt>{{ __('Show vehicle owner') }}</dt>
             <dd>{% set itemid = vehicle.createCompositeIdentifier() %}

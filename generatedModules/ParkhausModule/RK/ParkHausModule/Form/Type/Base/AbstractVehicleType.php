@@ -534,22 +534,6 @@ abstract class AbstractVehicleType extends AbstractType
             'max_length' => 255,
         ]);
         
-        $builder->add('owner', 'RK\ParkHausModule\Form\Type\Field\UserType', [
-            'label' => $this->__('Owner') . ':',
-            'label_attr' => [
-                'class' => 'tooltips',
-                'title' => $this->__('the owner of the vehicle if the owner is registered at our site')
-            ],
-            'help' => $this->__('the owner of the vehicle if the owner is registered at our site'),
-            'empty_data' => '',
-            'attr' => [
-                'class' => ' validate-digits',
-                'title' => $this->__('Enter the owner of the vehicle')
-            ],'required' => false,
-            'max_length' => 11,
-            'inlineUsage' => $options['inlineUsage']
-        ]);
-        
         $builder->add('showVehicleOwner', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
             'label' => $this->__('Show vehicle owner') . ':',
             'label_attr' => [
@@ -667,7 +651,6 @@ abstract class AbstractVehicleType extends AbstractType
                     return $this->entityFactory->createVehicle();
                 },
                 'error_mapping' => [
-                    'isOwnerUserValid' => 'owner',
                     'titleImage' => 'titleImage.titleImage',
                     'vehicleImage' => 'vehicleImage.vehicleImage',
                     'manufacturerImage' => 'manufacturerImage.manufacturerImage',

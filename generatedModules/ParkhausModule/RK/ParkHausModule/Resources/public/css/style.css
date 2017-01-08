@@ -69,9 +69,6 @@ div.parkhaus-edit .panel legend {
 div.rkparkhausmodule-autocomplete .tt-menu .tt-suggestion {
     background-image: url("../../../../../../images/icons/extrasmall/tab_right.png");
 }
-div.rkparkhausmodule-autocomplete-user .tt-menu .tt-suggestion {
-    background-image: url("../../../../../../images/icons/extrasmall/user.png");
-}
 div.rkparkhausmodule-autocomplete-with-image .tt-menu .tt-suggestion {
     background-image: url("../../../../../../images/icons/extrasmall/agt_Multimedia.png");
 }

@@ -140,8 +140,6 @@ abstract class AbstractUserListener implements EventSubscriberInterface
         
         // set last editor to guest (1) for all vehicles updated by this user
         $repo->updateLastEditor($userId, 1, $this->translator, $this->logger, $this->currentUserApi);
-        // set last editor to admin (2) for all vehicles affected by this user
-        $repo->updateUserField('owner', $userId, 2, $this->translator, $this->logger, $this->currentUserApi);
         
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entities' => 'vehicles'];
         $this->logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);
@@ -152,8 +150,6 @@ abstract class AbstractUserListener implements EventSubscriberInterface
         
         // set last editor to guest (1) for all vehicle images updated by this user
         $repo->updateLastEditor($userId, 1, $this->translator, $this->logger, $this->currentUserApi);
-        // set last editor to admin (2) for all vehicle images affected by this user
-        $repo->updateUserField('vehicleOwner', $userId, 2, $this->translator, $this->logger, $this->currentUserApi);
         
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entities' => 'vehicle images'];
         $this->logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);

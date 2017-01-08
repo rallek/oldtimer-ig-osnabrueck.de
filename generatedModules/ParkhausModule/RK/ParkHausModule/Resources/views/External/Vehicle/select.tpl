@@ -54,7 +54,6 @@
         <option value="infoField1"{if $sort eq 'infoField1'} selected="selected"{/if}>{gt text='Info field 1'}</option>
         <option value="infoField2"{if $sort eq 'infoField2'} selected="selected"{/if}>{gt text='Info field 2'}</option>
         <option value="infoField3"{if $sort eq 'infoField3'} selected="selected"{/if}>{gt text='Info field 3'}</option>
-        <option value="owner"{if $sort eq 'owner'} selected="selected"{/if}>{gt text='Owner'}</option>
         <option value="showVehicleOwner"{if $sort eq 'showVehicleOwner'} selected="selected"{/if}>{gt text='Show vehicle owner'}</option>
         <option value="titleTextColor"{if $sort eq 'titleTextColor'} selected="selected"{/if}>{gt text='Title text color'}</option>
         <option value="stillMyOwn"{if $sort eq 'stillMyOwn'} selected="selected"{/if}>{gt text='Still my own'}</option>

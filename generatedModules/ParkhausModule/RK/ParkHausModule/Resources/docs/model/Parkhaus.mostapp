@@ -4,7 +4,7 @@ application "ParkHaus" {
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://oldtimer-ig-osnabrueck.de"
-    version "0.6.0"
+    version "0.6.1"
     prefix "parkha"
     generatorSettings {
         settingsContainer "Settings"
@@ -197,14 +197,8 @@ application "ParkHaus" {
                     mandatory false
                 displayType DISPLAY
                 },
-                user "owner" {
-                    documentation "the owner of the vehicle if the owner is registered at our site"
-                    mandatory false
-                displayType DISPLAY
-                    onAccountDeletionCreator ADMIN
-                }
-            ,
-                boolean "showVehicleOwner" nullable ajaxTogglability {
+                
+            boolean "showVehicleOwner" nullable ajaxTogglability {
                     documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty"
                     defaultValue "false"
                     mandatory false
@@ -267,13 +261,6 @@ application "ParkHaus" {
                     mandatory false
                     displayType VIEW
                 }
-            ,
-                user "vehicleOwner" {
-                    documentation "If this filed is changed the image will be shown as created by this suer. It also will apper in his account settings."
-                    mandatory false
-                    displayType DISPLAY
-                    onAccountDeletionCreator ADMIN
-                }
             }
             actions {
                 mainAction "Index",
@@ -294,12 +281,4 @@ application "ParkHaus" {
             editType ACTIVE_NONE_PASSIVE_CHOOSE
         }
     }
-    variables {
-        varContainer "ownerRefresh" {
-            documentation "here we can refresh the owner relationsship for vehicles and vehicle images. This can be used if a vehicle has been addressed to another user."
-            vars {
-                boolVar "myFlag"
-            }
-        }
     }
-}
