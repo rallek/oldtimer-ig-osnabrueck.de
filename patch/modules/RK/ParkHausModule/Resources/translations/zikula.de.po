@@ -319,8 +319,7 @@ msgstr "Felgen des Fahrzeugs eingeben"
 msgid ""
 "Enter the shrink height vehicle image vehicle image. Only digits are allowed."
 msgstr ""
-"Geben Sie das schrumpfen Höhe Fahrzeug Bild Fahrzeug Bild. Nur Ziffern sind "
-"erlaubt."
+"Enter the shrink height vehicle image vehicle image. Only digits are allowed."
 
 #, fuzzy
 msgid ""
@@ -340,8 +339,7 @@ msgstr ""
 msgid ""
 "Enter the shrink width vehicle image vehicle image. Only digits are allowed."
 msgstr ""
-"Geben Sie die Verkleinerung breite Fahrzeug Bild Fahrzeug Bild. Nur Ziffern "
-"sind erlaubt."
+"Enter the shrink width vehicle image vehicle image. Only digits are allowed."
 
 #, fuzzy
 msgid ""
@@ -361,24 +359,24 @@ msgid ""
 "Enter the thumbnail height vehicle image vehicle image display. Only digits "
 "are allowed."
 msgstr ""
-"Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bilddarstellung. "
-"Nur Ziffern sind erlaubt."
+"Enter the thumbnail height vehicle image vehicle image display. Only digits "
+"are allowed."
 
 #, fuzzy
 msgid ""
 "Enter the thumbnail height vehicle image vehicle image edit. Only digits are "
 "allowed."
 msgstr ""
-"Geben Sie die Miniaturansicht Höhe Fahrzeug Bild Fahrzeug Bild bearbeiten. "
-"Nur Ziffern sind erlaubt."
+"Enter the thumbnail height vehicle image vehicle image edit. Only digits are "
+"allowed."
 
 #, fuzzy
 msgid ""
 "Enter the thumbnail height vehicle image vehicle image view. Only digits are "
 "allowed."
 msgstr ""
-"Geben Sie die Miniaturansicht Höhe Fahrzeug Fahrzeug Bild Bildansicht. Nur "
-"Ziffern sind erlaubt."
+"Enter the thumbnail height vehicle image vehicle image view. Only digits are "
+"allowed."
 
 #, fuzzy
 msgid ""
@@ -451,24 +449,24 @@ msgid ""
 "Enter the thumbnail width vehicle image vehicle image display. Only digits "
 "are allowed."
 msgstr ""
-"Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bilddarstellung. "
-"Nur Ziffern sind erlaubt."
+"Enter the thumbnail width vehicle image vehicle image display. Only digits "
+"are allowed."
 
 #, fuzzy
 msgid ""
 "Enter the thumbnail width vehicle image vehicle image edit. Only digits are "
 "allowed."
 msgstr ""
-"Geben Sie die Miniaturansicht breite Fahrzeug Bild Fahrzeug Bild bearbeiten. "
-"Nur Ziffern sind erlaubt."
+"Enter the thumbnail width vehicle image vehicle image edit. Only digits are "
+"allowed."
 
 #, fuzzy
 msgid ""
 "Enter the thumbnail width vehicle image vehicle image view. Only digits are "
 "allowed."
 msgstr ""
-"Geben Sie die Miniaturansicht breite Fahrzeug Fahrzeug Bild Bildansicht. Nur "
-"Ziffern sind erlaubt."
+"Enter the thumbnail width vehicle image vehicle image view. Only digits are "
+"allowed."
 
 #, fuzzy
 msgid ""
@@ -728,23 +726,20 @@ msgstr "Einfügen (inset)"
 msgid "Interior"
 msgstr "Innenausstattung"
 
-#, fuzzy
 msgid "Invalid identifier received."
-msgstr "Invalid identifier received."
+msgstr "Fehler! Ungültiger Bezeichner erhalten."
 
-#, fuzzy
 msgid "Invalid object type received."
-msgstr "Invalid object type received."
+msgstr "Ungültigen Objekt Typ (object type) erhalten."
 
 #, fuzzy
 msgid "Invalid user field name received."
-msgstr "Ungültiges Feld Benutzernamen erhalten."
+msgstr "Invalid user field name received."
 
 #, fuzzy
 msgid "Invalid user identifier received."
 msgstr "Invalid user identifier received."
 
-#, fuzzy
 msgid "KB"
 msgstr "KB"
 
@@ -754,7 +749,6 @@ msgstr "Link zum Fahrzeug"
 msgid "Link to the vehicle image"
 msgstr "Link zum Fahrzeug-Bild"
 
-#, fuzzy
 msgid "MB"
 msgstr "MB"
 
@@ -794,13 +788,11 @@ msgstr "Neueste"
 msgid "No"
 msgstr "Nein"
 
-#, fuzzy
 msgid "No item selected."
-msgstr "No item selected."
+msgstr "Kein Element ausgewählt."
 
-#, fuzzy
 msgid "No such item."
-msgstr "No such item."
+msgstr "Kein solches Element"
 
 msgid "None workflow (no approval)"
 msgstr "Kein Workflow (keine Freigabe)"
@@ -817,9 +809,8 @@ msgstr "Nur Einträge Titel"
 msgid "Open preview page"
 msgstr "Vorschau öffnen"
 
-#, fuzzy
 msgid "Operation cancelled."
-msgstr "Operation cancelled."
+msgstr "Vorgang abgebrochen"
 
 msgid "Outbound"
 msgstr "abschneiden (outbound)"
@@ -836,40 +827,35 @@ msgstr "Parkhaus Backend"
 msgid "Paste as"
 msgstr "Einfügen als"
 
-#, fuzzy
 msgid ""
 "Please change if white is not fitting due to the color of the title image. "
 "Preferred you should use #000000 in case."
 msgstr ""
-"Bitte ändern Sie, wenn weiß nicht wegen der Farbe des Bildes Titel passend "
-"ist. Bevorzugt, dass Sie im Fall #000000 verwenden sollten."
+"Bitte Farbe nur ändern, wenn sie nicht mit dem Fahrzeug zusammen passt. "
+"Bitte Grautöne verwenden."
 
-#, fuzzy
 msgid ""
 "Please fill the copyright. If you got the image from someone else please be "
 "fair and name him here."
-msgstr ""
-"Füllen Sie bitte das Copyright. Wenn Sie das Bild von jemand anderem "
-"bekommen bitte fair sein und ihm den Namen hier."
+msgstr "Bitte das Copyright ausfüllen."
 
-#, fuzzy
 msgid ""
 "Please upload an image. It does not matter if it is portrait, landscape or "
 "square. The hight will be harmonized always."
 msgstr ""
-"Please upload an image. It does not matter if it is portrait, landscape or "
-"square. The hight will be harmonized always."
+"Bitte ein Bild hochladen, Es ist egal, ob Hochformat, Querformat oder "
+"Quadrat. Die Bilder werden Proportional zur Höhe automatisch skaliert."
 
 msgid "Preview"
 msgstr "Vorschau"
 
-#, fuzzy
 msgid "Pseudo-state for content which has been deleted from the database."
-msgstr "Pseudo-state for content which has been deleted from the database."
+msgstr "Pseudo-Status für Inhalt, welcher aus der Datenbank gelöscht wurde."
 
-#, fuzzy
 msgid "Pseudo-state for content which is just created and not persisted yet."
-msgstr "Pseudo-state for content which is just created and not persisted yet."
+msgstr ""
+"Pseudo-Status für Inhalt, welcher gerade erstellt aber noch nicht "
+"persistiert wurde."
 
 msgid "RKParkHausModule detail view"
 msgstr "RKParkhausModule Detailansicht"
@@ -937,15 +923,13 @@ msgstr "Shrink width vehicle title image"
 msgid "Shrink width vehicle vehicle image"
 msgstr "Shrink width vehicle vehicle image"
 
-#, fuzzy
 msgid ""
 "Sorry, but an error occured during the %action% action. Please apply the "
 "changes again!"
 msgstr ""
-"Sorry, but an error occured during the %action% action. Please apply the "
-"changes again!"
+"Sorry, aber ein unbekannter Fehler bei der Aktion %s aufgetreten. Bitte "
+"diese Änderungen erneut anwenden!"
 
-#, fuzzy
 msgid "Sorry, but an error occured during the %s action."
 msgstr "Tut mir leid, aber während der %s Aktion ist ein Fehler aufgetreten."
 
@@ -981,17 +965,14 @@ msgstr "im Besitz"
 msgid "Submit"
 msgstr "Bestätigen"
 
-#, fuzzy
 msgid "Submit content."
-msgstr "Submit content."
+msgstr "Inhalt bestätigen."
 
-#, fuzzy
 msgid "Switch to administration area."
-msgstr "Switch to administration area."
+msgstr "Wechsel zum Administrationsbereich."
 
-#, fuzzy
 msgid "Switch to user area."
-msgstr "Switch to user area."
+msgstr "Wechsel zum Nutzerbereich."
 
 msgid "Template"
 msgstr "Template"
@@ -1002,17 +983,16 @@ msgstr "Die Anzahl der Fahrzeugbilder pro Seite"
 msgid "The amount of vehicles shown per page"
 msgstr "Die Anzahl der Fahrzeuge pro Seite"
 
-#, fuzzy
 msgid ""
 "The cache directory \"%directory%\" does not exist. Please create it and "
 "make it writable for the webserver."
 msgstr ""
-"The cache directory \"%directory%\" does not exist. Please create it and "
-"make it writable for the webserver."
+"Der Cache-Verzeichnis \"%directory%\" ist nicht vorhanden. Bitte erstellen "
+"Sie es und machen Sie es für den Webserver beschreibbar."
 
 #, fuzzy
 msgid "The enable shrinking for vehicle image vehicle image option."
-msgstr "Die schrumpfende für Fahrzeug-Bild-Fahrzeug-Bild-Option aktivieren."
+msgstr "The enable shrinking for vehicle image vehicle image option."
 
 #, fuzzy
 msgid "The enable shrinking for vehicle manufacturer image option."
@@ -1030,13 +1010,11 @@ msgstr "The enable shrinking for vehicle vehicle image option."
 msgid "The maximum amount of items to be shown. Only digits are allowed."
 msgstr "The maximum amount of items to be shown. Only digits are allowed."
 
-#, fuzzy
 msgid "The maximum image height in pixels."
-msgstr "The maximum image height in pixels."
+msgstr "Die maximale Bildhöhe in Pixel."
 
-#, fuzzy
 msgid "The maximum image width in pixels."
-msgstr "The maximum image width in pixels."
+msgstr "Die maximale Bildbreite in Pixel."
 
 msgid "The my flag option."
 msgstr "The my flag option."
@@ -1082,13 +1060,12 @@ msgstr ""
 "This is like a non-existing workflow. Everything is online immediately after "
 "creation."
 
-#, fuzzy
 msgid ""
 "This is the text which follows the teaser text at the display page. You can "
 "use max 5000 char."
 msgstr ""
-"Dies ist der Text, der den Teasertext auf der Anzeigeseite folgt. Sie können "
-"maximale 5000 Zeichen verwenden."
+"Dieser Text folgt dem Einleitungsteext in der Detailansicht. Maximal 5000 "
+"Zeichen erlaubt."
 
 #, fuzzy
 msgid "Thumbnail height on display pages in pixels."
@@ -1246,13 +1223,12 @@ msgstr "Fahrzeugbeschreibung"
 msgid "Vehicle description teaser"
 msgstr "Einleitende Fahrzeugbeschreibung"
 
-#, fuzzy
 msgid ""
 "Vehicle description with max 500 char. It will been shown in the list "
 "overview and added in front of the rest of the vehicle description."
 msgstr ""
-"Vehicle description with max 500 char. It will been shown in the list "
-"overview and added in front of the rest of the vehicle description."
+"Fahrzeugbeschreibung mit max. 500 Zeichen. Es wird in der Listenübersicht "
+"gezeigt und vor dem Rest der Fahrzeugbeschreibung hinzugefügt."
 
 msgid "Vehicle entries per page"
 msgstr "Fahrzeug-Einträge pro Seite"
@@ -1315,13 +1291,11 @@ msgstr "Kompression in Bar"
 msgid "do you have a special interieur?"
 msgstr "Hat das Fahrzeug eine spezielle Einrichtung?"
 
-#, fuzzy
 msgid "e.g. Otto, Diesel, Wankel, or specific type of engine, ..."
 msgstr "e.g. Otto, Diesel, Wankel, ..."
 
-#, fuzzy
 msgid "e.g. injection type, carburetor manufacturor and size ..."
-msgstr "e.g. injection type, carburetor manufacturor and size ..."
+msgstr "z.B. Einspritztyp, Vergaserhersteller und Größe, usw."
 
 msgid "e.g. the location or the event"
 msgstr "z.B. der Ort oder das Event"
@@ -1332,9 +1306,11 @@ msgstr "Anzahl Zylinder"
 msgid "how much ccm"
 msgstr "Größe des Hubraums"
 
-#, fuzzy
 msgid "if you do not know the manufacturer please type unknown."
-msgstr "Wenn Sie nicht, dass den Hersteller nicht bekannt geben wissen."
+msgstr ""
+"Wenn der Hersteller unbekannt ist, bitte hier \"Unbekannt\" oder etwas "
+"ähnliches eintragen (Pflichtfeld). Der Eintrag wird für die Überschrift "
+"verwendet und, falls ausgefüllt, durch Hersteller und Baujahr ergänzt."
 
 msgid "if you have special rim installed"
 msgstr "Sind besondere Felgen montiert?"
@@ -1345,19 +1321,15 @@ msgstr "Pixel"
 msgid "please select which type fits best"
 msgstr "Bitte wählen Sie, welcher Typ am besten passt"
 
-#, fuzzy
 msgid "rkparkhausmodule. Vehicle images Display Hooks"
-msgstr "Rkparkhausmodule. Fahrzeug Bilder Anzeige Haken"
+msgstr "rkparkhausmodule. Vehicle images Display Hooks"
 
-#, fuzzy
 msgid "rkparkhausmodule. Vehicle images Filter Hooks"
-msgstr "Rkparkhausmodule. Fahrzeug Bilder Filter Haken"
+msgstr "rkparkhausmodule. Vehicle images Filter Hooks"
 
-#, fuzzy
 msgid "rkparkhausmodule. Vehicles Display Hooks"
 msgstr "rkparkhausmodule. Vehicles Display Hooks"
 
-#, fuzzy
 msgid "rkparkhausmodule. Vehicles Filter Hooks"
 msgstr "rkparkhausmodule. Vehicles Filter Hooks"
 
@@ -1402,9 +1374,8 @@ msgstr "PS oder KW"
 msgid "you can use km/h or mph"
 msgstr "km/h oder mph"
 
-#, fuzzy
 msgid "z.B. Benzine, Diesel or 1:25"
-msgstr "z.B. Benzine, Diesel or 1:25"
+msgstr "z.B. Benzin, Diesel oder 1:25"
 
 #~ msgid "Thumbnail mode vehicle"
 #~ msgstr "Thumbnail mode vehicle"
