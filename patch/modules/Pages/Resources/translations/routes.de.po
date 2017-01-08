@@ -11,12 +11,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 1.8.11\n"
 
-msgid "ajaxinstall"
-msgstr "/ajaxinstall"
-
-msgid "ajaxupgrade"
-msgstr "/ajaxupgrade"
-
 msgid "doc"
 msgstr "/installdoc/{name}"
 
@@ -26,35 +20,53 @@ msgstr "/js/routing.{_format}"
 msgid "install"
 msgstr "/install/{stage}"
 
+msgid "legacy_short_url"
+msgstr "/{path}"
+
+msgid "liip_imagine_filter"
+msgstr "/media/cache/resolve/{filter}/{path}"
+
+msgid "liip_imagine_filter_runtime"
+msgstr "/media/cache/resolve/{filter}/rc/{hash}/{path}"
+
 msgid "upgrade"
-msgstr "/upgrade/{stage}"
+msgstr "/Upgrade/{stage}"
+
+msgid "zikula_hook_hook_changeproviderareaorder"
+msgstr "/Hooks/ReihenfolgAaendern"
+
+msgid "zikula_hook_hook_edit"
+msgstr "/Hooks/{moduleName}"
+
+msgid "zikula_hook_hook_togglesubscribeareastatus"
+msgstr "/Hooks/ToggleStatus"
 
 msgid "zikulapagesmodule_admin_index"
-msgstr "/admin"
+msgstr "/Administration"
 
 msgid "zikulapagesmodule_admin_purge"
-msgstr "/admin/purge"
+msgstr "/Administration/bereinigen"
 
 msgid "zikulapagesmodule_adminform_config"
-msgstr "/admin/config"
+msgstr "/Administration/Konfiguration"
 
 msgid "zikulapagesmodule_adminform_delete"
-msgstr "/admin/delete/{page}"
+msgstr "/Administration/Loeschen/{page}"
 
 msgid "zikulapagesmodule_adminform_edit"
-msgstr "/admin/edit/{page}"
+msgstr "/Administration/Bearbeiten/{page}"
 
 msgid "zikulapagesmodule_user_categories"
-msgstr "/kategorien"
+msgstr "/Kategorien"
 
 msgid "zikulapagesmodule_user_display"
-msgstr "/anzeige/{urltitle}/{pagenum}"
+msgstr "/Anzeige/{urltitle}/{pagenum}"
 
 msgid "zikulapagesmodule_user_index"
 msgstr "/"
 
 msgid "zikulapagesmodule_user_listpages"
-msgstr "/liste/{startnum}"
+msgstr "/Liste/{startnum}"
 
 msgid "zikulapagesmodule_user_view"
-msgstr "/uebersicht/{prop}/{cat}/{startnum}"
+msgstr "/Uebersicht/{prop}/{cat}/{startnum}"
