@@ -12,11 +12,10 @@
 
 namespace RK\ParkHausModule\Form\DataTransformer\Base;
 
-use ServiceUtil;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use RK\ParkHausModule\Form\Type\Field\UploadType;
 use RK\ParkHausModule\Helper\ControllerHelper;
 use RK\ParkHausModule\Helper\UploadHelper;
@@ -34,9 +33,9 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
     protected $formType = '';
 
     /**
-     * @var Request
+     * @var RequestStack
      */
-    protected $request = '';
+    protected $requestStack = '';
 
     /**
      * @var ControllerHelper
@@ -62,11 +61,38 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
     public function __construct(UploadType $formType, $fieldName)
     {
         $this->formType = $formType;
-        $this->request = ServiceUtil::get('request_stack')->getCurrentRequest();
-        $this->controllerHelper = ServiceUtil::get('rk_parkhaus_module.controller_helper');
-        $this->uploadHelper = ServiceUtil::get('rk_parkhaus_module.upload_helper');
         $this->fieldName = $fieldName;
     }
+
+    /**
+     * Sets the request stack.
+     *
+     * @param RequestStack $requestStack RequestStack service instance
+     */
+    public function setRequestStack($requestStack)
+    {
+        $this->requestStack = $requestStack;
+	}
+
+    /**
+     * Sets the controller helper.
+     *
+     * @param ControllerHelper $controllerHelper ControllerHelper service instance
+     */
+    public function setControllerHelper($controllerHelper)
+    {
+        $this->controllerHelper = $controllerHelper;
+	}
+
+    /**
+     * Sets the upload helper.
+     *
+     * @param UploadHelper $uploadHelper UploadHelper service instance
+     */
+    public function setUploadHelper($uploadHelper)
+    {
+        $this->uploadHelper = $uploadHelper;
+	}
 
     /**
      * Transforms a filename to the corresponding file object.
@@ -121,8 +147,9 @@ abstract class AbstractUploadFileTransformer implements DataTransformerInterface
         if (null === $uploadedFile) {
             // check files array
             $filesKey = 'rkparkhausmodule_' . $objectType;
-            if ($this->request->files->has($filesKey)) {
-                $files = $this->request->files->get($filesKey);
+            $request = $this->requestStack->getCurrentRequest();
+            if ($request->files->has($filesKey)) {
+                $files = $request->files->get($filesKey);
                 if (isset($files[$fieldName]) && isset($files[$fieldName][$fieldName])) {
                     $uploadedFile = $files[$fieldName][$fieldName];
                 }

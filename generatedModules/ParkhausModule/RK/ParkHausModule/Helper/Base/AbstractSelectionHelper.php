@@ -15,7 +15,6 @@ namespace RK\ParkHausModule\Helper\Base;
 use InvalidArgumentException;
 use Zikula\Common\Translator\TranslatorInterface;
 use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
-use RK\ParkHausModule\Helper\ControllerHelper;
 
 /**
  * Selection helper base class.
@@ -30,37 +29,32 @@ abstract class AbstractSelectionHelper
     /**
      * @var ParkHausFactory
      */
-    private $entityFactory;
-
-    /**
-     * @var ControllerHelper
-     */
-    protected $controllerHelper;
+    protected $entityFactory;
 
     /**
      * SelectionHelper constructor.
      *
      * @param TranslatorInterface $translator       Translator service instance
      * @param ParkHausFactory $entityFactory ParkHausFactory service instance
-     * @param ControllerHelper    $controllerHelper ControllerHelper service instance
      */
-    public function __construct(TranslatorInterface $translator, ParkHausFactory $entityFactory, ControllerHelper $controllerHelper)
+    public function __construct(TranslatorInterface $translator, ParkHausFactory $entityFactory)
     {
         $this->translator = $translator;
         $this->entityFactory = $entityFactory;
-        $this->controllerHelper = $controllerHelper;
     }
 
     /**
      * Gets the list of identifier fields for a given object type.
      *
-     * @param string $objectType The object type to be treated (optional)
+     * @param string $objectType The object type to be treated
      *
      * @return array List of identifier field names
      */
     public function getIdFields($objectType = '')
     {
-        $objectType = $this->determineObjectType($objectType, 'getIdFields');
+        if (empty($objectType)) {
+            throw new InvalidArgumentException($this->translator->__('Invalid object type received.'));
+        }
         $entityClass = 'RKParkHausModule:' . ucfirst($objectType) . 'Entity';
     
         $meta = $this->entityFactory->getObjectManager()->getClassMetadata($entityClass);
@@ -79,17 +73,24 @@ abstract class AbstractSelectionHelper
      *
      * @param string $objectType The object type to retrieve
      *
-     * @return boolean Whether composite keys are used or not
+     * @return Boolean Whether composite keys are used or not
      */
-    protected function hasCompositeKeys($objectType)
+    public function hasCompositeKeys($objectType)
     {
-        return $this->controllerHelper->hasCompositeKeys($objectType);
+        switch ($objectType) {
+            case 'vehicle':
+                return false;
+            case 'vehicleImage':
+                return false;
+                default:
+                    return false;
+        }
     }
     
     /**
      * Selects a single entity.
      *
-     * @param string $objectType The object type to be treated (optional)
+     * @param string $objectType The object type to be treated
      * @param mixed  $id         The id (or array of ids) to use to retrieve the object (default=null)
      * @param boolean $useJoins  Whether to include joining related objects (optional) (default=true)
      * @param boolean $slimMode  If activated only some basic fields are selected without using any joins (optional) (default=false)
@@ -98,11 +99,13 @@ abstract class AbstractSelectionHelper
      */
     public function getEntity($objectType = '', $id = '', $useJoins = true, $slimMode = false)
     {
+        if (empty($objectType)) {
+            throw new InvalidArgumentException($this->translator->__('Invalid object type received.'));
+        }
         if (empty($id)) {
             throw new InvalidArgumentException($this->translator->__('Invalid identifier received.'));
         }
     
-        $objectType = $this->determineObjectType($objectType, 'getEntity');
         $repository = $this->getRepository($objectType);
     
         $useJoins = (bool) $useJoins;
@@ -127,7 +130,9 @@ abstract class AbstractSelectionHelper
      */
     public function getEntities($objectType = '', array $idList = [], $where = '', $orderBy = '', $useJoins = true, $slimMode = false)
     {
-        $objectType = $this->determineObjectType($objectType, 'getEntities');
+        if (empty($objectType)) {
+            throw new InvalidArgumentException($this->translator->__('Invalid object type received.'));
+        }
         $repository = $this->getRepository($objectType);
     
         $useJoins = (bool) $useJoins;
@@ -155,31 +160,15 @@ abstract class AbstractSelectionHelper
      */
     public function getEntitiesPaginated($objectType = '', $where = '', $orderBy = '', $currentPage = 1, $resultsPerPage = 25, $useJoins = true, $slimMode = false)
     {
-        $objectType = $this->determineObjectType($objectType, 'getEntitiesPaginated');
+        if (empty($objectType)) {
+            throw new InvalidArgumentException($this->translator->__('Invalid object type received.'));
+        }
         $repository = $this->getRepository($objectType);
     
         $useJoins = (bool) $useJoins;
         $slimMode = (bool) $slimMode; 
     
         return $repository->selectWherePaginated($where, $orderBy, $currentPage, $resultsPerPage, $useJoins, $slimMode);
-    }
-    
-    /**
-     * Determines object type using controller util methods.
-     *
-     * @param string $objectType The object type to be treated (optional)
-     * @param string $methodName Name of calling method
-     *
-     * @return string the object type
-     */
-    protected function determineObjectType($objectType = '', $methodName = '')
-    {
-        $contextArgs = ['helper' => 'selection', 'action' => $methodName];
-        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('helper', $contextArgs))) {
-            $objectType = $this->controllerHelper->getDefaultObjectType('helper', $contextArgs);
-        }
-    
-        return $objectType;
     }
     
     /**

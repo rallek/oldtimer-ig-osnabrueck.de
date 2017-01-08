@@ -12,8 +12,6 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
-use DataUtil;
-use FileUtil;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
@@ -63,27 +61,27 @@ abstract class AbstractControllerHelper
     /**
      * @var ParkHausFactory
      */
-    private $entityFactory;
+    protected $entityFactory;
 
     /**
      * @var ModelHelper
      */
-    private $modelHelper;
+    protected $modelHelper;
 
     /**
      * @var SelectionHelper
      */
-    private $selectionHelper;
+    protected $selectionHelper;
 
     /**
      * @var ImageHelper
      */
-    private $imageHelper;
+    protected $imageHelper;
 
     /**
      * @var String
      */
-    private $dataDirectory;
+    protected $dataDirectory;
 
     /**
      * ControllerHelper constructor.
@@ -178,25 +176,6 @@ abstract class AbstractControllerHelper
     }
 
     /**
-     * Checks whether a certain entity type uses composite keys or not.
-     *
-     * @param string $objectType The object type to retrieve
-     *
-     * @return Boolean Whether composite keys are used or not
-     */
-    public function hasCompositeKeys($objectType)
-    {
-        switch ($objectType) {
-            case 'vehicle':
-                return false;
-            case 'vehicleImage':
-                return false;
-                default:
-                    return false;
-        }
-    }
-
-    /**
      * Retrieve identifier parameters for a given object type.
      *
      * @param Request $request    The current request
@@ -212,7 +191,7 @@ abstract class AbstractControllerHelper
         $routeParams = $request->get('_route_params', []);
         foreach ($idFields as $idField) {
             $defaultValue = isset($args[$idField]) && is_numeric($args[$idField]) ? $args[$idField] : 0;
-            if ($this->hasCompositeKeys($objectType)) {
+            if ($this->selectionHelper->hasCompositeKeys($objectType)) {
                 // composite key may be alphanumeric
                 if (array_key_exists($idField, $routeParams)) {
                     $id = !empty($routeParams[$idField]) ? $routeParams[$idField] : $defaultValue;
@@ -286,9 +265,9 @@ abstract class AbstractControllerHelper
             ['ae', 'oe', 'ue', 'Ae', 'Oe', 'Ue', 'ss', '', '', '', '-', '-', 'e', 'e', 'a'],
             $name
         );
-        $name = DataUtil::formatPermalink($name);
+        $name = preg_replace("#(\s*\/\s*|\s*\+\s*|\s+)#", '-', strtolower($name));
     
-        return strtolower($name);
+        return $name;
     }
 
     /**

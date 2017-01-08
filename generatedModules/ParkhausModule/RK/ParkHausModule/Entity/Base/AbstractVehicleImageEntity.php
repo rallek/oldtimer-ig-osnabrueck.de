@@ -20,7 +20,6 @@ use UserUtil;
 use RK\ParkHausModule\Traits\EntityWorkflowTrait;
 use RK\ParkHausModule\Traits\StandardFieldsTrait;
 
-use DataUtil;
 use RuntimeException;
 use ServiceUtil;
 use Zikula\Core\Doctrine\EntityAccess;
@@ -569,13 +568,11 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
             return true;
         }
     
-        $serviceManager = ServiceUtil::getManager();
-    
-        $validator = $serviceManager->get('validator');
+        $validator = ServiceUtil::get('validator');
         $errors = $validator->validate($this);
     
         if (count($errors) > 0) {
-            $flashBag = $serviceManager->get('session')->getFlashBag();
+            $flashBag = ServiceUtil::get('session')->getFlashBag();
             foreach ($errors as $error) {
                 $flashBag->add('error', $error->getMessage());
             }

@@ -36,21 +36,22 @@ services:
         class: RK\ParkHausModule\Helper\ModelHelper
         arguments:
             - "@rk_parkhaus_module.entity_factory"
-            - "@rk_parkhaus_module.controller_helper"
     
     rk_parkhaus_module.selection_helper:
         class: RK\ParkHausModule\Helper\SelectionHelper
         arguments:
             - "@translator.default"
             - "@rk_parkhaus_module.entity_factory"
-            - "@rk_parkhaus_module.controller_helper"
     
     rk_parkhaus_module.upload_helper:
         class: RK\ParkHausModule\Helper\\UploadHelper
         arguments:
             - "@translator.default"
+            - "@session"
+            - "@logger"
             - "@zikula_users_module.current_user"
             - "@zikula_extensions_module.api.variable"
+            - "@rk_parkhaus_module.controller_helper"
     
     rk_parkhaus_module.view_helper:
         class: RK\ParkHausModule\Helper\ViewHelper

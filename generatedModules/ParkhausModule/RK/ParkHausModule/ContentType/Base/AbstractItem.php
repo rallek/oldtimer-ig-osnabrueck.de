@@ -12,15 +12,29 @@
 
 namespace RK\ParkHausModule\ContentType\Base;
 
-use ServiceUtil;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 /**
  * Generic single item display content plugin base class.
  */
-abstract class AbstractItem extends \Content_AbstractContentType
+abstract class AbstractItem extends \Content_AbstractContentType implements ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
+    /**
+     * @var string
+     */
     protected $objectType;
+    
+    /**
+     * @var integer
+     */
     protected $id;
+    
+    /**
+     * @var string
+     */
     protected $displayMode;
     
     /**
@@ -50,7 +64,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
      */
     public function getTitle()
     {
-        return ServiceUtil::get('translator.default')->__('RKParkHausModule detail view');
+        return $this->container->get('translator.default')->__('RKParkHausModule detail view');
     }
     
     /**
@@ -60,7 +74,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
      */
     public function getDescription()
     {
-        return ServiceUtil::get('translator.default')->__('Display or link a single RKParkHausModule object.');
+        return $this->container->get('translator.default')->__('Display or link a single RKParkHausModule object.');
     }
     
     /**
@@ -70,8 +84,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
      */
     public function loadData(&$data)
     {
-        $serviceManager = ServiceUtil::getManager();
-        $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
+        $controllerHelper = $this->container->get('rk_parkhaus_module.controller_helper');
     
         $contextArgs = ['name' => 'detail'];
         if (!isset($data['objectType']) || !in_array($data['objectType'], $controllerHelper->getObjectTypes('contentType', $contextArgs))) {
@@ -99,7 +112,7 @@ abstract class AbstractItem extends \Content_AbstractContentType
     public function display()
     {
         if (null !== $this->id && !empty($this->displayMode)) {
-            return ServiceUtil::get('router')->generate('rkparkhausmodule_external_display', $this->getDisplayArguments());
+            return $this->container->get('router')->generate('rkparkhausmodule_external_display', $this->getDisplayArguments());
         }
     
         return '';
@@ -111,10 +124,10 @@ abstract class AbstractItem extends \Content_AbstractContentType
     public function displayEditing()
     {
         if (null !== $this->id && !empty($this->displayMode)) {
-            return ServiceUtil::get('router')->generate('rkparkhausmodule_external_display', $this->getDisplayArguments());
+            return $this->container->get('router')->generate('rkparkhausmodule_external_display', $this->getDisplayArguments());
         }
     
-        return ServiceUtil::get('translator.default')->__('No item selected.');
+        return $this->container->get('translator.default')->__('No item selected.');
     }
     
     /**

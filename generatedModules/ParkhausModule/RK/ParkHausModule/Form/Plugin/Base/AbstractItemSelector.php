@@ -12,9 +12,8 @@
 
 namespace RK\ParkHausModule\Form\Plugin\Base;
 
-use FormUtil;
-use PageUtil;
-use ServiceUtil;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Zikula_Form_Plugin_TextInput;
 use Zikula_Form_View;
 use Zikula_View;
@@ -22,8 +21,10 @@ use Zikula_View;
 /**
  * Item selector plugin base class.
  */
-class AbstractItemSelector extends Zikula_Form_Plugin_TextInput
+class AbstractItemSelector extends Zikula_Form_Plugin_TextInput implements ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
     /**
      * The treated object type.
      *
@@ -93,16 +94,19 @@ class AbstractItemSelector extends Zikula_Form_Plugin_TextInput
     {
         static $firstTime = true;
         if ($firstTime) {
-            PageUtil::addVar('javascript', 'jquery');
-            PageUtil::addVar('javascript', 'web/bootstrap-media-lightbox/bootstrap-media-lightbox.min.js');
-            PageUtil::addVar('stylesheet', 'web/bootstrap-media-lightbox/bootstrap-media-lightbox.css');
-            PageUtil::addVar('javascript', '@RKParkHausModule/Resources/public/js/RKParkHausModule.Finder.js');
-            PageUtil::addVar('stylesheet', '@RKParkHausModule/Resources/public/css/style.css');
+            $assetHelper = $this->container->get('zikula_core.common.theme.asset_helper');
+            $cssAssetBag = $this->container->get('zikula_core.common.theme.assets_css');
+            $jsAssetBag = $this->container->get('zikula_core.common.theme.assets_js');
+            $homePath = $this->container->get('router')->generate('home');
+
+            $jsAssetBag->add($homePath . 'web/bootstrap-media-lightbox/bootstrap-media-lightbox.min.js');
+            $cssAssetBag->add($homePath . 'web/bootstrap-media-lightbox/bootstrap-media-lightbox.css');
+            $jsAssetBag->add($assetHelper->resolve('@RKParkHausModule:js/RKParkHausModule.Finder.js'));
+            $cssAssetBag->add($assetHelper->resolve('@RKParkHausModule:css/style.css'));
         }
         $firstTime = false;
 
-        $serviceManager = ServiceUtil::getManager();
-        $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');
+        $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
 
         if (!$permissionApi->hasPermission('RKParkHausModule:' . ucfirst($this->objectType) . ':', '::', ACCESS_COMMENT)) {
             return false;
@@ -110,8 +114,7 @@ class AbstractItemSelector extends Zikula_Form_Plugin_TextInput
 
         $this->selectedItemId = $this->text;
 
-        $serviceManager = ServiceUtil::getManager();
-        $repository = $serviceManager->get('rk_parkhaus_module.entity_factory')->getRepository($this->objectType);
+        $repository = $this->container->get('rk_parkhaus_module.entity_factory')->getRepository($this->objectType);
 
         $sort = $repository->getDefaultSortingField();
         $sdir = 'asc';
@@ -140,7 +143,7 @@ class AbstractItemSelector extends Zikula_Form_Plugin_TextInput
     public function decode(Zikula_Form_View $view)
     {
         parent::decode($view);
-        $this->objectType = FormUtil::getPassedValue('RKParkHausModule_objecttype', 'vehicle', 'POST');
+        $this->objectType = $this->container->get('request_stack')->getCurrentRequest()->request->get('RKParkHausModule_objecttype', 'vehicle');
         $this->selectedItemId = $this->text;
     }
 }

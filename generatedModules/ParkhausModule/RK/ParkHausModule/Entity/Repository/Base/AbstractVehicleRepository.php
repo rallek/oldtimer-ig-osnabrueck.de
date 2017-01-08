@@ -1117,9 +1117,9 @@ abstract class AbstractVehicleRepository extends EntityRepository
         $showOnlyOwnEntries = $this->getRequest()->query->getInt('own', 0);
         if ($showOnlyOwnEntries == 1) {
             
-            $uid = $this->getRequest()->getSession()->get('uid');
+            $userId = $this->getRequest()->getSession()->get('uid');
             $qb->andWhere('tbl.createdBy = :creator')
-               ->setParameter('creator', $uid);
+               ->setParameter('creator', $userId);
         }
     
         return $qb;

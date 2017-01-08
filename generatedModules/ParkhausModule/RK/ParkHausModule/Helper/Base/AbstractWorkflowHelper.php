@@ -36,7 +36,7 @@ abstract class AbstractWorkflowHelper
     /**
      * @var ListEntriesHelper
      */
-    private $listEntriesHelper;
+    protected $listEntriesHelper;
 
     /**
      * WorkflowHelper constructor.

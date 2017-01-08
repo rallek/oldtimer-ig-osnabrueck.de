@@ -12,18 +12,59 @@
 
 namespace RK\ParkHausModule\Listener\Base;
 
-use ServiceUtil;
+use Psr\Log\LoggerInterface;
+use Zikula\Common\Translator\TranslatorInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use UserUtil;
+use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Core\Event\GenericEvent;
+use Zikula\UsersModule\Api\CurrentUserApi;
 use Zikula\UsersModule\UserEvents;
+use RK\ParkHausModule\Entity\Factory\ParkHausFactory;
 
 /**
  * Event handler base class for user-related events.
  */
 abstract class AbstractUserListener implements EventSubscriberInterface
 {
+    /**
+     * @var TranslatorInterface
+     */
+    protected $translator;
+    
+    /**
+     * @var ParkHausFactory
+     */
+    protected $entityFactory;
+    
+    /**
+     * @var CurrentUserApi
+     */
+    protected $currentUserApi;
+    
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
+    
+    /**
+     * UserListener constructor.
+     *
+     * @param TranslatorInterface $translator     Translator service instance
+     * @param ParkHausFactory $entityFactory ParkHausFactory service instance
+     * @param CurrentUserApi      $currentUserApi CurrentUserApi service instance
+     * @param LoggerInterface     $logger         Logger service instance
+     *
+     * @return void
+     */
+    public function __construct(TranslatorInterface $translator, ParkHausFactory $entityFactory, CurrentUserApi $currentUserApi, LoggerInterface $logger)
+    {
+        $this->translator = $translator;
+        $this->entityFactory = $entityFactory;
+        $this->currentUserApi = $currentUserApi;
+        $this->logger = $logger;
+    }
+    
     /**
      * Makes our handlers known to the event system.
      */
@@ -40,7 +81,7 @@ abstract class AbstractUserListener implements EventSubscriberInterface
     /**
      * Listener for the `user.gettheme` event.
      *
-     * Called during UserUtil::getTheme() and is used to filter the results.
+     * Called during \UserUtil::getTheme() and is used to filter the results.
      * Receives arg['type'] with the type of result to be filtered
      * and the $themeName in the $event->data which can be modified.
      * Must $event->stopPropagation() if handler performs filter.
@@ -83,43 +124,38 @@ abstract class AbstractUserListener implements EventSubscriberInterface
     /**
      * Listener for the `user.account.delete` event.
      *
-     * Occurs after the deletion of a user account. Subject is $uid.
+     * Occurs after the deletion of a user account. Subject is $userId.
      * This is a storage-level event, not a UI event. It should not be used for UI-level actions such as redirects.
      *
      * @param GenericEvent $event The event instance
      */
     public function delete(GenericEvent $event)
     {
-        $uid = $event->getSubject();
+        $userId = $event->getSubject();
     
-        $serviceManager = ServiceUtil::getManager();
-        $entityManager = $serviceManager->get('doctrine.orm.default_entity_manager');
-        $translator = $serviceManager->get('translator.default');
-        $logger = $serviceManager->get('logger');
-        $currentUserApi = $serviceManager->get('zikula_users_module.current_user');
         
-        $repo = $entityManager->getRepository('RK\ParkHausModule\Entity\VehicleEntity');
+        $repo = $this->entityFactory->getRepository('vehicle');
         // set creator to guest (1) for all vehicles created by this user
-        $repo->updateCreator($uid, 1, $translator, $logger, $currentUserApi);
+        $repo->updateCreator($userId, 1, $this->translator, $this->logger, $this->currentUserApi);
         
         // set last editor to guest (1) for all vehicles updated by this user
-        $repo->updateLastEditor($uid, 1, $translator, $logger, $currentUserApi);
+        $repo->updateLastEditor($userId, 1, $this->translator, $this->logger, $this->currentUserApi);
         // set last editor to admin (2) for all vehicles affected by this user
-        $repo->updateUserField('owner', $uid, 2, $translator, $logger, $currentUserApi);
+        $repo->updateUserField('owner', $userId, 2, $this->translator, $this->logger, $this->currentUserApi);
         
-        $logArgs = ['app' => 'RKParkHausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname'), 'entities' => 'vehicles'];
-        $logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);
+        $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entities' => 'vehicles'];
+        $this->logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);
         
-        $repo = $entityManager->getRepository('RK\ParkHausModule\Entity\VehicleImageEntity');
+        $repo = $this->entityFactory->getRepository('vehicleImage');
         // set creator to guest (1) for all vehicle images created by this user
-        $repo->updateCreator($uid, 1, $translator, $logger, $currentUserApi);
+        $repo->updateCreator($userId, 1, $this->translator, $this->logger, $this->currentUserApi);
         
         // set last editor to guest (1) for all vehicle images updated by this user
-        $repo->updateLastEditor($uid, 1, $translator, $logger, $currentUserApi);
+        $repo->updateLastEditor($userId, 1, $this->translator, $this->logger, $this->currentUserApi);
         // set last editor to admin (2) for all vehicle images affected by this user
-        $repo->updateUserField('vehicleOwner', $uid, 2, $translator, $logger, $currentUserApi);
+        $repo->updateUserField('vehicleOwner', $userId, 2, $this->translator, $this->logger, $this->currentUserApi);
         
-        $logArgs = ['app' => 'RKParkHausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname'), 'entities' => 'vehicle images'];
-        $logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);
+        $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entities' => 'vehicle images'];
+        $this->logger->notice('{app}: User {user} has been deleted, so we deleted/updated corresponding {entities}, too.', $logArgs);
     }
 }

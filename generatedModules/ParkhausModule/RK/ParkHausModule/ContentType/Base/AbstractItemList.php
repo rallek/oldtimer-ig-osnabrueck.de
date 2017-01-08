@@ -12,13 +12,16 @@
 
 namespace RK\ParkHausModule\ContentType\Base;
 
-use ServiceUtil;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 /**
  * Generic item list content plugin base class.
  */
-abstract class AbstractItemList extends \Content_AbstractContentType
+abstract class AbstractItemList extends \Content_AbstractContentType implements ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
     /**
      * The treated object type.
      *
@@ -88,7 +91,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
      */
     public function getTitle()
     {
-        return ServiceUtil::get('translator.default')->__('RKParkHausModule list view');
+        return $this->container->get('translator.default')->__('RKParkHausModule list view');
     }
     
     /**
@@ -98,7 +101,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
      */
     public function getDescription()
     {
-        return ServiceUtil::get('translator.default')->__('Display list of RKParkHausModule objects.');
+        return $this->container->get('translator.default')->__('Display list of RKParkHausModule objects.');
     }
     
     /**
@@ -108,8 +111,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
      */
     public function loadData(&$data)
     {
-        $serviceManager = ServiceUtil::getManager();
-        $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
+        $controllerHelper = $this->container->get('rk_parkhaus_module.controller_helper');
     
         $contextArgs = ['name' => 'list'];
         if (!isset($data['objectType']) || !in_array($data['objectType'], $controllerHelper->getObjectTypes('contentType', $contextArgs))) {
@@ -148,9 +150,8 @@ abstract class AbstractItemList extends \Content_AbstractContentType
      */
     public function display()
     {
-        $serviceManager = ServiceUtil::getManager();
-        $repository = $serviceManager->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
-        $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');
+        $repository = $this->container->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
+        $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
     
         // create query
         $where = $this->filter;
@@ -179,12 +180,12 @@ abstract class AbstractItemList extends \Content_AbstractContentType
             'items' => $entities
         ];
     
-        $imageHelper = $serviceManager->get('rk_parkhaus_module.image_helper');
+        $imageHelper = $this->container->get('rk_parkhaus_module.image_helper');
         $templateParameters = array_merge($templateData, $repository->getAdditionalTemplateParameters($imageHelper, 'contentType'));
     
         $template = $this->getDisplayTemplate();
     
-        return $serviceManager->get('twig')->render('@RKParkHausModule/' . $template, $templateParameters);
+        return $this->container->get('twig')->render('@RKParkHausModule/' . $template, $templateParameters);
     }
     
     /**
@@ -228,7 +229,7 @@ abstract class AbstractItemList extends \Content_AbstractContentType
     
         $sortParam = '';
         if ($this->sorting == 'newest') {
-            $selectionHelper = ServiceUtil::get('rk_parkhaus_module.selection_helper');
+            $selectionHelper = $this->container->get('rk_parkhaus_module.selection_helper');
             $idFields = $selectionHelper->getIdFields($this->objectType);
             if (count($idFields) == 1) {
                 $sortParam = $idFields[0] . ' DESC';

@@ -13,7 +13,6 @@
 namespace RK\ParkHausModule\Container\Base;
 
 use Symfony\Component\Routing\RouterInterface;
-use UserUtil;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
 use Zikula\Core\Doctrine\EntityAccess;
@@ -105,13 +104,6 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
         if (LinkContainerInterface::TYPE_ACCOUNT == $type) {
             $useAccountPage = $this->variableApi->get('RKParkHausModule', 'useAccountPage', true);
             if (false === $useAccountPage) {
-                return $links;
-            }
-
-            $userName = isset($args['uname']) ? $args['uname'] : $this->currentUserApi->get('uname');
-            // does this user exist?
-            if (false === UserUtil::getIdFromName($userName)) {
-                // user does not exist
                 return $links;
             }
 

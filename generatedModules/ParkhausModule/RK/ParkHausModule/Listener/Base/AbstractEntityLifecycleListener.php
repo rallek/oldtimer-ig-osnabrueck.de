@@ -16,18 +16,52 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
-use ServiceUtil;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Zikula\Core\Doctrine\EntityAccess;
 use RK\ParkHausModule\ParkHausEvents;
 use RK\ParkHausModule\Event\FilterVehicleEvent;
 use RK\ParkHausModule\Event\FilterVehicleImageEvent;
+use RK\ParkHausModule\Helper\ControllerHelper;
+use RK\ParkHausModule\Helper\UploadHelper;
 
 /**
  * Event subscriber base class for entity lifecycle events.
  */
 abstract class AbstractEntityLifecycleListener implements EventSubscriber
 {
+    /**
+     * @var Request
+     */
+    protected $request;
+
+    /**
+     * @var ControllerHelper
+     */
+    protected $controllerHelper;
+
+    /**
+     * @var UploadHelper
+     */
+    protected $uploadHelper;
+
+    /**
+     * EntityLifecycleListener constructor.
+     *
+     * @param RequestStack     $requestStack     RequestStack service instance
+     * @param ControllerHelper $controllerHelper ControllerHelper service instance
+     * @param UploadHelper     $uploadHelper     UploadHelper service instance
+     *
+     * @return void
+     */
+    public function __construct(RequestStack $requestStack, ControllerHelper $controllerHelper, UploadHelper $uploadHelper)
+    {
+        $this->request = $requestStack->getCurrentRequest();
+        $this->controllerHelper = $controllerHelper;
+        $this->uploadHelper = $uploadHelper;
+    }
+
     /**
      * Returns list of events to subscribe.
      *
@@ -300,15 +334,12 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
         $uploadFields = $this->getUploadFields($objectType);
 
         if (count($uploadFields) > 0) {
-            $controllerHelper = ServiceUtil::get('rk_parkhaus_module.controller_helper');
-            $request = ServiceUtil::get('request_stack')->getCurrentRequest();
-            $baseUrl = $request->getSchemeAndHttpHost() . $request->getBasePath();
-            $uploadHelper = ServiceUtil::get('rk_parkhaus_module.upload_helper');
+            $baseUrl = $this->request->getSchemeAndHttpHost() . $this->request->getBasePath();
             foreach ($uploadFields as $fieldName) {
                 if (empty($entity[$fieldName])) {
                     continue;
                 }
-                $basePath = $controllerHelper->getFileBaseFolder($objectType, $fieldName);
+                $basePath = $this->controllerHelper->getFileBaseFolder($objectType, $fieldName);
                 $filePath = $basePath . $entity[$fieldName];
                 if (file_exists($filePath)) {
                     $fileName = $entity[$fieldName];
@@ -317,7 +348,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber
 
                     // determine meta data if it does not exist
                     if (!is_array($entity[$fieldName . 'Meta']) || !count($entity[$fieldName . 'Meta'])) {
-                        $entity[$fieldName . 'Meta'] = $uploadHelper->readMetaDataForFile($fileName, $filePath);
+                        $entity[$fieldName . 'Meta'] = $this->uploadHelper->readMetaDataForFile($fileName, $filePath);
                     }
                 } else {
                     $entity[$fieldName] = null;

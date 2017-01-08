@@ -12,8 +12,6 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
-use DataUtil;
-use PageUtil;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -92,7 +90,7 @@ abstract class AbstractViewHelper
         $tpl = $this->request->query->getAlnum('tpl', '');
         if (!empty($tpl)) {
             // check if custom template exists
-            $customTemplate = $template . DataUtil::formatForOS(ucfirst($tpl));
+            $customTemplate = $template . ucfirst($tpl);
             if ($this->templating->exists($customTemplate . $templateExtension)) {
                 $template = $customTemplate;
             }
@@ -229,7 +227,7 @@ abstract class AbstractViewHelper
         // create name of the pdf output file
         $fileTitle = $this->controllerHelper->formatPermalink($siteName)
                    . '-'
-                   . $this->controllerHelper->formatPermalink(PageUtil::getVar('title'))
+                   . $this->controllerHelper->formatPermalink(\PageUtil::getVar('title'))
                    . '-' . date('Ymd') . '.pdf';
     
         /*

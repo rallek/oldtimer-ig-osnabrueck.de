@@ -12,7 +12,6 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
-use ServiceUtil;
 use Zikula\Core\RouteUrl;
 use Zikula\SearchModule\AbstractSearchable;
 
@@ -31,8 +30,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
      */
     public function getOptions($active, $modVars = null)
     {
-        $serviceManager = ServiceUtil::getManager();
-        $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');
+        $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
     
         if (!$permissionApi->hasPermission($this->name . '::', '::', ACCESS_READ)) {
             return '';
@@ -59,17 +57,15 @@ abstract class AbstractSearchHelper extends AbstractSearchable
      */
     public function getResults(array $words, $searchType = 'AND', $modVars = null)
     {
-        $serviceManager = ServiceUtil::getManager();
-        $permissionApi = $serviceManager->get('zikula_permissions_module.api.permission');
-        $request = $serviceManager->get('request_stack')->getCurrentRequest();
+        $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
+        $request = $this->container->get('request_stack')->getCurrentRequest();
     
         if (!$permissionApi->hasPermission($this->name . '::', '::', ACCESS_READ)) {
             return [];
         }
     
         // save session id as it is used when inserting search results below
-        $session = $serviceManager->get('session');
-        $sessionId = $session->getId();
+        $sessionId = $this->container->get('session')->getId();
     
         // initialise array for results
         $records = [];
@@ -84,7 +80,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
             }
         }
     
-        $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
+        $controllerHelper = $this->container->get('rk_parkhaus_module.controller_helper');
         $allowedTypes = $controllerHelper->getObjectTypes('helper', ['helper' => 'search', 'action' => 'getResults']);
     
         foreach ($searchTypes as $objectType) {
@@ -137,7 +133,7 @@ abstract class AbstractSearchHelper extends AbstractSearchable
                     break;
             }
     
-            $repository = $serviceManager->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
+            $repository = $this->container->get('rk_parkhaus_module.entity_factory')->getRepository($objectType);
     
             // build the search query without any joins
             $qb = $repository->genericBaseQuery('', '', false);

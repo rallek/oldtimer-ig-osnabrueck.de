@@ -12,7 +12,6 @@
 
 namespace RK\ParkHausModule\Form\Handler\Common\Base;
 
-use ModUtil;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Symfony\Component\Form\AbstractType;
@@ -181,12 +180,12 @@ abstract class AbstractEditHandler
     /**
      * @var CurrentUserApi
      */
-    private $currentUserApi;
+    protected $currentUserApi;
 
     /**
      * @var ParkHausFactory
      */
-    private $entityFactory;
+    protected $entityFactory;
 
     /**
      * @var ControllerHelper
@@ -265,7 +264,7 @@ abstract class AbstractEditHandler
         ControllerHelper $controllerHelper,
         ModelHelper $modelHelper,
         SelectionHelper $selectionHelper,
-        WorkflowHelperHelper $workflowHelper,
+        WorkflowHelper $workflowHelper,
         HookHelper $hookHelper)
     {
         $this->kernel = $kernel;

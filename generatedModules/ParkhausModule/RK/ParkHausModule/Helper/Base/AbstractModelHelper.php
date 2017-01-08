@@ -22,23 +22,16 @@ abstract class AbstractModelHelper
     /**
      * @var ParkHausFactory
      */
-    private $entityFactory;
-
-    /**
-     * @var ControllerHelper
-     */
-    private $controllerHelper;
+    protected $entityFactory;
 
     /**
      * ModelHelper constructor.
      *
      * @param ParkHausFactory $entityFactory ParkHausFactory service instance
-     * @param ControllerHelper $controllerHelper ControllerHelper service instance
      */
-    public function __construct(ParkHausFactory $entityFactory, ControllerHelper $controllerHelper)
+    public function __construct(ParkHausFactory $entityFactory)
     {
         $this->entityFactory = $entityFactory;
-        $this->controllerHelper = $controllerHelper;
     }
 
     /**
@@ -61,10 +54,6 @@ abstract class AbstractModelHelper
      */
     public function canBeCreated($objectType)
     {
-        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('helper', ['helper' => 'model', 'action' => 'canBeCreated']))) {
-            throw new Exception('Error! Invalid object type received.');
-        }
-    
         $result = false;
     
         switch ($objectType) {
@@ -90,11 +79,10 @@ abstract class AbstractModelHelper
      */
     protected function hasExistingInstances($objectType)
     {
-        if (!in_array($objectType, $this->controllerHelper->getObjectTypes('helper', ['helper' => 'model', 'action' => 'hasExistingInstances']))) {
-            throw new Exception('Error! Invalid object type received.');
-        }
-    
         $repository = $this->entityFactory->getRepository($objectType);
+        if (null === $repository) {
+            return false;
+        }
     
         return $repository->selectCount() > 0;
     }

@@ -13,9 +13,7 @@
 namespace RK\ParkHausModule\Base;
 
 use Doctrine\DBAL\Connection;
-use EventUtil;
 use RuntimeException;
-use UserUtil;
 use Zikula\Core\AbstractExtensionInstaller;
 use Zikula_Workflow_Util;
 
@@ -259,7 +257,7 @@ abstract class AbstractParkHausModuleInstaller extends AbstractExtensionInstalle
      */
     protected function dropEventHandlersFromDatabase()
     {
-        EventUtil::unregisterPersistentModuleHandlers('ParkHaus');
+        \EventUtil::unregisterPersistentModuleHandlers('ParkHaus');
     }
     
     /**

@@ -12,14 +12,15 @@
 
 namespace RK\ParkHausModule\Helper\Base;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Zikula\Common\Translator\TranslatorInterface;
 use Zikula\Common\Translator\TranslatorTrait;
 use Zikula\ExtensionsModule\Api\VariableApi;
 use Zikula\UsersModule\Api\CurrentUserApi;
-use ServiceUtil;
 
 /**
  * Helper base class for upload handling.
@@ -27,6 +28,16 @@ use ServiceUtil;
 abstract class AbstractUploadHelper
 {
     use TranslatorTrait;
+
+    /**
+     * @var SessionInterface
+     */
+    protected $session;
+
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
 
     /**
      * @var CurrentUserApi
@@ -37,6 +48,11 @@ abstract class AbstractUploadHelper
      * @var VariableApi
      */
     protected $variableApi;
+
+    /**
+     * @var ControllerHelper
+     */
+    protected $controllerHelper;
 
     /**
      * @var array List of object types with upload fields
@@ -56,15 +72,28 @@ abstract class AbstractUploadHelper
     /**
      * UploadHelper constructor.
      *
-     * @param TranslatorInterface $translator     Translator service instance
-     * @param CurrentUserApi      $currentUserApi CurrentUserApi service instance
-     * @param VariableApi         $variableApi    VariableApi service instance
+     * @param TranslatorInterface $translator       Translator service instance
+     * @param SessionInterface    $session          Session service instance
+     * @param LoggerInterface     $logger           Logger service instance
+     * @param CurrentUserApi      $currentUserApi   CurrentUserApi service instance
+     * @param VariableApi         $variableApi      VariableApi service instance
+     * @param ControllerHelper    $controllerHelper ControllerHelper service instance
      */
-    public function __construct(TranslatorInterface $translator, CurrentUserApi $currentUserApi, VariableApi $variableApi)
+    public function __construct(
+        TranslatorInterface $translator,
+        SessionInterface $session,
+        LoggerInterface $logger,
+        CurrentUserApi $currentUserApi,
+        VariableApi $variableApi,
+        ControllerHelper $controllerHelper)
     {
         $this->setTranslator($translator);
+        $this->session = $session;
+        $this->logger = $logger;
         $this->currentUserApi = $currentUserApi;
         $this->variableApi = $variableApi;
+        $this->controllerHelper = $controllerHelper;
+
         $this->allowedObjectTypes = ['vehicle', 'vehicleImage'];
         $this->imageFileTypes = ['gif', 'jpeg', 'jpg', 'png', 'swf'];
         $this->forbiddenFileTypes = ['cgi', 'pl', 'asp', 'phtml', 'php', 'php3', 'php4', 'php5', 'exe', 'com', 'bat', 'jsp', 'cfm', 'shtml'];
@@ -120,17 +149,14 @@ abstract class AbstractUploadHelper
         $fileNameParts[count($fileNameParts) - 1] = $extension;
         $fileName = implode('.', $fileNameParts);
     
-        $serviceManager = ServiceUtil::getManager();
-        $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
-        $flashBag = $serviceManager->get('session')->getFlashBag();
-        $logger = $serviceManager->get('logger');
+        $flashBag = $this->session->getFlashBag();
     
         // retrieve the final file name
         try {
-            $basePath = $controllerHelper->getFileBaseFolder($objectType, $fieldName);
+            $basePath = $this->controllerHelper->getFileBaseFolder($objectType, $fieldName);
         } catch (\Exception $e) {
             $flashBag->add('error', $e->getMessage());
-            $logger->error('{app}: User {user} could not detect upload destination path for entity {entity} and field {field}.', ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entity' => $objectType, 'field' => $fieldName]);
+            $this->logger->error('{app}: User {user} could not detect upload destination path for entity {entity} and field {field}.', ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'entity' => $objectType, 'field' => $fieldName]);
     
             return false;
         }
@@ -145,7 +171,7 @@ abstract class AbstractUploadHelper
             $imgInfo = getimagesize($destinationFilePath);
             if (!is_array($imgInfo) || !$imgInfo[0] || !$imgInfo[1]) {
                 $flashBag->add('error', $this->__('Error! This file type seems not to be a valid image.'));
-                $logger->error('{app}: User {user} tried to upload a file which is seems not to be a valid image.', ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname')]);
+                $this->logger->error('{app}: User {user} tried to upload a file which is seems not to be a valid image.', ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname')]);
         
                 return false;
             }
@@ -201,14 +227,12 @@ abstract class AbstractUploadHelper
      */
     protected function validateFileUpload($objectType, $file, $fieldName)
     {
-        $serviceManager = ServiceUtil::getManager();
-        $flashBag = $serviceManager->get('session')->getFlashBag();
-        $logger = $serviceManager->get('logger');
+        $flashBag = $this->session->getFlashBag();
     
         // check if a file has been uploaded properly without errors
         if ($file->getError() != UPLOAD_ERR_OK) {
             $flashBag->add('error', $file->getErrorMessage());
-            $logger->error('{app}: User {user} tried to upload a file with errors: ' . $file->getErrorMessage(), ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname')]);
+            $this->logger->error('{app}: User {user} tried to upload a file with errors: ' . $file->getErrorMessage(), ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname')]);
     
             return false;
         }
@@ -226,7 +250,7 @@ abstract class AbstractUploadHelper
         $isValidExtension = $this->isAllowedFileExtension($objectType, $fieldName, $extension);
         if (false === $isValidExtension) {
             $flashBag->add('error', $this->__('Error! This file type is not allowed. Please choose another file format.'));
-            $logger->error('{app}: User {user} tried to upload a file with a forbidden extension ("{extension}").', ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'extension' => $extension]);
+            $this->logger->error('{app}: User {user} tried to upload a file with a forbidden extension ("{extension}").', ['app' => 'RKParkHausModule', 'user' => $this->currentUserApi->get('uname'), 'extension' => $extension]);
     
             return false;
         }
@@ -419,9 +443,6 @@ abstract class AbstractUploadHelper
         if (empty($entity[$fieldName])) {
             return $entity;
         }
-    
-        $serviceManager = ServiceUtil::getManager();
-        $controllerHelper = $serviceManager->get('rk_parkhaus_module.controller_helper');
     
         // remove the file
         if (is_array($entity[$fieldName]) && isset($entity[$fieldName][$fieldName])) {
