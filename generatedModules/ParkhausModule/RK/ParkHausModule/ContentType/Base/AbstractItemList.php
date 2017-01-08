@@ -65,6 +65,14 @@ abstract class AbstractItemList extends \Content_AbstractContentType implements 
     protected $filter;
     
     /**
+     * ItemList constructor.
+     */
+    public function __construct()
+    {
+        $this->setContainer(\ServiceUtil::getManager());
+    }
+    
+    /**
      * Returns the module providing this content type.
      *
      * @return string The module name

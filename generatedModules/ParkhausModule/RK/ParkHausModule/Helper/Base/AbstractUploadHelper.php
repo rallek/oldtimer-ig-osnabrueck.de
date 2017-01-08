@@ -492,6 +492,8 @@ abstract class AbstractUploadHelper
                         break;
                 }
                 break;
+            default:
+                throw new Exception($this->__('Error! Invalid object type received.'));
             case 'vehicleImage':
                 $basePath .= 'vehicleimages/vehicleimage/';
                 break;

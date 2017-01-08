@@ -11,7 +11,7 @@
         {{ form_start(form) }}
         <ul class="nav nav-pills">
         {% set tabTitle = __('Owner refresh') %}
-        <liclass="active" role="presentation">
+        <li class="active" role="presentation">
             <a id="vars1Tab" href="#tab1" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a>
         </li>
         {% set tabTitle = __('Listviews') %}
@@ -19,7 +19,7 @@
             <a id="vars2Tab" href="#tab2" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a>
         </li>
         {% set tabTitle = __('Images') %}
-        <liclass=" dropdown" role="presentation">
+        <li class=" dropdown" role="presentation">
             <a id="imagesTabDrop" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-controls="imagesTabDropSections" aria-expanded="false">{{ tabTitle }}<span class="caret"></span></a>
             <ul id="imagesTabDropSections" class="dropdown-menu" aria-labelledby="imagesTabDrop">
             <li>
@@ -72,6 +72,12 @@
                     {{ form_row(form.shrinkHeightVehicleTitleImage) }}
                     </div>
                     {{ form_row(form.thumbnailModeVehicleTitleImage) }}
+                    {{ form_row(form.thumbnailWidthVehicleTitleImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleTitleImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleTitleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleTitleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleTitleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleTitleImageEdit) }}
                 </fieldset>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="tabImagesVehicleVehicleImage" aria-labelledby="imagesVehicleVehicleImageTab">
@@ -85,6 +91,12 @@
                     {{ form_row(form.shrinkHeightVehicleVehicleImage) }}
                     </div>
                     {{ form_row(form.thumbnailModeVehicleVehicleImage) }}
+                    {{ form_row(form.thumbnailWidthVehicleVehicleImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleVehicleImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleVehicleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleVehicleImageEdit) }}
                 </fieldset>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="tabImagesVehicleManufacturerImage" aria-labelledby="imagesVehicleManufacturerImageTab">
@@ -98,6 +110,12 @@
                     {{ form_row(form.shrinkHeightVehicleManufacturerImage) }}
                     </div>
                     {{ form_row(form.thumbnailModeVehicleManufacturerImage) }}
+                    {{ form_row(form.thumbnailWidthVehicleManufacturerImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleManufacturerImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleManufacturerImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleManufacturerImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleManufacturerImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleManufacturerImageEdit) }}
                 </fieldset>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="tabImagesVehicleImageVehicleImage" aria-labelledby="imagesVehicleImageVehicleImageTab">
@@ -111,6 +129,12 @@
                     {{ form_row(form.shrinkHeightVehicleImageVehicleImage) }}
                     </div>
                     {{ form_row(form.thumbnailModeVehicleImageVehicleImage) }}
+                    {{ form_row(form.thumbnailWidthVehicleImageVehicleImageView) }}
+                    {{ form_row(form.thumbnailHeightVehicleImageVehicleImageView) }}
+                    {{ form_row(form.thumbnailWidthVehicleImageVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightVehicleImageVehicleImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthVehicleImageVehicleImageEdit) }}
+                    {{ form_row(form.thumbnailHeightVehicleImageVehicleImageEdit) }}
                 </fieldset>
             </div>
         </div>

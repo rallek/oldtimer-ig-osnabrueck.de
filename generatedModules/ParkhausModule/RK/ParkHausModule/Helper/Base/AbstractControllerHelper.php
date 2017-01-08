@@ -105,7 +105,8 @@ abstract class AbstractControllerHelper
         ParkHausFactory $entityFactory,
         ModelHelper $modelHelper,
         SelectionHelper $selectionHelper,
-        ImageHelper $imageHelper)
+        ImageHelper $imageHelper
+        )
     {
         $this->setTranslator($translator);
         $this->request = $requestStack->getCurrentRequest();
@@ -279,7 +280,7 @@ abstract class AbstractControllerHelper
     {
         $contextArgs = ['controller' => $objectType, 'action' => 'view'];
         if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
-            throw new Exception('Error! Invalid object type received.');
+            throw new Exception($this->__('Error! Invalid object type received.'));
         }
     
         $request = $this->request;
@@ -422,7 +423,7 @@ abstract class AbstractControllerHelper
     {
         $contextArgs = ['controller' => $objectType, 'action' => 'display'];
         if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
-            throw new Exception('Error! Invalid object type received.');
+            throw new Exception($this->__('Error! Invalid object type received.'));
         }
     
         $repository = $this->entityFactory->getRepository($objectType);
@@ -455,7 +456,7 @@ abstract class AbstractControllerHelper
     {
         $contextArgs = ['controller' => $objectType, 'action' => 'edit'];
         if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
-            throw new Exception('Error! Invalid object type received.');
+            throw new Exception($this->__('Error! Invalid object type received.'));
         }
     
         $repository = $this->entityFactory->getRepository($objectType);
@@ -480,7 +481,7 @@ abstract class AbstractControllerHelper
     {
         $contextArgs = ['controller' => $objectType, 'action' => 'delete'];
         if (!in_array($objectType, $this->getObjectTypes('controllerAction', $contextArgs))) {
-            throw new Exception('Error! Invalid object type received.');
+            throw new Exception($this->__('Error! Invalid object type received.'));
         }
     
         $repository = $this->entityFactory->getRepository($objectType);

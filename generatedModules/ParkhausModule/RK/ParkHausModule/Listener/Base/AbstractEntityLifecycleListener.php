@@ -137,7 +137,6 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber, Conta
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->container->get('zikula_users_module.current_user')->get('uname'), 'entity' => $objectType, 'id' => $objectId];
         $logger->debug('{app}: User {user} removed the {entity} with id {id}.', $logArgs);
         
-        
         // create the filter event and dispatch it
         $filterEventClass = '\\RK\\ParkHausModule\\Event\\Filter' . ucfirst($objectType) . 'Event';
         $event = new $filterEventClass($entity);
@@ -205,7 +204,6 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber, Conta
         $logArgs = ['app' => 'RKParkHausModule', 'user' => $this->container->get('zikula_users_module.current_user')->get('uname'), 'entity' => $entity->get_objectType(), 'id' => $objectId];
         $logger->debug('{app}: User {user} created the {entity} with id {id}.', $logArgs);
         
-        
         // create the filter event and dispatch it
         $filterEventClass = '\\RK\\ParkHausModule\\Event\\Filter' . ucfirst($entity->get_objectType()) . 'Event';
         $event = new $filterEventClass($entity);
@@ -240,6 +238,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber, Conta
             }
             $entity[$uploadField] = $entity[$uploadField]->getFilename();
         }
+        
         
         // create the filter event and dispatch it
         $filterEventClass = '\\RK\\ParkHausModule\\Event\\Filter' . ucfirst($entity->get_objectType()) . 'Event';
@@ -299,7 +298,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber, Conta
         if (count($uploadFields) > 0) {
             $request = $this->container->get('request_stack')->getCurrentRequest();
             $baseUrl = $request->getSchemeAndHttpHost() . $request->getBasePath();
-            $uploadHelper = $this->container->get('rk_parkhaus_module.upload_helper');
+            $uploadHelper = $this->container->get('RK\ParkHausModule.upload_helper');
             foreach ($uploadFields as $fieldName) {
                 if (empty($entity[$fieldName])) {
                     continue;
@@ -323,6 +322,7 @@ abstract class AbstractEntityLifecycleListener implements EventSubscriber, Conta
             }
         }
 
+        
         // create the filter event and dispatch it
         $filterEventClass = '\\RK\\ParkHausModule\\Event\\Filter' . ucfirst($entity->get_objectType()) . 'Event';
         $event = new $filterEventClass($entity);
