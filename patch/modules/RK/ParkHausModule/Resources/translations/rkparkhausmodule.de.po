@@ -168,9 +168,6 @@ msgstr ""
 msgid "Engine"
 msgstr "Motor"
 
-msgid "Enter a part of the user name to search"
-msgstr "Zum Suchen geben Sie einen Teil des Benutzernamens ein"
-
 msgid "Example"
 msgstr "Beispiel"
 
@@ -273,9 +270,6 @@ msgstr "Letzte Aktualisierung"
 msgid "Listviews"
 msgstr "Listviews"
 
-msgid "Manage user"
-msgstr "Benutzer verwalten"
-
 msgid "Manufacturer"
 msgstr "Hersteller"
 
@@ -288,14 +282,17 @@ msgstr "Höchstgeschwindigkeit"
 msgid "Model"
 msgstr "Modell"
 
+msgid "My vehicle images"
+msgstr "Meine Fahrzeugbilder"
+
+msgid "My vehicles"
+msgstr "Meine Fahrzeuge"
+
 msgid "No"
 msgstr "Nein"
 
 msgid "No entries found."
 msgstr "Keine Einträge gefunden."
-
-msgid "No results found!"
-msgstr "Keine Ergebnisse gefunden!"
 
 msgid "No vehicle images found."
 msgstr "Kein Fahrzeugbilder gefunden."
@@ -314,12 +311,6 @@ msgstr "Fenster für Schnellansicht öffnen"
 
 msgid "Operators"
 msgstr "Operatoren"
-
-msgid "Owner"
-msgstr "Eigentümer"
-
-msgid "Owner refresh"
-msgstr "Eigentümer zuordnen"
 
 msgid ""
 "Prepend one of the keywords \"year\", \"month\", \"week\", \"day\", \"hour"
@@ -348,9 +339,6 @@ msgstr "Fahrzeug suchen und auswählen"
 
 msgid "Search and select vehicle image"
 msgstr "Fahrzeugbild suchen und auswählen"
-
-msgid "Search user"
-msgstr "Benutzer suchen"
 
 msgid "Settings"
 msgstr "Einstellungen"
@@ -391,9 +379,6 @@ msgstr "im Besitz"
 
 msgid "Submit"
 msgstr "Bestätigen"
-
-msgid "Switch to users administration"
-msgstr "Wechseln Sie in die Benutzerverwaltung."
 
 msgid "Table aliases"
 msgstr "Tabellen Aliase"
@@ -462,9 +447,6 @@ msgstr ""
 "Dabei bedeutet \"Foo\" nicht der Name der verknüpften Entität, aber die "
 "Quelle oder das Ziel Alias der entsprechenden Beziehung."
 
-msgid "This function requires JavaScript activated!"
-msgstr "Diese Funktion verlangt aktiviertes Javascript!"
-
 msgid ""
 "This has the advantage that it is possible to join a certain table multiple "
 "times. For example instead of having many addresses for a person one could "
@@ -523,9 +505,6 @@ msgstr "Fahrzeugbilder"
 msgid "Vehicle list"
 msgstr "Fahrzeug Übersicht"
 
-msgid "Vehicle owner"
-msgstr "Fahrzeugeigentümer"
-
 msgid "Vehicles"
 msgstr "Fahrzeuge"
 
@@ -571,13 +550,6 @@ msgid ""
 msgstr ""
 "Hier werden die Bilder aller Fahrzeuge angezeigt. Je nach Zugriffsrecht sind "
 "einige Bilder evtl. herausgefiltert."
-
-msgid ""
-"here we can refresh the owner relationsship for vehicles and vehicle images. "
-"This can be used if a vehicle has been addressed to another user."
-msgstr ""
-"here we can refresh the owner relationsship for vehicles and vehicle images. "
-"This can be used if a vehicle has been addressed to another user."
 
 msgid "is Empty or NULL."
 msgstr "ist leer oder NULL."
@@ -625,6 +597,40 @@ msgstr "Fahrzeugbilder"
 
 msgid "vehicles"
 msgstr "Fahrzeuge"
+
+#~ msgid "Enter a part of the user name to search"
+#~ msgstr "Zum Suchen geben Sie einen Teil des Benutzernamens ein"
+
+#~ msgid "Manage user"
+#~ msgstr "Benutzer verwalten"
+
+#~ msgid "No results found!"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+#~ msgid "Owner"
+#~ msgstr "Eigentümer"
+
+#~ msgid "Owner refresh"
+#~ msgstr "Eigentümer zuordnen"
+
+#~ msgid "Search user"
+#~ msgstr "Benutzer suchen"
+
+#~ msgid "Switch to users administration"
+#~ msgstr "Wechseln Sie in die Benutzerverwaltung."
+
+#~ msgid "This function requires JavaScript activated!"
+#~ msgstr "Diese Funktion verlangt aktiviertes Javascript!"
+
+#~ msgid "Vehicle owner"
+#~ msgstr "Fahrzeugeigentümer"
+
+#~ msgid ""
+#~ "here we can refresh the owner relationsship for vehicles and vehicle "
+#~ "images. This can be used if a vehicle has been addressed to another user."
+#~ msgstr ""
+#~ "here we can refresh the owner relationsship for vehicles and vehicle "
+#~ "images. This can be used if a vehicle has been addressed to another user."
 
 #~ msgid "Here you can define several options for image handling."
 #~ msgstr ""

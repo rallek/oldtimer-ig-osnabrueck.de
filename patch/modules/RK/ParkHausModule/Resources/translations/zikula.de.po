@@ -309,9 +309,6 @@ msgstr "Höchstgeschwindigkeit des Fahrzeugs eingeben"
 msgid "Enter the model of the vehicle"
 msgstr "Modell des Fahrzeugs eingeben"
 
-msgid "Enter the owner of the vehicle"
-msgstr "Eigentümer des Fahrzeugs eingeben"
-
 msgid "Enter the rim of the vehicle"
 msgstr "Felgen des Fahrzeugs eingeben"
 
@@ -563,9 +560,6 @@ msgstr "Bild des Fahrzeugs eingeben"
 msgid "Enter the vehicle image of the vehicle image"
 msgstr "Bild des Fahrzeugs eingeben"
 
-msgid "Enter the vehicle owner of the vehicle image"
-msgstr "Eigentümer des Fahrzeugs eingeben"
-
 msgid "Enter the weight of the vehicle"
 msgstr "Gewicht des Fahrzeugs eingeben"
 
@@ -661,34 +655,18 @@ msgstr ""
 #, fuzzy
 msgid ""
 "If not checked the registered user will not been shown to the public. Only "
-"IG members are able to see. If you even do not want this leave the owner "
-"field empty"
+"IG members are able to see."
 msgstr ""
 "If not checked the registered user will not been shown to the public. Only "
 "IG members are able to see."
 
 #, fuzzy
 msgid ""
-"If there is somethin special what you can not fill into one of the other "
-"fields you may want to place it here."
-msgstr ""
-"If there is somethin special what you can not fill into one of the other "
-"fields you may want to place it here."
-
-#, fuzzy
-msgid ""
 "If there is something special what you can not fill into one of the other "
 "fields you may want to place it here."
 msgstr ""
 "If there is something special what you can not fill into one of the other "
 "fields you may want to place it here."
-
-msgid ""
-"If this filed is changed the image will be shown as created by this suer. It "
-"also will apper in his account settings."
-msgstr ""
-"If this filed is changed the image will be shown as created by this user. It "
-"also will apper in his account settings."
 
 #, fuzzy
 msgid ""
@@ -733,10 +711,6 @@ msgid "Invalid object type received."
 msgstr "Ungültigen Objekt Typ (object type) erhalten."
 
 #, fuzzy
-msgid "Invalid user field name received."
-msgstr "Invalid user field name received."
-
-#, fuzzy
 msgid "Invalid user identifier received."
 msgstr "Invalid user identifier received."
 
@@ -772,9 +746,6 @@ msgstr "Modell"
 
 msgid "Motorbike"
 msgstr "Motorrad"
-
-msgid "My flag"
-msgstr "ungenutzt"
 
 msgid "My vehicle images"
 msgstr "Meine Fahrzeugbilder"
@@ -814,9 +785,6 @@ msgstr "Vorgang abgebrochen"
 
 msgid "Outbound"
 msgstr "abschneiden (outbound)"
-
-msgid "Owner"
-msgstr "Eigentümer"
 
 msgid "Page size"
 msgstr "Seitengröße"
@@ -1016,9 +984,6 @@ msgstr "Die maximale Bildhöhe in Pixel."
 msgid "The maximum image width in pixels."
 msgstr "Die maximale Bildbreite in Pixel."
 
-msgid "The my flag option."
-msgstr "The my flag option."
-
 msgid "The setting has been successfully changed."
 msgstr "Die Einstellungen wurden erfolgreich geändert."
 
@@ -1121,19 +1086,19 @@ msgstr "Thumbnail mode (inset or outbound)."
 
 #, fuzzy
 msgid "Thumbnail mode vehicle image vehicle image"
-msgstr "Thumbnail width vehicle image vehicle image edit"
+msgstr "Thumbnail mode vehicle image vehicle image"
 
 #, fuzzy
 msgid "Thumbnail mode vehicle manufacturer image"
-msgstr "Thumbnail width vehicle manufacturer image edit"
+msgstr "Thumbnail mode vehicle manufacturer image"
 
 #, fuzzy
 msgid "Thumbnail mode vehicle title image"
-msgstr "Thumbnail mode vehicle image"
+msgstr "Thumbnail mode vehicle title image"
 
 #, fuzzy
 msgid "Thumbnail mode vehicle vehicle image"
-msgstr "Thumbnail mode vehicle image"
+msgstr "Thumbnail mode vehicle vehicle image"
 
 #, fuzzy
 msgid "Thumbnail width on display pages in pixels."
@@ -1248,9 +1213,6 @@ msgstr "Fahrzeugbilder"
 msgid "Vehicle list"
 msgstr "Fahrzeug Übersicht"
 
-msgid "Vehicle owner"
-msgstr "Fahrzeugeigentümer"
-
 msgid "Vehicle type"
 msgstr "Fahrzeug Typ"
 
@@ -1351,11 +1313,6 @@ msgstr "Erwähnenswertes beim Bremssystem?"
 msgid "the image date will be added to the title"
 msgstr "Das Bild-Datum wird der Titel hinzugefügt"
 
-msgid "the owner of the vehicle if the owner is registered at our site"
-msgstr ""
-"der Eigentümer des Fahrzeugs, wenn der Besitzer auf unserer Website "
-"registriert ist"
-
 msgid "the year or month.year of your vehicle built"
 msgstr "Das Jahr oder Monat.Jahr der Fahrzeugherstellung"
 
@@ -1376,6 +1333,57 @@ msgstr "km/h oder mph"
 
 msgid "z.B. Benzine, Diesel or 1:25"
 msgstr "z.B. Benzin, Diesel oder 1:25"
+
+#~ msgid "Enter the owner of the vehicle"
+#~ msgstr "Eigentümer des Fahrzeugs eingeben"
+
+#~ msgid "Enter the vehicle owner of the vehicle image"
+#~ msgstr "Eigentümer des Fahrzeugs eingeben"
+
+#, fuzzy
+#~ msgid ""
+#~ "If not checked the registered user will not been shown to the public. "
+#~ "Only IG members are able to see. If you even do not want this leave the "
+#~ "owner field empty"
+#~ msgstr ""
+#~ "If not checked the registered user will not been shown to the public. "
+#~ "Only IG members are able to see."
+
+#, fuzzy
+#~ msgid ""
+#~ "If there is somethin special what you can not fill into one of the other "
+#~ "fields you may want to place it here."
+#~ msgstr ""
+#~ "If there is somethin special what you can not fill into one of the other "
+#~ "fields you may want to place it here."
+
+#~ msgid ""
+#~ "If this filed is changed the image will be shown as created by this suer. "
+#~ "It also will apper in his account settings."
+#~ msgstr ""
+#~ "If this filed is changed the image will be shown as created by this user. "
+#~ "It also will apper in his account settings."
+
+#, fuzzy
+#~ msgid "Invalid user field name received."
+#~ msgstr "Invalid user field name received."
+
+#~ msgid "My flag"
+#~ msgstr "ungenutzt"
+
+#~ msgid "Owner"
+#~ msgstr "Eigentümer"
+
+#~ msgid "The my flag option."
+#~ msgstr "The my flag option."
+
+#~ msgid "Vehicle owner"
+#~ msgstr "Fahrzeugeigentümer"
+
+#~ msgid "the owner of the vehicle if the owner is registered at our site"
+#~ msgstr ""
+#~ "der Eigentümer des Fahrzeugs, wenn der Besitzer auf unserer Website "
+#~ "registriert ist"
 
 #~ msgid "Thumbnail mode vehicle"
 #~ msgstr "Thumbnail mode vehicle"
