@@ -1,12 +1,13 @@
 {# purpose of this template: vehicles list view #}
 {% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
-{% block title __('Vehicle list') %}
+{% block title own ? __('My vehicles') : __('Vehicle list') %}
 {% block admin_page_icon 'list-alt' %}
 {% block content %}
 <div class="rkparkhausmodule-vehicle rkparkhausmodule-view">
 
     <p class="alert alert-info">{{ __('please add your vehicle. You will be able to add some images in a vehicle specific album. 
-    Not all fields are mandatory. Feel free to fill what fits best to your vehicle.') }}</p>
+    Not all fields are mandatory. Feel free to fill what fits best to your vehicle.
+    Documentation can be found here: <a href="https://github.com/rallek/oldtimer-ig-osnabrueck.de/wiki">Github Wiki</a>|raw') }}</p>
 
     {{ block('page_nav_links') }}
 

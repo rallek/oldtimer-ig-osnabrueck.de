@@ -189,7 +189,7 @@ abstract class AbstractUploadHelper
                 $imgInfo = getimagesize($destinationFilePath);
                 if ($imgInfo[0] > $maxWidth || $imgInfo[1] > $maxHeight) {
                     // resize to allowed maximum size
-                    $thumbManager = $serviceManager->get('systemplugin.imagine.manager');
+                    $thumbManager = \ServiceUtil::get('systemplugin.imagine.manager');
                     $preset = new \SystemPlugin_Imagine_Preset('RKParkHausModule_Shrinker', [
                         'width' => $maxWidth,
                         'height' => $maxHeight,
@@ -492,8 +492,6 @@ abstract class AbstractUploadHelper
                         break;
                 }
                 break;
-            default:
-                throw new Exception($this->__('Error! Invalid object type received.'));
             case 'vehicleImage':
                 $basePath .= 'vehicleimages/vehicleimage/';
                 break;

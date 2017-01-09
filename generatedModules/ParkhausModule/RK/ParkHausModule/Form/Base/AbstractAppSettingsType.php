@@ -105,9 +105,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['vehicleEntriesPerPage']) ? $this->modVars['vehicleEntriesPerPage'] : '',
                 'empty_data' => intval('10'),
                 'attr' => [
+                    'max_length' => 255,
                     'title' => $this->__('Enter the vehicle entries per page. Only digits are allowed.')
-                ],'max_length' => 255,
-                'scale' => 0
+                ],'scale' => 0
             ])
             ->add('vehicleImageEntriesPerPage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
                 'label' => $this->__('Vehicle image entries per page') . ':',
@@ -120,9 +120,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['vehicleImageEntriesPerPage']) ? $this->modVars['vehicleImageEntriesPerPage'] : '',
                 'empty_data' => intval('10'),
                 'attr' => [
+                    'max_length' => 255,
                     'title' => $this->__('Enter the vehicle image entries per page. Only digits are allowed.')
-                ],'max_length' => 255,
-                'scale' => 0
+                ],'scale' => 0
             ])
         ;
     }
@@ -161,10 +161,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkWidthVehicleTitleImage']) ? $this->modVars['shrinkWidthVehicleTitleImage'] : '',
                 'empty_data' => intval('800'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink width vehicle title image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehicletitleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('shrinkHeightVehicleTitleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -178,10 +178,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkHeightVehicleTitleImage']) ? $this->modVars['shrinkHeightVehicleTitleImage'] : '',
                 'empty_data' => intval('600'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink height vehicle title image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehicletitleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailModeVehicleTitleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
@@ -214,9 +214,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleTitleImageView']) ? $this->modVars['thumbnailWidthVehicleTitleImageView'] : '',
                 'empty_data' => intval('32'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle title image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleTitleImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -230,9 +230,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleTitleImageView']) ? $this->modVars['thumbnailHeightVehicleTitleImageView'] : '',
                 'empty_data' => intval('24'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle title image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleTitleImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -246,9 +246,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleTitleImageDisplay']) ? $this->modVars['thumbnailWidthVehicleTitleImageDisplay'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle title image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleTitleImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -262,9 +262,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleTitleImageDisplay']) ? $this->modVars['thumbnailHeightVehicleTitleImageDisplay'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle title image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleTitleImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -278,9 +278,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleTitleImageEdit']) ? $this->modVars['thumbnailWidthVehicleTitleImageEdit'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle title image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleTitleImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -294,9 +294,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleTitleImageEdit']) ? $this->modVars['thumbnailHeightVehicleTitleImageEdit'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle title image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('enableShrinkingForVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
@@ -324,10 +324,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkWidthVehicleVehicleImage']) ? $this->modVars['shrinkWidthVehicleVehicleImage'] : '',
                 'empty_data' => intval('800'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink width vehicle vehicle image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehiclevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('shrinkHeightVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -341,10 +341,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkHeightVehicleVehicleImage']) ? $this->modVars['shrinkHeightVehicleVehicleImage'] : '',
                 'empty_data' => intval('600'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink height vehicle vehicle image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehiclevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailModeVehicleVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
@@ -377,9 +377,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleVehicleImageView']) ? $this->modVars['thumbnailWidthVehicleVehicleImageView'] : '',
                 'empty_data' => intval('32'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle vehicle image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleVehicleImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -393,9 +393,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleVehicleImageView']) ? $this->modVars['thumbnailHeightVehicleVehicleImageView'] : '',
                 'empty_data' => intval('24'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle vehicle image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleVehicleImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -409,9 +409,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleVehicleImageDisplay']) ? $this->modVars['thumbnailWidthVehicleVehicleImageDisplay'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle vehicle image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleVehicleImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -425,9 +425,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleVehicleImageDisplay']) ? $this->modVars['thumbnailHeightVehicleVehicleImageDisplay'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle vehicle image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleVehicleImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -441,9 +441,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleVehicleImageEdit']) ? $this->modVars['thumbnailWidthVehicleVehicleImageEdit'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle vehicle image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleVehicleImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -457,9 +457,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleVehicleImageEdit']) ? $this->modVars['thumbnailHeightVehicleVehicleImageEdit'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle vehicle image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('enableShrinkingForVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
@@ -487,10 +487,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkWidthVehicleManufacturerImage']) ? $this->modVars['shrinkWidthVehicleManufacturerImage'] : '',
                 'empty_data' => intval('800'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink width vehicle manufacturer image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehiclemanufacturerimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('shrinkHeightVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -504,10 +504,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkHeightVehicleManufacturerImage']) ? $this->modVars['shrinkHeightVehicleManufacturerImage'] : '',
                 'empty_data' => intval('600'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink height vehicle manufacturer image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehiclemanufacturerimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailModeVehicleManufacturerImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
@@ -540,9 +540,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleManufacturerImageView']) ? $this->modVars['thumbnailWidthVehicleManufacturerImageView'] : '',
                 'empty_data' => intval('32'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle manufacturer image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleManufacturerImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -556,9 +556,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleManufacturerImageView']) ? $this->modVars['thumbnailHeightVehicleManufacturerImageView'] : '',
                 'empty_data' => intval('24'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle manufacturer image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleManufacturerImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -572,9 +572,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleManufacturerImageDisplay']) ? $this->modVars['thumbnailWidthVehicleManufacturerImageDisplay'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle manufacturer image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleManufacturerImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -588,9 +588,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleManufacturerImageDisplay']) ? $this->modVars['thumbnailHeightVehicleManufacturerImageDisplay'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle manufacturer image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleManufacturerImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -604,9 +604,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleManufacturerImageEdit']) ? $this->modVars['thumbnailWidthVehicleManufacturerImageEdit'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle manufacturer image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleManufacturerImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -620,9 +620,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleManufacturerImageEdit']) ? $this->modVars['thumbnailHeightVehicleManufacturerImageEdit'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle manufacturer image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('enableShrinkingForVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
@@ -650,10 +650,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkWidthVehicleImageVehicleImage']) ? $this->modVars['shrinkWidthVehicleImageVehicleImage'] : '',
                 'empty_data' => intval('800'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink width vehicle image vehicle image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehicleimagevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('shrinkHeightVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -667,10 +667,10 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['shrinkHeightVehicleImageVehicleImage']) ? $this->modVars['shrinkHeightVehicleImageVehicleImage'] : '',
                 'empty_data' => intval('600'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the shrink height vehicle image vehicle image. Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehicleimagevehicleimage'
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailModeVehicleImageVehicleImage', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
@@ -703,9 +703,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleImageVehicleImageView']) ? $this->modVars['thumbnailWidthVehicleImageVehicleImageView'] : '',
                 'empty_data' => intval('32'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle image vehicle image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleImageVehicleImageView', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -719,9 +719,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleImageVehicleImageView']) ? $this->modVars['thumbnailHeightVehicleImageVehicleImageView'] : '',
                 'empty_data' => intval('24'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle image vehicle image view. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleImageVehicleImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -735,9 +735,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleImageVehicleImageDisplay']) ? $this->modVars['thumbnailWidthVehicleImageVehicleImageDisplay'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle image vehicle image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleImageVehicleImageDisplay', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -751,9 +751,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleImageVehicleImageDisplay']) ? $this->modVars['thumbnailHeightVehicleImageVehicleImageDisplay'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle image vehicle image display. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailWidthVehicleImageVehicleImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -767,9 +767,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailWidthVehicleImageVehicleImageEdit']) ? $this->modVars['thumbnailWidthVehicleImageVehicleImageEdit'] : '',
                 'empty_data' => intval('240'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail width vehicle image vehicle image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
             ->add('thumbnailHeightVehicleImageVehicleImageEdit', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
@@ -783,9 +783,9 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['thumbnailHeightVehicleImageVehicleImageEdit']) ? $this->modVars['thumbnailHeightVehicleImageVehicleImageEdit'] : '',
                 'empty_data' => intval('180'),
                 'attr' => [
+                    'max_length' => 4,
                     'title' => $this->__('Enter the thumbnail height vehicle image vehicle image edit. Only digits are allowed.')
-                ],'max_length' => 4,
-                'scale' => 0,
+                ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
         ;

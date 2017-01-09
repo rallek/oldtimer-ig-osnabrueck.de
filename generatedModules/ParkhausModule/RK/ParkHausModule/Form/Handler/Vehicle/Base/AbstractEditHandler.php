@@ -113,6 +113,10 @@ abstract class AbstractEditHandler extends EditHandler
         $codes[] = 'userView';
         // admin list of vehicles
         $codes[] = 'adminView';
+        // user list of own vehicles
+        $codes[] = 'userOwnView';
+        // admin list of own vehicles
+        $codes[] = 'adminOwnView';
         // user detail page of treated vehicle
         $codes[] = 'userDisplay';
         // admin detail page of treated vehicle
@@ -303,6 +307,9 @@ abstract class AbstractEditHandler extends EditHandler
             case 'userView':
             case 'adminView':
                 return $this->router->generate($routePrefix . 'view');
+            case 'userOwnView':
+            case 'adminOwnView':
+                return $this->router->generate($routePrefix . 'view', [ 'own' => 1 ]);
             case 'userDisplay':
             case 'adminDisplay':
                 if ($args['commandName'] != 'delete' && !($this->templateParameters['mode'] == 'create' && $args['commandName'] == 'cancel')) {

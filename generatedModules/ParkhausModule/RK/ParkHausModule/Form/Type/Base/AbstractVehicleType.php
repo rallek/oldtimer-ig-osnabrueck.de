@@ -151,10 +151,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the copyright title image of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('vehicleImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
@@ -182,10 +182,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the copyright vehicle image of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('vehicleDescriptionTeaser', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
@@ -197,10 +197,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Vehicle description with max 500 char. It will been shown in the list overview and added in front of the rest of the vehicle description.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 500,
                 'class' => '',
                 'title' => $this->__('Enter the vehicle description teaser of the vehicle')
-            ],'required' => true,
-            'max_length' => 500,
+            ],'required' => true
         ]);
         
         $builder->add('vehicleDescription', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
@@ -212,10 +212,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('This is the text which follows the teaser text at the display page. You can use max 5000 char.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 5000,
                 'class' => '',
                 'title' => $this->__('Enter the vehicle description of the vehicle')
-            ],'required' => false,
-            'max_length' => 5000,
+            ],'required' => false
         ]);
         
         $builder->add('manufacturer', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -227,10 +227,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('if you do not know the manufacturer please type unknown.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the manufacturer of the vehicle')
             ],'required' => true,
-            'max_length' => 255,
         ]);
         
         $builder->add('manufacturerImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
@@ -258,10 +258,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('vehicle version'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the model of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('built', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -273,10 +273,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('the year or month.year of your vehicle built'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the built of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('engine', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -288,10 +288,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('e.g. Otto, Diesel, Wankel, or specific type of engine, ...'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the engine of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('displacement', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -303,10 +303,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('how much ccm'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the displacement of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('cylinders', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -318,10 +318,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('how many cylinders'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the cylinders of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('compression', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -333,10 +333,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('compression in bar'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the compression of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('fuelManagement', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -348,10 +348,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('e.g. injection type, carburetor manufacturor and size ...'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the fuel management of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('fuel', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -363,10 +363,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('z.B. Benzine, Diesel or 1:25'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the fuel of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('horsePower', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -378,10 +378,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('you can use hp or kw'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the horse power of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('maxSpeed', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -393,10 +393,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('you can use km/h or mph'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the max speed of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('weight', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -408,10 +408,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('typical in kg'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the weight of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('brakes', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -423,10 +423,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('tell us something about your brakes'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the brakes of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('gearbox', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -438,10 +438,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('shifter or automatic? Specific type?'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the gearbox of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('rim', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -453,10 +453,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('if you have special rim installed'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the rim of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('tire', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -468,10 +468,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('sice of tire or something specific about your tires'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the tire of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('interior', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -483,40 +483,40 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('do you have a special interieur?'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the interior of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('infoField1', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Info field 1') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('If there is somethin special what you can not fill into one of the other fields you may want to place it here.')
+                'title' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.')
             ],
-            'help' => $this->__('If there is somethin special what you can not fill into one of the other fields you may want to place it here.'),
+            'help' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the info field 1 of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('infoField2', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
             'label' => $this->__('Info field 2') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('If there is somethin special what you can not fill into one of the other fields you may want to place it here.')
+                'title' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.')
             ],
-            'help' => $this->__('If there is somethin special what you can not fill into one of the other fields you may want to place it here.'),
+            'help' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the info field 2 of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('infoField3', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -528,19 +528,19 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the info field 3 of the vehicle')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('showVehicleOwner', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
             'label' => $this->__('Show vehicle owner') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty')
+                'title' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see.')
             ],
-            'help' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty'),
+            'help' => $this->__('If not checked the registered user will not been shown to the public. Only IG members are able to see.'),
             'attr' => [
                 'class' => '',
                 'title' => $this->__('show vehicle owner ?')
@@ -556,10 +556,10 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Please change if white is not fitting due to the color of the title image. Preferred you should use #000000 in case.'),
             'empty_data' => '#ffffff',
             'attr' => [
+                'max_length' => 255,
                 'class' => ' validate-nospace validate-htmlcolour rkparkhausmoduleColourPicker',
                 'title' => $this->__('Choose the title text color of the vehicle')
             ],'required' => true,
-            'max_length' => 255,
         ]);
         
         $builder->add('stillMyOwn', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [

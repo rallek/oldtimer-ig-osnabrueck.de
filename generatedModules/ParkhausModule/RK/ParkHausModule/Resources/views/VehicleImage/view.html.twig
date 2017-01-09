@@ -1,6 +1,6 @@
 {# purpose of this template: vehicle images list view #}
 {% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
-{% block title __('Vehicle image list') %}
+{% block title own ? __('My vehicle images') : __('Vehicle image list') %}
 {% block admin_page_icon 'list-alt' %}
 {% block content %}
 <div class="rkparkhausmodule-vehicleimage rkparkhausmodule-view">

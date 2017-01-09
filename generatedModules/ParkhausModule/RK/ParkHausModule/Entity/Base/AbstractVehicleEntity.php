@@ -353,7 +353,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
     protected $interior = '';
     
     /**
-     * If there is somethin special what you can not fill into one of the other fields you may want to place it here.
+     * If there is something special what you can not fill into one of the other fields you may want to place it here.
      * @ORM\Column(length=255, nullable=true)
      * @Assert\Length(min="0", max="255")
      * @var string $infoField1
@@ -361,7 +361,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
     protected $infoField1 = '';
     
     /**
-     * If there is somethin special what you can not fill into one of the other fields you may want to place it here.
+     * If there is something special what you can not fill into one of the other fields you may want to place it here.
      * @ORM\Column(length=255, nullable=true)
      * @Assert\Length(min="0", max="255")
      * @var string $infoField2
@@ -377,7 +377,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
     protected $infoField3 = '';
     
     /**
-     * If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty
+     * If not checked the registered user will not been shown to the public. Only IG members are able to see.
      * @ORM\Column(type="boolean", nullable=true)
      * @Assert\Type(type="bool")
      * @var boolean $showVehicleOwner

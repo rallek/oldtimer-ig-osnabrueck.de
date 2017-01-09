@@ -135,15 +135,23 @@ abstract class AbstractEditHandler extends EditHandler
         $codes[] = 'userView';
         // admin list of vehicle images
         $codes[] = 'adminView';
+        // user list of own vehicle images
+        $codes[] = 'userOwnView';
+        // admin list of own vehicle images
+        $codes[] = 'adminOwnView';
         // user detail page of treated vehicle image
         $codes[] = 'userDisplay';
         // admin detail page of treated vehicle image
         $codes[] = 'adminDisplay';
     
         // user list of vehicles
-        $codes[] = 'userViewVehicle';
+        $codes[] = 'userViewVehicles';
         // admin list of vehicles
-        $codes[] = 'adminViewVehicle';
+        $codes[] = 'adminViewVehicles';
+        // user list of own vehicles
+        $codes[] = 'userOwnViewVehicles';
+        // admin list of own vehicles
+        $codes[] = 'adminOwnViewVehicles';
         // user detail page of related vehicle
         $codes[] = 'userDisplayVehicle';
         // admin detail page of related vehicle
@@ -333,6 +341,9 @@ abstract class AbstractEditHandler extends EditHandler
             case 'userView':
             case 'adminView':
                 return $this->router->generate($routePrefix . 'view');
+            case 'userOwnView':
+            case 'adminOwnView':
+                return $this->router->generate($routePrefix . 'view', [ 'own' => 1 ]);
             case 'userDisplay':
             case 'adminDisplay':
                 if ($args['commandName'] != 'delete' && !($this->templateParameters['mode'] == 'create' && $args['commandName'] == 'cancel')) {
@@ -344,9 +355,12 @@ abstract class AbstractEditHandler extends EditHandler
                 }
     
                 return $this->getDefaultReturnUrl($args);
-            case 'userViewVehicle':
-            case 'adminViewVehicle':
+            case 'userViewVehicles':
+            case 'adminViewVehicles':
                 return $this->router->generate('rkparkhausmodule_vehicle_' . $routeArea . 'view');
+            case 'userOwnViewVehicles':
+            case 'adminOwnViewVehicles':
+                return $this->router->generate('rkparkhausmodule_vehicle_' . $routeArea . 'view', [ 'own' => 1 ]);
             case 'userDisplayVehicle':
             case 'adminDisplayVehicle':
                 if (!empty($this->relationPresets['vehicle'])) {

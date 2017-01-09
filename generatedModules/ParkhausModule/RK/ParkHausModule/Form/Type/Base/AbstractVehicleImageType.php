@@ -112,10 +112,10 @@ abstract class AbstractVehicleImageType extends AbstractType
             'help' => $this->__('e.g. the location or the event'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the titel of the vehicle image')
             ],'required' => true,
-            'max_length' => 255,
         ]);
         
         $builder->add('vehicleImage', 'RK\ParkHausModule\Form\Type\Field\UploadType', [
@@ -143,10 +143,10 @@ abstract class AbstractVehicleImageType extends AbstractType
             'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the copyright of the vehicle image')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('imageDate', 'Symfony\Component\Form\Extension\Core\Type\TextType', [
@@ -158,20 +158,20 @@ abstract class AbstractVehicleImageType extends AbstractType
             'help' => $this->__('the image date will be added to the title'),
             'empty_data' => '',
             'attr' => [
+                'max_length' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the image date of the vehicle image')
             ],'required' => false,
-            'max_length' => 255,
         ]);
         
         $builder->add('description', 'Symfony\Component\Form\Extension\Core\Type\TextareaType', [
             'label' => $this->__('Description') . ':',
             'empty_data' => '',
             'attr' => [
+                'max_length' => 2000,
                 'class' => '',
                 'title' => $this->__('Enter the description of the vehicle image')
-            ],'required' => false,
-            'max_length' => 2000,
+            ],'required' => false
         ]);
         
         $builder->add('viewImage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [

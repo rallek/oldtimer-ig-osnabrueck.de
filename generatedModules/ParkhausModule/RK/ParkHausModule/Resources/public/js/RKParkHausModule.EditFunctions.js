@@ -29,7 +29,7 @@ var triggerValidation = true;
 
 function rKParkHausTriggerFormValidation()
 {
-    rKParkHausPerformCustomValidationConstraints(editedObjectType, editedEntityId);
+    rKParkHausExecuteCustomValidationConstraints(editedObjectType, editedEntityId);
 
     if (!editForm.get(0).checkValidity()) {
         // This does not really submit the form,
@@ -69,7 +69,9 @@ function rKParkHausInitEditForm(mode, entityId)
     editedEntityId = entityId;
 
     var allFormFields = editForm.find('input, select, textarea');
-    allFormFields.change(rKParkHausExecuteCustomValidationConstraints);
+    allFormFields.change(function (event) {
+        rKParkHausExecuteCustomValidationConstraints(editedObjectType, editedEntityId);
+    });
 
     formButtons = editForm.find('.form-buttons input');
     editForm.find('.btn-danger').first().bind('click keypress', function (event) {

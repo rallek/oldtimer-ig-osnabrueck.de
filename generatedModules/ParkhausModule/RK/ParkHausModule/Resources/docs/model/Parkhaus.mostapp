@@ -31,7 +31,7 @@ application "ParkHaus" {
     }
     entities {
         entity "vehicle" leading {
-            documentation "please add your vehicle. You will be able to add some images in a vehicle specific album. \r\nNot all fields are mandatory. Feel free to fill what fits best to your vehicle."
+            documentation "please add your vehicle. You will be able to add some images in a vehicle specific album. \r\nNot all fields are mandatory. Feel free to fill what fits best to your vehicle.\r\nDocumentation can be found here: <a href=\"https://github.com/rallek/oldtimer-ig-osnabrueck.de/wiki\">Github Wiki</a>|raw"
             nameMultiple "vehicles"
             displayPattern "#manufacturer# #model# #built#"
             onAccountDeletionCreator GUEST
@@ -183,12 +183,12 @@ application "ParkHaus" {
                     displayType DISPLAY
                 },
                 string "infoField1" nullable {
-                    documentation "If there is somethin special what you can not fill into one of the other fields you may want to place it here."
+                    documentation "If there is something special what you can not fill into one of the other fields you may want to place it here."
                     mandatory false
                 displayType DISPLAY
                 },
                 string "infoField2" nullable {
-                    documentation "If there is somethin special what you can not fill into one of the other fields you may want to place it here."
+                    documentation "If there is something special what you can not fill into one of the other fields you may want to place it here."
                     mandatory false
                 displayType DISPLAY
                 },
@@ -199,7 +199,7 @@ application "ParkHaus" {
                 },
                 
             boolean "showVehicleOwner" nullable ajaxTogglability {
-                    documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see. If you even do not want this leave the owner field empty"
+                    documentation "If not checked the registered user will not been shown to the public. Only IG members are able to see."
                     defaultValue "false"
                     mandatory false
                 displayType DISPLAY
