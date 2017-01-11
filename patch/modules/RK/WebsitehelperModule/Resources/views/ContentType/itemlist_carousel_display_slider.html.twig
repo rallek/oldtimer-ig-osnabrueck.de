@@ -3,11 +3,12 @@
 {# one carousel with n images should be shown #}
 
 {% for carousel in items %}
-	<div class="section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12 bottom-space">
-					<div class="carousel slide" id="{{ carousel.carouselName }}" data-interval="{{ carousel.slidingTime }}" data-ride="carousel">
+	</div class ="section">
+		<div class="container">
+			<div class="row bottom-space">
+			<div class="col-md-12 ">
+				<div class="col-md-12 white-space">
+					<div class="carousel slide" id="{{ carousel.carouselName }}" data-interval="{{ carousel.slidingTime }}" data-ride="carousel" width=100%>
 					  {# the small dots for the position #}
 						
 						{% if carousel.controls %}
@@ -52,6 +53,9 @@
 			</div>
 		</div>
 	</div>
+	</div>
+</div>
+</div>
 {% else %}
 	{{ __('No entries found.') }}
 {% endfor %}
