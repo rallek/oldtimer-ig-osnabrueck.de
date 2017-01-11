@@ -1,0 +1,15 @@
+services:
+    # Form field types
+    
+    rk_websitehelper_module.form.type.field.colour:
+        class: RK\WebsiteHelperModule\Form\Type\Field\ColourType
+        tags:
+            - { name: form.type }
+    
+    rk_websitehelper_module.form.type.field.upload:
+        class: RK\WebsiteHelperModule\Form\Type\Field\UploadType
+        arguments:
+            - "@translator.default"
+            - "@rk_websitehelper_module.image_helper"
+        tags:
+            - { name: form.type }

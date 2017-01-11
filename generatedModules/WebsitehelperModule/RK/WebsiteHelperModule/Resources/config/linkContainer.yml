@@ -1,0 +1,11 @@
+services:
+    rk_websitehelper_module.link_container:
+        class: RK\WebsiteHelperModule\Container\LinkContainer
+        arguments:
+            - "@translator.default"
+            - "@router"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_users_module.current_user"
+            - "@rk_websitehelper_module.controller_helper"
+        tags:
+            - { name: zikula.link_container }

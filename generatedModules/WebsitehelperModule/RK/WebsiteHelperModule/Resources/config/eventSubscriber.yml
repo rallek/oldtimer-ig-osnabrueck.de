@@ -1,0 +1,89 @@
+services:
+    # Event subscriber and listener classes
+    rk_websitehelper_module.entity_lifecycle_listener:
+        class: RK\WebsiteHelperModule\Listener\EntityLifecycleListener
+        arguments:
+            - "@service_container"
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_websitehelper_module.core_listener:
+        class: RK\WebsiteHelperModule\Listener\CoreListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.kernel_listener:
+        class: RK\WebsiteHelperModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.installer_listener:
+        class: RK\WebsiteHelperModule\Listener\InstallerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.moduledispatch_listener:
+        class: RK\WebsiteHelperModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.mailer_listener:
+        class: RK\WebsiteHelperModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.page_listener:
+        class: RK\WebsiteHelperModule\Listener\PageListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.theme_listener:
+        class: RK\WebsiteHelperModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.view_listener:
+        class: RK\WebsiteHelperModule\Listener\ViewListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.userlogin_listener:
+        class: RK\WebsiteHelperModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.userlogout_listener:
+        class: RK\WebsiteHelperModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.user_listener:
+        class: RK\WebsiteHelperModule\Listener\UserListener
+        arguments:
+            - "@translator.default"
+            - "@rk_websitehelper_module.entity_factory"
+            - "@zikula_users_module.current_user"
+            - "@logger"
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.userregistration_listener:
+        class: RK\WebsiteHelperModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.users_listener:
+        class: RK\WebsiteHelperModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.group_listener:
+        class: RK\WebsiteHelperModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_websitehelper_module.thirdparty_listener:
+        class: RK\WebsiteHelperModule\Listener\ThirdPartyListener
+        tags:
+            - { name: kernel.event_subscriber }
+    

@@ -1,0 +1,120 @@
+{# purpose of this template: module configuration page #}
+{% extends 'RKWebsiteHelperModule::adminBase.html.twig' %}
+{% block title __('Settings') %}
+{% block admin_page_icon 'wrench' %}
+{% block content %}
+    <div class="rkwebsitehelpermodule-config">
+        {% form_theme form with [
+            '@RKWebsiteHelperModule/Form/bootstrap_3.html.twig',
+            'ZikulaFormExtensionBundle:Form:form_div_layout.html.twig'
+        ] %}
+        {{ form_start(form) }}
+        <ul class="nav nav-pills">
+        {% set tabTitle = __('List views') %}
+        <li class="active" role="presentation">
+            <a id="vars1Tab" href="#tab1" title="{{ tabTitle|e('html_attr') }}" role="tab" data-toggle="tab">{{ tabTitle }}</a>
+        </li>
+        {% set tabTitle = __('Images') %}
+        <li class=" dropdown" role="presentation">
+            <a id="imagesTabDrop" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-controls="imagesTabDropSections" aria-expanded="false">{{ tabTitle }}<span class="caret"></span></a>
+            <ul id="imagesTabDropSections" class="dropdown-menu" aria-labelledby="imagesTabDrop">
+            <li>
+                <a id="imagesLinkerLinkerImageTab" href="#tabImagesLinkerLinkerImage" role="tab" data-toggle="tab" aria-controls="tabImagesLinkerLinkerImage">Linkers linker image</a>
+            </li>
+            <li>
+                <a id="imagesCarouselItemItemImageTab" href="#tabImagesCarouselItemItemImage" role="tab" data-toggle="tab" aria-controls="tabImagesCarouselItemItemImage">Carousel items item image</a>
+            </li>
+            <li>
+                <a id="imagesWebsiteImageMyImageTab" href="#tabImagesWebsiteImageMyImage" role="tab" data-toggle="tab" aria-controls="tabImagesWebsiteImageMyImage">Website images my image</a>
+            </li>
+            </ul>
+        </li>
+        </ul>
+
+        {{ form_errors(form) }}
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="tab1" aria-labelledby="vars1Tab">
+                {% set tabTitle = __('List views') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+                
+                    <p class="alert alert-info">{{ __('Here you can configure parameters for list views.')|nl2br }}</p>
+                
+                    {{ form_row(form.linkerEntriesPerPage) }}
+                    {{ form_row(form.carouselItemEntriesPerPage) }}
+                    {{ form_row(form.carouselEntriesPerPage) }}
+                    {{ form_row(form.websiteImageEntriesPerPage) }}
+                </fieldset>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabImagesLinkerLinkerImage" aria-labelledby="imagesLinkerLinkerImageTab">
+                {% set tabTitle = __('Image settings for linkers linker image') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+            
+                    {{ form_row(form.enableShrinkingForLinkerLinkerImage) }}
+                    <div id="shrinkDetailsLinkerLinkerImage">
+                    {{ form_row(form.shrinkWidthLinkerLinkerImage) }}
+                    {{ form_row(form.shrinkHeightLinkerLinkerImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeLinkerLinkerImage) }}
+                    {{ form_row(form.thumbnailWidthLinkerLinkerImageView) }}
+                    {{ form_row(form.thumbnailHeightLinkerLinkerImageView) }}
+                    {{ form_row(form.thumbnailWidthLinkerLinkerImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightLinkerLinkerImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthLinkerLinkerImageEdit) }}
+                    {{ form_row(form.thumbnailHeightLinkerLinkerImageEdit) }}
+                </fieldset>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabImagesCarouselItemItemImage" aria-labelledby="imagesCarouselItemItemImageTab">
+                {% set tabTitle = __('Image settings for carousel items item image') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+            
+                    {{ form_row(form.enableShrinkingForCarouselItemItemImage) }}
+                    <div id="shrinkDetailsCarouselItemItemImage">
+                    {{ form_row(form.shrinkWidthCarouselItemItemImage) }}
+                    {{ form_row(form.shrinkHeightCarouselItemItemImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeCarouselItemItemImage) }}
+                    {{ form_row(form.thumbnailWidthCarouselItemItemImageView) }}
+                    {{ form_row(form.thumbnailHeightCarouselItemItemImageView) }}
+                    {{ form_row(form.thumbnailWidthCarouselItemItemImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightCarouselItemItemImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthCarouselItemItemImageEdit) }}
+                    {{ form_row(form.thumbnailHeightCarouselItemItemImageEdit) }}
+                </fieldset>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="tabImagesWebsiteImageMyImage" aria-labelledby="imagesWebsiteImageMyImageTab">
+                {% set tabTitle = __('Image settings for website images my image') %}
+                <fieldset>
+                    <legend>{{ tabTitle }}</legend>
+            
+                    {{ form_row(form.enableShrinkingForWebsiteImageMyImage) }}
+                    <div id="shrinkDetailsWebsiteImageMyImage">
+                    {{ form_row(form.shrinkWidthWebsiteImageMyImage) }}
+                    {{ form_row(form.shrinkHeightWebsiteImageMyImage) }}
+                    </div>
+                    {{ form_row(form.thumbnailModeWebsiteImageMyImage) }}
+                    {{ form_row(form.thumbnailWidthWebsiteImageMyImageView) }}
+                    {{ form_row(form.thumbnailHeightWebsiteImageMyImageView) }}
+                    {{ form_row(form.thumbnailWidthWebsiteImageMyImageDisplay) }}
+                    {{ form_row(form.thumbnailHeightWebsiteImageMyImageDisplay) }}
+                    {{ form_row(form.thumbnailWidthWebsiteImageMyImageEdit) }}
+                    {{ form_row(form.thumbnailHeightWebsiteImageMyImageEdit) }}
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                {{ form_widget(form.save) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+    {{ pageAddAsset('javascript', zasset('@RKWebsiteHelperModule:js/RKWebsiteHelperModule.Config.js')) }}
+{% endblock %}
