@@ -135,9 +135,9 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
                 ];
             }
 
+
             return $links;
         }
-
 
         $routeArea = LinkContainerInterface::TYPE_ADMIN == $type ? 'admin' : '';
         if (LinkContainerInterface::TYPE_ADMIN == $type) {

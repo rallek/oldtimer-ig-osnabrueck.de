@@ -63,7 +63,7 @@ abstract class AbstractAppSettingsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $this->addListviewsFields($builder, $options);
+        $this->addListViewsFields($builder, $options);
         $this->addImagesFields($builder, $options);
 
         $builder
@@ -86,12 +86,12 @@ abstract class AbstractAppSettingsType extends AbstractType
     }
 
     /**
-     * Adds fields for listviews fields.
+     * Adds fields for list views fields.
      *
      * @param FormBuilderInterface $builder The form builder
      * @param array                $options The options
      */
-    public function addListviewsFields(FormBuilderInterface $builder, array $options)
+    public function addListViewsFields(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('vehicleEntriesPerPage', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [

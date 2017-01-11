@@ -19,7 +19,6 @@ use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
@@ -302,8 +301,7 @@ abstract class AbstractEditHandler
      *
      * @return boolean False in case of initialisation errors, otherwise true
      *
-     * @throws NotFoundHttpException Thrown if item to be edited isn't found
-     * @throws RuntimeException      Thrown if the workflow actions can not be determined
+     * @throws RuntimeException Thrown if the workflow actions can not be determined
      */
     public function processForm(array $templateParameters)
     {
@@ -346,16 +344,14 @@ abstract class AbstractEditHandler
             }
     
             $entity = $this->initEntityForEditing();
-            if (!is_object($entity)) {
-                return false;
-            }
-    
-            if (true === $this->hasPageLockSupport && $this->kernel->isBundle('ZikulaPageLockModule') && null !== $this->lockingApi) {
-                // try to guarantee that only one person at a time can be editing this entity
-                $lockName = 'RKParkHausModule' . $this->objectTypeCapital . $this->createCompositeIdentifier();
-                $this->lockingApi->addLock($lockName, $this->getRedirectUrl(null));
-                // reload entity as the addLock call above has triggered the preUpdate event
-                $this->entityFactory->getObjectManager()->refresh($entity);
+            if (null !== $entity) {
+                if (true === $this->hasPageLockSupport && $this->kernel->isBundle('ZikulaPageLockModule') && null !== $this->lockingApi) {
+                    // try to guarantee that only one person at a time can be editing this entity
+                    $lockName = 'RKParkHausModule' . $this->objectTypeCapital . $this->createCompositeIdentifier();
+                    $this->lockingApi->addLock($lockName, $this->getRedirectUrl(null));
+                    // reload entity as the addLock call above has triggered the preUpdate event
+                    $this->entityFactory->getObjectManager()->refresh($entity);
+                }
             }
         } else {
             if (!$this->permissionApi->hasPermission($this->permissionComponent, '::', ACCESS_EDIT)) {
@@ -363,6 +359,12 @@ abstract class AbstractEditHandler
             }
     
             $entity = $this->initEntityForCreation();
+        }
+    
+        if (null === $entity) {
+            $this->request->getSession()->getFlashBag()->add('error', $this->__('No such item found.'));
+    
+            return new RedirectResponse($this->getRedirectUrl(['commandName' => 'cancel']), 302);
         }
     
         // save entity reference for later reuse
@@ -457,14 +459,12 @@ abstract class AbstractEditHandler
      * Initialise existing entity for editing.
      *
      * @return EntityAccess|null Desired entity instance or null
-     *
-     * @throws NotFoundHttpException Thrown if item to be edited isn't found
      */
     protected function initEntityForEditing()
     {
         $entity = $this->selectionHelper->getEntity($this->objectType, $this->idValues);
         if (null === $entity) {
-            throw new NotFoundHttpException($this->__('No such item.'));
+            return null;
         }
     
         $entity->initWorkflow();
@@ -476,8 +476,6 @@ abstract class AbstractEditHandler
      * Initialise new entity for creation.
      *
      * @return EntityAccess|null Desired entity instance or null
-     *
-     * @throws NotFoundHttpException Thrown if item to be cloned isn't found
      */
     protected function initEntityForCreation()
     {
@@ -499,7 +497,7 @@ abstract class AbstractEditHandler
                 // reuse existing entity
                 $entityT = $this->selectionHelper->getEntity($this->objectType, $templateIdValues);
                 if (null === $entityT) {
-                    throw new NotFoundHttpException($this->__('No such item.'));
+                    return null;
                 }
                 $entity = clone $entityT;
             }
