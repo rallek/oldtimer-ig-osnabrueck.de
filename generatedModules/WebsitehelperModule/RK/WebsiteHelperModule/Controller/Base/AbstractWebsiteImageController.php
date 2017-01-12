@@ -142,6 +142,7 @@ abstract class AbstractWebsiteImageController extends AbstractController
         $request->query->set('sortdir', $sortdir);
         
         $sortableColumns = new SortableColumns($this->get('router'), 'rkwebsitehelpermodule_websiteimage_' . ($isAdmin ? 'admin' : '') . 'view', 'sort', 'sortdir');
+        
         $sortableColumns->addColumns([
             new Column('imageTitle'),
             new Column('myImage'),

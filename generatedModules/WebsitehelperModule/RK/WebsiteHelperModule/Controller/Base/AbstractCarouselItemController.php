@@ -206,6 +206,7 @@ abstract class AbstractCarouselItemController extends AbstractController
         $request->query->set('sortdir', $sortdir);
         
         $sortableColumns = new SortableColumns($this->get('router'), 'rkwebsitehelpermodule_carouselitem_' . ($isAdmin ? 'admin' : '') . 'view', 'sort', 'sortdir');
+        
         $sortableColumns->addColumns([
             new Column('itemName'),
             new Column('title'),

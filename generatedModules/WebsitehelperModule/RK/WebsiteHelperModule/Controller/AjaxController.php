@@ -51,9 +51,9 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Searches for entities for auto completion usage.
-    *
-    * @Route("/getItemListAutoCompletion", options={"expose"=true})
-    * @Method("GET")
+     *
+     * @Route("/getItemListAutoCompletion", options={"expose"=true})
+     * @Method("GET")
      *
      * @param Request $request Current request instance
      *
@@ -66,9 +66,9 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Checks whether a field value is a duplicate or not.
-    *
-    * @Route("/checkForDuplicate", options={"expose"=true})
-    * @Method("POST")
+     *
+     * @Route("/checkForDuplicate", options={"expose"=true})
+     * @Method("POST")
      *
      * @param Request $request Current request instance
      *

@@ -142,6 +142,7 @@ abstract class AbstractLinkerController extends AbstractController
         $request->query->set('sortdir', $sortdir);
         
         $sortableColumns = new SortableColumns($this->get('router'), 'rkwebsitehelpermodule_linker_' . ($isAdmin ? 'admin' : '') . 'view', 'sort', 'sortdir');
+        
         $sortableColumns->addColumns([
             new Column('linkerImage'),
             new Column('linkerHeadline'),
