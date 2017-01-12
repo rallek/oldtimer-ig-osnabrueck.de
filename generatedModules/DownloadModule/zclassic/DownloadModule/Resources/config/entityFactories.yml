@@ -1,6 +1,0 @@
-services:
-    # Entity factory classes
-    rk_download_module.file_factory:
-        class: RK\DownLoadModule\Entity\Factory\FileFactory
-        arguments: ["@doctrine.orm.entity_manager", RK\DownLoadModule\Entity\FileEntity]
-    
