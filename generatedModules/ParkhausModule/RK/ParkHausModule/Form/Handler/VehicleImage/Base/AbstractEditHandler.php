@@ -92,6 +92,9 @@ abstract class AbstractEditHandler extends EditHandler
             'entity' => $this->entityRef,
             'mode' => $this->templateParameters['mode'],
             'actions' => $this->templateParameters['actions'],
+            'hasModeratePermissions' => $this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_MODERATE)
+            'filterByOwnership' => !$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD),
+            'currentUserId' => $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : 1,
             'inlineUsage' => $this->templateParameters['inlineUsage']
         ];
     
@@ -102,17 +105,17 @@ abstract class AbstractEditHandler extends EditHandler
     /**
      * Initialise existing entity for editing.
      *
-     * @return EntityAccess desired entity instance or null
+     * @return EntityAccess Desired entity instance or null
      */
     protected function initEntityForEditing()
     {
         $entity = parent::initEntityForEditing();
     
         // only allow editing for the owner or people with higher permissions
-        if (!method_exists($entity, 'getCreatedBy') || $entity->getCreatedBy()->getUid() != $this->currentUserApi->get('uid')) {
-            if (!$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)) {
-                throw new AccessDeniedException();
-            }
+        $currentUserId = $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : 1;
+        $isOwner = $currentUserId == $entity->getCreatedBy()->getUid();
+        if (!$isOwner && !$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)) {
+            throw new AccessDeniedException();
         }
     
         return $entity;

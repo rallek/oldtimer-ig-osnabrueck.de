@@ -77,7 +77,6 @@ abstract class AbstractTwigExtension extends Twig_Extension
         return [
             new \Twig_SimpleFunction('rkparkhausmodule_objectTypeSelector', [$this, 'getObjectTypeSelector']),
             new \Twig_SimpleFunction('rkparkhausmodule_templateSelector', [$this, 'getTemplateSelector']),
-            new \Twig_SimpleFunction('rkparkhausmodule_userVar', [$this, 'getUserVar']),
             new \Twig_SimpleFunction('rkparkhausmodule_userAvatar', [$this, 'getUserAvatar'], ['is_safe' => ['html']])
         ];
     }
@@ -119,6 +118,36 @@ abstract class AbstractTwigExtension extends Twig_Extension
         return $result;
     }
     
+    
+    /**
+     * The rkparkhausmodule_fileSize filter displays the size of a given file in a readable way.
+     * Example:
+     *     {{ 12345|rkparkhausmodule_fileSize }}
+     *
+     * @param integer $size     File size in bytes
+     * @param string  $filepath The input file path including file name (if file size is not known)
+     * @param boolean $nodesc   If set to true the description will not be appended
+     * @param boolean $onlydesc If set to true only the description will be returned
+     *
+     * @return string File size in a readable form
+     */
+    public function getFileSize($size = 0, $filepath = '', $nodesc = false, $onlydesc = false)
+    {
+        if (!is_numeric($size)) {
+            $size = (int) $size;
+        }
+        if (!$size) {
+            if (empty($filepath) || !file_exists($filepath)) {
+                return '';
+            }
+            $size = filesize($filepath);
+        }
+        if (!$size) {
+            return '';
+        }
+    
+        return $this->getReadableFileSize($size, $nodesc, $onlydesc);
+    }
     
     /**
      * Display a given file size in a readable format
@@ -218,26 +247,6 @@ abstract class AbstractTwigExtension extends Twig_Extension
         $result[] = ['text' => $this->__('Only item titles'), 'value' => 'itemlist_display.html.twig'];
         $result[] = ['text' => $this->__('With description'), 'value' => 'itemlist_display_description.html.twig'];
         $result[] = ['text' => $this->__('Custom template'), 'value' => 'custom'];
-    
-        return $result;
-    }
-    
-    /**
-     * Returns the value of a user variable.
-     *
-     * @param string     $name    Name of desired property
-     * @param int        $uid     The user's id
-     * @param string|int $default The default value
-     *
-     * @return string
-     */
-    public function getUserVar($name, $uid = -1, $default = '')
-    {
-        if (!$uid) {
-            $uid = -1;
-        }
-    
-        $result = \UserUtil::getVar($name, $uid, $default);
     
         return $result;
     }

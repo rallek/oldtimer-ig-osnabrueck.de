@@ -668,6 +668,15 @@ abstract class AbstractEditHandler
             $this->repeatCreateAction = true;
         }
     
+        if (method_exists($this->entityRef, 'getCreatedBy')) {
+            if (isset($this->form['moderationSpecificCreator']) && $this->form['moderationSpecificCreator']->getData() > 0) {
+                $this->entityRef->setCreatedBy($this->form['moderationSpecificCreationDate']->getData());
+            }
+            if (isset($this->form['moderationSpecificCreationDate']) && $this->form['moderationSpecificCreationDate']->getData() != '') {
+                $this->entityRef->setCreatedDate($this->form['moderationSpecificCreationDate']->getData());
+            }
+        }
+    
         if (isset($this->form['additionalNotificationRemarks']) && $this->form['additionalNotificationRemarks']->getData() != '') {
             $this->request->getSession()->set('RKParkHausModuleAdditionalNotificationRemarks', $this->form['additionalNotificationRemarks']->getData());
         }

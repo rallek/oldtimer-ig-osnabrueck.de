@@ -68,6 +68,13 @@ function rKParkHausInitEditForm(mode, entityId)
     editedObjectType = editForm.attr('id').replace('EditForm', '');
     editedEntityId = entityId;
 
+    if (jQuery('#moderationFieldsSection').length > 0) {
+        jQuery('#moderationFieldsContent').addClass('hidden');
+        jQuery('#moderationFieldsSection legend').addClass('pointer').click(function (event) {
+            jQuery('#moderationFieldsContent').toggleClass('hidden');
+    	});
+    }
+
     var allFormFields = editForm.find('input, select, textarea');
     allFormFields.change(function (event) {
         rKParkHausExecuteCustomValidationConstraints(editedObjectType, editedEntityId);
@@ -83,6 +90,7 @@ function rKParkHausInitEditForm(mode, entityId)
         triggerValidation = !jQuery(this).attr('formnovalidate');
     });
     editForm.submit(rKParkHausHandleFormSubmit);
+
     if (mode != 'create') {
         rKParkHausTriggerFormValidation();
     }

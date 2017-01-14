@@ -73,6 +73,7 @@ abstract class AbstractVehicleImageType extends AbstractType
     {
         $this->addEntityFields($builder, $options);
         $this->addIncomingRelationshipFields($builder, $options);
+        $this->addModerationFields($builder, $options);
         $this->addReturnControlField($builder, $options);
         $this->addSubmitButtons($builder, $options);
 
@@ -203,12 +204,54 @@ abstract class AbstractVehicleImageType extends AbstractType
             'expanded' => false,
             'query_builder' => function(EntityRepository $er) {
                 // select without joins
-                return $er->getListQueryBuilder('', '', false);
+                $qb = $er->getListQueryBuilder('', '', false);
+                if (true === $options['filterByOwnership']) {
+                    $qb->andWhere('tbl.createdBy == :currentUserId)')
+                       ->setParameter('currentUserId', $options['currentUserId']);
+                }
+        
+                return $qb;
             },
             'label' => $this->__('Vehicle'),
             'attr' => [
                 'title' => $this->__('Choose the vehicle')
             ]
+        ]);
+    }
+
+    /**
+     * Adds special fields for moderators.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addModerationFields(FormBuilderInterface $builder, array $options)
+    {
+        if (!$options['hasModeratePermission']) {
+            return;
+        }
+    
+        $builder->add('moderationSpecificCreator', 'RK\ParkHausModule\Form\Type\Field\UserType', [
+            'label' => $this->__('Creator') . ':',
+            'attr' => [
+                'max_length' => 11,
+                'class' => ' validate-digits',
+                'title' => $this->__('Here you can choose a user which will be set as creator')
+            ],
+            'empty_data' => 0,
+            'required' => false,
+            'help' => $this->__('Here you can choose a user which will be set as creator')
+        ]);
+        $builder->add('moderationSpecificCreationDate', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', [
+            'label' => $this->__('Creation date') . ':',
+            'attr' => [
+                'class' => '',
+                'title' => $this->__('Here you can choose a custom creation date')
+            ],
+            'empty_data' => '',
+            'required' => false,
+            'widget' => 'single_text',
+            'help' => $this->__('Here you can choose a custom creation date')
         ]);
     }
 
@@ -291,12 +334,18 @@ abstract class AbstractVehicleImageType extends AbstractType
                 ],
                 'mode' => 'create',
                 'actions' => [],
+                'hasModeratePermission' => false,
+                'filterByOwnership' => true,
+                'currentUserId' => 0,
                 'inlineUsage' => false
             ])
             ->setRequired(['entity', 'mode', 'actions'])
             ->setAllowedTypes([
                 'mode' => 'string',
                 'actions' => 'array',
+                'hasModeratePermissions' => 'bool',
+                'filterByOwnership' => 'bool',
+                'currentUserId' => 'int',
                 'inlineUsage' => 'bool'
             ])
             ->setAllowedValues([

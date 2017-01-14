@@ -228,16 +228,13 @@
         ) }}
     {% endif %}
     
-    {% set permLevel = 'ACCESS_EDIT' %}
-    {% if routeArea == 'admin' %}
-        {% set permLevel = 'ACCESS_ADMIN' %}
-    {% endif %}
+    {% set permLevel = routeArea == 'admin' ? 'ACCESS_ADMIN' : 'ACCESS_ADD' %}
     {% set mayManage = hasPermission('RKParkHausModule:Vehicle:', vehicle.id ~ '::', permLevel) %}
     {% if mayManage or (currentUser|default and vehicle.createdBy|default and vehicle.createdBy.getUid() == currentUser.uid) %}
-    <p class="managelink">
-        {% set createTitle = __('Create vehicle image') %}
-        <a href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'edit', { vehicle: vehicle.id }) }}" title="{{ createTitle }}" class="fa fa-plus">{{ createTitle }}</a>
-    </p>
+        <p class="managelink">
+            {% set createTitle = __('Create vehicle image') %}
+            <a href="{{ path('rkparkhausmodule_vehicleimage_' ~ routeArea ~ 'edit', { vehicle: vehicle.id }) }}" title="{{ createTitle|e('html_attr') }}" class="fa fa-plus">{{ createTitle }}</a>
+        </p>
     {% endif %}
 {% endblock %}
 {% block display_hooks %}

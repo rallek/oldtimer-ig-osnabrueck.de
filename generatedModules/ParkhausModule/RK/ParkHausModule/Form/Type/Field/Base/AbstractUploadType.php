@@ -17,11 +17,13 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Zikula\Common\Translator\TranslatorInterface;
 use RK\ParkHausModule\Form\DataTransformer\UploadFileTransformer;
 use RK\ParkHausModule\Helper\ImageHelper;
+use RK\ParkHausModule\Helper\UploadHelper;
 
 /**
  * Upload field type base class.
@@ -34,9 +36,19 @@ abstract class AbstractUploadType extends AbstractType
     protected $translator;
 
     /**
+     * @var RequestStack
+     */
+    protected $requestStack = '';
+
+    /**
      * @var ImageHelper
      */
     protected $imageHelper;
+
+    /**
+     * @var UploadHelper
+     */
+    protected $uploadHelper = '';
 
     /**
      * @var FormBuilderInterface
@@ -51,13 +63,17 @@ abstract class AbstractUploadType extends AbstractType
     /**
      * UploadTypeExtension constructor.
      *
-     * @param TranslatorInterface $translator  Translator service instance
-     * @param ImageHelper         $imageHelper ImageHelper service instance
+     * @param TranslatorInterface $translator   Translator service instance
+     * @param RequestStack        $requestStack RequestStack service instance
+     * @param ImageHelper         $imageHelper  ImageHelper service instance
+     * @param UploadHelper        $uploadHelper UploadHelper service instance
      */
-    public function __construct(TranslatorInterface $translator, ImageHelper $imageHelper)
+    public function __construct(TranslatorInterface $translator, RequestStack $requestStack, ImageHelper $imageHelper, UploadHelper $uploadHelper)
     {
         $this->translator = $translator;
+        $this->requestStack = $requestStack;
         $this->imageHelper = $imageHelper;
+        $this->uploadHelper = $uploadHelper;
     }
 
     /**
@@ -81,7 +97,7 @@ abstract class AbstractUploadType extends AbstractType
         $fileOptions['attr']['class'] = 'validate-upload';
 
         $builder->add($fieldName, 'Symfony\Component\Form\Extension\Core\Type\FileType', $fileOptions);
-        $uploadFileTransformer = new UploadFileTransformer($this, $fieldName);
+        $uploadFileTransformer = new UploadFileTransformer($this, $this->requestStack, $this->uploadHelper, $fieldName);
         $builder->get($fieldName)->addModelTransformer($uploadFileTransformer);
 
         if ($options['required']) {

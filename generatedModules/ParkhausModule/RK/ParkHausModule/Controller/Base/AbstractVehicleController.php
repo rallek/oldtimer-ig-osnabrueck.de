@@ -142,6 +142,7 @@ abstract class AbstractVehicleController extends AbstractController
         $request->query->set('sortdir', $sortdir);
         
         $sortableColumns = new SortableColumns($this->get('router'), 'rkparkhausmodule_vehicle_' . ($isAdmin ? 'admin' : '') . 'view', 'sort', 'sortdir');
+        
         $sortableColumns->addColumns([
             new Column('workflowState'),
             new Column('vehicleType'),

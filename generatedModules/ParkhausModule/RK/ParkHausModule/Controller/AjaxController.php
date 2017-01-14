@@ -51,9 +51,9 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Searches for entities for auto completion usage.
-    *
-    * @Route("/getItemListAutoCompletion", options={"expose"=true})
-    * @Method("GET")
+     *
+     * @Route("/getItemListAutoCompletion", options={"expose"=true})
+     * @Method("GET")
      *
      * @param Request $request Current request instance
      *
@@ -66,9 +66,9 @@ class AjaxController extends AbstractAjaxController
     
     /**
      * Changes a given flag (boolean field) by switching between true and false.
-    *
-    * @Route("/toggleFlag", options={"expose"=true})
-    * @Method("POST")
+     *
+     * @Route("/toggleFlag", options={"expose"=true})
+     * @Method("POST")
      *
      * @param Request $request Current request instance
      *

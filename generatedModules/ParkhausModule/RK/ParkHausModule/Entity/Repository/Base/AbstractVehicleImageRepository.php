@@ -569,8 +569,8 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
             return $qb;
         }
     
-        $currentFunc = $this->getRequest()->query->getAlpha('func', 'index');
-        if ($currentFunc == 'edit') {
+        $routeName = $this->getRequest()->get('_route');
+        if (false !== strpos($routeName, 'edit')) {
             return $qb;
         }
     
@@ -621,7 +621,7 @@ abstract class AbstractVehicleImageRepository extends EntityRepository
     protected function applyDefaultFilters(QueryBuilder $qb, $parameters = [])
     {
         if (null === $this->getRequest()) {
-            $this->request = ServiceUtil::get('request');
+            $this->request = ServiceUtil::get('request_stack')->getCurrentRequest();
         }
         $routeName = $this->request->get('_route');
         $isAdminArea = false !== strpos($routeName, 'rkparkhausmodule_vehicle image_admin');

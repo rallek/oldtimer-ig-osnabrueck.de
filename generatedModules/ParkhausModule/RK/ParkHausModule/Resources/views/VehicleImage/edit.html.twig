@@ -20,17 +20,11 @@
 {{ form_errors(form) }}
 <fieldset>
     <legend>{{ __('Content') }}</legend>
-    
     {{ form_row(form.titel) }}
-    
     {{ form_row(form.vehicleImage) }}
-    
     {{ form_row(form.copyright) }}
-    
     {{ form_row(form.imageDate) }}
-    
     {{ form_row(form.description) }}
-    
     {{ form_row(form.viewImage) }}
 </fieldset>
 
@@ -53,6 +47,15 @@
     {% endfor %}
 {% endif %}
 
+{% if form.moderationSpecificCreator is defined %}
+    <fieldset id="moderationFieldsSection">
+        <legend>{{ __('Moderation') }}</legend>
+        <div id="moderationFieldsContent">
+            {{ form_row(form.moderationSpecificCreator) }}
+            {{ form_row(form.moderationSpecificCreationDate) }}
+        </div>
+    </fieldset>
+{% endif %}
 
 {# include return control #}
 {% if mode == 'create' %}

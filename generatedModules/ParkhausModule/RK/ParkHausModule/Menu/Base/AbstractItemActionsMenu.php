@@ -63,10 +63,12 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
         $currentUserApi = $this->container->get('zikula_users_module.current_user');
         $menu->setChildrenAttribute('class', 'list-inline');
 
+        $currentUserId = $currentUserApi->isLoggedIn() ? $currentUserApi->get('uid') : 1;
         if ($entity instanceof VehicleEntity) {
             $component = 'RKParkHausModule:Vehicle:';
             $instance = $entity['id'] . '::';
             $routePrefix = 'rkparkhausmodule_vehicle_';
+            $isOwner = $currentUserId > 0 && $currentUserId == $entity->getCreatedBy()->getUid();
         
             if ($routeArea == 'admin') {
                 $menu->addChild($this->__('Preview'), [
@@ -84,9 +86,8 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 $menu[$this->__('Details')]->setLinkAttribute('title', str_replace('"', '', $entity->getTitleFromDisplayPattern()));
             }
             if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
-                $uid = $currentUserApi->get('uid');
                 // only allow editing for the owner or people with higher permissions
-                if ($entity->getCreatedBy()->getUid() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
+                if ($isOwner || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
                     $menu->addChild($this->__('Edit'), [
                         'route' => $routePrefix . $routeArea . 'edit',
                         'routeParameters' => ['id' => $entity['id']]
@@ -110,8 +111,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             // more actions for adding new related items
             $authAdmin = $permissionApi->hasPermission($component, $instance, ACCESS_ADMIN);
             
-            $uid = $currentUserApi->get('uid');
-            if ($authAdmin || (isset($uid) && method_exists($entity, 'getCreatedBy') && $entity->getCreatedBy()->getUid() == $uid)) {
+            if ($isOwner || $authAdmin) {
             
                 $title = $this->__('Create vehicle image');
                 $menu->addChild($title, [
@@ -125,6 +125,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $component = 'RKParkHausModule:VehicleImage:';
             $instance = $entity['id'] . '::';
             $routePrefix = 'rkparkhausmodule_vehicleimage_';
+            $isOwner = $currentUserId > 0 && $currentUserId == $entity->getCreatedBy()->getUid();
         
             if ($routeArea == 'admin') {
                 $menu->addChild($this->__('Preview'), [
@@ -142,9 +143,8 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 $menu[$this->__('Details')]->setLinkAttribute('title', str_replace('"', '', $entity->getTitleFromDisplayPattern()));
             }
             if ($permissionApi->hasPermission($component, $instance, ACCESS_EDIT)) {
-                $uid = $currentUserApi->get('uid');
                 // only allow editing for the owner or people with higher permissions
-                if ($entity->getCreatedBy()->getUid() == $uid || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
+                if ($isOwner || $permissionApi->hasPermission($component, $instance, ACCESS_ADD)) {
                     $menu->addChild($this->__('Edit'), [
                         'route' => $routePrefix . $routeArea . 'edit',
                         'routeParameters' => ['id' => $entity['id']]

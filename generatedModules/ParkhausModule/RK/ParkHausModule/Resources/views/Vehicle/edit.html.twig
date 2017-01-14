@@ -20,67 +20,36 @@
 {{ form_errors(form) }}
 <fieldset>
     <legend>{{ __('Content') }}</legend>
-    
     {{ form_row(form.vehicleType) }}
-    
     {{ form_row(form.titleImage) }}
-    
     {{ form_row(form.copyrightTitleImage) }}
-    
     {{ form_row(form.vehicleImage) }}
-    
     {{ form_row(form.copyrightVehicleImage) }}
-    
     {{ form_row(form.vehicleDescriptionTeaser) }}
-    
     {{ form_row(form.vehicleDescription) }}
-    
     {{ form_row(form.manufacturer) }}
-    
     {{ form_row(form.manufacturerImage) }}
-    
     {{ form_row(form.model) }}
-    
     {{ form_row(form.built) }}
-    
     {{ form_row(form.engine) }}
-    
     {{ form_row(form.displacement) }}
-    
     {{ form_row(form.cylinders) }}
-    
     {{ form_row(form.compression) }}
-    
     {{ form_row(form.fuelManagement) }}
-    
     {{ form_row(form.fuel) }}
-    
     {{ form_row(form.horsePower) }}
-    
     {{ form_row(form.maxSpeed) }}
-    
     {{ form_row(form.weight) }}
-    
     {{ form_row(form.brakes) }}
-    
     {{ form_row(form.gearbox) }}
-    
     {{ form_row(form.rim) }}
-    
     {{ form_row(form.tire) }}
-    
     {{ form_row(form.interior) }}
-    
     {{ form_row(form.infoField1) }}
-    
     {{ form_row(form.infoField2) }}
-    
     {{ form_row(form.infoField3) }}
-    
     {{ form_row(form.showVehicleOwner) }}
-    
     {{ form_row(form.titleTextColor) }}
-    
     {{ form_row(form.stillMyOwn) }}
 </fieldset>
 
@@ -99,6 +68,15 @@
     {% endfor %}
 {% endif %}
 
+{% if form.moderationSpecificCreator is defined %}
+    <fieldset id="moderationFieldsSection">
+        <legend>{{ __('Moderation') }}</legend>
+        <div id="moderationFieldsContent">
+            {{ form_row(form.moderationSpecificCreator) }}
+            {{ form_row(form.moderationSpecificCreationDate) }}
+        </div>
+    </fieldset>
+{% endif %}
 
 {# include return control #}
 {% if mode == 'create' %}
