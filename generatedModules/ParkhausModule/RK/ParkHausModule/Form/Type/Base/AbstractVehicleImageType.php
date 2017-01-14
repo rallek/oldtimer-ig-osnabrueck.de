@@ -197,21 +197,26 @@ abstract class AbstractVehicleImageType extends AbstractType
      */
     public function addIncomingRelationshipFields(FormBuilderInterface $builder, array $options)
     {
+        $queryBuilder = function(EntityRepository $er) {
+            // select without joins
+            return $er->getListQueryBuilder('', '', false);
+        };
+        if (true === $options['filterByOwnership']) {
+            $queryBuilder = function(EntityRepository $er) {
+                // select without joins
+                $qb = $er->getListQueryBuilder('', '', false);
+                $qb->andWhere('tbl.createdBy == :currentUserId)')
+                   ->setParameter('currentUserId', $options['currentUserId']);
+        
+                return $qb;
+            };
+        }
         $builder->add('vehicle', 'Symfony\Bridge\Doctrine\Form\Type\EntityType', [
             'class' => 'RKParkHausModule:VehicleEntity',
             'choice_label' => 'getTitleFromDisplayPattern',
             'multiple' => false,
             'expanded' => false,
-            'query_builder' => function(EntityRepository $er) {
-                // select without joins
-                $qb = $er->getListQueryBuilder('', '', false);
-                if (true === $options['filterByOwnership']) {
-                    $qb->andWhere('tbl.createdBy == :currentUserId)')
-                       ->setParameter('currentUserId', $options['currentUserId']);
-                }
-        
-                return $qb;
-            },
+            'query_builder' => $queryBuilder,
             'label' => $this->__('Vehicle'),
             'attr' => [
                 'title' => $this->__('Choose the vehicle')
