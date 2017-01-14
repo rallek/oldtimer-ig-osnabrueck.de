@@ -19,15 +19,10 @@
 {{ form_errors(form) }}
 <fieldset>
     <legend>{{ __('Content') }}</legend>
-    
     {{ form_row(form.fileName) }}
-    
     {{ form_row(form.myFile) }}
-    
     {{ form_row(form.myDescription) }}
-    
     {{ form_row(form.startDate) }}
-    
     {{ form_row(form.endDate) }}
 </fieldset>
 
@@ -49,6 +44,15 @@
     {% endfor %}
 {% endif %}
 
+{% if form.moderationSpecificCreator is defined %}
+    <fieldset id="moderationFieldsSection">
+        <legend>{{ __('Moderation') }} <i class="fa fa-expand"></i></legend>
+        <div id="moderationFieldsContent">
+            {{ form_row(form.moderationSpecificCreator) }}
+            {{ form_row(form.moderationSpecificCreationDate) }}
+        </div>
+    </fieldset>
+{% endif %}
 
 {# include return control #}
 {% if mode == 'create' %}
@@ -83,6 +87,10 @@
         
         ( function($) {
             $(document).ready(function() {
+                // initialise auto completion for user fields
+                {% if form.moderationSpecificCreator is defined %}
+                    rKDownLoadInitUserField('rkdownloadmodule_file_moderationSpecificCreator', 'getCommonUsersList');
+                {% endif %}
                 rKDownLoadInitEditForm('{{ mode }}', '{% if mode != 'create' %}{{ file.id }}{% endif %}');
                 rKDownLoadInitUploadField('rkdownloadmodule_file_myFile_myFile');
                 rKDownLoadInitDateField('rkdownloadmodule_file_startDate');

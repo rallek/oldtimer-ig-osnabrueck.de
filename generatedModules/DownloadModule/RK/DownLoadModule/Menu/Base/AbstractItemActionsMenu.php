@@ -62,10 +62,12 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
         $currentUserApi = $this->container->get('zikula_users_module.current_user');
         $menu->setChildrenAttribute('class', 'list-inline');
 
+        $currentUserId = $currentUserApi->isLoggedIn() ? $currentUserApi->get('uid') : 1;
         if ($entity instanceof FileEntity) {
             $component = 'RKDownLoadModule:File:';
             $instance = $entity['id'] . '::';
             $routePrefix = 'rkdownloadmodule_file_';
+            $isOwner = $currentUserId > 0 && null !== $entity->getCreatedBy() && $currentUserId == $entity->getCreatedBy()->getUid();
         
             if ($routeArea == 'admin') {
                 $menu->addChild($this->__('Preview'), [

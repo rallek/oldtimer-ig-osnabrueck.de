@@ -82,6 +82,7 @@ abstract class AbstractFileType extends AbstractType
         if ($this->featureActivationHelper->isEnabled(FeatureActivationHelper::CATEGORIES, 'file')) {
             $this->addCategoriesField($builder, $options);
         }
+        $this->addModerationFields($builder, $options);
         $this->addReturnControlField($builder, $options);
         $this->addSubmitButtons($builder, $options);
 
@@ -189,6 +190,44 @@ abstract class AbstractFileType extends AbstractType
     }
 
     /**
+     * Adds special fields for moderators.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addModerationFields(FormBuilderInterface $builder, array $options)
+    {
+        if (!$options['hasModeratePermission']) {
+            return;
+        }
+    
+        $builder->add('moderationSpecificCreator', 'RK\DownLoadModule\Form\Type\Field\UserType', [
+            'mapped' => false,
+            'label' => $this->__('Creator') . ':',
+            'attr' => [
+                'max_length' => 11,
+                'class' => ' validate-digits',
+                'title' => $this->__('Here you can choose a user which will be set as creator')
+            ],
+            'empty_data' => 0,
+            'required' => false,
+            'help' => $this->__('Here you can choose a user which will be set as creator')
+        ]);
+        $builder->add('moderationSpecificCreationDate', 'RK\DownLoadModule\Form\Type\Field\DateTimeType', [
+            'mapped' => false,
+            'label' => $this->__('Creation date') . ':',
+            'attr' => [
+                'class' => '',
+                'title' => $this->__('Here you can choose a custom creation date')
+            ],
+            'empty_data' => '',
+            'required' => false,
+            'widget' => 'single_text',
+            'help' => $this->__('Here you can choose a custom creation date')
+        ]);
+    }
+
+    /**
      * Adds the return control field.
      *
      * @param FormBuilderInterface $builder The form builder
@@ -268,13 +307,13 @@ abstract class AbstractFileType extends AbstractType
                 ],
                 'mode' => 'create',
                 'actions' => [],
-                'inlineUsage' => false
+                'hasModeratePermission' => false,
             ])
             ->setRequired(['entity', 'mode', 'actions'])
             ->setAllowedTypes([
                 'mode' => 'string',
                 'actions' => 'array',
-                'inlineUsage' => 'bool'
+                'hasModeratePermission' => 'bool',
             ])
             ->setAllowedValues([
                 'mode' => ['create', 'edit']

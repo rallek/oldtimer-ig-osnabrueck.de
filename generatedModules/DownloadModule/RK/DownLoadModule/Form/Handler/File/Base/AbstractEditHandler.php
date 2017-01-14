@@ -71,6 +71,7 @@ abstract class AbstractEditHandler extends EditHandler
             'entity' => $this->entityRef,
             'mode' => $this->templateParameters['mode'],
             'actions' => $this->templateParameters['actions'],
+            'hasModeratePermission' => $this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_MODERATE),
         ];
     
         return $this->formFactory->create('RK\DownLoadModule\Form\Type\FileType', $this->entityRef, $options);

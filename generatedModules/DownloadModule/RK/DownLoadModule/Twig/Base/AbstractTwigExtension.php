@@ -77,7 +77,6 @@ abstract class AbstractTwigExtension extends Twig_Extension
         return [
             new \Twig_SimpleFunction('rkdownloadmodule_objectTypeSelector', [$this, 'getObjectTypeSelector']),
             new \Twig_SimpleFunction('rkdownloadmodule_templateSelector', [$this, 'getTemplateSelector']),
-            new \Twig_SimpleFunction('rkdownloadmodule_userVar', [$this, 'getUserVar']),
             new \Twig_SimpleFunction('rkdownloadmodule_userAvatar', [$this, 'getUserAvatar'], ['is_safe' => ['html']])
         ];
     }
@@ -247,26 +246,6 @@ abstract class AbstractTwigExtension extends Twig_Extension
         $result[] = ['text' => $this->__('Only item titles'), 'value' => 'itemlist_display.html.twig'];
         $result[] = ['text' => $this->__('With description'), 'value' => 'itemlist_display_description.html.twig'];
         $result[] = ['text' => $this->__('Custom template'), 'value' => 'custom'];
-    
-        return $result;
-    }
-    
-    /**
-     * Returns the value of a user variable.
-     *
-     * @param string     $name    Name of desired property
-     * @param int        $uid     The user's id
-     * @param string|int $default The default value
-     *
-     * @return string
-     */
-    public function getUserVar($name, $uid = -1, $default = '')
-    {
-        if (!$uid) {
-            $uid = -1;
-        }
-    
-        $result = \UserUtil::getVar($name, $uid, $default);
     
         return $result;
     }
