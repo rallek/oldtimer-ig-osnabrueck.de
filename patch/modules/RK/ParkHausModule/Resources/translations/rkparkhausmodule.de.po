@@ -168,6 +168,9 @@ msgstr ""
 msgid "Engine"
 msgstr "Motor"
 
+msgid "Enter a part of the user name to search"
+msgstr "Zum Suchen geben Sie einen Teil des Benutzernamens ein"
+
 msgid "Example"
 msgstr "Beispiel"
 
@@ -267,8 +270,11 @@ msgstr ""
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
 
-msgid "Listviews"
-msgstr "Listviews"
+msgid "List views"
+msgstr "Listenansichten"
+
+msgid "Manage user"
+msgstr "Benutzer verwalten"
 
 msgid "Manufacturer"
 msgstr "Hersteller"
@@ -282,6 +288,9 @@ msgstr "Höchstgeschwindigkeit"
 msgid "Model"
 msgstr "Modell"
 
+msgid "Moderation"
+msgstr "Ersteller und Erstellungsdatum ändern"
+
 msgid "My vehicle images"
 msgstr "Meine Fahrzeugbilder"
 
@@ -293,6 +302,9 @@ msgstr "Nein"
 
 msgid "No entries found."
 msgstr "Keine Einträge gefunden."
+
+msgid "No results found!"
+msgstr "Keine Ergebnisse gefunden!"
 
 msgid "No vehicle images found."
 msgstr "Kein Fahrzeugbilder gefunden."
@@ -340,6 +352,9 @@ msgstr "Fahrzeug suchen und auswählen"
 msgid "Search and select vehicle image"
 msgstr "Fahrzeugbild suchen und auswählen"
 
+msgid "Search user"
+msgstr "Benutzer suchen"
+
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -379,6 +394,9 @@ msgstr "im Besitz"
 
 msgid "Submit"
 msgstr "Bestätigen"
+
+msgid "Switch to users administration"
+msgstr "Wechseln Sie in die Benutzerverwaltung."
 
 msgid "Table aliases"
 msgstr "Tabellen Aliase"
@@ -446,6 +464,9 @@ msgid ""
 msgstr ""
 "Dabei bedeutet \"Foo\" nicht der Name der verknüpften Entität, aber die "
 "Quelle oder das Ziel Alias der entsprechenden Beziehung."
+
+msgid "This function requires JavaScript activated!"
+msgstr "Diese Funktion verlangt aktiviertes Javascript!"
 
 msgid ""
 "This has the advantage that it is possible to join a certain table multiple "
@@ -598,29 +619,11 @@ msgstr "Fahrzeugbilder"
 msgid "vehicles"
 msgstr "Fahrzeuge"
 
-#~ msgid "Enter a part of the user name to search"
-#~ msgstr "Zum Suchen geben Sie einen Teil des Benutzernamens ein"
-
-#~ msgid "Manage user"
-#~ msgstr "Benutzer verwalten"
-
-#~ msgid "No results found!"
-#~ msgstr "Keine Ergebnisse gefunden!"
-
 #~ msgid "Owner"
 #~ msgstr "Eigentümer"
 
 #~ msgid "Owner refresh"
 #~ msgstr "Eigentümer zuordnen"
-
-#~ msgid "Search user"
-#~ msgstr "Benutzer suchen"
-
-#~ msgid "Switch to users administration"
-#~ msgstr "Wechseln Sie in die Benutzerverwaltung."
-
-#~ msgid "This function requires JavaScript activated!"
-#~ msgstr "Diese Funktion verlangt aktiviertes Javascript!"
 
 #~ msgid "Vehicle owner"
 #~ msgstr "Fahrzeugeigentümer"

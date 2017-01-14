@@ -29,6 +29,9 @@ msgstr "/media/cache/resolve/{filter}/{path}"
 msgid "liip_imagine_filter_runtime"
 msgstr "/media/cache/resolve/{filter}/rc/{hash}/{path}"
 
+msgid "rkparkhausmodule_ajax_getcommonuserslist"
+msgstr "/ajax/getCommonUsersList"
+
 msgid "rkparkhausmodule_ajax_getitemlistautocompletion"
 msgstr "/ajax/getItemListAutoCompletion"
 
@@ -124,9 +127,6 @@ msgstr "/hooks/{moduleName}"
 
 msgid "zikula_hook_hook_togglesubscribeareastatus"
 msgstr "/hooks/togglestatus"
-
-#~ msgid "rkparkhausmodule_ajax_getcommonuserslist"
-#~ msgstr "/ajax/getCommonUsersList"
 
 #~ msgid "rkparkhausmodule_ajax_getvehicleimagevehicleownerusers"
 #~ msgstr "/ajax/getVehicleImageVehicleOwnerUsers"
