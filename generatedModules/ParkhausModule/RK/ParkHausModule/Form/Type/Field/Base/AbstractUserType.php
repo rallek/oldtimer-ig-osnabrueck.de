@@ -62,7 +62,7 @@ abstract class AbstractUserType extends AbstractType
         $parentData = $form->getParent()->getData();
         $accessor = PropertyAccess::createPropertyAccessor();
         $fieldNameGetter = 'get' . ucfirst($fieldName);
-        $user = null !== $parentData ? $accessor->getValue($parentData, $fieldNameGetter) : null;
+        $user = null !== $parentData && method_exists($parentData, $fieldNameGetter) ? $accessor->getValue($parentData, $fieldNameGetter) : null;
 
         $view->vars['userName'] = null !== $user ? $user->getUname() : '';
     }

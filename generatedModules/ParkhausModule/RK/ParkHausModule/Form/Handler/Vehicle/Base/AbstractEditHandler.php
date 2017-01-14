@@ -70,7 +70,7 @@ abstract class AbstractEditHandler extends EditHandler
             'entity' => $this->entityRef,
             'mode' => $this->templateParameters['mode'],
             'actions' => $this->templateParameters['actions'],
-            'hasModeratePermissions' => $this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_MODERATE)
+            'hasModeratePermission' => $this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_MODERATE),
             'filterByOwnership' => !$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD),
             'currentUserId' => $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : 1,
             'inlineUsage' => $this->templateParameters['inlineUsage']

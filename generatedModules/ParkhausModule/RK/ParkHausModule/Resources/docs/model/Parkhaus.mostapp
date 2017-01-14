@@ -4,7 +4,7 @@ application "ParkHaus" {
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://oldtimer-ig-osnabrueck.de"
-    version "0.6.1"
+    version "0.6.2"
     prefix "parkha"
     generatorSettings {
         settingsContainer "Settings"

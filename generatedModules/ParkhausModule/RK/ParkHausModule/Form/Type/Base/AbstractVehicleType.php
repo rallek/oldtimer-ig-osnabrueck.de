@@ -590,6 +590,7 @@ abstract class AbstractVehicleType extends AbstractType
         }
     
         $builder->add('moderationSpecificCreator', 'RK\ParkHausModule\Form\Type\Field\UserType', [
+            'mapped' => false,
             'label' => $this->__('Creator') . ':',
             'attr' => [
                 'max_length' => 11,
@@ -600,7 +601,8 @@ abstract class AbstractVehicleType extends AbstractType
             'required' => false,
             'help' => $this->__('Here you can choose a user which will be set as creator')
         ]);
-        $builder->add('moderationSpecificCreationDate', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', [
+        $builder->add('moderationSpecificCreationDate', 'RK\ParkHausModule\Form\Type\Field\DateTimeType', [
+            'mapped' => false,
             'label' => $this->__('Creation date') . ':',
             'attr' => [
                 'class' => '',
@@ -703,7 +705,7 @@ abstract class AbstractVehicleType extends AbstractType
             ->setAllowedTypes([
                 'mode' => 'string',
                 'actions' => 'array',
-                'hasModeratePermissions' => 'bool',
+                'hasModeratePermission' => 'bool',
                 'filterByOwnership' => 'bool',
                 'currentUserId' => 'int',
                 'inlineUsage' => 'bool'
