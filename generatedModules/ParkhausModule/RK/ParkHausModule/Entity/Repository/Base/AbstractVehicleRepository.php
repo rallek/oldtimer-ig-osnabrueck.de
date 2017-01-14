@@ -955,6 +955,10 @@ abstract class AbstractVehicleRepository extends EntityRepository
             
             
             $selection .= ', tbl.built';
+            
+            
+            $selection .= ', tbl.id';
+            
             $useJoins = false;
         }
     

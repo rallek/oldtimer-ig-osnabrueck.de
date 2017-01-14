@@ -113,7 +113,7 @@ abstract class AbstractEditHandler extends EditHandler
     
         // only allow editing for the owner or people with higher permissions
         $currentUserId = $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : 1;
-        $isOwner = $currentUserId == $entity->getCreatedBy()->getUid();
+        $isOwner = null !== $entity->getCreatedBy() && $currentUserId == $entity->getCreatedBy()->getUid();
         if (!$isOwner && !$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)) {
             throw new AccessDeniedException();
         }

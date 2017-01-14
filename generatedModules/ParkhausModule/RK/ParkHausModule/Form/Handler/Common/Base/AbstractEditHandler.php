@@ -670,7 +670,7 @@ abstract class AbstractEditHandler
     
         if (method_exists($this->entityRef, 'getCreatedBy')) {
             if (isset($this->form['moderationSpecificCreator']) && null !== $this->form['moderationSpecificCreator']->getData()) {
-                $this->entityRef->setCreatedBy($this->form['moderationSpecificCreationDate']->getData());
+                $this->entityRef->setCreatedBy($this->form['moderationSpecificCreator']->getData());
             }
             if (isset($this->form['moderationSpecificCreationDate']) && $this->form['moderationSpecificCreationDate']->getData() != '') {
                 $this->entityRef->setCreatedDate($this->form['moderationSpecificCreationDate']->getData());

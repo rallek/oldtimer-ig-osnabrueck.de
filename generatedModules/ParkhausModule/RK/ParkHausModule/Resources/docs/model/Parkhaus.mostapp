@@ -33,7 +33,7 @@ application "ParkHaus" {
         entity "vehicle" leading {
             documentation "please add your vehicle. You will be able to add some images in a vehicle specific album. \r\nNot all fields are mandatory. Feel free to fill what fits best to your vehicle."
             nameMultiple "vehicles"
-            displayPattern "#manufacturer# #model# #built#"
+            displayPattern "#manufacturer# #model# #built# (#id#)"
             onAccountDeletionCreator GUEST
             onAccountDeletionLastEditor GUEST
             ownerPermission true

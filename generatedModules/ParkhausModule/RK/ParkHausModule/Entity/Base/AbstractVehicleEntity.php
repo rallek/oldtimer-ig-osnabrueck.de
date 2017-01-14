@@ -1405,7 +1405,10 @@ abstract class AbstractVehicleEntity extends EntityAccess
                 . ' '
                 . $this->getModel()
                 . ' '
-                . $this->getBuilt();
+                . $this->getBuilt()
+                . ' ('
+                . $this->getId()
+                . ')';
     
         return $formattedTitle;
     }

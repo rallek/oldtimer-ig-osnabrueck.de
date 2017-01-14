@@ -68,7 +68,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $component = 'RKParkHausModule:Vehicle:';
             $instance = $entity['id'] . '::';
             $routePrefix = 'rkparkhausmodule_vehicle_';
-            $isOwner = $currentUserId > 0 && $currentUserId == $entity->getCreatedBy()->getUid();
+            $isOwner = $currentUserId > 0 && null !== $entity->getCreatedBy() && $currentUserId == $entity->getCreatedBy()->getUid();
         
             if ($routeArea == 'admin') {
                 $menu->addChild($this->__('Preview'), [
@@ -125,7 +125,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
             $component = 'RKParkHausModule:VehicleImage:';
             $instance = $entity['id'] . '::';
             $routePrefix = 'rkparkhausmodule_vehicleimage_';
-            $isOwner = $currentUserId > 0 && $currentUserId == $entity->getCreatedBy()->getUid();
+            $isOwner = $currentUserId > 0 && null !== $entity->getCreatedBy() && $currentUserId == $entity->getCreatedBy()->getUid();
         
             if ($routeArea == 'admin') {
                 $menu->addChild($this->__('Preview'), [
