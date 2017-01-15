@@ -31,7 +31,7 @@ abstract class AbstractColourType extends AbstractType
 
         $resolver->setDefaults([
             'attr' => [
-                'max_length' => 7,
+                'maxlength' => 7,
                 'class' => 'colour-selector'
             ]
         ]);

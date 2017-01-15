@@ -1,5 +1,6 @@
 {# purpose of this template: vehicle images display view #}
-{% extends routeArea == 'admin' ? 'RKParkHausModule::adminBase.html.twig' : 'RKParkHausModule::base.html.twig' %}
+{% set baseTemplate = app.request.query.getBoolean('raw', false) ? 'raw' : (routeArea == 'admin' ? 'adminBase' : 'base') %}
+{% extends 'RKParkHausModule::' ~ baseTemplate ~ '.html.twig' %}
 {% block pageTitle %}{{ vehicleImage.getTitleFromDisplayPattern()|default(__('Vehicle image')) }}{% endblock %}
 {% block title %}
     {% set templateTitle = vehicleImage.getTitleFromDisplayPattern()|default(__('Vehicle image')) %}

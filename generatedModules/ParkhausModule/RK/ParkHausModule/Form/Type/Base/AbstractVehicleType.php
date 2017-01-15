@@ -78,9 +78,9 @@ abstract class AbstractVehicleType extends AbstractType
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             $entity = $event->getData();
             foreach (['titleImage', 'vehicleImage', 'manufacturerImage'] as $uploadFieldName) {
-                if ($entity[$uploadFieldName] instanceof File) {
-                    $entity[$uploadFieldName] = [$uploadFieldName => $entity[$uploadFieldName]->getPathname()];
-                }
+                $entity[$uploadFieldName] = [
+                    $uploadFieldName => $entity[$uploadFieldName] instanceof File ? $entity[$uploadFieldName]->getPathname() : null
+                ];
             }
         });
         $builder->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) {
@@ -152,7 +152,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the copyright title image of the vehicle')
             ],'required' => false,
@@ -183,7 +183,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the copyright vehicle image of the vehicle')
             ],'required' => false,
@@ -198,7 +198,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Vehicle description with max 500 char. It will been shown in the list overview and added in front of the rest of the vehicle description.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 500,
+                'maxlength' => 500,
                 'class' => '',
                 'title' => $this->__('Enter the vehicle description teaser of the vehicle')
             ],'required' => true
@@ -213,7 +213,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('This is the text which follows the teaser text at the display page. You can use max 5000 char.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 5000,
+                'maxlength' => 5000,
                 'class' => '',
                 'title' => $this->__('Enter the vehicle description of the vehicle')
             ],'required' => false
@@ -228,7 +228,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('if you do not know the manufacturer please type unknown.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the manufacturer of the vehicle')
             ],'required' => true,
@@ -259,7 +259,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('vehicle version'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the model of the vehicle')
             ],'required' => false,
@@ -274,7 +274,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('the year or month.year of your vehicle built'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the built of the vehicle')
             ],'required' => false,
@@ -289,7 +289,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('e.g. Otto, Diesel, Wankel, or specific type of engine, ...'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the engine of the vehicle')
             ],'required' => false,
@@ -304,7 +304,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('how much ccm'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the displacement of the vehicle')
             ],'required' => false,
@@ -319,7 +319,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('how many cylinders'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the cylinders of the vehicle')
             ],'required' => false,
@@ -334,7 +334,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('compression in bar'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the compression of the vehicle')
             ],'required' => false,
@@ -349,7 +349,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('e.g. injection type, carburetor manufacturor and size ...'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the fuel management of the vehicle')
             ],'required' => false,
@@ -364,7 +364,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('z.B. Benzine, Diesel or 1:25'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the fuel of the vehicle')
             ],'required' => false,
@@ -379,7 +379,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('you can use hp or kw'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the horse power of the vehicle')
             ],'required' => false,
@@ -394,7 +394,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('you can use km/h or mph'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the max speed of the vehicle')
             ],'required' => false,
@@ -409,7 +409,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('typical in kg'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the weight of the vehicle')
             ],'required' => false,
@@ -424,7 +424,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('tell us something about your brakes'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the brakes of the vehicle')
             ],'required' => false,
@@ -439,7 +439,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('shifter or automatic? Specific type?'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the gearbox of the vehicle')
             ],'required' => false,
@@ -454,7 +454,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('if you have special rim installed'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the rim of the vehicle')
             ],'required' => false,
@@ -469,7 +469,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('sice of tire or something specific about your tires'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the tire of the vehicle')
             ],'required' => false,
@@ -484,7 +484,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('do you have a special interieur?'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the interior of the vehicle')
             ],'required' => false,
@@ -499,7 +499,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the info field 1 of the vehicle')
             ],'required' => false,
@@ -514,7 +514,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the info field 2 of the vehicle')
             ],'required' => false,
@@ -529,7 +529,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('If there is something special what you can not fill into one of the other fields you may want to place it here.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the info field 3 of the vehicle')
             ],'required' => false,
@@ -557,7 +557,7 @@ abstract class AbstractVehicleType extends AbstractType
             'help' => $this->__('Please change if white is not fitting due to the color of the title image. Preferred you should use #000000 in case.'),
             'empty_data' => '#ffffff',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => ' validate-nospace validate-htmlcolour rkparkhausmoduleColourPicker',
                 'title' => $this->__('Choose the title text color of the vehicle')
             ],'required' => true,
@@ -593,7 +593,7 @@ abstract class AbstractVehicleType extends AbstractType
             'mapped' => false,
             'label' => $this->__('Creator') . ':',
             'attr' => [
-                'max_length' => 11,
+                'maxlength' => 11,
                 'class' => ' validate-digits',
                 'title' => $this->__('Here you can choose a user which will be set as creator')
             ],
@@ -698,7 +698,6 @@ abstract class AbstractVehicleType extends AbstractType
                 'actions' => [],
                 'hasModeratePermission' => false,
                 'filterByOwnership' => true,
-                'currentUserId' => 0,
                 'inlineUsage' => false
             ])
             ->setRequired(['entity', 'mode', 'actions'])
@@ -707,7 +706,6 @@ abstract class AbstractVehicleType extends AbstractType
                 'actions' => 'array',
                 'hasModeratePermission' => 'bool',
                 'filterByOwnership' => 'bool',
-                'currentUserId' => 'int',
                 'inlineUsage' => 'bool'
             ])
             ->setAllowedValues([

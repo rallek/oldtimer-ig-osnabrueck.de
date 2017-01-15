@@ -182,7 +182,7 @@ abstract class AbstractVehicleImageFinderType extends AbstractType
             'label' => $this->__('Search for') . ':',
             'required' => false,
             'attr' => [
-                'max_length' => 255
+                'maxlength' => 255
             ]
         ]);
     }

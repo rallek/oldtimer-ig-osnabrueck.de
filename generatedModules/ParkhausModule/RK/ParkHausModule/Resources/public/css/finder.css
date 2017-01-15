@@ -4,12 +4,6 @@ body {
     text-align: left;
 }
 
-.rkparkhausmodule-finderform fieldset,
-.rkparkhausmodule-finderform fieldset legend {
-    background-color: #fff;
-    border: none;
-}
-
 #rkparkhausmoduleItemContainer {
     background-color: #eee;
     height: 300px;
@@ -48,4 +42,10 @@ body {
 #rkparkhausmoduleItemContainer a:focus img,
 #rkparkhausmoduleItemContainer a:active img {
     background-color: #fff;
+}
+
+.rkparkhausmodule-finderform fieldset,
+.rkparkhausmodule-finderform fieldset legend {
+    background-color: #fff;
+    border: none;
 }

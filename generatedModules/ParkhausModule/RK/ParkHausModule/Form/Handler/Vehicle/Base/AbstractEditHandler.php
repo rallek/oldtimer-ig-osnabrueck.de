@@ -71,9 +71,7 @@ abstract class AbstractEditHandler extends EditHandler
             'mode' => $this->templateParameters['mode'],
             'actions' => $this->templateParameters['actions'],
             'hasModeratePermission' => $this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_MODERATE),
-            'filterByOwnership' => !$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD),
-            'currentUserId' => $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : 1,
-            'inlineUsage' => $this->templateParameters['inlineUsage']
+            'filterByOwnership' => !$this->permissionApi->hasPermission($this->permissionComponent, $this->createCompositeIdentifier() . '::', ACCESS_ADD)
         ];
     
         return $this->formFactory->create('RK\ParkHausModule\Form\Type\VehicleType', $this->entityRef, $options);
@@ -272,19 +270,6 @@ abstract class AbstractEditHandler extends EditHandler
      */
     protected function getRedirectUrl($args)
     {
-        if (true === $this->templateParameters['inlineUsage']) {
-            $urlArgs = [
-                'idPrefix' => $this->idPrefix,
-                'commandName' => $args['commandName']
-            ];
-            foreach ($this->idFields as $idField) {
-                $urlArgs[$idField] = $this->idValues[$idField];
-            }
-    
-            // inline usage, return to special function for closing the modal window instance
-            return $this->router->generate('rkparkhausmodule_' . $this->objectTypeLower . '_handleinlineredirect', $urlArgs);
-        }
-    
         if ($this->repeatCreateAction) {
             return $this->repeatReturnUrl;
         }

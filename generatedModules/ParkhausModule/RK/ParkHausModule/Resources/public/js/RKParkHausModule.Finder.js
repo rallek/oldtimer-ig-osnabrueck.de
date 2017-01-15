@@ -44,8 +44,8 @@ rKParkHausModule.finder.onLoad = function (baseId, selectedId)
     jQuery('.btn-default').click(rKParkHausModule.finder.handleCancel);
 
     var selectedItems = jQuery('#rkparkhausmoduleItemContainer li a');
-    selectedItems.bind('click keypress', function (e) {
-        e.preventDefault();
+    selectedItems.bind('click keypress', function (event) {
+        event.preventDefault();
         rKParkHausModule.finder.selectItem(jQuery(this).data('itemid'));
     });
 };
@@ -59,6 +59,7 @@ rKParkHausModule.finder.handleCancel = function ()
 {
     var editor;
 
+    event.preventDefault();
     editor = jQuery("[id$='editor']").first().val();
     if ('tinymce' === editor) {
         rKParkHausClosePopup();

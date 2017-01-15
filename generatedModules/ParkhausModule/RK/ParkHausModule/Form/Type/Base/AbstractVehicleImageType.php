@@ -80,9 +80,9 @@ abstract class AbstractVehicleImageType extends AbstractType
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             $entity = $event->getData();
             foreach (['vehicleImage'] as $uploadFieldName) {
-                if ($entity[$uploadFieldName] instanceof File) {
-                    $entity[$uploadFieldName] = [$uploadFieldName => $entity[$uploadFieldName]->getPathname()];
-                }
+                $entity[$uploadFieldName] = [
+                    $uploadFieldName => $entity[$uploadFieldName] instanceof File ? $entity[$uploadFieldName]->getPathname() : null
+                ];
             }
         });
         $builder->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) {
@@ -113,7 +113,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             'help' => $this->__('e.g. the location or the event'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the titel of the vehicle image')
             ],'required' => true,
@@ -144,7 +144,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             'help' => $this->__('Please fill the copyright. If you got the image from someone else please be fair and name him here.'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the copyright of the vehicle image')
             ],'required' => false,
@@ -159,7 +159,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             'help' => $this->__('the image date will be added to the title'),
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the image date of the vehicle image')
             ],'required' => false,
@@ -169,7 +169,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             'label' => $this->__('Description') . ':',
             'empty_data' => '',
             'attr' => [
-                'max_length' => 2000,
+                'maxlength' => 2000,
                 'class' => '',
                 'title' => $this->__('Enter the description of the vehicle image')
             ],'required' => false
@@ -205,8 +205,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             $queryBuilder = function(EntityRepository $er) {
                 // select without joins
                 $qb = $er->getListQueryBuilder('', '', false);
-                $qb->andWhere('tbl.createdBy == :currentUserId)')
-                   ->setParameter('currentUserId', $options['currentUserId']);
+                $qb = $er->addCreatorFilter($qb);
         
                 return $qb;
             };
@@ -240,7 +239,7 @@ abstract class AbstractVehicleImageType extends AbstractType
             'mapped' => false,
             'label' => $this->__('Creator') . ':',
             'attr' => [
-                'max_length' => 11,
+                'maxlength' => 11,
                 'class' => ' validate-digits',
                 'title' => $this->__('Here you can choose a user which will be set as creator')
             ],
@@ -343,7 +342,6 @@ abstract class AbstractVehicleImageType extends AbstractType
                 'actions' => [],
                 'hasModeratePermission' => false,
                 'filterByOwnership' => true,
-                'currentUserId' => 0,
                 'inlineUsage' => false
             ])
             ->setRequired(['entity', 'mode', 'actions'])
@@ -352,7 +350,6 @@ abstract class AbstractVehicleImageType extends AbstractType
                 'actions' => 'array',
                 'hasModeratePermission' => 'bool',
                 'filterByOwnership' => 'bool',
-                'currentUserId' => 'int',
                 'inlineUsage' => 'bool'
             ])
             ->setAllowedValues([

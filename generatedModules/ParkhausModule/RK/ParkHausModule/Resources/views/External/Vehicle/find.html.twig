@@ -1,22 +1,8 @@
 {# Purpose of this template: Display a popup selector of vehicles for scribite integration #}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app.request.locale }}" lang="{{ app.request.locale }}">
-<head>
-    <title>{{ __('Search and select vehicle') }}</title>
-    {{ pageAddAsset('stylesheet', pagevars.homepath ~ 'style/core.css') }}
-    {{ pageAddAsset('stylesheet', zasset('@RKParkHausModule:css/style.css')) }}
-    {{ pageAddAsset('stylesheet', zasset('@RKParkHausModule:css/finder.css')) }}
-    <script type="text/javascript">/* <![CDATA[ */
-        if (typeof(Zikula) == 'undefined') {var Zikula = {};}
-        Zikula.Config = {'entrypoint': '{{ getModVar('ZConfig', 'entrypoint', 'index.php') }}', 'baseURL': '{{ app.request.getSchemeAndHttpHost() ~ '/' }}', 'baseURI': '{{ app.request.getBasePath() }}'}; /* ]]> */
-    </script>
-    {{ pageAddAsset('stylesheet', asset('bootstrap/css/bootstrap.min.css')) }}
-    {{ pageAddAsset('stylesheet', asset('bootstrap/css/bootstrap-theme.min.css')) }}
-    {{ pageAddAsset('javascript', asset('jquery/jquery.min.js')) }}
-    {{ pageAddAsset('javascript', asset('bootstrap/js/bootstrap.min.js')) }}
-    {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.Finder.js')) }}
-</head>
-<body>
+{% set useFinder = true %}
+{% extends 'RKParkHausModule::raw.html.twig' %}
+{% block title __('Search and select vehicle') %}
+{% block content %}
     <div class="container">
         <ul class="nav nav-tabs">
         <li{{ objectType == 'vehicle' ? ' class="active"' : '' }}><a href="{{ path('rkparkhausmodule_external_finder', {'objectType': 'vehicle', 'editor': editorName}) }}" title="{{ __('Search and select vehicle') }}">{{ __('Vehicles') }}</a></li>
@@ -33,7 +19,7 @@
             {{ form_row(finderForm.pasteas) }}
             <br />
             <div class="form-group">
-                <label for="rKParkHausModuleObjectId" class="col-sm-3 control-label">{{ __('Vehicle') }}:</label>
+                <label class="col-sm-3 control-label">{{ __('Vehicle') }}:</label>
                 <div class="col-sm-9">
                     <div id="rkparkhausmoduleItemContainer">
                         <ul>
@@ -74,22 +60,18 @@
     {#
     <div class="rkparkhausmodule-finderform">
         <fieldset>
-            {{ render(controller('RKParkHausModule:Admin:edit')) }}
+            {{ render(controller('RKParkHausModule:Vehicle:edit')) }}
         </fieldset>
     </div>
     #}
 
-    {% set customJsInit %}
-        <script type="text/javascript">
-        /* <![CDATA[ */
-            ( function($) {
-                $(document).ready(function() {
-                    rKParkHausModule.finder.onLoad();
-                });
-            })(jQuery);
-        /* ]]> */
-        </script>
-    {% endset %}
-    {{ pageAddAsset('footer', customJsInit) }}
-</body>
-</html>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        ( function($) {
+            $(document).ready(function() {
+                rKParkHausModule.finder.onLoad();
+            });
+        })(jQuery);
+    /* ]]> */
+    </script>
+{% endblock %}

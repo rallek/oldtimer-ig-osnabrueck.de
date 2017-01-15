@@ -102,31 +102,32 @@ abstract class AbstractLinkContainer implements LinkContainerInterface
         $links = [];
 
         if (LinkContainerInterface::TYPE_ACCOUNT == $type) {
-            $useAccountPage = $this->variableApi->get('RKParkHausModule', 'useAccountPage', true);
-            if (false === $useAccountPage) {
-                return $links;
-            }
-
             if (!$this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_OVERVIEW)) {
                 return $links;
             }
 
-            $objectType = 'vehicle';
-            if ($this->permissionApi->hasPermission($this->getBundleName() . ':' . ucfirst($objectType) . ':', '::', ACCESS_READ)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_' . strtolower($objectType) . '_view', ['own' => 1]),
-                    'text' => $this->__('My vehicles'),
-                    'icon' => 'list-alt'
-                ];
+            if (true === $this->variableApi->get('RKParkHausModule', 'linkOwnVehiclesOnAccountPage', true)) {
+                $objectType = 'vehicle';
+                if ($this->permissionApi->hasPermission($this->getBundleName() . ':' . ucfirst($objectType) . ':', '::', ACCESS_READ)) {
+                    $links[] = [
+                        'url' => $this->router->generate('rkparkhausmodule_' . strtolower($objectType) . '_view', ['own' => 1]),
+                        'text' => $this->__('My vehicles'),
+                        'icon' => 'list-alt'
+                    ];
+                }
             }
-            $objectType = 'vehicleImage';
-            if ($this->permissionApi->hasPermission($this->getBundleName() . ':' . ucfirst($objectType) . ':', '::', ACCESS_READ)) {
-                $links[] = [
-                    'url' => $this->router->generate('rkparkhausmodule_' . strtolower($objectType) . '_view', ['own' => 1]),
-                    'text' => $this->__('My vehicle images'),
-                    'icon' => 'list-alt'
-                ];
+
+            if (true === $this->variableApi->get('RKParkHausModule', 'linkOwnVehicleImagesOnAccountPage', true)) {
+                $objectType = 'vehicleImage';
+                if ($this->permissionApi->hasPermission($this->getBundleName() . ':' . ucfirst($objectType) . ':', '::', ACCESS_READ)) {
+                    $links[] = [
+                        'url' => $this->router->generate('rkparkhausmodule_' . strtolower($objectType) . '_view', ['own' => 1]),
+                        'text' => $this->__('My vehicle images'),
+                        'icon' => 'list-alt'
+                    ];
+                }
             }
+
             if ($this->permissionApi->hasPermission($this->getBundleName() . '::', '::', ACCESS_ADMIN)) {
                 $links[] = [
                     'url' => $this->router->generate('rkparkhausmodule_vehicle_adminindex'),

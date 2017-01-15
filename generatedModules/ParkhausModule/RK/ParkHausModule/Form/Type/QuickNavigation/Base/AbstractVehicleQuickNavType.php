@@ -138,7 +138,7 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
         $builder->add('q', 'Symfony\Component\Form\Extension\Core\Type\SearchType', [
             'label' => $this->__('Search'),
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => 'input-sm'
             ],
             'required' => false

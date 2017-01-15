@@ -125,7 +125,7 @@ abstract class AbstractItemListBlockType extends AbstractType
         $builder->add('amount', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
             'label' => $this->__('Amount') . ':',
             'attr' => [
-                'max_length' => 2,
+                'maxlength' => 2,
                 'title' => $this->__('The maximum amount of items to be shown. Only digits are allowed.')
             ],
             'help' => $this->__('The maximum amount of items to be shown. Only digits are allowed.'),
@@ -159,7 +159,7 @@ abstract class AbstractItemListBlockType extends AbstractType
                 'label' => $this->__('Custom template') . ':',
                 'required' => false,
                 'attr' => [
-                    'max_length' => 80,
+                    'maxlength' => 80,
                     'title' => $this->__('Example') . ': itemlist_[objectType]_display.html.twig'
                 ],
                 'help' => $this->__('Example') . ': <em>itemlist_[objectType]_display.html.twig</em>'
@@ -179,7 +179,7 @@ abstract class AbstractItemListBlockType extends AbstractType
             'label' => $this->__('Filter (expert option)') . ':',
             'required' => false,
             'attr' => [
-                'max_length' => 255
+                'maxlength' => 255
             ]
         ]);
     }

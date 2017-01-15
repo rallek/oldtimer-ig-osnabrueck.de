@@ -119,6 +119,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
      * @var string $titleImageUrl
      */
     protected $titleImageUrl = '';
+    
     /**
      * Please fill the copyright. If you got the image from someone else please be fair and name him here.
      * @ORM\Column(length=255, nullable=true)
@@ -160,6 +161,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
      * @var string $vehicleImageUrl
      */
     protected $vehicleImageUrl = '';
+    
     /**
      * Please fill the copyright. If you got the image from someone else please be fair and name him here.
      * @ORM\Column(length=255, nullable=true)
@@ -224,6 +226,7 @@ abstract class AbstractVehicleEntity extends EntityAccess
      * @var string $manufacturerImageUrl
      */
     protected $manufacturerImageUrl = '';
+    
     /**
      * vehicle version
      * @ORM\Column(length=255, nullable=true)

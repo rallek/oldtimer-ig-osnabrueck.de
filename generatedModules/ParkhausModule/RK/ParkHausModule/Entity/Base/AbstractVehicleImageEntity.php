@@ -115,6 +115,7 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      * @var string $vehicleImageUrl
      */
     protected $vehicleImageUrl = '';
+    
     /**
      * Please fill the copyright. If you got the image from someone else please be fair and name him here.
      * @ORM\Column(length=255, nullable=true)
@@ -155,7 +156,6 @@ abstract class AbstractVehicleImageEntity extends EntityAccess
      * @ORM\ManyToOne(targetEntity="RK\ParkHausModule\Entity\VehicleEntity", inversedBy="vehicleImages")
      * @ORM\JoinTable(name="rk_parkha_vehicle")
      * @Assert\Type(type="RK\ParkHausModule\Entity\VehicleEntity")
-     * @Assert\Valid()
      * @var \RK\ParkHausModule\Entity\VehicleEntity $vehicle
      */
     protected $vehicle;
