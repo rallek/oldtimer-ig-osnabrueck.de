@@ -16,26 +16,44 @@
         {{ form_errors(finderForm) }}
         <fieldset>
             <legend>{{ __('Search and select vehicle image') }}</legend>
+            {{ form_row(finderForm.onlyImages) }}
+            {{ form_row(finderForm.imageField) }}
             {{ form_row(finderForm.pasteas) }}
             <br />
             <div class="form-group">
                 <label class="col-sm-3 control-label">{{ __('Vehicle image') }}:</label>
                 <div class="col-sm-9">
                     <div id="rkparkhausmoduleItemContainer">
-                        <ul>
+                        {% if not onlyImages %}
+                            <ul>
+                        {% endif %}
                             {% for vehicleImage in items %}
-                                <li>
+                                {% if attribute(vehicleImage, imageField) is not empty and attribute(vehicleImage, imageField ~ 'Meta').isImage %}
+                                {% if not onlyImages %}
+                                    <li>
+                                {% endif %}
                                     {% set itemId = vehicleImage.createCompositeIdentifier() %}
-                                    <a href="#" data-itemid="{{ itemId }}">{{ vehicleImage.getTitleFromDisplayPattern() }}</a>
+                                    <a href="#" data-itemid="{{ itemId }}">
+                                        {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicleImage' ~ imageField|capitalize) %}
+                                        <img src="{{ attribute(vehicleImage, imageField).getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicleImage.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-rounded" />
+                                    </a>
                                     <input type="hidden" id="url{{ itemId }}" value="{{ url('rkparkhausmodule_vehicleimage_display', { 'id': vehicleImage.id }) }}" />
                                     <input type="hidden" id="title{{ itemId }}" value="{{ vehicleImage.getTitleFromDisplayPattern()|e('html_attr') }}" />
                                     <input type="hidden" id="desc{{ itemId }}" value="{% set description %}{% if vehicleImage.description is not empty %}{{ vehicleImage.description }}{% endif %}
                                     {% endset %}{{ description|striptags|e('html_attr') }}" />
-                                </li>
+                                    {% if onlyImages %}
+                                        <input type="hidden" id="imageUrl{{ itemId }}" value="{{ attribute(vehicleImage, imageField).getPathname() }}" />
+                                    {% endif %}
+                                {% if not onlyImages %}
+                                    </li>
+                                {% endif %}
+                                {% endif %}
                             {% else %}
-                                <li>{{ __('No entries found.') }}</li>
+                                {% if not onlyImages %}<li>{% endif %}{{ __('No vehicle images found.') }}{% if not onlyImages %}</li>{% endif %}
                             {% endfor %}
-                        </ul>
+                        {% if not onlyImages %}
+                            </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>

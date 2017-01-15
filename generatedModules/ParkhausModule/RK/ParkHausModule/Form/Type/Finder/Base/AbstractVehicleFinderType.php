@@ -60,6 +60,7 @@ abstract class AbstractVehicleFinderType extends AbstractType
             ])
         ;
 
+        $this->addImageFields($builder, $options);
         $this->addPasteAsField($builder, $options);
         $this->addSortingFields($builder, $options);
         $this->addAmountField($builder, $options);
@@ -85,6 +86,35 @@ abstract class AbstractVehicleFinderType extends AbstractType
     }
 
     /**
+     * Adds fields for image insertion options.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addImageFields(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('onlyImages', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
+            'label' => $this->__('Only images'),
+            'empty_data' => false,
+            'help' => $this->__('Enable this option to insert images'),
+            'required' => false
+        ]);
+        $builder->add('imageField', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+            'label' => $this->__('Image field'),
+            'empty_data' => 'titleImage',
+            'help' => $this->__('You can switch between different image fields'),
+            'choices' => [
+                $this->__('Title image') => 'titleImage',
+                $this->__('Vehicle image') => 'vehicleImage',
+                $this->__('Manufacturer image') => 'manufacturerImage'
+            ],
+            'choices_as_values' => true,
+            'multiple' => false,
+            'expanded' => false
+        ]);
+    }
+
+    /**
      * Adds a "paste as" field.
      *
      * @param FormBuilderInterface $builder The form builder
@@ -92,12 +122,15 @@ abstract class AbstractVehicleFinderType extends AbstractType
      */
     public function addPasteAsField(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('pasteas', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+        $builder->add('pasteAs', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
             'label' => $this->__('Paste as') . ':',
             'empty_data' => 1,
             'choices' => [
                 $this->__('Link to the vehicle') => 1,
-                $this->__('ID of vehicle') => 2
+                $this->__('ID of vehicle') => 2,
+                $this->__('Link to the image') => 6,
+                $this->__('Image') => 7,
+                $this->__('Image with link to the vehicle') => 8
             ],
             'choices_as_values' => true,
             'multiple' => false,
@@ -122,7 +155,8 @@ abstract class AbstractVehicleFinderType extends AbstractType
                     $this->__('Manufacturer') => 'manufacturer',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
-                    $this->__('Update date') => 'updatedDate'
+                    $this->__('Update date') => 'updatedDate',
+                    $this->__('Updater') => 'updatedBy'
                 ],
                 'choices_as_values' => true,
                 'multiple' => false,

@@ -117,7 +117,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],
                 'help' => $this->__('Whether to add a link to vehicles of the current user on his account page'),
                 'required' => false,
-                'data' => (bool)isset($this->modVars['linkOwnVehiclesOnAccountPage']) ? $this->modVars['linkOwnVehiclesOnAccountPage'] : '',
+                'data' => (bool)(isset($this->modVars['linkOwnVehiclesOnAccountPage']) ? $this->modVars['linkOwnVehiclesOnAccountPage'] : true),
                 'attr' => [
                     'title' => $this->__('The link own vehicles on account page option.')
                 ],
@@ -145,7 +145,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],
                 'help' => $this->__('Whether to add a link to vehicle images of the current user on his account page'),
                 'required' => false,
-                'data' => (bool)isset($this->modVars['linkOwnVehicleImagesOnAccountPage']) ? $this->modVars['linkOwnVehicleImagesOnAccountPage'] : '',
+                'data' => (bool)(isset($this->modVars['linkOwnVehicleImagesOnAccountPage']) ? $this->modVars['linkOwnVehicleImagesOnAccountPage'] : true),
                 'attr' => [
                     'title' => $this->__('The link own vehicle images on account page option.')
                 ],
@@ -170,7 +170,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],
                 'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
                 'required' => false,
-                'data' => (bool)isset($this->modVars['enableShrinkingForVehicleTitleImage']) ? $this->modVars['enableShrinkingForVehicleTitleImage'] : '',
+                'data' => (bool)(isset($this->modVars['enableShrinkingForVehicleTitleImage']) ? $this->modVars['enableShrinkingForVehicleTitleImage'] : false),
                 'attr' => [
                     'title' => $this->__('The enable shrinking for vehicle title image option.'),
                     'class' => 'shrink-enabler'
@@ -333,7 +333,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],
                 'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
                 'required' => false,
-                'data' => (bool)isset($this->modVars['enableShrinkingForVehicleVehicleImage']) ? $this->modVars['enableShrinkingForVehicleVehicleImage'] : '',
+                'data' => (bool)(isset($this->modVars['enableShrinkingForVehicleVehicleImage']) ? $this->modVars['enableShrinkingForVehicleVehicleImage'] : false),
                 'attr' => [
                     'title' => $this->__('The enable shrinking for vehicle vehicle image option.'),
                     'class' => 'shrink-enabler'
@@ -496,7 +496,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],
                 'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
                 'required' => false,
-                'data' => (bool)isset($this->modVars['enableShrinkingForVehicleManufacturerImage']) ? $this->modVars['enableShrinkingForVehicleManufacturerImage'] : '',
+                'data' => (bool)(isset($this->modVars['enableShrinkingForVehicleManufacturerImage']) ? $this->modVars['enableShrinkingForVehicleManufacturerImage'] : false),
                 'attr' => [
                     'title' => $this->__('The enable shrinking for vehicle manufacturer image option.'),
                     'class' => 'shrink-enabler'
@@ -659,7 +659,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 ],
                 'help' => $this->__('Whether to enable shrinking huge images to maximum dimensions. Stores downscaled version of the original image.'),
                 'required' => false,
-                'data' => (bool)isset($this->modVars['enableShrinkingForVehicleImageVehicleImage']) ? $this->modVars['enableShrinkingForVehicleImageVehicleImage'] : '',
+                'data' => (bool)(isset($this->modVars['enableShrinkingForVehicleImageVehicleImage']) ? $this->modVars['enableShrinkingForVehicleImageVehicleImage'] : false),
                 'attr' => [
                     'title' => $this->__('The enable shrinking for vehicle image vehicle image option.'),
                     'class' => 'shrink-enabler'

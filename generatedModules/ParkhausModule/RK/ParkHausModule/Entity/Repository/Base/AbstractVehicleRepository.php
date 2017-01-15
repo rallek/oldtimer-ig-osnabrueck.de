@@ -41,7 +41,7 @@ abstract class AbstractVehicleRepository extends EntityRepository
     /**
      * @var string The default sorting field/expression
      */
-    protected $defaultSortingField = 'workflowState';
+    protected $defaultSortingField = 'vehicleType';
 
     /**
      * @var Request The request object given by the calling controller
@@ -1101,6 +1101,16 @@ abstract class AbstractVehicleRepository extends EntityRepository
         if (!empty($orderBy)) {
             if (false === strpos($orderBy, '.')) {
                 $orderBy = 'tbl.' . $orderBy;
+            }
+            if (false !== strpos($orderBy, 'tbl.createdBy')) {
+                $qb->addSelect('tblCreator')
+                   ->leftJoin('tbl.createdBy', 'tblCreator');
+                $orderBy = str_replace('tbl.createdBy', 'tblCreator.uname', $orderBy);
+            }
+            if (false !== strpos($orderBy, 'tbl.updatedBy')) {
+                $qb->addSelect('tblUpdater')
+                   ->leftJoin('tbl.updatedBy', 'tblUpdater');
+                $orderBy = str_replace('tbl.updatedBy', 'tblUpdater.uname', $orderBy);
             }
             $qb->add('orderBy', $orderBy);
         }

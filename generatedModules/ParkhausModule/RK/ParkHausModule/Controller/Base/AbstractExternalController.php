@@ -138,7 +138,9 @@ abstract class AbstractExternalController extends AbstractController
             'objectType' => $objectType,
             'sort' => $sort,
             'sortdir' => $sdir,
-            'currentPage' => $currentPage
+            'currentPage' => $currentPage,
+            'onlyImages' = false,
+            'imageField' => ''
         ];
         $searchTerm = '';
         
@@ -148,7 +150,7 @@ abstract class AbstractExternalController extends AbstractController
         ];
         $form = $this->createForm('RK\ParkHausModule\Form\Type\Finder\\' . ucfirst($objectType) . 'FinderType', $templateParameters, $formOptions);
         
-        if ($form->handleRequest($request)->isValid() && $form->get('update')->isClicked()) {
+        if ($form->handleRequest($request)->isValid()) {
             $formData = $form->getData();
             $templateParameters = array_merge($templateParameters, $formData);
             $currentPage = $formData['currentPage'];
@@ -156,10 +158,25 @@ abstract class AbstractExternalController extends AbstractController
             $sort = $formData['sort'];
             $sdir = $formData['sortdir'];
             $searchTerm = $formData['q'];
+            $templateParameters['onlyImages'] = isset($formData['onlyImages'] ? (bool)$formData['onlyImages'] : false;
+            $templateParameters['imageField'] = isset($formData['imageField'] ? $formData['imageField'] : '';
         }
         
         $where = '';
         $sortParam = $sort . ' ' . $sdir;
+        
+        if (true === $templateParameters['onlyImages'] && $templateParameters['imageField'] != '') {
+            $searchTerm = '';
+            $imageField = $templateParameters['imageField'];
+        
+            $whereParts = [];
+            foreach (['gif', 'jpg', 'jpeg', 'jpe', 'png', 'bmp'] as $imageExtension) {
+                $whereParts[] = 'tbl.' . $imageField . ':like:%.' . $imageExtension;
+            }
+        
+            $where = '(' . implode('*', $whereParts) . ')';
+        }
+        
         if ($searchTerm != '') {
             list($entities, $objectCount) = $repository->selectSearch($searchTerm, [], $sortParam, $currentPage, $resultsPerPage);
         } else {
@@ -172,6 +189,9 @@ abstract class AbstractExternalController extends AbstractController
         
         $templateParameters['items'] = $entities;
         $templateParameters['finderForm'] = $form->createView();
+        
+        $imageHelper = $this->get('rk_parkhaus_module.image_helper');
+        $templateParameters = array_merge($templateParameters, $repository->getAdditionalTemplateParameters($imageHelper, 'controllerAction', ['action' => 'display']));
         
         $templateParameters['pager'] = [
             'numitems' => $objectCount,

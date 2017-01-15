@@ -165,10 +165,11 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
                     $this->__('Manufacturer') => 'manufacturer',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
-                    $this->__('Update date') => 'updatedDate'
+                    $this->__('Update date') => 'updatedDate',
+                    $this->__('Updater') => 'updatedBy'
                 ],
                 'choices_as_values' => true,
-                'required' => false,
+                'required' => true,
                 'expanded' => false
             ])
             ->add('sortdir', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
@@ -182,7 +183,7 @@ abstract class AbstractVehicleQuickNavType extends AbstractType
                     $this->__('Descending') => 'desc'
                 ],
                 'choices_as_values' => true,
-                'required' => false,
+                'required' => true,
                 'expanded' => false
             ])
         ;
