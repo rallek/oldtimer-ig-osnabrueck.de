@@ -28,7 +28,7 @@ abstract class AbstractHookContainer extends ZikulaHookContainer
      */
     protected function setupHookBundles()
     {
-        $bundle = new SubscriberBundle('RKDownLoadModule', 'subscriber.rkdownloadmodule..ui_hooks.files', 'ui_hooks', $this->__('rkdownloadmodule. Files Display Hooks'));
+        $bundle = new SubscriberBundle('RKDownLoadModule', 'subscriber.rkdownloadmodule.ui_hooks.files', 'ui_hooks', $this->__('rkdownloadmodule. Files Display Hooks'));
         
         // Display hook for view/display templates.
         $bundle->addEvent('display_view', 'rkdownloadmodule.ui_hooks.files.display_view');
@@ -46,7 +46,7 @@ abstract class AbstractHookContainer extends ZikulaHookContainer
         $bundle->addEvent('process_delete', 'rkdownloadmodule.ui_hooks.files.process_delete');
         $this->registerHookSubscriberBundle($bundle);
         
-        $bundle = new SubscriberBundle('RKDownLoadModule', 'subscriber.rkdownloadmodule..filter_hooks.files', 'filter_hooks', $this->__('rkdownloadmodule. Files Filter Hooks'));
+        $bundle = new SubscriberBundle('RKDownLoadModule', 'subscriber.rkdownloadmodule.filter_hooks.files', 'filter_hooks', $this->__('rkdownloadmodule. Files Filter Hooks'));
         // A filter applied to the given area.
         $bundle->addEvent('filter', 'rkdownloadmodule.filter_hooks.files.filter');
         $this->registerHookSubscriberBundle($bundle);

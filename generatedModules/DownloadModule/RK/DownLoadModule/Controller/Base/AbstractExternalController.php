@@ -150,7 +150,7 @@ abstract class AbstractExternalController extends AbstractController
         ];
         $form = $this->createForm('RK\DownLoadModule\Form\Type\Finder\\' . ucfirst($objectType) . 'FinderType', $templateParameters, $formOptions);
         
-        if ($form->handleRequest($request)->isValid() && $form->get('update')->isClicked()) {
+        if ($form->handleRequest($request)->isValid()) {
             $formData = $form->getData();
             $templateParameters = array_merge($templateParameters, $formData);
             $currentPage = $formData['currentPage'];
@@ -162,6 +162,7 @@ abstract class AbstractExternalController extends AbstractController
         
         $where = '';
         $sortParam = $sort . ' ' . $sdir;
+        
         if ($searchTerm != '') {
             list($entities, $objectCount) = $repository->selectSearch($searchTerm, [], $sortParam, $currentPage, $resultsPerPage);
         } else {

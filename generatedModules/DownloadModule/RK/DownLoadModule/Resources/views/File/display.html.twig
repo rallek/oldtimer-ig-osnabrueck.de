@@ -1,5 +1,6 @@
 {# purpose of this template: files display view #}
-{% extends routeArea == 'admin' ? 'RKDownLoadModule::adminBase.html.twig' : 'RKDownLoadModule::base.html.twig' %}
+{% set baseTemplate = app.request.query.getBoolean('raw', false) ? 'raw' : (routeArea == 'admin' ? 'adminBase' : 'base') %}
+{% extends 'RKDownLoadModule::' ~ baseTemplate ~ '.html.twig' %}
 {% block pageTitle %}{{ file.getTitleFromDisplayPattern()|default(__('File')) }}{% endblock %}
 {% block title %}
     {% set templateTitle = file.getTitleFromDisplayPattern()|default(__('File')) %}

@@ -99,7 +99,7 @@ abstract class AbstractFileQuickNavType extends AbstractType
     
         $builder->add('categories', 'Zikula\CategoriesModule\Form\Type\CategoriesType', [
             'label' => $this->__('Category'),
-            'empty_data' => [],
+            'empty_data' => null,
             'attr' => [
                 'class' => 'input-sm category-selector',
                 'title' => $this->__('This is an optional filter.')
@@ -154,7 +154,7 @@ abstract class AbstractFileQuickNavType extends AbstractType
         $builder->add('q', 'Symfony\Component\Form\Extension\Core\Type\SearchType', [
             'label' => $this->__('Search'),
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => 'input-sm'
             ],
             'required' => false
@@ -180,10 +180,11 @@ abstract class AbstractFileQuickNavType extends AbstractType
                     $this->__('File name') => 'fileName',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
-                    $this->__('Update date') => 'updatedDate'
+                    $this->__('Update date') => 'updatedDate',
+                    $this->__('Updater') => 'updatedBy'
                 ],
                 'choices_as_values' => true,
-                'required' => false,
+                'required' => true,
                 'expanded' => false
             ])
             ->add('sortdir', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
@@ -197,7 +198,7 @@ abstract class AbstractFileQuickNavType extends AbstractType
                     $this->__('Descending') => 'desc'
                 ],
                 'choices_as_values' => true,
-                'required' => false,
+                'required' => true,
                 'expanded' => false
             ])
         ;
@@ -218,13 +219,13 @@ abstract class AbstractFileQuickNavType extends AbstractType
                 'class' => 'input-sm text-right'
             ],
             'choices' => [
-                5 => 5,
-                10 => 10,
-                15 => 15,
-                20 => 20,
-                30 => 30,
-                50 => 50,
-                100 => 100
+                $this->__('5') => 5,
+                $this->__('10') => 10,
+                $this->__('15') => 15,
+                $this->__('20') => 20,
+                $this->__('30') => 30,
+                $this->__('50') => 50,
+                $this->__('100') => 100
             ],
             'choices_as_values' => true,
             'required' => false,

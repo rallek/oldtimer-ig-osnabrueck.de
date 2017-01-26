@@ -26,7 +26,7 @@ use RK\DownLoadModule\Traits\StandardFieldsTrait;
  * Entity class that defines the entity structure and behaviours.
  *
  * This is the concrete entity class for file entities.
- * @ORM\Entity(repositoryClass="\RK\DownLoadModule\Entity\Repository\FileRepository")
+ * @ORM\Entity(repositoryClass="RK\DownLoadModule\Entity\Repository\FileRepository")
  * @ORM\Table(name="rk_downlo_file",
  *     indexes={
  *         @ORM\Index(name="workflowstateindex", columns={"workflowState"})

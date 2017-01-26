@@ -64,7 +64,7 @@ abstract class AbstractFileEntity extends EntityAccess
      * @ORM\Column(type="integer", unique=true)
      * @Assert\Type(type="integer")
      * @Assert\NotNull()
-     * @Assert\LessThan(value=1000000000, message="Length of field value must not be higher than 9.")) {
+     * @Assert\LessThan(value=1000000000)
      * @var integer $id
      */
     protected $id = 0;
@@ -114,6 +114,7 @@ abstract class AbstractFileEntity extends EntityAccess
      * @var string $myFileUrl
      */
     protected $myFileUrl = '';
+    
     /**
      * @ORM\Column(type="text", length=2000, nullable=true)
      * @Assert\Length(min="0", max="2000")
@@ -496,8 +497,8 @@ abstract class AbstractFileEntity extends EntityAccess
      */
     public static function getWorkflowStateAllowedValues()
     {
-        $serviceManager = ServiceUtil::getManager();
-        $helper = $serviceManager->get('rk_download_module.listentries_helper');
+        $container = ServiceUtil::get('service_container');
+        $helper = $container->get('rk_download_module.listentries_helper');
         $listEntries = $helper->getWorkflowStateEntriesForFile();
     
         $allowedValues = ['initial'];

@@ -105,7 +105,7 @@ abstract class AbstractFileFinderType extends AbstractType
     {
         $builder->add('categories', 'Zikula\CategoriesModule\Form\Type\CategoriesType', [
             'label' => $this->__('Category') . ':',
-            'empty_data' => [],
+            'empty_data' => null,
             'attr' => [
                 'class' => 'category-selector',
                 'title' => $this->__('This is an optional filter.')
@@ -127,7 +127,7 @@ abstract class AbstractFileFinderType extends AbstractType
      */
     public function addPasteAsField(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('pasteas', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
+        $builder->add('pasteAs', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', [
             'label' => $this->__('Paste as') . ':',
             'empty_data' => 1,
             'choices' => [
@@ -156,7 +156,8 @@ abstract class AbstractFileFinderType extends AbstractType
                     $this->__('File name') => 'fileName',
                     $this->__('Creation date') => 'createdDate',
                     $this->__('Creator') => 'createdBy',
-                    $this->__('Update date') => 'updatedDate'
+                    $this->__('Update date') => 'updatedDate',
+                    $this->__('Updater') => 'updatedBy'
                 ],
                 'choices_as_values' => true,
                 'multiple' => false,
@@ -191,13 +192,13 @@ abstract class AbstractFileFinderType extends AbstractType
                 'class' => 'text-right'
             ],
             'choices' => [
-                5 => 5,
-                10 => 10,
-                15 => 15,
-                20 => 20,
-                30 => 30,
-                50 => 50,
-                100 => 100
+                $this->__('5') => 5,
+                $this->__('10') => 10,
+                $this->__('15') => 15,
+                $this->__('20') => 20,
+                $this->__('30') => 30,
+                $this->__('50') => 50,
+                $this->__('100') => 100
             ],
             'choices_as_values' => true,
             'multiple' => false,
@@ -217,7 +218,7 @@ abstract class AbstractFileFinderType extends AbstractType
             'label' => $this->__('Search for') . ':',
             'required' => false,
             'attr' => [
-                'max_length' => 255
+                'maxlength' => 255
             ]
         ]);
     }

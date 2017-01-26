@@ -78,9 +78,9 @@ trait EntityWorkflowTrait
         $loadingRequired = false !== strpos($routeName, 'edit') || false !== strpos($routeName, 'delete');
         $isReuse = $request->query->getBoolean('astemplate', false);
     
-        $serviceManager = ServiceUtil::getManager();
-        $translator = $serviceManager->get('translator.default');
-        $workflowHelper = $serviceManager->get('rk_download_module.workflow_helper');
+        $container = ServiceUtil::get('service_container');
+        $translator = $container->get('translator.default');
+        $workflowHelper = $container->get('rk_download_module.workflow_helper');
         
         $objectType = $this->get_objectType();
         $idColumn = $this->getWorkflowIdColumn();
@@ -100,7 +100,7 @@ trait EntityWorkflowTrait
         if (($loadingRequired && !$isReuse) || $forceLoading) {
             $result = Zikula_Workflow_Util::getWorkflowForObject($this, $objectType, $idColumn, 'RKDownLoadModule');
             if (!$result) {
-                $flashBag = $serviceManager->get('session')->getFlashBag();
+                $flashBag = $container->get('session')->getFlashBag();
                 $flashBag->add('error', $translator->__('Error! Could not load the associated workflow.'));
             }
         }

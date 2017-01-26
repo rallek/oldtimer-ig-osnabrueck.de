@@ -58,7 +58,7 @@ abstract class AbstractDownLoadFactory
      */
     public function createFile()
     {
-        $entityClass = 'RK\\DownLoadModule\\Entity\\fileEntity';
+        $entityClass = 'RK\\DownLoadModule\\Entity\\FileEntity';
 
         return new $entityClass();
     }

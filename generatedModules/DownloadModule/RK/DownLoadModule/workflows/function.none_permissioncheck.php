@@ -47,8 +47,8 @@ function RKDownLoadModule_workflow_none_permissioncheck($obj, $permLevel, $curre
  */
 function RKDownLoadModule_workflow_none_gettextstrings()
 {
-    $serviceManager = \ServiceUtil::getManager();
-    $translator = $serviceManager->get('translator.default');
+    $translator = \ServiceUtil::get('translator.default');
+
     return [
         'title' => $translator->__('None workflow (no approval)'),
         'description' => $translator->__('This is like a non-existing workflow. Everything is online immediately after creation.'),

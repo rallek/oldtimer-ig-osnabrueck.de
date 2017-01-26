@@ -39,13 +39,13 @@ rKDownLoadModule.finder = {};
 
 rKDownLoadModule.finder.onLoad = function (baseId, selectedId)
 {
-    jQuery('select').not("[id$='pasteas']").change(rKDownLoadModule.finder.onParamChanged);
+    jQuery('select').not("[id$='pasteAs']").change(rKDownLoadModule.finder.onParamChanged);
     
     jQuery('.btn-default').click(rKDownLoadModule.finder.handleCancel);
 
-    var selectedItems = jQuery('#rkdownloadmoduleItemContainer li a');
-    selectedItems.bind('click keypress', function (e) {
-        e.preventDefault();
+    var selectedItems = jQuery('#rkdownloadmoduleItemContainer a');
+    selectedItems.bind('click keypress', function (event) {
+        event.preventDefault();
         rKDownLoadModule.finder.selectItem(jQuery(this).data('itemid'));
     });
 };
@@ -59,6 +59,7 @@ rKDownLoadModule.finder.handleCancel = function ()
 {
     var editor;
 
+    event.preventDefault();
     editor = jQuery("[id$='editor']").first().val();
     if ('tinymce' === editor) {
         rKDownLoadClosePopup();
@@ -72,26 +73,29 @@ rKDownLoadModule.finder.handleCancel = function ()
 
 function rKDownLoadGetPasteSnippet(mode, itemId)
 {
-    var quoteFinder, itemUrl, itemTitle, itemDescription, pasteMode;
+    var quoteFinder;
+    var itemUrl;
+    var itemTitle;
+    var itemDescription;
+    var pasteMode;
 
     quoteFinder = new RegExp('"', 'g');
     itemUrl = jQuery('#url' + itemId).val().replace(quoteFinder, '');
     itemTitle = jQuery('#title' + itemId).val().replace(quoteFinder, '').trim();
     itemDescription = jQuery('#desc' + itemId).val().replace(quoteFinder, '').trim();
-    pasteMode = jQuery("[id$='pasteas']").first().val();
+    pasteMode = jQuery("[id$='pasteAs']").first().val();
 
-    if (pasteMode === '2' || pasteMode !== '1') {
+    // item ID
+    if (pasteMode === '2') {
         return '' + itemId;
     }
 
-    // return link to item
-    if (mode === 'url') {
-        // plugin mode
-        return itemUrl;
+    // link to detail page
+    if (pasteMode === '1') {
+        return mode === 'url' ? itemUrl : '<a href="' + itemUrl + '" title="' + itemDescription + '">' + itemTitle + '</a>';
     }
 
-    // editor mode
-    return '<a href="' + itemUrl + '" title="' + itemDescription + '">' + itemTitle + '</a>';
+    return '';
 }
 
 

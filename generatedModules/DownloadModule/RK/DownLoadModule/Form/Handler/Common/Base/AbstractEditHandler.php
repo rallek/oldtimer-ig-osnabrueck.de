@@ -301,7 +301,6 @@ abstract class AbstractEditHandler
     public function processForm(array $templateParameters)
     {
         $this->templateParameters = $templateParameters;
-        $this->templateParameters['inlineUsage'] = $this->request->query->getBoolean('raw', false);
     
         // initialise redirect goal
         $this->returnTo = $this->request->query->get('returnTo', null);
@@ -352,6 +351,19 @@ abstract class AbstractEditHandler
             }
     
             $entity = $this->initEntityForCreation();
+    
+            // set default values from request parameters
+            foreach ($this->request->query->all() as $key => $value) {
+                if (strlen($key) < 5 || substr($key, 0, 4) != 'set_') {
+                    continue;
+                }
+                $fieldName = str_replace('set_', '', $key);
+                $setterName = 'set' . ucfirst($fieldName);
+                if (!method_exists($entity, $setterName)) {
+                    continue;
+                }
+                $entity[$fieldName] = $value;
+            }
         }
     
         if (null === $entity) {

@@ -13,7 +13,6 @@
 namespace RK\DownLoadModule\Listener\Base;
 
 use Psr\Log\LoggerInterface;
-use Zikula\Common\Translator\TranslatorInterface as ZkTranslatorInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Zikula\Common\Translator\TranslatorInterface;
@@ -28,7 +27,7 @@ use RK\DownLoadModule\Entity\Factory\DownLoadFactory;
 abstract class AbstractUserListener implements EventSubscriberInterface
 {
     /**
-     * @var ZkTranslatorInterface
+     * @var TranslatorInterface
      */
     protected $translator;
     
@@ -50,14 +49,14 @@ abstract class AbstractUserListener implements EventSubscriberInterface
     /**
      * UserListener constructor.
      *
-     * @param ZkTranslatorInterface $translator     Translator service instance
+     * @param TranslatorInterface $translator     Translator service instance
      * @param DownLoadFactory $entityFactory DownLoadFactory service instance
-     * @param CurrentUserApi        $currentUserApi CurrentUserApi service instance
-     * @param LoggerInterface       $logger         Logger service instance
+     * @param CurrentUserApi      $currentUserApi CurrentUserApi service instance
+     * @param LoggerInterface     $logger         Logger service instance
      *
      * @return void
      */
-    public function __construct(ZkTranslatorInterface $translator, DownLoadFactory $entityFactory, CurrentUserApi $currentUserApi, LoggerInterface $logger)
+    public function __construct(TranslatorInterface $translator, DownLoadFactory $entityFactory, CurrentUserApi $currentUserApi, LoggerInterface $logger)
     {
         $this->translator = $translator;
         $this->entityFactory = $entityFactory;

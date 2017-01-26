@@ -89,9 +89,9 @@ abstract class AbstractFileType extends AbstractType
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             $entity = $event->getData();
             foreach (['myFile'] as $uploadFieldName) {
-                if ($entity[$uploadFieldName] instanceof File) {
-                    $entity[$uploadFieldName] = [$uploadFieldName => $entity[$uploadFieldName]->getPathname()];
-                }
+                $entity[$uploadFieldName] = [
+                    $uploadFieldName => $entity[$uploadFieldName] instanceof File ? $entity[$uploadFieldName]->getPathname() : null
+                ];
             }
         });
         $builder->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) {
@@ -117,7 +117,7 @@ abstract class AbstractFileType extends AbstractType
             'label' => $this->__('File name') . ':',
             'empty_data' => '',
             'attr' => [
-                'max_length' => 255,
+                'maxlength' => 255,
                 'class' => '',
                 'title' => $this->__('Enter the file name of the file')
             ],'required' => true,
@@ -138,7 +138,7 @@ abstract class AbstractFileType extends AbstractType
             'label' => $this->__('My description') . ':',
             'empty_data' => '',
             'attr' => [
-                'max_length' => 2000,
+                'maxlength' => 2000,
                 'class' => '',
                 'title' => $this->__('Enter the my description of the file')
             ],'required' => false
@@ -177,7 +177,7 @@ abstract class AbstractFileType extends AbstractType
     {
         $builder->add('categories', 'Zikula\CategoriesModule\Form\Type\CategoriesType', [
             'label' => $this->__('Category') . ':',
-            'empty_data' => [],
+            'empty_data' => null,
             'attr' => [
                 'class' => 'category-selector'
             ],
@@ -205,7 +205,7 @@ abstract class AbstractFileType extends AbstractType
             'mapped' => false,
             'label' => $this->__('Creator') . ':',
             'attr' => [
-                'max_length' => 11,
+                'maxlength' => 11,
                 'class' => ' validate-digits',
                 'title' => $this->__('Here you can choose a user which will be set as creator')
             ],

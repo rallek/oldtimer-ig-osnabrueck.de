@@ -48,7 +48,7 @@ abstract class AbstractFileRepository extends EntityRepository
     /**
      * @var string The default sorting field/expression
      */
-    protected $defaultSortingField = 'workflowState';
+    protected $defaultSortingField = 'fileName';
 
     /**
      * @var Request The request object given by the calling controller
@@ -473,6 +473,32 @@ abstract class AbstractFileRepository extends EntityRepository
         if ($excludeId > 0) {
             $qb->andWhere('tbl.id != :excludeId')
                ->setParameter('excludeId', $excludeId);
+        }
+    
+        return $qb;
+    }
+
+    /**
+     * Adds a filter for the createdBy field.
+     *
+     * @param QueryBuilder $qb Query builder to be enhanced
+     * @param integer      $userId The user identifier used for filtering (optional)
+     *
+     * @return QueryBuilder Enriched query builder instance
+     */
+    public function addCreatorFilter(QueryBuilder $qb, $userId = null)
+    {
+        if (null === $userId) {
+            $currentUserApi = ServiceUtil::get('zikula_users_module.current_user');
+            $userId = $currentUserApi->isLoggedIn() ? $currentUserApi->get('uid') : 1;
+        }
+    
+        if (is_array($userId)) {
+            $qb->andWhere('tbl.createdBy IN (:userIds)')
+               ->setParameter('userIds', $userId);
+        } else {
+            $qb->andWhere('tbl.createdBy = :userId')
+               ->setParameter('userId', $userId);
         }
     
         return $qb;
@@ -988,6 +1014,16 @@ abstract class AbstractFileRepository extends EntityRepository
         if (!empty($orderBy)) {
             if (false === strpos($orderBy, '.')) {
                 $orderBy = 'tbl.' . $orderBy;
+            }
+            if (false !== strpos($orderBy, 'tbl.createdBy')) {
+                $qb->addSelect('tblCreator')
+                   ->leftJoin('tbl.createdBy', 'tblCreator');
+                $orderBy = str_replace('tbl.createdBy', 'tblCreator.uname', $orderBy);
+            }
+            if (false !== strpos($orderBy, 'tbl.updatedBy')) {
+                $qb->addSelect('tblUpdater')
+                   ->leftJoin('tbl.updatedBy', 'tblUpdater');
+                $orderBy = str_replace('tbl.updatedBy', 'tblUpdater.uname', $orderBy);
             }
             $qb->add('orderBy', $orderBy);
         }

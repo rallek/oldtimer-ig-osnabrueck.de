@@ -104,8 +104,8 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'data' => isset($this->modVars['fileEntriesPerPage']) ? $this->modVars['fileEntriesPerPage'] : '',
                 'empty_data' => intval('10'),
                 'attr' => [
-                    'max_length' => 255,
-                    'title' => $this->__('Enter the file entries per page. Only digits are allowed.')
+                    'maxlength' => 255,
+                    'title' => $this->__('Enter the file entries per page.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0
             ])
         ;

@@ -109,7 +109,7 @@ abstract class AbstractItemListBlockType extends AbstractType
         $hasMultiSelection = $options['categoryHelper']->hasMultipleSelection($options['objectType']);
         $builder->add('categories', 'Zikula\CategoriesModule\Form\Type\CategoriesType', [
             'label' => ($hasMultiSelection ? $this->__('Categories') : $this->__('Category')) . ':',
-            'empty_data' => [],
+            'empty_data' => $hasMultiSelection ? [] : null,
             'attr' => [
                 'class' => 'category-selector',
                 'title' => $this->__('This is an optional filter.')
@@ -156,10 +156,10 @@ abstract class AbstractItemListBlockType extends AbstractType
         $builder->add('amount', 'Symfony\Component\Form\Extension\Core\Type\IntegerType', [
             'label' => $this->__('Amount') . ':',
             'attr' => [
-                'max_length' => 2,
-                'title' => $this->__('The maximum amount of items to be shown. Only digits are allowed.')
+                'maxlength' => 2,
+                'title' => $this->__('The maximum amount of items to be shown.') . ' ' . $this->__('Only digits are allowed.')
             ],
-            'help' => $this->__('The maximum amount of items to be shown. Only digits are allowed.'),
+            'help' => $this->__('The maximum amount of items to be shown.') . ' ' . $this->__('Only digits are allowed.'),
             'empty_data' => 5,
             'scale' => 0
         ]);
@@ -190,7 +190,7 @@ abstract class AbstractItemListBlockType extends AbstractType
                 'label' => $this->__('Custom template') . ':',
                 'required' => false,
                 'attr' => [
-                    'max_length' => 80,
+                    'maxlength' => 80,
                     'title' => $this->__('Example') . ': itemlist_[objectType]_display.html.twig'
                 ],
                 'help' => $this->__('Example') . ': <em>itemlist_[objectType]_display.html.twig</em>'
@@ -210,7 +210,7 @@ abstract class AbstractItemListBlockType extends AbstractType
             'label' => $this->__('Filter (expert option)') . ':',
             'required' => false,
             'attr' => [
-                'max_length' => 255
+                'maxlength' => 255
             ]
         ]);
     }
