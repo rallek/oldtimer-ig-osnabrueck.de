@@ -28,7 +28,7 @@ abstract class AbstractHookContainer extends ZikulaHookContainer
      */
     protected function setupHookBundles()
     {
-        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule..ui_hooks.vehicles', 'ui_hooks', $this->__('rkparkhausmodule. Vehicles Display Hooks'));
+        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule.ui_hooks.vehicles', 'ui_hooks', $this->__('rkparkhausmodule. Vehicles Display Hooks'));
         
         // Display hook for view/display templates.
         $bundle->addEvent('display_view', 'rkparkhausmodule.ui_hooks.vehicles.display_view');
@@ -46,12 +46,12 @@ abstract class AbstractHookContainer extends ZikulaHookContainer
         $bundle->addEvent('process_delete', 'rkparkhausmodule.ui_hooks.vehicles.process_delete');
         $this->registerHookSubscriberBundle($bundle);
         
-        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule..filter_hooks.vehicles', 'filter_hooks', $this->__('rkparkhausmodule. Vehicles Filter Hooks'));
+        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule.filter_hooks.vehicles', 'filter_hooks', $this->__('rkparkhausmodule. Vehicles Filter Hooks'));
         // A filter applied to the given area.
         $bundle->addEvent('filter', 'rkparkhausmodule.filter_hooks.vehicles.filter');
         $this->registerHookSubscriberBundle($bundle);
         
-        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule..ui_hooks.vehicleimages', 'ui_hooks', $this->__('rkparkhausmodule. Vehicle images Display Hooks'));
+        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule.ui_hooks.vehicleimages', 'ui_hooks', $this->__('rkparkhausmodule. Vehicle images Display Hooks'));
         
         // Display hook for view/display templates.
         $bundle->addEvent('display_view', 'rkparkhausmodule.ui_hooks.vehicleimages.display_view');
@@ -69,7 +69,7 @@ abstract class AbstractHookContainer extends ZikulaHookContainer
         $bundle->addEvent('process_delete', 'rkparkhausmodule.ui_hooks.vehicleimages.process_delete');
         $this->registerHookSubscriberBundle($bundle);
         
-        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule..filter_hooks.vehicleimages', 'filter_hooks', $this->__('rkparkhausmodule. Vehicle images Filter Hooks'));
+        $bundle = new SubscriberBundle('RKParkHausModule', 'subscriber.rkparkhausmodule.filter_hooks.vehicleimages', 'filter_hooks', $this->__('rkparkhausmodule. Vehicle images Filter Hooks'));
         // A filter applied to the given area.
         $bundle->addEvent('filter', 'rkparkhausmodule.filter_hooks.vehicleimages.filter');
         $this->registerHookSubscriberBundle($bundle);

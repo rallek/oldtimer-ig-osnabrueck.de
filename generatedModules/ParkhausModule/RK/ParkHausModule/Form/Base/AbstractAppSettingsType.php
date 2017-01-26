@@ -106,7 +106,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('10'),
                 'attr' => [
                     'maxlength' => 255,
-                    'title' => $this->__('Enter the vehicle entries per page. Only digits are allowed.')
+                    'title' => $this->__('Enter the vehicle entries per page.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0
             ])
             ->add('linkOwnVehiclesOnAccountPage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
@@ -134,7 +134,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('10'),
                 'attr' => [
                     'maxlength' => 255,
-                    'title' => $this->__('Enter the vehicle image entries per page. Only digits are allowed.')
+                    'title' => $this->__('Enter the vehicle image entries per page.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0
             ])
             ->add('linkOwnVehicleImagesOnAccountPage', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', [
@@ -188,7 +188,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('800'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink width vehicle title image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink width vehicle title image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehicletitleimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -205,7 +205,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('600'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink height vehicle title image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink height vehicle title image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehicletitleimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -241,7 +241,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('32'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle title image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle title image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -257,7 +257,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('24'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle title image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle title image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -273,7 +273,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle title image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle title image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -289,7 +289,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle title image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle title image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -305,7 +305,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle title image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle title image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -321,7 +321,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle title image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle title image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -351,7 +351,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('800'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink width vehicle vehicle image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink width vehicle vehicle image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehiclevehicleimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -368,7 +368,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('600'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink height vehicle vehicle image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink height vehicle vehicle image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehiclevehicleimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -404,7 +404,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('32'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle vehicle image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle vehicle image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -420,7 +420,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('24'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle vehicle image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle vehicle image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -436,7 +436,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle vehicle image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle vehicle image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -452,7 +452,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle vehicle image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle vehicle image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -468,7 +468,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle vehicle image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle vehicle image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -484,7 +484,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle vehicle image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle vehicle image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -514,7 +514,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('800'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink width vehicle manufacturer image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink width vehicle manufacturer image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehiclemanufacturerimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -531,7 +531,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('600'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink height vehicle manufacturer image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink height vehicle manufacturer image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehiclemanufacturerimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -567,7 +567,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('32'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -583,7 +583,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('24'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -599,7 +599,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -615,7 +615,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -631,7 +631,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle manufacturer image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -647,7 +647,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle manufacturer image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -677,7 +677,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('800'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink width vehicle image vehicle image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink width vehicle image vehicle image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkwidthvehicleimagevehicleimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -694,7 +694,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('600'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the shrink height vehicle image vehicle image. Only digits are allowed.'),
+                    'title' => $this->__('Enter the shrink height vehicle image vehicle image.') . ' ' . $this->__('Only digits are allowed.'),
                     'class' => 'shrinkdimension-shrinkheightvehicleimagevehicleimage'
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
@@ -730,7 +730,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('32'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle image vehicle image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle image vehicle image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -746,7 +746,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('24'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle image vehicle image view. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle image vehicle image view.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -762,7 +762,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle image vehicle image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle image vehicle image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -778,7 +778,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle image vehicle image display. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle image vehicle image display.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -794,7 +794,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('240'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail width vehicle image vehicle image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail width vehicle image vehicle image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])
@@ -810,7 +810,7 @@ abstract class AbstractAppSettingsType extends AbstractType
                 'empty_data' => intval('180'),
                 'attr' => [
                     'maxlength' => 4,
-                    'title' => $this->__('Enter the thumbnail height vehicle image vehicle image edit. Only digits are allowed.')
+                    'title' => $this->__('Enter the thumbnail height vehicle image vehicle image edit.') . ' ' . $this->__('Only digits are allowed.')
                 ],'scale' => 0,
                 'input_group' => ['right' => $this->__('pixels')]
             ])

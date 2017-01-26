@@ -34,10 +34,10 @@ function RKParkHausModule_operation_update(&$entity, $params)
     }
     
     // get entity manager
-    $serviceManager = \ServiceUtil::getManager();
-    $entityManager = $serviceManager->get('doctrine.orm.default_entity_manager');
-    $logger = $serviceManager->get('logger');
-    $logArgs = ['app' => 'RKParkHausModule', 'user' => $serviceManager->get('zikula_users_module.current_user')->get('uname')];
+    $container = \ServiceUtil::get('service_container');
+    $entityManager = $container->get('doctrine.orm.default_entity_manager');
+    $logger = $container->get('logger');
+    $logArgs = ['app' => 'RKParkHausModule', 'user' => $container->get('zikula_users_module.current_user')->get('uname')];
     
     // save entity data
     try {

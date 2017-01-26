@@ -58,7 +58,7 @@ abstract class AbstractParkHausFactory
      */
     public function createVehicle()
     {
-        $entityClass = 'RK\\ParkHausModule\\Entity\\vehicleEntity';
+        $entityClass = 'RK\\ParkHausModule\\Entity\\VehicleEntity';
 
         return new $entityClass();
     }
@@ -70,7 +70,7 @@ abstract class AbstractParkHausFactory
      */
     public function createVehicleImage()
     {
-        $entityClass = 'RK\\ParkHausModule\\Entity\\vehicleImageEntity';
+        $entityClass = 'RK\\ParkHausModule\\Entity\\VehicleImageEntity';
 
         return new $entityClass();
     }

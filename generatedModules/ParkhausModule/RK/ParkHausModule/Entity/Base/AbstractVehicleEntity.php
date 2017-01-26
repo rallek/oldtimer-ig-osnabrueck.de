@@ -1425,8 +1425,8 @@ abstract class AbstractVehicleEntity extends EntityAccess
      */
     public static function getWorkflowStateAllowedValues()
     {
-        $serviceManager = ServiceUtil::getManager();
-        $helper = $serviceManager->get('rk_parkhaus_module.listentries_helper');
+        $container = ServiceUtil::get('service_container');
+        $helper = $container->get('rk_parkhaus_module.listentries_helper');
         $listEntries = $helper->getWorkflowStateEntriesForVehicle();
     
         $allowedValues = ['initial'];
@@ -1445,8 +1445,8 @@ abstract class AbstractVehicleEntity extends EntityAccess
      */
     public static function getVehicleTypeAllowedValues()
     {
-        $serviceManager = ServiceUtil::getManager();
-        $helper = $serviceManager->get('rk_parkhaus_module.listentries_helper');
+        $container = ServiceUtil::get('service_container');
+        $helper = $container->get('rk_parkhaus_module.listentries_helper');
         $listEntries = $helper->getVehicleTypeEntriesForVehicle();
     
         $allowedValues = [];

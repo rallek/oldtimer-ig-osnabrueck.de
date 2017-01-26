@@ -126,9 +126,9 @@ abstract class AbstractItemListBlockType extends AbstractType
             'label' => $this->__('Amount') . ':',
             'attr' => [
                 'maxlength' => 2,
-                'title' => $this->__('The maximum amount of items to be shown. Only digits are allowed.')
+                'title' => $this->__('The maximum amount of items to be shown.') . ' ' . $this->__('Only digits are allowed.')
             ],
-            'help' => $this->__('The maximum amount of items to be shown. Only digits are allowed.'),
+            'help' => $this->__('The maximum amount of items to be shown.') . ' ' . $this->__('Only digits are allowed.'),
             'empty_data' => 5,
             'scale' => 0
         ]);

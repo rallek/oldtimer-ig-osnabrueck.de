@@ -26,7 +26,7 @@ use RK\ParkHausModule\Traits\StandardFieldsTrait;
  * Entity class that defines the entity structure and behaviours.
  *
  * This is the concrete entity class for vehicle entities.
- * @ORM\Entity(repositoryClass="\RK\ParkHausModule\Entity\Repository\VehicleRepository")
+ * @ORM\Entity(repositoryClass="RK\ParkHausModule\Entity\Repository\VehicleRepository")
  * @ORM\Table(name="rk_parkha_vehicle",
  *     indexes={
  *         @ORM\Index(name="workflowstateindex", columns={"workflowState"})

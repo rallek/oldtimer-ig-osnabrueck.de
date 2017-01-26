@@ -1,12 +1,12 @@
 {# purpose of this template: general base layout #}
 {% block header %}
-    {#{ pageAddAsset('stylesheet', asset('jquery-ui/themes/base/jquery-ui.min.css')) }#}
+    {{ pageAddAsset('stylesheet', asset('jquery-ui/themes/base/jquery-ui.min.css')) }}
     {{ pageAddAsset('javascript', asset('bootstrap-media-lightbox/bootstrap-media-lightbox.min.js')) }}
     {{ pageAddAsset('stylesheet', asset('bootstrap-media-lightbox/bootstrap-media-lightbox.css')) }}
-    {#{ pageAddAsset('stylesheet', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.css')) }}
-    {{ pageAddAsset('javascript', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.js')) }#}
+    {{ pageAddAsset('stylesheet', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.css')) }}
+    {{ pageAddAsset('javascript', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.js')) }}
     {{ pageAddAsset('javascript', zasset('@RKParkHausModule:js/RKParkHausModule.js')) }}
-    {% if 'edit' in app.request.get('_route') %}
+    {% if 'edit' in app.request.get('_route') or 'config' in app.request.get('_route') %}
         {{ polyfill(['forms', 'forms-ext']) }}
     {% endif %}
 {% endblock %}
@@ -26,6 +26,6 @@
 
 {% block footer %}
     <p class="text-center">
-        Powered by <a href="http://modulestudio.de" title="Get the MOST out of Zikula!">ModuleStudio 0.7.1</a>
+        Powered by <a href="http://modulestudio.de" title="Get the MOST out of Zikula!">ModuleStudio 0.7.2</a>
     </p>
 {% endblock %}

@@ -17,8 +17,10 @@
         <fieldset>
             <legend>{{ __('Search and select vehicle') }}</legend>
             {{ form_row(finderForm.onlyImages) }}
-            {{ form_row(finderForm.imageField) }}
-            {{ form_row(finderForm.pasteas) }}
+            <div id="imageFieldRow">
+                {{ form_row(finderForm.imageField) }}
+            </div>
+            {{ form_row(finderForm.pasteAs) }}
             <br />
             <div class="form-group">
                 <label class="col-sm-3 control-label">{{ __('Vehicle') }}:</label>
@@ -28,21 +30,25 @@
                             <ul>
                         {% endif %}
                             {% for vehicle in items %}
-                                {% if attribute(vehicle, imageField) is not empty and attribute(vehicle, imageField ~ 'Meta').isImage %}
+                                {% if not onlyImages or (attribute(vehicle, imageField) is not empty and attribute(vehicle, imageField ~ 'Meta').isImage) %}
                                 {% if not onlyImages %}
                                     <li>
                                 {% endif %}
                                     {% set itemId = vehicle.createCompositeIdentifier() %}
                                     <a href="#" data-itemid="{{ itemId }}">
-                                        {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicle' ~ imageField|capitalize) %}
-                                        <img src="{{ attribute(vehicle, imageField).getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-rounded" />
+                                        {% if onlyImages %}
+                                            {% set thumbOptions = attribute(thumbRuntimeOptions, 'vehicle' ~ imageField[:1]|upper ~ imageField[1:]) %}
+                                            <img src="{{ attribute(vehicle, imageField).getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-rounded" />
+                                        {% else %}
+                                            {{ vehicle.getTitleFromDisplayPattern() }}
+                                        {% endif %}
                                     </a>
                                     <input type="hidden" id="url{{ itemId }}" value="{{ url('rkparkhausmodule_vehicle_display', { 'id': vehicle.id }) }}" />
                                     <input type="hidden" id="title{{ itemId }}" value="{{ vehicle.getTitleFromDisplayPattern()|e('html_attr') }}" />
                                     <input type="hidden" id="desc{{ itemId }}" value="{% set description %}{% if vehicle.vehicleDescriptionTeaser is not empty %}{{ vehicle.vehicleDescriptionTeaser }}{% endif %}
                                     {% endset %}{{ description|striptags|e('html_attr') }}" />
                                     {% if onlyImages %}
-                                        <input type="hidden" id="imageUrl{{ itemId }}" value="{{ attribute(vehicle, imageField).getPathname() }}" />
+                                        <input type="hidden" id="imageUrl{{ itemId }}" value="/{{ attribute(vehicle, imageField).getPathname() }}" />
                                     {% endif %}
                                 {% if not onlyImages %}
                                     </li>
@@ -61,7 +67,9 @@
             {{ form_row(finderForm.sort) }}
             {{ form_row(finderForm.sortdir) }}
             {{ form_row(finderForm.num) }}
-            {{ form_row(finderForm.q) }}
+            <div id="searchTermRow">
+                {{ form_row(finderForm.q) }}
+            </div>
             <div>
                 {{ pager({ display: 'page', rowcount: pager.numitems, limit: pager.itemsperpage, posvar: 'pos', maxpages: 10, route: 'rkparkhausmodule_external_finder'}) }}
             </div>

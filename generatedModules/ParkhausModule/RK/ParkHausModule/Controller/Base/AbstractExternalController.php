@@ -139,7 +139,7 @@ abstract class AbstractExternalController extends AbstractController
             'sort' => $sort,
             'sortdir' => $sdir,
             'currentPage' => $currentPage,
-            'onlyImages' = false,
+            'onlyImages' => false,
             'imageField' => ''
         ];
         $searchTerm = '';
@@ -158,8 +158,8 @@ abstract class AbstractExternalController extends AbstractController
             $sort = $formData['sort'];
             $sdir = $formData['sortdir'];
             $searchTerm = $formData['q'];
-            $templateParameters['onlyImages'] = isset($formData['onlyImages'] ? (bool)$formData['onlyImages'] : false;
-            $templateParameters['imageField'] = isset($formData['imageField'] ? $formData['imageField'] : '';
+            $templateParameters['onlyImages'] = isset($formData['onlyImages']) ? (bool)$formData['onlyImages'] : false;
+            $templateParameters['imageField'] = isset($formData['imageField']) ? $formData['imageField'] : '';
         }
         
         $where = '';
