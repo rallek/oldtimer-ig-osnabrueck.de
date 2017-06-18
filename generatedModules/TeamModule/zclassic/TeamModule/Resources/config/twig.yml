@@ -1,8 +1,0 @@
-services:
-    # Twig extension
-    rk_team_module.twig_extension:
-        class: RK\TeamModule\Twig\TwigExtension
-        arguments: ["@translator.default", "@zikula_extensions_module.api.variable", "@rk_team_module.workflow_helper", "@rk_team_module.view_helper", "@rk_team_module.listentries_helper"]
-        public: false
-        tags:
-            - { name: twig.extension }

@@ -1,6 +1,0 @@
-services:
-    # Entity factory classes
-    rk_team_module.person_factory:
-        class: RK\TeamModule\Entity\Factory\PersonFactory
-        arguments: ["@doctrine.orm.entity_manager", RK\TeamModule\Entity\PersonEntity]
-    

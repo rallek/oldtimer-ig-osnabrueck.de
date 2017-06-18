@@ -1,6 +1,0 @@
-services:
-    rk_sponsoring_module.link_container:
-        class: RK\SponsoringModule\Container\LinkContainer
-        arguments: ["@translator.default", "@router", "@zikula_permissions_module.api.permission", "@rk_sponsoring_module.controller_helper", "@zikula_users_module.current_user"]
-        tags:
-            - { name: zikula.link_container }
