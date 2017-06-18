@@ -1,0 +1,16 @@
+       <div class="container">
+            <hr />
+            <footer>
+                <p>
+				{% if hasPermission('ZikulaPagesModule::', '::', 'ACCESS_READ') %}
+				<a href="/pages/display/impressum">Impressum</a> | 
+				{% endif %}	
+				
+				<a href="{{ path('zikulausersmodule_user_index') }}" title="{{ __('Go to your account panel') }}">Benutzerkonto</a> | 
+				{{ __('Powered by') }} <a href="http://zikula.org">Zikula</a>
+                </p>
+            </footer>
+        </div> <!-- /container -->
+
+    </body>
+</html>
