@@ -1,0 +1,62 @@
+body {
+    padding-top: 60px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+.navbar-modulelinks .navbar-nav a, .navbar-modulelinks .navbar-nav a:hover, .navbar-modulelinks .navbar-nav a:focus {
+    padding: 3px 20px;
+}
+.top-space {
+	padding-top: 8px;
+}
+.bottom-space {
+	padding-bottom: 8px;
+}
+.right-space {
+	padding-right: 8px;
+}
+.left-space {
+	padding-left: 8px;
+}
+.min-height-linker-text {
+	min-height: 80px;
+}
+.min-height-linker-headline {
+	min-height: 70px;
+}
+.copyright {
+	font-size: 10px;
+}
+.white-space {
+	background-image: linear-gradient(white, #F0F0F0); 
+	
+	padding: 5px;
+}
+.negative-space {
+	padding-left: -15px;
+	padding-right: -15px;
+}
+.no-padding {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.section-primary {
+	background: #898989;
+	color: #ffffff;
+}
+.white {
+	color: #ffffff;
+}
+
+.bildmitbildunterschrift span {
+    background-color: silver;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 2em;
+    text-align: right;
+	color: white;
+}
+	

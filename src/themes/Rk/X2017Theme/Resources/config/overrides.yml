@@ -1,0 +1,4 @@
+## YAML Override template
+## original/file.tpl: override/file.tpl
+---
+

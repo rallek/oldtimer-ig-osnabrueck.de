@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+msgid "Blocks"
+msgstr "Blöcke"
+
+msgid "Extensions"
+msgstr "Erweiterungen"
+
+msgid "Groups"
+msgstr "Gruppen"
+
+msgid "Home"
+msgstr "Startseite"
+
+msgid "Permissions"
+msgstr "Zugriffsrechte"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Themes"
+msgstr "Themes"
+
+msgid "Users"
+msgstr "Benutzer"

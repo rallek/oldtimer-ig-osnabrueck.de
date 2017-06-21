@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+msgid "I have forgotten my account information (for example, my user name)."
+msgstr "Ich habe meine Zugangsdaten vergessen (zum Beispiel meinen Benutzernamen)."
+
+msgid "I have forgotten my password."
+msgstr "Ich habe mein Passwort vergessen."
+
+msgid "I would like to create a new account."
+msgstr "Ich möchte ein neues Konto erstellen"
+
+msgid "I would like to login."
+msgstr "Ich möchte mich einloggen."
+
+msgid "Log out"
+msgstr "Abmelden"
+
+msgid "My Account"
+msgstr "Benutzerkonto"
+
+msgid "My account"
+msgstr "Benutzerkonto"
+
+msgid "Please select one of the following:"
+msgstr "Bitte eine der folgenden Möglichkeiten auswählen:"
+
+msgid "Powered by"
+msgstr "Website erstellt mit"
+
+msgid "Signed in as"
+msgstr "Angemeldet als"
+
+msgid "Toggle Dropdown"
+msgstr "Toggle Dropdown"

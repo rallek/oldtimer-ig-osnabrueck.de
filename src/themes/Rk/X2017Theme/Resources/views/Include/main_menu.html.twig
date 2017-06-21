@@ -1,0 +1,32 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+			<a class="navbar-brand" href="{{ pagevars.homepath }}"><img height="20" alt={{ getModVar('ZConfig', 'sitename') }} src="{{ zasset('@RkX2017Theme:images/logo.png') }}"> </a><a class="navbar-brand" href="/">&nbsp;{{ getModVar('ZConfig', 'sitename') }}</a>
+        </div>
+		<!-- <p>Home: {{ pagevars.homepath }}</p> -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>{{ adminPanelMenu() }}</li>
+            </ul>
+            {{ showblockposition('topnav') }}
+            <!-- {% if currentUser.loggedIn %} -->
+                <!-- <div class="btn-group navbar-right navbar-btn"> -->
+                    <!-- <a href="{{ path('zikulausersmodule_account_menu') }}" class="btn btn-default"><i class="fa fa-user"></i>&nbsp;&nbsp;{{ __('Signed in as') }} {{ currentUser.uname }}</a> -->
+                    <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                        <!-- <span class="caret"></span> -->
+                        <!-- <span class="sr-only">{{ __('Toggle Dropdown') }}</span> -->
+                    <!-- </button> -->
+                    <!-- <ul class="dropdown-menu"> -->
+                        <!-- <li><a href="{{ path('zikulausersmodule_access_logout') }}">{{ __('Log out') }}</a></li> -->
+                        <!-- <li><a href="{{ path('zikulausersmodule_account_menu') }}">{{ __('My Account') }}</a></li> -->
+                    <!-- </ul> -->
+                <!-- </div> -->
+            <!-- {% endif %} -->
+        </div>
+    </div>
+</div>

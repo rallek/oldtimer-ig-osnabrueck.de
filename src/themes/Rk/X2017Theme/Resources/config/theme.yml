@@ -1,0 +1,28 @@
+##
+# RkX2017Theme config
+##
+admin:
+  page: ":admin.html.twig"
+  block:
+    positions:
+      left: "Block:block.html.twig"
+      right: "Block:block.html.twig"
+      center: "Block:block.html.twig"
+home:
+  page: ":home.html.twig"
+  block:
+    positions:
+      left: "Block:block.html.twig"
+      right: "Block:block.html.twig"
+      center: "Block:block.html.twig"
+      topnav: "Block:topnavblock.html.twig"
+master:
+  page: ":master.html.twig"
+  block:
+    positions:
+      left: "Block:block.html.twig"
+      right: "Block:block.html.twig"
+      center: "Block:block.html.twig"
+      topnav: "Block:topnavblock.html.twig"
+bootstrapPath: themes/Rk/X2017Theme/Resources/public/css/bootstrap.css
+#blockWrapping: false

@@ -1,0 +1,30 @@
+{
+    "name": "rk/X2017-theme",
+    "version": "1.0.0",
+    "description": "Bootstrap based theme",
+    "type": "zikula-theme",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "rk",
+            "homepage": "http://k62.org/"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Rk\\X2017Theme\\": "" }
+    },
+    "require": {
+        "php": ">=5.4.1"
+    },
+    "extra": {
+        "zikula" : {
+            "core-compatibility": ">=1.4.5",
+            "class": "Rk\\X2017Theme\\RkX2017Theme",
+            "displayname": "X2017",
+            "capabilities": {
+                "user": true,
+                "admin": true
+            }
+        }
+    }
+}
