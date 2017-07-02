@@ -1,4 +1,10 @@
 ## YAML Override template
 ## original/file.tpl: override/file.tpl
----
-
+modules/News/templates/user/index.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/user/index.tpl
+modules/News/templates/user/view.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/user/view.tpl
+modules/News/templates/user/menu.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/user/menu.tpl
+modules/News/templates/user/article.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/user/article.tpl
+modules/News/templates/user/articlecontent.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/user/articlecontent.tpl
+modules/News/templates/block/storiesext/row2.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/block/storiesext/row2.tpl
+modules/News/templates/block/storiesext/main2.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/block/storiesext/main2.tpl
+modules/News/templates/block/storiesext/row.tpl: themes/Rk/X2017Theme/Resources/config/modules/News/templates/block/storiesext/row.tpl
