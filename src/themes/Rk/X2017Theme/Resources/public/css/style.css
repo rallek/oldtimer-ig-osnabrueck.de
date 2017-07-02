@@ -59,4 +59,16 @@ body {
     text-align: right;
 	color: white;
 }
+
+@page {margin: 0px;}
+
+@media print {
+    .z-admin-content-modtitle {
+        display: none;
+    }
+} 
+
+.mittig {
+  justify-content: center;
+}
 	
