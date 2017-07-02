@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula module News 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-18 10:10+0200\n"
+"PO-Revision-Date: 2016-10-18 10:27+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.10\n"
+"Last-Translator: \n"
+"Language: de\n"
+
+#: javascript/news.js:122
+msgid ""
+"Picture/file operations not supported in 'Quick edit' mode. You must click "
+"the 'Save full edit' button to complete these operations."
+msgstr ""
+"Bild/Datei Änderungen sind im 'Quick edit' Modus nicht erlaubt. Man muss "
+"über die Funktion 'Speichere volle Änderung' gehen um diese Änderung zu "
+"speichern."
+
+#: javascript/news.js:236 javascript/news.js:237
+msgid "Saving quick draft..."
+msgstr "Speichere schnellen Entwurf..."
+
+#: javascript/news.js:256
+msgid "Save quick draft"
+msgstr "Schneller Entwurf gespeichert"
+
+#: javascript/news.js:257
+msgid "Save quick draft failed"
+msgstr "Schneller Entwurf speichern ist fehlgeschlagen"
+
+#: javascript/news.js:264 javascript/news.js:290
+msgid "Update quick draft"
+msgstr "Aktualisiere schneller Entwurf"
+
+#: javascript/news.js:281
+msgid ""
+"Picture/file operations not supported in 'Quick draft' mode. You must click "
+"the 'Save full draft' button to complete these operations."
+msgstr ""
+"Bild/Datei Änderungen sind im 'schneller Entwurf' Modus nicht gestattet. "
+"Man muss über die Funktion 'Speichere vollen Entwurf' gehen um diese "
+"Änderung zu speichern."
+
+#: javascript/news.js:320 javascript/news.js:332 javascript/news.js:356
+msgid "Schedule"
+msgstr "Zeitplan"
+
+#: javascript/news.js:330
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: javascript/news.js:349 javascript/news.js:364 javascript/news.js:383
+#: javascript/news.js:392 javascript/news.js:406 javascript/news.js:415
+msgid "Show"
+msgstr "Anzeigen"
+
+#: javascript/news.js:353 javascript/news.js:367 javascript/news.js:380
+#: javascript/news.js:395 javascript/news.js:418
+msgid "Hide"
+msgstr "Verstecken"
+
+#: javascript/news.js:474
+msgid "Author updated"
+msgstr "Autor Aktualisiert"
+
+#: javascript/news_admin.js:40
+msgid "delete"
+msgstr "Löschen"
+
+#: javascript/news_admin.js:41
+msgid "archive"
+msgstr "Archivieren"
+
+#: javascript/news_admin.js:42
+msgid "publish"
+msgstr "Veröffentlichen"
+
+#: javascript/news_admin.js:43
+msgid "reject"
+msgstr "Verwerfen"
+
+#: javascript/news_admin.js:44
+msgid "change categories for"
+msgstr "Ändere Kategorie für"
+
+#: javascript/news_admin.js:47
+msgid "You cannot undo this operation!"
+msgstr "Die Änderung kann nicht rückgängig gemacht werden!"
+
+#: javascript/news_admin.js:65
+#, php-format
+msgid "Are you sure you want to %s the following article"
+msgid_plural "Are you sure you want to %s the following articles"
+msgstr[0] "Sicher dass der folgende Atikel %s werden soll"
+msgstr[1] "Sicher dass die folgenden Atikel %s werden sollen"
+
+#: javascript/news_admin.js:70
+msgid "Confirm Bulk Action"
+msgstr "Mehrfach Aktion bestätigen"
+
+#: javascript/news_admin.js:87
+#, php-format
+msgid "Please select at least one article to %s."
+msgstr "Mindestens einen Artikel zum %s auswählen."
+
+#: javascript/news_admin.js:88
+msgid "Bulk action error"
+msgstr "Mehrfach Aktions Fehler"
