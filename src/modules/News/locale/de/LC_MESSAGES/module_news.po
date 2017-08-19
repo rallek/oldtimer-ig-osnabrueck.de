@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: News 2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-18 10:08+0200\n"
-"PO-Revision-Date: 2017-07-02 21:02+0200\n"
+"PO-Revision-Date: 2017-07-02 21:18+0200\n"
 "Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
 "Language-Team: Carsten Volmer <carsten@zikula.org>\n"
 "Language: de\n"
@@ -1138,7 +1138,7 @@ msgstr "Beigetragen von"
 
 #: templates/admin/modify_subform.tpl:205
 msgid "on"
-msgstr ""
+msgstr "am"
 
 #: templates/admin/modify_subform.tpl:213
 msgid "Last edited"
