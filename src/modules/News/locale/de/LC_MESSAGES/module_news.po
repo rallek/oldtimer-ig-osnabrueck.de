@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: News 2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-18 10:08+0200\n"
-"PO-Revision-Date: 2017-08-19 18:39+0200\n"
+"PO-Revision-Date: 2017-08-19 18:47+0200\n"
 "Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
 "Language-Team: Carsten Volmer <carsten@zikula.org>\n"
 "Language: de\n"
@@ -475,8 +475,8 @@ msgstr ""
 #, php-format
 msgid "%1$s out of %2$s picture was uploaded and resized."
 msgid_plural "%1$s out of %2$s pictures were uploaded and resized."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s aus %2$s Bild wurde hochgeladen und verkleinert."
+msgstr[1] "%1$s aus %2$s Bilder wurden hochgeladen und verkleinert."
 
 #: lib/News/Controller/User.php:294
 msgid "Article now has draft status, since the picture was not uploaded."
@@ -1068,7 +1068,7 @@ msgstr "Anmerkungen"
 #: templates/admin/modify_subform.tpl:90
 #, php-format
 msgid "(Limit: %s characters)"
-msgstr ""
+msgstr "(Maximal %s Zeichen)"
 
 #: templates/admin/modify_subform.tpl:97 templates/admin/view.tpl:67
 #: templates/user/create.tpl:126
@@ -1086,6 +1086,8 @@ msgid ""
 "(max files %s, first picture is used as thumbnail in the index teaser page "
 "for this article.)"
 msgstr ""
+"(maximal %s Bilder, das erste Bild wird als Thumbnail in der "
+"Beitragseinleitung angezeigt)"
 
 #: templates/admin/modify_subform.tpl:120 templates/user/create.tpl:159
 msgid "news picture"
@@ -2088,6 +2090,8 @@ msgid ""
 "(An empty category selection will show articles from all available "
 "categories)"
 msgstr ""
+"(wird keine Kategorie ausgewählt, werden die Beiträge aller verfügbaren "
+"Kategorien angezeigt)"
 
 #: templates/contenttype/newsarticles_edit.tpl:23
 msgid "Display"
@@ -2119,7 +2123,7 @@ msgstr "Erstellungsdatum anzeigen"
 
 #: templates/contenttype/newsarticles_edit.tpl:69
 msgid "(Only shown when contributor's name is also enabled)"
-msgstr ""
+msgstr "(nur falls auch Autor angezeigt wird)"
 
 #: templates/contenttype/newsarticles_edit.tpl:75
 msgid ""
@@ -2154,7 +2158,7 @@ msgstr "Grafik in neuen Beiträgen anzeigen"
 #: templates/contenttype/newsarticles_edit.tpl:117
 #: templates/contenttype/newsarticles_edit.tpl:123
 msgid "(Used by 'img' plug-in)"
-msgstr ""
+msgstr "(Genutzt vom 'img' Plugin)"
 
 #: templates/contenttype/newsarticles_edit.tpl:130
 msgid "Display article's index page teaser text"
@@ -2184,6 +2188,8 @@ msgstr ""
 msgid ""
 "(Default template 'newsarticles_view.html' is used if this box is left blank)"
 msgstr ""
+"(falls Feld leer, wird die Standardvorlage 'newsarticles_view.html' "
+"verwendet)"
 
 #: templates/contenttype/newsarticles_view.tpl:22
 #, php-format
@@ -2286,7 +2292,7 @@ msgstr "Insgesamt"
 #: templates/user/categorylist.tpl:59 templates/user/categorylist.tpl:102
 #, php-format
 msgid "%s contributed by you"
-msgstr ""
+msgstr "%s selbst geschrieben"
 
 #: templates/user/categorylist.tpl:61 templates/user/categorylist.tpl:104
 msgid "Currently no articles."
@@ -2311,6 +2317,8 @@ msgstr ""
 #: templates/user/create.tpl:209
 msgid "(EZComments must be hooked to News to enable commenting.)"
 msgstr ""
+"(EZComments muss an das Newsmodul gehookt werden, um Kommentare zu "
+"aktivieren)"
 
 #: templates/user/create.tpl:260 templates/user/create.tpl:261
 msgid "Save quick draft"
