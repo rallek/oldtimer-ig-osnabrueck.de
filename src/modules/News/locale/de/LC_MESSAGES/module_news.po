@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: News 2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-18 10:08+0200\n"
-"PO-Revision-Date: 2017-07-02 21:18+0200\n"
+"PO-Revision-Date: 2017-08-19 18:39+0200\n"
 "Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
 "Language-Team: Carsten Volmer <carsten@zikula.org>\n"
 "Language: de\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: lib/News/Api/Account.php:35 lib/News/Api/User.php:965
@@ -1622,7 +1622,7 @@ msgstr ""
 
 #: templates/admin/userselector.tpl:4
 msgid "Article Author"
-msgstr ""
+msgstr "Artikel Autor"
 
 #: templates/admin/userselector.tpl:6
 msgid "Select a new article author"
@@ -2243,7 +2243,7 @@ msgstr "Seitenaufrufe"
 
 #: templates/user/articlepdf.tpl:19
 msgid "Article pictures"
-msgstr ""
+msgstr "Artikel Bilder"
 
 #: templates/user/attribute_subform.tpl:4
 msgid "Create new attribute"
@@ -2294,7 +2294,7 @@ msgstr "Momentan keine Beiträge."
 
 #: templates/user/create.tpl:20
 msgid "Create an article"
-msgstr ""
+msgstr "Artikel erstellen"
 
 #: templates/user/create.tpl:41
 msgid "Title & settings"
