@@ -28,7 +28,9 @@
 
     var editorOptions = {
         customConfig: 'custconfig.js',
-        toolbar: '{{$Scribite.editorVars.barmode}}',
+		
+        {{checkpermission component='::' instance='::' level=ACCESS_ADMIN assign='hasAdminPermission'}}
+		{{ if $hasAdminPermission }}toolbar: 'Full'{{else}}toolbar: '{{$Scribite.editorVars.barmode}}'{{/if}},
         {{if $Scribite.editorVars.height}}height: '{{$Scribite.editorVars.height}}',{{/if}}
         {{if $Scribite.editorVars.skin}}skin: '{{$Scribite.editorVars.skin}}',{{/if}}
         {{if $Scribite.editorVars.uicolor}}uiColor: '{{$Scribite.editorVars.uicolor}}',{{/if}}
