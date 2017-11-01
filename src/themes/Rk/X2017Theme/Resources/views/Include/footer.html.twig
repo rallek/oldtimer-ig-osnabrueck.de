@@ -6,10 +6,14 @@
 				  <div class="col-sm-12 text-right">
 					<ol class="list-unstyled">
 					 	{{ showblockposition('bottomnav') }}
-					  <li>Impressum</li>
+					  <li><a class="white" href="/pages/display/impressum" title="{{ __('Impress') }}">Impressum</a></li>
+					  {% if  currentUser.loggedIn %}
 					  <li><a class="white" href="{{ path('zikulausersmodule_user_index') }}" title="{{ __('Go to your account panel') }}">Benutzerkonto</a></li>
-					  <li>Kontakt</li>
-					  <li>unsere Sponsoren</li>
+					  {% else %}
+					  <li><a class="white" href="{{ path('zikulausersmodule_user_index') }}" title="{{ __('Einloggen bzw. Registrieren') }}">Anmelden</a></li>
+					  {% endif %}
+					  <!-- <li>Kontakt</li>
+					  <li>unsere Sponsoren</li> -->
 					</ol>
 				  </div>
 				</div>
