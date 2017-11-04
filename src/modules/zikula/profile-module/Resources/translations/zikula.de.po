@@ -1,0 +1,288 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 2.0.4\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+
+msgid "%s's site"
+msgstr "Website von %s"
+
+msgid "Account settings"
+msgstr "Kontoeinstellungen"
+
+msgid "Activate"
+msgstr "Aktivieren"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Admins and account owner only"
+msgstr "Nur Administratoren und Konto Besitzer"
+
+msgid "Admins only"
+msgstr "Nur Administratoren"
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Change email address"
+msgstr "E-Mail-Adresse ändern"
+
+msgid "Change password"
+msgstr "Kennwort ändern"
+
+msgid "Checkbox"
+msgstr "Kotrollkästchen"
+
+msgid "Content of your custom block"
+msgstr "Inhalt des benutzerdefinierten Blocks"
+
+msgid "Create new field"
+msgstr "Erstelle neues Feld"
+
+msgid "Custom block content for %s"
+msgstr "Individuelle Blockinhalte für %s"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Display the user's registration date"
+msgstr "Der Benutzer Registrierungsdatum anzeigen"
+
+msgid "Done! Created new item."
+msgstr "Fertig! Neues Element erstellt."
+
+msgid "Done! Module configuration updated."
+msgstr "Erledigt! Modul Konfiguration aktualisiert."
+
+msgid "Done! Saved custom block."
+msgstr "Erledigt! Der individuelle Block wurde gespeichert."
+
+msgid "Done! Saved your changes."
+msgstr "Erledigt! Die Änderungen wurden erfolgreich gespeichert."
+
+msgid "Done! The field has been successfully deleted."
+msgstr "Fertig! Das Feld wurde erfolgreich gelöscht."
+
+msgid "Done! The profile has been successfully updated."
+msgstr "Dein Profil wurde erfolgreich aktualisiert."
+
+msgid "Down"
+msgstr "nach unten"
+
+msgid "Dropdown list"
+msgstr "Dropdown Liste"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Edit profile"
+msgstr "Profil bearbeiten"
+
+msgid "Enable your personal custom block"
+msgstr "Persönlichen Menüblock aktivieren"
+
+msgid "Error! A required profile item [%s] is missing."
+msgstr "Fehler! Ein gewünschtes Profil Element [%s] fehlt."
+
+msgid "Error! Could not find profile page [%s]."
+msgstr "Fehler! Profilseite [%s] konnte nicht gefunden werden."
+
+msgid "Error! Could not find the specified module (%s)."
+msgstr "Fehler! Das angegebene Modul (%s) konnte nicht gefunden werden."
+
+msgid "Error! Could not find this user."
+msgstr "Fehler! Dieser Benutzer konnte nicht gefunden werden."
+
+msgid "Error! Could not load data."
+msgstr "Fehler! Daten können nicht geladen werden."
+
+msgid "Error! Could not load items."
+msgstr "Fehler! Element konnte nicht geladen werden."
+
+msgid "Error! Could not load the section."
+msgstr "Fehler! Die Sektion konnte nicht geladen werden."
+
+msgid "Error! Could not save your changes."
+msgstr "Fehler! Die Änderungen konnte nicht gespeichert werden."
+
+msgid "Error! Invalid '%s' passed."
+msgstr "Fehler! Ungültige '%s' übergeben."
+
+msgid "Error! No such item found."
+msgstr "Fehler! Kein solches Element gefunden."
+
+msgid ""
+"Error! The item must have a label. An example of a recommended label is: "
+"'_MYDUDLABEL'."
+msgstr ""
+
+msgid ""
+"Error! The item must have an attribute name. An example of an acceptable "
+"name is: 'mydudfield'."
+msgstr ""
+
+#, fuzzy
+msgid "Error! There is already a label with this name."
+msgstr "Fehler! Es existiert bereits eine Gruppe mit diesem Namen."
+
+#, fuzzy
+msgid "Error! There is already an attribute with this name."
+msgstr "Attributname"
+
+msgid "Error! There is already an item with the attribute name '%s'."
+msgstr ""
+
+#, fuzzy
+msgid "Error! There is already an item with the label '%s'."
+msgstr "Fehler! Ein gewünschtes Profil Element [%s] fehlt."
+
+msgid "Error! You cannot access form functions directly."
+msgstr ""
+
+#, fuzzy
+msgid "Error! You cannot deactivate this item."
+msgstr "Fehler! Die Standardgruppe für Benutzer kann nicht gelöscht werden."
+
+msgid "Error! You cannot decrease the weight of this account property."
+msgstr ""
+
+#, fuzzy
+msgid "Error! You cannot delete this item."
+msgstr "Fehler! Die Standardgruppe für Benutzer kann nicht gelöscht werden."
+
+msgid "Everyone"
+msgstr "Jeder"
+
+msgid "Fields"
+msgstr "Felder"
+
+msgid "Filter unverified users from 'Registered users list'"
+msgstr ""
+"Filtern Sie nicht verifizierte Benutzer von \"Registrierte Benutzerliste\""
+
+msgid "Go to the Avatar manager"
+msgstr "Gehen Sie zum Avatarmanager"
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "Inactive"
+msgstr "Inaktiv"
+
+msgid "Invalid %s."
+msgstr "Ungültige %s."
+
+msgid "Last %s registered users"
+msgstr "Letzte %s registrierte Benutzer"
+
+msgid "Messages"
+msgstr "Nachrichten"
+
+msgid "Missing dynamic data array in call to %s"
+msgstr ""
+
+msgid "Multiple checkbox set"
+msgstr "Mehrere Kontrollkästchen"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Not editable field"
+msgstr "Nicht bearbeitbares Feld"
+
+msgid "Operation cancelled."
+msgstr "Vorgang abgelehnt."
+
+msgid "Personal custom block"
+msgstr "Benutzerdefinierte Privatblock"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Query failed."
+msgstr "Abfrage gescheitert"
+
+msgid "Radio button"
+msgstr "Optionsschaltfläche"
+
+msgid "Registered users"
+msgstr "Registrierte Benutzer"
+
+msgid "Registered users only"
+msgstr "nur für registrierte Benutzer"
+
+msgid "Required"
+msgstr "Erforderlich"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Settings"
+msgstr "Konfiguration"
+
+msgid "Text area"
+msgstr "Textbereich"
+
+msgid "Text box"
+msgstr "Textbox"
+
+msgid "The '%s' field is required."
+msgstr "Das Feld '%s' ist erforderlich."
+
+msgid ""
+"There was a problem with one of the personal information fields.|There were "
+"problems with %d personal information fields."
+msgstr ""
+"Es gab ein Problem mit einem persönlichen Datenfeld. | Es gab %d Probleme "
+"mit mit persönlichen Informationen."
+
+msgid "Third-party"
+msgstr "Drittanbieter"
+
+msgid "Third-party (not editable)"
+msgstr "Von Drittanbietern (nicht editierbar)"
+
+msgid "Up"
+msgstr "nach oben"
+
+msgid "User Information"
+msgstr "Benutzer-Information"
+
+msgid "Users administration"
+msgstr "Benutzer-Verwaltung"
+
+msgid "Users online"
+msgstr "Benutzer Online"
+
+msgid "Users per page in 'Recent registrations' page"
+msgstr "Benutzer pro Seite in \"Den letzten Anmeldungen\""
+
+msgid "Users per page in 'Registered users list'"
+msgstr "Benutzer pro Seite in \"Registrierte Benutzerliste\""
+
+msgid "Users per page in 'Users currently on-line' page"
+msgstr "Benutzer pro Seite in \"Benutzer derzeit online\""
+
+msgid "Yes"
+msgstr "Ja"

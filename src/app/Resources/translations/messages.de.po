@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "!="
 msgstr "!="
@@ -22,9 +22,6 @@ msgstr ","
 
 msgid "/full/path/to/file.txt"
 msgstr "voller/Pfad/zur/Datei.txt"
-
-msgid "1"
-msgstr "1"
 
 msgid "7bit"
 msgstr "7bit"
@@ -137,11 +134,11 @@ msgstr "en"
 msgid "http"
 msgstr "http"
 
-msgid "http://www.w3schools.com/html5/tag_label.asp"
-msgstr "http://www.w3schools.com/html5/tag_label.asp"
-
 msgid "https"
 msgstr "https"
+
+msgid "https://www.w3schools.com/tags/tag_label.asp"
+msgstr "http://www.w3schools.com/html5/tag_label.asp"
 
 msgid "in_array"
 msgstr "in_array"
@@ -154,6 +151,9 @@ msgstr "quoted-printable"
 
 msgid "tab"
 msgstr "tab"
+
+#~ msgid "1"
+#~ msgstr "1"
 
 #~ msgid "10"
 #~ msgstr "10"
