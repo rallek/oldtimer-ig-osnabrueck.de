@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 2.0.4\n"
 "Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: \n"
 "Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%1$s and %2$s on-line."
 msgstr "%1$s und %2$s online."
@@ -24,36 +24,47 @@ msgstr "%s online."
 msgid "%s registered user|%s registered users"
 msgstr "registrierter Benutzer %s | %s registrierte Benutzer"
 
-msgid "&quot;%1$s: %2$s&quot; is required. Please select an option."
-msgstr "&quot;%1$s: %2$s&quot; ist erforderlich. Bitte wählen Sie eine Option."
+msgid ""
+"A comma-delineated list. either \"value, value, value\" or \"key:value, key:"
+"value, key:value\""
+msgstr ""
+"Eine durch Kommas separierte Liste. entweder \"Wert, Wert, Wert\" oder "
+"\"Schlüssel: Wert, Schlüssel: Wert, Schlüssel: Wert\""
 
-msgid "About Profile"
-msgstr "Über Profil"
-
-msgid "About the property labels"
-msgstr "Über die Eigentumslabel"
-
-msgid "About the property values"
-msgstr "Über die Eigenschaftswerte"
+msgid "Account menu"
+msgstr "Konto-Menu"
 
 msgid "Actions"
 msgstr "Aktionen"
 
-msgid "Activate"
-msgstr "Aktivieren"
-
 msgid "Active"
 msgstr "Aktiv"
 
-msgid ""
-"After you create a new property label (such as _MYDUDLABEL), you must add "
-"the msgid to your catalog (POT file). You will need two lines per label: "
-"<strong>msgid '_MYDUDLABEL'</strong> then one line after the <strong>msgstr "
-"''</strong> (study the default catalog content)."
+msgid "Admin Message: Sessions are configured to store in a file."
 msgstr ""
+"Admin-Nachricht: Sitzungen sind so konfiguriert, dass sie in einer Datei "
+"gespeichert werden."
 
-msgid "Attribute name"
-msgstr "Attributname"
+msgid "Allow uploading custom avatar images"
+msgstr "Hochladen von benutzerdefinierten Avatarbildern zulassen"
+
+msgid "Allow usage of Gravatar"
+msgstr "Verwendung von Gravatar erlauben"
+
+msgid "Are you sure you want to delete the property with ID: %id"
+msgstr "Möchten Sie die Eigenschaft mit der ID %id wirklich löschen?"
+
+msgid "Array"
+msgstr "Array"
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Avatar settings"
+msgstr "Avatareinstellungen"
+
+msgid "Birthday"
+msgstr "Geburtstag"
 
 msgid "Block content"
 msgstr "Blockinhalt"
@@ -61,108 +72,185 @@ msgstr "Blockinhalt"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-msgid ""
-"Check the <strong><a href=\"%s\">help page</a></strong> to get more "
-"information about labels and translatable stuff."
+msgid "Change email address"
+msgstr "E-Mail-Adresse ändern"
+
+msgid "Change password"
+msgstr "Kennwort ändern"
+
+msgid "Checkbox"
+msgstr "Kotrollkästchen"
+
+msgid "Choice"
+msgstr "Auswahlmöglichkeit"
+
+msgid "Choice Fields"
+msgstr "Auswahlfelder"
+
+msgid "Choices"
+msgstr "Auswahlmöglichkeiten"
+
+msgid "Clear"
+msgstr "Zurücksetzen"
+
+msgid "Content of your custom block"
+msgstr "Inhalt des benutzerdefinierten Blocks"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "Create new property"
+msgstr "Neues Feld erstellen"
+
+msgid "Currency"
+msgstr "Währung"
+
+msgid "Custom block content for %s"
+msgstr "Individuelle Blockinhalte für %s"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Date and Time Fields"
+msgstr "Datums- und Zeitfelder"
+
+msgid "DateTime"
+msgstr "DateTime"
+
+msgid "DateTime Object"
+msgstr "DateTime-Objekt"
+
+msgid "Default avatar image (used as fallback)"
+msgstr "Standard-Avatarbild (als Fallback verwendet)"
+
+msgid "Delete \":name\""
 msgstr ""
+"Löschen \": n\n"
+"ame\""
 
-msgid "Confirmation prompt"
-msgstr "Sicherheitsabfrage"
+msgid "Display profile"
+msgstr "Profil anzeigen"
 
-msgid "Content"
-msgstr "Inhalt"
+msgid "Display the user's registration date"
+msgstr "Der Benutzer Registrierungsdatum anzeigen"
 
-msgid ""
-"Copy all the files of the modules/zikula/profile-module/Resources/locale "
-"directory to /config/locale. There you will customize the catalog "
-"module_zikulaprofilemodule.pot and the translations afterwards."
-msgstr ""
+msgid "Done! Module configuration updated."
+msgstr "Erledigt! Modul Konfiguration aktualisiert."
 
-msgid "Create new field"
-msgstr "Erstelle neues Feld"
+msgid "Done! Saved custom block."
+msgstr "Erledigt! Der individuelle Block wurde gespeichert."
 
-msgid "Deactivate"
-msgstr "Deaktivieren"
-
-msgid "Delete personal info item"
-msgstr "Persönliche Info-Element löschen"
-
-msgid "Do you really want to delete this personal info item?"
-msgstr "Möchten Sie wirklich diese persönlichen Info-Element löschen?"
-
-msgid ""
-"Each option can be added in the catalog to be translated. Also, if you use a "
-"custom date format that needs translation, it can be added to the catalog "
-"too.<br />Enjoy!"
-msgstr ""
-
-msgid "Edit field"
-msgstr "Feld bearbeiten"
+msgid "Edit \":name\""
+msgstr "Bearbeite \":name\""
 
 msgid "Edit profile"
 msgstr "Profil bearbeiten"
 
-msgid "Fields list"
-msgstr "Felderliste"
+msgid "Email"
+msgstr "Email"
 
-msgid "Fieldset"
-msgstr "Formulargruppe"
+msgid "Enable your personal custom block"
+msgstr "Persönlichen Menüblock aktivieren"
 
-msgid ""
-"First of all, it's recommended to move the translation files of Profile to "
-"the /config directory to custom them there."
+msgid "Expanded"
+msgstr "Erweitert"
+
+msgid "Extra info"
+msgstr "Zusatzinfo"
+
+msgid "Field options"
+msgstr "Feldoptionen"
+
+msgid "Field type"
+msgstr "Feld-Typ"
+
+msgid "Filter unverified users from 'Registered users list'"
 msgstr ""
+"Filtern Sie nicht verifizierte Benutzer von \"Registrierte Benutzerliste\""
 
-msgid ""
-"In the .PO file you will be able to translate _MYDUDLABEL to the "
-"corresponding text for each specific language, to provide a legible display "
-"string like 'My DUD Label'."
-msgstr ""
+msgid "Form Type"
+msgstr "Formular Typ"
 
-msgid "Inactive"
-msgstr "Inaktiv"
+msgid "Format"
+msgstr "Format"
 
-msgid ""
-"It's recommended to use unique words for the labels, for that reason we use "
-"the format: _DUDLABEL and translate them for each available language in the "
-"site to a readable text."
-msgstr ""
+msgid "Help text"
+msgstr "Hilfetext"
 
-msgid "Item"
-msgstr "Eintrag"
+msgid "Homepage"
+msgstr "Startseite"
 
-msgid "Items marked with an asterisk (*) are required entries."
-msgstr "Mit (*) markierte Angaben sind zwingend erforderlich."
+msgid "Html5"
+msgstr "HTML5"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Information to show"
+msgstr "Informationen zeigen"
+
+msgid "Input"
+msgstr "Input"
+
+msgid "Integer"
+msgstr "Ganzzahlig"
 
 msgid "Label"
 msgstr "Bezeichnung"
 
+msgid "Language"
+msgstr "Sprache"
+
 msgid "Last %s registered users"
 msgstr "Letzte %s registrierte Benutzer"
 
-msgid "Latest articles of %s"
-msgstr "Neueste Artikel von %s"
+msgid "Locale"
+msgstr "Sprache"
 
-msgid "Latest comments of %s"
-msgstr "Neueste Kommentare von %s"
+msgid "Location"
+msgstr "Ort"
 
-msgid "Latest submissions of %s"
-msgstr "Neueste Beiträge von %s"
+msgid "Max. avatar filesize"
+msgstr "Max. Avatar-Dateigröße"
 
-msgid "Make this a 'required' item"
-msgstr "Machen Sie dies zu einem \"erforderlichen\" Element"
+msgid "Max. dimensions"
+msgstr "Max. Maße"
+
+msgid "Max. file size"
+msgstr "Max. Dateigröße"
+
+msgid "Max. height"
+msgstr "Max. Höhe"
+
+msgid "Max. width"
+msgstr "Max. Breite"
+
+msgid "Maximum number of characters to display"
+msgstr "Maximale Anzahl der anzuzeigenden Zeichen"
 
 msgid "Messages"
 msgstr "Nachrichten"
 
+msgid "Minutes a user is considered online"
+msgstr "In Minuten wird ein Benutzer als online betrachtet"
+
+msgid "Money"
+msgstr "Geld"
+
+msgid "Multiple"
+msgstr "Mehrfach"
+
+msgid "Name"
+msgstr "Name"
+
 msgid "Newest user:"
 msgstr "Neueste Benutzer:"
 
-msgid "No recent articles found."
-msgstr "Keine aktuellen Artikel gefunden."
-
-msgid "No recent comments found."
-msgstr "Keine Kommentare gefunden."
+msgid "No"
+msgstr "Nein"
 
 msgid "No recently registered users found."
 msgstr "Keine zuletzt registrierten Benutzer gefunden."
@@ -173,69 +261,13 @@ msgstr "Keine registrierten Benutzer sind online."
 msgid "No users found."
 msgstr "Keine Benutzer gefunden."
 
-msgid "Notice to display with personal info item"
-msgstr "Hinweis zur Anzeige mit persönlichem Info-Element"
-
 msgid ""
-"Notice: Entering an ID is optional. If you do not specify an ID, the option "
-"position will be used for the ID (starting from zero), instead of the user-"
-"defined ID you can enter here. You are recommended to choose an ID that is "
-"unique, and to avoid subsequently modifying it."
-msgstr ""
-
-msgid ""
-"Notice: No special characters or spaces are allowed in the personal info "
-"item's label or attribute name."
-msgstr ""
-
-msgid ""
-"Notice: Precede output options by '@@'. Example: '@@No@@Yes', "
-"'@@Disabled@@Enabled'. The order is important. If you want to have a "
-"different label in the edit form, you can use the following format: "
-"'EditLabel@@DisplayNo@@DisplayYes'. All the values are translatable."
-msgstr ""
-
-msgid ""
-"Notice: The attribute name you enter cannot be changed afterwards, so you "
-"should choose it carefully."
-msgstr ""
-
-msgid ""
-"Notice: This version does not support upgrades from versions less than 1.6. "
+"Notice: This version does not support upgrades from versions less than 2.0. "
 "Please upgrade before upgrading again to this version."
 msgstr ""
-
-msgid ""
-"Notice: Use drag and drop to arrange the personal info items into your "
-"desired order. The new order will be saved automatically when you drop the "
-"item into place."
-msgstr ""
-
-msgid ""
-"Notice: Use the following format for each option: '@@label@id'. Example for "
-"a simple list: '@@option 1@id1@@option 2@id2@@option 3@id3'. Example for a "
-"multiple checkbox set: '1@@option 1@id1@@option 2@id2@@option 3@id3'. The "
-"options are translatable."
-msgstr ""
-
-msgid ""
-"Notice: Use the following format for each option: '@@label@id'. Example: "
-"'@@radio option 1@id1@@radio option 2@id2@@radio option 3@id3'. The options "
-"are translatable."
-msgstr ""
-
-msgid ""
-"Notice: Use the following format for each option: 'id,label;'. Example: 'id1,"
-"label1;id2,label2;id3,label3'. Each property should be separated with a "
-"semicolon (';'). The ID and label of each property should be separated by a "
-"comma (','). The labels are translatable."
-msgstr ""
-
-msgid ""
-"Notice: You can choose the date format to use: 'EUR' (day month year, "
-"default), 'US' (month day, year) or 'DB' (YYYY-MM-DD). Month names are "
-"automatically translated."
-msgstr ""
+"Hinweis: Diese Version unterstützt keine Upgrades von Versionen unter 2.0. "
+"Bitte führen Sie ein Upgrade durch, bevor Sie erneut auf diese Version "
+"aktualisieren."
 
 msgid ""
 "Notice: Your personal custom block is a special block that will display in "
@@ -254,39 +286,83 @@ msgstr ""
 "bestimmen kann. Man könnte beispielsweise Links zu anderen Internetseiten "
 "einfügen, die häufig benutzt werden."
 
-#, fuzzy
-msgid "On %s"
-msgstr "Barrierefreiheit für %s"
+msgid "Number"
+msgstr "Nummer"
+
+msgid "Number of recent visitors to display"
+msgstr "Anzahl der zuletzt angezeigten Besucher"
+
+msgid "Number of recently-registered users to display"
+msgstr "Anzahl der zuletzt registrierten Besucher"
+
+msgid "Number of users to display"
+msgstr "Anzahl der anzuzeigenden Besucher"
+
+msgid "Occupation"
+msgstr "Beruf"
 
 msgid "Online:"
 msgstr "Online:"
 
-msgid "Pattern"
-msgstr "Muster"
+msgid "Operation cancelled."
+msgstr "Vorgang abgebrochen."
+
+msgid "Other Fields"
+msgstr "Andere Felder"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Path to user's avatar images"
+msgstr "Pfad zu den Avatar-Bildern"
+
+msgid "Percent"
+msgstr "Prozent"
 
 msgid "Personal custom block"
 msgstr "Benutzerdefinierte Privatblock"
 
-msgid "Personal info items to include in user registration form"
-msgstr "Persönliche Info Elemente für Benutzerregistrierung"
-
-msgid "Personal information"
-msgstr "Persönliche Informationen"
-
-msgid "Please select an item in the list."
-msgstr "Bitte einen Eintrag aus der Liste auswählen."
+msgid "Possible extensions"
+msgstr "Mögliche Erweiterungen"
 
 msgid "Profile"
 msgstr "Profil"
 
-msgid "Profile manager"
-msgstr "Profilmanager"
+msgid "Profile Display"
+msgstr "Profil anzeigen"
+
+msgid "Profile for %uname"
+msgstr "Profil von %uname"
 
 msgid "Profile settings"
 msgstr "Profileinstellungen"
 
-msgid "Real name"
-msgstr "Von (Absendername)"
+msgid "Property list"
+msgstr "Liste der Eigenschaften"
+
+msgid "Property removed."
+msgstr "Eigenschaft entfernt."
+
+msgid "Property saved."
+msgstr "Eigenschaft gespeichert."
+
+msgid "Public Email"
+msgstr "Öffentliche Mailadresse"
+
+msgid "Radio"
+msgstr "Optionsschaltfläche"
+
+msgid "Range"
+msgstr "Bereich"
+
+msgid "Real Name"
+msgstr "Echter Name"
+
+msgid "Reconfigure session storage"
+msgstr "Konfigurieren Sie den Sitzungsspeicher neu"
+
+msgid "Regex validation string constraint"
+msgstr "Regex-Validierungszeichenfolgeneinschränkung"
 
 msgid "Registered on %s"
 msgstr "Registriert am: %s"
@@ -306,78 +382,95 @@ msgstr "Registrierungsdatum"
 msgid "Registration date:"
 msgstr "Registrierungsdatum:"
 
-msgid "Reset"
-msgstr "Zurücksetzen"
+msgid "Required"
+msgstr "Erforderlich"
 
 msgid "Save"
 msgstr "Speichern"
 
-msgid "Search"
-msgstr "Suchen"
-
-msgid "Search in real names"
-msgstr "Suchen Sie in realen Namen"
-
-msgid "Search in sites"
-msgstr "Suche in Websites"
-
-msgid "Search in user names"
-msgstr "Im Benutzernamen suchen"
+msgid "Search by Uname"
+msgstr "Suche nach Uname"
 
 msgid "Select"
 msgstr "Auswählen"
 
-msgid "Send private message to %s"
-msgstr "Private Nachricht senden an: %s"
+msgid "Send private message"
+msgstr "Private Nachricht senden"
+
+msgid ""
+"Sessions are configured to store in a file. This prevents some functionality "
+"within the profile module related to tracking who is online."
+msgstr ""
+"Sitzungen sind so konfiguriert, dass sie in einer Datei gespeichert werden. "
+"Dies verhindert einige Funktionen innerhalb des Profilmoduls im Zusammenhang "
+"mit dem Verfolgen, wer online ist."
 
 msgid "Settings"
 msgstr "Konfiguration"
 
+msgid "Show registration date"
+msgstr "Zeige Registrierungsdatum"
+
+msgid "Shrink large images to maximum dimensions"
+msgstr "Schrumpfen Sie große Bilder auf maximale Abmessungen"
+
+msgid "Signature"
+msgstr "Unterschrift"
+
+msgid "Single Text"
+msgstr "Einzelner Text"
+
 msgid "Site"
 msgstr "Site"
-
-msgid ""
-"Some display types like checkboxes, radio buttons, dropdown lists and "
-"multicheckboxes, allows to define a specific set of options to show."
-msgstr ""
-
-msgid ""
-"Sorry! A required personal info item is missing. Please correct and try "
-"again."
-msgstr ""
 
 msgid "Statistics"
 msgstr "Statistiken"
 
-msgid "Status"
-msgstr "Status"
+msgid "String"
+msgstr "Zeichenkette"
 
 msgid "Submit"
 msgstr "Absenden"
 
-msgid ""
-"The personal info items that you activate below will be displayed in the "
-"user registration form if the 'Users' module is configured to display "
-"personal info items during user registration, and if the 'Profile' module is "
-"specified in the 'General settings manager' as the module to provide the "
-"site's user profile management functionality. Personal info items that are "
-"configured as 'Required' will always be displayed in the user registration "
-"form."
-msgstr ""
+msgid "Text"
+msgstr "Text"
+
+msgid "Text Fields"
+msgstr "Textfelder"
+
+msgid "Textarea"
+msgstr "Textbereich"
 
 msgid ""
-"There are some details that you may know about Profile and how it let you "
-"translate the account properties labels and values of your site."
+"The profile module is not selected as the system profile module. This is "
+"needed for full functionality."
 msgstr ""
+"Das Profilmodul ist nicht als Systemprofilmodul ausgewählt. Dies wird für "
+"die volle Funktionalität benötigt."
 
-msgid "Type"
-msgstr "Typ"
+msgid "This information is not available."
+msgstr "Diese Information ist nicht verfügbar."
 
-msgid "Type of control to display"
-msgstr "Typ des Steuerelements anzeigen"
+msgid "Time"
+msgstr "Zeit"
 
-msgid "User information"
-msgstr "Benutzerinformation"
+msgid "Timestamp"
+msgstr "Zeitstempel"
+
+msgid "Timezone"
+msgstr "Zeitzone"
+
+msgid "Translated labels"
+msgstr "Übersetzte Etiketten"
+
+msgid "Unique, simple string. No spaces. a-z, 0-9, _ and -"
+msgstr "Eindeutige simple Zeichenfolge. Keine Leerzeichen. a-z, 0-9, _ und -"
+
+msgid "Update system settings"
+msgstr "Systemeinstellungen aktualisieren"
+
+msgid "Url"
+msgstr "URL"
 
 msgid "User name"
 msgstr "Benutzername"
@@ -385,11 +478,17 @@ msgstr "Benutzername"
 msgid "User name:"
 msgstr "Benutzername:"
 
-msgid "User registration form settings"
-msgstr "Einstellungen Anmeldeformular"
-
 msgid "Users online"
 msgstr "Benutzer Online"
+
+msgid "Users per page in 'Recent registrations' page"
+msgstr "Benutzer pro Seite in \"Den letzten Anmeldungen\""
+
+msgid "Users per page in 'Registered users list'"
+msgstr "Benutzer pro Seite in \"Registrierte Benutzerliste\""
+
+msgid "Users per page in 'Users currently on-line' page"
+msgstr "Benutzer pro Seite in \"Benutzer derzeit online\""
 
 msgid "View profile of %uname%"
 msgstr "Profil von %uname% anzeigen"
@@ -397,25 +496,30 @@ msgstr "Profil von %uname% anzeigen"
 msgid "View users online"
 msgstr "Benutzer Online"
 
-msgid "Visibility"
-msgstr "Sichtbarkeit"
-
 msgid ""
-"Warning! If you want to edit the ID of an option without losing associated "
-"user data in the database, its label must not be renamed simultaneously. "
-"Also, do not assign IDs and labels the same naming. You are recommended to "
-"give each option an unique ID and a unique name, and to try to avoid "
-"renaming an ID once it has been created."
+"Warning! The avatar directory does not exist or is not readable for the "
+"webserver."
 msgstr ""
+"Warnung! Das Avatar-Verzeichnis existiert nicht oder ist für den Webserver "
+"nicht lesbar."
 
-msgid ""
-"With the updated POT, you can syncronize the translations (.PO files) for "
-"each available language, or even create a new .PO from the catalog with a "
-"tool like poEdit."
-msgstr ""
+msgid "Warning! The webserver cannot write to the avatar directory."
+msgstr "Warnung! Der Webserver kann nicht in das Avatar-Verzeichnis schreiben."
 
-msgid "click to"
-msgstr "Klicken Sie auf"
+msgid "Weight"
+msgstr "Gewichtung"
+
+msgid "Widget"
+msgstr "Widget"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "bytes"
+msgstr "Bytes"
+
+msgid "e.g. yyyy-MM-dd"
+msgstr "zB JJJJ-MM-TT"
 
 msgid "offline"
 msgstr "Offline"
@@ -423,8 +527,121 @@ msgstr "Offline"
 msgid "online"
 msgstr "Online"
 
+msgid "pixels"
+msgstr "Pixel"
+
 msgid "total"
 msgstr "Insgesamt"
 
 msgid "unread"
 msgstr "ungelesen"
+
+#~ msgid "&quot;%1$s: %2$s&quot; is required. Please select an option."
+#~ msgstr ""
+#~ "&quot;%1$s: %2$s&quot; ist erforderlich. Bitte wählen Sie eine Option."
+
+#~ msgid "About Profile"
+#~ msgstr "Über Profil"
+
+#~ msgid "About the property labels"
+#~ msgstr "Über die Eigentumslabel"
+
+#~ msgid "About the property values"
+#~ msgstr "Über die Eigenschaftswerte"
+
+#~ msgid "Activate"
+#~ msgstr "Aktivieren"
+
+#~ msgid "Attribute name"
+#~ msgstr "Attributname"
+
+#~ msgid "Confirmation prompt"
+#~ msgstr "Sicherheitsabfrage"
+
+#~ msgid "Content"
+#~ msgstr "Inhalt"
+
+#~ msgid "Deactivate"
+#~ msgstr "Deaktivieren"
+
+#~ msgid "Delete personal info item"
+#~ msgstr "Persönliche Info-Element löschen"
+
+#~ msgid "Edit field"
+#~ msgstr "Feld bearbeiten"
+
+#~ msgid "Inactive"
+#~ msgstr "Inaktiv"
+
+#~ msgid "Item"
+#~ msgstr "Eintrag"
+
+#~ msgid "Items marked with an asterisk (*) are required entries."
+#~ msgstr "Mit (*) markierte Angaben sind zwingend erforderlich."
+
+#~ msgid "Latest articles of %s"
+#~ msgstr "Neueste Artikel von %s"
+
+#~ msgid "Latest comments of %s"
+#~ msgstr "Neueste Kommentare von %s"
+
+#~ msgid "Latest submissions of %s"
+#~ msgstr "Neueste Beiträge von %s"
+
+#~ msgid "Make this a 'required' item"
+#~ msgstr "Machen Sie dies zu einem \"erforderlichen\" Element"
+
+#~ msgid "No recent articles found."
+#~ msgstr "Keine aktuellen Artikel gefunden."
+
+#~ msgid "No recent comments found."
+#~ msgstr "Keine Kommentare gefunden."
+
+#~ msgid "Notice to display with personal info item"
+#~ msgstr "Hinweis zur Anzeige mit persönlichem Info-Element"
+
+#, fuzzy
+#~ msgid "On %s"
+#~ msgstr "Barrierefreiheit für %s"
+
+#~ msgid "Pattern"
+#~ msgstr "Muster"
+
+#~ msgid "Personal info items to include in user registration form"
+#~ msgstr "Persönliche Info Elemente für Benutzerregistrierung"
+
+#~ msgid "Personal information"
+#~ msgstr "Persönliche Informationen"
+
+#~ msgid "Please select an item in the list."
+#~ msgstr "Bitte einen Eintrag aus der Liste auswählen."
+
+#~ msgid "Profile manager"
+#~ msgstr "Profilmanager"
+
+#~ msgid "Reset"
+#~ msgstr "Zurücksetzen"
+
+#~ msgid "Search"
+#~ msgstr "Suchen"
+
+#~ msgid "Search in sites"
+#~ msgstr "Suche in Websites"
+
+#~ msgid "Search in user names"
+#~ msgstr "Im Benutzernamen suchen"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "User information"
+#~ msgstr "Benutzerinformation"
+
+#~ msgid "User registration form settings"
+#~ msgstr "Einstellungen Anmeldeformular"
+
+#~ msgid "Visibility"
+#~ msgstr "Sichtbarkeit"
+
+#~ msgid "click to"
+#~ msgstr "Klicken Sie auf"
