@@ -1,6 +1,0 @@
-services:
-    # Entity factory classes
-    rk_sponsoring_module.sponsor_factory:
-        class: RK\SponsoringModule\Entity\Factory\SponsorFactory
-        arguments: ["@doctrine.orm.entity_manager", RK\SponsoringModule\Entity\SponsorEntity]
-    

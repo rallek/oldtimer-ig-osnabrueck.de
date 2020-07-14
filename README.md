@@ -1,2 +1,2 @@
 # oldtimer-ig-osnabrueck.de
-project repository of the new website. A lot of modules are made with modulestudio. Thanks to Axel for fixing all the bugs coming along the way!
+Wir sammeln im 2020 Branch unsere Dinge für die neue Webseite. Module werden je in einem eigenen Repository entwickelt. Aber es gibt immer malk wieder Hacks und Codeschnipsel, die man sammeln möchte. Wichtig hier sind die Issues, die wir hier sammeln werden, um sie abzuarbeiten.

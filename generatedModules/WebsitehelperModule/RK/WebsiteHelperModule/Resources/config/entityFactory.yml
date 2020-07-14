@@ -1,6 +1,0 @@
-services:
-    # Entity factory class
-    rk_websitehelper_module.entity_factory:
-        class: RK\WebsiteHelperModule\Entity\Factory\WebsiteHelperFactory
-        arguments:
-            - "@doctrine.orm.default_entity_manager"

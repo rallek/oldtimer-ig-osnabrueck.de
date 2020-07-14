@@ -1,6 +1,0 @@
-{# Purpose of this template: Display linkers within an external context #}
-{% for linker in items %}
-    <h3>{{ linker.getTitleFromDisplayPattern() }}</h3>
-    <p><a href="{{ path('rkwebsitehelpermodule_linker_display', { 'id': linker.id }) }}">{{ __('Read more') }}</a>
-    </p>
-{% endfor %}

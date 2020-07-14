@@ -1,8 +1,0 @@
-services:
-    # Twig extension
-    rk_sponsoring_module.twig_extension:
-        class: RK\SponsoringModule\Twig\TwigExtension
-        arguments: ["@translator.default", "@zikula_extensions_module.api.variable", "@rk_sponsoring_module.workflow_helper", "@rk_sponsoring_module.view_helper", "@rk_sponsoring_module.listentries_helper"]
-        public: false
-        tags:
-            - { name: twig.extension }
